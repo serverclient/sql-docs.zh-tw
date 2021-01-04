@@ -7,46 +7,58 @@ ms.date: 08/26/2020
 ms.topic: how-to
 author: garyericson
 ms.author: garye
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: b77fb8eac5b2c14bb181e2e10d9a32721ccec42b
-ms.sourcegitcommit: 82b92f73ca32fc28e1948aab70f37f0efdb54e39
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: cd0528125a4bd74b259fd02facb0589f4e123aad
+ms.sourcegitcommit: 8a8c89b0ff6d6dfb8554b92187aca1bf0f8bcc07
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94870391"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617547"
 ---
 # <a name="install-python-packages-with-sqlmlutils"></a>使用 sqlmlutils 安裝 Python 套件
 
 [!INCLUDE [SQL Server 2019 SQL MI](../../includes/applies-to-version/sqlserver2019-asdbmi.md)]
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 本文描述如何使用 [**sqlmlutils**](https://github.com/Microsoft/sqlmlutils) 套件中的函式，以將新 Python 套件安裝到 [SQL Server 機器學習服務](../sql-server-machine-learning-services.md)的執行個體，以及 [巨量資料叢集](../../big-data-cluster/machine-learning-services.md)。 您安裝的套件可用於使用 [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) T-SQL 陳述式在資料庫中執行的 Python 指令碼。
 ::: moniker-end
 
-::: moniker range="=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range="=azuresqldb-mi-current"
 本文描述如何使用 [**sqlmlutils**](https://github.com/Microsoft/sqlmlutils) 套件中的函式，以將新 Python 套件安裝到 [Azure SQL 受控執行個體機器學習服務](/azure/azure-sql/managed-instance/machine-learning-services-overview)的執行個體上。 您安裝的套件可用於使用 [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) T-SQL 陳述式在資料庫中執行的 Python 指令碼。
 ::: moniker-end
 
 如需套件位置和安裝路徑的詳細資訊，請參閱[取得 Python 套件資訊](../package-management/python-package-information.md)。
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 > [!NOTE]
-> 本文所述的 **sqlmlutils** 套件是用來將 Python 套件新增至 SQL Server 2019 或更新版本。 SQL Server 2017 及舊版請參閱[使用 Python 工具安裝套件](./install-python-packages-standard-tools.md?view=sql-server-2017)。
+> 本文所述的 **sqlmlutils** 套件是用來將 Python 套件新增至 SQL Server 2019 或更新版本。 SQL Server 2017 及舊版請參閱[使用 Python 工具安裝套件](./install-python-packages-standard-tools.md?view=sql-server-2017&preserve-view=true)。
 ::: moniker-end
 
 ## <a name="prerequisites"></a>Prerequisites
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 + 您必須使用 Python 語言選項安裝 [SQL Server 機器學習服務](../install/sql-machine-learning-services-windows-install.md)。
 ::: moniker-end
 
 + 在用來連線到 SQL Server 的用戶端電腦上安裝 [Azure Data Studio](../../azure-data-studio/what-is.md)。 您可以使用其他資料庫管理或查詢工具，但此文章假設使用 Azure Data Studio。
 
-+ 在 Azure Data Studio 中安裝 Python 核心程序。 您也可以從命令列安裝及使用 Python，且也可能需要 Python 開發環境，例如具有 [Python 延伸模組](https://marketplace.visualstudio.com/items?itemName=ms-python.python)的 [Visual Studio Code](https://code.visualstudio.com/download)。
++ 在 Azure Data Studio 中安裝 Python 核心程序。 您也可以從命令列安裝及使用 Python，而且可以使用替代的 Python 開發環境，例如具有 [Python 延伸模組](https://marketplace.visualstudio.com/items?itemName=ms-python.python)的 [Visual Studio Code](https://code.visualstudio.com/download)。
+
+  用戶端電腦上的 Python 版本必須符合伺服器上的 Python 版本，而且您安裝的套件必須符合所擁有的 Python 版本。
+  如需每個 SQL Server 版本隨附的 Python 版本相關資訊，請參閱 [Python 和 R 版本](../sql-server-machine-learning-services.md#versions)。
+  
+  若要確認特定 SQL Server 執行個體上的 Python 版本，請使用下列 T-SQL 命令。
+
+  ```sql
+  EXECUTE sp_execute_external_script
+    @language = N'Python',
+    @script = N'
+  import sys
+  print(sys.version)
+  '
+  ```
 
 ### <a name="other-considerations"></a>其他考量
-
-+ 套件必須符合所擁有的 Python 版本，且伺服器上的 Python 版本也必須符合用戶端電腦上的 Python 版本。 如需每個 SQL Server 版本隨附的 Python 版本相關資訊，請參閱 [Python 和 R 版本](../sql-server-machine-learning-services.md#versions)。 若要確認特定 SQL 執行個體中的 Python 版本，請參閱[檢視 Python 版本](python-package-information.md#bkmk_SQLPythonVersion)。
 
 + Python 套件程式庫位於 SQL Server 執行個體的 Program Files 資料夾中，而且根據預設，在此資料夾中安裝需要系統管理員權限。 如需詳細資訊，請參閱[套件程式庫位置](../package-management/python-package-information.md#default-python-library-location)。
 
@@ -106,7 +118,7 @@ pip install sqlmlutils
 
 如果您用來連線到 SQL Server 的用戶端電腦可以存取網際網路，則可以使用 **sqlmlutils** 透過網際網路尋找 **text-tools** 套件和任何相依性，然後從遠端將套件安裝到 SQL Server 執行個體。
 
-::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15"
 
 1. 在用戶端電腦上，開啟 **Python** 或 Python 環境。
 
@@ -114,7 +126,7 @@ pip install sqlmlutils
 
 ::: moniker-end
 
-::: moniker range=">=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-linux-ver15||=azuresqldb-mi-current"
 
 1. 在用戶端電腦上，開啟 **Python** 或 Python 環境。
 
@@ -148,13 +160,13 @@ pip install sqlmlutils
 
 在此範例中，**text-tools** 沒有相依性，因此 `text-tools` 資料夾中只有一個檔案可供您安裝。 相反地，**scikit-plot** 之類的套件有11 個相依性，因此您會在資料夾中找到 12 個檔案 (**scikit-plot** 套件和 11 個相依套件)，而且您將會安裝每個檔案。
 
-::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15"
 
 請執行下列 Python 指令碼。 替代實際檔案路徑和套件名稱，以及自有的 SQL Server 資料庫連線資訊 (如果使用 Windows 驗證，則不需要 `uid` 和 `pwd` 參數)。 針對資料夾中的每個套件檔案重複 `sqlmlutils.SQLPackageManager` 陳述式。
 
 ::: moniker-end
 
-::: moniker range=">=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-linux-ver15||=azuresqldb-mi-current"
 
 請執行下列 Python 指令碼。 替代實際檔案路徑和套件名稱，以及自有的 SQL Server 資料庫連線資訊。 針對資料夾中的每個套件檔案重複 `sqlmlutils.SQLPackageManager` 陳述式。
 
@@ -188,6 +200,17 @@ print(first_match)
 
 ```python
 sqlmlutils.SQLPackageManager(connection).uninstall("text-tools")
+```
+
+## <a name="more-sqlmlutils-functions"></a>更多 sqlmlutils 函數
+
+**sqlmlutils** 套件包含許多用於管理 Python 套件，以及在 SQL Server 中建立、管理及執行預存程序與查詢的函數。 如需詳細資料，請參閱 [sqlmlutils Python 讀我檔案](https://github.com/microsoft/sqlmlutils/tree/master/Python)。
+
+如需任何 **sqlmlutils** 函數的詳細資訊，請使用 Python **help** 函數。 例如：
+
+```Python
+import sqlmlutils
+help(SQLPackageManager.install)
 ```
 
 ## <a name="next-steps"></a>後續步驟

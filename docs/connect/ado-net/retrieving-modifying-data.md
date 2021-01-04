@@ -1,7 +1,7 @@
 ---
 title: 擷取及修改資料
-description: 在 .NET Framework 中，Microsoft SqlClient Data Provider for SQL Server 可作為應用程式與資料來源之間的橋樑來讀取及更新資料。
-ms.date: 11/13/2020
+description: 在 .NET 中，Microsoft SqlClient Data Provider for SQL Server 可作為應用程式與資料來源之間的橋樑以讀取及更新資料。
+ms.date: 11/30/2020
 ms.assetid: 722e7f87-3691-46c6-87e8-7d159722d675
 ms.prod: sql
 ms.prod_service: connectivity
@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: d6e4d6c298c632c446e1671b5d9adabaa19e0776
-ms.sourcegitcommit: c127c0752e84cccd38a7e23ac74c0362a40f952e
+ms.openlocfilehash: c3cf3766ffc6c8acf6025b58aa0adbaafafa2188
+ms.sourcegitcommit: 2add15a99df7b85d271adb261523689984dfd134
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96761486"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97038956"
 ---
 # <a name="retrieving-and-modifying-data-in-adonet"></a>在 ADO.NET 中擷取及修改資料
 
@@ -41,6 +41,10 @@ ms.locfileid: "96761486"
 
 [DataAdapter 和 DataReader](dataadapters-datareaders.md)  
 包含一些主題，其中說明 DataReader、DataAdapter、參數、處理 DataAdapter 事件，以及執行批次作業。
+
+[交易和並行存取](transactions-and-concurrency.md)包含說明如何執行本機交易、分散式交易及使用開放式並行存取的主題。
+
+[擷取資料庫結構描述資訊](retrieving-database-schema-information.md)描述如何取得可用的資料庫或目錄、資料庫的資料表和檢視、資料表現存的條件約束，以及資料來源中的其他結構描述資訊。
 
 ## <a name="see-also"></a>請參閱
 

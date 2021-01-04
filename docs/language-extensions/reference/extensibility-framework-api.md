@@ -8,13 +8,13 @@ ms.date: 10/09/2020
 ms.topic: reference
 ms.prod: sql
 ms.technology: language-extensions
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 3cc4e75f044476579859443b6a7407d01c3e92ea
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
+ms.openlocfilehash: 244a8ce680704b0b25f9d0499e1a7802661d56cd
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956859"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471689"
 ---
 # <a name="extensibility-framework-api-for-sql-server"></a>SQL Server 的擴充性架構 API
 [!INCLUDE [SQL Server 2019 and later](../../includes/applies-to-version/sqlserver2019.md)]
@@ -389,13 +389,13 @@ SQLRETURN GetResults(
     SQLUSMALLINT    TaskId,
     SQLULEN*        RowsNumber,
     SQLPOINTER**    Data,
-    SQLINTEGER***   StrLen_or_Ind
+    SQLINTEGER**_   StrLen_or_Ind
 );
 ```
 
 ### <a name="arguments"></a>引數
 
-*SessionId*  
+_SessionId*  
 \[輸入\] 唯一識別此指令碼工作階段的 GUID。
 
 *TaskId*  
@@ -453,12 +453,12 @@ SQLRETURN GetOutputParam(
 擷取介面版本。
 此函數會傳回整數，表示延伸模組的介面版本。 支援的值：
 1. 版本 1 是初始 API 版本。 支援 SQL Server 2019 RTM。
-1. 版本 2 已新增對 InstallExternalLibrary 和 UninstallExternalLibrary API 的支援，並支援 SQL Server 2019 CU3。                            
+1. 版本 2 已新增對 InstallExternalLibrary 和 UninstallExternalLibrary API 的支援，並支援 SQL Server 2019 CU3。                            
 
 ### <a name="syntax"></a>語法
 
 ```cpp
-SQLUSMALLINT GetInterfaceVersion();
+SQLUSMALLINT GetInterfaceVersion();
 ```
 
 ## <a name="cleanupsession"></a>CleanupSession

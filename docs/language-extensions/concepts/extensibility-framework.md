@@ -8,13 +8,13 @@ ms.date: 11/05/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: language-extensions
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 40fd6b73bf28b6a201a1c0fedd1624a09d67b9c0
-ms.sourcegitcommit: fe59f8dc27fd633f5dfce54519d6f5dcea577f56
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
+ms.openlocfilehash: 344e5f35e35202b6a44a4932db8a27424fdb8753
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91935370"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471799"
 ---
 # <a name="extensibility-architecture-in-sql-server-language-extensions"></a>SQL Server 語言延伸模組中的擴充性架構
 
@@ -38,15 +38,15 @@ The following diagram visually describes opportunities and benefits of the exten
 
 此架構的設計，是為了讓外部程式碼在 SQL Server 的個別處理序中執行，而不是在 SQL Server 上於內部管理資料和作業要求鏈的元件中執行。 
   
-  ***Windows 中的元件架構：***
+  **Windows 中的元件架構：** *_
 
   ![Windows 上的元件架構](../media/generic-architecture-windows.png "Windows 上的元件架構")
   
-  ***Linux 中的元件架構：***
+  _*_Linux 中的元件架構：_*_
   
   ![Linux 上的元件架構](../media/generic-architecture-linux.png "Linux 上的元件架構")
   
-元件包含**啟動控制板**服務，用來叫用外部執行階段 (例如 Java) 和程式庫特定邏輯，以載入解譯器和程式庫。
+元件包含 _ *Launchpad** 服務，用於叫用外部執行階段和程式庫特定邏輯 (例如 Java)，以載入解譯器和程式庫。
 
 <a name="launchpad"></a>
 
