@@ -1,38 +1,49 @@
 ---
-title: 安裝新的 R 套件
+title: 使用 sqlmlutils 安裝 R 套件
 description: 了解如何使用 sqlmlutils，在 SQL Server 機器學習服務執行個體上安裝新的 R 套件。
 ms.prod: sql
 ms.technology: machine-learning
-ms.date: 06/04/2020
+ms.date: 12/15/2020
 ms.topic: how-to
 author: garyericson
 ms.author: garye
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: d3f7c61420dc1b85f7f40854dce9931d25aef895
-ms.sourcegitcommit: 82b92f73ca32fc28e1948aab70f37f0efdb54e39
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: 9db282708c8f2e9bbd4ee44d45bac0b0d25dc5b9
+ms.sourcegitcommit: 8a8c89b0ff6d6dfb8554b92187aca1bf0f8bcc07
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94870489"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617557"
 ---
-# <a name="install-new-r-packages-with-sqlmlutils"></a>使用 sqlmlutils 安裝新的 R 套件
+# <a name="install-r-packages-with-sqlmlutils"></a>使用 sqlmlutils 安裝 R 套件
 
 [!INCLUDE [SQL Server 2019 SQL MI](../../includes/applies-to-version/sqlserver2019-asdbmi.md)]
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
-本文描述如何使用 [**sqlmlutils**](https://github.com/Microsoft/sqlmlutils) 套件中的函式，將新的 R 套件安裝到 [SQL Server 機器學習服務](../sql-server-machine-learning-services.md)和 [巨量資料叢集](../../big-data-cluster/machine-learning-services.md)上。 您安裝的套件可用於使用 [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) T-SQL 陳述式在資料庫中執行的 R 指令碼。
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
+本文描述如何使用 [**sqlmlutils**](https://github.com/Microsoft/sqlmlutils) 套件中的函數，將 R 套件安裝到 [SQL Server 機器學習服務](../sql-server-machine-learning-services.md)的執行個體和[巨量資料叢集](../../big-data-cluster/machine-learning-services.md)上。 您安裝的套件可用於使用 [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) T-SQL 陳述式在資料庫中執行的 R 指令碼。
 
 > [!NOTE]
-> 本文所述的 **sqlmlutils** 套件是用來將 R 套件新增至 SQL Server 2019 或更新版本。 SQL Server 2017 及舊版請參閱[使用 R 工具安裝套件](./install-r-packages-standard-tools.md?view=sql-server-2017)。
+> 本文所述的 **sqlmlutils** 套件是用來將 R 套件新增至 SQL Server 2019 或更新版本。 SQL Server 2017 及舊版請參閱[使用 R 工具安裝套件](./install-r-packages-standard-tools.md?view=sql-server-2017&preserve-view=true)。
 ::: moniker-end
-::: moniker range="=azuresqldb-mi-current||=sqlallproducts-allversions"
-本文描述如何使用 [**sqlmlutils**](https://github.com/Microsoft/sqlmlutils) 套件中的函式，將新的 R 套件安裝到 [Azure SQL 受控執行個體機器學習服務](/azure/azure-sql/managed-instance/machine-learning-services-overview)其執行個體上。 您安裝的套件可用於使用 [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) T-SQL 陳述式在資料庫中執行的 R 指令碼。
+
+::: moniker range="=azuresqldb-mi-current"
+本文描述如何使用 [**sqlmlutils**](https://github.com/Microsoft/sqlmlutils) 套件中的函數，將 R 套件安裝到 [Azure SQL 受控執行個體機器學習服務](/azure/azure-sql/managed-instance/machine-learning-services-overview)的執行個體上。 您安裝的套件可用於使用 [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) T-SQL 陳述式在資料庫中執行的 R 指令碼。
 ::: moniker-end
 
 ## <a name="prerequisites"></a>Prerequisites
 
 - 在用來連線到 SQL Server 的用戶端電腦上安裝 [R](https://www.r-project.org) 與 [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/)。 您可以使用任何 R IDE 來執行指令碼，但此文章假設使用 RStudio。
+
+  用戶端電腦上的 R 版本必須符合伺服器上的 R 版本，而且您安裝的套件必須符合所擁有的 R 版本。
+  如需每個 SQL Server 版本隨附的 R 版本相關資訊，請參閱 [Python 和 R 版本](../sql-server-machine-learning-services.md#versions)。
+  
+  若要確認特定 SQL Server 上的 R 版本，請使用下列 T-SQL 命令。
+
+  ```sql
+  EXECUTE sp_execute_external_script @language = N'R'
+   , @script = N'print(R.version)'
+  ```
 
 - 在用來連線到 SQL Server 的用戶端電腦上安裝 [Azure Data Studio](../../azure-data-studio/what-is.md)。 您可以使用其他資料庫管理或查詢工具，但此文章假設使用 Azure Data Studio。
 
@@ -51,7 +62,7 @@ ms.locfileid: "94870489"
 
 若要使用 **sqlmlutils**，您必須先將其安裝在用來連線到 SQL Server 的用戶端電腦。
 
-**sqlmlutils** 套件相依於 **RODBCext** 套件，而 **RODBCext** 相依於一些其他套件。 下列程序會以正確順序安裝所有這些套件。
+**sqlmlutils** 套件相依於 **odbc** 套件，而 **odbc** 相依於一些其他套件。 下列程序會以正確順序安裝所有這些套件。
 
 ### <a name="install-sqlmlutils-online"></a>線上安裝 sqlmlutils
 
@@ -59,27 +70,27 @@ ms.locfileid: "94870489"
 
 1. 從 https://github.com/Microsoft/sqlmlutils/tree/master/R/dist \(英文\) 將最新的 **sqlmlutils** 檔案 (`.zip` 適用於 Windows，`.tar.gz` 適用於 Linux) 下載到用戶端電腦。 不要展開檔案。
 
-1. 開啟 [命令提示字元] 並執行下列命令，以安裝 **RODBCext** 與 **sqlmlutils** 套件。 將路徑取代為您下載之 **sqlmlutils** 檔案的路徑。 會在線上找到 **RODBCext** 套件並安裝。
+1. 開啟 [命令提示字元] 並執行下列命令，以安裝 **odbc** 與 **sqlmlutils** 套件。 將路徑取代為您下載之 **sqlmlutils** 檔案的路徑。 會在線上找到 **odbc** 套件並安裝。
 
-   ::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+   ::: moniker range=">=sql-server-ver15||=azuresqldb-mi-current"
    ```console
-   R -e "install.packages('RODBCext', repos='https://mran.microsoft.com/snapshot/2019-02-01/')"
-   R CMD INSTALL sqlmlutils_0.7.1.zip
+   R.exe -e "install.packages('odbc')"
+   R.exe CMD INSTALL sqlmlutils_1.0.0.zip
    ```
    ::: moniker-end
 
-   ::: moniker range=">=sql-server-linux-ver15||=sqlallproducts-allversions"
+   ::: moniker range=">=sql-server-linux-ver15"
    ```console
-   R -e "install.packages('RODBCext', repos='https://mran.microsoft.com/snapshot/2019-02-01/')"
-   R CMD INSTALL sqlmlutils_0.7.1.tar.gz
+   R.exe -e "install.packages('odbc')"
+   R.exe CMD INSTALL sqlmlutils_1.0.0.tar.gz
    ```
    ::: moniker-end
 
 ### <a name="install-sqlmlutils-offline"></a>離線安裝 sqlmlutils
 
-若用戶端電腦沒有網際網路連線，您必須使用可存取網際網路的電腦事先下載 **RODBCext** 與 **sqlmlutils** 套件。 接著，您可以將檔案複製到用戶端電腦上的資料夾，並離線安裝套件。
+若用戶端電腦沒有網際網路連線，您必須使用可存取網際網路的電腦事先下載 **odbc** 與 **sqlmlutils** 套件。 接著，您可以將檔案複製到用戶端電腦上的資料夾，並離線安裝套件。
 
-**RODBCext** 套件有數個相依套件，而識別套件的所有相依性會變得複雜。 建議您使用 [**miniCRAN**](https://andrie.github.io/miniCRAN/)，為包括所有相依套件的套件建立本機存放庫資料夾。
+**odbc** 套件有數個相依套件，而識別套件的所有相依性會變得複雜。 建議您使用 [**miniCRAN**](https://andrie.github.io/miniCRAN/)，為包括所有相依套件的套件建立本機存放庫資料夾。
 如需詳細資訊，請參閱[使用 miniCRAN 建立本機 R 套件存放庫](create-a-local-package-repository-using-minicran.md)。
 
 **sqlmlutils** 套件包含單一檔案，您可以將該檔案複製到用戶端電腦並安裝。
@@ -88,24 +99,26 @@ ms.locfileid: "94870489"
 
 1. 安裝 **miniCRAN**。 如需詳細資訊，請參閱 [安裝 miniCRAN](create-a-local-package-repository-using-minicran.md#install-minicran)。
 
-1. 在 RStudio 中，執行下列 R 指令碼，以建立套件 **RODBCext** 的本機存放庫。 此範例假設存放庫將會在 `rodbcext` 資料夾中建立。
+1. 在 RStudio 中，執行下列 R 指令碼，以建立 **odbc** 套件的本機存放庫。 此範例假設存放庫將會在 `odbc` 資料夾中建立。
 
-   ::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+   ::: moniker range=">=sql-server-ver15||=azuresqldb-mi-current"
    ```R
-   CRAN_mirror <- c(CRAN = "https://mran.microsoft.com/snapshot/2019-02-01/")
-   local_repo <- "rodbcext"
-   pkgs_needed <- "RODBCext"
+   library("miniCRAN")
+   CRAN_mirror <- c(CRAN = "https://cran.microsoft.com")
+   local_repo <- "odbc"
+   pkgs_needed <- "odbc"
    pkgs_expanded <- pkgDep(pkgs_needed, repos = CRAN_mirror);
 
    makeRepo(pkgs_expanded, path = local_repo, repos = CRAN_mirror, type = "win.binary", Rversion = "3.5");
    ```
    ::: moniker-end
 
-   ::: moniker range=">=sql-server-linux-ver15||=sqlallproducts-allversions"
+   ::: moniker range=">=sql-server-linux-ver15"
    ```R
-   CRAN_mirror <- c(CRAN = "https://mran.microsoft.com/snapshot/2019-02-01/")
-   local_repo <- "rodbcext"
-   pkgs_needed <- "RODBCext"
+   library("miniCRAN")
+   CRAN_mirror <- c(CRAN = "https://cran.microsoft.com")
+   local_repo <- "odbc"
+   pkgs_needed <- "odbc"
    pkgs_expanded <- pkgDep(pkgs_needed, repos = CRAN_mirror);
 
    makeRepo(pkgs_expanded, path = local_repo, repos = CRAN_mirror, type = "source", Rversion = "3.5");
@@ -121,25 +134,25 @@ ms.locfileid: "94870489"
 
 1. 從 [https://github.com/Microsoft/sqlmlutils/tree/master/R/dist](https://github.com/Microsoft/sqlmlutils/tree/master/R/dist) \(英文\) 下載最新的 **sqlmlutils** 檔案 (`.zip` 適用於 Windows，`.tar.gz` 適用於 Linux)。 不要展開檔案。
 
-1. 將整個 [RODBCext] 存放庫資料夾與 **sqlmlutils** 檔案複製到用戶端電腦。
+1. 將整個 **odbc** 存放庫資料夾與 **sqlmlutils** 檔案複製到用戶端電腦。
 
 在用來連線到 SQL Server 的用戶端電腦上：
 
 1. 開啟命令提示字元。
 
-1. 執行下列命令以安裝 **RODBCext**，然後安裝 **sqlmlutils**。 將完整路徑取代為 [RODBCext] 存放庫資料夾，以及您複製到此電腦之 **sqlmlutils** 檔案的完整路徑。
+1. 執行下列命令以安裝 **odbc**，然後安裝 **sqlmlutils**。 請以您複製到此電腦之 **odbc** 存放庫資料夾與 **sqlmlutils** 檔案的完整路徑取代。
 
-   ::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+   ::: moniker range=">=sql-server-ver15||=azuresqldb-mi-current"
    ```console
-   R -e "install.packages('RODBCext', repos='rodbcext')"
-   R CMD INSTALL sqlmlutils_0.7.1.zip
+   R.exe -e "install.packages('odbc', repos='odbc')"
+   R.exe CMD INSTALL sqlmlutils_1.0.0.zip
    ```
    ::: moniker-end
 
-   ::: moniker range=">=sql-server-linux-ver15||=sqlallproducts-allversions"
+   ::: moniker range=">=sql-server-linux-ver15"
    ```console
-   R -e "install.packages('RODBCext', repos='rodbcext')"
-   R CMD INSTALL sqlmlutils_0.7.1.tar.gz
+   R.exe -e "install.packages('odbc', repos='odbc')"
+   R.exe CMD INSTALL sqlmlutils_1.0.0.tar.gz
    ```
    ::: moniker-end
 
@@ -178,8 +191,9 @@ ms.locfileid: "94870489"
 
 1. 執行下列 R 指令碼，以建立 **glue** 的本機存放庫。 此範例會在 `c:\downloads\glue` 中建立存放庫資料夾。
 
-   ::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+   ::: moniker range=">=sql-server-ver15||=azuresqldb-mi-current"
    ```R
+   library("miniCRAN")
    CRAN_mirror <- c(CRAN = "https://cran.microsoft.com")
    local_repo <- "c:/downloads/glue"
    pkgs_needed <- "glue"
@@ -189,8 +203,9 @@ ms.locfileid: "94870489"
    ```
    ::: moniker-end
 
-   ::: moniker range=">=sql-server-linux-ver15||=sqlallproducts-allversions"
+   ::: moniker range=">=sql-server-linux-ver15"
    ```R
+   library("miniCRAN")
    CRAN_mirror <- c(CRAN = "https://cran.microsoft.com")
    local_repo <- "c:/downloads/glue"
    pkgs_needed <- "glue"
@@ -262,6 +277,17 @@ ms.locfileid: "94870489"
 
 ```R
 sql_remove.packages(connectionString = connection, pkgs = "glue", scope = "PUBLIC")
+```
+
+## <a name="more-sqlmlutils-functions"></a>更多 sqlmlutils 函數
+
+**sqlmlutils** 套件包含許多用於管理 R 套件，以及在 SQL Server 中建立、管理及執行預存程序與查詢的函數。 如需詳細資料，請參閱 [sqlmlutils R 讀我檔案](https://github.com/microsoft/sqlmlutils/tree/master/R)。
+
+如需任何 **sqlmlutils** 函數的詳細資訊，請使用 R **help** 函數或 **?** 運算子。 例如：
+
+```R
+library(sqlmlutils)
+help("sql_install.packages")
 ```
 
 ## <a name="next-steps"></a>後續步驟

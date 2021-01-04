@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-kaywon
-ms.openlocfilehash: ea2f8a65cb8ca16efd625309f73d7dccc3e27505
-ms.sourcegitcommit: fe5c45a492e19a320a1a36b037704bf132dffd51
+ms.openlocfilehash: e70f6da7755b28c400cc80a5ee6de79a004e4e42
+ms.sourcegitcommit: 2add15a99df7b85d271adb261523689984dfd134
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80911664"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97038916"
 ---
 # <a name="sql-server-security"></a>SQL Server 安全性
 
@@ -36,6 +36,9 @@ SQL Server 具有許多功能，可支援安全資料庫應用程式的建立。
 ## <a name="in-this-section"></a>本節內容  
 [在 SQL Server 中進行驗證](authentication-sql-server.md)  
 描述 SQL Server 中的登入和驗證，並提供其他資源的連結。 
+
+[Azure Active Directory 驗證](azure-active-directory-authentication.md)  
+說明如何使用支援的 Azure Active Directory 驗證模式，透過 SqlClient 連線到 Azure SQL 資料來源。
   
 [SQL Server 中的應用程式安全性案例](application-security-scenarios-sql-server.md)  
 包含討論 ADO.NET 和 SQL Server 應用程式之各種應用程式安全性案例的主題。  

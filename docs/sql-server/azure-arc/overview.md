@@ -5,16 +5,16 @@ description: 管理已啟用 Azure Arc 之 SQL Server 的 SQL Server 執行個�
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mikeray
-ms.date: 10/07/2020
+ms.date: 12/08/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.custom: references_regions
-ms.openlocfilehash: 59a3dab4136749f85e1f752ee823f8815080fd76
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: c1ba7f7552b5050e3c1fa7bc765acfa431f3df30
+ms.sourcegitcommit: 18e2f0706e03d0b2b6324845244fbafaa077a8dd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91987984"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97103143"
 ---
 # <a name="azure-arc-enabled-sql-server-preview"></a>已啟用 Azure Arc 的 SQL Server (預覽)
 
@@ -43,8 +43,9 @@ SQL Server 可以安裝在執行 Windows 或 Linux 的虛擬或實體機器上�
 
 ### <a name="required-permissions"></a>所需的權限
 
-若要將 SQL Server 執行個體和裝載連線至 Azure Arc，您必須具有有權執行下列動作的帳戶：
-   * Microsoft.AzureData/*
+若要將 SQL Server 執行個體和主控電腦連線至 Azure Arc，您必須具備有權執行下列動作的帳戶：
+   * Microsoft.AzureArcData/sqlServerInstances/read
+   * Microsoft.AzureArcData/sqlServerInstances/write
    * Microsoft.HybridCompute/machines/read
    * Microsoft.HybridCompute/machines/write
    * Microsoft.GuestConfiguration/guestConfigurationAssignments/read
@@ -58,6 +59,10 @@ SQL Server 可以安裝在執行 Windows 或 Linux 的虛擬或實體機器上�
 ### <a name="networking-configuration-and-resource-providers"></a>網路設定和資源提供者
 
 檢閱 Connected Machine 代理程式所需的[網路設定、傳輸層安全性和資源提供者](/azure/azure-arc/servers/agent-overview#prerequisites)。
+
+需要有資源提供者 `Microsoft.AzureArcData`，才能將 SQL Server 執行個體連線到 Azure Arc。請參閱[必要條件](connect.md#prerequisites)一節中的資源提供者註冊指示。
+
+如果您已經有連線到 Azure Arc 的 SQL Server 執行個體，請遵循下列步驟，將現有的 [SQL Server - Azure Arc] 資源移轉至新的命名空間。
 
 ### <a name="supported-azure-regions"></a>支援的 Azure 區域
 

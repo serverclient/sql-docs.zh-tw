@@ -8,13 +8,13 @@ author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: ''
-ms.date: 10/22/2020
-ms.openlocfilehash: e4030cac39eca0d57af3bf2bcefad293e83971c2
-ms.sourcegitcommit: a2182276ba00c48dc1475b9c7dfa45179d4416dc
+ms.date: 12/15/2020
+ms.openlocfilehash: 7b52827de249153adc54d148ead5d93a015d152d
+ms.sourcegitcommit: 866554663ca3191748b6e4eb4d8d82fa58c4e426
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94704163"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97559090"
 ---
 # <a name="sql-database-projects-extension-preview"></a>SQL Database Projects 延伸模組 (預覽)
 
@@ -61,6 +61,31 @@ SQL Database Projects 延伸模組 (預覽) 適用於在以專案為基礎的開
 - 工作 (組建/發佈) 並非使用者定義。
 - 發佈 DacFx 所定義的目標。
 - WSL 環境支援有限。
+
+## <a name="workspace"></a>工作區
+Azure Data Studio 中的 SQL 資料庫專案都包含在邏輯工作區內。  工作區會管理 [總管] 窗格中顯示的資料夾，以及 [專案] 窗格中顯示的專案。 您可以透過 [專案] 窗格中的 Azure Data Studio 介面以完成新增和移除工作區中的專案。 不過，如有必要，可以在 `.code-workspace` 檔案中手動編輯工作區的設定。
+
+在下面的範例 `.code-workspace` 檔案中，`folders` 陣列會列出 [總管] 窗格中包含的所有資料夾，而 `settings` 內的 `dataworkspace.projects` 陣列則會列出 [專案] 窗格中包含的所有 SQL 專案。
+
+```json
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "name": "WideWorldImportersDW",
+            "path": "..\\WideWorldImportersDW"
+        }
+    ],
+    "settings": {
+        "dataworkspace.projects": [
+            "AdventureWorksLT.sqlproj",
+            "..\\WideWorldImportersDW\\WideWorldImportersDW.sqlproj"
+        ]
+    }
+}
+```
 
 ## <a name="next-steps"></a>接下來的步驟
 

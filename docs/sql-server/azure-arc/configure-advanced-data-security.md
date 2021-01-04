@@ -8,12 +8,12 @@ ms.reviewer: mikeray
 ms.date: 09/10/2020
 ms.topic: conceptual
 ms.prod: sql
-ms.openlocfilehash: 2bd589ebacd9ea35e15881eaaeb022d4f2302986
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: e0c68752d21de5945c06433af8c08f6208322f7c
+ms.sourcegitcommit: 18e2f0706e03d0b2b6324845244fbafaa077a8dd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988024"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97103165"
 ---
 # <a name="configure-advanced-data-security-for-azure-arc-enabled-sql-server-instance"></a>為已啟用 Azure Arc 的 SQL Server 執行個體設定進階資料安全性
 
@@ -50,17 +50,17 @@ ms.locfileid: "91988024"
 
 1. 如需詳細資訊，請參閱[使用 Azure Arc 進行延伸模組管理](/azure/azure-arc/servers/manage-vm-extensions)。
 
-## <a name="enable-advanced-data-security"></a>啟用進階資料安全性
+## <a name="enable-azure-defender"></a>啟用 Azure Defender
 
-接下來，您必須啟用 SQL Server 執行個體的進階資料安全性。
+接下來，您必須啟用適用於 SQL Server 執行個體的 Azure Defender。
 
 1. 移至資訊安全中心，並從資訊看板開啟 [定價和設定] 頁面。
 
 1. 選取您在上一個步驟中為 MMA 延伸模組設定的工作區。
 
-1. 選取 [標準]  。 確定已啟用 [機器上的 SQL 伺服器 (預覽)] 的選項。
+1. 選取 [開啟 Azure Defender]。 確定已開啟 [機器上的 SQL 伺服器] 選項。
 
-   ![升級工作區](media/configure-advanced-data-security/upgrade-log-analytics-workspace.png)
+   ![升級工作區](media/configure-advanced-data-security/enable-azure-defender.png)
 
  > [!NOTE]
    > 第一次產生弱點評估的掃描，會在啟用進階資料安全性之後 24 小時內發生。 之後，每週會在星期日執行自動掃描。

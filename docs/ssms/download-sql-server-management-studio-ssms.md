@@ -23,13 +23,13 @@ author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
-ms.date: 10/27/2020
-ms.openlocfilehash: 3dec5e211db8ae21d7b5425c4d66c727bf1b4efd
-ms.sourcegitcommit: b09f069c6bef0655b47e9953a4385f1b52bada2b
+ms.date: 12/17/2020
+ms.openlocfilehash: e1af0f83181e6fbd479d2727b7da893b8bc20b59
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92734654"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97639133"
 ---
 # <a name="download-sql-server-management-studio-ssms"></a>下載 SQL Server Management Studio (SSMS)
 
@@ -43,17 +43,17 @@ SQL Server Management Studio (SSMS) 是整合式環境，可用於管理任何 S
 
 :::image type="icon" source="media/download-icon.png" border="false"::: **[下載 SQL Server Management Studio (SSMS)](https://aka.ms/ssmsfullsetup)**
 
-SSMS 18.7.1 是 SSMS 最新的正式發行 (GA) 版本。 如果先前已安裝 SSMS 18 的 GA 版本，則在安裝 SSMS 18.7.1 時系統會將其升級為 18.7.1。
+SSMS 18.8 是 SSMS 的最新正式發行 (GA) 版本。 如果先前已安裝 SSMS 18 的 GA 版本，則在安裝 SSMS 18.8 會將其升級到 18.8。
 
 [!INCLUDE [ssms-ads-install](../includes/ssms-azure-data-studio-install.md)]
 
-- 版本號碼：18.7.1
-- 組建編號：15.0.18358.0
-- 發行日期：2020 年 10 月 27 日
+- 版本號碼：18.8
+- 組建編號：15.0.18369.0
+- 發行日期：2020 年 12 月 17 日
 
 若您有意見或建議，或是要回報問題，則連絡 SSMS 小組的最佳方式是透過 [SQL Server 使用者意見反應](https://aka.ms/sqlfeedback)。
 
-SSMS 18.x 安裝不會升級或取代 SSMS 17.x 版或更早版本。 SSMS 18.x 會與舊版本並行安裝，以便於使用者能夠同時使用這兩種版本。 不過，如果已安裝的是 SSMS 18.x「預覽」版本，則必須先將其解除安裝再安裝 SSMS 18.7.1。 可以前往 [說明] > [關於]  視窗，以查看您是否有預覽版本。
+SSMS 18.x 安裝不會升級或取代 SSMS 17.x 版或更早版本。 SSMS 18.x 會與舊版本並行安裝，以便於使用者能夠同時使用這兩種版本。 不過，如果已安裝的是 SSMS 18.x「預覽」版本，則必須先將其解除安裝再安裝 SSMS 18.8。 可以前往 [說明] > [關於]  視窗，以查看您是否有預覽版本。
 
 如果電腦中包含並存安裝的 SSMS，請確認已針對您的特定需求啟動正確的版本。 最新版本會標記為 **Microsoft SQL Server Management Studio 18**
 
@@ -64,8 +64,8 @@ SSMS 18.x 安裝不會升級或取代 SSMS 17.x 版或更早版本。 SSMS 18.x 
 
 此版 SSMS 提供下列語言版本：
 
-SQL Server Management Studio 18.7.1：  
-[簡體中文](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x804) | [繁體中文](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x404) | [英文 (美國)](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x409) | [法文](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x40c) | [德文](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x407) | [義大利文](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x410) | [日文](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x411) | [韓文](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x412) | [葡萄牙文 (巴西)](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x416) | [俄文](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x419) | [西班牙文](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x40a)
+SQL Server Management Studio 18.8：  
+[簡體中文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x804) | [繁體中文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x404) | [英文 (美國)](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x409) | [法文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x40c) | [德文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x407) | [義大利文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x410) | [日文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x411) | [韓文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x412) | [葡萄牙文 (巴西)](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x416) | [俄文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x419) | [西班牙文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x40a)
 
 > [!NOTE]
 > SQL Server PowerShell 模組為透過 PowerShell 資源庫個別安裝的模組。 如需詳細資訊，請參閱[下載 SQL Server PowerShell 模組](download-sql-server-ps-module.md)。
@@ -74,7 +74,7 @@ SQL Server Management Studio 18.7.1：
 
 如需此版本中最新功能的詳細資訊，請參閱 [SSMS 版本資訊](release-notes-ssms.md)。
 
-此版本有一些[已知問題](release-notes-ssms.md#known-issues-1871)。
+此版本有一些[已知問題](release-notes-ssms.md#known-issues-188)。
 
 ## <a name="previous-versions"></a>舊版
 
@@ -105,6 +105,14 @@ SQL Server Management Studio 18.7.1：
     您也可以傳遞 /Passive  (而不是 /Quiet  )，以查看安裝程式 UI。
 
 3. 若一切順利，就會像範例般顯示安裝在 %systemdrive%\SSMSto\Common7\IDE\Ssms.exe 的 SSMS。 若發生錯誤，將能查看傳回的錯誤碼，以及 %TEMP%\SSMSSetup 中的記錄檔。
+
+## <a name="installation-with-azure-data-studio"></a>使用 Azure Data Studio 來安裝
+
+- 從 SSMS 18.7 開始，SSMS 預設會安裝 Azure Data Studio 的系統版本。  如果工作站上的 Azure Data Studio 穩定或測試人員系統版本等於或高於內含的 Azure Data Studio 版本，則 SSMS 會跳過 Azure Data Studio 的安裝。 您可以在版本資訊中找到 Azure Data Studio 版本。
+- Azure Data Studio 系統安裝程式需要與 SSMS 安裝程式相同的安全性權限。
+- Azure Data Studio 安裝已完成 (使用預設的 Azure Data Studio 安裝選項)。 這些是用來建立 [開始] 功能表資料夾，並將 Azure Data Studio 新增至 PATH。 不會建立桌面捷徑，而且 Azure Data Studio 不會註冊為任何檔案類型的預設編輯器。
+- Azure Data Studio 的當地語系化是透過語言套件延伸模組來完成的。 若要將 Azure Data Studio 當地語系化，請從[延伸模組市集](../azure-data-studio/extensions/add-extensions.md)下載對應的語言套件。
+- 此時，您可以透過使用命令列旗標 `DoNotInstallAzureDataStudio=1` 啟動 SSMS 安裝程式，以跳過 Azure Data Studio 的安裝。
 
 ## <a name="uninstall"></a>解除安裝
 

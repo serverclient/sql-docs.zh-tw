@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: a0665916-7789-4f94-9086-879275802cf3
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: bd75bde9e125ffc99f1af6f382aa91d2f1e0caf7
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: f927e003673cb4397250fe532d57452ddb4e6445
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91987270"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97474559"
 ---
 # <a name="local-audit-for-sql-server-usage-and-diagnostic-data-collection-ceip"></a>SQL Server 使用狀況和診斷資料收集的本機稽核 (CEIP)
 
@@ -27,7 +27,7 @@ ms.locfileid: "91987270"
 
 ## <a name="introduction"></a>簡介
 
-Microsoft SQL Server 包含一些啟用網際網路的功能，而這些功能可能會收集並傳送電腦或裝置的相關資訊。 這稱為「標準電腦資訊」  。 [SQL Server 使用方式和診斷資料收集](usage-and-diagnostic-data-configuration-for-sql-server.md) \(英文\) 的本機稽核元件會將服務收集的資料寫入至指定的資料夾，代表將傳送給 Microsoft 的資料 (記錄)。 本機稽核的目的是要讓客戶看到 Microsoft 以此功能收集的所有資料，以用於相容性、法規或隱私權驗證的理由。  
+Microsoft SQL Server 包含一些啟用網際網路的功能，而這些功能可能會收集並傳送電腦或裝置的相關資訊。 這稱為「標準電腦資訊」  。 [SQL Server 使用方式和診斷資料收集](usage-and-diagnostic-data-configuration-for-sql-server.md) \(英文\) 的本機稽核元件會將服務收集的資料寫入至指定的資料夾，代表將傳送給 Microsoft 的資料 (記錄)。 本機稽核的目的是要讓客戶看到 Microsoft 以此功能收集的所有資料，以用於相容性、法規或隱私權驗證的理由。  
 
 若為 SQL Server 2016 CU2 和 CU3，則可在 SQL Server 資料庫引擎和 Analysis Services (SSAS) 的執行個體層級設定本機稽核。 若為 SQL Server 2016 CU4、2016 SP1 和更新版本，則也會啟用 SQL Server Integration Services (SSIS) 的本機稽核。 安裝程式執行期間所安裝的其他 SQL Server 元件，以及在安裝程式執行之後下載或安裝的 SQL Server 工具，沒有使用方式和診斷資料收集的本機稽核功能。
 
@@ -44,7 +44,7 @@ Microsoft SQL Server 包含一些啟用網際網路的功能，而這些功能�
 
 1. 執行個體已修補為 SQL Server 2016 RTM CU2 或更新版本。 若為 Integration Services，則執行個體會修補至 SQL 2016 RTM CU4、SQL 2016 SP1 或更新版本。
 
-1. 使用者必須是系統管理員或具有存取權可新增和修改登錄機碼、建立資料夾、管理資料夾安全性及停止/啟動 Windows 服務的角色。  
+1. 使用者必須是系統管理員或具有存取權可新增和修改登錄機碼、建立資料夾、管理資料夾安全性及停止/啟動 Windows 服務的角色。  
 
 ## <a name="pre-configuration-steps-prior-to-turning-on-local-audit"></a>開啟本機稽核前的預先設定步驟
 
@@ -73,7 +73,7 @@ Microsoft SQL Server 包含一些啟用網際網路的功能，而這些功能�
 
 ### <a name="configure-a-new-folder-for-the-local-audit-files"></a>設定本機稽核檔案的新資料夾。    
 
-建立新資料夾 (本機稽核目錄) 供本機稽核寫入記錄檔。 例如，資料庫引擎的預設執行個體的本機稽核目錄完整路徑會是︰*C:\\SQLCEIPAudit\\MSSQLSERVER\\DB\\* 。 
+建立新資料夾 (本機稽核目錄) 供本機稽核寫入記錄檔。 例如，資料庫引擎的預設執行個體的本機稽核目錄完整路徑會是︰*C:\\SQLCEIPAudit\\MSSQLSERVER\\DB\\* 。 
  
   >[!NOTE] 
   >請在 SQL Server 安裝路徑以外設定本機稽核的目錄路徑，以避免允許稽核功能和修補作業造成潛在的 SQL Server 問題。
@@ -83,24 +83,24 @@ Microsoft SQL Server 包含一些啟用網際網路的功能，而這些功能�
 |空間可用性 |針對大約 10 個資料庫的一般工作負載，請規劃每個資料庫的每個執行個體大約有 2 MB 的磁碟空間。|  
 |個別的目錄 | 為每個執行個體建立目錄。 例如，針對名為 `MSSQLSERVER` 的 SQL Server 執行個體，使用 *C:\\SQLCEIPAudit\\MSSQLSERVER\\DB\\*。 這可簡化檔案管理。
 |個別的資料夾 |針對每個服務使用特定的資料夾。 例如，針對給定的執行個體名稱，為資料庫引擎使用一個資料夾。 如果 Analysis Services 的執行個體使用相同的執行個體名稱，請為 Analysis Services 建立個別的資料夾。 資料庫引擎和 Analysis Services 執行個體設定為相同的資料夾將會造成所有本機稽核從兩個執行個體寫入相同的記錄檔。| 
-|授與 SQL Server CEIP 服務登入帳戶的權限|啟用 [列出資料夾內容]****、[讀取]**** 和 [寫入]**** 存取給 SQL Server CEIP 服務登入帳戶|
+|授與 SQL Server CEIP 服務登入帳戶的權限|啟用 [列出資料夾內容]、[讀取] 和 [寫入] 存取給 SQL Server CEIP 服務登入帳戶|
 
 
 ### <a name="grant-permissions-to-the-sql-server-ceip-service-logon-account"></a>授與 SQL Server CEIP 服務登入帳戶的權限
   
-1. 在檔案總管**** 裡，巡覽至新的資料夾所在的位置。
+1. 在檔案總管裡，巡覽至新的資料夾所在的位置。
 
-1. 以滑鼠右鍵按一下新資料夾，然後選擇 [屬性]****。 
+1. 以滑鼠右鍵按一下新資料夾，然後選擇 [屬性]。 
 
-1. 在 [安全性]**** 索引標籤上，選取 [編輯]**** 管理權限。
+1. 在 [安全性] 索引標籤上，選取 [編輯] 管理權限。
 
-1. 選取 [新增]****，並鍵入 SQL Server CEIP 服務的認證。 例如 `NT Service\SQLTELEMETRY` 。
+1. 選取 [新增]，並鍵入 SQL Server CEIP 服務的認證。 例如 `NT Service\SQLTELEMETRY` 。
 
-1. 選取 [檢查名稱]**** 驗證您提供的名稱，然後選取 [確定]****。
+1. 選取 [檢查名稱] 驗證您提供的名稱，然後選取 [確定]。
 
-1. 在 [權限]**** 對話方塊中，選擇 SQL Server CEIP 服務的登入帳戶，並選取 [列出資料夾內容]****、[讀取]**** 和 [寫入]****。
+1. 在 [權限] 對話方塊中，選擇 SQL Server CEIP 服務的登入帳戶，並選取 [列出資料夾內容]、[讀取] 和 [寫入]。
 
-1. 選取 [確定]**** 立即套用權限變更。 
+1. 選取 [確定] 立即套用權限變更。 
   
 ### <a name="create-a-registry-key-setting-to-configure-local-audit-target-directory"></a>建立登錄機碼設定來設定本機稽核目標目錄
 
@@ -108,28 +108,28 @@ Microsoft SQL Server 包含一些啟用網際網路的功能，而這些功能�
 
 1. 巡覽至適當的 CPE 路徑：
 
-   | 版本 | <資料庫引擎>****** - 登錄機碼 |
+   | 版本 | <資料庫引擎>*_ - 登錄機碼 |
    | :------ | :----------------------------- |
-   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL**13**.<您的執行個體名稱>**\\CPE |
-   | 2017    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL**14**.<您的執行個體名稱>**\\CPE |
-   | 2019    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL**15**.<您的執行個體名稱>**\\CPE |
+   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL_ *13**.* Your-Instance-Name*\\CPE |
+   | 2017    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL **14**.<您的執行個體名稱>\\CPE |
+   | 2019    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL **15**.<您的執行個體名稱>\\CPE |
    | &nbsp; | &nbsp; |
 
-   | 版本 | ***Analysis Services*** - 登錄機碼 |
+   | 版本 | ***Analysis Services** _ - 登錄機碼 |
    | :------ | :------------------------------- |
-   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS**13**.<您的執行個體名稱>**\\CPE |
-   | 2017    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS**14**.<您的執行個體名稱>**\\CPE |
-   | 2019    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS**15**.<您的執行個體名稱>**\\CPE |  
+   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS_ *13**.* Your-Instance-Name*\\CPE |
+   | 2017    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS **14**.<您的執行個體名稱>\\CPE |
+   | 2019    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS **15**.<您的執行個體名稱>\\CPE |  
    | &nbsp; | &nbsp; |
 
-   | 版本 | ***Integration Services*** - 登錄機碼 |
+   | 版本 | ***Integration Services** _ - 登錄機碼 |
    | :------ | :---------------------------------- |
-   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\**130** |
+   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\_ *130** |
    | 2017    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\**140** |
    | 2019    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\**150** |
    | &nbsp; | &nbsp; |
 
-1. 以滑鼠右鍵按一下 CPE 路徑，然後選擇 [新增]****。 選取 [字串值]****。
+1. 以滑鼠右鍵按一下 CPE 路徑，然後選擇 [新增]。 選取 [字串值]。
 
 1. 將新的登錄機碼命名為 `UserRequestedLocalAuditDirectory`。 
  
@@ -137,11 +137,11 @@ Microsoft SQL Server 包含一些啟用網際網路的功能，而這些功能�
 
 完成預先設定步驟之後，您可以開啟本機稽核。 若要這樣做，請使用系統管理員帳戶或具有具有存取權可修改登錄機碼的類似角色，遵循以下步驟來開啟或關閉本機稽核。 
 
-1. 啟動 **regedit**。  
+1. 啟動 **regedit**。  
 
 1. 巡覽至適當的 CPE [路徑](#create-a-registry-key-setting-to-configure-local-audit-target-directory)。 
 
-1. 以滑鼠右鍵按一下 **UserRequestedLocalAuditDirectory**，然後選取 [修改]**。 
+1. 以滑鼠右鍵按一下 **UserRequestedLocalAuditDirectory**，然後選取 [修改]。 
 
 1. 若要開啟本機稽核，請鍵入本機稽核路徑，例如 *C:\\SQLCEIPAudit\\MSSQLSERVER\\DB\\* 。
  
@@ -151,20 +151,20 @@ Microsoft SQL Server 包含一些啟用網際網路的功能，而這些功能�
 
 如果服務已在執行中，SQL Server CEIP 應該會立即辨識本機稽核設定。 若要啟動 SQL Server CEIP 服務，系統管理員或具有啟動或停止 Windows 服務之存取權的任何人，可以遵循下列步驟： 
 
-1. 啟動 [服務]**** 主控台。 若要這樣做，請在鍵盤上選取 **Windows 鍵 + R** 來開啟 [執行]**** 對話方塊。 接下來，在文字欄位中鍵入 *services.msc*，並選取 [確定]**** 來啟動 [服務]**** 主控台。  
+1. 啟動 [服務] 主控台。 若要這樣做，請在鍵盤上選取 **Windows 鍵 + R** 來開啟 [執行] 對話方塊。 接下來，在文字欄位中鍵入 *services.msc*，並選取 [確定] 來啟動 [服務] 主控台。  
 
 1. 瀏覽至適當的服務。 
 
-    - 若為資料庫引擎，請使用 **SQL Server CEIP 服務 (「您的執行個體名稱」**)**。     
-    - 若為 Analysis Services，請使用 **SQL Server Analysis Services CEIP (「您的執行個體名稱」**)**。
+    - 若為資料庫引擎，請使用 **SQL Server CEIP 服務 (「您的執行個體名稱」)**。     
+    - 若為 Analysis Services，請使用 **SQL Server Analysis Services CEIP (「您的執行個體名稱」)**。
     - 若為 Integration Services， 
-        - 如果是 SQL 2016，請使用「SQL Server Integration Services CEIP 服務 13.0」**。
-        - 如果是 SQL 2017，請使用「SQL Server Integration Services CEIP 服務 14.0」**。
-    - 針對 SQL 2019，請使用「SQL Server Integration Services CEIP 服務 15.0」**。
+        - 如果是 SQL 2016，請使用「SQL Server Integration Services CEIP 服務 13.0」。
+        - 如果是 SQL 2017，請使用「SQL Server Integration Services CEIP 服務 14.0」。
+    - 針對 SQL 2019，請使用「SQL Server Integration Services CEIP 服務 15.0」。
 
 1. 以滑鼠右鍵按一下服務並選擇 [重新啟動]。 
 
-1. 確定服務的狀態為**執行中**。 
+1. 確定服務的狀態為 **執行中**。 
 
 本機稽核每天會產生一個記錄檔。 記錄檔格式將為 `<YYYY-MM-DD>.json`。 例如， *2016-07-12.json*。 如果指定目錄中已有當天的檔案，本機稽核將附加到其中。 否則，它會建立當天的新檔案。 
 
@@ -173,24 +173,24 @@ Microsoft SQL Server 包含一些啟用網際網路的功能，而這些功能�
 
 ## <a name="maintenance"></a>維護 
 
-1. 若要限制本機稽核寫入檔案的磁碟空間使用量，請設定原則或定期作業來清除本機稽核目錄，移除較舊且不需要的檔案。  
+1. 若要限制本機稽核寫入檔案的磁碟空間使用量，請設定原則或定期作業來清除本機稽核目錄，移除較舊且不需要的檔案。  
 
-2. 保護本機稽核目錄路徑，讓它只能由適當的人員存取。 請注意，記錄檔包含[如何設定 SQL Server 2016 將意見反應傳送給 Microsoft](https://support.microsoft.com/kb/3153756)中所述的資訊。 此檔案的存取權應該避免大部分組織成員讀取它。  
+2. 保護本機稽核目錄路徑，讓它只能由適當的人員存取。 請注意，記錄檔包含[如何設定 SQL Server 2016 將意見反應傳送給 Microsoft](https://support.microsoft.com/kb/3153756)中所述的資訊。 此檔案的存取權應該避免大部分組織成員讀取它。  
 
 ## <a name="data-dictionary-of-local-audit-output-data-structure"></a>本機稽核輸出資料結構的資料字典 
 
 - 本機稽核記錄檔為 JSON 格式，其中包含一組物件 (資料列)，代表在 **emitTime** 時傳回給 Microsoft 的資料點。
-- 每個資料列會遵循特定的結構描述，如 **schemaVersion**所識別。
-- 每個資料列是 SQLCEIP 服務工作階段的輸出，如 **sessionID**所識別。
-- 資料列會依 **sequence**所識別的順序發出。
+- 每個資料列會遵循特定的結構描述，如 **schemaVersion** 所識別。
+- 每個資料列是 SQLCEIP 服務工作階段的輸出，如 **sessionID** 所識別。
+- 資料列會依 **sequence** 所識別的順序發出。
 - 每個資料點資料列包含 **queryIdentifier** 的輸出，這可以是 T-SQL 查詢、XE 工作階段或與某種追蹤相關的訊息，識別為 **traceName**。
-- **queryIdentifiers** 會與 **querySetVersion**一起分組並建立版本。
+- **queryIdentifiers** 會與 **querySetVersion** 一起分組並建立版本。
 - **data** 包含對應查詢執行的輸出，此執行花費時間為 **queryTimeInTicks**。
-- T-SQL 查詢的**queryIdentifiers** 會具有查詢中所儲存的 T-SQL 查詢定義。
+- T-SQL 查詢的 **queryIdentifiers** 會具有查詢中所儲存的 T-SQL 查詢定義。
 
-| 邏輯本機稽核資訊階層 | 相關的資料行 |
+| 邏輯本機稽核資訊階層 | 相關的資料行 |
 | ------ | -------|
-| 標頭 | emitTime, schemaVersion 
+| 標頭 | emitTime, schemaVersion 
 | 電腦 | operatingSystem 
 | 執行個體 | instanceUniqueID、correlationID、clientVersion 
 | 工作階段 | sessionID, traceName 
@@ -199,12 +199,12 @@ Microsoft SQL Server 包含一些啟用網際網路的功能，而這些功能�
 
 ### <a name="namevalue-pairs-definition-and-examples"></a>名稱/值配對的定義和範例 
 
-下面所列的資料行代表本機稽核檔案輸出的順序。 使用 SHA 256 的單向雜湊用於底下許多資料行的匿名值。  
+下面所列的資料行代表本機稽核檔案輸出的順序。 使用 SHA 256 的單向雜湊用於底下許多資料行的匿名值。  
 
 | 名稱 | 描述 | 範例值
 |-------|--------| ----------|
 |instanceUniqueID| 匿名的執行個體識別碼 | 888770C4D5A8C6729F76F33D472B28883AE518C92E1999888B171A085059FD 
-|schemaVersion| SQLCEIP 結構描述版本 |  3 
+|schemaVersion| SQLCEIP 結構描述版本 |  3 
 |emitTime |UTC 的資料點發出時間 | 2016-09-08T17:20:22.1124269Z 
 |sessionID | 要服務 SQLCEIP 服務用的工作階段識別碼 | 89decf9a-ad11-485c-94a7-fefb3a02ed86 
 |correlationId | 其他識別碼的預留位置 | 0 
@@ -216,7 +216,7 @@ Microsoft SQL Server 包含一些啟用網際網路的功能，而這些功能�
 |queryIdentifier | 查詢的識別碼 | SQLServerProperties.002 
 |data   | 所收集到 queryIdentifier 相關資訊的輸出，它作為 T-SQL 查詢、XE 工作階段或應用程式的輸出 |  [{"Collation": "SQL_Latin1_General_CP1_CI_AS","SqlFTinstalled": "0" "SqlIntSec": "1","IsSingleUser": "0","SqlFilestreamMode": "0","SqlPbInstalled": "0","SqlPbNodeRole": "","SqlVersionMajor": "13","SqlVersionMinor": "0","SqlVersionBuild": "2161","ProductBuildType": "","ProductLevel": "RTM","ProductUpdateLevel": "CU2","ProductUpdateReference": "KB3182270","ProductRevision": "3","SQLEditionId": "-1534726760","IsClustered": "0","IsHadrEnabled": "0","SqlAdvAInstalled": "0","PacketReceived": "1210","Version": "Microsoft SQL Server 2016 (RTM-CU2) (KB3182270) - 13.0.2161.3 (X64) \n\tSep  7 2016 14:24:16 \n\tCopyright (c) Microsoft Corporation\n\tStandard Edition (64-bit) on Windows Server 2012 R2 Datacenter 6.3 \u003cX64\u003e (Build 9600: ) (Hypervisor)\n"}],
 |查詢| 如果適用的話，此為與產生資料之 queryIdentifier 相關的 T-SQL 查詢定義。        此元件不會由 SQL Server CEIP 服務上傳。 它包含在本機稽核中，僅供客戶參考之用。| SELECT\n      SERVERPROPERTY(\u0027Collation\u0027) AS [Collation],\n      SERVERPROPERTY(\u0027IsFullTextInstalled\u0027) AS [SqlFTinstalled],\n      SERVERPROPERTY(\u0027IsIntegratedSecurityOnly\u0027) AS [SqlIntSec],\n      SERVERPROPERTY(\u0027IsSingleUser\u0027) AS [IsSingleUser],\n      SERVERPROPERTY (\u0027FileStreamEffectiveLevel\u0027) AS [SqlFilestreamMode],\n      SERVERPROPERTY(\u0027IsPolyBaseInstalled\u0027) AS [SqlPbInstalled],\n      SERVERPROPERTY(\u0027PolyBaseRole\u0027) AS [SqlPbNodeRole],\n      SERVERPROPERTY(\u0027ProductMajorVersion\u0027) AS [SqlVersionMajor],\n      SERVERPROPERTY(\u0027ProductMinorVersion\u0027) AS [SqlVersionMinor],\n      SERVERPROPERTY(\u0027ProductBuild\u0027) AS [SqlVersionBuild],\n      SERVERPROPERTY(\u0027ProductBuildType\u0027) AS ProductBuildType,\n      SERVERPROPERTY(\u0027ProductLevel\u0027) AS ProductLevel,\n      SERVERPROPERTY(\u0027ProductUpdateLevel\u0027) AS ProductUpdateLevel,\n      SERVERPROPERTY(\u0027ProductUpdateReference\u0027) AS ProductUpdateReference,\n      RIGHT(CAST(SERVERPROPERTY(\u0027ProductVersion\u0027) AS NVARCHAR(30)),CHARINDEX(\u0027.\u0027, REVERSE(CAST(SERVERPROPERTY(\u0027ProductVersion\u0027) AS NVARCHAR(30)))) - 1) AS ProductRevision,\n      SERVERPROPERTY(\u0027EditionID\u0027) AS SQLEditionId,\n      SERVERPROPERTY(\u0027IsClustered\u0027) AS IsClustered,\n      SERVERPROPERTY(\u0027IsHadrEnabled\u0027) AS IsHadrEnabled,\n      SERVERPROPERTY(\u0027IsAdvancedAnalyticsInstalled\u0027) AS [SqlAdvAInstalled],\n      @@PACK_RECEIVED AS PacketReceived,\n      @@VERSION AS Version
-|queryTimeInTicks | 具有下列追蹤類別的查詢執行所需的持續時間：(SQLServerXeQueries, SQLServerPeriodicQueries) |  0 
+|queryTimeInTicks | 具有下列追蹤類別的查詢執行所需的持續時間：(SQLServerXeQueries, SQLServerPeriodicQueries) |  0 
  
 ### <a name="trace-categories"></a>追蹤類別 
 目前，我們會收集下列追蹤類別︰ 
