@@ -9,12 +9,12 @@ ms.reviewer: alayu, maghan, sstein
 ms.topic: quickstart
 author: sunilagarwal
 ms.author: sunila
-ms.openlocfilehash: fddbceec338a05d693fd9d1e039d08e271bbc01f
-ms.sourcegitcommit: 610e3ebe21ac6575850a29641a32f275e71557e3
+ms.openlocfilehash: 389c8b745a3768f63e2f702a7f48e8c110262fb7
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91785003"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97637705"
 ---
 # <a name="quickstart-use-azure-data-studio-to-connect-and-query-postgresql"></a>快速入門：使用 Azure Data Studio 連線及查詢 PostgreSQL
 
@@ -24,7 +24,7 @@ ms.locfileid: "91785003"
 
 若要完成本快速入門，則需要 Azure Data Studio、適用於 Azure Data Studio 的 PostgreSQL 延伸模組，以及 PostgreSQL 伺服器的存取權。
 
-- [安裝 Azure Data Studio](./download-azure-data-studio.md?view=sql-server-ver15)。
+- [安裝 Azure Data Studio](./download-azure-data-studio.md)。
 - [安裝適用於 Azure Data Studio 的 PostgreSQL 延伸模組](./extensions/postgres-extension.md)。
 - [安裝 PostgreSQL](https://www.postgresql.org/download/) (或者，您可以使用 [az postgres up](/azure/postgresql/quickstart-create-server-up-azure-cli)，在雲端建立 Postgres 資料庫)。 
 
@@ -32,7 +32,7 @@ ms.locfileid: "91785003"
 
 1. 啟動 **Azure Data Studio**。
 
-2. 第一次啟動 Azure Data Studio 時，會隨即開啟 [連線] 對話方塊。 如果 [連線] 對話方塊未開啟，請按一下 [伺服器] 頁面中的**新增連線**圖示：
+2. 第一次啟動 Azure Data Studio 時，會隨即開啟 [連線] 對話方塊。 如果 [連線] 對話方塊未開啟，請按一下 [伺服器] 頁面中的 **新增連線** 圖示：
 
    ![新增連線圖示](media/quickstart-postgresql/new-connection-icon.png)
 

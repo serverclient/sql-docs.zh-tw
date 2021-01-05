@@ -13,17 +13,17 @@ ms.assetid: 29816a41-f105-4414-8be1-070675d62e84
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: c18b6842139e5a4f5f0261761fa93cc42d3a506c
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 506abf476e04ab1a40059d04031949fa80b31acf
+ms.sourcegitcommit: 866554663ca3191748b6e4eb4d8d82fa58c4e426
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97405566"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97559320"
 ---
 # <a name="configure-column-encryption-using-always-encrypted-with-a-dac-package"></a>使用 Always Encrypted 與 DAC 套件設定資料行加密 
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
 
-[資料層應用程式 (DAC) 套件](../../data-tier-applications/data-tier-applications.md) (也稱為 DACPAC) 是 SQL Server 資料庫部署的可移植單位，其定義所有 SQL Server 物件，包括資料表及資料表內的資料行。 當您將 DACPAC 發佈至資料庫時 (當您使用 DACPAC 升級資料庫時)，目標資料庫的結構描述會更新以符合 DACPAC 中結構描述。 您可以使用 SQL Server Management Studio 中的 [[升級資料層應用程式精靈]](../../data-tier-applications/upgrade-a-data-tier-application.md#UsingDACUpgradeWizard)、[PowerShell](../../data-tier-applications/upgrade-a-data-tier-application.md#UpgradeDACPowerShell) 或 [sqlpackage](../../../tools/sqlpackage.md#publish-parameters-properties-and-sqlcmd-variables) 來發佈 DACPAC。
+[資料層應用程式 (DAC) 套件](../../data-tier-applications/data-tier-applications.md) (也稱為 DACPAC) 是 SQL Server 資料庫部署的可移植單位，其定義所有 SQL Server 物件，包括資料表及資料表內的資料行。 當您將 DACPAC 發佈至資料庫時 (當您使用 DACPAC 升級資料庫時)，目標資料庫的結構描述會更新以符合 DACPAC 中結構描述。 您可以使用 SQL Server Management Studio 中的 [[升級資料層應用程式精靈]](../../data-tier-applications/upgrade-a-data-tier-application.md#UsingDACUpgradeWizard)、[PowerShell](../../data-tier-applications/upgrade-a-data-tier-application.md#UpgradeDACPowerShell) 或 [sqlpackage](../../../tools/sqlpackage/sqlpackage-publish.md) 來發佈 DACPAC。
 
 本文說明當 DACPAC 或/和目標資料庫包含以 [Always Encrypted](always-encrypted-database-engine.md) 所保護的資料行時，升級資料庫的特殊考量。 如果 DACPAC 中資料行與目標資料庫中現有資料行的加密配置不同，則發佈 DACPAC 會導致加密、解密或重新加密儲存在資料行中的資料。 如需詳細資訊，請參閱下表。
 

@@ -5,7 +5,7 @@ ms.custom: seo-lt-2019
 ms.date: 01/19/2019
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 helpviewer_keywords:
 - AlwaysOn
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: d74afd28-25c3-48a1-bc3f-e353bee615c2
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 14a7b2fbb5834ae45c5262f73ffc81a684bba300
-ms.sourcegitcommit: 54cd97a33f417432aa26b948b3fc4b71a5e9162b
+ms.openlocfilehash: 1d0abb2a078c9dd2e7f540ee05b70b60dd756a34
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94583829"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97639045"
 ---
 # <a name="availability-group-database-level-health-detection-failover-option"></a>可用性群組資料庫層級健全狀況偵測容錯移轉選項
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

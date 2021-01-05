@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 91e3622e-4b1a-439a-80c7-a00b90d66979
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: bdeaca276e64ec436b3ee39cc97439bbdc25aa98
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 7c50a2e201bcba99299998dc232e1246005eb168
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91719323"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97639213"
 ---
 # <a name="ole-db-connection-manager"></a>OLE DB 連接管理員
 
@@ -112,7 +112,7 @@ OLE DB 連接管理員可透過使用 OLE DB 提供者讓封裝連接到資料�
     
 1. 在 Azure 入口網站為您的受控執行個體[佈建 Azure Active Directory 系統管理員](/azure/sql-database/sql-database-aad-authentication-configure#provision-an-azure-active-directory-administrator-for-your-managed-instance) \(部分機器翻譯\)，如果您尚未這麼做。 Azure AD 系統管理員可以是 Azure AD 使用者或 Azure AD 群組。 如果您將系統管理員角色授與受控識別群組，請略過步驟 2-4。 系統管理員將擁有資料庫的完整存取權。
 
-1. 為 Data Factory 受控識別[建立登入](../../t-sql/statements/create-login-transact-sql.md?view=azuresqldb-mi-current)。 在 SQL Server Management Studio (SSMS) 中，以**系統管理員**身分的 SQL Server 帳戶連線到您的受控執行個體。 在 **master** 資料庫中執行下列 T-SQL：
+1. 為 Data Factory 受控識別[建立登入](../../t-sql/statements/create-login-transact-sql.md?view=azuresqldb-mi-current&preserve-view=true)。 在 SQL Server Management Studio (SSMS) 中，以 **系統管理員** 身分的 SQL Server 帳戶連線到您的受控執行個體。 在 **master** 資料庫中執行下列 T-SQL：
 
     ```sql
     CREATE LOGIN [your data factory name] FROM EXTERNAL PROVIDER;
@@ -124,7 +124,7 @@ OLE DB 連接管理員可透過使用 OLE DB 提供者讓封裝連接到資料�
     CREATE USER [your data factory name] FROM EXTERNAL PROVIDER;
     ```
 
-1. 依照您平常為 SQL 使用者和其他人所進行的操作一樣，授與 Data Factory 受控識別所需的權限。 執行下列程式碼。 如需更多選項，請參閱[此文件](../../t-sql/statements/alter-role-transact-sql.md?view=azuresqldb-mi-current)。
+1. 依照您平常為 SQL 使用者和其他人所進行的操作一樣，授與 Data Factory 受控識別所需的權限。 執行下列程式碼。 如需更多選項，請參閱[此文件](../../t-sql/statements/alter-role-transact-sql.md?view=azuresqldb-mi-current&preserve-view=true)。
 
     ```sql
     ALTER ROLE [role name e.g., db_owner] ADD MEMBER [your data factory name];
@@ -147,7 +147,7 @@ OLE DB 連接管理員可透過使用 OLE DB 提供者讓封裝連接到資料�
     > [!NOTE]
     >  目前，當您在 SSIS 設計工具中或 [!INCLUDE[msCoName](../../includes/msconame-md.md)] SQL Server 中執行 SSIS 套件時，連線管理員的 `ConnectUsingManagedIdentity` 屬性不會生效 (表示受控識別驗證無法運作)。
 
-- **在執行階段設定。** 當您透過 SSMS 或**執行 SQL 套件**活動執行套件時，尋找 OLE DB 連線管理員，並將其 `ConnectUsingManagedIdentity` 屬性更新為 `True`。
+- **在執行階段設定。** 當您透過 SSMS 或 **執行 SQL 套件** 活動執行套件時，尋找 OLE DB 連線管理員，並將其 `ConnectUsingManagedIdentity` 屬性更新為 `True`。
     > [!NOTE]
     >  在 Azure-SSIS 整合執行階段中，當受控識別驗證用於建立資料庫連線時，會覆寫 OLE DB 連線管理員上預先設定的所有其他驗證方法 (例如，整合式安全性和密碼)。
 

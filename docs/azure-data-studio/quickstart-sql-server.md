@@ -9,12 +9,12 @@ ms.author: alayu
 ms.reviewer: alayu, maghan, sstein
 ms.custom: seodec18, sqlfreshmay19
 ms.date: 08/02/2019
-ms.openlocfilehash: f49d322e664bce35f7d9a47ab5c8f3b197468377
-ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
+ms.openlocfilehash: 6a637791eac7858e905f766126ca93d9277b65c1
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88766357"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97637624"
 ---
 # <a name="quickstart-use-azure-data-studio-to-connect-and-query-sql-server"></a>快速入門：使用 Azure Data Studio 連線及查詢 SQL Server
 
@@ -24,7 +24,7 @@ ms.locfileid: "88766357"
 
 若要完成此快速入門，您需要 Azure Data Studio 以及 SQL Server 的存取權。
 
-- [安裝 Azure Data Studio](./download-azure-data-studio.md?view=sql-server-ver15)。
+- [安裝 Azure Data Studio](./download-azure-data-studio.md)。
 
 如果您沒有 SQL Server 存取權，請從下列連結中選取平台 (請務必記住您的 SQL 登入和密碼)：
 
