@@ -11,12 +11,12 @@ ms.tgt_pltfrm: ''
 ms.topic: tutorial
 author: karinazhou
 ms.author: v-jizho2
-ms.openlocfilehash: 51c99e679855ca762b7adc5763086b4ded9b6cf5
-ms.sourcegitcommit: 4c3949f620d09529658a2172d00bfe37aeb1a387
+ms.openlocfilehash: 6638144576d56a0225f03021f7cf8226643a45ab
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96123894"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771576"
 ---
 # <a name="example-demonstrating-use-of-azure-key-vault-provider-with-always-encrypted"></a>示範如何搭配 Always Encrypted 使用 Azure Key Vault 提供者的範例
 
@@ -33,7 +33,7 @@ ms.locfileid: "96123894"
 >
 > - 若要在 Linux 與 macOS 上使用 Always Encrypted 功能，需要 **Microsoft.Data.SqlClient** 2.1.0 版或更新版本。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [示範如何搭配透過安全記憶體保護區啟用的 Always Encrypted 使用 Azure Key Vault 提供者的範例](azure-key-vault-enclave-example.md)
 - [教學課程：使用具有安全記憶體保護區的 Always Encrypted 開發 .NET 應用程式](tutorial-always-encrypted-enclaves-develop-net-apps.md)

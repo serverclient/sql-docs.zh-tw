@@ -9,12 +9,12 @@ ms.author: maghan
 ms.reviewer: alayu, sstein
 ms.custom: seodec18
 ms.date: 09/24/2018
-ms.openlocfilehash: aa1826539a6b9d2a5f649159e566d3ceda8d624d
-ms.sourcegitcommit: 63aef5a96905f0b026322abc9ccb862ee497eebe
+ms.openlocfilehash: bd86afbe288be3b92b15b6702ec46903f56a2ad5
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364125"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97637801"
 ---
 # <a name="create-and-use-code-snippets-to-quickly-create-transact-sql-t-sql-scripts-in-azure-data-studio"></a>建立和使用程式碼片段，以在 Azure Data Studio 中快速建立 Transact-SQL (T-SQL) 指令碼
 
@@ -48,7 +48,7 @@ Azure Data Studio 提供數個 T-SQL 程式碼片段，以協助快速產生適�
 
 您可以定義自己的程式碼片段。 若要開啟 SQL 程式碼片段檔案進行編輯：
 
-1. 開啟*命令選擇區* (**Shift+Ctrl+P**)，並鍵入 *snip*，然後選取 [喜好設定:開啟使用者程式碼片段]：
+1. 開啟 *命令選擇區* (**Shift+Ctrl+P**)，並鍵入 *snip*，然後選取 [喜好設定:開啟使用者程式碼片段]：
 
    ![使用者程式碼片段](media/code-snippets/user-snippets.png)
 
@@ -89,16 +89,16 @@ Azure Data Studio 提供數個 T-SQL 程式碼片段，以協助快速產生適�
        "description": "User-defined snippet example 2"
        }
        }
-       ```
+    ```
 
-4. Save the sql.json file.
+4. 儲存 sql.json 檔案。
 
-5. Open a new query editor window by clicking **Ctrl+N**.
+5. 按一下 **Ctrl+N** 開啟新的查詢編輯器視窗。
 
-6. Type **sql**, and you see the two user snippets you just added; *sqlCreateTable2* and *sqlSelectTop5*.
+6. 鍵入 **sql**，您會看到剛才新增的兩個使用者程式碼片段：*sqlCreateTable2* 和 *sqlSelectTop5*。
 
-Select one of the new snippets and give it a test run!
+選取其中一個新的程式碼片段，並進行測試回合！
 
-## Next steps
+## <a name="next-steps"></a>後續步驟
 
-For information about the SQL editor, see [Code editor tutorial](tutorial-sql-editor.md).
+如需 SQL 編輯器的資訊，請參閱[程式碼編輯器教學課程](tutorial-sql-editor.md)。

@@ -2,7 +2,7 @@
 description: backupset (Transact-SQL)
 title: backupset (Transact-sql) |Microsoft Docs
 ms.custom: ''
-ms.date: 06/10/2016
+ms.date: 12/24/2020
 ms.prod: sql
 ms.prod_service: database-engine, pdw
 ms.reviewer: ''
@@ -21,12 +21,12 @@ ms.assetid: 6ff79bbf-4acf-4f75-926f-38637ca8a943
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3271963cf5a07e88b6209bd2b7316ab40f43bc05
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 7653ad7ed1d69e7de97e66d1003d6f131be45142
+ms.sourcegitcommit: d8a9ad86401bff422d506078c6200494c795e7c0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97461529"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97765197"
 ---
 # <a name="backupset-transact-sql"></a>backupset (Transact-SQL)
 [!INCLUDE [sql-asdbmi-pdw](../../includes/applies-to-version/sql-asdbmi-pdw.md)]
@@ -35,7 +35,6 @@ ms.locfileid: "97461529"
   
  此資料表儲存在 **msdb** 資料庫中。  
 
-  
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
 |**backup_set_id**|**int**|用來識別備份組的唯一備份組識別碼。 識別，主索引鍵。|  
@@ -102,10 +101,10 @@ ms.locfileid: "97461529"
 |**encryptor_thumbprint**|**varbinary(20)**|加密程式指模，可用來尋找資料庫中的憑證或非對稱金鑰。 在備份未加密的情況下，這個值是 NULL。|  
 |**encryptor_type**|**nvarchar(32)**|使用的加密程式類型：憑證或非對稱金鑰。 . 在備份未加密的情況下，這個值是 NULL。|  
   
-## <a name="remarks"></a>備註  
- 從 *BACKUP_DEVICE* RESTORE VERIFYONLY with LOADHISTORY 會在 **backupmediaset** 資料表的資料行中填入來自媒體集標頭的適當值。  
-  
- 若要減少此資料表以及其他備份和記錄資料表中的資料列數目，請執行 [sp_delete_backuphistory](../../relational-databases/system-stored-procedures/sp-delete-backuphistory-transact-sql.md) 預存程式。  
+## <a name="remarks"></a>備註
+- 從 *BACKUP_DEVICE* RESTORE VERIFYONLY with LOADHISTORY 會在 **backupmediaset** 資料表的資料行中填入來自媒體集標頭的適當值。  
+- 若要減少此資料表以及其他備份和記錄資料表中的資料列數目，請執行 [sp_delete_backuphistory](../../relational-databases/system-stored-procedures/sp-delete-backuphistory-transact-sql.md) 預存程式。  
+- 針對 SQL 受控執行個體，backupset 資料表只會顯示使用者所起始 [僅限複本備份](../../relational-databases/backup-restore/copy-only-backups-sql-server.md)的備份歷程記錄。 Backupset 資料表不會顯示服務所執行之自動備份的備份歷程記錄。 
   
 ## <a name="see-also"></a>另請參閱  
  [備份與還原資料表 &#40;Transact-sql&#41;](../../relational-databases/system-tables/backup-and-restore-tables-transact-sql.md)   

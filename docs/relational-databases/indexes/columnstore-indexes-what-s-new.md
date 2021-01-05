@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4d94afd3698b8911288ee7794d8ee32cdc1b0f3f
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a9fc87cef0244afc4459c789f94855c0c0530ddd
+ms.sourcegitcommit: e5664d20ed507a6f1b5e8ae7429a172a427b066c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97480149"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697122"
 ---
 # <a name="columnstore-indexes---what39s-new"></a>資料行存放區索引 - 新功能
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -38,13 +38,13 @@ ms.locfileid: "97480149"
 |建立資料表時指定資料行存放區索引|||是|是|是|是|是|  
 |AlwaysOn 支援資料行存放區索引|是|是|是|是|是|是|是| 
 |AlwaysOn 可讀取次要支援唯讀的非叢集資料行存放區索引|是|是|是|是|是|是|是|  
-|AlwaysOn 可讀取次要支援可更新的資料行存放區索引|||是||是是|||  
+|AlwaysOn 可讀取次要支援可更新的資料行存放區索引|||是||是|||  
 |堆積或 B-tree 的唯讀非叢集資料行存放區索引|是|是|是 <sup>1</sup>|是 <sup>1</sup>|是 <sup>1</sup>|是 <sup>1</sup>|是 <sup>1</sup>|  
 |堆積或 B-tree 的可更新非叢集資料行存放區索引|||是|是|是|是|是|  
 |有非叢集資料行存放區索引的堆積或 B-tree 允許其他的 B-tree 索引|是|是|是|是|是|是|是|  
-|可更新的叢集資料行存放區索引||是|是|是||是是|是|  
-|叢集資料行存放區索引的 B-tree 索引|||是|是||是是|是|  
-|記憶體最佳化資料表的資料行存放區索引|||是|是||是是|是|  
+|可更新的叢集資料行存放區索引||是|是|是||是|是|  
+|叢集資料行存放區索引的 B-tree 索引|||是|是||是|是|  
+|記憶體最佳化資料表的資料行存放區索引|||是|是||是|是|  
 |非叢集資料行存放區索引定義支援使用篩選的條件|||是|是|是|是|是|  
 |`CREATE TABLE` 和 `ALTER TABLE` 中資料行存放區索引的壓縮延遲選項|||是|是|是|是|是|
 |資料行存放區索引可以具有非保存的計算資料行||||是|是|||   

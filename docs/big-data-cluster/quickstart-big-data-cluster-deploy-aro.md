@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 2c0b42a27fcb49835c33b45ee73a9d31151a5e28
-ms.sourcegitcommit: ae474d21db4f724523e419622ce79f611e956a22
+ms.openlocfilehash: c5889a9411c54312dd52ee1a5e9f2b7917da6838
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92257158"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97637427"
 ---
 # <a name="use-a-python-script-to-deploy-a-sql-server-big-data-cluster-on-azure-red-hat-openshift-aro"></a>使用 Python 指令碼在 Azure Red Hat OpenShift (ARO) 上部署 SQL Server 巨量資料叢集
 
@@ -27,7 +27,7 @@ ms.locfileid: "92257158"
 
 
 > [!WARNING]
-> 使用內建儲存類別 *managed-premium* 建立的永久性磁碟區具有 *Delete* (刪除) 的回收原則。 因此，當您刪除 SQL Server 巨量資料叢集時，永久性磁碟區宣告會遭到刪除，然後永久性磁碟區也是。 您應該使用 azure-disk 佈建程式搭配 *Retain* (保留) 回收原則來建立自訂儲存類別，如[概念儲存體](/azure/aks/concepts-storage/#storage-classes)中所述。 下列指令碼是使用 *managed-premium* 儲存類別。 如需詳細資訊，請參閱[資料持續性](concept-data-persistence.md)主題。
+> 使用內建儲存類別 *managed-premium* 建立的永久性磁碟區具有 *Delete* (刪除) 的回收原則。 因此，當您刪除 SQL Server 巨量資料叢集時，永久性磁碟區宣告會遭到刪除，然後永久性磁碟區也是。 您應該使用 azure-disk 佈建程式搭配 *Retain* (保留) 回收原則來建立自訂儲存類別，如 [概念儲存體](/azure/aks/concepts-storage/#storage-classes)中所述。 下列指令碼是使用 *managed-premium* 儲存類別。 如需詳細資訊，請參閱[資料持續性](concept-data-persistence.md)主題。
 
 此處使用的預設巨量資料叢集部署，包含 SQL 主要執行個體、一個計算集區執行個體、兩個資料集區執行個體以及兩個存放集區執行個體。 資料以使用 ARO 預設儲存類別的 Kubernetes 持續性磁碟區保存。 本教學課程中使用的預設設定適用於開發/測試環境。
 
@@ -80,7 +80,7 @@ SQL Server 巨量資料叢集現已部署在 ARO 上。 您現在可以使用 Az
 > [!WARNING]
 > 下列步驟會卸除 ARO 叢集，也會移除 SQL Server 巨量資料叢集。 如果您有任何想要保留的資料庫或 HDFS 資料，請在刪除叢集之前先備份該資料。
 
-執行下列 Azure CLI 命令以移除巨量資料叢集與 Azure 中的 ARO 服務 (以您在部署指令碼中指定的 **Azure 資源群組**取代 `<resource group name>`)：
+執行下列 Azure CLI 命令以移除巨量資料叢集與 Azure 中的 ARO 服務 (以您在部署指令碼中指定的 **Azure 資源群組** 取代 `<resource group name>`)：
 
 ```terminal
 az group delete -n <resource group name>
@@ -94,7 +94,7 @@ az group delete -n <resource group name>
 #
 # Prerequisites: 
 # 
-# Azure CLI (https://docs.microsoft.com/en-us/cli/azure/install-azure-cli), Azure Data CLI (`azdata`) (https://docs.microsoft.com/en-us/sql/big-data-cluster/deploy-install-azdata?view=sql-server-ver15), oc CLI (https://www.openshift.com/blog/installing-oc-tools-windows)
+# Azure CLI (https://docs.microsoft.com/en-us/cli/azure/install-azure-cli), Azure Data CLI (`azdata`) (https://docs.microsoft.com/en-us/sql/big-data-cluster/deploy-install-azdata), oc CLI (https://www.openshift.com/blog/installing-oc-tools-windows)
 #
 # Run `az login` at least once BEFORE running this script
 #

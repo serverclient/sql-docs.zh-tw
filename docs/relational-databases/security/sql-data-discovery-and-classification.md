@@ -11,23 +11,23 @@ ms.topic: conceptual
 ms.date: 06/10/2020
 ms.author: datrigan
 author: DavidTrigano
-ms.openlocfilehash: ed1b0cb22d26895d5b01e59d36ede00f44ce4cd1
-ms.sourcegitcommit: fb8724fb99c46ecf3a6d7b02a743af9b590402f0
+ms.openlocfilehash: eab3c943f1191c2d52f6d476c1e0a83b74b6f0df
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92439495"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97638044"
 ---
 # <a name="sql-data-discovery-and-classification"></a>SQL 資料探索與分類
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-資料探索與分類引進內建至 [SQL Server Management Studio (SSMS)](../../ssms/download-sql-server-management-studio-ssms.md) 的新工具，可用來 **探索** 、 **分類** 、 **標記** & **報告** 您資料庫中的敏感性資料。
+資料探索與分類引進內建至 [SQL Server Management Studio (SSMS)](../../ssms/download-sql-server-management-studio-ssms.md) 的新工具，可用來 **探索**、**分類**、**標記** & **報告** 您資料庫中的敏感性資料。
 探索和分類最敏感的資料 (商務、財務、醫療等等) 可以扮演組織資訊保護成長的關鍵角色。 它可以作為下列的基礎結構：
 * 協助符合資料隱私權標準。
 * 控制存取以及強化包含高敏感性資料之資料庫/資料行的安全性。
 
 > [!NOTE]
-> 資料探索與分類由 **SQL Server 2012 和更新版本所支援，且可搭配 [SSMS 17.5](../../ssms/download-sql-server-management-studio-ssms.md) 或更新版本使用** 。 針對 Azure SQL Database，請參閱 [Azure SQL Database 的資料探索與分類](/azure/sql-database/sql-database-data-discovery-and-classification/)。
+> 資料探索與分類由 **SQL Server 2012 和更新版本所支援，且可搭配 [SSMS 17.5](../../ssms/download-sql-server-management-studio-ssms.md) 或更新版本使用**。 針對 Azure SQL Database，請參閱 [Azure SQL Database 的資料探索與分類](/azure/sql-database/sql-database-data-discovery-and-classification/)。
 
 ## <a name="overview"></a><a id="subheading-1"></a>概觀
 資料探索與分類引進一組進階服務，形成目標為保護資料的新 SQL Information Protection 範例，而不只是資料庫：
@@ -60,32 +60,32 @@ ms.locfileid: "92439495"
         ![顯示通知的螢幕擷取畫面，其指出有 39 個資料行含有分類建議 (按一下以檢視)。][3]
 
     * 檢閱建議清單：
-        * 若要接受特定資料行的建議，請核取相關資料列左側資料行中的核取方塊。 您也可以核取建議資料表標頭中的核取方塊，以將「所有建議」  標記為已接受。
+        * 若要接受特定資料行的建議，請核取相關資料列左側資料行中的核取方塊。 您也可以核取建議資料表標頭中的核取方塊，以將「所有建議」標記為已接受。
 
         * 您也可以使用下拉式方塊來變更建議的「資訊類型」和「敏感度標籤」。        
 
         ![顯示建議清單的螢幕擷取畫面。][4]
 
-    * 若要套用選取的建議，請按一下藍色的 [Accept selected recommendations]\(接受選取的建議)  按鈕。若要套用選取的建議，請按一下藍色的 接受選取的建議按鈕。
+    * 若要套用選取的建議，請按一下藍色的 [Accept selected recommendations]\(接受選取的建議) 按鈕。若要套用選取的建議，請按一下藍色的 接受選取的建議按鈕。
 
         ![[接受選取的建議] 按鈕的螢幕擷取畫面。][5]
 
 4. 您也可以 **手動分類** 資料行作為 (以及) 建議分類的替代方法：
 
-    * 按一下視窗上方功能表中的 [新增分類]  。
+    * 按一下視窗上方功能表中的 [新增分類]。
 
         ![顯示頂端功能表的螢幕擷取畫面，其中已標註 [新增分類] 選項。][6]
 
-    * 在開啟的內容視窗中，選取結構描述 > 資料表 > 您想要分類的資料行，以及資訊類型和敏感度標籤。 然後按一下內容視窗底部的藍色 [新增分類]  按鈕。
+    * 在開啟的內容視窗中，選取結構描述 > 資料表 > 您想要分類的資料行，以及資訊類型和敏感度標籤。 然後按一下內容視窗底部的藍色 [新增分類] 按鈕。
 
         ![顯示 [新增分類] 內容視窗的螢幕擷取畫面。][7]
 
-5. 若要完成您的分類，並使用新的分類中繼資料持續標示 (標記) 資料庫資料行，請按一下視窗上方功能表中的 [儲存]  。
+5. 若要完成您的分類，並使用新的分類中繼資料持續標示 (標記) 資料庫資料行，請按一下視窗上方功能表中的 [儲存]。
 
     ![顯示頂端功能表的螢幕擷取畫面，其中已標註 [儲存] 選項。][8]
 
 
-6. 若要產生具有完整資料庫分類狀態摘要的報表，請按一下視窗上方功能表中的 [檢視報告]  。 (您也可以使用 SSMS 產生報告。 以滑鼠右鍵按一下您想要產生報告的資料庫，然後選擇 [工作] > [資料探索與分類] > [產生報告])
+6. 若要產生具有完整資料庫分類狀態摘要的報表，請按一下視窗上方功能表中的 [檢視報告]。 (您也可以使用 SSMS 產生報告。 以滑鼠右鍵按一下您想要產生報告的資料庫，然後選擇 [工作] > [資料探索與分類] > [產生報告])
 
     ![顯示頂端功能表的螢幕擷取畫面，其中已標註 [檢視報表] 選項。][9]
 
@@ -101,22 +101,22 @@ ms.locfileid: "92439495"
 
    下列功能表選項可讓您管理資訊保護原則：
 
-* **設定資訊保護原則檔案** ：使用在所選取 JSON 檔案中所定義的資訊保護原則。
+* **設定資訊保護原則檔案**：使用在所選取 JSON 檔案中所定義的資訊保護原則。
 
-* **匯出資訊保護原則** ：將資訊保護原則匯出為 JSON 檔案。
+* **匯出資訊保護原則**：將資訊保護原則匯出為 JSON 檔案。
 
-* **重設資訊保護原則** ：將資訊保護原則重設為預設資訊保護原則。
+* **重設資訊保護原則**：將資訊保護原則重設為預設資訊保護原則。
 
 > [!IMPORTANT]
 > 資訊保護原則檔案不會儲存在 SQL Server 中。
-> SSMS 會使用預設資訊保護原則。 如果自訂的資訊保護原則失敗，SSMS 便無法使用預設原則。 資料分類失敗。 若要解決此問題，請按一下 [重設資訊保護原則]  以使用預設原則，然後重新啟用資料分類。
+> SSMS 會使用預設資訊保護原則。 如果自訂的資訊保護原則失敗，SSMS 便無法使用預設原則。 資料分類失敗。 若要解決此問題，請按一下 [重設資訊保護原則] 以使用預設原則，然後重新啟用資料分類。
 
 ## <a name="accessing-the-classification-metadata"></a><a id="subheading-4"></a>存取分類中繼資料
 
 SQL Server 2019 引進 [`sys.sensitivity_classifications`](../system-catalog-views/sys-sensitivity-classifications-transact-sql.md) 系統目錄檢視。 此檢視會傳回資訊類型和敏感度標籤。 
 
 > [!NOTE]
-> 此檢視需要 **VIEW ANY SENSITIVITY CLASSIFICATION** 權限。 如需相關資訊，請參閱 [Metadata Visibility Configuration](./metadata-visibility-configuration.md?view=sql-server-ver15)。
+> 此檢視需要 **VIEW ANY SENSITIVITY CLASSIFICATION** 權限。 如需相關資訊，請參閱 [Metadata Visibility Configuration](./metadata-visibility-configuration.md)。
 
 在 SQL Server 2019 執行個體上，查詢 `sys.sensitivity_classifications` 以檢閱所有分類資料行，以及其對應的分類。 例如： 
 
@@ -196,12 +196,10 @@ FROM
 # <a name="powershell-cmdlet"></a>[PowerShell Cmdlet](#tab/sql-powelshell)
 您可以使用 PowerShell Cmdlet 來新增/移除資料行分類，以及擷取所有分類並取得整個資料庫的建議。
 
-- [Get-SqlSensitivityClassification](/powershell/module/sqlserver/Get-SqlSensitivityClassification?view=sqlserver-ps) \(英文\)
-- [Get-SqlSensitivityRecommendations](/powershell/module/sqlserver/Get-SqlSensitivityRecommendations?view=sqlserver-ps) \(英文\)
-- [Set-SqlSensitivityClassification](/powershell/module/sqlserver/Set-SqlSensitivityClassification?view=sqlserver-ps) \(英文\)
-- [Remove-SqlSensitivityClassification](/powershell/module/sqlserver/Remove-SqlSensitivityClassification?view=sqlserver-ps) \(英文\)
-
----
+- [Get-SqlSensitivityClassification](/powershell/module/sqlserver/Get-SqlSensitivityClassification) \(英文\)
+- [Get-SqlSensitivityRecommendations](/powershell/module/sqlserver/Get-SqlSensitivityRecommendations) \(英文\)
+- [Set-SqlSensitivityClassification](/powershell/module/sqlserver/Set-SqlSensitivityClassification) \(英文\)
+- [Remove-SqlSensitivityClassification](/powershell/module/sqlserver/Remove-SqlSensitivityClassification) \(英文\)
 
 ## <a name="next-steps"></a><a id="subheading-6"></a>後續步驟
 

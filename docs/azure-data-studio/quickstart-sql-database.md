@@ -9,12 +9,12 @@ author: yualan
 ms.author: alayu
 ms.custom: seodec18; sqlfreshmay19; seo-lt-2019
 ms.date: 05/14/2019
-ms.openlocfilehash: 7eb89be3b94565f7a8642dad893642176a22822b
-ms.sourcegitcommit: fb8724fb99c46ecf3a6d7b02a743af9b590402f0
+ms.openlocfilehash: c168ceb916ac1b65f4e6d45c9ee1054b15b0cb75
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92439292"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97637655"
 ---
 # <a name="quickstart-use-azure-data-studio-to-connect-and-query-azure-sql-database"></a>快速入門：使用 Azure Data Studio 連線及查詢 Azure SQL 資料庫
 
@@ -24,7 +24,7 @@ ms.locfileid: "92439292"
 
 若要完成本快速入門，則需要 Azure Data Studio 與 Azure SQL Database 伺服器。
 
-- [安裝 Azure Data Studio](./download-azure-data-studio.md?view=sql-server-ver15)
+- [安裝 Azure Data Studio](./download-azure-data-studio.md)
 
 如果您沒有 Azure SQL 伺服器，請完成下列其中一個 Azure SQL Database 快速入門。 請記住完整伺服器名稱和登入認證，以供後續步驟執行：
 
@@ -45,7 +45,7 @@ ms.locfileid: "92439292"
 
    | 設定       | 建議的值 | 描述 |
    | ------------ | ------------------ | ------------------------------------------------- | 
-   | **伺服器名稱** | 完整伺服器名稱 | 如下所示： **servername.database.windows.net** 。 |
+   | **伺服器名稱** | 完整伺服器名稱 | 如下所示：**servername.database.windows.net**。 |
    | **驗證** | SQL 登入| 本教學課程使用 SQL 驗證。 |
    | **使用者名稱** | 伺服器系統管理員帳戶使用者名稱 | 用來建立伺服器之帳戶的使用者名稱。 |
    | **密碼 (SQL 登入)** | 伺服器系統管理員帳戶密碼 | 用來建立伺服器之帳戶的密碼。 |

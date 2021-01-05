@@ -1,7 +1,7 @@
 ---
 title: 資料庫立即檔案初始化
 description: 了解檔案立即初始化，以及如何在您的 SQL Server 資料庫上加以啟用。
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 ms.date: 07/24/2020
 ms.prod: sql
 ms.prod_service: database-engine
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 1ad468f5-4f75-480b-aac6-0b01b048bd67
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: ed2781c82b2479087012ff6c761a0497b2d56444
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 6598dc9812aed56b170c22d0ed1b4a470c5f7209
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192086"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878749"
 ---
 # <a name="database-instant-file-initialization"></a>資料庫立即檔案初始化
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -70,7 +70,7 @@ ms.locfileid: "92192086"
 
         `Database Instant File Initialization: enabled. For security and performance considerations see the topic 'Database Instant File Initialization' in SQL Server Books Online. This is an informational message only. No user action is required.`
 
-    1. 如果 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 服務啟動帳戶**未**獲授與 *SE_MANAGE_VOLUME_NAME*，會記錄如下資訊訊息：
+    1. 如果 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 服務啟動帳戶 **未** 獲授與 *SE_MANAGE_VOLUME_NAME*，會記錄如下資訊訊息：
 
         `Database Instant File Initialization: disabled. For security and performance considerations see the topic 'Database Instant File Initialization' in SQL Server Books Online. This is an informational message only. No user action is required.`
     > [!NOTE]
