@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: a4e3226a-3917-4ec8-bdf0-472879d231c9
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: c8cd352c5347cbc48979af4e03775c9d7da8f3d1
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: 9bf93bf9b59df77efe905a6c0debb722c63c3bbb
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96504959"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643037"
 ---
 # <a name="start-and-use-the-database-engine-tuning-advisor"></a>啟動及使用 Database Engine Tuning Advisor
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -55,7 +55,7 @@ ms.locfileid: "96504959"
   
 #### <a name="to-start-the-database-engine-tuning-advisor-from-the-sql-server-management-studio-query-editor"></a>若要從 SQL Server Management Studio 查詢編輯器中啟動 Database Engine Tuning Advisor  
   
-1.  在 [!INCLUDE[tsql](../../includes/tsql-md.md)] 中，開啟一個 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]指令碼檔案。 如需詳細資訊，請參閱[查詢與文字編輯器 &#40;SQL Server Management Studio&#41;](../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md?view=sql-server-ver15)。  
+1.  在 [!INCLUDE[tsql](../../includes/tsql-md.md)] 中，開啟一個 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]指令碼檔案。 如需詳細資訊，請參閱[查詢與文字編輯器 &#40;SQL Server Management Studio&#41;](../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md)。  
   
 2.  選取 [!INCLUDE[tsql](../../includes/tsql-md.md)] 指令碼中的一項查詢，或選取整份指令碼，以滑鼠右鍵按一下選取範圍，選擇 [在 Database Engine Tuning Advisor 中分析查詢]。 此時會開啟 Database Engine Tuning Advisor GUI，且會將指令碼匯入來作為一份 XML 檔工作負載。 您可以指定工作階段名稱和微調選項來微調做為工作負載的所選 [!INCLUDE[tsql](../../includes/tsql-md.md)] 查詢。  
   
@@ -88,7 +88,7 @@ ms.locfileid: "96504959"
   
 ###  <a name="to-create-transact-sql-script-workloads"></a><a name="SSMS"></a> 建立 Transact-SQL 指令碼工作負載  
   
-1.  在 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]中啟動 [查詢編輯器]。 如需詳細資訊，請參閱[查詢與文字編輯器 &#40;SQL Server Management Studio&#41;](../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md?view=sql-server-ver15)。  
+1.  在 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]中啟動 [查詢編輯器]。 如需詳細資訊，請參閱[查詢與文字編輯器 &#40;SQL Server Management Studio&#41;](../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md)。  
   
 2.  在 [查詢編輯器] 中輸入您的 [!INCLUDE[tsql](../../includes/tsql-md.md)] 指令碼。 此指令碼應包含一組 [!INCLUDE[tsql](../../includes/tsql-md.md)] 陳述式，可針對您要微調的資料庫來執行。  
   

@@ -6,7 +6,7 @@ ms.date: 03/09/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - database mirroring [SQL Server], removing
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 40c72091-8f03-4037-8b55-5e95309fe145
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: d3da88574635b01afd7f309bb09b8850e072a241
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 5b921f442c84d94615655b7aeeea2686775d33cf
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85735168"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641282"
 ---
 # <a name="removing-database-mirroring-sql-server"></a>移除資料庫鏡像 (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "85735168"
   
 -   每個夥伴伺服器執行個體都會保有個別的資料庫副本。  
   
--   因為鏡像資料庫是利用 RESTORE WITH NORECOVERY 建立的，所以它會處於 RESTORING 狀態 (請參閱 **sys.databases** 的 **state**資料行)。 此時，您可卸除先前的鏡像資料庫，或利用 WITH RECOVERY 予以還原。 當您復原資料庫時，因為復原會啟動新的復原分岔，所以與先前的主體資料庫有所差異。  
+-   因為鏡像資料庫是利用 RESTORE WITH NORECOVERY 建立的，所以它會處於 RESTORING 狀態 (請參閱 **sys.databases** 的 **state** 資料行)。 此時，您可卸除先前的鏡像資料庫，或利用 WITH RECOVERY 予以還原。 當您復原資料庫時，因為復原會啟動新的復原分岔，所以與先前的主體資料庫有所差異。  
   
 > [!NOTE]  
 >  若要在停止工作階段之後繼續鏡像，您就必須建立新的資料庫鏡像工作階段。 若要在停止鏡像之後建立記錄備份，您必須在重新啟動鏡像之前將它套用到鏡像資料庫。  

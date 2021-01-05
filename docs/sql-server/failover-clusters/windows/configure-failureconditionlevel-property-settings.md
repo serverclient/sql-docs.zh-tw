@@ -5,17 +5,17 @@ ms.custom: seo-lt-2019
 ms.date: 03/14/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: failover-cluster-instance
 ms.topic: how-to
 ms.assetid: 513dd179-9a46-46da-9fdd-7632cf6d0816
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 678775f19cee303b4c1bb34320ca9f7fd7030e97
-ms.sourcegitcommit: 5a1ed81749800c33059dac91b0e18bd8bb3081b1
+ms.openlocfilehash: ecb034767917eac38fa2a161fb749ca8d438b995
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96127628"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642801"
 ---
 # <a name="configure-failureconditionlevel-property-settings"></a>進行 FailureConditionLevel 屬性設定
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

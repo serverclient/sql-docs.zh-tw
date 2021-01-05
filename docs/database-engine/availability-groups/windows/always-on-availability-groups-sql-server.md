@@ -5,7 +5,7 @@ ms.custom: seodec18
 ms.date: 04/23/2019
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 helpviewer_keywords:
 - Availability Groups [SQL Server], about
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: aa427606-8422-4656-b205-c9e665ddc8c1
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 6c6b5290db30ce42df920bac56cf38d8c130039a
-ms.sourcegitcommit: 54cd97a33f417432aa26b948b3fc4b71a5e9162b
+ms.openlocfilehash: 7f9b06bd6805e75c053037b18fc6870ef1469500
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94584819"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642184"
 ---
 # <a name="always-on-availability-groups-a-high-availability-and-disaster-recovery-solution"></a>Always On 可用性群組：高可用性和災害復原解決方案
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

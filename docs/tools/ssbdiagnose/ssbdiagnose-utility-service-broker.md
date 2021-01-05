@@ -26,12 +26,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 03/14/2017
-ms.openlocfilehash: 2457f180cef24b13568a6718128efa78635c3e41
-ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
+ms.openlocfilehash: 8590f3677d27c367782999877cb6892251785278
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88714256"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641280"
 ---
 # <a name="ssbdiagnose-utility-service-broker"></a>ssbdiagnose 公用程式 [Service Broker]
 
@@ -121,7 +121,7 @@ ssbdiagnose
  指定具有指定之 *error_id* 的錯誤或訊息，不要包含在報表中。 您可以多次指定 **-IGNORE** ，以隱藏多個訊息識別碼。  
   
  **\<baseconnectionoptions>**  
- 指定當特定子句中未包含連線選項時， **ssbdiagnose** 所使用的基底連線資訊。 在特定子句中提供的連接資訊，會覆寫 **baseconnectionoption** 資訊。 這會針對每項參數個別執行。 例如， **baseconnetionoptions** 中同時指定了 **-S** 和 **-d**，而 **toconnetionoptions** 中只指定了 **-d**，則 **ssbdiagnose** 會使用 **baseconnetionoptions** 的 -S 和 **toconnetionoptions**的 -d。  
+ 指定當特定子句中未包含連線選項時， **ssbdiagnose** 所使用的基底連線資訊。 在特定子句中提供的連接資訊，會覆寫 **baseconnectionoption** 資訊。 這會針對每項參數個別執行。 例如， **baseconnetionoptions** 中同時指定了 **-S** 和 **-d**，而 **toconnetionoptions** 中只指定了 **-d**，則 **ssbdiagnose** 會使用 **baseconnetionoptions** 的 -S 和 **toconnetionoptions** 的 -d。  
   
  **CONFIGURATION**  
  要求一組 [!INCLUDE[ssSB](../../includes/sssb-md.md)] 服務之間或單一服務的組態錯誤報表。  
@@ -207,7 +207,7 @@ WHERE database_id = DB_ID();
  指定 **RUNTIME** 報表要執行的秒數。 如未指定 **-TIMEOUT** ，執行階段報表就會無限期地執行。 **-TIMEOUT** 僅用於 **RUNTIME** 報表，不用在 **CONFIGURATION** 報表。 如果沒有指定 **ssbdiagnose** if **-TIMEOUT** 間隔到期之前結束執行階段報表，您可以使用 CTRL + C 結束 **-** 。 *timeout_interval* 必須是介於 1 和 2,147,483,647 之間的數字。  
   
  **\<runtimeconnectionoptions>**  
- 指定資料庫的連接資訊，而這些資料庫包含與受監視之交談元素相關聯的服務。 如果所有服務都位於相同的資料庫中，您就只需要指定一個 **CONNECT TO** 子句。 如果各項服務位於不同的資料庫中，您就必須針對每個資料庫提供一個 **CONNECT TO** 子句。 如未指定 **runtimeconnectionoptions** ，則 **ssbdiagnose** 會使用 **baseconnectionoptions**中的連接資訊。  
+ 指定資料庫的連接資訊，而這些資料庫包含與受監視之交談元素相關聯的服務。 如果所有服務都位於相同的資料庫中，您就只需要指定一個 **CONNECT TO** 子句。 如果各項服務位於不同的資料庫中，您就必須針對每個資料庫提供一個 **CONNECT TO** 子句。 如未指定 **runtimeconnectionoptions** ，則 **ssbdiagnose** 會使用 **baseconnectionoptions** 中的連接資訊。  
   
  **-E**  
  使用您目前的 Windows 帳戶作為登入識別碼，藉以開啟 [!INCLUDE[ssDE](../../includes/ssde-md.md)] 執行個體的 Windows 驗證連線。 登入必須是 **系統管理員** 固定伺服器角色的成員。  
@@ -221,7 +221,7 @@ WHERE database_id = DB_ID();
  **-U** _login_id_  
  使用指定的登入識別碼，藉以開啟 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 驗證連線。 登入必須是 **系統管理員** 固定伺服器角色的成員。  
   
- 如未指定 **-E** 也未指定 **-U** ， **ssbdiagnose** 就會使用 SQLCMDUSER 環境變數的值。 如果也沒有設定 SQLCMDUSER， **ssbdiagnose** 就會根據正在執行 **ssbdiagnose**的使用者 Windows 帳戶，使用 Windows 驗證模式嘗試連接。  
+ 如未指定 **-E** 也未指定 **-U** ， **ssbdiagnose** 就會使用 SQLCMDUSER 環境變數的值。 如果也沒有設定 SQLCMDUSER， **ssbdiagnose** 就會根據正在執行 **ssbdiagnose** 的使用者 Windows 帳戶，使用 Windows 驗證模式嘗試連接。  
   
  如果同時使用 **-U** 選項和 **-E** 選項，就會產生錯誤訊息。 如果 **-U** 選項後面有多個引數，就會產生錯誤訊息並結束程式。  
   
@@ -272,7 +272,7 @@ WHERE database_id = DB_ID();
 -   取得在一組 [!INCLUDE[ssSB](../../includes/sssb-md.md)] 交談元素中發生之任何錯誤的報表。  
   
 ## <a name="configuration-reporting"></a>組態報表  
- 若要正確分析交談所使用的組態，請執行與交談使用相同選項的 **ssbdiagnose** 組態報表。 如果您為 **ssbdiagnose** 指定的選項層級低於交談所使用的選項層級，則 **ssbdiagnose** 可能不會報告交談所需的條件。 如果您為 **ssbdiagnose**指定較高的選項層級，它可能會報告交談所不需要的報表項目。 例如，在相同資料庫中兩個服務之間的交談，可能會在 ENCPRYPTION OFF 的情況下執行。 如果您執行 **ssbdiagnose** 以驗證這兩個服務之間的組態，但卻使用預設的 ENCRYPTION ON 設定， **ssbdiagnose** 就會報告資料庫缺少主要金鑰。 這種交談不需要使用主要金鑰。  
+ 若要正確分析交談所使用的組態，請執行與交談使用相同選項的 **ssbdiagnose** 組態報表。 如果您為 **ssbdiagnose** 指定的選項層級低於交談所使用的選項層級，則 **ssbdiagnose** 可能不會報告交談所需的條件。 如果您為 **ssbdiagnose** 指定較高的選項層級，它可能會報告交談所不需要的報表項目。 例如，在相同資料庫中兩個服務之間的交談，可能會在 ENCPRYPTION OFF 的情況下執行。 如果您執行 **ssbdiagnose** 以驗證這兩個服務之間的組態，但卻使用預設的 ENCRYPTION ON 設定， **ssbdiagnose** 就會報告資料庫缺少主要金鑰。 這種交談不需要使用主要金鑰。  
   
  每次執行 **ssbdiagnose** 組態報表時，它只會分析一個 [!INCLUDE[ssSB](../../includes/sssb-md.md)] 服務或一對服務。 若要報告多對 [!INCLUDE[ssSB](../../includes/sssb-md.md)] 服務，請建立多次呼叫 **ssbdiagnose** 的 .cmd 命令檔。  
   
@@ -291,11 +291,11 @@ WHERE database_id = DB_ID();
   
  此清單不會包含連接選項未涵蓋之資料庫的元素。 例如，假設您使用 **-ID** 指定交談識別碼，但是僅針對起始端資料庫 (而非目標資料庫) 提供 **runtimeconnectionoptions** 子句。 **ssbdiagnose** 不會在其識別碼清單中包含目標交談控制代碼，而只會包含交談識別碼和起始端交談控制代碼。  
   
- **ssbdiagnose** 監視 [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] runtimeconnectionoptions **和** baseconnectionoptions **涵蓋的資料庫**事件。 它會搜尋 [!INCLUDE[ssSB](../../includes/sssb-md.md)] 事件，指出執行階段清單中一或多個 [!INCLUDE[ssSB](../../includes/sssb-md.md)] 識別碼發生的錯誤。 **ssbdiagnose** 也會搜尋未特別與任何交談群組相關聯的系統層級 [!INCLUDE[ssSB](../../includes/sssb-md.md)] 錯誤事件。  
+ **ssbdiagnose** 監視 [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] runtimeconnectionoptions **和** baseconnectionoptions **涵蓋的資料庫** 事件。 它會搜尋 [!INCLUDE[ssSB](../../includes/sssb-md.md)] 事件，指出執行階段清單中一或多個 [!INCLUDE[ssSB](../../includes/sssb-md.md)] 識別碼發生的錯誤。 **ssbdiagnose** 也會搜尋未特別與任何交談群組相關聯的系統層級 [!INCLUDE[ssSB](../../includes/sssb-md.md)] 錯誤事件。  
   
  如果 **ssbdiagnose** 找到交談錯誤，此公用程式就會透過同時執行組態報表，嘗試報告事件的根本原因。 **ssbdiagnose** 會使用資料庫內的中繼資料，嘗試判斷交談所使用的執行個體、 [!INCLUDE[ssSB](../../includes/sssb-md.md)] 識別碼、資料庫、服務與合約。 然後，它會使用所有可用的資訊來執行組態報表。  
   
- **ssbdiagnose** 預設不會報告錯誤事件。 它只會報告在組態檢查期間所找到的基礎問題。 如此會將報告的資訊量減到最少，協助您將焦點集中在基礎組態問題。 您可以指定 **-SHOWEVENTS** ，以便查看 **ssbdiagnose**所遇到的錯誤事件。  
+ **ssbdiagnose** 預設不會報告錯誤事件。 它只會報告在組態檢查期間所找到的基礎問題。 如此會將報告的資訊量減到最少，協助您將焦點集中在基礎組態問題。 您可以指定 **-SHOWEVENTS** ，以便查看 **ssbdiagnose** 所遇到的錯誤事件。  
   
 ## <a name="issues-reported-by-ssbdiagnose"></a>ssbdiagnose 所報告的問題  
  **ssbdiagnose** 會報告三種問題類別。 在 XML 輸出檔中，每種問題類別都會報告成個別的 Issue 元素類型。 **ssbdiagnose** 所報告的三種問題類型如下：  
@@ -310,10 +310,10 @@ WHERE database_id = DB_ID();
  報告會讓 **ssbdiagnose** 無法完成組態分析或無法監視交談的問題。  
   
 ## <a name="sqlcmd-environment-variables"></a>sqlcmd 環境變數  
- **ssbdiagnose** 公用程式支援 **sqlcmd** 公用程式也使用的 SQLCMDSERVER、SQLCMDUSER、SQLCMDPASSWORD 和 SQLCMDLOGINTIMOUT 環境變數。 您可以使用命令提示字元 SET 命令，或在用 **sqlcmd** 執行的 [!INCLUDE[tsql](../../includes/tsql-md.md)] 指令碼中使用 **setvar**命令，來設定這些環境變數。 如需如何在 **sqlcmd** 中使用 **setvar**的詳細資訊，請參閱 [以指令碼變數使用 sqlcmd](../../ssms/scripting/sqlcmd-use-with-scripting-variables.md?view=sql-server-ver15)。  
+ **ssbdiagnose** 公用程式支援 **sqlcmd** 公用程式也使用的 SQLCMDSERVER、SQLCMDUSER、SQLCMDPASSWORD 和 SQLCMDLOGINTIMOUT 環境變數。 您可以使用命令提示字元 SET 命令，或在用 **sqlcmd** 執行的 [!INCLUDE[tsql](../../includes/tsql-md.md)] 指令碼中使用 **setvar** 命令，來設定這些環境變數。 如需如何在 **sqlcmd** 中使用 **setvar** 的詳細資訊，請參閱 [以指令碼變數使用 sqlcmd](../../ssms/scripting/sqlcmd-use-with-scripting-variables.md)。  
   
 ## <a name="permissions"></a>權限  
- 在每個 **connectionoptions** 子句中，使用 **-E** 或 **-U** 指定的登入，必須是以 **-S** 所指定之執行個體內 **系統管理員**固定伺服器角色的成員。  
+ 在每個 **connectionoptions** 子句中，使用 **-E** 或 **-U** 指定的登入，必須是以 **-S** 所指定之執行個體內 **系統管理員** 固定伺服器角色的成員。  
   
 ## <a name="examples"></a>範例  
  本節包含在命令提示字元處使用 **ssbdiagnose** 的範例。  
@@ -379,7 +379,7 @@ TO SERVICE /test/target ON CONTRACT PromotionContract
 ```  
   
 ### <a name="f-monitor-the-status-of-a-specific-conversation-on-the-local-computer-with-a-time-out"></a>F. 在具有逾時之本機電腦上監視特定交談的狀態  
- 下列範例將示範如何監視特定交談，其中起始端和目標服務位於執行 **ssbdiagnose**之相同電腦的預設執行個體內的相同資料庫中。 其逾時間隔設定為 20 秒。  
+ 下列範例將示範如何監視特定交談，其中起始端和目標服務位於執行 **ssbdiagnose** 之相同電腦的預設執行個體內的相同資料庫中。 其逾時間隔設定為 20 秒。  
   
 ```  
 ssbdiagnose -E -d TestDatabase RUNTIME -ID D68D77A9-B1CF-41BF-A5CE-279ABCAB140D -TIMEOUT 20  

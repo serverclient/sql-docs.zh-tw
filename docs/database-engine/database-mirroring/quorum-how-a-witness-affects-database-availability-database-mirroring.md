@@ -6,7 +6,7 @@ ms.date: 03/01/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - quorum [SQL Server], database mirroring
@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: a62d9dd7-3667-4751-a294-a61fc9caae7c
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: c28e70d2f66dffc00ff2ac9138f97dc8d0e08991
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: f30f336ade4b3ab911d6ed365ddfa637230ea02e
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85789659"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641323"
 ---
 # <a name="quorum-how-a-witness-affects-database-availability-database-mirroring"></a>仲裁：見證如何影響資料庫可用性 (資料庫鏡像)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -99,9 +99,9 @@ ms.locfileid: "85789659"
   
  ![見證與夥伴如何合作](../../database-engine/database-mirroring/media/dbm-quorum-scenarios.gif "見證與夥伴如何合作")  
   
- 案例 1 顯示在原始主體伺服器 (**Partner_A**) 失敗之後，見證和鏡像如何同意主體伺服器 **Partner_A**不再可用，從而形成仲裁。 接著，由鏡像伺服器 **Partner_B** 承擔主體角色。 這會發生自動容錯移轉，且 **Partner_B**會讓其資料庫副本連線工作。 接著 **Partner_B** 會關閉，且資料庫會離線。 稍後，先前的主體伺服器 **Partner_A**會重新連接到見證以重新取得仲裁，但與見證溝通時， **Partner_A** 將會得知它無法使其資料庫副本上線，因為 **Partner_B** 現在擁有主體角色。 當 **Partner_B** 重新加入工作階段時，它會將其資料庫連線工作。  
+ 案例 1 顯示在原始主體伺服器 (**Partner_A**) 失敗之後，見證和鏡像如何同意主體伺服器 **Partner_A** 不再可用，從而形成仲裁。 接著，由鏡像伺服器 **Partner_B** 承擔主體角色。 這會發生自動容錯移轉，且 **Partner_B** 會讓其資料庫副本連線工作。 接著 **Partner_B** 會關閉，且資料庫會離線。 稍後，先前的主體伺服器 **Partner_A** 會重新連接到見證以重新取得仲裁，但與見證溝通時， **Partner_A** 將會得知它無法使其資料庫副本上線，因為 **Partner_B** 現在擁有主體角色。 當 **Partner_B** 重新加入工作階段時，它會將其資料庫連線工作。  
   
- 在案例 2 中，見證失去仲裁，而夥伴 **Partner_A** 和 **Partner_B**則彼此保有仲裁，且資料庫會維持在線上。 接著，夥伴也遺失其仲裁，且資料庫會離線。 稍後，主體伺服器 **Partner_A**會重新連接到見證以重新取得仲裁。 見證會確認 **Partner_A** 是否仍然擁有主體角色，且 **Partner_A** 會將其資料庫連線工作。  
+ 在案例 2 中，見證失去仲裁，而夥伴 **Partner_A** 和 **Partner_B** 則彼此保有仲裁，且資料庫會維持在線上。 接著，夥伴也遺失其仲裁，且資料庫會離線。 稍後，主體伺服器 **Partner_A** 會重新連接到見證以重新取得仲裁。 見證會確認 **Partner_A** 是否仍然擁有主體角色，且 **Partner_A** 會將其資料庫連線工作。  
   
 ## <a name="see-also"></a>另請參閱  
  [資料庫鏡像作業模式](../../database-engine/database-mirroring/database-mirroring-operating-modes.md)   

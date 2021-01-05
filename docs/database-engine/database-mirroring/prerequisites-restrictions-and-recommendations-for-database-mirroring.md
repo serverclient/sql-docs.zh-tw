@@ -6,7 +6,7 @@ ms.date: 05/17/2016
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - database mirroring [SQL Server], deployment
@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: fdcf2251-9895-44c6-b81e-768fef32e732
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 9fcccee3820f2b7b99da3f5c1f742f17edbde68d
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+ms.openlocfilehash: 0aca4b4b5250232f065b02ca21be7187ab42c119
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671121"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641471"
 ---
 # <a name="prerequisites-restrictions-and-recommendations-for-database-mirroring"></a>資料庫鏡像的必要條件、限制和建議事項
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -65,7 +65,7 @@ ms.locfileid: "91671121"
   
 ##  <a name="restrictions"></a><a name="Restrictions"></a> 限制  
   
--   只有使用者資料庫可進行鏡像。 您無法鏡像處理 **master**、 **msdb**、 **tempdb**或 **model** 資料庫。  
+-   只有使用者資料庫可進行鏡像。 您無法鏡像處理 **master**、 **msdb**、 **tempdb** 或 **model** 資料庫。  
   
 -   鏡像資料庫不能在資料庫鏡像工作階段期間重新命名。  
   

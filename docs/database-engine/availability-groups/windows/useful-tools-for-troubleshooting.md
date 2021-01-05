@@ -5,17 +5,17 @@ ms.custom: seo-lt-2019
 ms.date: 06/14/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 ms.assetid: 57801bcc-4d51-4ffc-8454-b9cb6eddbfe0
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 5a8407d450b653c8476b152904c586996f53d55a
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+ms.openlocfilehash: 9b45f2d2b3bc95315951202440dc7edfdb32f435
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85882351"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641728"
 ---
 # <a name="useful-tools-for-troubleshooting"></a>對進行疑難排解有助益的工具
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

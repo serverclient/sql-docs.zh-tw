@@ -12,12 +12,12 @@ ms.assetid: ea21c73c-40e8-4c54-83d4-46ca36b2cf73
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
-ms.openlocfilehash: fdadefa5b898a2b37c7e5a7f087c429ccc6b8d4f
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: bf8ef986da54559c5928677643f6bd99c63c2266
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97438957"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643014"
 ---
 # <a name="create-table-azure-synapse-analytics"></a>CREATE TABLE (Azure Synapse Analytics)
 
@@ -172,7 +172,7 @@ CREATE TABLE { database_name.schema_name.table_name | schema_name.table_name | t
 
 ### <a name="ordered-clustered-columnstore-index-option"></a>已排序的叢集資料行存放區索引選項 
 
-叢集資料行存放區索引 (CCI) 是在 [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)]中建立資料表的預設值。  CCI 中的資料在壓縮成資料行存放區區段之前，不會進行排序。  建立具有順序的 CCI 時，資料會先進行排序，再新增至索引區段，且可改善查詢效能。 如需詳細資訊，請參閱[使用已排序叢集資料行存放區索引進行效能調整](/azure/sql-data-warehouse/performance-tuning-ordered-cci?view=azure-sqldw-latest)。  
+叢集資料行存放區索引 (CCI) 是在 [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)]中建立資料表的預設值。  CCI 中的資料在壓縮成資料行存放區區段之前，不會進行排序。  建立具有順序的 CCI 時，資料會先進行排序，再新增至索引區段，且可改善查詢效能。 如需詳細資訊，請參閱[使用已排序叢集資料行存放區索引進行效能調整](/azure/sql-data-warehouse/performance-tuning-ordered-cci?view=azure-sqldw-latest&preserve-view=true)。  
 
 已排序的 CCI 可以建立在 [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)]支援的任何資料類型的資料行上，但不包括字串資料行。  
 
@@ -596,4 +596,4 @@ WITH
 [CREATE TABLE AS SELECT &#40;Azure Synapse Analytics&#41;](../../t-sql/statements/create-table-as-select-azure-sql-data-warehouse.md)   
 [DROP TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/drop-table-transact-sql.md)   
 [ALTER TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-table-transact-sql.md)   
-[sys.index_columns &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-index-columns-transact-sql.md?view=azure-sqldw-latest) 
+[sys.index_columns &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-index-columns-transact-sql.md) 

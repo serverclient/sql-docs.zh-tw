@@ -6,7 +6,7 @@ ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - database mirroring [SQL Server], interoperability
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 53e98134-e274-4dfd-8b72-0cc0fd5c800e
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: fd18ca39f11525f3fd91f759ff34f4ce6ebd0dbb
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 4f15bfe798c4fdec07be55f9dbb871c2980bc777
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85789701"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642063"
 ---
 # <a name="database-mirroring-and-log-shipping-sql-server"></a>資料庫鏡像和記錄傳送 (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -51,7 +51,7 @@ ms.locfileid: "85789701"
   
  在記錄傳送工作階段中，主要資料庫上的備份作業會在備份資料夾中建立記錄備份， 而次要伺服器的複製作業會從此處複製備份。 若要順利執行備份作業與複製作業，這些作業必須具備記錄傳送備份資料夾的存取權。 為了盡可能提高主要伺服器的可用性，建議您將備份資料夾建立在個別主機電腦的共用備份位置上。 請確定所有記錄傳送伺服器 (包括鏡像/主要伺服器) 都能存取共用備份位置 (稱為「備份共用」)。  
   
- 若在資料庫鏡像容錯移轉後要讓記錄傳送還能繼續執行，您必須同時將鏡像伺服器設為主要伺服器，而所使用的組態必須與主體資料庫上主要伺服器所使用的相同。 鏡像資料庫會處於還原狀態，以防止備份作業備份鏡像資料庫上的記錄檔。 如此可確定鏡像/主要資料庫不會對主體/主要資料庫有所影響 (而後者的記錄備份目前正由次要伺服器進行複製中)。 為防止假警示，當備份作業在鏡像/主要資料庫上執行後，備份作業會將一則訊息記錄到**log_shipping_monitor_history_detail** 資料表中，然後代理程式作業會傳回成功狀態。  
+ 若在資料庫鏡像容錯移轉後要讓記錄傳送還能繼續執行，您必須同時將鏡像伺服器設為主要伺服器，而所使用的組態必須與主體資料庫上主要伺服器所使用的相同。 鏡像資料庫會處於還原狀態，以防止備份作業備份鏡像資料庫上的記錄檔。 如此可確定鏡像/主要資料庫不會對主體/主要資料庫有所影響 (而後者的記錄備份目前正由次要伺服器進行複製中)。 為防止假警示，當備份作業在鏡像/主要資料庫上執行後，備份作業會將一則訊息記錄到 **log_shipping_monitor_history_detail** 資料表中，然後代理程式作業會傳回成功狀態。  
   
  鏡像/主要資料庫在記錄傳送工作階段中是處於非使用中狀態， 然而，若發生鏡像容錯移轉，先前的鏡像資料庫就會連線成為主體資料庫。 此時，該資料庫也會變成使用中的記錄傳送主要資料庫， 而先前無法將記錄傳送至該資料庫的記錄傳送備份作業，則會開始傳送記錄。 相反地，容錯移轉會使先前的主體/主要資料庫成為新的鏡像/主要資料庫，並進入還原狀態，而該資料庫上的備份作業也會停止備份記錄。  
   

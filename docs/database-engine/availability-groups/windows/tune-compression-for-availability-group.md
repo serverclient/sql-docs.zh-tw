@@ -4,17 +4,17 @@ description: 了解 SQL Server 如何壓縮可用性群組的資料流，這樣�
 ms.custom: ''
 ms.date: 06/22/2016
 ms.prod: sql
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 ms.assetid: 7632769c-b246-4766-886f-7c60ec540be8
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 6b618efb64f5409e16665d772accbbe9434e8ffd
-ms.sourcegitcommit: 54cd97a33f417432aa26b948b3fc4b71a5e9162b
+ms.openlocfilehash: 1066b1e519f757207b06f1deb94031f2f054bc5f
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94583683"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641845"
 ---
 # <a name="tune-compression-for-availability-group"></a>微調可用性群組的壓縮
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

@@ -11,12 +11,12 @@ ms.author: maghan
 ms.reviewer: mikeray
 ms.custom: seo-lt-2019
 ms.date: 12/15/2019
-ms.openlocfilehash: 40ce4c62a28f404ceb3295f9644a8aefb4c789f8
-ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
+ms.openlocfilehash: e99362bd36d99aeeb2b44d3947454f198d29be7c
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97489788"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642438"
 ---
 # <a name="download-sql-server-extended-features-and-tools"></a>下載 SQL Server 擴充功能及工具
 
@@ -112,8 +112,8 @@ ms.locfileid: "97489788"
 ## <a name="see-also"></a>另請參閱
 
 - [SQL Server Management Studio 文件](../ssms/download-sql-server-management-studio-ssms.md)
-- [Azure Data Studio](../azure-data-studio/download-azure-data-studio.md?view=sql-server-ver15)
-- [其他的更新與 Service Pack](../database-engine/install-windows/latest-updates-for-microsoft-sql-server.md?view=sql-server-ver15)
+- [Azure Data Studio](../azure-data-studio/download-azure-data-studio.md)
+- [其他的更新與 Service Pack](../database-engine/install-windows/latest-updates-for-microsoft-sql-server.md)
 - [下載 SQL Server Data Tools (SSDT)](../ssdt/download-sql-server-data-tools-ssdt.md)
 
 [!INCLUDE[contribute-to-content](../includes/paragraph-content/contribute-to-content.md)]

@@ -15,12 +15,12 @@ f1_keywords:
 ms.assetid: 24bd987e-164a-48fd-b4f2-cbe16a3cd95e
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: dd2fffbce8d2db5bb5bafbcb49b1f37ea48873c7
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: a8ed14b14198bb95db838e76ca07bffe5875ce69
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91726042"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642584"
 ---
 # <a name="ssis-catalog"></a>SSIS 目錄
 
@@ -131,7 +131,7 @@ ms.locfileid: "91726042"
  以下 **[SSISDB]** 目錄屬性會定義此 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent 作業的行為模式。 您可以使用 [目錄屬性] 對話方塊或使用 [catalog.catalog_properties &#40;SSISDB 資料庫&#41;](../../integration-services/system-views/catalog-catalog-properties-ssisdb-database.md) 和 [catalog.configure_catalog &#40;SSISDB 資料庫&#41;](../../integration-services/system-stored-procedures/catalog-configure-catalog-ssisdb-database.md) 檢視及修改屬性。  
   
  **定期清除記錄檔**  
- 當這個屬性設定為 **True**時，便會執行作業清除的作業步驟。  
+ 當這個屬性設定為 **True** 時，便會執行作業清除的作業步驟。  
   
  **保留週期 (天)**  
  定義可允許的作業資料存在時間上限 (以天為單位)。 移除較舊的資料。  
@@ -139,7 +139,7 @@ ms.locfileid: "91726042"
  最小值是一天。 最大值只會受到 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **int** 資料最大值的限制。 如需此資料類型的資訊，請參閱 [int、bigint、smallint 和 tinyint &#40;Transact-SQL&#41;](../../t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql.md)。  
   
  **定期移除舊版本**  
- 當這個屬性設定為 **True**時，便會執行專案版本清除的作業步驟。  
+ 當這個屬性設定為 **True** 時，便會執行專案版本清除的作業步驟。  
   
  **每一專案的版本數目上限**  
  定義多少個專案版本儲存在目錄中。 移除專案的舊版。  
@@ -456,7 +456,7 @@ ms.locfileid: "91726042"
            FROM Executable File = 'C:\Program Files\Microsoft SQL Server\YourSQLServerDefaultCompatibilityLevel\DTS\Binn\Microsoft.SqlServer.IntegrationServices.Server.dll'  
     ```  
 
-    您可以從 [SQL Server 預設相容性層級清單](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md?view=sql-server-ver15#arguments)中尋找 `YourSQLServerDefaultCompatibilityLevel` 的值。
+    您可以從 [SQL Server 預設相容性層級清單](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#arguments)中尋找 `YourSQLServerDefaultCompatibilityLevel` 的值。
   
     [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] CLR 預存程序需要授與 UNSAFE 權限給登入，因為登入需要對於限制資源的額外存取，例如 Microsoft Win32 API。 如需 UNSAFE 程式碼權限的詳細資訊，請參閱 [建立組件](../../relational-databases/clr-integration/assemblies/creating-an-assembly.md)。  
 
@@ -597,7 +597,7 @@ ms.locfileid: "91726042"
   
 > [!IMPORTANT]  
 > -   您必須在可用性群組的 **主要節點** 上執行這些步驟。
-> -   將 SSISDB 新增至 Always On 群組之後，您必須啟用**適用於 Always On 的 SSIS 支援**。  
+> -   將 SSISDB 新增至 Always On 群組之後，您必須啟用 **適用於 Always On 的 SSIS 支援**。  
 
 > [!NOTE]
 > 如需此程序的詳細資訊，請參閱下列由 Data Platform MVP Marcos Freccia 提供的逐步解說與其他螢幕擷取畫面：[Adding SSISDB to AG for SQL Server 2016](https://marcosfreccia.com/2017/04/28/adding-ssisdb-to-ag-for-sql-server-2016/) (將 SSISDB 新增至 SQL Server 2016 的 AG)。
@@ -651,11 +651,11 @@ ms.locfileid: "91726042"
   
  如果您在升級 SQL Server 時未遭到封鎖，且 SSISDB 在 Always On 可用性群組中，請在升級 SQL Server 資料庫引擎之後個別升級 SSISDB。 使用 SSIS 升級精靈來升級 SSISDB，如下列程序所述。  
   
-1.  將 SSISDB 資料庫移出可用性群組，或者如果 SSISDB 是可用性群組中唯一的資料庫，請刪除可用性群組。 若要執行這項工作，請在可用性群組的**主要節點**上啟動 [SQL Server Management Studio]。  
+1.  將 SSISDB 資料庫移出可用性群組，或者如果 SSISDB 是可用性群組中唯一的資料庫，請刪除可用性群組。 若要執行這項工作，請在可用性群組的 **主要節點** 上啟動 [SQL Server Management Studio]。  
   
-2.  從所有 **複本節點**移除 SSISDB 資料庫。  
+2.  從所有 **複本節點** 移除 SSISDB 資料庫。  
   
-3.  在 **主要節點**上升級 SSISDB 資料庫。 在 SQL Server Management Studio 的物件總管 中，展開 [Integration Services 目錄] 、以滑鼠右鍵按一下 [SSISDB] ，然後選取 [資料庫升級] 。 遵循 **SSISDB 升級精靈** 中的指示來升級資料庫。 在**主要節點**本機上啟動 [SSIDB 升級精靈]。  
+3.  在 **主要節點** 上升級 SSISDB 資料庫。 在 SQL Server Management Studio 的物件總管 中，展開 [Integration Services 目錄] 、以滑鼠右鍵按一下 [SSISDB] ，然後選取 [資料庫升級] 。 遵循 **SSISDB 升級精靈** 中的指示來升級資料庫。 在 **主要節點** 本機上啟動 [SSIDB 升級精靈]。  
   
 4.  遵循[步驟 2：將 SSISDB 新增至 Always On 可用性群組](#Step2)中的指示，將 SSISDB 新增回可用性群組。  
   

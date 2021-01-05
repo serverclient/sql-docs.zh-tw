@@ -20,12 +20,12 @@ ms.assetid: 816d2bda-ed72-43ec-aa4d-7ee3dc25fd8a
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016
-ms.openlocfilehash: 226db73ec48cdcd13ef80571b94e21fb283ecaac
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: eb082b29411b136edca7ed14f06effa354a5f0e6
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97477909"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643088"
 ---
 # <a name="replication-system-stored-procedures-concepts"></a>Replication System Stored Procedures Concepts
 [!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
@@ -131,7 +131,7 @@ GO
  建立之後，複寫指令碼可以用下列其中一種方式來執行：  
   
 ### <a name="creating-a-sql-query-file-in-sql-server-management-studio"></a>在 SQL Server Management Studio 中建立 SQL 查詢檔案  
- 在 [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] 專案中，可以將複寫 [!INCLUDE[tsql](../../../includes/tsql-md.md)] 指令碼檔案建立成 SQL 查詢檔案。 在寫入指令碼之後，可以為此查詢檔案建立資料庫的連接，而且可以執行指令碼。 如需如何使用 [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] 建立 [!INCLUDE[tsql](../../../includes/tsql-md.md)] 的詳細資訊，請參閱[查詢與文字編輯器 &#40;SQL Server Management Studio&#41;](../../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md?view=sql-server-ver15)。  
+ 在 [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] 專案中，可以將複寫 [!INCLUDE[tsql](../../../includes/tsql-md.md)] 指令碼檔案建立成 SQL 查詢檔案。 在寫入指令碼之後，可以為此查詢檔案建立資料庫的連接，而且可以執行指令碼。 如需如何使用 [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] 建立 [!INCLUDE[tsql](../../../includes/tsql-md.md)] 的詳細資訊，請參閱[查詢與文字編輯器 &#40;SQL Server Management Studio&#41;](../../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md)。  
   
  若要使用包含指令碼變數的指令碼，[!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] 必須在 **sqlcmd** 模式下執行。 在 **sqlcmd** 模式中，查詢編輯器會接受 **sqlcmd** 特有的其他語法，例如 `:setvar`，它是用於變數值。 如需 **sqlcmd** 模式的詳細資訊，請參閱 [使用查詢編輯器編輯 SQLCMD 指令碼](../../../ssms/scripting/edit-sqlcmd-scripts-with-query-editor.md)。 在下列指令碼中，`:setvar` 是用以提供 `$(DistPubServer)` 變數的值。  
   

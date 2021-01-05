@@ -5,17 +5,17 @@ ms.custom: seo-lt-2019
 ms.date: 06/13/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 ms.assetid: 38de1841-9c99-435a-998d-df81c7ca0f1e
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 11492d2488fabdc4128844bca60c3ecbfac58ad6
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+ms.openlocfilehash: 34ac1e35b83158aec9aa2bae6cdd9754078212bb
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91670681"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642917"
 ---
 # <a name="troubleshoot-availability-group-exceeded-rpo"></a>疑難排解：可用性群組已超過 RPO
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "91670681"
   
  此外，檢查兩個效能物件 `SQL Server:Availability Replica > Flow Control Time (ms/sec)` 和 `SQL Server:Availability Replica > Flow Control/sec` 也很有用。 乘以這兩個值可以提供您在最後一刻等候流量控制清除花費了多少時間。 流量控制等候的時間越長，傳送速率越低。  
   
- 下列計量對於診斷網路延遲和輸送量很有用。 您可以使用其他 Windows 工具，例如 **ping.exe** 和[網路監視器](https://www.microsoft.com/p/network-monitor-pro-free-edition/9n8gdvj32gp7)評估延遲和網路使用率。  
+ 下列計量對於診斷網路延遲和輸送量很有用。 您可以使用其他 Windows 工具，例如 **ping.exe** 和 [網路監視器](https://www.microsoft.com/p/network-monitor-pro-free-edition/9n8gdvj32gp7)評估延遲和網路使用率。  
   
 -   DMV `sys.dm_hadr_database_replica_states, log_send_queue_size`  
   

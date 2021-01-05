@@ -6,7 +6,7 @@ ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - database mirroring [SQL Server], deployment
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: a64d4b6b-9016-4f1e-a310-b1df181dd0c6
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 87872d393af6b9312a3cfc4b33cc39233be3a463
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 28214674672887e57abeb2b8f7381eab2d744405
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85789610"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641613"
 ---
 # <a name="specify-a-server-network-address-database-mirroring"></a>指定伺服器網路位址 (資料庫鏡像)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "85789610"
 ##  <a name="syntax-for-a-server-network-address"></a><a name="Syntax"></a> 伺服器網路位址的語法  
  伺服器網路位址的語法採用下列格式：  
   
- TCP<strong>://</strong> *\<system-address>* <strong>:</strong> *\<port>*  
+ TCP <strong>://</strong> *\<system-address>* <strong>:</strong> *\<port>*  
   
  其中  
   
@@ -49,7 +49,7 @@ ms.locfileid: "85789610"
   
          _電腦名稱_ **.** _網域區段_[... **.** _網域區段_]  
   
-         其中 *電腦名稱*是執行伺服器執行個體之電腦的網路名稱，而 *網域區段*[... **.** _網域區段_] 則是伺服器的其餘網域資訊；例如： `localinfo.corp.Adventure-Works.com`。  
+         其中 *電腦名稱* 是執行伺服器執行個體之電腦的網路名稱，而 *網域區段*[... **.** _網域區段_] 則是伺服器的其餘網域資訊；例如： `localinfo.corp.Adventure-Works.com`。  
   
          網域區段的內容和數目是在公司或組織的內部決定的。 如果您不知道伺服器的完整網域名稱，請洽詢您的系統管理員。  
   

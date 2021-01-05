@@ -5,17 +5,17 @@ ms.custom: seo-lt-2019
 ms.date: 06/13/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: how-to
 ms.assetid: 47bb7a1a-c0a5-473c-a7db-d9f4bf3ee650
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 88f3d5cfb5fd7d7aae2b3d20c57bf2d1f7163c77
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+ms.openlocfilehash: 1feb461ad05167b4669da2ee53c17342bba98195
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91115775"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641428"
 ---
 # <a name="use-ring-buffers-to-obtain-health-information-about-always-on-availability-groups"></a>使用環形緩衝區取得 Always On 可用性群組的健全狀況資訊
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

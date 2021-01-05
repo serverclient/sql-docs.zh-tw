@@ -13,12 +13,12 @@ ms.assetid: 30f27f4d-8852-4b12-ba62-57f63e496f1d
 author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
-ms.openlocfilehash: 53eacd0177862b81d32b44616dc67cc0beb90f79
-ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
+ms.openlocfilehash: 064d7fc2d47cbd4f688d113f60be6080ca90fee1
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97489148"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642585"
 ---
 # <a name="lesson-3-using-the-dta-command-prompt-utility"></a>第 3 課：使用 dta 命令提示字元公用程式
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "97489148"
   
 本教學課程使用 AdventureWorks2017 範例資料庫。 基於安全性的考量，依預設，不會安裝範例資料庫。 若要安裝範例資料庫，請參閱＜ [安裝 SQL Server 範例和範例資料庫](../../samples/adventureworks-install-configure.md)＞。  
   
-下列工作將帶您逐步開啟命令提示字元、啟動 **dta** 命令提示字元公用程式、檢視其語法說明，以及微調您在 [微調工作負載](./lesson-2-using-database-engine-tuning-advisor.md?view=sql-server-ver15)中所建立的簡單工作負載 MyScript.sql。  
+下列工作將帶您逐步開啟命令提示字元、啟動 **dta** 命令提示字元公用程式、檢視其語法說明，以及微調您在 [微調工作負載](./lesson-2-using-database-engine-tuning-advisor.md)中所建立的簡單工作負載 MyScript.sql。  
 
 ## <a name="prerequisites"></a>必要條件 
 
@@ -84,7 +84,7 @@ ms.locfileid: "97489148"
 
   ![搭配 DTA 使用 Cmd](media/dta-tutorials/dta-cmd.png)
   
-3.  在 Database Engine Tuning Advisor 微調好工作負載之後，它會顯示一則訊息，指出微調工作階段已順利完成。 您可以利用 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] 來開啟 MySession2OutputScript.sql 和 MySession2Output.xml 檔，以檢視微調結果。 另外，您也可以在 Database Engine Tuning Advisor GUI 中開啟 MySession2 微調工作階段，依照 [檢視微調建議](./lesson-2-using-database-engine-tuning-advisor.md?view=sql-server-ver15) 和 [檢視微調報表](./lesson-2-using-database-engine-tuning-advisor.md?view=sql-server-ver15)中的相同方式來檢視其建議和報表。  
+3.  在 Database Engine Tuning Advisor 微調好工作負載之後，它會顯示一則訊息，指出微調工作階段已順利完成。 您可以利用 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] 來開啟 MySession2OutputScript.sql 和 MySession2Output.xml 檔，以檢視微調結果。 另外，您也可以在 Database Engine Tuning Advisor GUI 中開啟 MySession2 微調工作階段，依照 [檢視微調建議](./lesson-2-using-database-engine-tuning-advisor.md) 和 [檢視微調報表](./lesson-2-using-database-engine-tuning-advisor.md)中的相同方式來檢視其建議和報表。  
   
  
 ## <a name="after-you-finish-this-tutorial"></a>完成這個教學課程之後  

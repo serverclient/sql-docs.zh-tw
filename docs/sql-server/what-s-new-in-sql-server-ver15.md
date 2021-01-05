@@ -9,12 +9,12 @@ ms.topic: article
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=sql-server-ver15'
-ms.openlocfilehash: 28b2d4cf892aa21b44d989fb56351a6ab5448bff
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: b04cb475579c73a26ec5977ce52b9521ce69552a
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97482282"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642641"
 ---
 # <a name="whats-new-in-sql-server-2019"></a>[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] 的新功能
 
@@ -222,8 +222,8 @@ ms.locfileid: "97482282"
 
 |新功能或更新 | 詳細資料 |
 |:---|:---| 
-|新的記憶體設定選項 | 設定安裝期間的 [最小伺服器記憶體 (MB)]  與 [最大伺服器記憶體 (MB)]  伺服器設定。 請參閱[資料庫引擎設定 - 記憶體頁面](https://docs.microsoft.com/sql/sql-server/install/instance-configuration?view=sql-server-ver15#memory)，以及[從命令提示字元安裝 SQL Server](../database-engine/install-windows/install-sql-server-from-the-command-prompt.md#Install) 中的 `USESQLRECOMMENDEDMEMORYLIMITS`、`SQLMINMEMORY` 與 `SQLMAXMEMORY` 參數。 建議值會與[伺服器記憶體設定選項](../database-engine/configure-windows/server-memory-server-configuration-options.md#manually)中的記憶體設定指導方針一致。| 
-|新平行處理原則設定選項 | 在安裝期間設定 [平行處理原則的最大程度]  伺服器設定。 請參閱[資料庫引擎設定 - MaxDOP 頁面](https://docs.microsoft.com/sql/sql-server/install/instance-configuration?view=sql-server-ver15#maxdop)，以及[從命令提示字元安裝 SQL Server](../database-engine/install-windows/install-sql-server-from-the-command-prompt.md#Install) 中的 `SQLMAXDOP` 參數。 預設值將會與[設定 max degree of parallelism 伺服器設定選項](../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md#Guidelines)中平行處理原則的最大程度指導方針一致。| 
+|新的記憶體設定選項 | 設定安裝期間的 [最小伺服器記憶體 (MB)]  與 [最大伺服器記憶體 (MB)]  伺服器設定。 請參閱[資料庫引擎設定 - 記憶體頁面](./install/instance-configuration.md#memory)，以及[從命令提示字元安裝 SQL Server](../database-engine/install-windows/install-sql-server-from-the-command-prompt.md#Install) 中的 `USESQLRECOMMENDEDMEMORYLIMITS`、`SQLMINMEMORY` 與 `SQLMAXMEMORY` 參數。 建議值會與[伺服器記憶體設定選項](../database-engine/configure-windows/server-memory-server-configuration-options.md#manually)中的記憶體設定指導方針一致。| 
+|新平行處理原則設定選項 | 在安裝期間設定 [平行處理原則的最大程度]  伺服器設定。 請參閱[資料庫引擎設定 - MaxDOP 頁面](./install/instance-configuration.md#maxdop)，以及[從命令提示字元安裝 SQL Server](../database-engine/install-windows/install-sql-server-from-the-command-prompt.md#Install) 中的 `SQLMAXDOP` 參數。 預設值將會與[設定 max degree of parallelism 伺服器設定選項](../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md#Guidelines)中平行處理原則的最大程度指導方針一致。| 
 |伺服器/CAL 授權產品金鑰上的設定警告|如果輸入企業伺服器/CAL 授權產品金鑰，且電腦具有 20 個以上的實體核心，或在啟用超執行緒時有 40 個邏輯核心，則會在安裝期間顯示警告。 使用者仍然可以確認該限制並繼續設定，或輸入可支援作業系統最大處理器數量的授權金鑰。|
 | &nbsp; | &nbsp; |
 

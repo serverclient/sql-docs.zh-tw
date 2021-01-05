@@ -12,12 +12,12 @@ ms.assetid: 117250d3-9982-47fe-94fd-6f29f6159940
 author: MightyPen
 ms.author: genemi
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 522045cafa1effd04dae5b20193089ea34b4145e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 78b4d84a98d7ea2c753a673a222a1a19e0b7e5e2
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97485240"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641266"
 ---
 # <a name="powershell-cmdlet-for-migration-evaluation"></a>用於移轉評估的 PowerShell Cmdlet
 
@@ -192,4 +192,4 @@ HTML 大多數是包含下列標頭的兩欄式表格：
 
 ## <a name="related-links"></a>相關連結
 
-- 參考文件：[Save-SqlMigrationReport](/powershell/module/sqlserver/save-sqlmigrationreport?view=sqlserver-ps)
+- 參考文件：[Save-SqlMigrationReport](/powershell/module/sqlserver/save-sqlmigrationreport)

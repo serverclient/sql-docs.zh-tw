@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: a690aec2-056b-40bc-8cab-c694bd2d6d62
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: a3dc21f30222704622f86732c11bd5f1db7b46d1
-ms.sourcegitcommit: 768f046107642f72693514f51bf2cbd00f58f58a
+ms.openlocfilehash: 6411d6f3810153614de0e60e9b20555e061836e3
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87112021"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641597"
 ---
 # <a name="troubleshoot-reports-map-reports-report-builder-and-ssrs"></a>報表疑難排解：地圖報表 (報表產生器及 SSRS)
   當您將地圖或地圖圖層加入至報表時、自訂報表中現有的地圖或地圖圖層時、預覽報表中的地圖時，或發行包含地圖的報表時，在 [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] 分頁報表中可能會發生與地圖相關的問題。 您可以使用本主題來協助疑難排解這些問題。  
@@ -207,6 +207,6 @@ ms.locfileid: "87112021"
   
 ## <a name="see-also"></a>另請參閱  
  [地圖 &#40;報表產生器及 SSRS&#41;](../../reporting-services/report-design/maps-report-builder-and-ssrs.md)   
- [針對報表產生器進行疑難排解](/previous-versions/sql/2014/reporting-services/troubleshoot-report-builder?view=sql-server-2014)  
+ [針對報表產生器進行疑難排解](/previous-versions/sql/2014/reporting-services/troubleshoot-report-builder?view=sql-server-2014&preserve-view=true)  
   
   

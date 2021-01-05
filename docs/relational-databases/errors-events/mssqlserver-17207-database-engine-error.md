@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: PijoCoder
 ms.author: mathoma
-ms.openlocfilehash: d1c0face9315a38d4748cffef71e135401102dd0
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+ms.openlocfilehash: d95f6b04265550d758064fe277c21de6be862ec5
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91869463"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642432"
 ---
 # <a name="mssqlserver_17207"></a>MSSQLSERVER_17207
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -81,7 +81,7 @@ STREAMFCB::Startup: Operating system error 2(The system cannot find the file spe
 1. 解決錯誤 17207 須涉及了解相關聯的作業系統錯誤碼並診斷該錯誤。 在解決作業系統錯誤狀況之後，您便可以嘗試重新啟動資料庫 (例如使用 ALTER DATABASE SET ONLINE) 或 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體來使受影響的資料庫上線。 在某些情況下，您可能會無法解決作業系統錯誤，因此必須採取特定的矯正措施。 我們將在此節中討論這些動作。
 1. 如果 17207 錯誤訊息僅包含錯誤碼，而沒有錯誤描述，您可以嘗試從作業系統殼層使用命令來解決錯誤碼：net helpmsg <error code>。 如果您接收到 8 位數的狀態碼作為錯誤碼，您可以參考[我要如何將 HRESULT 轉換為 Win32 錯誤碼？](https://devblogs.microsoft.com/oldnewthing/20061103-07/?p=29133) \(英文\) 之類的資訊來源，來將這些狀態碼解碼為 OS 錯誤。
 1. 如果您接收到 ```Access is Denied``` 作業系統錯誤 = 5，請考慮這些方法：
-   -  透過在 Windows 檔案總管中查看檔案的內容，來檢查針對檔案所設定的權限。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 會使用 Windows 群組來佈建各種檔案資源上的存取控制。 確定適當的群組 (具有如 SQLServerMSSQLUser$ComputerName$MSSQLSERVER 或 SQLServerMSSQLUser$ComputerName$InstanceName 的名稱) 針對錯誤訊息中所述的資料庫檔案具有必要的權限。 如需詳細資料，請檢閱[設定資料庫引擎對檔案系統的存取權限](/previous-versions/sql/2014/database-engine/configure-windows/configure-file-system-permissions-for-database-engine-access?view=sql-server-2014)。 確定 Windows 群組確實包含 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 服務啟動帳戶或服務 SID。
+   -  透過在 Windows 檔案總管中查看檔案的內容，來檢查針對檔案所設定的權限。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 會使用 Windows 群組來佈建各種檔案資源上的存取控制。 確定適當的群組 (具有如 SQLServerMSSQLUser$ComputerName$MSSQLSERVER 或 SQLServerMSSQLUser$ComputerName$InstanceName 的名稱) 針對錯誤訊息中所述的資料庫檔案具有必要的權限。 如需詳細資料，請檢閱[設定資料庫引擎對檔案系統的存取權限](/previous-versions/sql/2014/database-engine/configure-windows/configure-file-system-permissions-for-database-engine-access?view=sql-server-2014&preserve-view=true)。 確定 Windows 群組確實包含 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 服務啟動帳戶或服務 SID。
    -  檢閱正在執行 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 服務的使用者帳戶。 您可以使用 Windows 工作管理員來取得此資訊。 尋找可執行檔 "sqlservr.exe" 的 [使用者名稱]。 此外，如果您最近已變更 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 服務帳戶，請記住執行此作業的支援方式是使用 SQL Server 組態管理員公用程式。 此功能的詳細資訊已於 [SQL Server 組態管理員](../sql-server-configuration-manager.md)提供。 
    -  取決於作業的類型 (在伺服器啟動時開啟資料庫、附加資料庫、資料庫還原等)，用來進行模擬和存取資料庫檔案的帳戶可能會有所不同。 請檢閱[保護資料和記錄檔](/previous-versions/sql/sql-server-2008-r2/ms189128(v=sql.105))主題，以了解哪個作業會設定哪一種權限，以及會針對哪些帳戶設定。 使用如 Windows SysInternals [Process Monitor](/sysinternals/downloads/procmon) \(英文\) 之類的工具，來了解檔案存取是否正在 SQL Server 執行個體服務啟動帳戶 (或服務 SID) 或模擬帳戶的資訊安全內容底下發生。
 

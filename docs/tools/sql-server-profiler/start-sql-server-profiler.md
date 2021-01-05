@@ -12,12 +12,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 07/07/2017
-ms.openlocfilehash: d3b8bc77f5d4fd2bd549c253b8a64cfa86c6132c
-ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
+ms.openlocfilehash: 09a6d7f612e9a66ad98849ec1c7672b44387d43e
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88713766"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641918"
 ---
 # <a name="run-sql-server-profiler"></a>執行 SQL Server Profiler
 
@@ -27,7 +27,7 @@ ms.locfileid: "88713766"
   
 當您第一次啟動 [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] ，且從 [檔案] 功能表中選取 [新增追蹤] 時，應用程式會顯示一個 [連線到伺服器] 對話方塊，您可在此指定要連線的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體。  
 ## <a name="to-start-sql-server-profiler-from-the-windows-10-start-menu"></a>從 Windows 10 的 [開始] 功能表啟動 SQL Server Profiler  
--  按一下 Windows **開始**圖示或按 Windows 鍵，然後鍵入 "SQL Server Profiler 17"。 按一下出現的 [SQL Server Profiler 17] 磚。   
+-  按一下 Windows **開始** 圖示或按 Windows 鍵，然後鍵入 "SQL Server Profiler 17"。 按一下出現的 [SQL Server Profiler 17] 磚。   
 
 ## <a name="to-start-sql-server-profiler-in-database-engine-tuning-advisor"></a>在 Database Engine Tuning Advisor 中啟動 SQL Server Profiler  
 -  在 [!INCLUDE[ssDE](../../includes/ssde-md.md)] Tuning Advisor 的 **[工具]** 功能表上，按一下 **[SQL Server Profiler]** 。  
@@ -55,4 +55,4 @@ ms.locfileid: "88713766"
 
 ## <a name="next-steps"></a>後續步驟  
  [SQL Server Profiler 概觀](../../tools/sql-server-profiler/sql-server-profiler.md)   
- [使用 SQL Server Management Studio](../../ssms/sql-server-management-studio-ssms.md?view=sql-server-ver15)
+ [使用 SQL Server Management Studio](../../ssms/sql-server-management-studio-ssms.md)

@@ -6,19 +6,19 @@ ms.date: 03/07/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 f1_keywords:
 - sql13.swb.dbmmonitor.warningsandalerts.f1
 ms.assetid: 01936122-961d-436b-ba3c-5f79fefe5469
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 9a2a5b2b940f1ee72e903e47dee3a3c5e76f293e
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 02acad8ee93c311c18c80e325450105ac47ee876
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85680434"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642309"
 ---
 # <a name="database-mirroring-monitor-warnings-page"></a>資料庫鏡像監視器 (警告頁面)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
