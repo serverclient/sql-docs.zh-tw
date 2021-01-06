@@ -6,7 +6,7 @@ ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - monitoring [SQL Server], database mirroring
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a7b1b9b0-7c19-4acc-9de3-3a7c5e70694d
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: f8479b88d100f9687469ad615d0b92c50aedb6ad
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 9b77b54ba48dc2c3820d055227411f61983b1a7c
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85771828"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644280"
 ---
 # <a name="monitoring-database-mirroring-sql-server"></a>監視資料庫鏡像 (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -92,7 +92,7 @@ ms.locfileid: "85771828"
     |[sp_dbmmonitorresults](../../relational-databases/system-stored-procedures/sp-dbmmonitorresults-transact-sql.md)|傳回監視資料庫的狀態資料列，並且讓您選擇是否要讓此程序事先取得最新狀態。|  
     |[sp_dbmmonitordropmonitoring](../../relational-databases/system-stored-procedures/sp-dbmmonitordropmonitoring-transact-sql.md)|停止並刪除伺服器執行個體上所有資料庫的鏡像監視器作業。|  
   
-     **dbmmonitor** 系統預存程序可當做 [資料庫鏡像監視器] 的輔助使用。 例如，即使監視作業是使用 **sp_dbmmonitoraddmonitoring**設定的，您還是可以使用「資料庫鏡像監視器」來檢視狀態。  
+     **dbmmonitor** 系統預存程序可當做 [資料庫鏡像監視器] 的輔助使用。 例如，即使監視作業是使用 **sp_dbmmonitoraddmonitoring** 設定的，您還是可以使用「資料庫鏡像監視器」來檢視狀態。  
   
 ### <a name="how-monitoring-works"></a>監視的運作方式  
  本節將介紹資料庫鏡像狀態資料表、資料庫鏡像監視器作業和監視器、使用者如何監視資料庫鏡像狀態，以及如何卸除監視作業。  
@@ -107,10 +107,10 @@ ms.locfileid: "85771828"
  **sp_dbmmonitorupdate** 初次執行時，會建立 **資料庫鏡像狀態** 資料表，並在 **msdb** 資料庫中建立 **dbm_monitor** 固定資料庫角色。 **sp_dbmmonitorupdate** 通常會針對伺服器執行個體上每個鏡像資料庫的狀態資料表插入新資料列，以更新鏡像狀態；如需詳細資訊，請參閱本主題稍後的＜資料庫鏡像狀態資料表＞。 這個程序也會評估新資料列中的效能標準，並截斷晚於目前保留期限 (預設為 7 天) 的資料列。 如需詳細資訊，請參閱 [sp_dbmmonitorupdate &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-dbmmonitorupdate-transact-sql.md)。  
   
 > [!NOTE]  
->  除非「資料庫鏡像監視器」目前正由**系統管理員**固定伺服器角色的成員使用，否則只有當 **[資料庫鏡像監視器作業]** 存在且 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent 執行時，才會自動更新狀態資料表。  
+>  除非「資料庫鏡像監視器」目前正由 **系統管理員** 固定伺服器角色的成員使用，否則只有當 **[資料庫鏡像監視器作業]** 存在且 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent 執行時，才會自動更新狀態資料表。  
   
 #### <a name="database-mirroring-monitor-job"></a>資料庫鏡像監視器作業  
- 資料庫鏡像監視作業 **[資料庫鏡像監視器作業]** 是獨立於 [資料庫鏡像監視器] 運作的。 只有當**是用來啟動鏡像工作階段時，才會自動建立** [資料庫鏡像監視器作業] [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] 。 如果一律使用 ALTER DATABASE *資料庫名稱* SET PARTNER 命令來啟動鏡像，則只有當系統管理員執行 **sp_dbmmonitoraddmonitoring** 預存程序時，此作業才會存在。  
+ 資料庫鏡像監視作業 **[資料庫鏡像監視器作業]** 是獨立於 [資料庫鏡像監視器] 運作的。 只有當 **是用來啟動鏡像工作階段時，才會自動建立** [資料庫鏡像監視器作業] [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] 。 如果一律使用 ALTER DATABASE *資料庫名稱* SET PARTNER 命令來啟動鏡像，則只有當系統管理員執行 **sp_dbmmonitoraddmonitoring** 預存程序時，此作業才會存在。  
   
  建立 **[資料庫鏡像監視器作業]** 之後，假設 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent 正在執行，則預設會每分鐘呼叫此作業一次。 然後，此作業就會呼叫 **sp_dbmmonitorupdate** 系統預存程序。  
   

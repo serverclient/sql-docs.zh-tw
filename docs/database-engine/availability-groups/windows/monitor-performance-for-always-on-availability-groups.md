@@ -5,17 +5,17 @@ ms.custom: ag-guide, seodec18
 ms.date: 06/13/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 ms.assetid: dfd2b639-8fd4-4cb9-b134-768a3898f9e6
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 15ae1302fcff002816e8e8e7a5e37b6fbe8bd503
-ms.sourcegitcommit: 442fbe1655d629ecef273b02fae1beb2455a762e
+ms.openlocfilehash: fa6d63d665a2a81d0a112a1685b3ead1969479d1
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93235446"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643726"
 ---
 # <a name="monitor-performance-for-always-on-availability-groups"></a>監視 Always On 可用性群組的效能
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -96,7 +96,7 @@ ms.locfileid: "93235446"
 復原時間計算可判斷在容錯移轉之後需要多少時間來復原「次要資料庫」  。  容錯移轉時間通常簡短且一致。 偵測時間取決於叢集層級設定，而不是個別可用性複本。 
 
 
-針對次要資料庫 (DB_sec)，其 RTO 的計算和顯示會根據其 **redo_queue_size** 和 **redo_rate** ：
+針對次要資料庫 (DB_sec)，其 RTO 的計算和顯示會根據其 **redo_queue_size** 和 **redo_rate**：
 
 ![計算 RTO](media/calculate-rto.png)
 
@@ -110,15 +110,15 @@ ms.locfileid: "93235446"
 
 針對次要資料庫 (DB_sec)，其 RPO 的計算和顯示會根據其 is_failover_ready、last_commit_time 以及其相互關聯主要資料庫 (DB_pri) 的 last_commit_time。 secondary database.is_failover_ready = 1 時，會同步處理資料，而且在容錯移轉時不會遺失資料。 不過，如果此值為 0，則主要資料庫上的 **last_commit_time** 與次要資料庫上的 **last_commit_time** 之間會有差距。 
 
-針對主要資料庫， **last_commit_time** 是認可最新交易的時間。 針對次要資料庫， **last_commit_time** 是主要資料庫上已在次要資料庫上成功強化的交易最新認可時間。 主要和次要資料庫的這個數目應該相同。 這兩個值之間的差距是次要資料庫上尚未強化暫止交易的持續時間，而且將會在容錯移轉時遺失。 
+針對主要資料庫，**last_commit_time** 是認可最新交易的時間。 針對次要資料庫，**last_commit_time** 是主要資料庫上已在次要資料庫上成功強化的交易最新認可時間。 主要和次要資料庫的這個數目應該相同。 這兩個值之間的差距是次要資料庫上尚未強化暫止交易的持續時間，而且將會在容錯移轉時遺失。 
 
 ![計算 RPO](media/calculate-rpo.png)
 
 ### <a name="performance-counters-used-in-rtorpo-formulas"></a>RTO/RPO 公式中使用的效能計數器
 
-- **redo_queue_size** (KB) [用於 RTO]  ：重做佇列大小是其 **last_received_lsn** 與 **last_redone_lsn** 之間的交易記錄大小。 **last_received_lsn** 是記錄檔區塊識別碼，可識別裝載此次要資料庫的次要複本已經接收所有記錄檔區塊到哪一點。 **last_redone_lsn** 是最後一個記錄檔記錄的記錄序號，而該記錄在次要資料庫上重做。 根據這兩個值，我們可以找出起始記錄區塊 ( **last_received_lsn** ) 和結尾記錄區塊 ( **last_redone_lsn** ) 的識別碼。 這兩個記錄區塊之間的空格接著可以代表尚未重做交易記錄區塊數目。 這是以 KB 來測量。
+- **redo_queue_size** (KB) [用於 RTO]  ：重做佇列大小是其 **last_received_lsn** 與 **last_redone_lsn** 之間的交易記錄大小。 **last_received_lsn** 是記錄檔區塊識別碼，可識別裝載此次要資料庫的次要複本已經接收所有記錄檔區塊到哪一點。 **last_redone_lsn** 是最後一個記錄檔記錄的記錄序號，而該記錄在次要資料庫上重做。 根據這兩個值，我們可以找出起始記錄區塊 (**last_received_lsn**) 和結尾記錄區塊 (**last_redone_lsn**) 的識別碼。 這兩個記錄區塊之間的空格接著可以代表尚未重做交易記錄區塊數目。 這是以 KB 來測量。
 -  **redo_rate** (KB/秒) [用於 RTO]  ：累加值，在耗用期間，代表次要資料庫上已重做的交易記錄數量 (KB) (以KB/秒為單位)。 
-- **last_commit_time** (Datetime) [用於 RPO]  ：針對主要資料庫， **last_commit_time** 是認可最新交易的時間。 針對次要資料庫， **last_commit_time** 是主要資料庫上已在次要資料庫上成功強化的交易最新認可時間。 因為次要複本上的這個值應該與主要複本上的相同值同步，所以這兩個值之間的任何差距就是預估資料遺失 (RPO)。  
+- **last_commit_time** (Datetime) [用於 RPO]  ：針對主要資料庫，**last_commit_time** 是認可最新交易的時間。 針對次要資料庫，**last_commit_time** 是主要資料庫上已在次要資料庫上成功強化的交易最新認可時間。 因為次要複本上的這個值應該與主要複本上的相同值同步，所以這兩個值之間的任何差距就是預估資料遺失 (RPO)。  
  
 ## <a name="estimate-rto-and-rpo-using-dmvs"></a>使用 DMV 預估 RTO 和 RPO
 
@@ -129,7 +129,7 @@ ms.locfileid: "93235446"
 
 ### <a name="create-a-stored-procedure-to-estimate-rto"></a>建立預存程序來預估 RTO 
 
-1. 在目標次要複本上，建立預存程序 **proc_calculate_RTO** 。 如果此預存程序已經存在，請先將它卸除後再重新建立。 
+1. 在目標次要複本上，建立預存程序 **proc_calculate_RTO**。 如果此預存程序已經存在，請先將它卸除後再重新建立。 
 
  ```sql
     if object_id(N'proc_calculate_RTO', 'p') is not null
@@ -202,11 +202,11 @@ ms.locfileid: "93235446"
     end
  ```
 
-2. 使用目標次要資料庫名稱，執行 **proc_calculate_RTO** ：
+2. 使用目標次要資料庫名稱，執行 **proc_calculate_RTO**：
   ```sql
    exec proc_calculate_RTO @secondary_database_name = N'DB_sec'
   ```
-3. 輸出會顯示目標次要複本資料庫的 RTO 值。 儲存 *group_id* 、 *replica_id* 和 *group_database_id* ，以與 RPO 預估預存程序搭配使用。 
+3. 輸出會顯示目標次要複本資料庫的 RTO 值。 儲存 *group_id*、*replica_id* 和 *group_database_id*，以與 RPO 預估預存程序搭配使用。 
    
    範例輸出：
 <br>資料庫 DB_sec 的 RTO 是 0
@@ -215,7 +215,7 @@ ms.locfileid: "93235446"
 <br>資料庫 DB4 的 group_database_id 是 39F7942F-7B5E-42C5-977D-02E7FFA6C392
 
 ### <a name="create-a-stored-procedure-to-estimate-rpo"></a>建立預存程序來預估 RPO 
-1. 在主要複本上，建立預存程序 **proc_calculate_RPO** 。 如果它已經存在，請先將它卸除後再重新建立。 
+1. 在主要複本上，建立預存程序 **proc_calculate_RPO**。 如果它已經存在，請先將它卸除後再重新建立。 
 
  ```sql
     if object_id(N'proc_calculate_RPO', 'p') is not null
@@ -299,7 +299,7 @@ ms.locfileid: "93235446"
       end
  ```
 
-2. 使用目標次要資料庫的 *group_id* 、 *replica_id* 和 *group_database_id* ，執行 **proc_calculate_RPO** 。 
+2. 使用目標次要資料庫的 *group_id*、*replica_id* 和 *group_database_id*，執行 **proc_calculate_RPO**。 
 
  ```sql
    exec proc_calculate_RPO @group_id= 'F176DD65-C3EE-4240-BA23-EA615F965C9B',
@@ -338,43 +338,43 @@ ms.locfileid: "93235446"
   
 4.  使用下列規格建立[以原則為基礎的管理條件](~/relational-databases/policy-based-management/create-a-new-policy-based-management-condition.md)：  
   
-    -   **名稱** ：`RTO`  
+    -   **名稱**：`RTO`  
   
-    -   **Facet** ： **資料庫複本狀態**  
+    -   **Facet**：**資料庫複本狀態**  
   
-    -   **欄位** ：`Add(@EstimatedRecoveryTime, 60)`  
+    -   **欄位**：`Add(@EstimatedRecoveryTime, 60)`  
   
-    -   **運算子** ： **<=**  
+    -   **運算子**： **<=**  
   
-    -   **值** ：`600`  
+    -   **值**：`600`  
   
      當潛在容錯移轉時間超過 10 分鐘 (包括失敗偵測和容錯移轉的 60 秒額外負荷)，此條件會失敗。  
   
 5.  使用下列規格建立第二個[以原則為基礎的管理條件](~/relational-databases/policy-based-management/create-a-new-policy-based-management-condition.md)：  
   
-    -   **名稱** ：`RPO`  
+    -   **名稱**：`RPO`  
   
-    -   **Facet** ： **資料庫複本狀態**  
+    -   **Facet**：**資料庫複本狀態**  
   
-    -   **欄位** ：`@EstimatedDataLoss`  
+    -   **欄位**：`@EstimatedDataLoss`  
   
-    -   **運算子** ： **<=**  
+    -   **運算子**： **<=**  
   
-    -   **值** ：`3600`  
+    -   **值**：`3600`  
   
      當潛在資料遺失超過 1 小時時，此條件會失敗。  
   
 6.  使用下列規格建立第三個[以原則為基礎的管理條件](~/relational-databases/policy-based-management/create-a-new-policy-based-management-condition.md)：  
   
-    -   **名稱** ：`IsPrimaryReplica`  
+    -   **名稱**：`IsPrimaryReplica`  
   
-    -   **Facet** ： **可用性群組**  
+    -   **Facet**：**可用性群組**  
   
-    -   **欄位** ：`@LocalReplicaRole`  
+    -   **欄位**：`@LocalReplicaRole`  
   
-    -   **運算子** ： **=**  
+    -   **運算子**： **=**  
   
-    -   **值** ：`Primary`  
+    -   **值**：`Primary`  
   
      此條件會檢查給定可用性群組的本機可用性複本是否為主要複本。  
   
@@ -382,55 +382,55 @@ ms.locfileid: "93235446"
   
     -   [一般]  頁面：  
   
-        -   **名稱** ：`CustomSecondaryDatabaseRTO`  
+        -   **名稱**：`CustomSecondaryDatabaseRTO`  
   
-        -   **檢查條件** ：`RTO`  
+        -   **檢查條件**：`RTO`  
   
-        -   **針對目標** ： **IsPrimaryReplica AvailabilityGroup** 中的 **每個 DatabaseReplicaState**  
+        -   **針對目標**：**IsPrimaryReplica AvailabilityGroup** 中的 **每個 DatabaseReplicaState**  
   
              此設定可確保原則僅於本機可用性複本為主要複本的可用性群組上評估。  
   
-        -   **評估模式** ： **按排程時間**  
+        -   **評估模式**：**按排程時間**  
   
-        -   **排程** ： **CollectorSchedule_Every_5min**  
+        -   **排程**：**CollectorSchedule_Every_5min**  
   
-        -   **已啟用** ： **選取**  
+        -   **已啟用**：**選取**  
   
     -   [描述]  頁面：  
   
-        -   **類別** ： **可用性資料庫警告**  
+        -   **類別**：**可用性資料庫警告**  
   
              此設定可讓原則評估結果在 Always On 儀表板中顯示。  
   
-        -   **描述** ： **目前複本擁有已超過 10 分鐘的 RTO，假設 1 分鐘的額外負荷進行探索及容錯移轉。您應該立即調查個別的伺服器執行個體上的效能問題。**  
+        -   **描述**：**目前複本擁有已超過 10 分鐘的 RTO，假設 1 分鐘的額外負荷進行探索及容錯移轉。您應該立即調查個別的伺服器執行個體上的效能問題。**  
   
-        -   **要顯示的文字** ： **已超過 RTO！**  
+        -   **要顯示的文字**：**已超過 RTO！**  
   
 8.  使用下列規格建立第二個[以原則為基礎的管理原則](~/relational-databases/policy-based-management/create-a-policy-based-management-policy.md)：  
   
     -   [一般]  頁面：  
   
-        -   **名稱** ：`CustomAvailabilityDatabaseRPO`  
+        -   **名稱**：`CustomAvailabilityDatabaseRPO`  
   
-        -   **檢查條件** ：`RPO`  
+        -   **檢查條件**：`RPO`  
   
-        -   **針對目標** ： **IsPrimaryReplica AvailabilityGroup** 中的 **每個 DatabaseReplicaState**  
+        -   **針對目標**：**IsPrimaryReplica AvailabilityGroup** 中的 **每個 DatabaseReplicaState**  
   
-        -   **評估模式** ： **按排程時間**  
+        -   **評估模式**：**按排程時間**  
   
-        -   **排程** ： **CollectorSchedule_Every_30min**  
+        -   **排程**：**CollectorSchedule_Every_30min**  
   
-        -   **已啟用** ： **選取**  
+        -   **已啟用**：**選取**  
   
     -   [描述]  頁面：  
   
-        -   **類別** ： **可用性資料庫警告**  
+        -   **類別**：**可用性資料庫警告**  
   
-        -   **描述** ： **可用性資料庫已超過您的 1 小時 RPO。您應該立即調查可用性複本上的效能問題。**  
+        -   **描述**：**可用性資料庫已超過您的 1 小時 RPO。您應該立即調查可用性複本上的效能問題。**  
   
-        -   **要顯示的文字** ： **已超過 RPO！**  
+        -   **要顯示的文字**：**已超過 RPO！**  
   
- 當您完成時，會分別針對每個原則評估排程建立兩個新的 SQL Server Agent 作業。 這些作業的名稱開頭應該為 **syspolicy_check_schedule** 。  
+ 當您完成時，會分別針對每個原則評估排程建立兩個新的 SQL Server Agent 作業。 這些作業的名稱開頭應該為 **syspolicy_check_schedule**。  
   
  您可以檢視作業記錄以檢查評估結果。 評估失敗也會記錄在事件識別碼為 34052 的 Windows 應用程式記錄檔中 (位於 [事件檢視器])。 您也可以設定 SQL Server Agent 在原則失敗時傳送警示。 如需詳細資訊，請參閱[設定警示，在原則失敗時通知原則系統管理員](~/relational-databases/policy-based-management/configure-alerts-to-notify-policy-administrators-of-policy-failures.md)。  
   

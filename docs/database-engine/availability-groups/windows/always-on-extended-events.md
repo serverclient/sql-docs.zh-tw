@@ -5,17 +5,17 @@ ms.custom: ag-guide, seodec18
 ms.date: 06/13/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: how-to
 ms.assetid: 5950f98a-3950-473d-95fd-cde3557b8fc2
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 3a5b2f339f5aec4d97daaee9ac273dd73833d564
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+ms.openlocfilehash: 28eab9dae04e0268c6dd7827aab8be71220e4218
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91115852"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643733"
 ---
 # <a name="configure-extended-events-for-always-on-availability-groups"></a>設定 Always On 可用性群組的延伸事件
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -29,7 +29,7 @@ SELECT * FROM sys.dm_xe_objects WHERE name LIKE '%hadr%'
  Alwayson_health 擴充事件工作階段是在您建立可用性群組時自動建立，會擷取可用性群組相關事件的子集。 此工作階段已預先設定為實用且方便的工具，可協助您對可用性群組進行疑難排解時快速開始。 「建立可用性群組精靈」會自動在精靈中設定的每個參與可用性複本上啟動工作階段。  
   
 > [!IMPORTANT]  
->  如果您未使用**新增可用性群組精靈**建立可用性群組，alwayson_health 工作階段可能無法自動啟動。 如果工作階段未啟動，就無法在發生未預期的問題時擷取事件資料。 您應該手動啟動工作階段，並設定工作階段內容，將工作階段設定為自動啟動。  
+>  如果您未使用 **新增可用性群組精靈** 建立可用性群組，alwayson_health 工作階段可能無法自動啟動。 如果工作階段未啟動，就無法在發生未預期的問題時擷取事件資料。 您應該手動啟動工作階段，並設定工作階段內容，將工作階段設定為自動啟動。  
   
  檢視 alwayson_health 工作階段的定義：  
   

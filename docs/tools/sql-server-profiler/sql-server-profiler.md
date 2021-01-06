@@ -12,12 +12,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 05/01/2020
-ms.openlocfilehash: 485bb37dee0c118cf313bd7b3740b56c41e20c90
-ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
+ms.openlocfilehash: 3169f8fbbc86fc95a62631c0cc93d77b6a46b0a4
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88713776"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643392"
 ---
 # <a name="sql-server-profiler"></a>SQL Server Profiler
 
@@ -118,7 +118,7 @@ Microsoft [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] 是「SQ
 
 ### <a name="trace"></a>追蹤
 
-追蹤會根據所選取的事件類別、資料行及篩選，來擷取資料。 例如，您可以建立追蹤來監視異常錯誤。 若要執行此作業，請選取 **Exception** 事件類別及 **Error**、 **State**和 **Severity** 資料行。 必須同時收集這三個資料行的資料，追蹤結果才能提供有意義的資料。 接著，您可以執行以此方式設定的追蹤，並收集出現在伺服器中之任何 **Exception** 事件的資料。 追蹤資料可以儲存起來，也可以立即用於分析。 稍後可以再重新執行追蹤，但有些事件 (例如 **Exception** 事件) 永遠也無法重新執行。 您也可以將追蹤儲存成範本，以在未來建立類似的追蹤。  
+追蹤會根據所選取的事件類別、資料行及篩選，來擷取資料。 例如，您可以建立追蹤來監視異常錯誤。 若要執行此作業，請選取 **Exception** 事件類別及 **Error**、 **State** 和 **Severity** 資料行。 必須同時收集這三個資料行的資料，追蹤結果才能提供有意義的資料。 接著，您可以執行以此方式設定的追蹤，並收集出現在伺服器中之任何 **Exception** 事件的資料。 追蹤資料可以儲存起來，也可以立即用於分析。 稍後可以再重新執行追蹤，但有些事件 (例如 **Exception** 事件) 永遠也無法重新執行。 您也可以將追蹤儲存成範本，以在未來建立類似的追蹤。  
 
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 提供兩種方式來追蹤 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的執行個體：您可以透過 [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] 追蹤，或是使用系統預存程序追蹤。  
 
@@ -164,7 +164,7 @@ Microsoft [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] 是「SQ
 |描述如何重新執行至資料指標。|[重新執行至資料指標處 &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/replay-to-a-cursor-sql-server-profiler.md)|  
 |描述如何重新執行 [!INCLUDE[tsql](../../includes/tsql-md.md)] 指令碼。|[重新執行 Transact-SQL 指令碼 &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/replay-a-transact-sql-script-sql-server-profiler.md)|  
 |描述如何建立追蹤範本。|[建立追蹤範本 &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/create-a-trace-template-sql-server-profiler.md)|  
-|描述如何修改追蹤範本。|[修改追蹤範本 &#40;SQL Server Profiler&#41;](./modify-trace-templates.md?view=sql-server-ver15)|  
+|描述如何修改追蹤範本。|[修改追蹤範本 &#40;SQL Server Profiler&#41;](./modify-trace-templates.md)|  
 |描述如何設定全域追蹤選項。|[設定全域追蹤選項 &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/set-global-trace-options-sql-server-profiler.md)|  
 |描述如何在追蹤時尋找值或資料行。|[在追蹤時尋找值或資料行 &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/find-a-value-or-data-column-while-tracing-sql-server-profiler.md)|  
 |描述如何從執行中追蹤衍生範本。|[從執行中的追蹤衍生範本 &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/derive-a-template-from-a-running-trace-sql-server-profiler.md)|  
@@ -173,7 +173,7 @@ Microsoft [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] 是「SQ
 |描述如何匯出追蹤範本。|[匯出追蹤範本 &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/export-a-trace-template-sql-server-profiler.md)|  
 |描述如何匯入追蹤範本。|[匯入追蹤範本 &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/import-a-trace-template-sql-server-profiler.md)|  
 |描述如何從追蹤擷取指令碼。|[從追蹤中擷取指令碼 &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/extract-a-script-from-a-trace-sql-server-profiler.md)|  
-|描述如何使追蹤與 Windows 效能記錄資料相互關聯。|[使追蹤與 Windows 效能記錄資料產生相互關聯 &#40;SQL Server Profiler&#41;](./correlate-a-trace-with-windows-performance-log-data.md?view=sql-server-ver15)|  
+|描述如何使追蹤與 Windows 效能記錄資料相互關聯。|[使追蹤與 Windows 效能記錄資料產生相互關聯 &#40;SQL Server Profiler&#41;](./correlate-a-trace-with-windows-performance-log-data.md)|  
 |描述如何組織追蹤中所顯示的資料行。|[組織追蹤內顯示的資料行 &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/organize-columns-displayed-in-a-trace-sql-server-profiler.md)|  
 |描述如何啟動 [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)]。|[啟動 SQL Server Profiler](../../tools/sql-server-profiler/start-sql-server-profiler.md)|  
 |描述如何儲存追蹤及追蹤範本。|[儲存追蹤及追蹤範本](../../tools/sql-server-profiler/save-traces-and-trace-templates.md)|  

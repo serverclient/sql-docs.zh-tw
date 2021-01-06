@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: 0fdf91c5a4da33b585f10939cd6a801a46b236b3
-ms.sourcegitcommit: c127c0752e84cccd38a7e23ac74c0362a40f952e
+ms.openlocfilehash: 65bbd662c7eeab5114262efa96c009d1ebbf0323
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96761516"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771648"
 ---
 # <a name="connecting-to-a-data-source-in-adonet"></a>連線到 ADO.NET 中的資料來源
 
@@ -41,3 +41,5 @@ Microsoft SqlClient Data Provider for SQL Server 包括衍生自 <xref:System.Da
 - [連接共用](connection-pooling.md)
 - [命令與參數](commands-parameters.md)
 - [DataAdapter 和 DataReader](dataadapters-datareaders.md)
+- [異動和並行存取](transactions-and-concurrency.md)
+- [Microsoft ADO.NET for SQL Server](microsoft-ado-net-sql-server.md)

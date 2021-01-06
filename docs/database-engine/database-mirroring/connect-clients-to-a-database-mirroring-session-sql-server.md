@@ -6,7 +6,7 @@ ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - partners [SQL Server], connecting clients to
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 0d5d2742-2614-43de-9ab9-864addb6299b
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 8da63d8ff15d03b55586a72a578d6074fa2a5473
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 680273a6bab1283be56d130c84b4c156d8fcd280
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85789773"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644327"
 ---
 # <a name="connect-clients-to-a-database-mirroring-session-sql-server"></a>將用戶端連接至資料庫鏡像工作階段 (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "85789773"
   
  如果該嘗試沒有用，資料存取提供者就會嘗試容錯移轉夥伴名稱 (如果可用的話)。 如果任何一個夥伴名稱可正確識別目前的主體伺服器，資料存取提供者通常就可以順利開啟初始連接。 完成此連接後，資料存取提供者會下載目前鏡像伺服器的伺服器執行個體名稱。 這個名稱會當做容錯移轉夥伴名稱儲存在快取中，並覆寫用戶端提供的容錯移轉夥伴名稱 (如果有的話)。 之後，.NET Framework Data Provider for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 就不會更新容錯移轉夥伴名稱。 相較之下，每當後續連接或連接重設傳回不同的夥伴名稱時， [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client 就會更新快取。  
   
- 下圖說明用戶端連接到名為 **Db_1**之鏡像資料庫的初始夥伴 **Partner_A**。 此圖將顯示用戶端提供的初始夥伴名稱可正確識別目前主體伺服器 **Partner_A**。 初始連線嘗試成功，而且資料存取提供者將鏡像伺服器的名稱 (目前是 **Partner_B**) 當作容錯移轉夥伴名稱儲存在本機快取中。 最後，用戶端連接到 **Db_1** 資料庫的主體複本。  
+ 下圖說明用戶端連接到名為 **Db_1** 之鏡像資料庫的初始夥伴 **Partner_A**。 此圖將顯示用戶端提供的初始夥伴名稱可正確識別目前主體伺服器 **Partner_A**。 初始連線嘗試成功，而且資料存取提供者將鏡像伺服器的名稱 (目前是 **Partner_B**) 當作容錯移轉夥伴名稱儲存在本機快取中。 最後，用戶端連接到 **Db_1** 資料庫的主體複本。  
   
  ![初始夥伴為主體時的用戶端連線](../../database-engine/database-mirroring/media/dbm-initial-connection.gif "初始夥伴為主體時的用戶端連線")  
   

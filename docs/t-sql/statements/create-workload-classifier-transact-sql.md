@@ -21,12 +21,12 @@ ms.assetid: ''
 author: ronortloff
 ms.author: rortloff
 monikerRange: =azure-sqldw-latest
-ms.openlocfilehash: 7c2b5d7bb93383e53a7d90f703172220a5427f3a
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 6a81c3164e183bb8a202e4ac537298c093e6d873
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97464049"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644007"
 ---
 # <a name="create-workload-classifier-transact-sql"></a>CREATE WORKLOAD CLASSIFIER (Transact-SQL)
 
@@ -86,7 +86,7 @@ SELECT COUNT(*)
 ```
 
 *WLM_CONTEXT*  
-指定可分類要求的工作階段內容值。  context 是 nvarchar(255) 類型的選擇性參數。  在提交設定工作階段內容的要求之前，使用變數名稱等於 [ 的 ](../../relational-databases/system-stored-procedures/sp-set-session-context-transact-sql.md?view=azure-sqldw-latest)sys.sp_set_session_context`wlm_context`。
+指定可分類要求的工作階段內容值。  context 是 nvarchar(255) 類型的選擇性參數。  在提交設定工作階段內容的要求之前，使用變數名稱等於 [ 的 ](../../relational-databases/system-stored-procedures/sp-set-session-context-transact-sql.md?view=azure-sqldw-latest&preserve-view=true)sys.sp_set_session_context`wlm_context`。
 
 範例：
 

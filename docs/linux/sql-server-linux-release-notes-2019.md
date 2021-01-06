@@ -7,12 +7,12 @@ ms.date: 10/01/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: 00e2e11f83fb282bbc674f2fdba91810986c69bd
-ms.sourcegitcommit: 32135463a8494d9ed1600a58f51819359e3c09dc
+ms.openlocfilehash: 262e2f222e6c30f3657e78c2a20862912b1aa970
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91833652"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643942"
 ---
 # <a name="release-notes-for-sql-server-2019-on-linux"></a>Linux 上 SQL Server 2019 的版本資訊
 
@@ -21,7 +21,7 @@ ms.locfileid: "91833652"
 下列版本資訊適用於在 Linux 上執行的 SQL Server 2019。 此文章已針對每個版本細分為數個小節。 每個版本都具有描述 CU 變更的支援文章連結，以及能下載 Linux 套件的連結。
 
 > [!TIP]
-> 若要了解 SQL Server 2019 中的新 Linux 功能，請參閱 [SQL Server 2019 中的新功能](../sql-server/what-s-new-in-sql-server-ver15.md?view=sql-server-ver15#sql-server-on-linux)。
+> 若要了解 SQL Server 2019 中的新 Linux 功能，請參閱 [SQL Server 2019 中的新功能](../sql-server/what-s-new-in-sql-server-ver15.md?view=sql-server-ver15&preserve-view=true#sql-server-on-linux)。
 
 [!INCLUDE [linux-supported-platfoms-2019](../includes/linux-supported-platfoms-2019.md)]
 
@@ -238,7 +238,7 @@ ms.locfileid: "91833652"
 
 - **sa** 登入的預設語言是英文。
 
-    - **解決方法**：使用 **ALTER LOGIN**陳述式來變更 **sa** 登入的語言。
+    - **解決方法**：使用 **ALTER LOGIN** 陳述式來變更 **sa** 登入的語言。
 
 - OLEDB 提供者會記錄下列警告：`Failed to verify the Authenticode signature of 'C:\binn\msoledbsql.dll'. Signature verification of SQL Server DLLs will be skipped. Genuine copies of SQL Server are signed. Failure to verify the Authenticode signature might indicate that this is not an authentic release of SQL Server. Install a genuine copy of SQL Server or contact customer support.`
 
@@ -295,7 +295,7 @@ ms.locfileid: "91833652"
 1. 從開機 cmdline 中移除 `ipv6.disable=1` 以在核心中啟用 IPv6。 執行此動作的方式取決於 Linux 發行版本和開機載入器 (例如 grub)。 如果您想要停用 IPv6，您仍然可以透過在 `sysctl` 設定 (例如 `/etc/sysctl.conf`) 中設定 `net.ipv6.conf.all.disable_ipv6 = 1` 來予以停用。 這將仍然防止系統的網路介面卡取得 IPv6 位址，但可允許 sqlservr 功能正常運作。
 
 #### <a name="network-file-system-nfs"></a>網路檔案系統 (NFS)
-如果您在生產環境中使用**網路檔案系統 (NFS)** 遠端共用，請注意下列支援需求：
+如果您在生產環境中使用 **網路檔案系統 (NFS)** 遠端共用，請注意下列支援需求：
 
 - 使用 NFS 版本 **4.2 或更新的版本**。 舊版 NFS 不支援新式檔案系統常用的必要功能，例如 `fallocate` 和疏鬆檔案建立。
 - 僅尋找 NFS 掛接上的 **/var/opt/mssql** 目錄。 其他檔案 (例如 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 系統二進位檔案) 並不受支援。

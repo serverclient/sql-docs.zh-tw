@@ -6,7 +6,7 @@ ms.date: 05/16/2016
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - partners [SQL Server]
@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: a7f95ddc-5154-4ed5-8117-c9fcf2221f13
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: c1b95d55a979738f787e4814a9f40f929c521868
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 906dc46e076ce49242ecb0aa416d13cbb770147e
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85754735"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644427"
 ---
 # <a name="database-mirroring-sql-server"></a>資料庫鏡像 (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -212,7 +212,7 @@ ms.locfileid: "85754735"
 |`SSInstance_2`|Partner|見證|Partner|Partner|  
 |`SSInstance_3`|Partner|Partner|見證|見證|  
   
- 下圖說明兩個伺服器執行個體以夥伴伺服器的角色，共同參與兩個鏡像工作階段。 其中一個工作階段用於名為 **Db_1**的資料庫，另一個工作階段則用於名為 **Db_2**的資料庫。  
+ 下圖說明兩個伺服器執行個體以夥伴伺服器的角色，共同參與兩個鏡像工作階段。 其中一個工作階段用於名為 **Db_1** 的資料庫，另一個工作階段則用於名為 **Db_2** 的資料庫。  
   
  ![兩個並行工作階段中的兩個伺服器執行個體](../../database-engine/database-mirroring/media/dbm-concurrent-sessions.gif "兩個並行工作階段中的兩個伺服器執行個體")  
   

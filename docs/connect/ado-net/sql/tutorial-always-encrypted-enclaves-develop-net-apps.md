@@ -11,12 +11,12 @@ ms.tgt_pltfrm: ''
 ms.topic: tutorial
 author: karinazhou
 ms.author: v-jizho2
-ms.openlocfilehash: a7a2170c14502be9ffcae478839657abc39974ae
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 59c377d5055e8eb3858e1005c50d9c4dfb8334ab
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88438670"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771524"
 ---
 # <a name="tutorial-develop-a-net-application-using-always-encrypted-with-secure-enclaves"></a>教學課程：使用具有安全記憶體保護區的 Always Encrypted 開發 .NET 應用程式
 
@@ -68,7 +68,7 @@ ms.locfileid: "88438670"
 
 ## <a name="step-2-implement-your-application-logic"></a>步驟 2:實作您的應用程式邏輯
 
-您的應用程式將會連線到 **ContosoHR** 資料庫 (來自[教學課程：使用 SSMS 開始使用具有安全記憶體保護區的 Always Encrypted](../../../relational-databases/security/tutorial-getting-started-with-always-encrypted-enclaves.md))，且其將會執行查詢，其中包含 **SSN** 資料行上的 `LIKE` 述詞和 **Salary** 資料行上的範圍比較。
+您的應用程式將會連線到 **ContosoHR** 資料庫 (來自 [教學課程：使用 SSMS 開始使用具有安全記憶體保護區的 Always Encrypted](../../../relational-databases/security/tutorial-getting-started-with-always-encrypted-enclaves.md))，且其將會執行查詢，其中包含 **SSN** 資料行上的 `LIKE` 述詞和 **Salary** 資料行上的範圍比較。
 
 1. 將 Program.cs 檔案 (由 Visual Studio 產生) 的內容取代為下列程式碼。 使用您伺服器名稱和環境的記憶體保護區證明 URL 來更新資料庫連接字串。 您也可以更新資料庫驗證設定。
 
@@ -129,7 +129,7 @@ ms.locfileid: "88438670"
 
 2. 建置並執行應用程式。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [搭配 Microsoft .NET Data Provider for SQL Server 使用 Always Encrypted](sqlclient-support-always-encrypted.md)
 - [示範如何搭配 Always Encrypted 使用 Azure Key Vault 提供者的範例](azure-key-vault-example.md)

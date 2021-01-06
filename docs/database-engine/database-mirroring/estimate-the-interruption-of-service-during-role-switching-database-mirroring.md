@@ -6,7 +6,7 @@ ms.date: 03/01/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - parallel redo [SQL Server]
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 586a6f25-672b-491b-bc2f-deab2ccda6e2
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 9d83569a79980097a18ebff39b3628401a4387c3
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 4b8f2e5435f6f168a113cf78b1539e97c4935972
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85754675"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643922"
 ---
 # <a name="estimate-the-interruption-of-service-during-role-switching-database-mirroring"></a>預估角色切換期間的服務中斷時間 (資料庫鏡像)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -72,7 +72,7 @@ ms.locfileid: "85754675"
  在 [!INCLUDE[ssEnterprise](../../includes/ssenterprise-md.md)]中，平行重做已完成最佳化，針對每四個 CPU 使用一個執行緒。 若要預估平行重做的向前恢復時間，存取執行中測試系統比存取測試資料庫更加精確。 在鏡像伺服器上監視重做佇列時，請增加主體伺服器上的負載。 在正常作業中，重做佇列會接近零。 請增加主體伺服器上的負載，直到 Redo Queue 開始持續成長為止；然後系統會在其重做速率的上限，而 **Redo Bytes/sec** 效能計數器此時代表重做速率的上限。 如需詳細資訊，請參閱 [SQL Server 的 Database Mirroring 物件](../../relational-databases/performance-monitor/sql-server-database-mirroring-object.md)。  
   
 ## <a name="estimating-interruption-of-service-during-automatic-failover"></a>預估自動容錯移轉期間的服務中斷時間  
- 下圖說明錯誤偵測與容錯移轉時間，如何構成在 **Partner_B**上完成自動容錯移轉所需的全部時間。 容錯移轉需要時間以向前恢復資料庫 (重做階段)，再加上少許時間，才能使資料庫上線。 恢復階段會在新的主體資料庫上線後發生，並在容錯移轉之後繼續作業，其中涉及回復所有未認可的交易。 恢復階段期間可使用資料庫。  
+ 下圖說明錯誤偵測與容錯移轉時間，如何構成在 **Partner_B** 上完成自動容錯移轉所需的全部時間。 容錯移轉需要時間以向前恢復資料庫 (重做階段)，再加上少許時間，才能使資料庫上線。 恢復階段會在新的主體資料庫上線後發生，並在容錯移轉之後繼續作業，其中涉及回復所有未認可的交易。 恢復階段期間可使用資料庫。  
   
  ![錯誤偵測和容錯移轉時間](../../database-engine/database-mirroring/media/dbm-failovauto-time.gif "錯誤偵測和容錯移轉時間")  
   

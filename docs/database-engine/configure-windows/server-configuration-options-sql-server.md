@@ -1,11 +1,8 @@
 ---
-title: 伺服器組態選項 (SQL Server) | Microsoft Docs
+title: 伺服器組態選項 (SQL Server)
 description: 了解如何管理及最佳化 SQL Server 資源。 檢視可用的組態選項、可能的設定、預設值和重新啟動需求。
-ms.custom: ''
-ms.date: 07/20/2020
 ms.prod: sql
 ms.prod_service: high-availability
-ms.reviewer: ''
 ms.technology: configuration
 ms.topic: conceptual
 keywords:
@@ -27,15 +24,17 @@ helpviewer_keywords:
 - stored procedures [SQL Server], configuration options
 - server configuration [SQL Server]
 - administering SQL Server, configuration options
-ms.assetid: 9f38eba6-39b1-4f1d-ba24-ee4f7e2bc969
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 6ffbb3df5a8a8dac4ce22c27a1194520e8b058de
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+ms.reviewer: ''
+ms.custom: ''
+ms.date: 07/20/2020
+ms.openlocfilehash: bcadbc294414b2fe992d3864be240a1998a5e477
+ms.sourcegitcommit: a81823f20262227454c0b5ce9c8ac607aaf537e2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86923602"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97684219"
 ---
 # <a name="server-configuration-options-sql-server"></a>伺服器組態選項 (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

@@ -25,18 +25,18 @@ ms.assetid: b81edbf0-856a-498f-ba87-48ff1426d980
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 8822addbf09d03d3b38cf43666dce33f4277e24e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 05ab2a8c6f9b278fb548eb215653e0434232b2ae
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97480449"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643754"
 ---
 # <a name="error_procedure-transact-sql"></a>ERROR_PROCEDURE (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]  
 
 此函式會在發生錯誤且該錯誤造成執行 TRY...CATCH 建構的 CATCH 區塊時，傳回預存程序或觸發程序的名稱。 
-- SQL Server 2017 到[目前的版本](../../sql-server/what-s-new-in-sql-server-ver15.md?view=sql-server-ver15)會傳回 schema_name.stored_procedure_name
+- SQL Server 2017 到[目前的版本](../../sql-server/what-s-new-in-sql-server-ver15.md)會傳回 schema_name.stored_procedure_name
 - SQL Server 2016 會傳回 stored_procedure_name
 
  ![主題連結圖示](../../database-engine/configure-windows/media/topic-link.gif "主題連結圖示") [Transact-SQL 語法慣例](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  

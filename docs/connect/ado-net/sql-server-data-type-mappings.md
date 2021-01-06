@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: 0b12445989fd044a39ab88b2d840368aec206025
-ms.sourcegitcommit: debaff72dbfae91b303f0acd42dd6d99e03135a2
+ms.openlocfilehash: 3cf6d932a3f458e971d827c1ca4c493c298c2241
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96419699"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771356"
 ---
 # <a name="sql-server-data-type-mappings"></a>SQL Server 資料類型對應
 
@@ -72,6 +72,6 @@ SQL Server 和 .NET Framework 是以不同的型別系統為基礎。 例如，.
 ## <a name="see-also"></a>另請參閱
 
 - [SQL Server 資料類型和 ADO.NET](./sql/sql-server-data-types.md)
-- [SQL Server 二進位和大數值資料](./sql/sql-server-binary-large-value-data.md)
+- [SQL Server 二進位和大型數值資料](./sql/sql-server-binary-large-value-data.md)
 - [設定參數](configure-parameters.md)
 - [ADO.NET 中的資料類型對應](data-type-mappings-ado-net.md)

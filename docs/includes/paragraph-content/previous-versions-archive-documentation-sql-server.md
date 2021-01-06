@@ -18,6 +18,6 @@ FYI: In the following link syntax to SQL 2014 content, the two 'view' related pa
 [SQL Server 2014 documentation](/previous-versions/sql/2014/index?view=sql-server-2014&preserve-view=true) is still available on our main Docs address.
 -->
 
-我們的主要 Docs 位址提供 [SQL Server 2019文件](../../sql-server/index.yml?preserve-view=true&view=sql-server-ver15)。 接著使用頁面頂端附近的版本設定下拉式清單，選取另一個感興趣的版本。
+我們的主要 Docs 位址提供 [SQL Server 2019文件](../../sql-server/index.yml?view=sql-server-ver15&preserve-view=true)。 接著使用頁面頂端附近的版本設定下拉式清單，選取另一個感興趣的版本。
 
 如需舊版 SQL Server 文件的詳細資訊，請參閱[舊版 SQL Server 文件](/previous-versions/sql/)。

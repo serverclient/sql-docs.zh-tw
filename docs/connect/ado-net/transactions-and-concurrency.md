@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: a30a3d3184c411fc0b54c0e26330a8fb138ffdae
-ms.sourcegitcommit: 2add15a99df7b85d271adb261523689984dfd134
+ms.openlocfilehash: 2a00ef1ec1f2f5d8ee892289021f42cb139b5a12
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97051268"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771304"
 ---
 # <a name="transactions-and-concurrency"></a>異動和並行存取
 
@@ -35,21 +35,22 @@ ms.locfileid: "97051268"
 
 ## <a name="in-this-section"></a>本節內容
 
- [本機交易](local-transactions.md)  
- 示範如何針對資料庫執行交易。  
+[本機交易](local-transactions.md)  
+示範如何針對資料庫執行交易。  
   
- [分散式交易](distributed-transactions.md)  
- 說明如何在 ADO.NET 中執行分散式異動。  
+[分散式交易](distributed-transactions.md)  
+說明如何在 ADO.NET 中執行分散式異動。  
   
- [System.Transactions 與 SQL Server 的整合](system-transactions-integration-with-sql-server.md)  
- 說明 <xref:System.Transactions> 如何與 SQL Server 整合以使用分散式交易。  
+[System.Transactions 與 SQL Server 的整合](system-transactions-integration-with-sql-server.md)  
+說明 <xref:System.Transactions> 如何與 SQL Server 整合以使用分散式交易。  
   
- [開放式並行存取](optimistic-concurrency.md)描述開放式和封閉式並行存取，以及您如何測試並行存取違規。  
+[開放式並行存取](optimistic-concurrency.md)描述開放式和封閉式並行存取，以及您如何測試並行存取違規。  
 
 ## <a name="see-also"></a>請參閱
 
 - [交易基本概念](/dotnet/framework/data/transactions/transaction-fundamentals)
 - [連線到資料來源](connecting-to-data-source.md)
-- [命令和參數](commands-parameters.md)
+- [命令與參數](commands-parameters.md)
 - [DataAdapter 和 DataReader](dataadapters-datareaders.md)
+- [DbProviderFactory](dbproviderfactories.md)
 - [Microsoft ADO.NET for SQL Server](microsoft-ado-net-sql-server.md)

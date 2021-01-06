@@ -12,12 +12,12 @@ ms.assetid: df347f9b-b950-4e3a-85f4-b9f21735eae3
 author: MightyPen
 ms.author: genemi
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: d581d8dcf038b56a6b3df5b5ecc67a9a32b4255f
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 0d28550dba1a4703bab01324910436b7256597bb
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97485230"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643836"
 ---
 # <a name="sample-database-for-in-memory-oltp"></a>記憶體內部 OLTP 的範例資料庫
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "97485230"
  此範例示範了記憶體內部 OLTP 功能。 其顯示經記憶體最佳化的資料表和原生編譯的預存程序，並可用來示範記憶體內部 OLTP 的效能優勢。  
   
 > [!NOTE]  
->  若要檢視 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]的這項主題，請參閱 [Extensions to AdventureWorks to Demonstrate In-Memory OLTP](./overview-and-usage-scenarios.md?view=sql-server-ver15#in-memory-oltp-overview)(示範記憶體內部 OLTP 的 AdventureWorks 延伸模組)。  
+>  若要檢視 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]的這項主題，請參閱 [Extensions to AdventureWorks to Demonstrate In-Memory OLTP](./overview-and-usage-scenarios.md#in-memory-oltp-overview)(示範記憶體內部 OLTP 的 AdventureWorks 延伸模組)。  
   
  此範例會將 AdventureWorks 資料庫中的五個資料表移轉至經記憶體最佳化的資料表，並包含銷售訂單處理的工作負載示範。 您可以利用此工作負載示範，查看在伺服器上使用記憶體內部 OLTP 的效能優勢。  
   
