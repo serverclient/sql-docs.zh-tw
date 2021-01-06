@@ -2,7 +2,7 @@
 description: 'sys.dm_resource_governor_resource_pools_history_ex (Transact-sql) '
 title: sys.dm_resource_governor_resource_pools_history_ex (Transact-sql) |Microsoft Docs
 ms.custom: ''
-ms.date: 03/27/2019
+ms.date: 01/05/2021
 ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
@@ -21,19 +21,19 @@ ms.assetid: ''
 author: joesackmsft
 ms.author: josack
 monikerRange: =azuresqldb-current
-ms.openlocfilehash: 8aafaca36fb5ef1d96ddbd9f369a3ba4f06a596d
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 32082b09a5e583e68f2f06794d80d1d3f21b4e76
+ms.sourcegitcommit: 11ca2305a8d7e420daf772eb97861706c9e08e31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97484580"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97928437"
 ---
 # <a name="sysdm_resource_governor_resource_pools_history_ex-transact-sql"></a>sys.dm_resource_governor_resource_pools_history_ex (Transact-sql) 
 
 [!INCLUDE[appliesto-xx-asdb-xxxx-xxx-md](../../includes/appliesto-xx-asdb-xxxx-xxx-md.md)]
 
-針對 Azure SQL Database 的資源集區統計資料的總) ，以20秒為間隔傳回過去32分鐘的快照 (128 recs。  
-  
+每個資料列都代表 Azure SQL Database 中的資源集區統計資料的定期快照。 資料庫引擎啟動時，會建立快照集，之後每隔幾秒鐘就會執行。 目前與上一個快照之間的間隔可能會不同，而且是在資料行中提供 `duration_ms` 。 傳回最新可用的快照集，每個資源集區最多128個快照集。
+
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
 |**pool_id**|int|資源集區的識別碼。 不可為 Null。
