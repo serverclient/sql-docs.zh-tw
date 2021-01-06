@@ -1,7 +1,7 @@
 ---
 title: 資料庫檔案與檔案群組 | Microsoft 文件
 description: 了解資料庫檔案，以及如何在 SQL Server 中建立檔案群組，以進行配置及管理。 檢視範例、規則及建議。
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 ms.date: 05/29/2020
 ms.prod: sql
 ms.prod_service: database-engine
@@ -33,12 +33,12 @@ helpviewer_keywords:
 ms.assetid: 9ca11918-480d-4838-9198-cec221ef6ad0
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: b9a4fc2995b0442f46794ad8ad226b48bfa4726b
-ms.sourcegitcommit: d35d0901296580bfceda6e0ab2e14cf2b7e99a0f
+ms.openlocfilehash: f14eaec691218c4f7a9cad82dabb2f31f36b6245
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92496998"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878741"
 ---
 # <a name="database-files-and-filegroups"></a>資料庫檔案與檔案群組
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

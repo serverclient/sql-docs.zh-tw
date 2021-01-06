@@ -1,6 +1,6 @@
 ---
 title: 伺服器記憶體組態選項 | Microsoft Docs
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 ms.date: 08/14/2019
 ms.prod: sql
 ms.prod_service: high-availability
@@ -22,17 +22,17 @@ helpviewer_keywords:
 ms.assetid: 29ce373e-18f8-46ff-aea6-15bbb10fb9c2
 author: pmasl
 ms.author: pelopes
-ms.openlocfilehash: 8620da6349efe012e9e0d75d6ddf5efada437832
-ms.sourcegitcommit: 039fb38c583019b3fd06894160568387a19ba04e
+ms.openlocfilehash: 71cab9c11aaa4f3dc569761fdfef407601162b1c
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87442820"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878899"
 ---
 # <a name="server-memory-configuration-options"></a>伺服器記憶體組態選項
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-重新設定 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體所使用之 SQL Server 處理序的記憶體數量 (以 MB 為單位)。  有兩個伺服器記憶體選項：**最小伺服器記憶體**和**最大伺服器記憶體**。 這些選項會變更 SQL Server 記憶體管理員配置給 SQL Server 處理序的記憶體數量。
+重新設定 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體所使用之 SQL Server 處理序的記憶體數量 (以 MB 為單位)。  有兩個伺服器記憶體選項：**最小伺服器記憶體** 和 **最大伺服器記憶體**。 這些選項會變更 SQL Server 記憶體管理員配置給 SQL Server 處理序的記憶體數量。
   
 這些選項的預設設定和最小允許值如下：
 
@@ -61,7 +61,7 @@ ms.locfileid: "87442820"
 
 <a name="max_server_memory"></a> 您可使用 **max_server_memory** 確保 OS 不會遇到有害的記憶體壓力。 若要設定最大伺服器記憶體設定，請監視 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 處理序的整體取用量，以判斷記憶體需求。 若要為單一執行個體進行更準確的計算：
 - 從 OS 總記憶體中保留 1GB - 4GB 的記憶體給 OS 本身。
-- 接著減去等於不受 [最大伺服器記憶體] 控制的潛在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 記憶體配置，算法為**堆疊大小 <sup>1</sup> \* 計算得出的最大背景工作執行緒數 <sup>2</sup>** 。 餘數即為單一執行個體安裝的 max_server_memory 設定。
+- 接著減去等於不受 [最大伺服器記憶體] 控制的潛在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 記憶體配置，算法為 **堆疊大小 <sup>1</sup> \* 計算得出的最大背景工作執行緒數 <sup>2</sup>** 。 餘數即為單一執行個體安裝的 max_server_memory 設定。
 
 <sup>1</sup> 如需每個架構之執行緒堆疊大小的資訊，請參閱[記憶體管理架構指南](../../relational-databases/memory-management-architecture-guide.md#stacksizes)。
 

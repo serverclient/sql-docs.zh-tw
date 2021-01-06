@@ -1,7 +1,7 @@
 ---
 title: Docker：安裝 Linux 上的 SQL Server 容器
 description: 本快速入門會示範如何使用 Docker 來執行 SQL Server 2017 和 2019 容器映像。 您隨後便可使用 sqlcmd 來建立及查詢資料庫。
-ms.custom: seo-lt-2019, contperfq1
+ms.custom: seo-lt-2019, contperf-fy21q1
 author: vin-yu
 ms.author: vinsonyu
 ms.reviewer: vanto
@@ -13,12 +13,12 @@ ms.prod_service: linux
 ms.assetid: 82737f18-f5d6-4dce-a255-688889fdde69
 monikerRange: '>= sql-server-linux-2017 || >= sql-server-2017'
 zone_pivot_groups: cs1-command-shell
-ms.openlocfilehash: 94ca368b7eaf9b9ad37107c01eb84e239d5fb3c0
-ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
+ms.openlocfilehash: 615e3d2ec9c64be70535c9a45a9f31e94d34b139
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97490028"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878767"
 ---
 # <a name="quickstart-run-sql-server-container-images-with-docker"></a>快速入門：使用 Docker 執行 SQL Server 容器映像
 [!INCLUDE [SQL Server - Linux](../includes/applies-to-version/sql-linux.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "97490028"
 在本快速入門中，您將使用 Docker 來提取與執行 SQL Server 2017 容器映像，[mssql-server-linux](https://hub.docker.com/_/microsoft-mssql-server)。 然後與 **sqlcmd** 連線來建立您的第一個資料庫並執行查詢。
 
 > [!TIP]
-> 如果您想要執行 SQL Server 2019 容器，請參閱[本文的 SQL Server 2019 版本](quickstart-install-connect-docker.md?view=sql-server-linux-ver15)。
+> 如果您想要執行 SQL Server 2019 容器，請參閱[本文的 SQL Server 2019 版本](quickstart-install-connect-docker.md?view=sql-server-linux-ver15&preserve-view=true)。
 
 ::: moniker-end
 <!--SQL Server 2019 on Linux-->
@@ -87,7 +87,7 @@ any changes to one section should be duplicated in the other-->
    ::: zone-end
 
    > [!TIP]
-   > 如果您想要執行 SQL Server 2019 容器，請參閱[本文的 SQL Server 2019 版本](quickstart-install-connect-docker.md?view=sql-server-linux-ver15#pullandrun2019)。
+   > 如果您想要執行 SQL Server 2019 容器，請參閱[本文的 SQL Server 2019 版本](quickstart-install-connect-docker.md?view=sql-server-linux-ver15&preserve-view=true#pullandrun2019)。
 
    上述命令會提取最新的 SQL Server 2017 容器映像。 若要提取特定映像，您需要新增欄位與標籤名稱 (例如，`mcr.microsoft.com/mssql/server:2017-GA-ubuntu`)。 若要查看所有可用的映像，請參閱 [mssql-server Docker Hub 頁面](https://hub.docker.com/r/microsoft/mssql-server)。
 

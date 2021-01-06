@@ -1,7 +1,7 @@
 ---
 title: 設定 max worker threads 伺服器組態選項 | Microsoft Docs
 description: 了解如何使用背景工作執行緒上限選項來設定可供 SQL Server 處理特定要求的背景工作執行緒數目。
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 ms.date: 04/14/2020
 ms.prod: sql
 ms.prod_service: high-availability
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: abeadfa4-a14d-469a-bacf-75812e48fac1
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: e1f2398e59fb7a0fee48f2d4c4e4a171c6044ca7
-ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
+ms.openlocfilehash: 89da087dd829642653fee6ae8648af3c1c00c2a0
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96127420"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878884"
 ---
 # <a name="configure-the-max-worker-threads-server-configuration-option"></a>設定 max worker threads 伺服器組態選項
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

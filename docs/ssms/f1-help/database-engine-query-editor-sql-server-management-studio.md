@@ -41,14 +41,14 @@ ms.assetid: 05cfae9b-96d5-4a35-a098-0bc3a548bcfc
 author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
-ms.custom: seo-lt-2019, contperfq1
+ms.custom: seo-lt-2019, contperf-fy21q1
 ms.date: 08/28/2020
-ms.openlocfilehash: 7450a77549d05dab5a024b39be6d2b4aef6c09de
-ms.sourcegitcommit: b3a711a673baebb2ff10d7142b209982b46973ae
+ms.openlocfilehash: 87fd12a17b86a47e6fec1b235ae9e9a21fde6e45
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93364830"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878949"
 ---
 # <a name="sql-server-management-studio-ssms-query-editor"></a>SQL Server Management Studio (SSMS) 查詢編輯器
 

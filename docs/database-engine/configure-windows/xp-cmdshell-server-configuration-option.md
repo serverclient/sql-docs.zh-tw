@@ -11,14 +11,14 @@ helpviewer_keywords:
 ms.assetid: c147c9e1-b81d-49c8-b800-3019f4d86a13
 author: markingmyname
 ms.author: maghan
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 ms.date: 06/12/2020
-ms.openlocfilehash: 004a7b0a50a657632bb2b9970f0558857d416494
-ms.sourcegitcommit: ae474d21db4f724523e419622ce79f611e956a22
+ms.openlocfilehash: d12ea9c15f2a07fa6fdd4bc5dd5538fd1522d267
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92257982"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878831"
 ---
 # <a name="xp_cmdshell-server-configuration-option"></a>xp_cmdshell 伺服器組態選項
 
@@ -29,12 +29,12 @@ ms.locfileid: "92257982"
 啟用此選項前，請務必考量潛在安全性影響。
 
 - 新開發的程式碼不應使用 **xp_cmdshell** 預存程序，且通常應該保持停用。
-- 某些繼承應用程式則必須啟用 **xp_cmdshell** 。 如果無法修改這些應用程式以避免使用這個預存程序，則可依照下述來加以啟用。
+- 某些繼承應用程式則必須啟用 **xp_cmdshell**。 如果無法修改這些應用程式以避免使用這個預存程序，則可依照下述來加以啟用。
 
 > [!NOTE]  
-> 如果必須使用 **xp_cmdshell** ，作為安全的最佳做法，建議只在需要該選項的實際工作期間才予以啟用。
+> 如果必須使用 **xp_cmdshell**，作為安全的最佳做法，建議只在需要該選項的實際工作期間才予以啟用。
 
-如果需要啟用 **xp_cmdshell** ，則可使用 [原則式管理](../../relational-databases/policy-based-management/administer-servers-by-using-policy-based-management.md)或執行 **sp_configure** 系統預存程序，如下列程式碼範例所示：  
+如果需要啟用 **xp_cmdshell**，則可使用 [原則式管理](../../relational-databases/policy-based-management/administer-servers-by-using-policy-based-management.md)或執行 **sp_configure** 系統預存程序，如下列程式碼範例所示：  
   
 ``` sql
 -- To allow advanced options to be changed.  

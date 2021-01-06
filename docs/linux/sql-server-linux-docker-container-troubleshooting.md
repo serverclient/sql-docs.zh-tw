@@ -4,19 +4,19 @@ description: 探索可用來解決搭配 SQL Server 映像使用 Linux Docker �
 author: vin-yu
 ms.author: vinsonyu
 ms.reviewer: vanto
-ms.custom: contperfq1
+ms.custom: contperf-fy21q1
 ms.date: 09/07/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 moniker: '>= sql-server-linux-2017 || >= sql-server-2017'
 zone_pivot_groups: cs1-command-shell
-ms.openlocfilehash: 051dbe0d44cbd798653632df114beb6727f1c9af
-ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
+ms.openlocfilehash: d94ae00cb8f3581be51f53d999068e60c4d5b7f1
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97489818"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878779"
 ---
 # <a name="troubleshooting-sql-server-docker-containers"></a>針對 SQL Server Docker 容器進行疑難排解
 
@@ -252,7 +252,7 @@ docker exec -it <Container ID> /bin/bash
 <!--SQL Server 2019 on Linux-->
 ::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
-- 透過此[快速入門](quickstart-install-connect-docker.md?view=sql-server-ver15)，開始使用 Docker 上的 SQL Server 2019 容器映像。
+- 透過此[快速入門](quickstart-install-connect-docker.md)，開始使用 Docker 上的 SQL Server 2019 容器映像。
 
 ::: moniker-end
 

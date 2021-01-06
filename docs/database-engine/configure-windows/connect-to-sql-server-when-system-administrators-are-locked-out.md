@@ -1,7 +1,7 @@
 ---
 title: 當系統管理員遭鎖定時連線到 SQL Server | Microsoft Docs
 description: 了解如果您誤遭鎖定，如何以系統管理員身分重新取得 SQL Server 的存取權。
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 ms.date: 05/20/2020
 ms.prod: sql
 ms.prod_service: high-availability
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c0c0082e-b867-480f-a54b-79f2a94ceb67
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 801602c78193f9fc3fa9cdab40b98c3dc3dd42e0
-ms.sourcegitcommit: 291ae8f6b72fd355f8f24ce5300339306293ea7e
+ms.openlocfilehash: 3b4cf5946fba4eb3c79150b29ef44bd232f9c155
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88512312"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878941"
 ---
 # <a name="connect-to-sql-server-when-system-administrators-are-locked-out"></a>當系統管理員遭到鎖定時連線到 SQL Server 
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,10 +37,10 @@ ms.locfileid: "88512312"
   
 ## <a name="resolution"></a>解決方案
 
-為了解決您的存取權問題，建議您以單一使用者模式啟動 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的執行個體。 此模式可防止當您嘗試重新取得存取權時發生其他連線。 從這裡，您可以連線到 SQL Server 執行個體，並將登入新增至**系統管理員 (sysadmin)** 伺服器角色。 [逐步指示](#step-by-step-instructions)一節會提供此解決方案的詳細步驟。
+為了解決您的存取權問題，建議您以單一使用者模式啟動 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的執行個體。 此模式可防止當您嘗試重新取得存取權時發生其他連線。 從這裡，您可以連線到 SQL Server 執行個體，並將登入新增至 **系統管理員 (sysadmin)** 伺服器角色。 [逐步指示](#step-by-step-instructions)一節會提供此解決方案的詳細步驟。
 
 
-您可以從命令列中使用 `-m` 或 `-f` 選項，以單一使用者模式啟動 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的執行個體。 電腦本機系統管理員群組的所有成員接著就能利用**系統管理員 (sysadmin)** 固定伺服器角色的成員身分，連線到 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的執行個體。  
+您可以從命令列中使用 `-m` 或 `-f` 選項，以單一使用者模式啟動 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的執行個體。 電腦本機系統管理員群組的所有成員接著就能利用 **系統管理員 (sysadmin)** 固定伺服器角色的成員身分，連線到 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的執行個體。  
 
 當您以單一使用者模式啟動執行個體時，請先停止 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent 服務。 否則，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent 可能會先連線，取得與伺服器的唯一可用連線，並封鎖您登入。
 
@@ -56,7 +56,7 @@ ms.locfileid: "88512312"
 |:---|:---|:---|
 |`-m` | 將連線限制為單一連線 | 當沒有其他使用者嘗試連線到執行個體，或您不確定用來連線到執行個體的應用程式名稱時。 |
 |`-mSQLCMD`| 將連線限制為單一連線，其必須將自己識別為 **sqlcmd** 用戶端程式| 當您計畫使用 **sqlcmd** 連線到執行個體，而且您想要防止其他應用程式取得唯一可用的連線時。 |
-|`-m"Microsoft SQL Server Management Studio - Query"`| 將連線限制為單一連線，其必須將自己識別為 **Microsoft SQL Server Management Studio - 查詢**應用程式。| 當您計畫透過 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] 中的查詢編輯器連線到執行個體，而且您想要防止其他應用程式取得唯一可用的連線時。 |
+|`-m"Microsoft SQL Server Management Studio - Query"`| 將連線限制為單一連線，其必須將自己識別為 **Microsoft SQL Server Management Studio - 查詢** 應用程式。| 當您計畫透過 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] 中的查詢編輯器連線到執行個體，而且您想要防止其他應用程式取得唯一可用的連線時。 |
 |`-f`| 將連線限制為單一連線，並以基本組態來啟動執行個體 | 當某些其他組態導致您無法啟動時。 |
 | &nbsp; | &nbsp; | &nbsp; |
   
@@ -96,14 +96,14 @@ ms.locfileid: "88512312"
   
     1.  使用 Windows 驗證 (包含您的系統管理員認證) 透過 [物件總管] 連線。 依序展開 [安全性] 和 [登入]，然後按兩下您自己的登入。 在 [伺服器角色] 頁面上，選取 [系統管理員]，然後按一下 [確定]。  
   
-    2.  不透過 [物件總管] 連接，而是使用 Windows 驗證 (包含您的系統管理員認證) 透過查詢視窗連接 (如果您沒有透過 [物件總管] 連接，就只能以這種方式連接)。執行程式碼 (例如下列程式碼) 來加入屬於**系統管理員**固定伺服器角色成員的新 Windows 驗證登入。 下列範例會加入名為 `CONTOSO\PatK` 的網域使用者。  
+    2.  不透過 [物件總管] 連接，而是使用 Windows 驗證 (包含您的系統管理員認證) 透過查詢視窗連接 (如果您沒有透過 [物件總管] 連接，就只能以這種方式連接)。執行程式碼 (例如下列程式碼) 來加入屬於 **系統管理員** 固定伺服器角色成員的新 Windows 驗證登入。 下列範例會加入名為 `CONTOSO\PatK` 的網域使用者。  
   
         ```  
         CREATE LOGIN [CONTOSO\PatK] FROM WINDOWS;  
         ALTER SERVER ROLE sysadmin ADD MEMBER [CONTOSO\PatK];  
         ```  
   
-    3.  如果您的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 是以混合驗證模式執行，請使用 Windows 驗證 (包含您的系統管理員認證) 透過查詢視窗連接。 執行程式碼 (例如下列程式碼) 來建立屬於**系統管理員 (sysadmin)** 固定伺服器角色成員的新 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 驗證登入。  
+    3.  如果您的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 是以混合驗證模式執行，請使用 Windows 驗證 (包含您的系統管理員認證) 透過查詢視窗連接。 執行程式碼 (例如下列程式碼) 來建立屬於 **系統管理員 (sysadmin)** 固定伺服器角色成員的新 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 驗證登入。  
   
         ```  
         CREATE LOGIN TempLogin WITH PASSWORD = '************';  
@@ -135,7 +135,7 @@ ms.locfileid: "88512312"
   
 11. 以滑鼠右鍵按一下您的伺服器名稱，然後按一下 [重新啟動]。 如果您在以單一使用者模式啟動 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 之前停止了 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent，請務必再次加以啟動。
   
-現在，您應該能夠使用其中一個目前屬於**系統管理員**固定伺服器角色成員的帳戶進行正常連接。  
+現在，您應該能夠使用其中一個目前屬於 **系統管理員** 固定伺服器角色成員的帳戶進行正常連接。  
   
 ## <a name="see-also"></a>另請參閱  
 
