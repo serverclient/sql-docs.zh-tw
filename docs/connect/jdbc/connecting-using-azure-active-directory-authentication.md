@@ -2,7 +2,7 @@
 title: 使用 Azure Active Directory 驗證連線
 description: 了解如何開發 Java 應用程式，以搭配 Microsoft JDBC Driver for SQL Server 使用 Azure Active Directory 驗證功能。
 ms.custom: ''
-ms.date: 09/23/2020
+ms.date: 01/04/2020
 ms.reviewer: ''
 ms.prod: sql
 ms.prod_service: connectivity
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 9c9d97be-de1d-412f-901d-5d9860c3df8c
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: cf829dfabdd291367990ef21280208ac0741154c
-ms.sourcegitcommit: 7eb80038c86acfef1d8e7bfd5f4e30e94aed3a75
+ms.openlocfilehash: 68d8b2a131fa6ab1c9e287f70cb584db3aeedacc
+ms.sourcegitcommit: 6154ee7f20bccce9d458ac7f3b0a21b9613d1131
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92081307"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97902636"
 ---
 # <a name="connecting-using-azure-active-directory-authentication"></a>使用 Azure Active Directory 驗證連線
 
@@ -54,9 +54,9 @@ ms.locfileid: "92081307"
 針對其他驗證模式，必須在用戶端機器上安裝下列元件：
 * Java 7 或更新版本
 * Microsoft JDBC Driver 6.0 (或更新版本) for SQL Server
-* 如果您使用存取權杖型驗證模式，則需要 [azure-activedirectory-library-for-java](https://github.com/AzureAD/azure-activedirectory-library-for-java) \(英文\) 及其相依性，才能執行此文章中的範例。 如需詳細資訊，請參閱**使用存取權杖連線**一節。
-* 如果您使用 **ActiveDirectoryPassword** 驗證模式，則需要 [azure-activedirectory-library-for-java](https://github.com/AzureAD/azure-activedirectory-library-for-java) \(英文\) 及其相依性。 如需詳細資訊，請參閱**使用 ActiveDirectoryPassword 驗證模式來連線**一節。
-* 如果您使用 **ActiveDirectoryIntegrated** 模式，則需要 azure-activedirectory-library-for-java 及其相依性。 如需詳細資訊，請參閱**使用 ActiveDirectoryIntegrated 驗證模式來連線**一節。
+* 如果您使用存取權杖型驗證模式，則需要 [azure-activedirectory-library-for-java](https://github.com/AzureAD/azure-activedirectory-library-for-java) \(英文\) 及其相依性，才能執行此文章中的範例。 如需詳細資訊，請參閱 **使用存取權杖連線** 一節。
+* 如果您使用 **ActiveDirectoryPassword** 驗證模式，則需要 [azure-activedirectory-library-for-java](https://github.com/AzureAD/azure-activedirectory-library-for-java) \(英文\) 及其相依性。 如需詳細資訊，請參閱 **使用 ActiveDirectoryPassword 驗證模式來連線** 一節。
+* 如果您使用 **ActiveDirectoryIntegrated** 模式，則需要 azure-activedirectory-library-for-java 及其相依性。 如需詳細資訊，請參閱 **使用 ActiveDirectoryIntegrated 驗證模式來連線** 一節。
 
 ## <a name="connecting-using-activedirectorymsi-authentication-mode"></a>使用 ActiveDirectoryMSI 驗證模式來連線
 下列範例示範如何使用 `authentication=ActiveDirectoryMSI` 模式。 從 Azure 資源 (例如 Azure 虛擬機器、App Service 或與 Azure Active Directory 建立同盟的函數應用程式) 內部執行此範例。
@@ -87,7 +87,7 @@ public class AAD_MSI {
         ds.setDatabaseName("demo"); // Replace with your database name
         ds.setAuthentication("ActiveDirectoryMSI");
         // Optional
-        ds.setMsiClientId("94de34e9-8e8c-470a-96df-08110924b814"); // Replace with Client ID of User-Assigned Managed Identity to be used
+        ds.setMSIClientId("94de34e9-8e8c-470a-96df-08110924b814"); // Replace with Client ID of User-Assigned Managed Identity to be used
 
         try (Connection connection = ds.getConnection(); 
                 Statement stmt = connection.createStatement();
