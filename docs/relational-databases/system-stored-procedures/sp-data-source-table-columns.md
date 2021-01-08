@@ -1,25 +1,27 @@
 ---
+title: sp_data_source_table_columns
 description: 'sp_data_source_table_columns (Transact-sql) '
-title: sp_data_source_table_columns |Microsoft Docs
-ms.custom: ''
-ms.date: 11/10/2020
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: conceptual
 f1_keywords:
-- sp_data_source_table_columns
+- sp_data_source_table_columns_TSQL
+dev_langs:
+- TSQL
 helpviewer_keywords:
 - PolyBase
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 4153b7546dfce226cb056b7a548efb69f5175e06
-ms.sourcegitcommit: 4c3949f620d09529658a2172d00bfe37aeb1a387
+ms.custom: ''
+ms.date: 11/10/2020
+ms.openlocfilehash: 30205befcdd9da78f4f9a3f002ddd398f49abc55
+ms.sourcegitcommit: d681796e8c012eca2d9629d3b816749e9f50f868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96128771"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98005383"
 ---
 # <a name="sp_data_source_table_columns-transact-sql"></a>sp_data_source_table_columns (Transact-sql) 
 
@@ -55,7 +57,7 @@ sp_data_source_table_columns
 
 |資料行名稱 |資料類型 |描述|
 |---|---|---|
-|NAME|nvarchar(max)|資料行名稱。
+|名稱|nvarchar(max)|資料行名稱。
 |TYPE|nvarchar(200)|SQL Server 類型名稱
 |LENGTH|int|資料行的長度
 |PRECISION|int|資料行的有效位數
@@ -99,7 +101,7 @@ DECLARE @table_location NVARCHAR(400) = N'[database].[schema].[table]';
 EXEC sp_data_source_table_columns @data_source, @table_location
 ```  
   
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [開始使用 PolyBase](../polybase/polybase-guide.md)
 - [系統預存程序 &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)
