@@ -2734,7 +2734,7 @@
               href: language-extensions/language-extensions-whats-new.md
         - name: 安裝
           items:
-            - name: 在 Windows 上安裝 語言延伸模組
+            - name: 在 Windows 上安裝 Java 語言延伸模組
               href: language-extensions/install/windows-java.md
         - name: 教學課程
           items:
