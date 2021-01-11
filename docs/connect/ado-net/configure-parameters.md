@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: a24241d3ef66739a85422397426278738987bf15
-ms.sourcegitcommit: debaff72dbfae91b303f0acd42dd6d99e03135a2
+ms.openlocfilehash: 14442892bc59fc733c6a67153832b95c3f368b95
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96428224"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771449"
 ---
 # <a name="configuring-parameters"></a>設定參數
 
@@ -31,7 +31,7 @@ ms.locfileid: "96428224"
 
 <xref:System.Data.Common.DbParameter> 物件可透過其建構函式建立，或者透過呼叫 <xref:System.Data.Common.DbCommand.DbParameterCollection%2A> 集合的 `Add` 方法，將其加入 <xref:System.Data.Common.DbParameterCollection> 來建立。 `Add` 方法會將建構函式引數或現有的參數物件當做輸出，依資料提供者而定。
 
-## <a name="supplying-the-parameterdirection-property"></a>提供 ParameterDirection 屬性
+## <a name="supply-the-parameterdirection-property"></a>提供 ParameterDirection 屬性
 
 在加入參數時，您必須為不是輸入參數的參數提供 <xref:System.Data.ParameterDirection> 屬性。 下表所顯示的 `ParameterDirection` 值是可以與 <xref:System.Data.ParameterDirection> 列舉一起使用的。
 
@@ -42,11 +42,11 @@ ms.locfileid: "96428224"
 |<xref:System.Data.ParameterDirection.Output>|這是輸出參數。|
 |<xref:System.Data.ParameterDirection.ReturnValue>|此參數代表預存程序 (Stored Procedure)、內建函式或使用者定義函式等作業的傳回值。|
 
-## <a name="working-with-parameter-placeholders"></a>使用參數預留位置
+## <a name="work-with-parameter-placeholders"></a>使用參數預留位置
 
 參數預留位置的語法會隨資料來源而有所不同。 Microsoft SqlClient Data Provider for SQL Server 會以不同的方式來處理命名及指定參數與參數預留位置。 SqlClient 資料提供者會使用 `@`*parametername* 格式的具名參數。
 
-## <a name="specifying-parameter-data-types"></a>指定參數資料類型
+## <a name="specify-parameter-data-types"></a>指定參數資料類型
 
 參數的資料類型是特定於 Microsoft SqlClient Data Provider for SQL Server。 指定類型會先將 `Parameter` 的值轉換成 Microsoft SqlClient Data Provider for SQL Server 類型，然後再將該值傳遞到資料來源。 您也可以使用一般方式指定 `Parameter` 的型別，方法是將 `DbType` 物件的 `Parameter` 屬性設為特定的 <xref:System.Data.DbType>。
 
@@ -89,7 +89,7 @@ ms.locfileid: "96428224"
 > [!NOTE]
 > 當您將 Null 參數值傳送到伺服器時，必須指定 <xref:System.DBNull>，而不是 `null` (在 Visual Basic 中為 `Nothing`)。 系統中的 Null 值是沒有值的空物件。 <xref:System.DBNull> 用於表示 null 值。
 
-## <a name="deriving-parameter-information"></a>衍生參數資訊
+## <a name="derive-parameter-information"></a>衍生參數資訊
 
 您也可以使用 `DbCommandBuilder` 類別 (Class) 從預存程序衍生參數。 `SqlCommandBuilder` 類別會提供靜態方法 `DeriveParameters`，其會自動填入使用來自預存程序參數資訊之 Command 物件的參數集合。 請注意， `DeriveParameters` 將會覆寫命令所有的現有參數資訊。
 
@@ -123,4 +123,6 @@ CREATE PROCEDURE dbo.CustOrderHist @CustomerID varchar(5)
 ## <a name="see-also"></a>請參閱
 
 - [命令與參數](commands-parameters.md)
+- [DataAdapter 和 DataReader](dataadapters-datareaders.md)
 - [ADO.NET 中的資料類型對應](data-type-mappings-ado-net.md)
+- [Microsoft ADO.NET for SQL Server](microsoft-ado-net-sql-server.md)

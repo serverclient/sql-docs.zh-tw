@@ -35,12 +35,12 @@ ms.assetid: 071cf260-c794-4b45-adc0-0e64097938c0
 author: rothja
 ms.author: jroth
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a42d01bead1a5d3882dcce0df67cda7785724b5e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 13afe3aa357bfd968874ae1f89bf0720c39fe49c
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97466149"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644451"
 ---
 # <a name="kill-transact-sql"></a>KILL (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -56,7 +56,8 @@ KILL 會結束正常的連線，這樣就可在內部停止與指定之工作階
 ```syntaxsql  
 -- Syntax for SQL Server  
   
-KILL { session ID | UOW } [ WITH STATUSONLY ]   
+KILL { session ID [ WITH STATUSONLY ] | UOW [ WITH STATUSONLY | COMMIT | ROLLBACK ] }    
+
 ```  
   
 ```syntaxsql  
@@ -69,26 +70,37 @@ KILL 'session_id'
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ## <a name="arguments"></a>引數
-_session ID_  
-這是要結束之處理序的工作階段識別碼。 _session ID_ 是在建立連線時，指派給每個使用者連線的唯一整數 (**int**)。 在連接持續時間，工作階段識別碼值會繫結連接。 當連接結束時，會釋出這個整數值，它可以重新指派給新的連接。  
+
+_session ID_   
+這是要結束之處理序的工作階段識別碼。 `session_id` 是在建立連線時，指派給每個使用者連線的唯一整數 (**int**)。 在連接持續時間，工作階段識別碼值會繫結連接。 當連接結束時，會釋出這個整數值，它可以重新指派給新的連接。  
+
 下列查詢可協助識別您想要終止的 `session_id`：  
+
  ```sql  
  SELECT conn.session_id, host_name, program_name,
      nt_domain, login_name, connect_time, last_request_end_time 
 FROM sys.dm_exec_sessions AS sess
 JOIN sys.dm_exec_connections AS conn
     ON sess.session_id = conn.session_id;
+
 ```  
+
+
+_UOW_   
+識別分散式交易的工作單位識別碼 (UOW)。 _UOW_ 是可以從 `sys.dm_tran_locks` 動態管理檢視的 request_owner_guid 資料行取得的 GUID。 您也可以從錯誤記錄檔或透過 MS DTC 監視器來取得 _UOW_。 如需有關監視分散式交易的詳細資訊，請參閱 MS DTC 文件集。  
   
-_UOW_  
-**適用於**：[!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 和更新版本
-  
-識別分散式交易的工作單位識別碼 (UOW)。 _UOW_ 是可以從 sys.dm_tran_locks 動態管理檢視的 request_owner_guid 資料行取得的 GUID。 您也可以從錯誤記錄檔或透過 MS DTC 監視器來取得 _UOW_。 如需有關監視分散式交易的詳細資訊，請參閱 MS DTC 文件集。  
-  
-使用 KILL _UOW_ 來停止孤立的分散式交易。 這些交易並未與任何實際工作階段識別碼建立關聯；反之，是以人工方式與 session ID = '-2' 建立關聯。 透過查詢 sys.dm_tran_locks、sys.dm_exec_sessions 或 sys.dm_exec_requests 動態管理檢視中的 session ID 資料行，此工作階段識別碼使得識別被遺棄的交易變得更容易。  
-  
-WITH STATUSONLY  
-會針對因先前 KILL 陳述式而導致復原的指定 _session ID_ 或 _UOW_，產生一份進度報告。 KILL WITH STATUSONLY 並不會結束或復原 _Id>_ 或是 _UOW_。 此命令只會顯示目前的復原進度。  
+使用 KILL \<UOW> 來停止尚未解決的分散式交易。 這些交易並未與任何實際工作階段識別碼建立關聯；反之，是以人工方式與 session ID = '-2' 建立關聯。 此工作階段識別碼可讓您更輕鬆地識別尚未解決的交易，方法是透過在 `sys.dm_tran_locks`、` sys.dm_exec_sessions` 或 `sys.dm_exec_requests` 動態管理檢視中查詢 session ID 資料行。  
+
+_WITH STATUSONLY_   
+用來針對因先前 KILL 陳述式而導致復原的指定 _UOW_ 或 `session_id` 產生進度報告。 KILL WITH STATUSONLY 並不會結束或復原 UOW 或工作階段識別碼。 此命令只會顯示目前的復原進度。
+
+_WITH COMMIT_   
+用來終止具有認可且尚未解決的分散式交易。 僅適用於分散式交易，您必須指定 _UOW_ 才能使用此選項。  如需詳細資訊，請參閱[分散式交易](../../database-engine/availability-groups/windows/configure-availability-group-for-distributed-transactions.md#manage-unresolved-transactions)。
+
+_WITH ROLLBACK_   
+用來終止具有復原且尚未解決的分散式交易。 僅適用於分散式交易，您必須指定 _UOW_ 才能使用此選項。  如需詳細資訊，請參閱[分散式交易](../../database-engine/availability-groups/windows/configure-availability-group-for-distributed-transactions.md#manage-unresolved-transactions)。
+
+
   
 ## <a name="remarks"></a>備註  
 KILL 通常用於結束會使用鎖定來封鎖其他重要處理序的處理序。 KILL 也可用來停止正在執行必要系統資源之查詢的處理序。 系統處理序和執行擴充預存程序的處理序無法結束。  

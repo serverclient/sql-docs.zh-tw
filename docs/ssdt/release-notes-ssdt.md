@@ -12,12 +12,12 @@ ms.reviewer: maghan
 ms.custom: seo-lt-2019
 ms.date: 12/15/2019
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=azuresqldb-mi-current'
-ms.openlocfilehash: c59e142ec924a573e127d9caa0cd7d6ac9bf9e8f
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a380eabba4a20a65fd291b938d270a440f66d754
+ms.sourcegitcommit: 44eebb659f9b226c08aea6c31a909b22ad4fec60
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97440490"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860604"
 ---
 # <a name="release-notes-for-sql-server-data-tools-ssdt"></a>SQL Server Data Tools (SSDT) 的版本資訊
 
@@ -44,6 +44,35 @@ GeneMi , 2019/03/22.
 
 P.S.  there's no need to keep this large HTML comment indefinitely.
 -->
+
+## <a name="1597nbsp-ssdt-for-vs-2017"></a>15.9.7，適用於 VS 2017 的 SSDT&nbsp;
+
+發行日期：2021 年 1 月 5 日&nbsp;  
+組建編號：14.0.16228.0&nbsp;  
+適用於 Visual Studio 2017 的 SSDT。 
+
+### <a name="whats-new"></a>新功能
+
+| 新項目 | 詳細資料 |
+|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Integration Services (SSIS) | 將在 [IR 建立精靈] 中建立 SSISDB 的作業設為選用。 |
+| Integration Services (SSIS) | 已修正在不同的訂用帳戶具有相同名稱的情況下，[Azure 訂用帳戶] 下拉式方塊項目會在 [IR 建立精靈] 與 [Azure 支援專案精靈] 中重複的問題。 |
+| Integration Services (SSIS) | 已修正 [連線] 按鈕有時候無法在 [IR 建立] 精靈中啟用的問題。 |
+| Integration Services (SSIS) | 已修正在不同的訂用帳戶具有相同名稱的情況下，[Azure 訂用帳戶] 下拉式方塊項目會在 [IR 建立精靈] 與 [Azure 支援專案精靈] 中重複的問題。 |
+| Integration Services (SSIS) | 已修正當目前的地區設定為 [德國] 時，在指令碼元件 bufferwrapper.cs 底下自動產生的程式碼會額外新增雙引號的問題。 |
+| Integration Services (SSIS) | 已修正當目標伺服器版本為 SQL Server 2012、2014、2016 時，不會顯示 [下載 WSDL] 按鈕的問題。 |
+| Integration Services (SSIS) | 已修正建置大型專案可能會因為記憶體不足的例外狀況而導致失敗的問題。 |
+| Integration Services (SSIS) | 已修正在套件部署模型中將套件儲存為檔案系統或 MSDB 的複本時，該套件不會降級為專案目前目標伺服器版本的問題。 |
+| Integration Services (SSIS) | 已修正由於「沒有這類介面」錯誤而導致維度處理目的地無法正常運作的問題。 |
+| Integration Services (SSIS) | 已修正某些與協助工具和高 DPI 有關的問題。 |
+
+### <a name="known-issues"></a>已知問題
+
+| 已知問題 | 詳細資料 |
+| :---------- | :------ |
+| 當 ExecuteOutOfProcess 設定為 True 時，SSIS 執行套件工作不支援偵錯。 | 此問題僅適用於偵錯。 透過 DTExec.exe 或 SSIS 目錄進行的儲存、部署及執行則不受到影響。 |
+| &nbsp; | &nbsp; |
+
 
 ## <a name="1596nbsp-ssdt-for-vs-2017"></a>15.9.6，適用於 VS 2017 的 &nbsp; SSDT
 

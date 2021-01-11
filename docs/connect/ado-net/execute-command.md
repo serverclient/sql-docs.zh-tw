@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: b1427fa78e52c985478996bfb41cb7a20e1ee608
-ms.sourcegitcommit: debaff72dbfae91b303f0acd42dd6d99e03135a2
+ms.openlocfilehash: 772ecef470b69a34e4bd4b0eba2ca60255657eaf
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96428201"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771420"
 ---
 # <a name="executing-a-command"></a>執行命令
 
@@ -34,7 +34,7 @@ Microsoft SqlClient Data Provider for SQL Server 具有繼承自 <xref:System.Da
 |`ExecuteNonQuery`|執行不會傳回任何資料列的命令。|  
 |`ExecuteXMLReader`|傳回 <xref:System.Xml.XmlReader>。 僅適用於 `SqlCommand` 物件。|
 
- 每個強型別 (Strongly Typed) 的命令物件也會支援 <xref:System.Data.CommandType> 列舉型別 (Enumeration)，此型別可指定解譯命令字串的方式。
+每個強型別 (Strongly Typed) 的命令物件也會支援 <xref:System.Data.CommandType> 列舉型別 (Enumeration)，此型別可指定解譯命令字串的方式。
 
 |CommandType|說明|
 |-----------------|-----------------|  
@@ -51,12 +51,14 @@ Microsoft SqlClient Data Provider for SQL Server 具有繼承自 <xref:System.Da
 
 [!code-csharp[DataWorks SqlClient.StoredProcedure#1](~/../sqlclient/doc/samples/SqlCommand_StoredProcedure.cs#1)]
 
-### <a name="troubleshooting-commands"></a>疑難排解命令
+### <a name="troubleshooting-commands"></a>針對命令進行疑難排解
 
 [!INCLUDE[appliesto-netfx-xxxx-xxxx-md](../../includes/appliesto-netfx-xxxx-xxxx-md.md)]
 
-Microsoft SqlClient Data Provider for SQL Server 會新增 **效能計數器** 來讓您偵測與命令執行失敗相關的間歇性問題。
+Microsoft SqlClient Data Provider for SQL Server 會新增 **效能計數器** 來讓您偵測與命令執行失敗相關的間歇性問題。 如需詳細資訊，請參閱 [SqlClient 中的效能計數器](performance-counters.md)。
 
 ## <a name="see-also"></a>請參閱
 
 - [命令與參數](commands-parameters.md)
+- [DataAdapter 和 DataReader](dataadapters-datareaders.md)
+- [Microsoft ADO.NET for SQL Server](microsoft-ado-net-sql-server.md)

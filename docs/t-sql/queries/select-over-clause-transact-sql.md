@@ -25,12 +25,12 @@ ms.assetid: ddcef3a6-0341-43e0-ae73-630484b7b398
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c07ce738ea3364cba27cd2872894ff4701f41dfe
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 5dd2c6c6f33f9a115196d9a2afc3ca700b3a4631
+ms.sourcegitcommit: a81823f20262227454c0b5ce9c8ac607aaf537e2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97476679"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97684202"
 ---
 # <a name="select---over-clause-transact-sql"></a>SELECT - OVER 子句 (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -110,15 +110,95 @@ OVER ( [ PARTITION BY value_expression ] [ order_by_clause ] )
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ## <a name="arguments"></a>引數
- PARTITION BY  
+
+視窗函數的 `OVER` 子句中可能有下列引數：
+- [PARTITION BY](#partition-by) 可將查詢結果集分成幾個資料分割。
+- [ORDER BY](#order-by) 可定義結果集的每個資料分割內資料列的邏輯順序。 
+- [ROWS/RANGE](#rows-or-range) 可透過指定資料分割中的起點和終點來限制資料分割內的資料列。 其需要 `ORDER BY` 引數，且在指定 `ORDER BY` 引數的情況下，其預設值為資料分割的開頭至目前的元素。
+
+如果您未指定任何引數，則視窗函數會套用到整個結果集。
+```sql
+select 
+      object_id
+    , [min] = min(object_id) over()
+    , [max] = max(object_id) over()
+from sys.objects
+```
+ 
+|object_id | 分鐘 | max |
+|---|---|---|
+| 3 | 3 | 2139154666 |
+| 5 | 3 | 2139154666 |
+| ... | ... | ... |
+| 2123154609 |  3 | 2139154666 |
+| 2139154666 |  3 | 2139154666 |
+
+### <a name="partition-by"></a>PARTITION BY  
  將查詢結果集分成幾個資料分割。 視窗函數會分別套用至每個資料分割，並且針對每個資料分割重新開始計算。  
+
+```sqlsyntax
+PARTITION BY *value_expression* 
+```
+ 
+ 如未指定 PARTITION BY，則函式會將查詢結果集的所有資料列視為單一資料分割。
+如未指定 `ORDER BY` 子句，則函式會套用至資料分割中的所有資料列。
   
- *value_expression*  
- 指定分割資料列集所根據的資料行。 *value_expression* 只能參考 FROM 子句所提供的資料行。 *value_expression* 無法參考選取清單中的運算式或別名。 *value_expression* 可以是資料行運算式、純量子查詢、純量函數或使用者定義的變數。  
+#### <a name="partition-by-value_expression"></a>PARTITION BY *value_expression*  
+ 指定分割資料列集所根據的資料行。 *value_expression* 只能參考 FROM 子句所提供的資料行。 *value_expression* 無法參考選取清單中的運算式或別名。 *value_expression* 可以是資料行運算式、純量子查詢、純量函數或使用者定義的變數。 
+ 
+ ```sql
+ select 
+      object_id, type
+    , [min] = min(object_id) over(partition by type)
+    , [max] = max(object_id) over(partition by type)
+from sys.objects
+```
+
+|object_id | 類型 | 分鐘 | max |
+|---|---|---|---|
+| 68195293  | PK    | 68195293  | 711673583 |
+| 631673298 | PK    | 68195293  | 711673583 |
+| 711673583 | PK    | 68195293  | 711673583 |
+| ... | ... | ... |
+| 3 | S | 3 | 98 |
+| 5 | S |   3   | 98 |
+| ... | ... | ... |
+| 98    | S |   3   | 98 |
+| ... | ... | ... |
   
- \<ORDER BY clause>  
- 定義結果集的每個資料分割內資料列的邏輯順序。 也就是說，它會指定執行視窗函數計算的邏輯順序。  
-  
+### <a name="order-by"></a>排序依據  
+
+```sqlsyntax
+ORDER BY *order_by_expression* [COLLATE *collation_name*] [ASC|DESC]  
+```
+
+ 定義結果集的每個資料分割內資料列的邏輯順序。 也就是說，其會指定執行視窗函數計算的邏輯順序。 
+ - 如未指定，則預設的順序為 `ASC`，而且視窗函數會使用資料分割中的所有資料列。
+ - 如已加以指定，且在 ROWS/RANGE 中未指定，則可接受選擇性 ROWS/RANGE 規格的函式 (例如 `min` 或 `max`) 會使用預設的 `RANGE UNBOUNDED PRECEDING AND CURRENT ROW` 作為視窗框架的預設值。 
+ 
+```sql
+select 
+      object_id, type
+    , [min] = min(object_id) over(partition by type order by object_id)
+    , [max] = max(object_id) over(partition by type order by object_id)
+from sys.objects
+```
+
+|object_id | 類型 | 分鐘 | max |
+|---|---|---|---|
+| 68195293  | PK    | 68195293  | 68195293 |
+| 631673298 | PK    | 68195293  | 631673298 |
+| 711673583 | PK    | 68195293  | 711673583 |
+| ... | ... | ... |
+| 3 | S | 3 | 3 |
+| 5 | S |   3 | 5 |
+| 6 | S |   3 | 6 |
+| ... | ... | ... |
+| 97    | S |   3 | 97 |
+| 98    | S |   3 | 98 |
+| ... | ... | ... |
+
+
  *order_by_expression*  
  指定排序的資料行或運算式。 *order_by_expression* 只能參考 FROM 子句所提供的資料行。 不能指定整數來代表資料行名稱或別名。  
   
@@ -128,17 +208,40 @@ OVER ( [ PARTITION BY value_expression ] [ order_by_clause ] )
  **ASC** | DESC  
  指定指定之資料行的值應該以遞增或遞減順序排序。 ASC 是預設排序次序。 Null 值會當做最低的可能值來處理。  
   
- ROWS | RANGE  
+### <a name="rows-or-range"></a>ROWS 或 RANGE  
 **適用對象**：[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 及更新版本。 
   
  指定資料分割內的起始點和結束點，以進一步限制資料分割中的資料列。 這可以藉由指定與目前資料列有關的資料列範圍 (透過邏輯關聯或實體關聯) 來完成。 可以使用 ROWS 子句來達成實體關聯。  
   
  ROWS 子句會限制資料分割內的資料列，方法是指定目前資料列之前或之後的固定資料列數。 另外，RANGE 子句會以邏輯方式限制資料分割內的資料列，方法是指定與目前資料列的值相關的值範圍。 前後的資料列是根據 ORDER BY 子句的順序定義。 視窗框架 "RANGE ...CURRENT ROW ..." 包含 ORDER BY 運算式中，與目前資料列相同值的所有資料列。 例如，ROWS BETWEEN 2 PRECEDING AND CURRENT ROW 表示此函數操作所在的資料列視窗大小為三個資料列，從之前的 2 個資料列直到目前的資料列。  
+ 
+```sql
+select
+      object_id
+    , [preceding]   = count(*) over(order by object_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW )
+    , [central] = count(*) over(order by object_id ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING )
+    , [following]   = count(*) over(order by object_id ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING)
+from sys.objects
+order by object_id asc
+```
+
+|object_id | preceding | central | following |
+|---|---|---|---|
+| 3 | 1 | 3 | 156 |
+| 5 | 2 | 4 | 155 |
+| 6 | 3 | 5 | 154 |
+| 7 | 4 | 5 | 153 |
+| 8 | 5 | 5 | 152 |
+| ...   | ...   | ...   | ... |
+| 2112726579    | 153   | 5 | 4 |
+| 2119678599    | 154   | 5 | 3 |
+| 2123154609    | 155   | 4 | 2 |
+| 2139154666    | 156   | 3 | 1 | 
   
 > [!NOTE]  
 >  ROWS 或 RANGE 要求必須指定 ORDER BY 子句。 如果 ORDER BY 包含多個順序運算式，則 CURRENT ROW FOR RANGE 會在判斷目前資料列時，考量 ORDER BY 清單中的所有資料列。  
   
- UNBOUNDED PRECEDING  
+#### <a name="unbounded-preceding"></a>UNBOUNDED PRECEDING  
 **適用對象**：[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 及更新版本。  
   
  指定視窗從資料分割的第一個資料列開始。 只能將 UNBOUNDED PRECEDING 指定為視窗起點。  
@@ -146,17 +249,20 @@ OVER ( [ PARTITION BY value_expression ] [ order_by_clause ] )
  \<unsigned value specification> PRECEDING  
  與 \<unsigned value specification> 一起指定，以指出要置於目前資料列前面的資料列或值數目。 RANGE 不允許這項指定。  
   
- CURRENT ROW  
+#### <a name="current-row"></a>CURRENT ROW  
 **適用對象**：[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 及更新版本。 
   
  指定在與 ROWS 一起使用時，視窗在目前的資料列開始或結束，或者在與 RANGE 一起使用時則為目前值。 CURRENT ROW 可以指定為開始點和結束點。  
   
- BETWEEN \<window frame bound > AND \<window frame bound >  
+#### <a name="between-and"></a>BETWEEN AND  
 **適用對象**：[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 及更新版本。 
   
+```sqlsyntax
+BETWEEN <window frame bound > AND <window frame bound >  
+```
  與 ROWS 或 RANGE 一起使用，以指定視窗的下 (開始) 邊界點和上 (結束) 邊界點。 \<window frame bound> 會定義界限開始點，而 \<window frame bound> 則定義界限結束點。 上限不能小於下限。  
   
- UNBOUNDED FOLLOWING  
+#### <a name="unbounded-following"></a>UNBOUNDED FOLLOWING  
 **適用對象**：[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 及更新版本。 
   
  指定視窗在資料分割的最後一個資料列結束。 只能將 UNBOUNDED FOLLOWING 指定為視窗結束點。 例如，RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING 會定義一個視窗，此視窗從資料分割的目前資料列開始，並結束於資料分割的最後一個資料列。  

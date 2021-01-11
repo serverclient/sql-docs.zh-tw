@@ -2,7 +2,7 @@
 title: 使用查詢存放區的最佳做法 | Microsoft Docs
 description: 了解工作負載與 SQL Server 查詢存放區搭配使用的最佳做法，例如使用最新的 SQL Server Management Studio 和查詢效能深入解析。
 ms.custom: ''
-ms.date: 09/02/2020
+ms.date: 12/23/2020
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.technology: performance
@@ -13,12 +13,12 @@ ms.assetid: 5b13b5ac-1e4c-45e7-bda7-ebebe2784551
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||= azure-sqldw-latest||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: d71da2a6d0bcc0cb43529331116acdbb4a6d8136
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a973fd5ec66f101c162e35baec0269f7b6d3d601
+ms.sourcegitcommit: d8a9ad86401bff422d506078c6200494c795e7c0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97418535"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97765207"
 ---
 # <a name="best-practices-with-query-store"></a>使用查詢存放區的最佳做法
 
@@ -124,7 +124,7 @@ ALTER DATABASE [QueryStoreDB]
 SET QUERY_STORE (CLEANUP_POLICY = (STALE_QUERY_THRESHOLD_DAYS = 90));
 ```
 
-[以大小為基準的清除模式]：可指定當查詢存放區的資料大小到達限制時是否自動清除資料。 請啟用 [以大小為基準的清除模式]，以確保查詢存放區一律以讀寫模式執行並收集最新的資料。
+[以大小為基準的清除模式]：可指定當查詢存放區的資料大小到達限制時是否自動清除資料。 請啟用 [以大小為基準的清除模式]，以確保查詢存放區一律以讀寫模式執行並收集最新的資料。  請注意，在繁重的工作負載下，無法保證查詢存放區清除可持續將資料大小維持在限制內。 自動資料清除的進度可能會落後，並 (暫時) 切換為唯讀模式。
 
 ```sql
 ALTER DATABASE [QueryStoreDB]

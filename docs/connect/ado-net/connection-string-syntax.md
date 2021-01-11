@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: f61b867b70825595a012b2167d2c63b13409a8e2
-ms.sourcegitcommit: 0c0e4ab90655dde3e34ebc08487493e621f25dda
+ms.openlocfilehash: 42b1f8704be721c0b52b3c42946c9abbf7efd7db
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442812"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771621"
 ---
 # <a name="connection-string-syntax"></a>連接字串語法
 
@@ -25,7 +25,7 @@ ms.locfileid: "96442812"
 
 <xref:Microsoft.Data.SqlClient> 具有繼承自 <xref:System.Data.Common.DbConnection> 的 `Connection` 物件，以及提供者特定的 <xref:System.Data.Common.DbConnection.ConnectionString%2A> 屬性。 適用於 SqlClient 提供者的特定連接字串語法記載於其 `ConnectionString` 屬性中。 如需連接字串語法的詳細資訊，請參閱 <xref:Microsoft.Data.SqlClient.SqlConnection.ConnectionString%2A>。
 
-## <a name="connection-string-builders"></a>連接字串產生器
+## <a name="connection-string-builders"></a>連接字串建立器
 
  Microsoft SqlClient Data Provider for SQL Server 引進了下列連接字串建立器。
 
@@ -88,13 +88,13 @@ ms.locfileid: "96442812"
 
 <xref:Microsoft.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> 中的 `Type System Version` 關鍵字會指定 SQL Server 類型的用戶端表示法。 如需 <xref:Microsoft.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> 關鍵字的詳細資訊，請參閱 `Type System Version`。
 
-## <a name="connecting-and-attaching-to-sql-server-express-user-instances"></a>連接和附加至 SQL Server Express 使用者執行個體
+## <a name="connect-and-attach-to-sql-server-express-user-instances"></a>連線並附加至 SQL Server Express 使用者執行個體
 
 使用者執行個體是 SQL Server Express 中的功能。 透過使用者執行個體，在最低權限的本機 Windows 帳戶上執行的使用者不需要系統管理員權限，即可附加及執行 SQL Server 資料庫。 使用者執行個體會使用使用者的 Windows 認證執行，而不是以服務方式執行。
 
 如需利用使用者執行個體的詳細資訊，請參閱 [SQL Server Express 使用者執行個體](./sql/sql-server-express-user-instances.md)。
 
-## <a name="using-trustservercertificate"></a>使用 TrustServerCertificate
+## <a name="use-trustservercertificate"></a>使用 TrustServerCertificate
 
 `TrustServerCertificate` 關鍵字只有在使用有效憑證連線到 SQL Server 執行個體時才有效。 將 `TrustServerCertificate` 設為 `true` 時，傳輸層將使用 TLS/SSL 來加密通道，並略過憑證鏈結來驗證信任。
 
@@ -105,7 +105,7 @@ ms.locfileid: "96442812"
 > [!NOTE]
 > 如果 `TrustServerCertificate` 是設定為 `true` 且加密功能已開啟，則即使 `Encrypt` 在連接字串中是設定為 `false`，仍將使用伺服器上指定的加密等級， 否則連接將會失敗。
 
-### <a name="enabling-encryption"></a>啟用加密
+### <a name="enable-encryption"></a>啟用加密
 
 若要在伺服器上尚未佈建憑證時啟用加密，則必須在 SQL Server 組態管理員中設定 [強制通訊協定加密] 與 [信任伺服器憑證] 選項。 在此情況下，如果伺服器上未提供任何可驗證的憑證，加密將會使用自行簽署的伺服器憑證，而不需驗證。
 
@@ -129,3 +129,4 @@ ms.locfileid: "96442812"
 
 - [連接字串](connection-strings.md)
 - [連線到資料來源](connecting-to-data-source.md)
+- [Microsoft ADO.NET for SQL Server](microsoft-ado-net-sql-server.md)

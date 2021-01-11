@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: fb290f9a795c9f64bcb2ee95c66210790a80a71d
-ms.sourcegitcommit: 7a3fdd3f282f634f7382790841d2c2a06c917011
+ms.openlocfilehash: 8f1e0ac5fc52576f0e47ccb8be4b8e90899c6e68
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96563114"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771450"
 ---
 # <a name="connection-strings-and-configuration-files"></a>連接字串與組態檔
 
@@ -27,7 +27,7 @@ ms.locfileid: "96563114"
 
 在應用程式的程式碼中嵌入連接字串可能會導致安全性漏洞和維護問題。 編譯到應用程式原始程式碼中的未加密連接字串，可使用 [Ildasm.exe (IL 反組譯工具)](/dotnet/framework/tools/ildasm-exe-il-disassembler) 工具進行檢視。 此外，如果連接字串變更，應用程式就必須重新編譯。 基於上述理由，建議您將連接字串儲存在應用程式組態檔中。
 
-## <a name="working-with-application-configuration-files"></a>使用應用程式組態檔
+## <a name="work-with-application-configuration-files"></a>使用應用程式組態檔
 
 應用程式組態檔包含特定應用程式專屬的設定。 例如，ASP.NET 應用程式可能擁有一或多個 **web.config** 檔案，Windows 應用程式則可能具有選擇性的 **app.config** 檔案。 組態檔會共用通用的項目，但組態檔的名稱及位置則會根據應用程式的主機而不同。
 
@@ -52,7 +52,7 @@ ms.locfileid: "96563114"
 > [!NOTE]
 > 您可將部分連接字串儲存在組態檔中，然後在執行階段使用 <xref:System.Data.Common.DbConnectionStringBuilder> 類別 (Class) 加以完成。 在您無法預先知道連接字串的項目，或者不想將機密資訊儲存在組態檔中時，這種方法很有用。 如需詳細資訊，請參閱[連接字串建置器](connection-string-builders.md)。
 
-### <a name="using-external-configuration-files"></a>使用外部組態檔
+### <a name="use-external-configuration-files"></a>使用外部組態檔
 
 外部組態檔是包含組態檔片段 (由單一區段組成) 的個別檔案。 外部組態檔接著會由主組態檔來參考。 將 **connectionStrings** 區段儲存在實際分開的檔案中，對於在部署應用程式之後可能會編輯連接字串的情況很有用。 例如，標準的 ASP.NET 行為是在組態檔修改時重新啟動應用程式網域，而這可能導致狀態資訊遺失。 然而，修改外部組態檔並不會造成應用程式重新啟動。 外部組態檔並不僅限於 ASP.NET 才有，Windows 應用程式也可加以利用； 此外，也可以透過檔案存取安全性和權限，限制對外部組態檔的存取權。 執行階段的外部組態檔使用是透明的，而且不需要任何特殊的程式碼。
 
@@ -82,7 +82,7 @@ ms.locfileid: "96563114"
 > [!NOTE]
 > **machine.config** 檔案也包含 **connectionStrings** 區段，後者則包含 Visual Studio 所使用的連接字串。 從 Windows 應用程式中的 **app.config** 檔案依提供者名稱擷取連接字串時，首先會載入 **machine.config** 中的連接字串，然後才會載入 **app.config** 的項目。如果在 **connectionStrings** 元素之後緊接著新增 **clear**，就會從記憶體中的資料結構移除所有繼承的參考，如此便只會考量本機 **app.config** 檔案中所定義的連接字串。
 
-### <a name="working-with-the-configuration-classes"></a>使用組態類別
+### <a name="work-with-the-configuration-files"></a>使用組態檔
 
 從 .NET Framework 2.0 開始，在本機電腦上使用組態檔時，就會使用 <xref:System.Configuration.ConfigurationManager> 來取代已被取代的 <xref:System.Configuration.ConfigurationSettings>。 <xref:System.Web.Configuration.WebConfigurationManager> 則會用於搭配 ASP.NET 組態檔。 這是為了在 Web 伺服器上使用組態檔而設計，可透過程式設計的方式存取 **system.web** 之類的組態檔區段。
 
@@ -118,7 +118,7 @@ ms.locfileid: "96563114"
 
 [!code-csharp[DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider#1](~/../SqlClient/doc/samples/ConnectionStringSettings_RetrieveFromConfigByProvider.cs#1)]
 
-## <a name="encrypting-configuration-file-sections-using-protected-configuration"></a>使用受保護的組態來加密組態檔區段
+## <a name="encrypt-configuration-file-sections-using-protected-configuration"></a>使用受保護的組態來加密組態檔區塊
 
 ASP.NET 2.0 導入一項稱為「受保護的組態」的新功能，可用於加密組態檔中的機密資訊。 雖然主要是針對 ASP.NET 所設計，但這項功能仍可用來加密 Windows 應用程式中的組態檔區段。 如需受保護之組態功能的詳細描述，請參閱[使用受保護的組態加密組態資訊](/previous-versions/aspnet/53tyfkaw(v=vs.100))。
 
@@ -160,7 +160,7 @@ ASP.NET 2.0 導入一項稱為「受保護的組態」的新功能，可用於�
 
 這兩種提供者都提供高度加密的資料。 不過，如果您打算在多個伺服器 (例如 Web 伺服陣列) 上使用相同的加密組態檔，則只有使用 <xref:System.Configuration.RsaProtectedConfigurationProvider> 才能匯出用於加密資料的加密金鑰並將其匯入另一個伺服器。 如需詳細資訊，請參閱[匯入和匯出受保護的組態 RSA 金鑰容器](/previous-versions/aspnet/yxw286t2(v=vs.100))。
 
-### <a name="using-the-configuration-classes"></a>使用組態類別
+### <a name="use-the-configuration-classes"></a>使用組態類別
 
 <xref:System.Configuration> 命名空間 (Namespace) 提供類別 (Class)，以透過程式設計的方式使用組態設定。 <xref:System.Configuration.ConfigurationManager> 類別可用於存取電腦、應用程式及使用者組態檔。 如果要建立 ASP.NET 應用程式，您可以使用 <xref:System.Web.Configuration.WebConfigurationManager> 類別，此類別會提供相同功能，同時還允許您存取 ASP.NET 應用程式獨有的設定，例如可在 **\<system.web>** 中找到的設定。
 
@@ -191,8 +191,9 @@ ASP.NET 2.0 導入一項稱為「受保護的組態」的新功能，可用於�
 
 ## <a name="see-also"></a>另請參閱
 
-- [連接字串產生器](connection-string-builders.md)
-- [保護連接資訊](protecting-connection-information.md)
+- [連接字串建立器](connection-string-builders.md)
+- [保護連線資訊](protecting-connection-information.md)
 - [使用組態類別](/previous-versions/visualstudio/visual-studio-2008/ms228063(v=vs.90))
 - [設定應用程式](/dotnet/framework/configure-apps/index)
-- [管理 ASP.NET 網站](/previous-versions/aspnet/6hy1xzbw(v=vs.100))
+- [ASP.NET 網站管理](/previous-versions/aspnet/6hy1xzbw(v=vs.100))
+- [Microsoft ADO.NET for SQL Server](microsoft-ado-net-sql-server.md)

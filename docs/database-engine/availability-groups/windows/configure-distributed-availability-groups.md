@@ -5,17 +5,17 @@ ms.custom: seodec18
 ms.date: 01/28/2020
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: how-to
 ms.assetid: f7c7acc5-a350-4a17-95e1-e689c78a0900
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: df4daf119464ccf90c751f97daeea0379d8e8a21
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: b6335c43c179dfcdb94ecae98b829f3ff8bb50aa
+ms.sourcegitcommit: e5664d20ed507a6f1b5e8ae7429a172a427b066c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96506342"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697099"
 ---
 # <a name="configure-an-always-on-distributed-availability-group"></a>設定 Always On 分散式可用性群組  
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -155,6 +155,10 @@ GO
 ## <a name="create-distributed-availability-group-on-first-cluster"></a>在第一個叢集上建立分散式可用性群組  
  在第一個 WSFC 上，建立分散式可用性群組 (在此範例中名為 `distributedag` )。 使用 **CREATE AVAILABILITY GROUP** 命令搭配 **DISTRIBUTED** 選項。 **AVAILABILITY GROUP ON** 參數會指定成員可用性群組 `ag1` 和 `ag2`。  
   
+# <a name="automatic-seeding"></a>[自動植入](#tab/automatic)
+
+若要使用自動植入來建立分散式可用性群組，請使用下列 Transact-SQL 程式碼： 
+
 ```sql  
 CREATE AVAILABILITY GROUP [distributedag]  
    WITH (DISTRIBUTED)   
@@ -176,6 +180,35 @@ CREATE AVAILABILITY GROUP [distributedag]
 GO   
 ```  
   
+
+# <a name="manual-seeding"></a>[手動植入](#tab/manual)
+
+若要使用手動植入來建立分散式可用性群組，請使用下列 Transact-SQL 程式碼： 
+
+```sql
+CREATE AVAILABILITY GROUP [distributedag]  
+   WITH (DISTRIBUTED)   
+   AVAILABILITY GROUP ON  
+      'ag1' WITH    
+      (   
+         LISTENER_URL = 'tcp://ag1-listener.contoso.com:5022',    
+         AVAILABILITY_MODE = ASYNCHRONOUS_COMMIT,   
+         FAILOVER_MODE = MANUAL,   
+         SEEDING_MODE = MANUAL   
+      ),   
+      'ag2' WITH    
+      (   
+         LISTENER_URL = 'tcp://ag2-listener.contoso.com:5022',   
+         AVAILABILITY_MODE = ASYNCHRONOUS_COMMIT,   
+         FAILOVER_MODE = MANUAL,   
+         SEEDING_MODE = MANUAL   
+      );    
+GO   
+
+```
+
+---
+
 > [!NOTE]  
 >  **LISTENER_URL** 會指定每個可用性群組的接聽程式，以及可用性群組的資料庫鏡像端點。 在此範例中，其為通訊埠 `5022` (非用於建立接聽程式的通訊埠 `60173` )。 如果您要使用負載平衡器 (例如在 Azure 中)，則請[新增分散式可用性群組連接埠的負載平衡規則](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener#add-load-balancing-rule-for-distributed-availability-group)。 除了 SQL Server 執行個體連接埠之外，還需要新增接聽程式連接埠的規則。 
 
@@ -196,6 +229,10 @@ ALTER AVAILABILITY GROUP [distributedag]
 ## <a name="join-distributed-availability-group-on-second-cluster"></a>將分散式可用性群組加入第二個叢集  
  然後在第二個 WSFC 上聯結分散式可用性群組。  
   
+# <a name="automatic-seeding"></a>[自動植入](#tab/automatic)
+
+若要使用自動植入來聯結分散式可用性群組，請使用下列 Transact-SQL 程式碼： 
+
 ```sql  
 ALTER AVAILABILITY GROUP [distributedag]   
    JOIN   
@@ -216,6 +253,61 @@ ALTER AVAILABILITY GROUP [distributedag]
       );    
 GO  
 ```  
+
+
+
+# <a name="manual-seeding"></a>[手動植入](#tab/manual)
+
+若要使用手動植入來聯結分散式可用性群組，請使用下列 Transact-SQL 程式碼： 
+
+```sql
+ALTER AVAILABILITY GROUP [distributedag]   
+   JOIN   
+   AVAILABILITY GROUP ON  
+      'ag1' WITH    
+      (   
+         LISTENER_URL = 'tcp://ag1-listener.contoso.com:5022',    
+         AVAILABILITY_MODE = ASYNCHRONOUS_COMMIT,   
+         FAILOVER_MODE = MANUAL,   
+         SEEDING_MODE = MANUAL   
+      ),   
+      'ag2' WITH    
+      (   
+         LISTENER_URL = 'tcp://ag2-listener.contoso.com:5022',   
+         AVAILABILITY_MODE = ASYNCHRONOUS_COMMIT,   
+         FAILOVER_MODE = MANUAL,   
+         SEEDING_MODE = MANUAL  
+      );    
+GO  
+```
+
+若使用手動植入在轉寄站上建立資料庫，請從全域主要複本執行完整備份與交易記錄備份，然後使用 NONRECOVERY 選項以將其還原至該轉寄站。 例如：
+
+在全域主要複本上進行備份： 
+
+```sql
+BACKUP DATABASE [db1] 
+TO DISK = '<full backup location>' WITH FORMAT
+BACKUP LOG [db1] 
+TO DISK = '<log backup location>' WITH FORMAT
+```
+
+還原至轉寄站： 
+
+```sql
+RESTORE DATABASE [db1] 
+FROM DISK = '<full backup location>' WITH NORECOVERY
+RESTORE LOG [db1] FROM DISK = '<log backup location>' WITH NORECOVERY
+```
+
+還原之後，在轉寄站上執行下列程式碼
+
+```sql
+ALTER DATABASE [db1] SET HADR AVAILABILITY GROUP = [distributedag]
+```
+
+---
+
 
 ## <a name="join-the-database-on-the-secondary-of-the-second-availability-group"></a><a name="failover"></a> 聯結第二個可用性群組次要複本上的資料庫
 在第二個可用性群組的次要複本上的資料庫處於還原中狀態後，您必須手動將它聯結至可用性群組。

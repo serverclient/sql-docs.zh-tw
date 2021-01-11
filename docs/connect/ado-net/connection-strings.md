@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: e37d77304644d1adb50bb195dd32d4c4e1222c09
-ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
+ms.openlocfilehash: 257ed7d43f8ab204c7c7e7575c69251be6f2efdf
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96126413"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771620"
 ---
 # <a name="connection-strings-in-adonet"></a>ADO.NET 中的連接字串
 
@@ -69,7 +69,7 @@ Keyword=a=b=c
 
 輸入錯誤可能導致錯誤。 例如，`Integrated Security=true` 是有效的，但 `IntegratedSecurity=true` 會導致錯誤。
 
-在執行階段，從未經驗證的使用者輸入手動建構的連接字串可能成為字串插入式攻擊的弱點，進而危及資料來源的安全性。 為了解決這些問題，建立了[連接字串建立器](connection-string-builders.md)。 此連接字串建立器會公開參數作為強型別屬性，而且能夠在將連接字串傳送至資料來源之前進行驗證。
+在執行階段從未經驗證的使用者輸入手動建構的連接字串可能成為字串插入式攻擊的弱點，進而危及資料來源的安全性。 為了解決這些問題，已建立 <xref:Microsoft.Data.SqlClient.SqlConnectionStringBuilder> 類別。 此[連接字串建立器](connection-string-builders.md)類別會公開參數作為強型別屬性，而且能夠在將連接字串傳送至資料來源之前進行驗證。
 
 ## <a name="in-this-section"></a>本節內容
 
@@ -84,3 +84,7 @@ Keyword=a=b=c
 
 [保護連線資訊](protecting-connection-information.md)\
 示範的技術可保護用於連接至資料來源的資訊。
+
+## <a name="see-also"></a>請參閱
+
+- [Microsoft ADO.NET for SQL Server](microsoft-ado-net-sql-server.md)

@@ -1,7 +1,7 @@
 ---
 title: SqlClient 驅動程式支援生命週期
 description: 包含產品支援週期資訊的頁面。
-ms.date: 11/19/2020
+ms.date: 01/04/2020
 dev_langs:
 - csharp
 - vb
@@ -13,12 +13,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-jizho2
-ms.openlocfilehash: eef9e81c94c930b9f00689b41339d54a0f0302be
-ms.sourcegitcommit: 0c0e4ab90655dde3e34ebc08487493e621f25dda
+ms.openlocfilehash: 200e600448f1f93cca3d566be10d6065ffd537e7
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442712"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878581"
 ---
 # <a name="sqlclient-driver-support-lifecycle"></a>SqlClient 驅動程式支援生命週期
 
@@ -36,7 +36,7 @@ Microsoft.Data.SqlClient 程式庫會遵循適用於所有版本的最新 .NET C
 
 | 版本 | 正式發行日期 | 最新修補程式版本 | 修補程式發行日期 | 支援層級  | 結束支援 |
 | -- | -- | -- | -- | -- | -- |
-| 2.1 | 2020 年 11 月 19 日 | 2.1.0 | 2020 年 11 月 19 日 | 目前 | |
+| 2.1 | 2020 年 11 月 19 日 | 2.1.1 | 2020 年 12 月 18 日 | 目前 | |
 | 2.0 | 2020 年 6 月 16 日 | 2.0.1 | 2020 年 8 月 25 日 | 目前 | 2021 年 2 月 19 日 |
 | 1.1 | 2019 年 11 月 20 日 | 1.1.3 | 2020 年 5 月 15 日 | LTS | 2022 年 11 月 21 日 |
 

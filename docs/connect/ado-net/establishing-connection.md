@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: cb77d01ede16a6fa68aac6dcb49612ad8fd9a191
-ms.sourcegitcommit: 7a3fdd3f282f634f7382790841d2c2a06c917011
+ms.openlocfilehash: b3d92f49fb4eae6184a673ffc25ff6bbdf521626
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96563081"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771590"
 ---
 # <a name="establishing-connection"></a>建立連線
 
@@ -27,7 +27,7 @@ ms.locfileid: "96563081"
 
 若要連線到 Microsoft SQL Server，請使用 Microsoft SqlClient Data Provider for SQL Server 的 <xref:Microsoft.Data.SqlClient.SqlConnection> 物件。 若要安全地儲存及擷取連接字串，請參閱[保護連線資訊](protecting-connection-information.md)。
 
-## <a name="closing-connections"></a>關閉連接
+## <a name="closing-connections"></a>關閉連線
 
 建議您在使用完連接後一律關閉該連接，以便將連接傳回集區。 即使有未處理的例外狀況，Visual Basic 或 C# 中的 `Using` 區塊也會在程式碼結束該區塊時自動處理連接。 如需詳細資訊，請參閱 [using 陳述式](/dotnet/csharp/language-reference/keywords/using-statement)與 [Using 陳述式](/dotnet/visual-basic/language-reference/statements/using-statement)。
 
@@ -47,7 +47,7 @@ ms.locfileid: "96563081"
 
 [!code-csharp[SqlConnection.Open#1](~/../sqlclient/doc/samples/SqlConnection_Open.cs#1)]
 
-### <a name="integrated-security-and-aspnet"></a>整合安全性與 ASP.NET
+### <a name="integrated-security-and-aspnet"></a>整合式安全性與 ASP.NET
 
 連線到 SQL Server 時，SQL Server 整合式安全性 (也稱為信任連接) 有助於提供保護，因為其不會在連接字串中公開使用者識別碼與密碼，而且是建議用於驗證連線的方法。 整合安全性會使用執行中處理序的目前安全性識別或語彙基元。 針對傳統型應用程式，這個身分識別通常是目前登入之使用者的身分識別。
 
@@ -57,3 +57,4 @@ ASP.NET 應用程式的安全性識別可設為數個不同的選項之一。 �
 
 - [連線到資料來源](connecting-to-data-source.md)
 - [連接字串](connection-strings.md)
+- [Microsoft ADO.NET for SQL Server](microsoft-ado-net-sql-server.md)

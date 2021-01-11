@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: 0be62b3c2a63f7b25889e25f88969aa5aaa9b50e
-ms.sourcegitcommit: c127c0752e84cccd38a7e23ac74c0362a40f952e
+ms.openlocfilehash: 6f2feb876d0f232f4d7951de8ee1cc84587e6486
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96772191"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771328"
 ---
 # <a name="update-data-sources-with-dataadapters"></a>使用 DataAdapter 更新資料來源
 
@@ -75,7 +75,7 @@ ms.locfileid: "96772191"
 
 ## <a name="autoincrement-columns"></a>自動遞增資料行
 
-如果來自資料來源的資料表具有自動遞增的資料行，您就可以將這些資料行填入 `DataSet` 中，方法包括：將自動遞增值當成預存程序的輸出參數傳回並將它對應至資料表的資料行、傳回結果集 (由預存程序或 SQL 陳述式所傳回) 之第一個資料列中的自動遞增值，或使用 `RowUpdated` 的 `DataAdapter` 事件來執行其他 SELECT 陳述式。
+如果來自資料來源的資料表具有自動遞增的資料行，您就可以將這些資料行填入 `DataSet` 中，方法包括：將自動遞增值當成預存程序的輸出參數傳回並將它對應至資料表的資料行、傳回結果集 (由預存程序或 SQL 陳述式所傳回) 之第一個資料列中的自動遞增值，或使用 `RowUpdated` 的 `DataAdapter` 事件來執行其他 SELECT 陳述式。 如需詳細資訊與範例，請參閱[擷取識別或自動編號值](retrieve-identity-or-autonumber-values.md)。
 
 ## <a name="ordering-of-inserts-updates-and-deletes"></a>插入、更新與刪除的順序
 
@@ -172,4 +172,5 @@ GO
 ## <a name="see-also"></a>請參閱
 
 - [DataAdapter 和 DataReader](dataadapters-datareaders.md)
+- [擷取識別或自動編號值](retrieve-identity-or-autonumber-values.md)
 - [Microsoft ADO.NET for SQL Server](microsoft-ado-net-sql-server.md)

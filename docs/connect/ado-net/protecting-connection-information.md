@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: 146063d665b89a8541c34d9cc3b0b6da3939d801
-ms.sourcegitcommit: 7a3fdd3f282f634f7382790841d2c2a06c917011
+ms.openlocfilehash: 1d170d712269bf169d069ef7b93f975de855f8ec
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96563094"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771400"
 ---
 # <a name="protecting-connection-information"></a>保護連線資訊
 
@@ -27,7 +27,7 @@ ms.locfileid: "96563094"
 
 涉及連接字串的安全性漏洞，可能會根據使用的驗證類型、連接字串在記憶體及磁碟中的保存方式，以及在執行階段用來建構連接字串的技巧而引發。
 
-## <a name="use-windows-authentication"></a>[使用 Windows 驗證]
+## <a name="use-windows-authentication"></a>使用 Windows 驗證
 
 為了限制他人存取您的資料來源，您必須保護連線資訊，例如使用者 ID、密碼和資料來源名稱。 為了避免公開使用者資訊，建議您盡可能使用 Windows 驗證 (有時也稱為「整合式安全性」)。 Windows 驗證是藉由 `Integrated Security` 或 `Trusted_Connection` 關鍵字指定於連接字串中，可免除使用使用者 ID 和密碼的需要。 在使用 Windows 驗證時，使用者會由 Windows 進行驗證，而對伺服器和資料庫資源的存取權則是藉由授權給 Windows 使用者和群組來決定。
 
@@ -41,11 +41,11 @@ ms.locfileid: "96563094"
 
 固定識別帳戶應該是低權限的帳戶，僅為其授與資料庫中的必要權限。 此外，您也應該將組態檔加密，讓使用者名稱和密碼不至於以純文字方式公開。
 
-## <a name="avoid-injection-attacks-with-connection-string-builders"></a>使用連接字串產生器來避免插入式攻擊
+## <a name="avoid-injection-attacks-with-connection-string-builders"></a>使用連接字串建立器來避免插入式攻擊
 
 當使用動態字串串連來根據使用者輸入建立連接字串時，就可能發生連接字串插入式攻擊。 如果使用者輸入未經驗證且未逸出惡意的文字或字元，攻擊者就可能得以存取伺服器上的機密資料或其他資源。 為了解決此問題，Microsoft SqlClient Data Provider for SQL Server 引進了新的連接字串建立器類別，來驗證連接字串語法，並確保未引進其他參數。 如需詳細資訊，請參閱[連接字串建置器](connection-string-builders.md)。
 
-## <a name="use-persist-security-infofalse"></a>使用 Persist Security Info=False
+## <a name="use-persist-security-infofalse"></a>使用 "Persist Security Info=false"
 
 `Persist Security Info` 的預設值為 False；建議您在所有連接字串中都使用此預設值。 如果將 `Persist Security Info` 設定為 `true` 或 `yes`，則在開啟連接後，可透過連接取得安全機密資訊，包括使用者 ID 和密碼。 當 `Persist Security Info` 是設定為 `false` 或 `no` 時，安全性資訊會在用來開啟連接之後捨棄，以確保未受信任的來源無法存取安全機密資訊。
 
@@ -58,3 +58,4 @@ ms.locfileid: "96563094"
 ## <a name="see-also"></a>另請參閱
 
 - [使用受保護的設定來加密設定資訊](/previous-versions/aspnet/53tyfkaw(v=vs.100))
+- [Microsoft ADO.NET for SQL Server](microsoft-ado-net-sql-server.md)

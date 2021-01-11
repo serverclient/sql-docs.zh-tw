@@ -11,14 +11,14 @@ ms.topic: conceptual
 ms.assetid: de676bea-cec7-479d-891a-39ac8b85664f
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 4212c397c712351e951060032f6e7a2ece6a5c3f
-ms.sourcegitcommit: 5a1ed81749800c33059dac91b0e18bd8bb3081b1
+ms.openlocfilehash: dc7532aaead7b2257755f2db689c2cbbbd05d3c3
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96129036"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97639069"
 ---
-# <a name="sql-server-backup-to-url-best-practices-and-troubleshooting"></a>SQL Server 備份至 URL 的最佳做法和疑難排解
+# <a name="sql-server-back-up-to-url-best-practices-and-troubleshooting"></a>SQL Server 備份至 URL 的最佳做法和疑難排解
 
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
@@ -52,86 +52,118 @@ ms.locfileid: "96129036"
 -   備份大型檔案時，務必遵循[管理備份](#managing-backups-mb1)一節中的建議使用 `WITH COMPRESSION` 選項。  
   
 ## <a name="troubleshooting-backup-to-or-restore-from-url"></a>疑難排解備份至 URL 或從中還原  
- 以下是對備份至 Azure Blob 儲存體服務或從中還原時發生的錯誤，進行疑難排解的一些快速方法。  
-  
- 若要避免由於不支援的選項或限制而發生的錯誤，請在 [使用 Microsoft Azure Blob 儲存體服務進行 SQL Server 備份及還原](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md) 文章中檢閱限制的清單，以及支援 BACKUP 和 RESTORE 命令的資訊。  
-  
- **驗證錯誤：**  
-  
--   `WITH CREDENTIAL` 是新的選項，而且在備份至 Azure Blob 儲存體服務或從中還原時是必要的。 與認證有關的失敗可能包括：  
-  
-     **BACKUP** 或 **RESTORE** 命令中指定的認證不存在。 若要避免此問題，您可以在 Backup 陳述式中加入 T-SQL 陳述式來建立認證 (如果認證不存在的話)。 以下是您可以使用的範例：  
-  
-    ```sql  
-    IF NOT EXISTS  
-    (SELECT * FROM sys.credentials   
-    WHERE credential_identity = 'mycredential')  
-    CREATE CREDENTIAL <credential name> WITH IDENTITY = 'mystorageaccount'  
-    , SECRET = '<storage access key>' ;  
-    ```  
-  
--   認證存在，但是用來執行 Backup 命令的登入帳戶沒有存取認證的權限。 請使用具備*「更改任何認證」_權限的 **db_backupoperator** 角色登入帳戶。  
-  
--   確認儲存體帳戶名稱與金鑰值。 儲存在認證中的資訊必須符合您在備份和還原作業中使用之 Azure 儲存體帳戶的屬性值。  
-  
- _ *備份錯誤/失敗：* *  
-  
--   相同 Blob 的平行備份會導致其中一個備份失敗並出現 [初始化失敗]  錯誤。  
-  
--   若您正在使用分頁 Blob (例如 `BACKUP... TO URL... WITH CREDENTIAL`)，請使用下列錯誤記錄來協助針對備份錯誤進行疑難排解：  
-  
-    -   您可以使用下列格式來設定追蹤旗標 3051，以便記錄至特定錯誤記錄：  
-  
-        `BackupToUrl-\<instname>-\<dbname>-action-\<PID>.log`，其中 `\<action>` 是下列其中之一：  
-  
-        -   **DB**  
-        -   **FILELISTONLY**  
-        -   **LABELONLY**  
-        -   **HEADERONLY**  
-        -   **VERIFYONLY**  
-  
-    -   您也可以透過檢閱 Windows 事件記錄檔 (在名為 `SQLBackupToUrl` 的應用程式記錄底下)，尋找相關資訊。  
 
-    -   備份大型資料庫時，請考慮 COMPRESSION、MAXTRANSFERSIZE、BLOCKSIZE 和多個 URL 引數。  請參閱[將 VLDB 備份至 Azure Blob 儲存體](/archive/blogs/sqlcat/backing-up-a-vldb-to-azure-blob-storage)
+以下是對備份至 Azure Blob 儲存體服務或從中還原時發生的錯誤，進行疑難排解的一些快速方法。  
   
-        ```console
-        Msg 3202, Level 16, State 1, Line 1
-        Write on "https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak" failed: 1117(The request could not be performed because of an I/O device error.)
-        Msg 3013, Level 16, State 1, Line 1
-        BACKUP DATABASE is terminating abnormally.
-        ```
+若要避免由於不支援的選項或限制而發生的錯誤，請在 [使用 Microsoft Azure Blob 儲存體服務進行 SQL Server 備份及還原](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md) 文章中檢閱限制的清單，以及支援 BACKUP 和 RESTORE 命令的資訊。  
 
-        ```sql  
-        BACKUP DATABASE TestDb
-        TO URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak',
-        URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_1.bak',
-        URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_2.bak'
-        WITH COMPRESSION, MAXTRANSFERSIZE = 4194304, BLOCKSIZE = 65536;  
-        ```  
+**初始化失敗** 
 
--   從壓縮備份還原時，您可能會看見下列錯誤：  
+相同 Blob 的平行備份會導致其中一個備份失敗並出現 [初始化失敗]  錯誤。 
+
+若您正在使用分頁 Blob (例如 `BACKUP... TO URL... WITH CREDENTIAL`)，請使用下列錯誤記錄來協助針對備份錯誤進行疑難排解：  
   
-    -   `SqlException 3284 occurred. Severity: 16 State: 5  
-        Message Filemark on device 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak' is not aligned.           Reissue the Restore statement with the same block size used to create the backupset: '65536' looks like a possible value.`  
+您可以使用下列格式來設定追蹤旗標 3051，以便記錄至特定錯誤記錄：  
   
-        若要解決此錯誤，請重新發出 **RESTORE** 陳述式並搭配指定 **BLOCKSIZE = 65536**。  
+`BackupToUrl-\<instname>-\<dbname>-action-\<PID>.log`，其中 `\<action>` 是下列其中之一：  
   
--   含有使用中租用的 Blob 導致備份期間發生錯誤：失敗的備份活動可能會產生含有使用中租用的 Blob。  
+-   **DB**  
+-   **FILELISTONLY**  
+-   **LABELONLY**  
+-   **HEADERONLY**  
+-   **VERIFYONLY**  
   
-     如果重新嘗試執行 Backup 陳述式，備份作業可能會失敗並出現類似以下的錯誤：  
+您也可以透過檢閱 Windows 事件記錄檔 (在名為 `SQLBackupToUrl` 的應用程式記錄底下)，尋找相關資訊。  
+
+**因為 I/O 裝置錯誤，所以無法執行要求。**
+
+備份大型資料庫時，請考慮 COMPRESSION、MAXTRANSFERSIZE、BLOCKSIZE 與多個 URL 引數。  請參閱[將 VLDB 備份至 Azure Blob 儲存體](/archive/blogs/sqlcat/backing-up-a-vldb-to-azure-blob-storage)
+
+錯誤： 
+
+```console
+Msg 3202, Level 16, State 1, Line 1
+Write on "https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak" failed: 
+1117(The request could not be performed because of an I/O device error.)
+Msg 3013, Level 16, State 1, Line 1
+BACKUP DATABASE is terminating abnormally.
+```
+
+範例解決方案： 
+
+```sql  
+BACKUP DATABASE TestDb
+TO URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak',
+URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_1.bak',
+URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_2.bak'
+WITH COMPRESSION, MAXTRANSFERSIZE = 4194304, BLOCKSIZE = 65536;  
+```  
+
+**尚未調準裝置上的訊息檔案標記。**
+
+從壓縮備份還原時，您可能會看見下列錯誤：  
   
-     `Backup to URL received an exception from the remote endpoint. Exception Message: The remote server returned an error: (412) There is currently a lease on the blob and no lease ID was specified in the request.`  
+```
+SqlException 3284 occurred. Severity: 16 State: 5  
+Message Filemark on device 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak' is not aligned.
+Reissue the Restore statement with the same block size used to create the backupset: '65536' looks like a possible value.  
+```
   
-     如果針對擁有使用中租用的備份 Blob 檔案執行 Restore 陳述式，還原作業會失敗並出現類似以下的錯誤：  
+若要解決此錯誤，請重新發出 **RESTORE** 陳述式並搭配指定 **BLOCKSIZE = 65536**。  
   
-     `Exception Message: The remote server returned an error: (409) Conflict..`  
+**失敗的備份活動可能會產生含有使用中租用的 Blob。**
+
+因為 Blob 具有使用中的租用而導致備份期間發生錯誤：`Failed backup activity can result in blobs with active leases.`  
+
+如果重新嘗試執行 Backup 陳述式，備份作業可能會失敗並出現類似以下的錯誤：  
+
+```
+Backup to URL received an exception from the remote endpoint. Exception Message: 
+The remote server returned an error: (412) There is currently a lease on the blob and no lease ID was specified in the request. 
+```
+
+如果針對擁有使用中租用的備份 Blob 檔案執行 Restore 陳述式，還原作業會失敗並出現類似以下的錯誤：  
   
-     發生這類錯誤時，您必須刪除 Blob 檔案。 如需有關此案例以及如何更正這個問題的詳細資訊，請參閱 [刪除擁有使用中租用的備份 Blob 檔案](../../relational-databases/backup-restore/deleting-backup-blob-files-with-active-leases.md)  
+`Exception Message: The remote server returned an error: (409) Conflict..`  
+  
+發生這類錯誤時，您必須刪除 Blob 檔案。 如需有關此案例以及如何更正這個問題的詳細資訊，請參閱 [刪除擁有使用中租用的備份 Blob 檔案](../../relational-databases/backup-restore/deleting-backup-blob-files-with-active-leases.md)  
+
+**作業系統錯誤 50：不支援此要求**
+ 
+備份資料庫時，您可能會因為下列原因而看到錯誤 `Operating system error 50(The request is not supported)`： 
+
+   - 指定的儲存體帳戶不是一般用途 V1/V2。
+   - SAS 權杖超過 128 個字元。
+   - 建立認證時，SAS 權杖的權杖開頭具有 `?` 符號。 如果是，則將其移除。
+   - 目前的連線無法使用儲存體總管或 SQL Server Management Studio (SSMS)，從目前的機器連線到儲存體帳戶。 
+   - 指派給 SAS 權杖的原則已過期。 請使用 Azure 儲存體總管建立新原則，並使用該原則建立新的 SAS 權杖，或改變認證，然後再次嘗試備份。 
+
+**驗證錯誤**
+  
+`WITH CREDENTIAL` 是新的選項，而且在備份至 Azure Blob 儲存體服務或從中還原時是必要的。
+
+與認證有關的失敗可能為：`The credential specified in the **BACKUP** or **RESTORE** command does not exist. `
+
+若要避免此問題，您可以在 Backup 陳述式中加入 T-SQL 陳述式來建立認證 (如果認證不存在的話)。 以下是您可以使用的範例：  
+
+  
+```sql  
+IF NOT EXISTS  
+(SELECT * FROM sys.credentials   
+WHERE credential_identity = 'mycredential')  
+CREATE CREDENTIAL <credential name> WITH IDENTITY = 'mystorageaccount'  
+, SECRET = '<storage access key>' ;  
+```  
+  
+認證存在，但是用來執行 Backup 命令的登入帳戶沒有存取認證的權限。 請使用具備*「更改任何認證」_權限的 **db_backupoperator** 角色登入帳戶。  
+  
+確認儲存體帳戶名稱與金鑰值。 儲存在認證中的資訊必須符合您在備份和還原作業中使用之 Azure 儲存體帳戶的屬性值。  
+  
   
 ## <a name="proxy-errors"></a>Proxy 錯誤  
  如果您使用 Proxy 伺服器存取網際網路，可能會看見下列問題：  
   
- **Proxy 伺服器連線節流：**  
+ _ *Proxy 伺服器進行連線節流**  
   
  Proxy 伺服器可能有限制每分鐘連接數目的設定。 備份至 URL 處理序是一個多執行緒處理序，因此可能會超出此限制。 如果發生這種情況，Proxy 伺服器會清除該連接。 若要解決這個問題，請變更 Proxy 設定，讓 SQL Server 不使用 Proxy。 以下是您可能在錯誤記錄檔中看到的類型或錯誤訊息的部分範例：  
   

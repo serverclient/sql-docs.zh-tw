@@ -2,7 +2,7 @@
 title: 連接到 Azure SQL Database
 description: 此文章討論使用 Microsoft JDBC Driver for SQL Server 連線到 Azure SQL Database 時發生的問題。
 ms.custom: ''
-ms.date: 08/12/2019
+ms.date: 12/18/2020
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 49645b1f-39b1-4757-bda1-c51ebc375c34
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: bda9c33588c8248d0aff62f555ec46451d0e9e78
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 03768a309ac10fc16fd1a743660df6fe74b088e7
+ms.sourcegitcommit: bc8474fa200ef0de7498dbb103bc76e3e3a4def4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91725489"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97709667"
 ---
 # <a name="connecting-to-an-azure-sql-database"></a>連接到 Azure SQL Database
 
@@ -43,7 +43,13 @@ ms.locfileid: "91725489"
 
 - 於 Azure SQL 閘道閒置，其中可能會發生 TCP **keepalive** 訊息 (使連線從 TCP 觀點而言未閒置)，但在 30 分鐘內沒有使用中查詢。 在此狀況下，閘道會在 30 分鐘時判定 TDS 連接閒置並結束連接。  
   
-若要避免網路元件中斷閒置連接，您應該在載入此驅動程式的作業系統上設定下列登錄設定 (或其非 Windows 對等項目)：  
+若要解決第二點並避免閘道終止閒置連線，您可以：
+
+* 在設定 Azure SQL 資料來源時，使用 [重新導向] [連線原則](/azure/azure-sql/database/connectivity-architecture#connection-policy)。
+
+* 透過輕量活動讓連線保持作用中狀態。 不建議使用這個方法，如果要使用，應該只在沒有其他可能的選擇時才使用。
+
+若要解決第一點並避免網路元件中斷閒置連線，您應該在載入該驅動程式的作業系統上設定下列登錄設定 (或其非 Windows 對等項目)：  
   
 |登錄設定|建議值|  
 |----------------------|-----------------------|  
@@ -53,7 +59,13 @@ ms.locfileid: "91725489"
   
 重新啟動電腦，讓這些登錄設定生效。  
 
-若要在 Azure 中執行時完成此作業，請建立啟動工作以加入登錄機碼。  例如，您可以將下列啟動工作加入至服務定義檔：  
+KeepAliveTime 與 KeepAliveInterval 值是以毫秒為單位。 這些設定將會在 10 到 40 秒內中斷無回應的連線。 傳送「保持運作」封包之後，如果沒有收到任何回應，則會每秒重試一次，最多 10 次。 如果在這段時間內沒有收到任何回應，就會中斷用戶端通訊端的連線。 視環境而定，建議您增加 KeepAliveInterval 以配合可能會導致伺服器超過 10 無法回應的已知中斷作業 (例如虛擬機器移轉)。
+
+> [!NOTE]
+> 在 Windows Vista 或 Windows 2008 與更新版本上，無法控制 TcpMaxDataRetransmissions。
+
+若要在於 Azure 中執行時執行此設定，請建立啟動工作以加入登錄機碼。  例如，您可以將下列啟動工作加入至服務定義檔：  
+
 
 ```xml
 <Startup>  
@@ -62,7 +74,7 @@ ms.locfileid: "91725489"
 </Startup>  
 ```
 
-然後，將 AddKeepAlive.cmd 檔案加入至您的專案。 將 [複製到輸出目錄] 設定設為 [永遠複製]。 下面是範例 AddKeepAlive.cmd 檔案：  
+然後，將 AddKeepAlive.cmd 檔案加入至您的專案。 將 [複製到輸出目錄] 設定設為 [永遠複製]。 下列指令碼是範例 AddKeepAlive.cmd 檔案：  
 
 ```bat
 if exist keepalive.txt goto done  

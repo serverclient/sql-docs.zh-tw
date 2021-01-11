@@ -2,7 +2,7 @@
 title: 資源管理員 | Microsoft 文件
 description: 了解 SQL Server Resource Governor 功能，以限制內送應用程式要求所能使用的 CPU、實體 I/O 和記憶體數量。
 ms.custom: ''
-ms.date: 03/14/2017
+ms.date: 12/21/2020
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: performance
@@ -13,17 +13,20 @@ helpviewer_keywords:
 ms.assetid: 2bc89b66-e801-45ba-b30d-8ed197052212
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 29d63602d4e3553ee2e5f1cb9053e445265fd301
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: 6b5f22541039f781e49615b5e8916d138a5c375b
+ms.sourcegitcommit: bb54e4c9dd8c97365b7a96dfcd557b8b86d06978
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96506538"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97736886"
 ---
 # <a name="resource-governor"></a>資源管理員
-[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+[!INCLUDE [SQL Server SQL MI](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Resource Governor 是一項功能，其可用於管理 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 工作負載和系統資源耗用量。 Resource Governor 可供指定內送應用程式要求所能使用的 CPU、實體 I/O 和記憶體數量限制。  
   
+> [!NOTE]
+> 雖然 [Azure SQL Database 會利用 Resource Governor](https://azure.microsoft.com/blog/resource-governance-in-azure-sql-database/) (及其他技術) 來管理資源，Azure SQL Database 中並不支援使用者設定自訂資源集區和工作負載群組。 Azure Synapse Analytics 會透過[工作負載分類功能](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-workload-classification) \(部分機器翻譯\)，以不同的方式實作類似 Resource Governor 的行為。
+
 ## <a name="benefits-of-resource-governor"></a>資源管理員的優點  
  資源管理員可讓您藉由指定內送要求的資源耗用量限制來管理 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 工作負載和資源。 在「資源管理員」環境中，工作負載是一組大小類似的查詢或要求，可以也應該將其視為單一實體。 這不是一項規定，但是當工作負載的資源使用模式越一致時，您就可以從「資源管理員」得到更多的好處。 可以即時重新設定資源限制，對正在執行的工作負載造成最低的影響。  
   
@@ -61,8 +64,8 @@ ms.locfileid: "96506538"
   
 -   **分類。** 分類程序會根據工作階段的特性，將工作階段指派給工作負載群組。 您可以透過撰寫使用者定義函數 (稱為分類函數) 來自訂分類邏輯。 資源管理員也可支援實作分類規則的使用者定義分類函數。 如需詳細資訊，請參閱 [Resource Governor Classifier Function](../../relational-databases/resource-governor/resource-governor-classifier-function.md)。  
   
-> [!NOTE]  
->  資源管理員不會對專用管理員連接 (DAC) 進行任何控制， 因為根本不需要分類在內部工作負載群組和資源集區中執行的 DAC 查詢。  
+> [!NOTE]
+> 資源管理員不會對專用管理員連接 (DAC) 進行任何控制， 因為根本不需要分類在內部工作負載群組和資源集區中執行的 DAC 查詢。  
   
  在資源管理員的內容中，您可以將上述概念視為元件。 下圖將顯示這些元件以及它們在 Database Engine 環境中存在時，彼此的關聯性。 從處理的觀點而言，簡化的流程如下所示：  
   

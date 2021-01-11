@@ -5,7 +5,7 @@ ms.custom: seodec18
 ms.date: 05/18/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: how-to
 helpviewer_keywords:
 - Availability Groups [SQL Server], interoperability
@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 55b345fe-2eb9-4b04-a900-63d858eec360
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 864fca7c1d2983bec6296f1e82304cff31f658cb
-ms.sourcegitcommit: 54cd97a33f417432aa26b948b3fc4b71a5e9162b
+ms.openlocfilehash: f07f8eaa1dc5657c2dfdb296bc9efffec9b308b2
+ms.sourcegitcommit: e5664d20ed507a6f1b5e8ae7429a172a427b066c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94584198"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697129"
 ---
 # <a name="manage-a-replicated-publisher-database-as-part-of-an-always-on-availability-group"></a>管理屬於 Always On 可用性群組一部分的已複寫發行者資料庫
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -63,7 +63,7 @@ ms.locfileid: "94584198"
   
      請勿從散發者中移除原始發行者的遠端伺服器，即使無法再存取伺服器也一樣。 散發者需要原始發行者的伺服器中繼資料，才能滿足發行集中繼資料查詢。  
   
--   如果您已移除完整可用性群組，成員複寫資料庫的相關行為就會與從可用性群組中移除已發行資料庫時的行為相同。 一旦您已經還原資料庫並且修改重新導向之後，就可以從最後一個主要複本恢復複寫。 如果資料庫是在其原始發行者端還原，您就應該移除重新導向。 如果資料庫是在不同的主機上還原，您就應該將重新導向明確導向至新主機。  
+-   如果已移除完整可用性群組，成員複寫資料庫的相關行為就會與從可用性群組中移除已發行資料庫時的行為相同。 一旦您已經還原資料庫並且修改重新導向之後，就可以從最後一個主要複本恢復複寫。 如果資料庫是在其原始發行者端還原，您就應該移除重新導向。 如果資料庫是在不同的主機上還原，您就應該將重新導向明確導向至新主機。  
   
     > [!NOTE]  
     >  當您移除了具有已發行成員資料庫的可用性群組，或者從可用性群組中移除已發行的資料庫時，已發行資料庫的所有複本都將保持復原狀態。 如果進行還原，每個複本都會顯示成已發行的資料庫。 您應該只保留一個具有發行集中繼資料的複本。 若要針對已發行的資料庫複本停用複寫，請先從資料庫中移除所有訂閱和發行集。  
@@ -99,6 +99,27 @@ ms.locfileid: "94584198"
     ```  
   
      此時，您就可以保留或卸除已發行資料庫的複本。  
+
+## <a name="remove-original-publisher"></a>移除原始發行者
+
+在某些情況下 (更換較舊的伺服器、OS 升級等)，您會想要從 Always On 可用性群組中移除原始發行者。 請依照此節中的步驟，從可用性群組中移除該發行者。 
+
+假設您有伺服器 N1、N2 與 D1，其中 N1 與 N2 是可用性群組 AG1 的主要與次要複本、N1 是交易式發行集的原始發行者，而 D1 是散發者。 您想要將原始發行者 N1 取代為新的發行者 N3。 
+
+若要移除發行者，請遵循下列步驟： 
+
+1. 安裝 SQL Server 並設定為節點 N3。 SQL Server 的版本必須與原始發行者相同。 
+1. 在散發者伺服器 D1 上，使用 [sp_adddistpublisher](../../../relational-databases/system-stored-procedures/sp-adddistpublisher-transact-sql.md) 來將 N3 新增為發行者。 
+1. 將 N3 設定為發行者，並將 D1 當作其散發者。 
+1. 將 N3 當作複本新增至可用性群組 AG1。 
+1. 在 N3 複本上，確認發行集的發送訂閱者會顯示為連結的伺服器。 請使用 [sp_addlinkedserver](../../../relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql.md) 或 SQL Server Management Studio。 
+1. 同步處理 N3 之後，將可用性群組容錯移轉至 N3 以作為主要複本。 
+1. 從可用性群組 AG1 中移除 N1。 
+
+請考慮下列各項：
+- 請勿從散發者中移除原始發行者的遠端伺服器 (在此案例中為 N1) 或任何與其相關聯的中繼資料，即使無法再存取伺服器也一樣。 散發者需要原始發行者的伺服器中繼資料，才能滿足發行集中繼資料查詢，如果沒有，複寫將會失敗。 
+- 針對 SQL Server 2014，一旦移除原始發行者之後，您將無法在複寫監視器中使用原始發行者名稱來管理複寫。 如果您嘗試在複寫監視器中將新複本註冊為發行者，則不會顯示資訊，因為沒有與其相關聯的中繼資料。 若要管理此案例中的複寫，您必須以滑鼠右鍵按一下 SQL Server Management Studio (SSMS) 中的個別發行集與訂用帳戶。
+- 針對 SQL Server 2016 SP2-CU3、SQL Server 2017 CU6 與更新版本，在複寫監視器中註冊可用性群組發行者的接聽程式，以使用 SQL Server Management Studio 17.7 與更新版本來管理複寫。 
   
 ##  <a name="related-tasks"></a><a name="RelatedTasks"></a> 相關工作  
   

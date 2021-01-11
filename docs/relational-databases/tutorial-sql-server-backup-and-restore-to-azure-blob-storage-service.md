@@ -2,27 +2,35 @@
 title: 快速入門：備份及還原至 Azure Blob 儲存體服務
 description: 快速入門：了解如何將備份寫入至 Azure Blob 儲存體服務以及從中還原。 建立 Azure Blob 容器、寫入備份，然後進行還原。
 ms.custom: seo-dt-2019
-ms.date: 04/09/2018
+ms.date: 12/21/2020
 ms.prod: sql
-ms.prod_service: database-engine
+ms.technology: backup-restore
+ms.prod_service: backup-restore
 ms.reviewer: ''
-ms.technology: performance
 ms.topic: quickstart
-ms.assetid: 9e1d94ce-2c93-45d1-ae2a-2a7d1fa094c4
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.openlocfilehash: faf3ccecd17ece2b66371d81a68589f184fe48a0
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: d27f53f80c8f987106f90816a4566339d777e6f6
+ms.sourcegitcommit: bb54e4c9dd8c97365b7a96dfcd557b8b86d06978
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96506404"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97736896"
 ---
 # <a name="quickstart-sql-backup-and-restore-to-azure-blob-storage-service"></a>快速入門：SQL 備份及還原至 Azure Blob 儲存體服務
-[!INCLUDE[tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md.md](../includes/tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md.md)]
+
+[!INCLUDE [sqlserver2016-asdbmi](../includes/applies-to-version/sqlserver2016-asdbmi.md)]
+
 本快速入門可協助您了解如何將備份寫入至 Azure Blob 儲存體服務以及從中還原。  此文章說明如何建立 Azure Blob 容器、將備份寫入到 Blob 服務，然後執行還原。
+
+> [!NOTE]
+> SQL Server 2012 SP1 CU2 已推出對備份到 Azure Blob 儲存體的支援。 SQL Server 2014 和先前版本不支援此快速入門文章中所述的共用存取簽章 (SAS)。
+>
+> 針對 SQL Server 2014 和先前版本，請使用[教學課程：SQL Server 2014 備份及還原至 Microsoft Azure Blob 儲存體](/previous-versions/sql/2014/relational-databases/backup-restore/sql-server-backup-to-url)。
+>
   
-## <a name="prerequisites"></a>必要條件  
+## <a name="prerequisites"></a>必要條件
+
 若要完成本快速入門，您必須熟悉 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 備份與還原概念以及 T-SQL 語法。  您需要 Azure 儲存體帳戶、SQL Server Management Studio (SSMS)，以及執行 SQL Server 伺服器或 Azure SQL 受控執行個體之伺服器的存取權。 此外，用來發出 BACKUP 或 RESTORE 命令的帳戶，應該位於擁有 **ALTER ANY CREDENTIAL** 權限的 **db_backupoperator** 資料庫角色中。 
 
 - 取得免費 [Azure 帳戶](https://azure.microsoft.com/offers/ms-azr-0044p/)。
@@ -214,12 +222,12 @@ GO
 
    ![選取還原檔案](media/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service/select-restore-file.png)
 
-1. 選取 [確定] 以關閉 [選取備份裝置] 對話方塊。 
-1. 選取 [確定] 以還原您的資料庫。 
+1. 選取 [確定] 以關閉 [選取備份裝置] 對話方塊。
+1. 選取 [確定] 以還原您的資料庫。
 
 # <a name="transact-sql"></a>[Transact-SQL](#tab/tsql)
 
-若要從 Azure Blob 儲存體還原您的內部部署資料庫，請修改下列 Transact-SQL 以使用您自己的儲存體帳戶，然後在新查詢視窗內執行它。 
+若要從 Azure Blob 儲存體還原您的內部部署資料庫，請修改下列 Transact-SQL 以使用您自己的儲存體帳戶，然後在新查詢視窗內執行它。
 
 ```sql
 USE [master]

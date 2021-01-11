@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: bdb4294fda1f26ec346f786ec29061f8d4f9ee27
-ms.sourcegitcommit: debaff72dbfae91b303f0acd42dd6d99e03135a2
+ms.openlocfilehash: 38c1ad34fb4819460c08f00da4c1dbd31749b7cb
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96419776"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771430"
 ---
 # <a name="connection-string-builders"></a>連接字串建立器
 
@@ -44,7 +44,7 @@ data source=(local);Integrated Security=True;
 initial catalog="AdventureWorks;NewValue=Bad"
 ```
 
-## <a name="building-connection-strings-from-configuration-files"></a>從組態檔建置連接字串
+## <a name="build-connection-strings-from-configuration-files"></a>從組態檔建置連接字串
 
 如果事先知道連接字串的特定項目，就可以先將其儲存在組態檔中，執行階段時再進行擷取，用以建構完整的連接字串。 例如，您可能會預先知道資料庫的名稱，但不知道伺服器的名稱； 或者，也可以讓使用者在執行階段提供名稱和密碼，但不能將其他值插入連接字串。
 
@@ -74,3 +74,4 @@ initial catalog="AdventureWorks;NewValue=Bad"
 ## <a name="see-also"></a>另請參閱
 
 - [連接字串](connection-strings.md)
+- [Microsoft ADO.NET for SQL Server](microsoft-ado-net-sql-server.md)

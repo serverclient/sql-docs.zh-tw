@@ -5,23 +5,23 @@ ms.custom: seodec18
 ms.date: 02/01/2018
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: how-to
 ms.assetid: 285adbc7-ac9b-40f6-b4a9-3f1591d3b632
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 88704561006f0beff14ae69fff2b79c14ef3114b
-ms.sourcegitcommit: 54cd97a33f417432aa26b948b3fc4b71a5e9162b
+ms.openlocfilehash: 50db7fba110c33cc6c50211cd1b431bf1380ba26
+ms.sourcegitcommit: 44eebb659f9b226c08aea6c31a909b22ad4fec60
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94584605"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860587"
 ---
 # <a name="basic-always-on-availability-groups-for-a-single-database"></a>單一資料庫的基本 Always On 可用性群組
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 
-  Always On 基本可用性群組為 SQL Server 2016 與 SQL Server 2017 Standard Edition 提供高可用性解決方案。 基本可用性群組支援單一資料庫的容錯移轉環境。 其建立和管理類似 Enterprise Edition 的傳統 (進階) [AlwaysOn 可用性群組 &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/always-on-availability-groups-sql-server.md)。 本文摘要說明基本可用性群組的差異和限制。  
-  
+ Always On 基本可用性群組可為 SQL Server (2016 版與更新版本) Standard Edition 提供高可用性解決方案。 基本可用性群組支援單一資料庫的容錯移轉環境。 其建立和管理類似 Enterprise Edition 的傳統 (進階) [AlwaysOn 可用性群組 &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/always-on-availability-groups-sql-server.md)。 本文摘要說明基本可用性群組的差異和限制。
+
 ## <a name="features"></a>特性  
  AlwaysOn 基本可用性群組取代了過時的資料庫鏡像功能，並提供類似的功能支援層級。 基本可用性群組可讓主要資料庫維護單一複本。 此複本可使用同步認可模式或非同步認可模式。 如需可用性模式的詳細資訊，請參閱[可用性模式 &#40;AlwaysOn 可用性群組&#41;](../../../database-engine/availability-groups/windows/availability-modes-always-on-availability-groups.md)。 除非需要容錯移轉，否則次要複本會維持非使用中狀態。 此容錯移轉會將主要角色指派和次要角色指派反轉，使得次要複本成為主要的使用中資料庫。 如需容錯移轉的詳細資訊，請參閱[容錯移轉及容錯移轉模式 &#40;AlwaysOn 可用性群組&#41;](../../../database-engine/availability-groups/windows/failover-and-failover-modes-always-on-availability-groups.md)。 基本可用性群組可在跨越內部部署和 Microsoft Azure 的混合式環境中運作。  
   

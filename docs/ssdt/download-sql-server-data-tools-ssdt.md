@@ -13,12 +13,12 @@ ms.reviewer: maghan
 ms.custom: seo-lt-2019
 ms.date: 02/20/2020
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=azuresqldb-mi-current'
-ms.openlocfilehash: b69137a197cab3054eeae2ee180a2624e7d564e7
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 8913e553460c9fae3d008783d571aca81b5c21a4
+ms.sourcegitcommit: 44eebb659f9b226c08aea6c31a909b22ad4fec60
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97474439"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860569"
 ---
 # <a name="download-sql-server-data-tools-ssdt-for-visual-studio"></a>下載適用於 Visual Studio 的 SQL Server Data Tools (SSDT)
 
@@ -93,10 +93,10 @@ ms.locfileid: "97474439"
 
 ## <a name="ssdt-for-vs-2017-standalone-installer"></a>SSDT for VS 2017 (獨立安裝程式)
 
-:::image type="icon" source="media/download.png" border="false"::: **[下載適用於 Visual Studio 2017 (15.9.6) 的 SSDT](https://go.microsoft.com/fwlink/?linkid=2139376)**
+:::image type="icon" source="media/download.png" border="false"::: **[下載適用於 Visual Studio 2017 (15.9.7) 的 SSDT](https://go.microsoft.com/fwlink/?linkid=2151759)**
 
 > [!IMPORTANT]
-> * 如果已安裝「Analysis Services 專案」與「Reporting Services 專案」延伸模組，請先解除安裝並關閉所有 VS 執行個體，再安裝 SSDT for Visual Studio 2017 (15.9.6)。 
+> * 如果已安裝「Analysis Services 專案」與「Reporting Services 專案」延伸模組，請先將其解除安裝並關閉所有 VS 執行個體，再安裝適用於 Visual Studio 2017 (15.9.7) 的 SSDT。 
 > * 已移除 Power Query Source for SQL Server 2017 的收件匣元件。 我們現在宣告 Power Query Source for SQL Server 2017 與 2019 為 OOB 元件，您可以在[這裡](https://www.microsoft.com/download/details.aspx?id=100619)下載。
 > * 若要使用 Oracle 和 Teradata 連接器設計套件，並將目標設為 SQL 2019 之前的舊版 SQL Server，除了 [Microsoft Oracle Connector for SQL 2019](https://www.microsoft.com/download/details.aspx?id=58228) \(英文\) 和 [Microsoft Teradata Connector for SQL 2019](https://www.microsoft.com/download/details.aspx?id=100599) \(英文\) 以外，您還需要安裝由 Attunity 提供適用於 Oracle 和 Teradata 的 Microsoft 連接器相應版本。
 >    * [目標為 SQL Server 2017 由 Attunity 提供適用於 Oracle 和 Teradata 的 Microsoft 連接器 5.0 版](https://www.microsoft.com/download/details.aspx?id=55179) \(英文\)
@@ -116,17 +116,17 @@ SSDT for Visual Studio 2017 與 Visual Studio 具有相同的[系統需求](/vis
 
 這版 **適用於 VS 2017 的 SSDT** 提供下列語言版本：
 
-* [簡體中文](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x804)
-* [繁體中文](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x404)
-* [英文 (美國)](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x409)
-* [法文](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x40c)
-* [德文](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x407)
-* [義大利文](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x410)
-* [日文](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x411)
-* [韓文](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x412)
-* [葡萄牙文 (巴西)](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x416)
-* [俄文](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x419)
-* [西班牙文](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x40a)
+* [簡體中文](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x804)
+* [繁體中文](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x404)
+* [英文 (美國)](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x409)
+* [法文](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x40c)
+* [德文](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x407)
+* [義大利文](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x410)
+* [日文](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x411)
+* [韓文](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x412)
+* [葡萄牙文 (巴西)](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x416)
+* [俄文](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x419)
+* [西班牙文](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x40a)
 
 ### <a name="considerations-and-limitations"></a>考量與限制
 

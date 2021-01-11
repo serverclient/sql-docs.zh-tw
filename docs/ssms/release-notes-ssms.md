@@ -10,13 +10,13 @@ author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
-ms.date: 10/27/2020
-ms.openlocfilehash: 4569c61552a03e928d01e47940ae02e7fee9dcec
-ms.sourcegitcommit: eeb30d9ac19d3ede8d07bfdb5d47f33c6c80a28f
+ms.date: 12/17/2020
+ms.openlocfilehash: 346e964b30f76bf79c20d6f348636a626a8beee2
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96523081"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642369"
 ---
 # <a name="release-notes-for-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) 版本資訊
 
@@ -26,9 +26,89 @@ ms.locfileid: "96523081"
 
 ## <a name="current-ssms-release"></a>目前的 SSMS 版本
 
+### <a name="188"></a>18.8
+
+![下載](media/download-icon.png) [下載 SSMS 18.8](download-sql-server-management-studio-ssms.md)
+
+- 版本號碼：18.8
+- 組建編號：15.0.18369.0
+- 發行日期：2020 年 12 月 17 日
+
+[簡體中文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x804) | [繁體中文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x404) | [英文 (美國)](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x409) | [法文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x40c) | [德文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x407) | [義大利文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x410) | [日文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x411) | [韓文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x412) | [葡萄牙文 (巴西)](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x416) | [俄文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x419) | [西班牙文](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x40a)
+
+SSMS 18.8 是 SSMS 最新的正式發行 (GA) 版本。 如果您需要舊版 SSMS，請參閱[舊版 SSMS](release-notes-ssms.md#previous-ssms-releases)。
+
+#### <a name="whats-new-in-188"></a>18.8 的新功能
+
+[!INCLUDE [ssms-ads-install](../includes/ssms-azure-data-studio-install.md)]
+
+| 新項目 | 詳細資料 |
+|----------|---------|
+| Azure Data Studio 安裝整合 | 安裝 SSMS 會安裝 Azure Data Studio 1.25.1。 |
+| Analysis Services | 已新增對 Power BI Premium Gen2 工作區的支援。 |
+| 稽核 | 已新增對 EXTERNAL_MONITOR 與「操作員稽核」的支援。  如需詳細資訊，請參閱設定[文件](https://docs.microsoft.com/azure/azure-sql/managed-instance/auditing-configure) \(部分機器翻譯\)。 |
+| Integration Services | 已改進 [IR 建立精靈]，因而在建立 SSIS IR 時建立 SSISDB 為選用的 |
+
+#### <a name="bug-fixes-in-188"></a>18.8 中的錯誤 (Bug) 修正
+
+| 新項目 | 詳細資料 |
+|----------|---------|
+| Accessibility | 已修正 [進度報告] 對話方塊中影響朗讀程式的問題 |
+| 活動監視器 | 已修正 [使用中的高成本查詢] 方格中的 [編輯查詢文字] 操作功能表無法運作的問題 |
+| Always Encrypted | 已修正 SSMS 可能擲回執行階段錯誤 (「找不到類別」) 的問題 |
+| 高 DPI/調整 | 已改進 [進度報告] 對話方塊的 4K 顯示 |
+| 高 DPI/調整 | 已修正 Integration Services 中「新增排程 - 套件」表單的問題 |
+| 一般 SSMS |  已修正當嘗試顯示的資料行屬性具有超過 Bigint 大小的識別值種子或身分識別增量時，SSMS 可能擲回錯誤的問題。
+| 一般 SSMS | 已修正 SSMS 中由功能表項目 [專案匯出範本…] 所造成的損毀 (其不應顯示) |
+| 一般 SSMS | 已修正在列舉資料夾中的備份時可能造成 SSMS 損毀的問題 |
+| 一般 SSMS | 已減緩在顯示查詢結果時造成 SSMS 流失控制代碼和記憶體的問題 |
+| 一般 SSMS | 已修正使用者無法針對特定類型 (SQL 2014 與更新版本上的 UniqueIdentifier、SQL 2017 和更新版本上的 VarCharMax/NVarCharMax/VarBinaryMax) 的資料行建立叢集資料行存放區索引的問題 |
+| 一般 SSMS | 已修正 [結果方格] 中 XML 資料行的重新排序作業無法運作的長時間待處理問題。 請參閱 [SQL Server 使用者意見反應](https://feedback.azure.com/forums/908035/suggestions/32890930) |
+| 一般 SSMS | 已修正 SSMS 錯誤顯示「有記憶體最佳化物件的資料庫不支援變更追蹤」警告的問題。 |
+| 產生指令碼精靈 | 已修正禁止在 SQL Server 2014 與更舊版本上列舉資料庫物件的錯誤 (Bug)。 請參閱 [SQL Server 使用者意見反應](https://feedback.azure.com/forums/908035-sql-server/suggestions/41885587)。 |
+| 複寫工具 | 已修正 SQL 複寫監視器未接受自動連線設定，因而強制使用者每次手動重新連線的問題。 請參閱 [SQL Server 使用者意見反應](https://feedback.azure.com/forums/908035/suggestions/40394743) |
+| SMO/指令碼 | 已修正嘗試在 SQL Azure DB 中已加密的檢視上使用 [產生指令碼...] 時發生的問題 |
+| XEvent UI | 已修正從其他應用程式切換至 SSMS 時可能造成 SSMS 損毀的問題。 |
+| XEvent UI | 已還原 18.7 的改進，其是針對在 XEvent 建立期間因為有額外引號而造成錯誤 (Bug) 所做的改進。 此變更是暫時的，該改進將在後續版本中回復，因而不會伴隨錯誤 (Bug)。 |
+
+#### <a name="known-issues-188"></a>已知問題 (18.8)
+
+| 新項目 | 詳細資料 | 因應措施 |
+|----------|---------|------------|
+| Analysis Services | 透過 msmdpump.dll 連線到 SSAS 時發生錯誤。 請參閱 [SQL Server 使用者意見反應](https://feedback.azure.com/forums/908035-sql-server/suggestions/40144696)。 | N/A |
+| Analysis Services | 在罕見的情況下，使用升級安裝程式時，在升級 SSMS 後嘗試開啟 DAX 編輯器時可能會有「物件未設定成物件的執行個體」錯誤。 | 將 SQL Server Management Studio 解除安裝並重新安裝。  如果無法透過重新安裝解決，請關閉所有 SSMS 執行個體、進行備份，然後移除 `%AppData%\Microsoft\SQL Server Management Studio` 與 `%LocalAppData%\Microsoft\SQL Server Management Studio`。 |
+| 一般 SSMS | [新的伺服器稽核規格] 對話方塊可能會導致 SSMS 損毀，並出現存取違規錯誤。 | N/A |
+| 一般 SSMS | 使用 SMO 的 SSMS 延伸模組應以新 SSMS 特定 SMO v161 套件為目標重新編譯。 您可在 https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects.SSMS/ 取得預覽版本 </br></br> 針對 Microsoft.SqlServer.SqlManagementObjects 套件 160 以前版本所編譯的延伸模組仍然會正常運作。 | N/A |
+| Integration Services | 在 Integration Services 中匯入或匯出套件，或在 Azure-SSIS Integration Runtime 中匯出套件時，包含指令碼工作/元件的套件會遺失指令碼。 | 移除資料夾 "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild"。 |
+| Integration Services | 從遠端連線至 Integration Services 的作業可能會失敗，並出現「指定的服務不是以已安裝的服務形式存在。」 (在較新的作業系統上)。 | 在 Computer\HKEY_CLASSES_ROOT\AppID & Computer\HKEY_CLASSES_ROOT\ WOW6432Node\AppID 下找出 Integration Services 的相關登錄位置，然後在這些登錄區內，針對我們嘗試連線的特定 Integration Services 版本，將名為 'LocalService' 的登錄機碼重新命名為 'LocalService_A'得 |
+
+
+針對其他已知問題，您可參考 [SQL Server 使用者意見反應](https://feedback.azure.com/forums/908035-sql-server)並為產品小組提供意見反應。
+
+## <a name="previous-ssms-releases"></a>舊版 SSMS
+
+[!INCLUDE[ssms-connect-aazure-ad](../includes/ssms-connect-azure-ad.md)]
+
+選取相關區段中的下載連結，以下載舊版的 SSMS。
+
+| SSMS 版本 | 組建編號 | 發行日期 |
+|--------------|--------------|--------------|
+| [18.7.1](#1871) | 15.0.18358.0 | 2020 年 10 月 27 日 |
+| [18.7](#187) | 15.0.18357.0 | 2020 年 10 月 20 日 |
+| [18.6](#186) | 15.0.18338.0 | 2020 年 7 月 22 日 |
+| [18.5.1](#1851) | 15.0.18333.0 | 2020 年 6 月 9 日 |
+| [18.5](#185) | 15.0.18330.0 | 2020 年 4 月 7 日 |
+| [18.4](#184) | 15.0.18206.0 | 2019 年 11 月 4 日 |
+| [18.3.1](#1831) | 15.0.18183.0 | 2019 年 10 月 2 日 |
+| [18.2](#182) | 15.0.18142.0 | 2019 年 7 月 25 日 |
+| [18.1](#181) | 15.0.18131.0 | 2019 年 6 月 11 日 |
+| [18.0](#180) | 15.0.18118.0 | 2019 年 4 月 24 日 |
+| [17.9.1](#1791) | 14.0.17289.0 | 2018 年 11 月 21 日 |
+| [16.5.3](#1653) | 13.0.16106.4 | 2017 年 1 月 30 日 |
+
 ### <a name="1871"></a>18.7.1
 
-![下載](media/download-icon.png) [下載 SSMS 18.7](download-sql-server-management-studio-ssms.md)
+![下載](media/download-icon.png) [下載 SSMS 18.7](https://go.microsoft.com/fwlink/?linkid=2147207)
 
 - 版本號碼：18.7.1
 - 組建編號：15.0.18358.0
@@ -64,31 +144,9 @@ SSMS 18.7 是 SSMS 最新的正式發行 (GA) 版本。 如果您需要舊版 SS
 | Integration Services | 從遠端連線至 Integration Services 的作業可能會失敗，並出現「指定的服務不是以已安裝的服務形式存在。」 (在較新的作業系統上)。 | 在 Computer\HKEY_CLASSES_ROOT\AppID & Computer\HKEY_CLASSES_ROOT\ WOW6432Node\AppID 下找出 Integration Services 的相關登錄位置，然後在這些登錄區內，針對我們嘗試連線的特定 Integration Services 版本，將名為 'LocalService' 的登錄機碼重新命名為 'LocalService_A'得 |
 | 物件總管 | 18.7 之前的 SSMS 版本在物件總管中有中斷性變更，其原因是與 [Azure Synapse Analytics 無伺服器 SQL 集區](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview)相關的引擎變更。 | 若要繼續搭配 Azure Synapse Analytics 無伺服器 SQL 集區利用 SSMS 中的物件總管，您必須使用 SSMS 18.7 或更新版本。 |
 
-針對其他已知問題，您可參考 [SQL Server 使用者意見反應](https://feedback.azure.com/forums/908035-sql-server)並為產品小組提供意見反應。
-
-## <a name="previous-ssms-releases"></a>舊版 SSMS
-
-[!INCLUDE[ssms-connect-aazure-ad](../includes/ssms-connect-azure-ad.md)]
-
-選取相關區段中的下載連結，以下載舊版的 SSMS。
-
-| SSMS 版本 | 組建編號 | 發行日期 |
-|--------------|--------------|--------------|
-| [18.7](#187) | 15.0.18357.0 | 2020 年 10 月 20 日 |
-| [18.6](#186) | 15.0.18338.0 | 2020 年 7 月 22 日 |
-| [18.5.1](#1851) | 15.0.18333.0 | 2020 年 6 月 9 日 |
-| [18.5](#185) | 15.0.18330.0 | 2020 年 4 月 7 日 |
-| [18.4](#184) | 15.0.18206.0 | 2019 年 11 月 4 日 |
-| [18.3.1](#1831) | 15.0.18183.0 | 2019 年 10 月 2 日 |
-| [18.2](#182) | 15.0.18142.0 | 2019 年 7 月 25 日 |
-| [18.1](#181) | 15.0.18131.0 | 2019 年 6 月 11 日 |
-| [18.0](#180) | 15.0.18118.0 | 2019 年 4 月 24 日 |
-| [17.9.1](#1791) | 14.0.17289.0 | 2018 年 11 月 21 日 |
-| [16.5.3](#1653) | 13.0.16106.4 | 2017 年 1 月 30 日 |
-
 ### <a name="187"></a>18.7
 
-![下載](media/download-icon.png) [下載 SSMS 18.7](download-sql-server-management-studio-ssms.md)
+![下載](media/download-icon.png) [下載 SSMS 18.7](https://go.microsoft.com/fwlink/?linkid=2146265)
 
 - 版本號碼：18.7
 - 組建編號：15.0.18357.0

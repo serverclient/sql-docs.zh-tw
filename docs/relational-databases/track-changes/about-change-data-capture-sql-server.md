@@ -15,22 +15,21 @@ helpviewer_keywords:
 ms.assetid: 7d8c4684-9eb1-4791-8c3b-0f0bb15d9634
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 55bb82e19a97a91dbe00b44b195e74a250ddf1dc
-ms.sourcegitcommit: 7f76975c29d948a9a3b51abce564b9c73d05dcf0
+ms.openlocfilehash: f90e59f3e54b69a98e7ca058da971677faaafd0d
+ms.sourcegitcommit: e5664d20ed507a6f1b5e8ae7429a172a427b066c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96900956"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697112"
 ---
 # <a name="about-change-data-capture-sql-server"></a>關於異動資料擷取 (SQL Server)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
 
-> [!NOTE]
-> Linux 上的 SQL Server 2017 (從 CU18 開始)，以及 Linux 上的 SQL Server 2019 現已支援 CDC。
+
 
   異動資料擷取會記錄套用至 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資料表的插入、更新和刪除活動。 這樣會以方便取用的關聯式格式提供變更的詳細資料。 系統會針對修改的資料列擷取資料行資訊以及將變更套用至目標環境所需的中繼資料，並且將它們儲存在鏡像追蹤來源資料表之資料行結構的變更資料表中。 此外，系統會提供資料表值函式，讓取用者以有系統的方式存取異動資料。  
   
- 此技術之目標資料取用者的理想範例為擷取、轉換和下載 (ETL) 應用程式。 ETL 應用程式會將變更資料從 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 來源資料表累加地載入資料倉儲或資料超市。 雖然在資料倉儲內的來源資料表表示法必須反映來源資料表中的變更，但是重新整理來源複本的端對端技術並不適用。 您需要的是結構化變更資料的可靠資料流，讓取用者可以將其套用到不同的資料目標表示法。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 異動資料擷取提供這種技術。  
+ 此技術之目標資料取用者的理想範例為擷取、轉換和載入 (ETL) 應用程式。 ETL 應用程式會將變更資料從 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 來源資料表累加地載入資料倉儲或資料超市。 雖然在資料倉儲內的來源資料表表示法必須反映來源資料表中的變更，但是重新整理來源複本的端對端技術並不適用。 您需要的是結構化變更資料的可靠資料流，讓取用者可以將其套用到不同的資料目標表示法。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 異動資料擷取提供這種技術。  
   
 ## <a name="change-data-capture-data-flow"></a>異動資料擷取資料流程  
  下圖顯示異動資料擷取的主要資料流程。  
@@ -56,9 +55,9 @@ ms.locfileid: "96900956"
   
  如果您沒有定期且有系統地清除儲放在變更資料表中的資料，這項資料將無限制地成長。 異動資料擷取清除處理序會負責強制執行保留性清除原則。 首先，它會移動有效性間隔的低端點，以便滿足時間限制。 然後，它會移除過期的變更資料表項目。 根據預設，系統會保留三天內的資料。  
   
- 對於高端點而言，因為擷取處理序會認可每一批新的變更資料，所以新項目會加入具有變更資料表項目之每個交易的 **cdc.lsn_time_mapping** 。 在對應資料表中，會保留認可記錄序號 (LSN) 和交易認可時間 (分別為 start_lsn 和 tran_end_time 資料行)。 在 **cdc.lsn_time_mapping** 中找到的最大 LSN 值代表資料庫有效性期間的上限標準。 其對應認可時間會當做保留性清除用以計算新下限標準的基礎。  
+ 對於高端點而言，因為擷取處理序會認可每一批新的變更資料，所以新項目會加入具有變更資料表項目之每個交易的 **cdc.lsn_time_mapping** 。 在對應資料表中，會保留認可記錄序號 (LSN) 和交易認可時間 (分別為 start_lsn 和 tran_end_time 資料行)。 在 **cdc.lsn_time_mapping** 中找到的最大 LSN 值代表資料庫有效性期間的上限標準。 其對應的認可時間會當做保留型清除用來計算新下限標準的基礎。  
   
- 由於擷取處理序會從交易記錄中擷取變更資料，因此來源資料表認可變更的時間與變更顯示在其相關聯變更資料表中的時間之間具有內建的延遲。 雖然這個延遲通常很短，但是請務必記住，在擷取處理序處理相關記錄項目之前，無法使用變更資料。  
+ 由於擷取程序會從交易記錄中擷取變更資料，因此來源資料表認可變更的時間與變更顯示在其相關聯變更資料表中的時間之間具有內建的延遲。 雖然這個延遲通常很短，但是請務必記住，在擷取處理序處理相關記錄項目之前，無法使用變更資料。  
   
 ## <a name="change-data-capture-validity-interval-for-a-capture-instance"></a>擷取執行個體的異動資料擷取有效性間隔  
  雖然資料庫有效性間隔與個別擷取執行個體的有效性間隔通常會一致，但是並非永遠如此。 當擷取處理序辨識擷取執行個體並且開始將相關聯的變更記錄至其變更資料表時，擷取執行個體的有效性間隔就會開始。 因此，如果您在不同的時間建立擷取執行個體，每個擷取執行個體一開始都會有不同的低端點。 [sys.sp_cdc_help_change_data_capture](../../relational-databases/system-stored-procedures/sys-sp-cdc-help-change-data-capture-transact-sql.md) 所傳回之結果集的 start_lsn 資料行會顯示每個已定義之擷取執行個體的目前低端點。 當清除處理序清除變更資料表項目時，它就會調整所有擷取執行個體的 start_lsn 值，以便反映可用變更資料的新下限標準。 只有 start_lsn 值目前小於新下限標準的這些擷取執行個體才會進行調整。 經過一段時間後，如果沒有建立任何新的擷取執行個體，所有個別執行個體的有效性間隔通常會與資料庫有效性間隔一致。  
@@ -85,7 +84,7 @@ ms.locfileid: "96900956"
 > [!IMPORTANT]  
 >  擷取邏輯的兩個執行個體都需要 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent 處於執行中狀態，才能讓處理序執行。  
   
- 擷取處理序的主要工作是掃描記錄，並且將資料行資料和交易相關的資訊寫入異動資料擷取變更資料表。 為了確保它所擴展的所有異動資料擷取變更資料表在交易方面具有一致的界限，擷取處理序會針對每個掃描循環開啟並認可自己的交易。 它會偵測出資料表最近啟用異動資料擷取的時間，並且自動將它們加入目前正在記錄中監視變更項目的資料表集合。 同樣地，它也會偵測出停用異動資料擷取，進而從目前正在監視變更資料的資料表集合中移除來源資料表。 當某個記錄區段的處理完成時，擷取處理序就會發出伺服器記錄截斷邏輯的信號，而此邏輯會使用這項資訊來識別適合用於截斷的記錄項目。  
+ 擷取程序的主要工作是掃描記錄，並且將資料行資料和交易相關的資訊寫入異動資料擷取變更資料表。 為了確保它所擴展的所有異動資料擷取變更資料表在交易方面具有一致的界限，擷取處理序會針對每個掃描循環開啟並認可自己的交易。 它會偵測出資料表最近啟用異動資料擷取的時間，並且自動將它們加入目前正在記錄中監視變更項目的資料表集合。 同樣地，它也會偵測出停用異動資料擷取，進而從目前正在監視變更資料的資料表集合中移除來源資料表。 當某個記錄區段的處理完成時，擷取處理序就會發出伺服器記錄截斷邏輯的信號，而此邏輯會使用這項資訊來識別適合用於截斷的記錄項目。  
   
 > [!NOTE]  
 >  啟用異動資料擷取的資料庫時，即使復原模式設定為簡單復原，在擷取處理序蒐集到所有標示為待擷取的變更之前，記錄截斷點將不會前進。 如果擷取處理序並未執行，而且存在要蒐集的變更，則執行 CHECKPOINT 將不會截斷記錄。  
@@ -138,9 +137,20 @@ CREATE TABLE T1(
      C2 NVARCHAR(10) collate Chinese_PRC_CI_AI --Unicode data type, CDC works well with this data type)
 ```
 
-## <a name="columnstore-indexes"></a>資料行存放區索引
+## <a name="limitations"></a>限制
 
-無法在具有叢集資料行存放區索引的資料表上啟用變更資料擷取。 從 SQL Server 2016 開始，可在具有非叢集資料行存放區索引的資料表上啟用此功能。
+異動資料擷取具有下列限制： 
+
+**Linux**：   
+Linux 上的 SQL Server 2017 (從 CU18 開始)，以及 Linux 上的 SQL Server 2019 現已支援 CDC。
+
+**資料行存放區索引**   
+無法在具有叢集資料行存放區索引的資料表上啟用變更資料擷取。 從 SQL Server 2016 開始，您可以在具有非叢集資料行存放區索引的資料表上啟用此功能。
+
+**使用變數進行資料分割切換**   
+針對 `ALTER TABLE ... SWITCH TO ... PARTITION ...` 陳述式，不支援在具有異動資料擷取 (CDC) 的資料庫或資料表上使用變數進行資料分割切換。 請參閱[分割區切換限制](../replication/publish/replicate-partitioned-tables-and-indexes.md#replication-support-for-partition-switching)以深入了解。 
+
+
 
 ## <a name="see-also"></a>另請參閱  
  [追蹤資料變更 &#40;SQL Server&#41;](../../relational-databases/track-changes/track-data-changes-sql-server.md)   

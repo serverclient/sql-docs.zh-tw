@@ -9,12 +9,12 @@ ms.technology: report-data
 ms.topic: conceptual
 ms.date: 02/15/2019
 monikerRange: '>= sql-server-2016'
-ms.openlocfilehash: 1b13134166c4c17bea73d2990ceaf678fe1b4b2c
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 4dc1fcf4aa738a018274f65d7d707f6461b9c45c
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97478839"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878841"
 ---
 # <a name="azure-sql-connection-type-ssrs"></a>Azure SQL 連線類型 (SSRS)
 
@@ -156,7 +156,7 @@ WHERE EmployeeID = (@EmpID)
 
 ## <a name="azure-sql-database-and-aad"></a>Azure SQL Database 與 AAD
 
-您可以搭配 Azure Active Directory (AAD) 傳遞驗證使用 Azure SQL Database。
+您可以搭配 Azure Active Directory (AAD) 使用 Azure SQL 資料庫。
 
 當您以適當方式設定下列項目時，便支援此案例：
 

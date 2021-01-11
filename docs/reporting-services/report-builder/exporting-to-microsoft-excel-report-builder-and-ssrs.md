@@ -1,7 +1,7 @@
 ---
 title: 匯出至 Microsoft Excel (報表產生器) | Microsoft Docs
 description: 在報表產生器中，Excel 轉譯延伸模組會將分頁報表轉譯為 Office Open XML 格式，以便與 Microsoft Excel 搭配使用。
-ms.date: 01/09/2017
+ms.date: 12/23/2020
 ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.technology: report-builder
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 74f726fc-2167-47af-9093-1644e03ef01f
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 865caa0938aa89feacbb5e330eb38f292039446c
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+ms.openlocfilehash: 4e8b43d3e9e772b06961602bf2d8bd69aa51216e
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "80342897"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878851"
 ---
 # <a name="exporting-to-microsoft-excel-report-builder-and-ssrs"></a>Exporting to Microsoft Excel (Report Builder and SSRS)
   [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] Excel 轉譯延伸模組會將 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 分頁報表轉譯成 [!INCLUDE[ofprexcel](../../includes/ofprexcel-md.md)] 格式 (.xlsx)。 使用 Excel 轉譯延伸模組，Excel 中的資料行寬度就可以更精確地反映報表中的資料行寬度。  
@@ -26,7 +26,7 @@ ms.locfileid: "80342897"
  如需如何匯出至 Excel 的詳細資訊，請參閱[匯出報表 &#40;報表產生器及 SSRS&#41;](../../reporting-services/report-builder/export-reports-report-builder-and-ssrs.md)。  
   
 > [!IMPORTANT]  
->  當您將參數定義為 **String**類型時，使用者會看到一個可接受任何值的文字方塊。 如果報表參數未繫結至查詢參數且參數值未包含在報表中，報表使用者就可以輸入運算式語法、指令碼或 URL 到參數值中，將報表轉譯為 Excel。 如果另一個使用者接著檢視報表並按一下轉譯的參數內容，該使用者可能會不小心執行惡意指令碼或連結。  
+>  當您將參數定義為 **String** 類型時，使用者會看到一個可接受任何值的文字方塊。 如果報表參數未繫結至查詢參數且參數值未包含在報表中，報表使用者就可以輸入運算式語法、指令碼或 URL 到參數值中，將報表轉譯為 Excel。 如果另一個使用者接著檢視報表並按一下轉譯的參數內容，該使用者可能會不小心執行惡意指令碼或連結。  
 >   
 >  若要減輕不小心執行惡意指令碼的風險，請只從信任的來源開啟轉譯的報表。 如需保護報表安全的詳細資訊，請參閱 [保護報表和資源的安全](../../reporting-services/security/secure-reports-and-resources.md)。  
   
@@ -47,7 +47,7 @@ ms.locfileid: "80342897"
   
 -   如果控制是否要切換其他項目的報表項目不在要切換之項目的上一個資料列或下一個資料列，則系統也會停用大綱。  
   
- 如需 Excel 限制的詳細資訊，請參閱 [Excel 規格和限制](https://support.office.com/article/Excel-specifications-and-limits-CA36E2DC-1F09-4620-B726-67C00B05040F)。  
+ 如需 Excel 限制的詳細資訊，請參閱 [Excel 規格和限制](https://support.microsoft.com/en-us/office/excel-specifications-and-limits-1672b34d-7043-467e-8e27-269d656771c3)。  
   
 ### <a name="sizes-of-excel-2003-xls-files"></a>Excel 2003 (.xls) 檔案的大小  
   
@@ -249,7 +249,7 @@ ms.locfileid: "80342897"
   
  文件引導模式大綱會轉譯為可折疊的 Excel 大綱。 大綱結構會與文件引導模式的巢狀結構相符。 大綱的展開和折疊狀態會從第二層級開始。  
   
- 地圖的根節點即為報表名稱 \<報表名稱  >.rdl，且無法互動。 文件引導模式連結字型為 Arial，10pt。  
+ 文件引導模式的根節點就是報表名稱 \<*reportname*>.rdl，而且這不是互動的。 文件引導模式連結字型為 Arial，10pt。  
   
 ### <a name="drillthrough-links"></a>鑽研連結  
  系統會將文字方塊中出現的鑽研連結轉譯為轉譯文字之資料格中的 Excel 超連結。 而影像和圖表的鑽研連結則會在轉譯時，轉譯為影像上的 Excel 超連結。 當您按一下鑽研連結時，用戶端的預設瀏覽器會開啟，並巡覽至目標的 HTML 檢視。  

@@ -5,7 +5,7 @@ ms.custom: seo-lt-2019
 ms.date: 06/06/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 helpviewer_keywords:
 - connection access to availability replicas
@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 78f3f81a-066a-4fff-b023-7725ff874fdf
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 82a8d9f4e787fd419e31e637775e33a4cf71f36d
-ms.sourcegitcommit: 54cd97a33f417432aa26b948b3fc4b71a5e9162b
+ms.openlocfilehash: c8f93191b689599a24ad960d316a02901de2e6e0
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94584860"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643808"
 ---
 # <a name="offload-read-only-workload-to-secondary-replica-of-an-always-on-availability-group"></a>將唯讀工作負載卸載至 Always On 可用性群組的次要複本
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -162,7 +162,7 @@ ms.locfileid: "94584860"
   
  只有 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 可以建立和更新暫時統計資料。 但是，您可以使用永久統計資料所使用的相同工具來刪除暫時統計資料及監控其屬性：  
   
--   使用 [DROP STATISTICS](../../../t-sql/statements/drop-statistics-transact-sql.md)[!INCLUDE[tsql](../../../includes/tsql-md.md)] 陳述式刪除暫時統計資料。  
+-   使用 [DROP STATISTICS](../../../t-sql/statements/drop-statistics-transact-sql.md) [!INCLUDE[tsql](../../../includes/tsql-md.md)] 陳述式刪除暫時統計資料。  
   
 -   使用 **sys.stats** 和 **sys.stats_columns** 目錄檢視監視統計資料。 **sys_stats** 包含 **is_temporary** 資料行，以表示哪些統計資料為永久性而哪些統計資料為暫時性。  
   

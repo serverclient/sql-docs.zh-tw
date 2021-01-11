@@ -9,12 +9,12 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
-ms.openlocfilehash: 554c3a08cc29cfbc6addef598698c40df31f9990
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 9029dd87712ee7128504a9b495b699c9c58e000d
+ms.sourcegitcommit: 5b2c47ce88f7e56552fd415c32b319009d043b56
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97471229"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97804342"
 ---
 # <a name="install-an-r-custom-runtime-for-sql-server"></a>安裝 SQL Server 適用的 R 自訂執行階段
 
@@ -62,9 +62,9 @@ ms.locfileid: "97471229"
 
     - **機器學習服務和語言延伸模組**
 
-       選取 [機器學習服務和語言延伸模組]。 不需要選取 [R]。
+        選取 [機器學習服務和語言延伸模組]。 不需要選取 [R]。
 
-    ![SQL Server 2019 CU3 或更新版本安裝功能](../install/media/sql-feature-selection.png)
+        :::image type="content" source="media/2019-setup-language-extensions.png" alt-text="SQL Server 2019 語言延伸模組安裝。":::
 
 1. 在 [準備安裝]  頁面上，確認包含這些選項，然後選取 [安裝]  。
 

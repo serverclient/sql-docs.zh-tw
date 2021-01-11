@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: c3cf3766ffc6c8acf6025b58aa0adbaafafa2188
-ms.sourcegitcommit: 2add15a99df7b85d271adb261523689984dfd134
+ms.openlocfilehash: 4275b7de0f31d03aa36ef31d8801fcdc0e9ec853
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97038956"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771535"
 ---
 # <a name="retrieving-and-modifying-data-in-adonet"></a>在 ADO.NET 中擷取及修改資料
 
@@ -42,9 +42,35 @@ ms.locfileid: "97038956"
 [DataAdapter 和 DataReader](dataadapters-datareaders.md)  
 包含一些主題，其中說明 DataReader、DataAdapter、參數、處理 DataAdapter 事件，以及執行批次作業。
 
-[交易和並行存取](transactions-and-concurrency.md)包含說明如何執行本機交易、分散式交易及使用開放式並行存取的主題。
+[異動和並行存取](transactions-and-concurrency.md)  
+包含一些主題，其中說明如何執行本機異動、分散式異動，以及使用開放式並行存取 (Optimistic Concurrency)。
 
-[擷取資料庫結構描述資訊](retrieving-database-schema-information.md)描述如何取得可用的資料庫或目錄、資料庫的資料表和檢視、資料表現存的條件約束，以及資料來源中的其他結構描述資訊。
+[擷取資料庫結構描述資訊](retrieving-database-schema-information.md)  
+說明如何取得資料來源的可用資料庫或目錄、資料庫中的資料表和檢視表、資料表的條件約束，以及其他結構描述資訊。
+
+[DbProviderFactory](dbproviderfactories.md)  
+說明提供者 Factory 模型並示範如何使用 `System.Data.Common` 命名空間 (Namespace) 中的基底類別 (Base Class)。  
+
+[擷取識別或自動編號值](retrieve-identity-or-autonumber-values.md)  
+提供範例，說明如何將針對 SQL Server 資料表中的 **identity** 資料行所產生的值，對應至資料表中插入資料列的資料行。 討論如何在 `DataTable` 中合併識別值。  
+  
+[擷取二進位資料](retrieve-binary-data.md)  
+說明如何使用 `CommandBehavior`.`SequentialAccess` 來擷取二進位資料或大型資料結構 以修改 `DataReader` 的預設行為。  
+  
+[使用預存程序修改資料](modify-data-with-stored-procedures.md)  
+說明如何使用預存程序 (Stored Procedure) 輸入參數和輸出參數，將資料列插入資料庫中，並傳回新的識別值。  
+
+[SqlClient 中的資料追蹤](data-tracing.md)  
+說明 Microsoft SqlClient Data Provider for SQL Server 如何提供內建的資料追蹤功能。  
+  
+[SqlClient 中的效能計數器](performance-counters.md)  
+描述可供 Microsoft SqlClient Data Provider for SQL Server 使用的效能計數器。  
+  
+[非同步程式設計](asynchronous-programming.md)  
+描述 Microsoft SqlClient Data Provider for SQL Server 對非同步程式設計的支援。  
+  
+[SqlClient 串流支援](sqlclient-streaming-support.md)  
+討論如何撰寫從 SQL Server 串流資料而不需將它完全載入記憶體的應用程式。  
 
 ## <a name="see-also"></a>請參閱
 

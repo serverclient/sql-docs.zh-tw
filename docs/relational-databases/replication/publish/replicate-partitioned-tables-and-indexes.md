@@ -18,12 +18,12 @@ ms.assetid: c9fa81b1-6c81-4c11-927b-fab16301a8f5
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016
-ms.openlocfilehash: 70df27b530fe6afb40f296afdc012ac2c40500a9
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 75c0f38e67fd4d02791c5d2b953f4354a5945dc2
+ms.sourcegitcommit: e5664d20ed507a6f1b5e8ae7429a172a427b066c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97468939"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697140"
 ---
 # <a name="replicate-partitioned-tables-and-indexes"></a>複寫資料分割資料表及索引
 [!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "97468939"
 |分割區函數|CREATE PARTITION FUNCTION|  
 |分割區配置|CREATE PARTITION SCHEME|  
   
- 與資料分割有關的第一組屬性是發行項結構描述選項，這些選項可決定是否應將資料分割物件複製到訂閱者。 可透過下列方式來設定這些結構描述選項：  
+ 資料分割屬性為發行項結構描述選項，可決定是否應將資料分割物件複製到訂閱者。 可透過下列方式來設定這些結構描述選項：  
   
 -   在新增發行集精靈的 **[發行項屬性]** 頁面中，或是在 [發行集屬性] 對話方塊中。 若要複製上表所列的物件，請針對 **[複製資料表資料分割配置]** 和 **[複製索引資料分割配置]** 屬性指定 **true** 的值。 如需如何存取 [發行項屬性] 頁面的詳細資訊，請參閱[檢視和修改發行集屬性](../../../relational-databases/replication/publish/view-and-modify-publication-properties.md)。  
   
@@ -61,15 +61,40 @@ ms.locfileid: "97468939"
   
 -   如果訂閱者對於資料分割資料表的定義與發行者不同，則當散發代理程式嘗試在訂閱者上套用變更時，將會失敗。  
   
- 雖然有這些潛在的問題，還是可以啟用資料分割切換來進行異動複寫。 在您啟用資料分割切換之前，請確定與資料分割切換有關的所有資料表都存在於發行者和訂閱者上，並確定資料表定義和資料分割定義是相同的。  
+雖然有這些潛在的問題，還是可以啟用資料分割切換來進行異動複寫。 在您啟用資料分割切換之前，請確定與資料分割切換有關的所有資料表都存在於發行者和訂閱者上，並確定資料表定義和資料分割定義是相同的。  
   
- 當資料分割在發行者端和訂閱者端擁有完全相同的資料分割配置時，您可以開啟僅將資料分割切換陳述式複寫至訂閱者的 *allow_partition_switch* 和 *replication_partition_switch* 。 您也可以在不複寫 DDL 的情況下，開啟 *allow_partition_switch* 。 當您想要將舊的月份傳出資料分割，但針對其他年份，則將複寫的資料分割保留在原位以便在訂閱者端進行備份時，這非常實用。  
+當資料分割在發行者端和訂閱者端擁有完全相同的資料分割配置時，您可以開啟 *allow_partition_switch* 和 *replication_partition_switch*，其只會將資料分割切換陳述式複寫至訂閱者。 您也可以在不複寫 DDL 的情況下，開啟 *allow_partition_switch* 。 當您想要將舊的月份傳出資料分割，但針對其他年份，則將複寫的資料分割保留在原位以便在訂閱者端進行備份時，這非常實用。  
   
- 若您透過目前的版本啟用了 SQL Server 2008 R2 的資料分割切換功能，您可能很快就會需要執行分割及合併作業。 對複寫的資料表執行分割或合併作業之前，請確定有問題的分割區上沒有任何暫止的複寫命令。 此外也必須確定未在分割及合併作業期間，對分割區執行任何 DML 作業。 如有交易的記錄讀取器未處理，或在執行分割或合併作業時，對複寫資料表的資料分割執行了 DML 作業 (對象均為同一個資料分割)，可能會導致記錄讀取器代理程式發生處理錯誤。 若要更正此錯誤，可能需要重新初始化訂閱。  
-  
-> [!WARNING]  
->  由於用來偵測並解決衝突之隱藏資料行的緣故，您不得為點對點發行集啟用資料分割切換。  
-  
+若您透過目前的版本啟用了 SQL Server 2008 R2 的資料分割切換功能，您可能很快就會需要執行分割及合併作業。 對複寫或啟用 CDC 的資料表執行分割或合併作業之前，請確認目標資料分割並沒有任何擱置的複寫命令。 此外也必須確定未在分割及合併作業期間，對分割區執行任何 DML 作業。 如果有記錄讀取器或 CDC 擷取作業尚未處理的交易，或是在執行分割或合併作業時，對複寫或啟用 CDC 之資料表的資料分割執行 DML 作業 (涉及相同的資料分割)，這可能會導致記錄讀取器代理程式或 CDC 擷取作業發生處理錯誤 (錯誤 608 - 找不到資料分割識別碼的目錄項目)。 若要更正此錯誤，可能需要將訂用帳戶重新初始化或停用該資料表或資料庫上的 CDC。 
+
+### <a name="unsupported-scenarios"></a>不支援的案例
+
+使用複寫進行資料分割切換時，不支援下列案例： 
+
+**點對點複寫**   
+資料分割切換不支援點對點複寫。 
+
+**使用變數進行資料分割切換**   
+
+針對 `ALTER TABLE ... SWITCH TO ... PARTITION ...` 陳述式，不支援在使用異動複寫或異動資料擷取 (CDC) 發佈的資料表上搭配資料分割切換使用變數。
+
+例如，在資料庫上啟用 CDC，或 TableA 參與交易式發行集的情況下，將無法使用下列資料分割切換程式碼： 
+
+```sql
+DECLARE @SomeVariable INT = $PARTITION.pf_test(10);
+ALTER TABLE dbo.TableA
+SWITCH TO dbo.TableB 
+PARTITION @SomeVariable;
+```
+
+相反地，請直接使用資料分割函數來切換資料分割，如下列範例所示： 
+
+```sql
+ALTER TABLE NonPartitionedTable 
+SWITCH TO PartitionedTable PARTITION $PARTITION.pf_test(10);
+```
+
+
 ### <a name="enabling-partition-switching"></a>啟用資料分割切換  
  交易式發行集的下列屬性可讓使用者控制複寫環境中的資料分割切換行為：  
   

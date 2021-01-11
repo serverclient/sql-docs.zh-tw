@@ -5,7 +5,7 @@ ms.custom: seodec18
 ms.date: 05/17/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: how-to
 helpviewer_keywords:
 - Transparent Data Encryption, AlwaysOn Availability Groups
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 09eb6ebc-3051-4fff-86a5-93524507b1fc
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 2569f44e4642df714c8108b6540b81d013d30b82
-ms.sourcegitcommit: 54cd97a33f417432aa26b948b3fc4b71a5e9162b
+ms.openlocfilehash: 8001dbf4a5799d275bced4f565ee00a7a70d6c61
+ms.sourcegitcommit: 44eebb659f9b226c08aea6c31a909b22ad4fec60
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94584294"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860592"
 ---
 # <a name="add-an-encrypted-database-to-an-always-on-availability-group"></a>將加密的資料庫新增至 Always On 可用性群組
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -33,15 +33,13 @@ ms.locfileid: "94584294"
   
      若要讓解密的資料庫能夠透過精靈加入至可用性群組：  
   
-    1.  建立主要資料庫的記錄備份。  
+    1.  建立主要資料庫的完整資料庫備份。 
   
-    2.  建立主要資料庫的完整資料庫備份。  
+    2.  建立主要資料庫的記錄備份。  
   
     3.  在裝載次要複本的伺服器執行個體上還原資料庫備份。  
-  
-    4.  從主要資料庫建立新的記錄備份。  
-  
-    5.  在次要資料庫上還原這個記錄備份。  
+    
+    4.  在次要資料庫上還原記錄備份。  
   
 ##  <a name="related-tasks"></a><a name="RelatedTasks"></a> 相關工作  
   

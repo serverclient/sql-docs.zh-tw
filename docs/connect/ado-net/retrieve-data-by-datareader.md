@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: e7a618ef92a9f4a4cc969112886a4246ad25adc6
-ms.sourcegitcommit: 866554663ca3191748b6e4eb4d8d82fa58c4e426
+ms.openlocfilehash: dfbe41fe29a3dadc69a2a428f1bf8b606a2a7050
+ms.sourcegitcommit: c938c12cf157962a5541347fcfae57588b90d929
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559200"
+ms.lasthandoff: 12/25/2020
+ms.locfileid: "97771327"
 ---
 # <a name="retrieve-data-by-a-datareader"></a>由 DataReader 擷取的資料
 
@@ -42,9 +42,9 @@ reader = command.ExecuteReader();
 
 [!code-csharp[DataWorks SqlClient.HasRows#1](~/../sqlclient/doc/samples/SqlDataReader_HasRows.cs#1)]
 
-## <a name="closing-the-datareader"></a>關閉 DataReader  
+## <a name="close-the-datareader"></a>關閉 DataReader  
 
-當 **DataReader** 物件使用完畢之後，請務必呼叫 **Close** 方法。
+當 `DataReader` 物件使用完畢之後，請務必呼叫 `Close()` 方法。
 
 > [!NOTE]
 > 如果您的 **Command** 包含輸出參數或傳回值，則必須等到 **DataReader** 關閉後才能使用這些值。  
@@ -71,4 +71,5 @@ reader = command.ExecuteReader();
 
 - [DataAdapter 和 DataReader](dataadapters-datareaders.md)
 - [命令與參數](commands-parameters.md)
+- [擷取資料庫結構描述資訊](retrieving-database-schema-information.md)
 - [Microsoft ADO.NET for SQL Server](microsoft-ado-net-sql-server.md)
