@@ -15,14 +15,14 @@ helpviewer_keywords:
 - isolation levels [SQL Server], metadata access
 - hints [SQL Server], locking
 ms.assetid: 02bb71fa-1e92-4782-a9cf-6e256cc1f3ea
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: f9c3d400f67f42f206c9b6924f3d2ea90445d023
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: d5147b1fafa7c1095571a89f6d2bd8647806381f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467550"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100898"
 ---
 # <a name="transaction-isolation-levels"></a>交易隔離等級
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -51,7 +51,7 @@ ms.locfileid: "88467550"
   
 |隔離等級|支援|接受|  
 |---------------------|---------------|-------------|  
-|READ UNCOMMITTED|否|不保證|  
+|READ UNCOMMITTED|No|不保證|  
 |READ COMMITTED|是|是|  
 |REPEATABLE READ|否|否|  
 |SNAPSHOT ISOLATION|否|否|  

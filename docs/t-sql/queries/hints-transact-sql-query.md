@@ -55,13 +55,13 @@ helpviewer_keywords:
 - QUERY_PLAN_PROFILE query hint
 ms.assetid: 66fb1520-dcdf-4aab-9ff1-7de8f79e5b2d
 author: pmasl
-ms.author: vanto
-ms.openlocfilehash: effad55b1fd1eec856aa412700a751e36e588b37
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+ms.author: pelopes
+ms.openlocfilehash: eda240576ebb819e387e3fb93d55a06b6a1c1d9e
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92035838"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102373"
 ---
 # <a name="hints-transact-sql---query"></a>提示 (Transact-SQL) - 查詢
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -298,7 +298,7 @@ ROBUST PLAN
 <a name="use_hint"></a> USE HINT ( **'** _hint\_name_ **'** )    
  **適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 起) 與 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
  
-為查詢處理器提供一或多個其他提示。 其他提示由**單引號內**的提示名稱所指定。   
+為查詢處理器提供一或多個其他提示。 其他提示由 **單引號內** 的提示名稱所指定。   
 
 支援下列提示名稱：    
  

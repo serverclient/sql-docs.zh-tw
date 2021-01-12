@@ -21,14 +21,14 @@ helpviewer_keywords:
 - CREATE SPATIAL INDEX statement
 - CREATE INDEX statement
 ms.assetid: ee6b9116-a7ff-463a-a9f0-b360804d8678
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 549f9157341c6b9508e63c0fadcdb06bade25d18
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: ce2693109669da084a67849105e859066f818213
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538098"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102368"
 ---
 # <a name="create-spatial-index-transact-sql"></a>CREATE SPATIAL INDEX (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -250,7 +250,7 @@ BOUNDING_BOX
  > [!NOTE]
  > 週框方塊座標只適用於 USING GEOMETRY_GRID 子句內。  
  >
- > *xmax* 必須大於 *xmin*，而 *ymax* 必須大於 *ymin*。 您可以指定任何有效的[float](../../t-sql/data-types/float-and-real-transact-sql.md) 值表示法，前提如下：*xmax* > *xmin* 且 *ymax* > *ymin*。 否則會引發適當的錯誤。  
+ > *xmax* 必須大於 *xmin*，而 *ymax* 必須大於 *ymin*。 您可以指定任何有效的 [float](../../t-sql/data-types/float-and-real-transact-sql.md) 值表示法，前提如下：*xmax* > *xmin* 且 *ymax* > *ymin*。 否則會引發適當的錯誤。  
  >
  > 沒有預設值。  
  >
@@ -308,7 +308,7 @@ CELLS_PER_OBJECT =*n*
 |GEOGRAPHY_GRID|**16**|  
 |GEOGRAPHY_AUTO_GRID|**12**|  
   
-在最上層，如果物件涵蓋的資料格數目要比 *n*指定的數目還要多，則索引會盡量使用所需的資料格數目來提供完整的最上層鑲嵌。 在這類情況下，物件可能會收到比指定之資料格數目還要多的資料格。 在此情況下，最大數目就是最上層方格產生的資料格數目，該數目取決於密度。  
+在最上層，如果物件涵蓋的資料格數目要比 *n* 指定的數目還要多，則索引會盡量使用所需的資料格數目來提供完整的最上層鑲嵌。 在這類情況下，物件可能會收到比指定之資料格數目還要多的資料格。 在此情況下，最大數目就是最上層方格產生的資料格數目，該數目取決於密度。  
   
 CELLS_PER_OBJECT 值會由每一物件的資料格鑲嵌式規則所使用。 如需鑲嵌規則的資訊，請參閱[空間索引概觀](../../relational-databases/spatial/spatial-indexes-overview.md)。  
   

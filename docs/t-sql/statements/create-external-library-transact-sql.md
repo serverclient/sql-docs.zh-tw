@@ -20,12 +20,12 @@ author: dphansen
 ms.author: davidph
 manager: cgronlund
 monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current'
-ms.openlocfilehash: a408cfb25f40ee58c1aeb521c11938026d9241cb
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 9839a6fa8bd678afdce426f9dcd5657500c5a6cd
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97439013"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100781"
 ---
 # <a name="create-external-library-transact-sql"></a>CREATE EXTERNAL LIBRARY (Transact-SQL)  
 [!INCLUDE [SQL Server 2017 SQL MI](../../includes/applies-to-version/sqlserver2017-asdbmi.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "97439013"
 將 R 或 Python 套件檔案從指定的位元組資料流或檔案路徑上傳到資料庫。 此陳述式可以作為資料庫管理員上傳所需成品的一般機制。 
 
 > [!NOTE]
-> 在 Azure SQL 受控執行個體中，您可使用 **sqlmlutils** 來安裝程式庫。 如需詳細資料，請參閱[使用 sqlmlutils 安裝 Python 套件](../../machine-learning/package-management/install-additional-python-packages-on-sql-server.md?context=%252fazure%252fazure-sql%252fmanaged-instance%252fcontext%252fml-context&view=azuresqldb-mi-current)和[使用 sqlmlutils 安裝新的 R 套件](../../machine-learning/package-management/install-additional-r-packages-on-sql-server.md?context=%252fazure%252fazure-sql%252fmanaged-instance%252fcontext%252fml-context&view=azuresqldb-mi-current)。
+> 在 Azure SQL 受控執行個體中，您可使用 **sqlmlutils** 來安裝程式庫。 如需詳細資料，請參閱[使用 sqlmlutils 安裝 Python 套件](../../machine-learning/package-management/install-additional-python-packages-on-sql-server.md?context=%252fazure%252fazure-sql%252fmanaged-instance%252fcontext%252fml-context&view=azuresqldb-mi-current&preserve-view=true)和[使用 sqlmlutils 安裝新的 R 套件](../../machine-learning/package-management/install-additional-r-packages-on-sql-server.md?context=%252fazure%252fazure-sql%252fmanaged-instance%252fcontext%252fml-context&view=azuresqldb-mi-current&preserve-view=true)。
 ::: moniker-end
 
 ::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"

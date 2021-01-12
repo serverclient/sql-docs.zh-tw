@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: suresh-kandoth
 ms.author: ramakoni
-ms.openlocfilehash: 0a04ec00e94dca9a4d940a3b0182123f0716d472
-ms.sourcegitcommit: ead0b8c334d487a07e41256ce5d6acafa2d23c9d
+ms.openlocfilehash: b448b97f5f6eeaf403b0c5c218edb8cd7dd7f8ca
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92418750"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101847"
 ---
 # <a name="mssqlserver_4214"></a>MSSQLSERVER_4214
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -47,4 +47,4 @@ ms.locfileid: "92418750"
 
 ## <a name="more-information"></a>詳細資訊
 
-如需詳細資訊，請參閱：[SQL Server 資料庫的備份與還原](/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases)。
+如需詳細資訊，請參閱：[SQL Server 資料庫的備份與還原](../backup-restore/back-up-and-restore-of-sql-server-databases.md)。

@@ -22,14 +22,14 @@ helpviewer_keywords:
 - adding files
 - ALTER ASSEMBLY statement
 ms.assetid: 87bca678-4e79-40e1-bb8b-bd5ed8f34853
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 781d61c5cde33ae51b7ecb94d56a8c3cadff1595
-ms.sourcegitcommit: bd3a135f061e4a49183bbebc7add41ab11872bae
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: dda1de9a2eb4628765333651c7d074b0c38551db
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92300218"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100906"
 ---
 # <a name="alter-assembly-transact-sql"></a>ALTER ASSEMBLY (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -95,7 +95,7 @@ ALTER ASSEMBLY assembly_name
 >  自主資料庫無法使用 EXTERNAL_ACCESS 和 UNSAFE 選項。  
   
  VISIBILITY = { ON | OFF }  
- 指出是否會顯示組件，以對該組件建立 Common Language Runtime (CLR) 函數、預存程序、觸發程序、使用者自訂類型以及使用者定義彙總函式。 如果是設為 OFF，則該組件是專供其他組件呼叫。 如果已對該組件建立現有的 CLR 資料庫物件，就不能變更該組件的可見性。 依預設， *assembly_name* 所參考的任何組件在上傳時都不會顯示。  
+ 指出是否會顯示組件，以對該組件建立 Common Language Runtime (CLR) 函數、預存程序、觸發程序、使用者自訂類型以及使用者定義彙總函式。 如果是設為 OFF，則該組件是專供其他組件呼叫。 如果已對該組件建立現有的 CLR 資料庫物件，就不能變更該組件的可見性。 依預設，*assembly_name* 所參考的任何組件在上傳時都不會顯示。  
   
  UNCHECKED DATA  
  依預設，如果必須驗證個別資料表資料列的一致性，ALTER ASSEMBLY 便會失敗。 這個選項可讓您利用 DBCC CHECKTABLE 延後檢查。 如果指定的話，即使資料庫中有包含下列各項的資料表，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 也會執行 ALTER ASSEMBLY 陳述式：  
@@ -104,7 +104,7 @@ ALTER ASSEMBLY assembly_name
   
 -   直接或間接參考組件方法的 CHECK 條件約束。  
   
--   相依於組件的 CLR 使用者定義型別資料行，以及實作 **UserDefined** (非 **原生** ) 序列化格式之類型的資料行。  
+-   相依於組件的 CLR 使用者定義型別資料行，以及實作 **UserDefined** (非 **原生**) 序列化格式之類型的資料行。  
   
 -   參考利用 WITH SCHEMABINDING 建立之檢視的 CLR 使用者自訂類型資料行。  
   
@@ -116,14 +116,14 @@ ALTER ASSEMBLY assembly_name
   
  如需詳細資訊，請參閱[實作組件](../../relational-databases/clr-integration/assemblies-implementing.md)。  
   
- [ DROP FILE { *file_name* [ **,** _...n_ ] | ALL } ]  
+ [ DROP FILE { *file_name*[ **,** _...n_] | ALL } ]  
  從資料庫移除與該組件相關聯的檔案名稱，或是所有與該組件相關聯的檔案。 如果使用底下的 ADD FILE，則會先執行 DROP FILE。 此舉可讓您取代同名的檔案。  
   
 > [!NOTE]  
 >  此選項在自主資料庫或 Azure SQL Database 中無法使用。  
   
- [ ADD FILE FROM { *client_file_specifier* [ AS *file_name* ] | *file_bits* AS *file_name* }  
- 將與組件相關聯的檔案 (例如，原始程式碼、偵錯檔案或其他相關資訊)，上傳到伺服器，並顯示在 **sys.assembly_files** 目錄檢視中。 *client_file_specifier* 會指定要上傳檔案的位置。 您可以改用 *file_bits* 來指定構成該檔的二進位值清單。 *file_name* 會指定該檔案儲存在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體所用的名稱。 如果已指定 *file_bits* ，則必須指定 *file_name* ，而如果已指定 *client_file_specifier* ，則為選用。 如果未指定 *file_name* ， *client_file_specifier* 的 file_name 部分會作為 *file_name* 使用。  
+ [ ADD FILE FROM { *client_file_specifier* [ AS *file_name*] | *file_bits* AS *file_name*}  
+ 將與組件相關聯的檔案 (例如，原始程式碼、偵錯檔案或其他相關資訊)，上傳到伺服器，並顯示在 **sys.assembly_files** 目錄檢視中。 *client_file_specifier* 會指定要上傳檔案的位置。 您可以改用 *file_bits* 來指定構成該檔的二進位值清單。 *file_name* 會指定該檔案儲存在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體所用的名稱。 如果已指定 *file_bits*，則必須指定 *file_name*，而如果已指定 *client_file_specifier*，則為選用。 如果未指定 *file_name*，*client_file_specifier* 的 file_name 部分會作為 *file_name* 使用。  
   
 > [!NOTE]  
 >  此選項在自主資料庫或 Azure SQL Database 中無法使用。  
