@@ -13,12 +13,12 @@ f1_keywords:
 ms.assetid: a3447987-5507-4630-ac35-58821b72354d
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: bf329c6537df49ace1ae78bba64e146641e1e664
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 87c3b10b95a37c74ea1595dca15341aeffe5c261
+ms.sourcegitcommit: 4a813a0741502c56c0cd5ecaafafad2e857a9d7f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195033"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98031097"
 ---
 # <a name="database-properties-options-page"></a>資料庫屬性 (選項頁面)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -69,9 +69,9 @@ ms.locfileid: "92195033"
 
   **目前的服務等級目標** 要使用的特定 SLO。 有效值受限於選取的版本。 如果您想要的 SLO 值不在清單中，您可以鍵入值。
 
-  **版本**要使用的 Azure SQL Database 版本，例如基本或進階。 如果您需要的版本值不在清單中，您可以鍵入值，它必須符合 Azure REST API 中使用的值。
+  **版本** 要使用的 Azure SQL Database 版本，例如基本或進階。 如果您需要的版本值不在清單中，您可以鍵入值，它必須符合 Azure REST API 中使用的值。
   
-  **大小上限**資料庫的大小上限。 如果想要的大小值不在清單中，您可以鍵入值。 保留空白會使用指定版本和 SLO 的預設大小。
+  **大小上限** 資料庫的大小上限。 如果想要的大小值不在清單中，您可以鍵入值。 保留空白會使用指定版本和 SLO 的預設大小。
   
 ## <a name="containment"></a>Containment  
  在自主資料庫中，通常在伺服器層級設定的某些設定可在資料庫層級進行設定。  
@@ -165,7 +165,7 @@ ms.locfileid: "92195033"
  若為 [False]，則不會維謢相互關聯統計資料。  
  
  **延遲持久性**  
- 啟用這項功能。  
+ 啟用這項功能。 如需詳細資訊，請參閱[控制交易持久性](../logs/control-transaction-durability.md)。
  
  **為啟用讀取認可快照**  
  啟用這項功能。  

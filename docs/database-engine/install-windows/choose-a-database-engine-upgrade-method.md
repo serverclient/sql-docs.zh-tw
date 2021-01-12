@@ -11,12 +11,12 @@ ms.assetid: 5e57a427-2e88-4ef6-b142-4ccad97bcecc
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 0fd911cd7ce60068c0d28ecd5a386a344c5ebea7
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c36d6718455f85314f98219b860a801984804d9d
+ms.sourcegitcommit: 3ec49252e82590de0fe559a8574606ae213f6f3b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481459"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97975443"
 ---
 # <a name="choose-a-database-engine-upgrade-method"></a>選擇資料庫引擎升級方法
 [!INCLUDE [SQL Server -Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "97481459"
 >   - [在 Azure 中選取 SQL Server 選項](/azure/azure-sql/azure-sql-iaas-vs-paas-what-is-overview)。  
   
 ## <a name="upgrade-in-place"></a>就地升級  
- 透過此方法，SQL Server 安裝程式會以新的 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] 位元取代現有的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 位元，然後升級每個系統及使用者資料庫，藉此升級現有的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 安裝。  就地升級方法最簡易，其需要停機一段時間，需要後援時也會花費較長時間，而且未受所有案例支援。 如需支援與未支援的就地升級案例詳細資訊，請參閱 [支援的版本與版本升級](../../database-engine/install-windows/supported-version-and-edition-upgrades-2017.md)。  
+ 透過此方法，SQL Server 安裝程式會以新的 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] 位元取代現有的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 位元，然後升級每個系統及使用者資料庫，藉此升級現有的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 安裝。  就地升級方法最簡易，其需要停機一段時間，需要後援時也會花費較長時間，而且未受所有案例支援。 如需支援與未支援的就地升級案例詳細資訊，請參閱 [支援的版本與版本升級](../../database-engine/install-windows/supported-version-and-edition-upgrades-version-15.md)。  
   
  此方法通常用在下列案例中：  
   

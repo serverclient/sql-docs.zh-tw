@@ -11,12 +11,12 @@ ms.assetid: 19c5b725-7400-4881-af8f-fd232ca28234
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 5e98874d2e5d1673a4f666de81b82e92b20bfa9f
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 73c70e347de00a18f4c4ec5ce3228d6d000d16f0
+ms.sourcegitcommit: 3ec49252e82590de0fe559a8574606ae213f6f3b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97463619"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97975445"
 ---
 # <a name="plan-and-test-the-database-engine-upgrade-plan"></a>計劃和測試資料庫引擎升級計畫
 
@@ -27,8 +27,9 @@ ms.locfileid: "97463619"
 ## <a name="release-notes-and-known-upgrade-issues"></a>版本資訊與已知升級問題  
  升級 [!INCLUDE[ssDE](../../includes/ssde-md.md)] 之前，請檢閱：
 
+- [SQL Server 2019 版本資訊](../../sql-server/sql-server-version-15-release-notes.md)
 - [SQL Server 2017 版本資訊](../../sql-server/sql-server-2017-release-notes.md) 
-- [SQL Server 2016 版本資訊](../../sql-server/sql-server-2016-release-notes.md) 
+- [SQL Server 2016 版本資訊](../../sql-server/sql-server-2016-release-notes.md)
 - [SQL Server 資料庫引擎回溯相容性](../discontinued-database-engine-functionality-in-sql-server.md)一文。  
   
 ## <a name="pre-upgrade-planning-checklist"></a>升級前的計劃檢查清單  
