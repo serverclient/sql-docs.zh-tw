@@ -1,6 +1,6 @@
 ---
-description: 'sys. dm_exec_session_wait_stats (Transact-sql) '
-title: sys. dm_exec_session_wait_stats (Transact-sql) |Microsoft Docs
+description: 'sys.dm_exec_session_wait_stats (Transact-sql) '
+title: sys.dm_exec_session_wait_stats (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 04/24/2018
 ms.prod: sql
@@ -15,20 +15,20 @@ f1_keywords:
 helpviewer_keywords:
 - sys.dm_exec_session_wait_stats
 ms.assetid: df84842a-71eb-4fda-b448-5953cf9985dc
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 6668ab7b975c7325ab4b5d03ca2f30856b2ffbd0
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 7555332848e338fe73e0add1a1fb4e9a3097256e
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89536994"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098928"
 ---
-# <a name="sysdm_exec_session_wait_stats-transact-sql"></a>sys. dm_exec_session_wait_stats (Transact-sql) 
+# <a name="sysdm_exec_session_wait_stats-transact-sql"></a>sys.dm_exec_session_wait_stats (Transact-sql) 
 
 [!INCLUDE [sqlserver2016-asdb-asdbmi](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi.md)]
 
-  傳回針對每個會話執行的執行緒所遇到之所有等候的相關資訊。 您可以使用此視圖來診斷會話的效能問題 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ，以及特定查詢和批次的效能問題。  此視圖會傳回會話相同的資訊，此資訊是針對 [sys. dm_os_wait_stats &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md) 所匯總，但也提供 **session_id** 號碼。  
+  傳回針對每個會話執行的執行緒所遇到之所有等候的相關資訊。 您可以使用此視圖來診斷會話的效能問題 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ，以及特定查詢和批次的效能問題。  此視圖會傳回會話相同的 [sys.dm_os_wait_stats &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md) 所匯總的資訊，但也會提供 **session_id** 的數位。  
   
 **適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本)。  
   
@@ -44,7 +44,7 @@ ms.locfileid: "89536994"
 ## <a name="remarks"></a>備註  
  此 DMV 會在會話開啟時重設會話的資訊; 如果連接共用) ，則會重設會話 (  
   
- 如需等候類型的詳細資訊，請參閱 [sys. dm_os_wait_stats &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md)。  
+ 如需等候類型的詳細資訊，請參閱 [sys.dm_os_wait_stats &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md)。  
   
 ## <a name="permissions"></a>權限  
  如果使用者具有伺服器的 **VIEW SERVER STATE** 許可權，使用者將會在實例上看到所有執行中的會話 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ; 否則，使用者只會看到目前的會話。  

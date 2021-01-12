@@ -1,6 +1,6 @@
 ---
 description: sys.fn_validate_plan_guide (Transact-SQL)
-title: sys. fn_validate_plan_guide (Transact-sql) |Microsoft Docs
+title: sys.fn_validate_plan_guide (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - fn_validate_plan_guide function
 - sys.fn_validate_plan_guide function
 ms.assetid: 3af8b47a-936d-4411-91d1-d2d16dda5623
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: b19a3cd2f2ee449780127682555f1ae77fabd5d0
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 7c9290f1d638f1eb2cf55c19d70d4e32a773bafe
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88396894"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093788"
 ---
 # <a name="sysfn_validate_plan_guide-transact-sql"></a>sys.fn_validate_plan_guide (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -45,7 +45,7 @@ sys.fn_validate_plan_guide ( plan_guide_id )
   
 ## <a name="arguments"></a>引數  
  *plan_guide_id*  
- 這是 [sys. plan_guides](../../relational-databases/system-catalog-views/sys-plan-guides-transact-sql.md) 目錄檢視中所報告之計劃指南的識別碼。 *plan_guide_id* 是 **int** ，沒有預設值。  
+ 這是 [sys.plan_guides](../../relational-databases/system-catalog-views/sys-plan-guides-transact-sql.md) 目錄檢視中所報告之計劃指南的識別碼。 *plan_guide_id* 是 **int** ，沒有預設值。  
   
 ## <a name="table-returned"></a>傳回的資料表  
   
@@ -53,8 +53,8 @@ sys.fn_validate_plan_guide ( plan_guide_id )
 |-----------------|---------------|-----------------|  
 |msgnum|**int**|錯誤訊息的識別碼。|  
 |severity|**tinyint**|訊息的嚴重性層級，介於 1 至 25 之間。|  
-|狀態|**smallint**|錯誤的狀態碼，可指出程式碼中的錯誤發生點。|  
-|訊息|**nvarchar(2048)**|錯誤的訊息文字。|  
+|state|**smallint**|錯誤的狀態碼，可指出程式碼中的錯誤發生點。|  
+|message|**nvarchar(2048)**|錯誤的訊息文字。|  
   
 ## <a name="permissions"></a>權限  
  OBJECT 範圍的計畫指南需要所參考物件的 VIEW DEFINITION 或 ALTER 權限，以及編譯計畫指南中所提供之查詢或批次的權限。 例如，如果批次包含 SELECT 陳述式，就會需要所參考物件的 SELECT 權限。  

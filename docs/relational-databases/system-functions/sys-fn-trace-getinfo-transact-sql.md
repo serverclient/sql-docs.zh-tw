@@ -1,6 +1,6 @@
 ---
 description: sys.fn_trace_getinfo (Transact-SQL)
-title: sys. fn_trace_getinfo (Transact-sql) |Microsoft Docs
+title: sys.fn_trace_getinfo (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/09/2016
 ms.prod: sql
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sys.fn_trace_getinfo function
 - fn_trace_getinfo function
 ms.assetid: 04b140fe-110a-47b8-98b5-e4c161beb6c9
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 2502fa3fb70811ff73235863eb83fb63b889ad8f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c7426552dd52732b6b22f9947862b8607418f482
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88481775"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093806"
 ---
 # <a name="sysfn_trace_getinfo-transact-sql"></a>sys.fn_trace_getinfo (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -59,7 +59,7 @@ sys.fn_trace_getinfo ( { trace_id | NULL | 0 | DEFAULT } )
 ## <a name="remarks"></a>備註  
  在傳遞特定追蹤的識別碼之後，fn_trace_getinfo 會傳回該追蹤的相關資訊。 當傳遞無效的識別碼時，這個函數會傳回空的資料列集。  
   
- fn_trace_getinfo 會對其結果集所包含的任何追蹤檔案名稱附加 .trc 副檔名。 如需定義追蹤的詳細資訊，請參閱 [sp_trace_create &#40;transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-trace-create-transact-sql.md)。 如需追蹤篩選器的類似資訊，請參閱 [sys. fn_trace_getfilterinfo &#40;transact-sql&#41;](../../relational-databases/system-functions/sys-fn-trace-getfilterinfo-transact-sql.md)。  
+ fn_trace_getinfo 會對其結果集所包含的任何追蹤檔案名稱附加 .trc 副檔名。 如需定義追蹤的詳細資訊，請參閱 [sp_trace_create &#40;transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-trace-create-transact-sql.md)。 如需追蹤篩選器的類似資訊，請參閱 [sys.fn_trace_getfilterinfo &#40;transact-sql&#41;](../../relational-databases/system-functions/sys-fn-trace-getfilterinfo-transact-sql.md)。  
   
  如需使用追蹤預存程式的完整範例，請參閱 [&#40;transact-sql&#41;建立追蹤 ](../../relational-databases/sql-trace/create-a-trace-transact-sql.md)。  
   
@@ -75,14 +75,14 @@ GO
 ```  
   
 ## <a name="see-also"></a>另請參閱  
- [建立 &#40;Transact-sql&#41;的追蹤 ](../../relational-databases/sql-trace/create-a-trace-transact-sql.md)   
- [sp_trace_create &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-trace-create-transact-sql.md)   
+ [建立追蹤 &#40;Transact-SQL&#41;](../../relational-databases/sql-trace/create-a-trace-transact-sql.md)   
+ [sp_trace_create &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-trace-create-transact-sql.md)   
  [sp_trace_generateevent &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-trace-generateevent-transact-sql.md)   
  [sp_trace_setevent &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-trace-setevent-transact-sql.md)   
- [sp_trace_setfilter &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-trace-setfilter-transact-sql.md)   
- [sp_trace_setstatus &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-trace-setstatus-transact-sql.md)   
- [sys. fn_trace_getfilterinfo &#40;Transact-sql&#41;](../../relational-databases/system-functions/sys-fn-trace-getfilterinfo-transact-sql.md)   
- [sys. fn_trace_geteventinfo &#40;Transact-sql&#41;](../../relational-databases/system-functions/sys-fn-trace-geteventinfo-transact-sql.md)   
- [sys. fn_trace_gettable &#40;Transact-sql&#41;](../../relational-databases/system-functions/sys-fn-trace-gettable-transact-sql.md)  
+ [sp_trace_setfilter &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-trace-setfilter-transact-sql.md)   
+ [sp_trace_setstatus &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-trace-setstatus-transact-sql.md)   
+ [sys.fn_trace_getfilterinfo &#40;Transact-SQL&#41;](../../relational-databases/system-functions/sys-fn-trace-getfilterinfo-transact-sql.md)   
+ [sys.fn_trace_geteventinfo &#40;Transact-sql&#41;](../../relational-databases/system-functions/sys-fn-trace-geteventinfo-transact-sql.md)   
+ [sys.fn_trace_gettable &#40;Transact-sql&#41;](../../relational-databases/system-functions/sys-fn-trace-gettable-transact-sql.md)  
   
   
