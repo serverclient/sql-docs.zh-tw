@@ -1,6 +1,6 @@
 ---
 description: sys.dm_exec_query_plan (Transact-SQL)
-title: sys. dm_exec_query_plan (Transact-sql) |Microsoft Docs
+title: sys.dm_exec_query_plan (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/02/2016
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_exec_query_plan dynamic management function
 ms.assetid: e26f0867-9be3-4b2e-969e-7f2840230770
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 741cfebb7eb50e37512a5778691ab61700f9d98e
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 18d6e4e8e3c6fe097676d1bf65f337610127566a
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89548528"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094108"
 ---
 # <a name="sysdm_exec_query_plan-transact-sql"></a>sys.dm_exec_query_plan (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -43,7 +43,7 @@ sys.dm_exec_query_plan(plan_handle)
   
 ## <a name="arguments"></a>引數  
 *plan_handle*  
-這是一種權杖，可唯一識別已執行之批次的查詢執行計畫，而且其計畫位於計畫快取或目前正在執行中。 *plan_handle* 是 **Varbinary (64) **。   
+這是一種權杖，可唯一識別已執行之批次的查詢執行計畫，而且其計畫位於計畫快取或目前正在執行中。 *plan_handle* 是 **Varbinary (64)**。   
 
 您可以從下列動態管理物件中取得 *plan_handle* ：
   
@@ -53,9 +53,9 @@ sys.dm_exec_query_plan(plan_handle)
   
 -   [sys.dm_exec_requests &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md)  
 
--   [sys. dm_exec_procedure_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-procedure-stats-transact-sql.md)  
+-   [sys.dm_exec_procedure_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-procedure-stats-transact-sql.md)  
 
--   [sys. dm_exec_trigger_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-trigger-stats-transact-sql.md)  
+-   [sys.dm_exec_trigger_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-trigger-stats-transact-sql.md)  
   
 ## <a name="table-returned"></a>傳回的資料表  
   
@@ -65,7 +65,7 @@ sys.dm_exec_query_plan(plan_handle)
 |**objectid**|**int**|這個查詢計畫的物件識別碼 (如預存程序或使用者自訂函數)。 若為特定和準備批次，這個資料行是 **Null**。<br /><br /> 資料行可為 Null。|  
 |**number**|**smallint**|編號預存程序整數。 例如，**orders** 應用程式的一組程序可以命名為 **orderproc;1**、**orderproc;2**，依此類推。 若為特定和準備批次，這個資料行是 **Null**。<br /><br /> 資料行可為 Null。|  
 |**加密**|**bit**|指出對應的預存程序是否加密。<br /><br /> 0 = 未加密<br /><br /> 1 = 加密<br /><br /> 資料行不可為 Null。|  
-|**query_plan**|**xml**|包含以 *plan_handle*指定之查詢執行計畫的編譯階段顯示計畫標記法。 顯示計畫是 XML 格式。 每個包含諸如特定 [!INCLUDE[tsql](../../includes/tsql-md.md)] 陳述式、預存程序呼叫和使用者自訂函數呼叫的批次，都會產生一份計畫。<br /><br /> 資料行可為 Null。|  
+|**query_plan**|**xml**|包含以 *plan_handle* 指定之查詢執行計畫的編譯階段顯示計畫標記法。 顯示計畫是 XML 格式。 每個包含諸如特定 [!INCLUDE[tsql](../../includes/tsql-md.md)] 陳述式、預存程序呼叫和使用者自訂函數呼叫的批次，都會產生一份計畫。<br /><br /> 資料行可為 Null。|  
   
 ## <a name="remarks"></a>備註  
  在下列狀況之下，**sys.dm_exec_query_plan** 傳回之資料表的 **query_plan** 資料行不會傳回任何顯示計畫輸出：  
@@ -74,16 +74,16 @@ sys.dm_exec_query_plan(plan_handle)
   
 -   尚未快取某些 [!INCLUDE[tsql](../../includes/tsql-md.md)] 陳述式，如大量作業陳述式或包含大小超出 8 KB 字串文字的陳述式。 您無法利用 **sys.dm_exec_query_plan** 來擷取這些陳述式的 XML 顯示計畫，因為它們不在快取中，除非批次正在執行。  
   
--   如果 [!INCLUDE[tsql](../../includes/tsql-md.md)] 批次或預存套裝程式含對使用者定義函數的呼叫或對動態 SQL 的呼叫，例如使用 EXEC (*字串*) ，則會將使用者自訂函數的已編譯 XML 執行程式表包含在 **sys. dm_exec_query_plan** 針對批次或預存程式所傳回的資料表中。 相反地，您必須針對對應至使用者定義函數的計畫控制碼，個別呼叫 **sys. dm_exec_query_plan** 。  
+-   如果 [!INCLUDE[tsql](../../includes/tsql-md.md)] 批次或預存套裝程式含對使用者定義函數的呼叫或對動態 SQL 的呼叫，例如使用 EXEC (*字串*) ，則會將使用者自訂函數的編譯 XML 執行程式表，不包含在批次或預存程式 **sys.dm_exec_query_plan** 所傳回的資料表中。 相反地，您必須針對對應至使用者定義函數的計畫控制碼，進行個別的 **sys.dm_exec_query_plan** 呼叫。  
   
  當隨選查詢使用簡單或強制參數化時，**query_plan** 資料行只會包含陳述式文字，而非實際查詢計畫。 若要傳回查詢計畫，請呼叫 **sys.dm_exec_query_plan** 來取得準備參數化查詢的計畫控制代碼。 您可以藉由參考 [sys.syscacheobjects](../../relational-databases/system-compatibility-views/sys-syscacheobjects-transact-sql.md) 檢視的 **sql** 資料行，或 [sys.dm_exec_sql_text](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md) 動態管理檢視的文字資料行，判斷查詢是否參數化。  
   
 > [!NOTE] 
-> 由於 **xml** 資料類型所允許的嵌套層級數目有所限制，因此 **sys. dm_exec_query_plan** 無法傳回符合或超過128層級之嵌套專案的查詢計劃。 在舊版 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 中，這會讓查詢計畫無法傳回並產生錯誤 6335。 在 [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] Service Pack 2 和更新版本中， **query_plan** 資料行傳回 Null。   
-> 您可以使用 [sys. dm_exec_text_query_plan &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-text-query-plan-transact-sql.md) 動態管理函數，以文字格式傳回查詢計劃的輸出。  
+> 由於 **xml** 資料類型所允許的嵌套層級數目有所限制， **sys.dm_exec_query_plan** 無法傳回符合或超過128層級之嵌套專案的查詢計劃。 在舊版 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 中，這會讓查詢計畫無法傳回並產生錯誤 6335。 在 [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] Service Pack 2 和更新版本中， **query_plan** 資料行傳回 Null。   
+> 您可以使用 [sys.dm_exec_text_query_plan &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-text-query-plan-transact-sql.md) 動態管理函數，以文字格式傳回查詢計劃的輸出。  
   
 ## <a name="permissions"></a>權限  
- 若要執行 **sys. dm_exec_query_plan**，使用者必須是 **系統管理員（sysadmin** ）固定伺服器角色的成員，或具有 `VIEW SERVER STATE` 伺服器的許可權。  
+ 若要執行 **sys.dm_exec_query_plan**，使用者必須是 **系統管理員（sysadmin** ）固定伺服器角色的成員，或具有伺服器的 `VIEW SERVER STATE` 許可權。  
   
 ## <a name="examples"></a>範例  
  下列範例會顯示如何使用 **sys.dm_exec_query_plan** 動態管理檢視。  
@@ -117,7 +117,7 @@ WHERE session_id = 54;
 GO  
 ```  
   
- **Sys. dm_exec_requests**所傳回的資料表指出執行緩慢的查詢或批次的計畫控制碼是 `0x06000100A27E7C1FA821B10600` ，您可以將其指定為*plan_handle*引數，以依照 `sys.dm_exec_query_plan` 下列方式取出 XML 格式的執行計畫。 執行緩慢的查詢或批次之 XML 格式執行計畫，儲存在 `sys.dm_exec_query_plan` 傳回的資料表之 **query_plan** 資料行中。  
+ **Sys.dm_exec_requests** 所傳回的資料表指出執行緩慢的查詢或批次的計畫控制碼是 `0x06000100A27E7C1FA821B10600` ，您可以將其指定為 *plan_handle* 引數，以依照 `sys.dm_exec_query_plan` 下列方式取得 XML 格式的執行計畫。 執行緩慢的查詢或批次之 XML 格式執行計畫，儲存在 `sys.dm_exec_query_plan` 傳回的資料表之 **query_plan** 資料行中。  
   
 ```sql  
 USE master;  
@@ -166,10 +166,10 @@ GO
 ## <a name="see-also"></a>另請參閱  
  [動態管理檢視與函數 &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)   
  [sys.dm_exec_cached_plans &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-cached-plans-transact-sql.md)   
- [sys. dm_exec_query_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-stats-transact-sql.md)   
+ [sys.dm_exec_query_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-stats-transact-sql.md)   
  [sys.dm_exec_requests &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md)   
  [sp_who &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-who-transact-sql.md)   
  [執行程序邏輯和實體運算子參考](../../relational-databases/showplan-logical-and-physical-operators-reference.md)   
- [sys. dm_exec_text_query_plan &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-text-query-plan-transact-sql.md)  
+ [sys.dm_exec_text_query_plan &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-text-query-plan-transact-sql.md)  
   
   

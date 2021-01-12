@@ -20,15 +20,15 @@ helpviewer_keywords:
 - dm_exec_distributed_request_steps
 - sys.dm_exec_distributed_request_steps management view
 ms.assetid: 1954541d-b716-4e03-8fcc-7022f428e01d
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2edc50544c6a21b385544dd487f5202990ef331c
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 57ea8cc29caae50f91c8351bf72af494b000b178
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97411195"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094076"
 ---
 # <a name="sysdm_exec_distributed_request_steps-transact-sql"></a>sys.dm_exec_distributed_request_steps (Transact-sql) 
 [!INCLUDE [sqlserver2016-asa-pdw](../../includes/applies-to-version/sqlserver2016-asa-pdw.md)]

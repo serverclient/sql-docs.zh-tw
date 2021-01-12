@@ -17,14 +17,14 @@ helpviewer_keywords:
 - data collector view
 - syscollector_collection_sets view
 ms.assetid: db0def92-f25b-45da-9709-eab972b33800
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: e03a5f7ef7ee05e91b3a3b36798c2cb23a883005
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: cc9b5754c1df9957f1a3e8b5e53d0465690a78a7
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537913"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094255"
 ---
 # <a name="syscollector_collection_sets-transact-sql"></a>syscollector_collection_sets (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "89537913"
 |-----------------|---------------|-----------------|  
 |collection_set_id|**int**|收集組的本機識別碼。 不可為 Null。|  
 |collection_set_uid|**uniqueidentifier**|收集組的全域唯一識別碼。 不可為 Null。|  
-|名稱|**nvarchar(4000)**|收集組的名稱。 可為 Null。|  
+|name|**nvarchar(4000)**|收集組的名稱。 可為 Null。|  
 |目標|**nvarchar(max)**|識別收集組的目標。 可為 Null。|  
 |is_system|**bit**|開啟 (1) 表示收集組是由資料收集器提供，而關閉 (0) 則表示之後由 dc_admin 加入。 這可能是本廠開發或由協力廠商開發的自訂收集組。 不可為 Null。|  
 |is_running|**bit**|指出收集組是否正在執行。 不可為 Null。|  

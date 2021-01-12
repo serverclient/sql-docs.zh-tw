@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sysoledbusers system table
 - sys.sysoledbusers compatibility view
 ms.assetid: fe924c17-9cad-4b2b-8124-1e0fd82931e3
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 01a2683f063280800606ebd42ba9ce65a286ab82
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 442ca09761a75a5ca53b028bf8ac0a7f58c59314
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88482111"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095439"
 ---
 # <a name="syssysoledbusers-transact-sql"></a>sys.sysoledbusers (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -40,9 +40,9 @@ ms.locfileid: "88482111"
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
 |**rmtsrvid**|**smallint**|伺服器的安全性識別碼 (SID)。|  
-|**rmtloginame**|**Nvarchar (** 128 **) **|**Loginsid**對應至連結**rmtservid**之遠端登入的名稱。|  
-|**rmtpassword**|**Nvarchar (** 128 **) **|傳回 NULL。|  
-|**loginsid**|**varbinary(** 85 **)**|所要對應的本機登入 SID。|  
+|**rmtloginame**|**Nvarchar (** 128 **)**|**Loginsid** 對應至連結 **rmtservid** 之遠端登入的名稱。|  
+|**rmtpassword**|**Nvarchar (** 128 **)**|傳回 NULL。|  
+|**loginsid**|**Varbinary (** 85 **)**|所要對應的本機登入 SID。|  
 |**status**|**smallint**|如果是 1，則對應應該使用使用者的認證。|  
 |**changedate**|**datetime**|上次變更對應資訊的日期。|  
   

@@ -17,14 +17,14 @@ helpviewer_keywords:
 - filegroups [SQL Server], restorefilegroup system table
 - restorefilegroup system table
 ms.assetid: 3aa15c55-6b72-4f76-97d7-bd88391d105c
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 52d1fb66f32d17521343c979493766f2d1ff086a
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: b4be126afb404fcff25dfa5ce036a70189d7b640
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545321"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096166"
 ---
 # <a name="restorefilegroup-transact-sql"></a>restorefilegroup (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "89545321"
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
-|**restore_history_id**|**int**|用來識別對應的還原作業的唯一識別碼。 參考 **restorehistory (restore_history_id) **。|  
+|**restore_history_id**|**int**|用來識別對應的還原作業的唯一識別碼。 參考 **restorehistory (restore_history_id)**。|  
 |**filegroup_name**|**nvarchar(128)**|正在還原的檔案群組名稱。 可以是 NULL。<br /><br /> 當資料庫還原為資料庫快照集時，會依照完整還原的相同方式來擴展這個值。|  
   
 ## <a name="remarks"></a>備註  

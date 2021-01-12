@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSlogreader_history system table
 ms.assetid: 2e399fa1-3591-4c1c-96b7-7964fe82c7c4
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ae2abdcaf4014df405ebf6dcefff8e2207530a93
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: e6e3c54c859a542f5992a0e2199099e6b93bb27c
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545725"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096255"
 ---
 # <a name="mslogreader_history-transact-sql"></a>MSlogreader_history (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSlogreader_history**資料表包含與本機散發者相關聯之記錄讀取器代理程式的記錄資料列。 這份資料表儲存在散發資料庫中。  
+  **MSlogreader_history** 資料表包含與本機散發者相關聯之記錄讀取器代理程式的記錄資料列。 這份資料表儲存在散發資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
@@ -44,8 +44,8 @@ ms.locfileid: "89545725"
 |**delivered_commands**|**int**|在工作階段所傳遞的命令總數。|  
 |**average_commands**|**int**|在工作階段所傳遞的命令平均數。|  
 |**delivery_rate**|**float**|平均每秒傳遞的命令數。|  
-|**delivery_latency**|**int**|進入發行資料庫的命令以及被進入散發資料庫的命令，兩者之間的延遲時間 (毫秒)。|  
-|**error_id**|**int**|**MSrepl_error**系統資料表中錯誤的識別碼。|  
+|**delivery_latency**|**int**|進入發行資料庫的命令以及被進入散發資料庫的命令，兩者之間的延遲時間 以毫秒為單位。|  
+|**error_id**|**int**|**MSrepl_error** 系統資料表中錯誤的識別碼。|  
 |**timestamp**|**timestamp**|這份資料表的時間戳記資料行。|  
 |**updateable_row**|**bit**|如果可以覆寫歷程記錄資料列，請設定為 **1** 。|  
   

@@ -1,6 +1,6 @@
 ---
 description: sys.dm_db_incremental_stats_properties (Transact-SQL)
-title: sys. dm_db_incremental_stats_properties (Transact-sql) |Microsoft Docs
+title: sys.dm_db_incremental_stats_properties (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 12/18/2017
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_db_incremental_stats_properties
 ms.assetid: aa0db893-34d1-419c-b008-224852e71307
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: caa090c1835c34bd2d1da6d6b3bcb6caa4077217
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: b11acf31ca9f20aaf70acbe530106e58ca787439
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544798"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094128"
 ---
 # <a name="sysdm_db_incremental_stats_properties-transact-sql"></a>sys.dm_db_incremental_stats_properties (Transact-SQL)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
@@ -44,7 +44,7 @@ sys.dm_db_incremental_stats_properties (object_id, stats_id)
  這是目前資料庫中，要求其中一個累加統計資料屬性之物件的識別碼。 *object_id* 為 **int**。  
   
  *stats_id*  
- 這是指定 *object_id*之統計資料的識別碼。 您可以從 [sys.stats](../../relational-databases/system-catalog-views/sys-stats-transact-sql.md) 動態管理檢視取得統計資料識別碼。 *stats_id* 是 **int**。  
+ 這是指定 *object_id* 之統計資料的識別碼。 您可以從 [sys.stats](../../relational-databases/system-catalog-views/sys-stats-transact-sql.md) 動態管理檢視取得統計資料識別碼。 *stats_id* 是 **int**。  
   
 ## <a name="table-returned"></a>傳回的資料表  
   
@@ -91,5 +91,5 @@ SELECT * FROM sys.dm_db_incremental_stats_properties (object_id('PartitionTable'
  [sys.stats &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-stats-transact-sql.md)   
  [物件相關的動態管理檢視和函數 &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/object-related-dynamic-management-views-and-functions-transact-sql.md)   
  [動態管理檢視與函數 &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)  
- [sys. dm_db_stats_properties](../../relational-databases/system-dynamic-management-views/sys-dm-db-stats-properties-transact-sql.md)   
+ [sys.dm_db_stats_properties](../../relational-databases/system-dynamic-management-views/sys-dm-db-stats-properties-transact-sql.md)   
  [sys.dm_db_stats_histogram (Transact-SQL)](../../relational-databases/system-dynamic-management-views/sys-dm-db-stats-histogram-transact-sql.md) 

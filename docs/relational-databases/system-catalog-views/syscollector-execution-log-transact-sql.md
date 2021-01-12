@@ -17,14 +17,14 @@ helpviewer_keywords:
 - data collector view
 - syscollector_execution_log view
 ms.assetid: 11554d64-0426-42ce-b7ce-5591f67864d2
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 145d22131701c3b7342cb83e1e95735dc7726408
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: f6c9cc330c87debc0a80a9d282ea8c40c904c59c
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550345"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094237"
 ---
 # <a name="syscollector_execution_log-transact-sql"></a>syscollector_execution_log (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "89550345"
 |finish_time|**datetime**|已完成之封裝和收集組執行完成的時間。 可為 Null。|  
 |runtime_execution_mode|**smallint**|指出收集組活動是收集資料或上傳資料。 可為 Null。<br /><br /> 值為：<br /><br /> 0 = 收集<br /><br /> 1 = 上傳|  
 |status|**smallint**|指出收集組或封裝的目前狀態。 不可為 Null。<br /><br /> 值為：<br /><br /> 0 = 執行中<br /><br /> 1 = 完成<br /><br /> 2 = 失敗|  
-|! 運算子之後|**nvarchar(128)**|識別啟動收集組或封裝的人員。 不可為 Null。|  
+|運算子|**nvarchar(128)**|識別啟動收集組或封裝的人員。 不可為 Null。|  
 |package_id|**uniqueidentifier**|識別產生這個記錄的收集組或封裝。 可為 Null。|  
 |package_name|**nvarchar(4000)**|產生此記錄檔的封裝名稱。 可為 Null。|  
 |package_execution_id|**uniqueidentifier**|提供 [!INCLUDE[ssIS](../../includes/ssis-md.md)] 記錄資料表的連結。 可為 Null。|  

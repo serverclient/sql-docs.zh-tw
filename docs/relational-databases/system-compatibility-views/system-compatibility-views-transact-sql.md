@@ -22,14 +22,14 @@ helpviewer_keywords:
 - compatibility [SQL Server], system tables
 - user IDs [SQL Server]
 ms.assetid: 8e4624f5-9d36-4ce7-9c9e-1fe010fa2122
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 3eb92654dfb25a0e66d2e071040e487e6a404366
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 7ba0c3b5c023d1d2b6a3d025de7f96f49a4b3c1a
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88482030"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095290"
 ---
 # <a name="system-compatibility-views-transact-sql"></a> (Transact-sql) 的系統相容性檢視
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -59,7 +59,7 @@ ms.locfileid: "88482030"
   
  在使用者資料庫中參考時，在 SQL Server 2000 (中宣告為已淘汰的系統資料表（例如 **syslanguages** 或 **sys.syscacheobjects**) ）現在會系結至 **sys** 架構中的回溯相容性檢視。 由於 SQL Server 2000 的系統資料表已經過多個版本取代，所以此變更並非視為重大變更。  
   
- 範例：如果使用者在使用者資料庫中建立名為 **syslanguages** 的使用者資料表，則在 SQL Server 2008 中，該資料庫中的語句 `SELECT * from dbo.syslanguages;` 會傳回使用者資料表中的值。 從 SQL Server 2012 開始，此實務將會從 system view **sys.sys語言**傳回資料。  
+ 範例：如果使用者在使用者資料庫中建立名為 **syslanguages** 的使用者資料表，則在 SQL Server 2008 中，該資料庫中的語句 `SELECT * from dbo.syslanguages;` 會傳回使用者資料表中的值。 從 SQL Server 2012 開始，此實務將會從 system view **sys.sys語言** 傳回資料。  
   
 ## <a name="see-also"></a>另請參閱  
  [目錄檢視 &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   

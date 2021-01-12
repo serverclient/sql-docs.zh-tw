@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_os_threads dynamic management view
 ms.assetid: a5052701-edbf-4209-a7cb-afc9e65c41c1
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 96a25a69c14919c4e0108537af105108a813c3fd
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c0163e4176202f4bfe8b55ecca0fe4812ec5d26b
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97472869"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096493"
 ---
 # <a name="sysdm_os_threads-transact-sql"></a>sys.dm_os_threads (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -52,7 +52,7 @@ ms.locfileid: "97472869"
 |stack_bytes_used|**int**|執行緒目前使用的位元組數。|  
 |affinity|**bigint**|這個執行緒正在執行的 CPU 遮罩。 這取決於 **ALTER SERVER CONFIGURATION SET PROCESS 相似性** 語句所設定的值。 若是軟相似性，可能與排程器不同。|  
 |優先順序|**int**|這個執行緒的優先權值。|  
-|地區設定|**int**|執行緒的快取地區設定 LCID。|  
+|Locale|**int**|執行緒的快取地區設定 LCID。|  
 |權杖|**varbinary(8)**|執行緒的快取模擬 Token 控制代碼。|  
 |is_impersonating|**int**|指出這個執行緒是否使用 Win32 模擬。<br /><br /> 1 = 執行緒使用不同於處理序預設值的安全性認證。 這指出執行緒模擬的實體不是建立處理序的實體。|  
 |is_waiting_on_loader_lock|**int**|執行緒是否在等待載入程式鎖定的作業系統狀態。|  

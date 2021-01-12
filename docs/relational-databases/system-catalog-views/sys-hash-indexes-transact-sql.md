@@ -1,6 +1,6 @@
 ---
 description: sys.hash_indexes (Transact-SQL)
-title: sys. hash_indexes (Transact-sql) |Microsoft Docs
+title: sys.hash_indexes (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -18,21 +18,21 @@ dev_langs:
 helpviewer_keywords:
 - sys.hash_indexes catalog view
 ms.assetid: d9e230fb-d3ff-486f-86ef-44898f0a703e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 64008b6fe537c611c0c7204692dbef9461b79b8b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: b422523074806b6cac30fc56859006561fc0c828
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539624"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095524"
 ---
 # <a name="syshash_indexes-transact-sql"></a>sys.hash_indexes (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  顯示目前雜湊索引和雜湊索引屬性。 只有記憶體內部的 [OLTP &#40;記憶體內部優化&#41;](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md)才支援雜湊索引。  
+  顯示目前雜湊索引和雜湊索引屬性。 只有 [記憶體內部 OLTP &#40;In-Memory 優化&#41;](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md)才支援雜湊索引。  
   
- Sys. hash_indexes view 包含與 sys. 索引視圖相同的資料行，以及名為 **bucket_count**的其他資料行。 如需有關 sys. hash_indexes 視圖中其他資料行的詳細資訊，請參閱 [sys. 索引 &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sys-indexes-transact-sql.md)。  
+ Sys.hash_indexes view 包含與 sys. 索引視圖相同的資料行，以及一個名為 **bucket_count** 的額外資料行。 如需 sys.hash_indexes view 中其他資料行的詳細資訊，請參閱 [transact-sql&#41;的 sys. 索引 &#40;](../../relational-databases/system-catalog-views/sys-indexes-transact-sql.md)。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

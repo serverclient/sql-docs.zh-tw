@@ -15,14 +15,14 @@ helpviewer_keywords:
 - change data capture [SQL Server], querying metadata
 - cdc.fn_cdc_get_all_changes_<capture_instance>
 ms.assetid: c6bad147-1449-4e20-a42e-b51aed76963c
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: aa461859dcc7d2adc359139e4740ea9272161bf8
-ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 8bb04e74ab2dd613173bf194fe4ca5412d79ac7e
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90989937"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095026"
 ---
 # <a name="cdcfn_cdc_get_all_changes_ltcapture_instancegt--transact-sql"></a>cdc.fn_cdc_get_all_changes_ &lt; capture_instance &gt;  (transact-sql) 
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -47,12 +47,12 @@ cdc.fn_cdc_get_all_changes_capture_instance ( from_lsn , to_lsn , '<row_filter_o
   
 ## <a name="arguments"></a>引數  
  *from_lsn*  
- LSN 值，代表要包含在結果集之 LSN 範圍的低端點。 *from_lsn* 是 **二進位 (10) **。  
+ LSN 值，代表要包含在結果集之 LSN 範圍的低端點。 *from_lsn* 是 **二進位 (10)**。  
   
  結果集中只會包含 [cdc. &#91;capture_instance&#93;_CT](../../relational-databases/system-tables/cdc-capture-instance-ct-transact-sql.md) 變更資料表中值為 **__ $ start_lsn** 大於或等於 *from_lsn* 的資料列。  
   
  *to_lsn*  
- LSN 值，代表要包含在結果集之 LSN 範圍的高端點。 *to_lsn* 是 **二進位 (10) **。  
+ LSN 值，代表要包含在結果集之 LSN 範圍的高端點。 *to_lsn* 是 **二進位 (10)**。  
   
  只有 [cdc. &#91;capture_instance&#93;_CT](../../relational-databases/system-tables/cdc-capture-instance-ct-transact-sql.md) 變更資料表中的資料列，其值在 **__ $ start_lsn** 大於或等於 *from_lsn* ，且小於或等於 *to_lsn* 都會包含在結果集中。  
   
@@ -83,7 +83,7 @@ cdc.fn_cdc_get_all_changes_capture_instance ( from_lsn , to_lsn , '<row_filter_o
 ## <a name="remarks"></a>備註  
  如果指定的 LSN 範圍不在擷取執行個體的變更追蹤時間表內，此函數會傳回錯誤 208 (「提供給程序或函數 cdc.fn_cdc_get_all_changes 的引數數量不足」)。  
   
- 當 **__ $ operation** = 1 或 **__ $ operation** = 3 時，資料類型為**image**、 **text**和**Ntext**的資料行一律會被指派 Null 值。 除非資料行在更新期間變更，否則在 **__ $ operation** = 3 時，資料類型為**Varbinary (max) **、 **Varchar (max) **或**Nvarchar (max) **最大值的資料行都會被指派 Null 值。 當 **__ $ operation** = 1 時，會在刪除時將這些資料行的值指派給這些資料行。 包含在擷取執行個體中的計算資料行，一律使用 NULL 值。  
+ 當 **__ $ operation** = 1 或 **__ $ operation** = 3 時，資料類型為 **image**、 **text** 和 **Ntext** 的資料行一律會被指派 Null 值。 除非資料行在更新期間變更，否則在 **__ $ operation** = 3 時，資料類型為 **Varbinary (max)**、 **Varchar (max)** 或 **Nvarchar (max)** 最大值的資料行都會被指派 Null 值。 當 **__ $ operation** = 1 時，會在刪除時將這些資料行的值指派給這些資料行。 包含在擷取執行個體中的計算資料行，一律使用 NULL 值。  
   
 ## <a name="examples"></a>範例  
  有幾個 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] 範本可用來顯示如何使用變更資料捕獲查詢函數。 您可以在的 [ **View** ] 功能表中找到這些範本 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] 。 如需詳細資訊，請參閱 [ [範本瀏覽器](../../ssms/template/template-explorer.md)]。  

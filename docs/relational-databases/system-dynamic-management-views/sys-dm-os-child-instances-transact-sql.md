@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sys.dm_os_child_instances dynamic management view
 - monitoring server health
 ms.assetid: 1bef3074-0ccc-48fa-8f3d-14f3d99df86b
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 81cceff6a1336fadecb84f1d70c5f41c7625dc07
-ms.sourcegitcommit: 32135463a8494d9ed1600a58f51819359e3c09dc
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 9b46f17c349015fee41f91ddb64fc6773ca8c5ee
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91834448"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094051"
 ---
 # <a name="sysdm_os_child_instances-transact-sql"></a>sys.dm_os_child_instances (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "91834448"
   
 > **注意：** 使用者實例只是的一項功能 [!INCLUDE[ssExpressEd11](../../includes/ssexpressed11-md.md)] 。  
 > 
-> **注意** 若要從或呼叫這個 [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] ，請使用 **sys.dm_pdw_nodes_os_child_instances**名稱。  
+> **注意** 若要從或呼叫這個 [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] ，請使用 **sys.dm_pdw_nodes_os_child_instances** 名稱。  
   
 |資料行|資料類型|描述|  
 |------------|---------------|-----------------|  
@@ -50,8 +50,8 @@ ms.locfileid: "91834448"
 |**instance_pipe_name**|**nvarchar(260)**|在建立使用者執行個體時，系統會針對要連接的應用程式建立具名管道。 這個名稱可用於連接字串，以連接這個使用者執行個體。|  
 |**os_process_id**|**整數**|這個使用者執行個體的 Windows 處理序號碼。|  
 |**os_process_creation_date**|**Datetime**|上次啟動這個使用者執行個體的日期和時間。|  
-|**heart_beat**|**Nvarchar (5) **|這個使用者執行個體目前的狀態，可能為 ALIVE 或 DEAD。|  
-|**pdw_node_id**|**int**|**適用**于： [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> 此散發所在之節點的識別碼。|  
+|**heart_beat**|**Nvarchar (5)**|這個使用者執行個體目前的狀態，可能為 ALIVE 或 DEAD。|  
+|**pdw_node_id**|**int**|**適用** 于： [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> 此散發所在之節點的識別碼。|  
   
 ## <a name="permissions"></a>權限  
  需要伺服器的 VIEW SERVER STATE 權限。  

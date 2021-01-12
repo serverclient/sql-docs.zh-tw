@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSarticles system table
 ms.assetid: 1acd79a5-b3e2-4161-9592-7acc2a41ba38
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 3123834712540681748ab39edbfa6ee39d78ea14
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: c4f9badc2350511763ff41501887dc38a1a6c193
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545711"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094783"
 ---
 # <a name="msarticles-transact-sql"></a>MSarticles (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSarticles**資料表會針對發行者所複寫的每個發行項，各包含一個資料列。 這份資料表儲存在散發資料庫中。  
+  **MSarticles** 資料表會針對發行者所複寫的每個發行項，各包含一個資料列。 這份資料表儲存在散發資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_server_audit_status dynamic management view
 ms.assetid: 4aa32d54-2ae1-437e-bbaa-7f1df1404b44
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 2138e06195e8f8c34a5f8f9abde96306c2d92cc5
-ms.sourcegitcommit: b93beb4f03aee2c1971909cb1d15f79cd479a35c
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: bcb3334eb564eab7a30aa544c35b74aa89c69ccb
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91498160"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096499"
 ---
 # <a name="sysdm_server_audit_status-transact-sql"></a>sys.dm_server_audit_status (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -33,8 +33,8 @@ ms.locfileid: "91498160"
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
-|**audit_id**|**int**|稽核的識別碼。 對應至**sys. 審核**目錄檢視中的**audit_id**欄位。|  
-|**name**|**sysname**|稽核的名稱。 與 [ **sys.server_audits**目錄] 視圖中的 [**名稱**] 欄位相同。|  
+|**audit_id**|**int**|稽核的識別碼。 對應至 **sys. 審核** 目錄檢視中的 **audit_id** 欄位。|  
+|**name**|**sysname**|稽核的名稱。 與 [ **sys.server_audits** 目錄] 視圖中的 [**名稱**] 欄位相同。|  
 |**status**|**smallint**|伺服器稽核的數值狀態：<br /><br /> 0 = 未啟動<br /><br /> 1 =<br />        已開始<br /><br /> 2 =<br />      執行時間失敗<br /><br /> 3 = 目標建立失敗<br /><br /> 4 = 正在關閉|  
 |**status_desc**|**nvarchar(256)**|顯示伺服器稽核狀態的字串：<br /><br /> NOT_STARTED<br /><br /> STARTED<br /><br /> RUNTIME_FAIL<br /><br /> TARGET_CREATION_FAILED<br /><br /> SHUTTING_DOWN|  
 |**status_time**|**datetime2**|稽核之上一次狀態變更的時間戳記 (以 UTC 為單位)。|  

@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSmerge_articlehistory system table
 ms.assetid: 2870e7ea-dbec-4636-9171-c2cee96018ac
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5fcf637d540b541f0a96e6a8f8322c34799ddcb2
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 89a5e3969d6f55a38ecfdcb6abf2a41e322ce89f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544519"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096237"
 ---
 # <a name="msmerge_articlehistory-transact-sql"></a>MSmerge_articlehistory (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSmerge_articlehistory**資料表會追蹤合併代理程式同步處理會話期間對發行項所做的變更，並針對變更的每個發行項，各有一個資料列。 這份資料表儲存在散發資料庫中。  
+  **MSmerge_articlehistory** 資料表會追蹤合併代理程式同步處理會話期間對發行項所做的變更，並針對變更的每個發行項，各有一個資料列。 這份資料表儲存在散發資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

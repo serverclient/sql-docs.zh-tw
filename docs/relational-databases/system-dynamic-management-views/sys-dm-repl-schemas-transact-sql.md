@@ -1,6 +1,6 @@
 ---
 description: sys.dm_repl_schemas (Transact-SQL)
-title: sys. dm_repl_schemas (Transact-sql) |Microsoft Docs
+title: sys.dm_repl_schemas (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_repl_schemas dynamic management function
 ms.assetid: 6f5fefff-8492-4360-bd5b-a97287367914
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 45ca3d11d1299e2fa308e823f196251066fb6202
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 549f5beaae81d181f391936d1acecbc4aeb5b77a
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89536895"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095068"
 ---
 # <a name="sysdm_repl_schemas-transact-sql"></a>sys.dm_repl_schemas (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,20 +37,20 @@ ms.locfileid: "89536895"
 |**tabid**|**bigint**|複寫資料表的識別碼。|  
 |**indexid**|**smallint**|已發行資料表之叢集索引的識別碼。|  
 |**idSch**|**bigint**|資料表結構描述的識別碼。|  
-|**tabschema**|**Nvarchar (510) **|資料表結構描述的名稱。|  
+|**tabschema**|**Nvarchar (510)**|資料表結構描述的名稱。|  
 |**ccTabschema**|**smallint**|資料表結構描述的字元長度。|  
-|**tabname**|**Nvarchar (510) **|已發行資料表的名稱。|  
+|**tabname**|**Nvarchar (510)**|已發行資料表的名稱。|  
 |**ccTabname**|**smallint**|已發行資料表名稱的字元長度。|  
 |**rowsetid_delete**|**bigint**|已刪除資料列的識別碼。|  
 |**rowsetid_insert**|**bigint**|已插入資料列的識別碼。|  
 |**num_pk_cols**|**int**|主索引鍵資料行的數目。|  
-|**pcitee**|**binary (8000) **|用來評估計算資料行之查詢運算式結構的指標。|  
+|**pcitee**|**binary (8000)**|用來評估計算資料行之查詢運算式結構的指標。|  
 |**re_numtextcols**|**int**|已複寫資料表中的二進位大型物件資料行數目。|  
-|**re_schema_lsn_begin**|**binary (8000) **|結構描述版本記錄的開始記錄序號 (LSN)。|  
-|**re_schema_lsn_end**|**binary (8000) **|結構描述版本記錄的結束 LSN。|  
+|**re_schema_lsn_begin**|**binary (8000)**|結構描述版本記錄的開始記錄序號 (LSN)。|  
+|**re_schema_lsn_end**|**binary (8000)**|結構描述版本記錄的結束 LSN。|  
 |**re_numcols**|**int**|已發行的資料行數目。|  
 |**re_colid**|**int**|在發行者端的資料行識別碼。|  
-|**re_awcName**|**Nvarchar (510) **|已發行資料行的名稱。|  
+|**re_awcName**|**Nvarchar (510)**|已發行資料行的名稱。|  
 |**re_ccName**|**smallint**|資料行名稱的字元數目。|  
 |**re_pk**|**tinyint**|已發行資料行是否為主索引鍵的一部分。|  
 |**re_unique**|**tinyint**|已發行資料行是否為唯一索引的一部分。|  
@@ -65,8 +65,8 @@ ms.locfileid: "89536895"
 |**re_fAnsiTrim**|**tinyint**|指定 ANSI 修剪是否用於已發行資料行。|  
 |**re_computed**|**smallint**|指定已發行資料行是否為計算資料行。|  
 |**se_rowsetid**|**bigint**|資料列集的識別碼。|  
-|**se_schema_lsn_begin**|**binary (8000) **|結構描述版本記錄的開始 LSN。|  
-|**se_schema_lsn_end**|**binary (8000) **|結構描述版本記錄的結束 LSN。|  
+|**se_schema_lsn_begin**|**binary (8000)**|結構描述版本記錄的開始 LSN。|  
+|**se_schema_lsn_end**|**binary (8000)**|結構描述版本記錄的結束 LSN。|  
 |**se_numcols**|**int**|資料行數目。|  
 |**se_colid**|**int**|在訂閱者端的資料行識別碼。|  
 |**se_maxlen**|**smallint**|資料行的最大長度。|  

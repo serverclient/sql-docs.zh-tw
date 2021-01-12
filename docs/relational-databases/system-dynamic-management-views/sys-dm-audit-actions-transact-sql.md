@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_audit_actions dynamic management view
 ms.assetid: b987c2b9-998a-4a5f-a82d-280dc6963cbe
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 897d83dcf6c85606ac513d9075cca9ebc316a6cf
-ms.sourcegitcommit: 27f95e50f11a98164e9e7a5130a3e00ac06b4cea
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 7f880fa229e64990b729d193c6e39bfb05523788
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91412805"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095291"
 ---
 # <a name="sysdm_audit_actions-transact-sql"></a>sys.dm_audit_actions (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "91412805"
 |**class_desc**|**nvarchar(120)**|稽核動作套用之物件的類別名稱。 可以是任何一個伺服器、資料庫或結構描述範圍物件，但是不包括結構描述物件。 不可為 Null。|  
 |**parent_class_desc**|**nvarchar(120)**|class_desc 所描述之物件的父類別名稱。 如果 class_desc 是伺服器則為 NULL。|  
 |**covering_parent_action_name**|**nvarchar(120)**|稽核動作名稱，或是包含此資料列中所述之稽核動作的稽核群組名稱。 這是用來建立動作的階層及涵蓋的動作。 可為 Null。|  
-|**configuration_level**|**Nvarchar (10) **|指示此資料列中指定的動作或動作群組可在群組或動作層級上設定。 如果此動作無法設定，則為 NULL。|  
+|**configuration_level**|**Nvarchar (10)**|指示此資料列中指定的動作或動作群組可在群組或動作層級上設定。 如果此動作無法設定，則為 NULL。|  
 |**containing_group_name**|**nvarchar(120)**|包含指定之動作的稽核群組名稱。 如果名稱中的值是群組，則為 NULL。|  
   
 ## <a name="permissions"></a>權限  

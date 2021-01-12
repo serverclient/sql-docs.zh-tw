@@ -19,19 +19,19 @@ helpviewer_keywords:
 - sys.syscurconfigs compatibility view
 - syscurconfigs system table
 ms.assetid: 454ab849-07a5-4b50-ba0a-6b1b14721f77
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: c5c83219c93c24929b257989a034f283cf2ac5b2
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 7ab083faabc6541f06f3b9017d6b612e358f38bd
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88423322"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094227"
 ---
 # <a name="syssyscurconfigs-transact-sql"></a>sys.syscurconfigs (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  包含每個目前組態選項各一個項目。 同時，此檢視表含有描述組態結構的四個項目。 當使用者進行查詢時，會以動態方式建立**syscurconfigs** 。 如需詳細資訊，請參閱 [sys.sys設定 &#40;transact-sql&#41;](../../relational-databases/system-compatibility-views/sys-sysconfigures-transact-sql.md)。  
+  包含每個目前組態選項各一個項目。 同時，此檢視表含有描述組態結構的四個項目。 當使用者進行查詢時，會以動態方式建立 **syscurconfigs** 。 如需詳細資訊，請參閱 [sys.sys設定 &#40;transact-sql&#41;](../../relational-databases/system-compatibility-views/sys-sysconfigures-transact-sql.md)。  
   
 > [!IMPORTANT]  
 >  [!INCLUDE[ssnoteCompView](../../includes/ssnotecompview-md.md)]  

@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sysindexes system table
 - sys.sysindexes compatibility view
 ms.assetid: f483d89c-35c4-4a08-8f8b-737fd80d13f5
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 4b78a272e9fa2ec3a0cc3d4418986078ff02f457
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: cf8982115b1a4399c327aefc66a5e99a1d46c575
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88399404"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094189"
 ---
 # <a name="syssysindexes-transact-sql"></a>sys.sysindexes (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -66,12 +66,12 @@ ms.locfileid: "88399404"
 |**name**|**sysname**|索引或統計資料的名稱。 當 **indid** = 0 時，會傳回 Null。 請修改您的應用程式來查閱 NULL 堆積名稱。|  
 |**statblob**|**image**|統計資料二進位大型物件 (BLOB)。<br /><br /> 傳回 NULL。|  
 |**maxlen**|**int**|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
-|**行**|**int**|以 **indid** = 0 和 **indid** = 1 為基礎的資料層級資料列計數，並針對 **indid** >1 重複此值。|  
+|**rows**|**int**|以 **indid** = 0 和 **indid** = 1 為基礎的資料層級資料列計數，並針對 **indid** >1 重複此值。|  
   
 ## <a name="remarks"></a>備註  
  不應使用定義為已保留的資料行。  
   
- 如果資料表或索引包含 ROW_OVERFLOW 配置單位中的資料， **dpages**、 **reserved**和 **used** 資料行就不會傳回精確的結果。 另外，每個索引的頁面計數也都會個別追蹤，不會彙總基底資料表這些計數。 若要查看頁面計數，請使用 [sys. allocation_units](../../relational-databases/system-catalog-views/sys-allocation-units-transact-sql.md) 或 [sys. 磁碟分割](../../relational-databases/system-catalog-views/sys-partitions-transact-sql.md) 目錄檢視，或 [sys. dm_db_partition_stats](../../relational-databases/system-dynamic-management-views/sys-dm-db-partition-stats-transact-sql.md) 動態管理檢視。  
+ 如果資料表或索引包含 ROW_OVERFLOW 配置單位中的資料， **dpages**、 **reserved** 和 **used** 資料行就不會傳回精確的結果。 另外，每個索引的頁面計數也都會個別追蹤，不會彙總基底資料表這些計數。 若要查看頁面計數，請使用 [sys.allocation_units](../../relational-databases/system-catalog-views/sys-allocation-units-transact-sql.md) 或 [sys. 磁碟分割](../../relational-databases/system-catalog-views/sys-partitions-transact-sql.md) 目錄檢視，或 [sys.dm_db_partition_stats](../../relational-databases/system-dynamic-management-views/sys-dm-db-partition-stats-transact-sql.md) 動態管理檢視。  
   
  在 SQL Server 2000 和舊版中，[!INCLUDE[ssDE](../../includes/ssde-md.md)] 會維護資料列層級的修改計數器。 現在，系統則會在資料行層級維護這些計數器。 因此，會計算 **rowmodctr** 資料行，並產生類似于舊版中結果的結果，但不是精確的結果。  
   

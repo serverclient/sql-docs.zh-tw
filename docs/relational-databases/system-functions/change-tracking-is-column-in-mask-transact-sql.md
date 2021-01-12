@@ -17,15 +17,15 @@ helpviewer_keywords:
 - change tracking [SQL Server], CHANGE_TRACKING_IS_COLUMN_IN_MASK
 - CHANGE_TRACKING_IS_COLUMN_IN_MASK
 ms.assetid: 649b370b-da54-4915-919d-1b597a39d505
-author: rothja
-ms.author: jroth
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e1961dec1f32006d7a4b3d91b7b8763f34ce3514
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a9d5ee6c44e0b0ca9544ee4a32b7cbd455497fe6
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97440611"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095008"
 ---
 # <a name="change_tracking_is_column_in_mask-transact-sql"></a>CHANGE_TRACKING_IS_COLUMN_IN_MASK (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]

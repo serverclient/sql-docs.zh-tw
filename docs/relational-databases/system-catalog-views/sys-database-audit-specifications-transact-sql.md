@@ -1,6 +1,6 @@
 ---
 description: sys.database_audit_specifications (Transact-SQL)
-title: sys. database_audit_specifications (Transact-sql) |Microsoft Docs
+title: sys.database_audit_specifications (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 04/05/2016
 ms.prod: sql
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.database_audit_specifications catalog view
 ms.assetid: bf80e5c6-0588-4eb7-86ff-aa7c73461335
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: a4e3a7d73b8464d11e4ecab1e603805bd9d41a05
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: e88134772509f84eb389b3e55de860fdb59380bd
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542603"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095568"
 ---
 # <a name="sysdatabase_audit_specifications-transact-sql"></a>sys.database_audit_specifications (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

@@ -1,5 +1,6 @@
 ---
 title: backupmediafamily (Transact-sql) |Microsoft Docs
+description: Backupmediafamily 的參考，其中包含每個媒體家族的一個資料列。
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -15,30 +16,30 @@ dev_langs:
 helpviewer_keywords:
 - backupmediafamily system table
 - backup media [SQL Server], backupmediafamily system table
-ms.assetid: ee16de24-3d95-4b2e-a094-78df2514d18a
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c2499bbc91fb09f943e5a093851bd5aef810b5b9
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 6adacacdb3e075e3eb058005d3b11fc8fc219cbe
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89547204"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096284"
 ---
 # <a name="backupmediafamily-transact-sql"></a>backupmediafamily (Transact-SQL)
+
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  針對每個媒體家族，各包含一個資料列。 如果媒體家族位於鏡像媒體集中，則在這個媒體集中，這個家族的每個鏡像都會各有一個個別的資料列。 此資料表儲存在 **msdb** 資料庫中。  
+針對每個媒體家族，各包含一個資料列。 如果媒體家族位於鏡像媒體集中，則在這個媒體集中，這個家族的每個鏡像都會各有一個個別的資料列。 此資料表儲存在 **msdb** 資料庫中。  
     
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
-|**media_set_id**|**int**|用來識別這個家族為其成員之媒體集的唯一識別碼。 參考 **backupmediaset (media_set_id) **|  
+|**media_set_id**|**int**|用來識別這個家族為其成員之媒體集的唯一識別碼。 參考 **backupmediaset (media_set_id)**|  
 |**family_sequence_number**|**tinyint**|這個媒體家族在媒體集中的位置。|  
 |**media_family_id**|**uniqueidentifier**|用來識別媒體家族的唯一識別碼。 可以是 NULL。|  
 |**media_count**|**int**|媒體家族中的媒體數目。 可以是 NULL。|  
-|**logical_device_name**|**nvarchar(128)**|此備份裝置在 **sys. backup_devices**名稱中的名稱。 如果這是暫存備份裝置 (而不是存在於 **sys. backup_devices**) 的永久備份裝置，則 **logical_device_name** 的值為 Null。|  
+|**logical_device_name**|**nvarchar(128)**|此備份裝置在 **sys.backup_devices** 的名稱。 如果這是暫存備份裝置 (而不是存在於 **sys.backup_devices**) 的永久備份裝置，則 **logical_device_name** 的值為 Null。|  
 |**physical_device_name**|**nvarchar(260)**|備份裝置的實體名稱。 可以是 NULL。 這是在備份和還原程式之間共用的欄位。 它可能包含原始的備份目的地路徑或原始的還原來源路徑。 取決於資料庫的伺服器是否先發生備份或還原。 請注意，從相同備份檔案的連續還原將不會更新該路徑，不論它在還原時的位置為何。 因此， **physical_device_name** 欄位不能用來查看使用的還原路徑。|  
-|**device_type**|**tinyint**|備份裝置的類型：<br /><br /> 2 = 磁碟<br /><br /> 5 = 磁帶<br /><br /> 7 = 虛擬裝置<br /><br /> 9 = Azure 儲存體<br /><br /> 105 = 永久備份裝置。<br /><br /> 可以是 NULL。<br /><br /> 您可以在 **sys. backup_devices**中找到所有永久的裝置名稱和裝置號碼。|  
+|**device_type**|**tinyint**|備份裝置的類型：<br /><br /> 2 = 磁碟<br /><br /> 5 = 磁帶<br /><br /> 7 = 虛擬裝置<br /><br /> 9 = Azure 儲存體<br /><br /> 105 = 永久備份裝置。<br /><br /> 可以是 NULL。<br /><br /> 所有永久裝置名稱和裝置號碼都可以在 **sys.backup_devices** 中找到。|  
 |**physical_block_size**|**int**|用來寫入媒體家族的實體區塊大小。 可以是 NULL。|  
 |**mirror**|**tinyint**|鏡像數目 (0-3)。|  
   

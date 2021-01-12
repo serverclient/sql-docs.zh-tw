@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.key_encryptions catalog view
 ms.assetid: c39cecf8-af63-40b9-98e5-f84a5bf3ae54
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: c841e05d54ee5ba672107426c2f10b2396b84a76
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 3210dabc99d3bdd80a6cd274f259e5027fe83dec
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97472989"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094509"
 ---
 # <a name="syskey_encryptions-transact-sql"></a>sys.key_encryptions (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "97472989"
 |資料行名稱|資料類型|描述|  
 |------------------|----------------|-----------------|  
 |**key_id**|**int**|加密金鑰的識別碼。|  
-|**thumbprint**|**varbinary(32)**|用來加密金鑰的憑證 SHA-1 雜湊，或用來加密金鑰的對稱金鑰 GUID。|  
+|**指紋**|**varbinary(32)**|用來加密金鑰的憑證 SHA-1 雜湊，或用來加密金鑰的對稱金鑰 GUID。|  
 |**crypt_type**|**char (4)**|加密的類型：<br /><br /> ESKS = 由對稱金鑰加密<br /><br /> ESKP、ESP2 或 ESP3 = 以密碼加密<br /><br /> EPUC = 由憑證加密<br /><br /> EPUA = 由非對稱金鑰加密<br /><br /> ESKM = 由主要金鑰加密|  
 |**crypt_type_desc**|**nvarchar(60)**|加密類型的描述：<br /><br /> ENCRYPTION BY SYMMETRIC KEY<br /><br /> ENCRYPTION BY PASSWORD <br /> (從開始 [!INCLUDE[sssqlv14_md](../../includes/sssqlv14-md.md)] ，包含 CSS 所使用的版本號碼。 ) <br /><br /> ENCRYPTION BY CERTIFICATE <br /><br /> ENCRYPTION BY ASYMMETRIC KEY<br /><br /> ENCRYPTION BY MASTER KEY<br /><br /> 注意： Windows DPAPI 用來保護服務主要金鑰。|  
 |**crypt_property**|**varbinary(max)**|簽署或加密的位元。|  

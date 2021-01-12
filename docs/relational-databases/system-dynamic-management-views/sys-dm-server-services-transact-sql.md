@@ -1,6 +1,6 @@
 ---
 description: sys.dm_server_services (Transact-SQL)
-title: sys. dm_server_services (Transact-sql) |Microsoft Docs
+title: sys.dm_server_services (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 01/07/2018
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_server_services dynamic management view
 ms.assetid: 3f0defd0-478d-4e7f-96be-8795c9de4e3f
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c1b013b97e15fafbc35c1f2120892d9382ea1bc2
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 2133cd83a96a6db171f078c89dec887aec0e0646
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546465"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095072"
 ---
 # <a name="sysdm_server_services-transact-sql"></a>sys.dm_server_services (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -43,9 +43,9 @@ ms.locfileid: "89546465"
 |last_startup_time|**datetimeoffset(7)**|服務上次啟動的日期和時間。 可為 Null。|  
 |service_account|**nvarchar(256)**|已獲授權可控制服務的帳戶。 這個帳戶可以啟動或停止服務，或修改服務屬性。 不可以是 null。|  
 |filename|**nvarchar(256)**|服務可執行檔的路徑和檔案名稱。 不可以是 null。|  
-|is_clustered|**Nvarchar (1) **|指出服務是否安裝為叢集伺服器的資源。 不可以是 null。|  
+|is_clustered|**Nvarchar (1)**|指出服務是否安裝為叢集伺服器的資源。 不可以是 null。|  
 |cluster_nodename|**nvarchar(256)**|安裝服務所在之叢集節點的名稱。 可為 Null。|
-|instant_file_initialization_enabled|**Nvarchar (1) **|指定是否啟用服務的立即檔案初始化 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 。<br /><br />Y = 啟用服務的立即檔案初始化。<br /><br />N = 服務的立即檔案初始化已停用。<br /><br /> 可為 Null。<br /><br /> **注意：** 不會套用至其他服務，例如 SQL Server Agent。<br /><br /> **適用于：** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 從 SP4 開始 ([!INCLUDE[sssql11](../../includes/sssql11-md.md)] ，以及 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 和更新版本的) 。|  
+|instant_file_initialization_enabled|**Nvarchar (1)**|指定是否啟用服務的立即檔案初始化 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 。<br /><br />Y = 啟用服務的立即檔案初始化。<br /><br />N = 服務的立即檔案初始化已停用。<br /><br /> 可為 Null。<br /><br /> **注意：** 不會套用至其他服務，例如 SQL Server Agent。<br /><br /> **適用于：** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 從 SP4 開始 ([!INCLUDE[sssql11](../../includes/sssql11-md.md)] ，以及 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 和更新版本的) 。|  
 
 ## <a name="security"></a>安全性  
   
@@ -53,5 +53,5 @@ ms.locfileid: "89546465"
  需要伺服器的 `VIEW SERVER STATE` 權限。  
   
 ## <a name="see-also"></a>另請參閱  
- [sys. dm_server_registry &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-server-registry-transact-sql.md)  
+ [sys.dm_server_registry &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-server-registry-transact-sql.md)  
   

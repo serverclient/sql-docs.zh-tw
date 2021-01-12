@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - IHcolumns system table
 ms.assetid: 5bb027e5-5279-487b-9c33-5f402987253c
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: a27e72b46fed5f814e91d447abf30c9c905cba4d
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: e9d264dd2c3199527a763f5c2c8afce01dad17e3
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540966"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094816"
 ---
 # <a name="ihcolumns-transact-sql"></a>IHcolumns (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **IHcolumns**系統資料表會針對每個已發行的資料行，各包含一個資料列。 這份資料表用來定義 SQL Server 發行者中的資料行資料類型在發行時如何表示，基本上它是在非 SQL Server 資料庫管理系統 (DBMS) 和 SQL Server 之間對應資料類型。 這份資料表儲存在散發資料庫中。  
+  **IHcolumns** 系統資料表會針對每個已發行的資料行，各包含一個資料列。 這份資料表用來定義 SQL Server 發行者中的資料行資料類型在發行時如何表示，基本上它是在非 SQL Server 資料庫管理系統 (DBMS) 和 SQL Server 之間對應資料類型。 這份資料表儲存在散發資料庫中。  
   
 ## <a name="definition"></a>定義  
   

@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sys.sysprocesses compatibility view
 - sysprocesses system table
 ms.assetid: 60a36d36-54b3-4bd6-9cac-702205a21b16
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 89e9bf9ab596e24148851f68ffa30515079fb51f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: d8272d6759508697512506bcab8df81d65b90b83
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88482069"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095379"
 ---
 # <a name="syssysprocesses-transact-sql"></a>sys.sysprocesses (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -54,12 +54,12 @@ ms.locfileid: "88482069"
 |last_batch|**datetime**|上次用戶端處理序執行遠端預存程序呼叫或 EXECUTE 陳述式的時間。|  
 |ecid|**smallint**|用來唯一識別代表單一處理序操作之子執行緒的執行內容識別碼。|  
 |open_tran|**smallint**|處理序的開啟交易數目。|  
-|status|**nchar(30)**|處理序識別碼狀態。 可能的值包括：<br /><br /> **dormant**  =  休眠 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]正在重設會話。<br /><br /> **正在** 執行 = 會話正在執行一或多個批次。 啟用 Multiple Active Result Set (MARS) 之後，工作階段就可以執行多個批次。 如需詳細資訊，請參閱[使用 Multiple Active Result Sets &#40;MARS&#41;](../../relational-databases/native-client/features/using-multiple-active-result-sets-mars.md)。<br /><br /> **背景** = 會話正在執行背景工作，例如鎖死偵測。<br /><br /> **rollback** = 會話正在處理交易回復。<br /><br /> **暫** 止 = 會話正在等候工作者執行緒變成可用。<br /><br /> 可**執行 = 會話**中的工作位於排程器的可執行佇列中，並在等候取得時間配量時。<br /><br /> **spinloop** = 會話中的工作正在等待 spinlock 變成可用。<br /><br /> 已**暫停**= 會話正在等候事件（例如 i/o）完成。|  
+|status|**nchar(30)**|處理序識別碼狀態。 可能的值包括：<br /><br />   =  休眠 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]正在重設會話。<br /><br /> **正在** 執行 = 會話正在執行一或多個批次。 啟用 Multiple Active Result Set (MARS) 之後，工作階段就可以執行多個批次。 如需詳細資訊，請參閱[使用 Multiple Active Result Sets &#40;MARS&#41;](../../relational-databases/native-client/features/using-multiple-active-result-sets-mars.md)。<br /><br /> **背景** = 會話正在執行背景工作，例如鎖死偵測。<br /><br /> **rollback** = 會話正在處理交易回復。<br /><br /> **暫** 止 = 會話正在等候工作者執行緒變成可用。<br /><br /> 可 **執行 = 會話** 中的工作位於排程器的可執行佇列中，並在等候取得時間配量時。<br /><br /> **spinloop** = 會話中的工作正在等待 spinlock 變成可用。<br /><br /> 已 **暫停**= 會話正在等候事件（例如 i/o）完成。|  
 |sid|**binary(86)**|使用者的全域唯一識別碼 (GUID)。|  
 |hostname|**nchar(128)**|工作站的名稱。|  
 |program_name|**nchar(128)**|應用程式的名稱。|  
 |hostprocess|**nchar(10)**|工作站處理序識別碼。|  
-|cmd|**Nchar (52) **|目前正在執行的命令。|  
+|cmd|**Nchar (52)**|目前正在執行的命令。|  
 |nt_domain|**nchar(128)**|用戶端的 Windows 網域 (如果使用 Windows 驗證的話) 或信任連接。|  
 |nt_username|**nchar(128)**|處理序的 Windows 使用者名稱 (如果使用 Windows 驗證的話) 或信任連接。|  
 |net_address|**nchar(12)**|在每一個使用者的工作站上指派的網路配接器唯一識別碼。 當使用者登入時，這個識別碼會插入 net_address 資料行中。|  
@@ -70,7 +70,7 @@ ms.locfileid: "88482069"
 |stmt_start|**int**|開始指定的 sql_handle 之目前 SQL 陳述式的位移。|  
 |stmt_end|**int**|結束指定之 sql_handle 的目前 SQL 陳述式的位移。<br /><br /> -1 = 目前陳述式執行至指定 sql_handle 之 fn_get_sql 函數傳回的結果尾端。|  
 |request_id|**int**|要求識別碼。 用來識別在特定工作階段中執行的要求。|
-|page_resource |**二元 (8) ** |**適用於**：[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] <br /><br /> 如果資料行包含頁面，則為頁面資源的8位元組十六進位標記法 `waitresource` 。 |  
+|page_resource |**二元 (8)** |**適用於**：[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] <br /><br /> 如果資料行包含頁面，則為頁面資源的8位元組十六進位標記法 `waitresource` 。 |  
   
 ## <a name="remarks"></a>備註  
  如果使用者具有伺服器的 VIEW SERVER STATE 權限，使用者會在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體上看到所有執行中的工作階段；否則，使用者只會看到目前的工作階段。  

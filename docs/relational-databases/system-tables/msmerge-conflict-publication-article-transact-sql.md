@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSmerge_conflict_publication_article system table
 ms.assetid: dc4490b4-02d8-4dfc-98f5-0cf8de8e11be
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 17f6d7920589e4797369f96d69727fa21917cc00
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 741aeb7e38463c738862b78cfb8140d54368b1ab
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545678"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096233"
 ---
 # <a name="msmerge_conflict_publication_article-transact-sql"></a>MSmerge_conflict_publication_article (Transact-sql) 
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSmerge_conflict_publication_article**表包含衝突的資料列或資料列變更的資訊，而這些資料列已復原以達成資料聚合。 發行集中每個複寫的資料表都有衝突資料表，衝突資料表的名稱是附加在發行集和發行項名稱後面。 這些發行項特有的衝突資料表位於記錄衝突所用的資料庫中，通常是發行集資料庫，不過如果是使用非集中式衝突記錄，也可能是訂閱資料庫。  
+  **MSmerge_conflict_publication_article** 表包含衝突的資料列或資料列變更的資訊，而這些資料列已復原以達成資料聚合。 發行集中每個複寫的資料表都有衝突資料表，衝突資料表的名稱是附加在發行集和發行項名稱後面。 這些發行項特有的衝突資料表位於記錄衝突所用的資料庫中，通常是發行集資料庫，不過如果是使用非集中式衝突記錄，也可能是訂閱資料庫。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

@@ -1,6 +1,6 @@
 ---
 description: sys.trace_events (Transact-SQL)
-title: sys. trace_events (Transact-sql) |Microsoft Docs
+title: sys.trace_events (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/09/2016
 ms.prod: sql
@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.trace_events catalog view
 ms.assetid: e7d2c5df-0e17-4e94-9d41-d36c7ee60662
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 0b83821952fb9b7aa96a1c5c1da4033da1e750aa
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 2a1d4bf30f4b59f9ccd8ff3bc04dccf8eb2a6d23
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544941"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094368"
 ---
 # <a name="systrace_events-transact-sql"></a>sys.trace_events (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **Sys. trace_events**目錄檢視包含所有 SQL 追蹤事件的清單。 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 給定版本的這些追蹤事件不會改變。  
+  **Sys.trace_events** 目錄] 視圖包含所有 SQL 追蹤事件的清單。 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 給定版本的這些追蹤事件不會改變。  
   
 > **重要！** [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)]請改用擴充事件目錄檢視。  
   
@@ -39,8 +39,8 @@ ms.locfileid: "89544941"
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
-|**trace_event_id**|**smallint**|事件的唯一識別碼。 這個資料行也在 **sys. trace_event_bindings** 和 **sys. trace_subclass_values** 目錄檢視中。|  
-|**category_id**|**smallint**|事件的類別目錄識別碼。 這個資料行也在 **sys. trace_categories** 目錄檢視中。|  
+|**trace_event_id**|**smallint**|事件的唯一識別碼。 此資料行也位於 [ **sys.trace_event_bindings** ] 和 [ **sys.trace_subclass_values** 目錄] 視圖中。|  
+|**category_id**|**smallint**|事件的類別目錄識別碼。 此資料行也位於 **sys.trace_categories** 目錄] 視圖中。|  
 |**name**|**nvarchar(128)**|這個事件的唯一名稱。 這個參數未翻譯成當地語系。|  
   
 ## <a name="permissions"></a>權限  
@@ -49,9 +49,9 @@ ms.locfileid: "89544941"
 ## <a name="see-also"></a>另請參閱  
  [物件目錄檢視 &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/object-catalog-views-transact-sql.md)   
  [sys. 追蹤 &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-traces-transact-sql.md)   
- [sys. trace_categories &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-trace-categories-transact-sql.md)   
- [sys. trace_columns &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-trace-columns-transact-sql.md)   
- [sys. trace_event_bindings &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-trace-event-bindings-transact-sql.md)   
- [sys. trace_subclass_values &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-trace-subclass-values-transact-sql.md)  
+ [sys.trace_categories &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-trace-categories-transact-sql.md)   
+ [sys.trace_columns &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-trace-columns-transact-sql.md)   
+ [sys.trace_event_bindings &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-trace-event-bindings-transact-sql.md)   
+ [sys.trace_subclass_values &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-trace-subclass-values-transact-sql.md)  
   
   

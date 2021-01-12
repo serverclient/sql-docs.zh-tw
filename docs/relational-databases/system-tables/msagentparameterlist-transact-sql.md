@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - Msagentparameterlist system table
 ms.assetid: 4ea571a0-078d-4e13-95ee-f3d4bbd4dfb2
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: b5fcded0e1ffe97578832f773e65d2d08e1c41d8
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 8f92e12e48a088c0328d14653ddafd069135201f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551037"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094837"
 ---
 # <a name="msagentparameterlist-transact-sql"></a>MSagentparameterlist (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **Msdb.dbo.msagentparameterlist**資料表包含複寫代理程式參數資訊，用來指定可針對指定的代理程式類型設定的參數。 此資料表儲存在 **msdb** 資料庫中。  
+  **Msdb.dbo.msagentparameterlist** 資料表包含複寫代理程式參數資訊，用來指定可針對指定的代理程式類型設定的參數。 此資料表儲存在 **msdb** 資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

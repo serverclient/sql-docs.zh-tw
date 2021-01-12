@@ -1,6 +1,6 @@
 ---
 description: sys.dm_os_loaded_modules (Transact-SQL)
-title: sys. dm_os_loaded_modules (Transact-sql) |Microsoft Docs
+title: sys.dm_os_loaded_modules (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/18/2017
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_os_loaded_modules dynamic management view
 ms.assetid: 56c7743a-b568-4943-bd3b-73c57d9d641c
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: af93d167af59eb95b4a1edd83109eebbd12782c7
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 77f4e2e69e73be88bd4cb70dcad7d7069eb8539d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542162"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094025"
 ---
 # <a name="sysdm_os_loaded_modules-transact-sql"></a>sys.dm_os_loaded_modules (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -32,13 +32,13 @@ ms.locfileid: "89542162"
   針對已載入至伺服器位址空間的每一個模組，各傳回一個資料列。  
   
 > [!NOTE]  
->  若要從呼叫這個 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] ，請使用名稱 **sys. dm_pdw_nodes_os_loaded_modules**。  
+>  若要從呼叫這個 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] ，請使用名稱 **sys.dm_pdw_nodes_os_loaded_modules**。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
 |**base_address**|**varbinary(8)**|處理序中的模組位址。|  
-|**file_version**|**Varchar (23) **|檔案的版本。 以下列格式呈現：<br /><br /> x.x:x.x|  
-|**product_version**|**Varchar (23) **|產品的版本。 以下列格式呈現：<br /><br /> x.x:x.x|  
+|**file_version**|**Varchar (23)**|檔案的版本。 以下列格式呈現：<br /><br /> x.x:x.x|  
+|**product_version**|**Varchar (23)**|產品的版本。 以下列格式呈現：<br /><br /> x.x:x.x|  
 |**調試**|**bit**|1 = 模組是已載入模組的偵錯版本。|  
 |**patched**|**bit**|1 = 模組已修補。|  
 |**發佈**|**bit**|1 = 模組是已載入模組的發行前版本。|  

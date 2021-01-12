@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - log_shipping_monitor_history_detail system table
 ms.assetid: 7080c888-323b-4206-a1ab-e6c51f9e2579
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 515a2b38f10beca9c4797ce02d48387bfa662707
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 3cd8f1b5c42d62ed508527b46d4a3705ad63dd09
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544532"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094824"
 ---
 # <a name="log_shipping_monitor_history_detail-transact-sql"></a>log_shipping_monitor_history_detail (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "89544532"
 |**message**|**nvarchar(max)**|訊息文字。|  
   
 ## <a name="remarks"></a>備註  
- 這份資料表包含記錄傳送代理程式的記錄詳細資料。 若要識別代理程式會話，請使用 **agent_id**、 **agent_type**和 **session_id**資料行。 若要查看代理程式會話的歷程記錄詳細資料，請依 **log_time**排序。  
+ 這份資料表包含記錄傳送代理程式的記錄詳細資料。 若要識別代理程式會話，請使用 **agent_id**、 **agent_type** 和 **session_id** 資料行。 若要查看代理程式會話的歷程記錄詳細資料，請依 **log_time** 排序。  
   
  除了儲存在遠端監視伺服器之外，主伺服器的相關資訊也會儲存在主伺服器的 **log_shipping_monitor_history_detail** 資料表中，而次要伺服器的相關資訊也會儲存在次要伺服器的 **log_shipping_monitor_history_detail** 資料表中。  
   

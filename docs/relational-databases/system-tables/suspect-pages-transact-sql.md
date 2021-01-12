@@ -17,14 +17,14 @@ helpviewer_keywords:
 - suspect_pages system table
 - suspect pages [SQL Server]
 ms.assetid: 119c8d62-eea8-44fb-bf72-de469c838c50
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 0c601496075c71d70af89b0413e5bcbf3a6ba8b2
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: c2b5952f12c857a7bf58c066744e1c366279b1e4
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544472"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096122"
 ---
 # <a name="suspect_pages-transact-sql"></a>suspect_pages (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "89544472"
 |-----------------|---------------|-----------------|  
 |**database_id**|**int**|這個頁面所套用的資料庫識別碼。|  
 |**file_id**|**int**|資料庫內的檔案識別碼。|  
-|**page_id**|**bigint**|可疑頁面的識別碼。 每個頁面都有一個頁面識別碼，它是一個 32 位元的值，用來識別頁面在資料庫中的位置。 **Page_id**是 8 KB 頁面的資料檔案中的位移。 每個頁面識別碼在檔案內都是唯一的。|  
+|**page_id**|**bigint**|可疑頁面的識別碼。 每個頁面都有一個頁面識別碼，它是一個 32 位元的值，用來識別頁面在資料庫中的位置。 **Page_id** 是 8 KB 頁面的資料檔案中的位移。 每個頁面識別碼在檔案內都是唯一的。|  
 |**event_type**|**int**|這是錯誤的類型，它有下列幾種：<br /><br /> 1 = 導致可疑頁面 (例如，磁碟錯誤) 的 823 錯誤，或總和檢查碼錯誤或頁面損毀 (例如，頁面識別碼不正確) 以外的 824 錯誤。<br /><br /> 2 = 總和檢查碼錯誤。<br /><br /> 3 = 頁面損毀。<br /><br /> 4 = 已還原 (在頁面標示為不正確之後還原頁面)。<br /><br /> 5 = 已修復 (DBCC 已修復頁面)。<br /><br /> 7 = 已由 DBCC 取消配置。|  
 |**error_count**|**int**|錯誤的發生次數。|  
 |**last_update_date**|**datetime**|上次更新的日期和時間戳記。|  

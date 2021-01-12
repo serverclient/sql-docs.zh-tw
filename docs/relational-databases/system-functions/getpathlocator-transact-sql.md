@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - GetPathLocator function
 ms.assetid: 78b7e220-445b-4fdf-811b-7253f4f2b058
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 2551dfbb7d71b33542f4bc6fd8087c10f974e45b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 155921b08c936bfb758f60c65b4ad737546141f5
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88464760"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096349"
 ---
 # <a name="getpathlocator-transact-sql"></a>GetPathLocator (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -39,7 +39,7 @@ GetPathLocator(filenamespace_path)
   
 ## <a name="arguments"></a>引數  
  *filenamespace_path*  
- FileTable 中的命名空間路徑。 命名空間路徑的類型為 **Nvarchar (max) **。  
+ FileTable 中的命名空間路徑。 命名空間路徑的類型為 **Nvarchar (max)**。  
   
  當資料庫屬於 Always On 可用性群組時， **GetPathLocator** 函數會接受虛擬網路名稱 (VNN) 或電腦名稱稱。  
   

@@ -18,26 +18,26 @@ dev_langs:
 helpviewer_keywords:
 - sys.xml_schema_attributes catalog view
 ms.assetid: dd0c98aa-5e72-4df6-96d9-482786c8dbb1
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: a64481a5e3ab55a489d173dfd88f295a09aa9dfd
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: cedfdf992f1dbec8eeff1ff7fa74a489b179d943
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546701"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095403"
 ---
 # <a name="sysxml_schema_attributes-transact-sql"></a>sys.xml_schema_attributes (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  針對每個 XML 架構元件，各**傳回一個資料**列，該元件是**symbol_space**的屬性。  
+  針對每個 XML 架構元件，各 **傳回一個資料** 列，該元件是 **symbol_space** 的屬性。  
 
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
 |**\<inherited columns>**|--|繼承自 [sys.xml_schema_components](../../relational-databases/system-catalog-views/sys-xml-schema-components-transact-sql.md)。|  
 |**is_default_fixed**|**bit**|1 = 預設值是固定值。 在 XML 執行個體中不能覆寫這個值。<br /><br /> 0 = 預設值不是屬性的固定值。 (預設值)|  
 |**must_be_qualified**|**bit**|1 = 屬性必須明確限定命名空間。<br /><br /> 0 = 屬性可隱含限定命名空間。 (預設值)|  
-|**default_value**|**nvarchar**<br /><br /> ** (4000) **|屬性的預設值。 如果沒有提供預設值，則為 NULL。|  
+|**default_value**|**nvarchar**<br /><br /> **(4000)**|屬性的預設值。 如果沒有提供預設值，則為 NULL。|  
   
 ## <a name="permissions"></a>權限  
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] 如需相關資訊，請參閱 [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md)。  
