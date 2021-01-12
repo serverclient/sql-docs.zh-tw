@@ -1,6 +1,6 @@
 ---
 description: sys.dm_xe_packages (Transact-SQL)
-title: sys. dm_xe_packages (Transact-sql) |Microsoft Docs
+title: sys.dm_xe_packages (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/09/2016
 ms.prod: sql
@@ -18,14 +18,14 @@ helpviewer_keywords:
 - sys.dm_xe_packages dynamic management view
 - extended events [SQL Server], views
 ms.assetid: 2e5ecbe9-3ea8-45e6-a161-e31671a03e1d
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: b3bf921d551a10a53c0ecbab16721f4e8240df7a
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: f4d23f493b669744f0c3bb53b6148056131ebe17
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89536923"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093923"
 ---
 # <a name="sysdm_xe_packages-transact-sql"></a>sys.dm_xe_packages (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "89536923"
 |-----------------|---------------|-----------------|  
 |NAME|**nvarchar(256)**|封裝的名稱。 描述會從封裝本身公開。 不可為 Null。|  
 |guid|**uniqueidentifier**|識別此封裝的 GUID。 不可為 Null。|  
-|description|**Nvarchar (3072) **|封裝的描述。 descriptionis 由封裝作者所設定，而且不可為 null。|  
+|description|**Nvarchar (3072)**|封裝的描述。 descriptionis 由封裝作者所設定，而且不可為 null。|  
 |capabilities|**int**|描述這個封裝之功能的點陣圖。 可為 Null。|  
 |capabilities_desc|**nvarchar(256)**|此封裝所有可能之功能的清單。 可為 Null。|  
 |module_guid|**nvarchar(60)**|公開此封裝之模組的 GUID。 不可為 Null。|  

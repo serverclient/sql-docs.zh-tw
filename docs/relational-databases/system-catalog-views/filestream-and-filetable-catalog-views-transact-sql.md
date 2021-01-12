@@ -13,14 +13,14 @@ dev_langs:
 helpviewer_keywords:
 - FileTables [SQL Server], catalog views
 ms.assetid: 2c83a4a7-720b-4435-a3b5-788c29f56949
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: fb9a8f2daa440386e48e12ab5a25bcb746a26c97
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: f280208aa768997e63d0df2c9ee9fc4d8a079aca
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545071"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092592"
 ---
 # <a name="filestream-and-filetable-catalog-views-transact-sql"></a>Filestream 和 FileTable 目錄檢視 (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "89545071"
  顯示與 FileTable 相關的系統定義物件清單。 針對每個系統定義物件，各包含一個資料列。  
   
  [sys.filetables &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-filetables-transact-sql.md)  
- 針對每個 FileTable，各傳回一個資料列。 從 **sys. 資料表**繼承。  
+ 針對每個 FileTable，各傳回一個資料列。 從 **sys. 資料表** 繼承。  
 
 ## <a name="see-also"></a>另請參閱
 [檔案資料流](../../relational-databases/blob/filestream-sql-server.md)

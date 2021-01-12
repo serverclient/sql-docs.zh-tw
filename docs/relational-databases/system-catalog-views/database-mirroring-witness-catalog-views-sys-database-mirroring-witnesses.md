@@ -1,6 +1,6 @@
 ---
-description: 資料庫鏡像見證目錄檢視-sys. database_mirroring_witnesses
-title: sys. database_mirroring_witnesses (Transact-sql) |Microsoft Docs
+description: 資料庫鏡像見證目錄檢視-sys.database_mirroring_witnesses
+title: sys.database_mirroring_witnesses (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -20,16 +20,16 @@ helpviewer_keywords:
 - sys.database_mirroring_witnesses catalog view
 - witness [SQL Server], sys.database_mirroring_witnesses catalog view
 ms.assetid: 0dd5b794-733b-4a3c-b5a4-62f9f1f0f22d
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: a321ea1734ce63941e2ba3ebac30bb0149891d09
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 09eae37eb4eb380ad56c36d837a8454a50a58f8d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89548816"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092648"
 ---
-# <a name="database-mirroring-witness-catalog-views---sysdatabase_mirroring_witnesses"></a>資料庫鏡像見證目錄檢視-sys. database_mirroring_witnesses
+# <a name="database-mirroring-witness-catalog-views---sysdatabase_mirroring_witnesses"></a>資料庫鏡像見證目錄檢視-sys.database_mirroring_witnesses
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   針對伺服器在資料庫鏡像合作關係中所扮演的每個見證角色，各包含一個資料列。 
@@ -48,7 +48,7 @@ ms.locfileid: "89548816"
 |**mirroring_guid**|**uniqueidentifier**|鏡像合作關係的識別碼。|  
 |**family_guid**|**uniqueidentifier**|資料庫備份家族的識別碼。 它用來偵測相符還原狀態。|  
 |**is_suspended**|**bit**|資料庫鏡像已暫停。|  
-|**is_suspended_sequence_number**|**int**|設定 **is_suspended**的序號。|  
+|**is_suspended_sequence_number**|**int**|設定 **is_suspended** 的序號。|  
 |**partner_sync_state**|**tinyint**|鏡像工作階段的同步處理狀態：<br /><br /> 5 = 夥伴已同步處理。 現在可能可以進行容錯移轉。 如需容錯移轉需求的詳細資訊，請參閱 [資料庫鏡像會話期間的角色切換 &#40;SQL Server&#41;](../../database-engine/database-mirroring/role-switching-during-a-database-mirroring-session-sql-server.md)。<br /><br /> 6 = 夥伴未同步處理。 現在不可能進行容錯移轉。|  
 |**partner_sync_state_desc**|**nvarchar(60)**|鏡像工作階段之同步處理狀態的描述：<br /><br /> SYNCHRONIZED<br /><br /> UNSYNCHRONIZED|  
   
@@ -57,7 +57,7 @@ ms.locfileid: "89548816"
   
 ## <a name="see-also"></a>另請參閱  
  [資料庫鏡像見證](../../database-engine/database-mirroring/database-mirroring-witness.md)   
- [sys. database_mirroring &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-database-mirroring-transact-sql.md)   
+ [sys.database_mirroring &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-database-mirroring-transact-sql.md)   
  [sys.database_mirroring_endpoints &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-database-mirroring-endpoints-transact-sql.md)   
  [查詢 SQL Server 系統目錄 FAQ](../../relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.md)  
   

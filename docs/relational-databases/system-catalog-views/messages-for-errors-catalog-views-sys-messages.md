@@ -20,14 +20,14 @@ helpviewer_keywords:
 - sys.messages catalog view
 - error numbers [SQL Server]
 ms.assetid: 8c16ecdf-68f4-4a2a-b594-086e3344e58a
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 30cfb208d709f19743216369b23e6b7bef9dfc38
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 590ad007eebcf37765752272ef775e0d3d2443f0
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91810394"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092542"
 ---
 # <a name="messages-for-errors-catalog-views---sysmessages"></a>訊息 (適用於錯誤) 目錄檢視 - sys.messages
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,9 +37,9 @@ ms.locfileid: "91810394"
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
 |**message_id**|**int**|訊息的識別碼。 在伺服器中，這是唯一的。 小於 50000 的訊息識別碼，都是系統訊息。|  
-|**language_id**|**smallint**|使用 **文字** 中文字的語言識別項，如 **syslanguages**中所定義。 這對指定的 **message_id**而言是唯一的。|  
-|**severity**|**tinyint**|訊息的嚴重性層級，介於 1 至 25 之間。 這對 **message_id**內的所有訊息語言都相同。|  
-|**is_event_logged**|**bit**|1 = 當引發錯誤時，會以記錄事件的方式記錄訊息。 這對 **message_id**內的所有訊息語言都相同。|  
+|**language_id**|**smallint**|使用 **文字** 中文字的語言識別項，如 **syslanguages** 中所定義。 這對指定的 **message_id** 而言是唯一的。|  
+|**severity**|**tinyint**|訊息的嚴重性層級，介於 1 至 25 之間。 這對 **message_id** 內的所有訊息語言都相同。|  
+|**is_event_logged**|**bit**|1 = 當引發錯誤時，會以記錄事件的方式記錄訊息。 這對 **message_id** 內的所有訊息語言都相同。|  
 |**text**|**nvarchar(2048)**|當對應的 **language_id** 為使用中時，所使用之訊息的文字。|  
   
 ## <a name="permissions"></a>權限  

@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - IHpublishercolumnconstraints system table
 ms.assetid: d7a41da6-e067-430a-8da2-3f6745b8a4f3
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5fd48949931767dde0873ac95c7184544850e842
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 8f82d650cc09c7379c9ad9256413229143be4cdf
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89547182"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092478"
 ---
 # <a name="ihpublishercolumnconstraints-transact-sql"></a>IHpublishercolumnconstraints (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **IHpublishercolumnconstraints**系統資料表會將[IHpublishercolumns](../../relational-databases/system-tables/ihpublishercolumns-transact-sql.md)系統資料表中非 SQL Server 發行集的資料行對應至[IHpublisherconstraints](../../relational-databases/system-tables/ihpublisherconstraints-transact-sql.md)系統資料表中的條件約束。 這份資料表儲存在散發資料庫中。  
+  **IHpublishercolumnconstraints** 系統資料表會將 [IHpublishercolumns](../../relational-databases/system-tables/ihpublishercolumns-transact-sql.md)系統資料表中非 SQL Server 發行集的資料行對應至 [IHpublisherconstraints](../../relational-databases/system-tables/ihpublisherconstraints-transact-sql.md)系統資料表中的條件約束。 這份資料表儲存在散發資料庫中。  
   
 ## <a name="definition"></a>定義  
   

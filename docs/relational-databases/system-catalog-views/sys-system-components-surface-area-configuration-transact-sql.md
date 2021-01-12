@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.system_components_surface_area_configuration catalog view
 ms.assetid: d9920008-3387-4f9e-8f21-47473f2ba04f
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5e5e014ad22613d65f3f8829e51f998b1744ddcf
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 7f5eecd0b62dc819f3526053fb22779299d4c449
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550338"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092978"
 ---
 # <a name="syssystem_components_surface_area_configuration-transact-sql"></a>sys.system_components_surface_area_configuration (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSreplication_subscriptions system table
 ms.assetid: fd0c5843-4e9b-4448-8bfb-0a4067d1d8d1
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: b89aee32b5ea431da77043938104960d4d353b74
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 8d5d0b8b450102483c844ec53472ff509b75cd0d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551018"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092374"
 ---
 # <a name="msreplication_subscriptions-transact-sql"></a>MSreplication_subscriptions (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSreplication_subscriptions**資料表會針對服務本機訂閱者資料庫的每個散發代理程式，各包含一列複寫資訊。 這份資料表儲存在訂閱資料庫中。  
+  **MSreplication_subscriptions** 資料表會針對服務本機訂閱者資料庫的每個散發代理程式，各包含一列複寫資訊。 這份資料表儲存在訂閱資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

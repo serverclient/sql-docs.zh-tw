@@ -11,14 +11,14 @@ ms.topic: language-reference
 dev_langs:
 - TSQL
 ms.assetid: fa2c95df-1211-4330-adc6-9657e1a113e8
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 812dd0fe08c4195571c827ec82d3e599732d0ff2
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: d58da34aaf49813033b026ada4f200123afa7eaf
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88427740"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092718"
 ---
 # <a name="system-security-functions"></a>系統安全性函數
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

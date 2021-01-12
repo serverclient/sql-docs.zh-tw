@@ -9,12 +9,12 @@ ms.date: 06/27/2018
 ms.author: murshedz
 ms.reviewer: martinle
 ms.custom: seo-dt-2019
-ms.openlocfilehash: 590ca4149bc93fd2c22d04f22c3c47b7389245a2
-ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
+ms.openlocfilehash: 004550d95ca69bae45c518b8054886e635e829df
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97489605"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091781"
 ---
 # <a name="whats-new-in-analytics-platform-system-a-scale-out-mpp-data-warehouse"></a>Analytics Platform System 的新功能，擴充 MPP 資料倉儲
 請參閱 Microsoft Analytics Platform System (AP) 最新設備更新的新功能。 AP 是一個將 MPP SQL Server 平行處理資料倉儲的相應放大內部部署設備。 
@@ -142,7 +142,7 @@ from cte;
 發行日期-2018 年7月
 
 ### <a name="dbcc-commands-do-not-consume-concurrency-slots-behavior-change"></a>DBCC 命令不會使用平行存取插槽 (行為變更) 
-AP 支援 T-sql [dbcc 命令](../t-sql/database-console-commands/dbcc-transact-sql.md) 的子集，例如 [dbcc DROPCLEANBUFFERS](../t-sql/database-console-commands/dbcc-dropcleanbuffers-transact-sql.md)。 之前，這些命令會耗用[並行位置](./workload-management.md?view=aps-pdw-2016-au7#concurrency-slots)，減少可執行的使用者載入/查詢數量。 `DBCC`命令現在會在本機佇列中執行，而不會使用使用者平行存取位置來改善整體查詢執行效能。
+AP 支援 T-sql [dbcc 命令](../t-sql/database-console-commands/dbcc-transact-sql.md) 的子集，例如 [dbcc DROPCLEANBUFFERS](../t-sql/database-console-commands/dbcc-dropcleanbuffers-transact-sql.md)。 之前，這些命令會耗用[並行位置](./workload-management.md?view=aps-pdw-2016-au7&preserve-view=true&#concurrency-slots)，減少可執行的使用者載入/查詢數量。 `DBCC`命令現在會在本機佇列中執行，而不會使用使用者平行存取位置來改善整體查詢執行效能。
 
 ### <a name="replaces-some-metadata-calls-with-catalog-objects"></a>以目錄物件取代某些中繼資料呼叫
 使用目錄物件進行中繼資料呼叫，而不使用 SMO，在 AP 中顯示效能改進。 從 CU 7.1 開始，其中有些中繼資料呼叫現在預設會使用目錄物件。 如果使用中繼資料查詢的客戶遇到任何問題，則 [功能切換](appliance-feature-switch.md) 可關閉此行為。
@@ -275,7 +275,7 @@ The proper formats have at least two big advantages.  One big advantage is that 
 [bcp 公用程式]:/sql/tools/bcp-utility
 [唯一]:/sql/t-sql/data-types/uniqueidentifier-transact-sql
 [NUMERIC]:/sql/t-sql/data-types/decimal-and-numeric-transact-sql
-[資料列或範圍]:/sql/t-sql/queries/select-over-clause-transact-sql
+[ROWS 或 RANGE]:/sql/t-sql/queries/select-over-clause-transact-sql
 [FIRST_VALUE]:/sql/t-sql/functions/first-value-transact-sql
 [LAST_VALUE]:/sql/t-sql/functions/last-value-transact-sql
 [CUME_DIST]:/sql/t-sql/functions/cume-dist-transact-sql

@@ -1,6 +1,6 @@
 ---
 description: sys.column_store_dictionaries (Transact-SQL)
-title: sys. column_store_dictionaries (Transact-sql) |Microsoft Docs
+title: sys.column_store_dictionaries (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.column_store_dictionaries catalog view
 ms.assetid: 56efd563-2f72-4caf-94e3-8a182385c173
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ec0e67a4406076b73b1e064e31fba15cf7a0c70c
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 86c749ab8fdad447c477dd4f424cab3ab1d6b086
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539675"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092499"
 ---
 # <a name="syscolumn_store_dictionaries-transact-sql"></a>sys.column_store_dictionaries (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -54,8 +54,8 @@ ms.locfileid: "89539675"
  [目錄檢視 &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   
  [查詢 SQL Server 系統目錄常見問題](../../relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.md)   
  [sys.columns &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-columns-transact-sql.md)   
- [sys. all_columns &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-all-columns-transact-sql.md)   
- [sys. computed_columns &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-computed-columns-transact-sql.md)   
+ [sys.all_columns &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-all-columns-transact-sql.md)   
+ [sys.computed_columns &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-computed-columns-transact-sql.md)   
  [資料行存放區索引指南](~/relational-databases/indexes/columnstore-indexes-overview.md)   
  [資料行存放區索引指南](~/relational-databases/indexes/columnstore-indexes-overview.md)   
  [sys.column_store_segments &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-column-store-segments-transact-sql.md)  

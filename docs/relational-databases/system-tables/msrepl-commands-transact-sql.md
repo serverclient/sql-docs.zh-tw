@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSrepl_commands system table
 ms.assetid: 53b9f9cd-9429-47a0-aba2-908fc60e7036
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c8596aefdaecce0e7d39033b2a484ebfe6a4f46b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: c939e1c5112aee07738ad5d368cb0ef05d804618
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540252"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98090971"
 ---
 # <a name="msrepl_commands-transact-sql"></a>MSrepl_commands (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSrepl_commands**資料表包含已複寫命令的資料列。 這份資料表儲存在散發資料庫中。  
+  **MSrepl_commands** 資料表包含已複寫命令的資料列。 這份資料表儲存在散發資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
@@ -39,7 +39,7 @@ ms.locfileid: "89540252"
 |**originator_id**|**int**|發起者的識別碼。|  
 |**command_id**|**int**|命令的識別碼。|  
 |**partial_command**|**bit**|指出這是否為部分命令。|  
-|**command**|**Varbinary (1024) **|命令值。|  
+|**command**|**Varbinary (1024)**|命令值。|  
 |**hashkey**|**int**|僅供內部使用。|  
 |**originator_lsn**|**varbinary(16)**|識別原始發行集中，該命令的 LSN。 用於點對點異動複寫中。|  
   

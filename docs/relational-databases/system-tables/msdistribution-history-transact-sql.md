@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSdistribution_history system table
 ms.assetid: 55665bd2-9e1d-4efc-8f60-c63a24f66b28
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: a97b83feb047e5e45e3de2a19475f8cc42033db0
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 541a976e55a62dd9802f5d5a54cc31487ad5680e
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89547124"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091448"
 ---
 # <a name="msdistribution_history-transact-sql"></a>MSdistribution_history (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSdistribution_history**資料表包含與本機散發者相關聯之散發代理程式的記錄資料列。 這份資料表儲存在散發資料庫中。  
+  **MSdistribution_history** 資料表包含與本機散發者相關聯之散發代理程式的記錄資料列。 這份資料表儲存在散發資料庫中。  
   
 ## <a name="definition"></a>定義  
   
@@ -42,14 +42,14 @@ ms.locfileid: "89547124"
 |**評論**|**nvarchar(4000)**|訊息文字。|  
 |**xact_seqno**|**varbinary(16)**|前次處理的交易序號。|  
 |**current_delivery_rate**|**float**|在最後一個記錄項目之後，每秒傳遞的平均命令數。|  
-|**current_delivery_latency**|**int**|在前一個記錄項目之後，在命令輸入散發資料庫和套用至訂閱者之間的延遲 (毫秒)。|  
+|**current_delivery_latency**|**int**|在前一個記錄項目之後，在命令輸入散發資料庫和套用至訂閱者之間的延遲 以毫秒為單位。|  
 |**delivered_transactions**|**int**|在工作階段所傳遞的交易總數。|  
 |**delivered_commands**|**int**|在工作階段所傳遞的命令總數。|  
 |**average_commands**|**int**|在工作階段所傳遞的命令平均數。|  
 |**delivery_rate**|**float**|平均每秒傳遞的命令數。|  
-|**delivery_latency**|**int**|在命令輸入散發資料庫和套用至訂閱者之間的延遲 (毫秒)。|  
+|**delivery_latency**|**int**|在命令輸入散發資料庫和套用至訂閱者之間的延遲 以毫秒為單位。|  
 |**total_delivered_commands**|**bigint**|建立訂閱之後所傳遞的命令總數。|  
-|**error_id**|**int**|**MSrepl_error**系統資料表中錯誤的識別碼。|  
+|**error_id**|**int**|**MSrepl_error** 系統資料表中錯誤的識別碼。|  
 |**updateable_row**|**bit**|如果可以覆寫歷程記錄資料列，請設定為 **1** 。|  
 |**timestamp**|**timestamp**|這份資料表的時間戳記資料行。|  
   

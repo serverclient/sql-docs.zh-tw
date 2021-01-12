@@ -25,15 +25,15 @@ helpviewer_keywords:
 - displaying permission hierarchy
 - sys.fn_builtin_permissions function
 ms.assetid: 704b1ad3-3534-4cf3-aff4-9fb70064b6cc
-author: rothja
-ms.author: jroth
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 117c4c2e6bc3e08ea32869cd198850eb3bb29ab2
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: ca23195b680ca5e2e16010b04c357fa2369d7f0a
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97484560"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093854"
 ---
 # <a name="sysfn_builtin_permissions-transact-sql"></a>sys.fn_builtin_permissions (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]

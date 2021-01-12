@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.extended_properties catalog view
 ms.assetid: 439b7299-dce3-4d26-b1c7-61be5e0df82a
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6bbafba4036b90c99427eb4ee9bd0313ac90bfe5
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 5a70bfd5e379dae4a68fa871ba7792cdf038d2ad
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97475289"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092681"
 ---
 # <a name="extended-properties-catalog-views---sysextended_properties"></a>擴充屬性目錄檢視-sys.extended_properties
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "97475289"
 |major_id|**int**|擴充屬性所在的項目識別碼，它是根據其類別加以解譯的。 對大部分的項目來說，這是套用至類別代表的識別碼。 下面是非標準主要識別碼的解譯：<br /><br /> 如果 class 是 0，則 major_id 一律為 0。<br /><br /> 如果 class 是 1、2 或 7，則 major_id 就是 object_id。|  
 |minor_id|**int**|擴充屬性所在項目的次要識別碼，它是根據其類別加以解譯的。 對於大部分的項目來說，這個值為 0；如果不是，則識別碼如下：<br /><br /> 如果 class = 1， minor_id 就是 column_id (資料行)，否則就是 0 (物件)。<br /><br /> 如果 class = 2，minor_id 就是 parameter_id。<br /><br /> 如果 class = 7，minor_id 就是 index_id。|  
 |NAME|**sysname**|內容名稱，另外加上的 class、major_id 和 minor_id，使它成為唯一名稱。|  
-|值|**sql_variant**|擴充屬性的值。|  
+|value|**sql_variant**|擴充屬性的值。|  
   
 ## <a name="permissions"></a>權限  
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] 如需相關資訊，請參閱 [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md)。  

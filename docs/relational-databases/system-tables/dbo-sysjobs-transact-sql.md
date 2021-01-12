@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sysjobs system table
 ms.assetid: e244a6a5-54c2-47a6-8039-dd1852b0ae59
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: fb1e7125dd953fe4904c963f888ae9c11c400df9
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: e36afae06020e9e970359cb09bc79a9bdf346b03
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545791"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091499"
 ---
 # <a name="dbosysjobs-transact-sql"></a>dbo.sysjobs (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -42,14 +42,14 @@ ms.locfileid: "89545791"
 |**start_step_id**|**int**|應該作為執行起點的作業步驟識別碼。|  
 |**category_id**|**int**|作業類別目錄的識別碼。|  
 |**owner_sid**|**varbinary(85)**|作業擁有者的安全性識別碼 (SID)。|  
-|**notify_level_eventlog**|**int**|表示在哪些情況下，應該將通知事件記錄到 Microsoft Windows 應用程式記錄檔的**位元遮罩**：<br /><br /> **0** = 永不<br /><br /> **1** = 當作業成功時<br /><br /> **2** = 當作業失敗時<br /><br /> **3** = 每當作業完成時 (，不論工作結果) |  
+|**notify_level_eventlog**|**int**|表示在哪些情況下，應該將通知事件記錄到 Microsoft Windows 應用程式記錄檔的 **位元遮罩**：<br /><br /> **0** = 永不<br /><br /> **1** = 當作業成功時<br /><br /> **2** = 當作業失敗時<br /><br /> **3** = 每當作業完成時 (，不論工作結果) |  
 |**notify_level_email**|**int**|這是一個位元組遮罩，指出在哪些情況之下，應該在作業完成時傳送通知電子郵件：<br /><br /> **0** = 永不<br /><br /> **1** = 當作業成功時<br /><br /> **2** = 當作業失敗時<br /><br /> **3** = 每當作業完成時 (，不論工作結果) |  
 |**notify_level_netsend**|**int**|這是一個位元組遮罩，指出在哪些情況之下，應該在作業完成時傳送網路訊息：<br /><br /> **0** = 永不<br /><br /> **1** = 當作業成功時<br /><br /> **2** = 當作業失敗時<br /><br /> **3** = 每當作業完成時 (，不論工作結果) |  
 |**notify_level_page**|**int**|這是一個位元組遮罩，指出在哪些情況之下，應該在作業完成時傳送頁面：<br /><br /> **0** = 永不<br /><br /> **1** = 當作業成功時<br /><br /> **2** = 當作業失敗時<br /><br /> **3** = 每當作業完成時 (，不論工作結果) |  
 |**notify_email_operator_id**|**int**|要通知的操作員電子郵件名稱。|  
 |**notify_netsend_operator_id**|**int**|傳送網路訊息時所用的電腦或使用者識別碼。|  
 |**notify_page_operator_id**|**int**|傳送呼叫時所用的電腦或使用者識別碼。|  
-|**delete_level**|**int**|此為**位元遮罩**，指出在哪些情況下，應該在作業完成時刪除作業：<br /><br /> **0** = 永不<br /><br /> **1** = 當作業成功時<br /><br /> **2** = 當作業失敗時<br /><br /> **3** = 每當作業完成時 (，不論工作結果) |  
+|**delete_level**|**int**|此為 **位元遮罩**，指出在哪些情況下，應該在作業完成時刪除作業：<br /><br /> **0** = 永不<br /><br /> **1** = 當作業成功時<br /><br /> **2** = 當作業失敗時<br /><br /> **3** = 每當作業完成時 (，不論工作結果) |  
 |**date_created**|**datetime**|作業的建立日期。|  
 |**date_modified**|**datetime**|上次修改作業的日期。|  
 |**version_number**|**int**|作業的版本。|  

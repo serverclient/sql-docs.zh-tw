@@ -19,14 +19,14 @@ helpviewer_keywords:
 - dbo.sysdac_instances
 - sysdac_instances
 ms.assetid: 28285f3d-3889-439f-8b24-3bdef08e46b4
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 1a21fa1559bb09493ae2802254c87235ecc19efc
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: f5178fdb50b8a959471c8be973080d1416ba10f6
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91809454"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092655"
 ---
 # <a name="data-tier-application-views---dbosysdac_instances"></a>資料層應用程式視圖-dbo.sysdac_instances
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "91809454"
 |instance_id|**uniqueidentifier**|DAC 執行個體的識別碼。|  
 |instance_name|**sysname**|部署 DAC 時指定之 DAC 執行個體的名稱。|  
 |type_name|**sysname**|建立 DAC 封裝時指定之 DAC 的名稱。|  
-|type_version|**Nvarchar (64) **|建立 DAC 封裝時指定之 DAC 的版本。|  
+|type_version|**Nvarchar (64)**|建立 DAC 封裝時指定之 DAC 的版本。|  
 |description|**nvarchar(4000)**|建立 DAC 封裝時寫入之 DAC 的描述。|  
 |type_stream|**varbinary(max)**|包含 DAC 中之邏輯物件編碼表示法的位元資料流，例如，資料表和檢視表。|  
 |date_created|**datetime**|建立 DAC 執行個體的日期和時間。|  

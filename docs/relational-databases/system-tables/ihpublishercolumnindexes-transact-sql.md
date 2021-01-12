@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - IHpublishercolumnindexes system table
 ms.assetid: 95b95a1d-b502-4838-825f-82a456487e25
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5e8c4f3de523b1809ceed4a71c5384d853f92414
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: ab3d300d9dc76dd1d4922e6d62b4a6e0f8e1e492
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545742"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092488"
 ---
 # <a name="ihpublishercolumnindexes-transact-sql"></a>IHpublishercolumnindexes (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **IHpublishercolumnindexes**系統資料表會將[IHpublishercolumns](../../relational-databases/system-tables/ihpublishercolumns-transact-sql.md)系統資料表中非 SQL Server 發行集的資料行對應至[IHpublisherindexes](../../relational-databases/system-tables/ihpublisherindexes-transact-sql.md)系統資料表中的索引。 這份資料表儲存在散發資料庫中。  
+  **IHpublishercolumnindexes** 系統資料表會將 [IHpublishercolumns](../../relational-databases/system-tables/ihpublishercolumns-transact-sql.md)系統資料表中非 SQL Server 發行集的資料行對應至 [IHpublisherindexes](../../relational-databases/system-tables/ihpublisherindexes-transact-sql.md)系統資料表中的索引。 這份資料表儲存在散發資料庫中。  
   
 ## <a name="definition"></a>定義  
   

@@ -1,9 +1,9 @@
 ---
 title: backupmediaset (Transact-sql) |Microsoft Docs
+description: Backupmediaset 的參考，其中包含每個備份媒體集的一個資料列。
 ms.custom: ''
 ms.date: 08/09/2016
 ms.prod: sql
-ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: language-reference
@@ -15,21 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - backup media [SQL Server], backupmediaset system table
 - backupmediaset system table
-ms.assetid: d9c18a93-cab9-4db8-ae09-c6bd8145ab8f
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: fded40f11cfc094e3af89295496787413e3fd4cd
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 10b4d744e7ef4e0d11a9788580ea7f8c5a67bd1f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540364"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091572"
 ---
 # <a name="backupmediaset-transact-sql"></a>backupmediaset (Transact-SQL)
+
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  每個備份組各含一個資料列。 此資料表儲存在 **msdb** 資料庫中。  
- 
+每個備份組各含一個資料列。 此資料表儲存在 **msdb** 資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
@@ -44,7 +43,7 @@ ms.locfileid: "89540364"
 |**mirror_count**|**tinyint**|媒體集中的鏡像數目。|  
 |**is_password_protected**|**bit**|這是指媒體集是否有密碼保護：<br /><br /> 0 = 無保護<br /><br /> 1 = 保護|  
 |**is_compressed**|**bit**|備份是否經過壓縮：<br /><br /> 0 = 未壓縮<br /><br /> 1 = 已壓縮<br /><br /> 在 **msdb** 升級期間，這個值會設定為 Null。 這表示非壓縮的備份。|  
-|**is_encrypted**|**位**|備份是否經過加密：<br /><br /> 0 = 未加密<br /><br /> 1 = 已加密|  
+|**is_encrypted**|**bit**|備份是否經過加密：<br /><br /> 0 = 未加密<br /><br /> 1 = 已加密|  
   
 ## <a name="remarks"></a>備註  
  從 *BACKUP_DEVICE* RESTORE VERIFYONLY with LOADHISTORY 會在 **backupmediaset** 資料表的資料行中填入來自媒體集標頭的適當值。  

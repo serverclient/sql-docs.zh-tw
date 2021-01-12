@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - PathName FILESTREAM [SQL Server]
 ms.assetid: 6b95ad90-6c82-4a23-9294-a2adb74934a3
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: fc5b4b67074c85aef7d5d6d0f7c889a02cbb047d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 85058a3d551a385e4d2de8aed2ea9f56dc3b19c7
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88489714"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093886"
 ---
 # <a name="pathname-transact-sql"></a>PathName (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -41,12 +41,12 @@ column_name.PathName ( @option [ , use_replica_computer_name ] )
   
 ## <a name="arguments"></a>引數  
  *column_name*  
- 這是 **Varbinary (max) ** FILESTREAM 資料行的資料行名稱。 *column_name* 必須是資料行名稱。 它不能是運算式或是 CAST 或 CONVERT 陳述式的結果。  
+ 這是 **Varbinary (max)** FILESTREAM 資料行的資料行名稱。 *column_name* 必須是資料行名稱。 它不能是運算式或是 CAST 或 CONVERT 陳述式的結果。  
   
- 要求任何其他資料類型之資料行的路徑名稱或 **Varbinary (max) ** COLUMNTHAT 沒有 FILESTREAM 儲存屬性會導致查詢編譯時期錯誤。  
+ 要求任何其他資料類型之資料行的路徑名稱或 **Varbinary (max)** COLUMNTHAT 沒有 FILESTREAM 儲存屬性會導致查詢編譯時期錯誤。  
   
  *\@選項*  
- 整數 [運算式](../../t-sql/language-elements/expressions-transact-sql.md) ，定義路徑的伺服器元件如何格式化。 * \@ 選項*可以是下列其中一個值。 預設值是 0。  
+ 整數 [運算式](../../t-sql/language-elements/expressions-transact-sql.md) ，定義路徑的伺服器元件如何格式化。 *\@ 選項* 可以是下列其中一個值。 預設值是 0。  
   
 |值|描述|  
 |-----------|-----------------|  

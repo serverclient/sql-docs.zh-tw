@@ -14,12 +14,12 @@ ms.assetid: ''
 author: rajeshsetlem
 ms.author: rajpo
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 03ea9cc4d6b7842739f4431fea2e9a418e0f3f9e
-ms.sourcegitcommit: 67befbf7435f256e766bbce6c1de57799e1db9ad
+ms.openlocfilehash: 4d1bcf2cdc9997ea33be87184c38447b7cd62973
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92523915"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091604"
 ---
 # <a name="assess-an-enterprise-and-consolidate-assessment-reports-with-dma"></a>使用 DMA 評估企業及整合評估報告
 
@@ -34,7 +34,7 @@ ms.locfileid: "92523915"
   - [.NET Framework](https://www.microsoft.com/download/details.aspx?id=30653) 4.5 或更新版本。
   - [SSMS](../ssms/download-sql-server-management-studio-ssms.md) 17.0 或更新版本。
   - [Power BI 桌面](/power-bi/fundamentals/desktop-get-the-desktop)。
-  - [Azure PowerShell 模組](/powershell/azure/install-az-ps?view=azps-1.0.0)
+  - [Azure PowerShell 模組](/powershell/azure/install-az-ps)
 - 下載並解壓縮：
   - [DMA 會報告 Power BI 範本](https://techcommunity.microsoft.com/gxcuf89792/attachments/gxcuf89792/MicrosoftDataMigration/161/4/PowerBI-Reports.zip)。
   - [LoadWarehouse 腳本](https://techcommunity.microsoft.com/gxcuf89792/attachments/gxcuf89792/MicrosoftDataMigration/161/3/LoadWarehouse1.zip)。
@@ -45,7 +45,7 @@ ms.locfileid: "92523915"
 
 若要載入模組，請執行下列步驟：
 
-1. 流覽至 [C:\Program Files\WindowsPowerShell\Modules]，然後建立名為 **>datamigrationassistant.msi**的資料夾。
+1. 流覽至 [C:\Program Files\WindowsPowerShell\Modules]，然後建立名為 **>datamigrationassistant.msi** 的資料夾。
 2. 開啟 [PowerShell 模組](https://techcommunity.microsoft.com/gxcuf89792/attachments/gxcuf89792/MicrosoftDataMigration/161/1/PowerShell-Modules2.zip)，然後將它們儲存至您建立的資料夾。
 
       ![PowerShell 模組](../dma/media//dma-consolidatereports/dma-powershell-modules.png)
@@ -89,7 +89,7 @@ ms.locfileid: "92523915"
 > [!IMPORTANT]
 > 若為預設實例，請將實例名稱設定為 MSSQLServer。
 
-建立名為 **EstateInventory** 的資料庫，以及名為 **DatabaseInventory**的資料表。 包含此清查資料的資料表可以有任意數目的資料行，但前提是下列四個數據行存在：
+建立名為 **EstateInventory** 的資料庫，以及名為 **DatabaseInventory** 的資料表。 包含此清查資料的資料表可以有任意數目的資料行，但前提是下列四個數據行存在：
 
 - ServerName
 - InstanceName
@@ -106,11 +106,11 @@ ms.locfileid: "92523915"
 
 ### <a name="if-using-an-instance-inventory"></a>如果使用實例清查
 
-建立名為 **EstateInventory** 的資料庫，以及名為 **InstanceInventory**的資料表。 包含此清查資料的資料表可以有任意數目的資料行，但前提是下列四個數據行存在：
+建立名為 **EstateInventory** 的資料庫，以及名為 **InstanceInventory** 的資料表。 包含此清查資料的資料表可以有任意數目的資料行，但前提是下列四個數據行存在：
 
 - ServerName
 - InstanceName
-- 連接埠
+- Port
 - AssessmentFlag
 
 ![使用實例清查時，SQL Server 資料表內容的螢幕擷取畫面。](../dma/media//dma-consolidatereports/dma-sql-server-table-contents-instance-inventory.png)
@@ -123,15 +123,15 @@ ms.locfileid: "92523915"
 
 下表說明與 dmaDataCollector 函數相關聯的參數。
 
-|參數  |說明 |
+|參數  |描述 |
 |---------|---------|
 |**getServerListFrom** | 您的清查。 可能的值為 **SqlServer** 和 **CSV**。<br/>如需詳細資訊，請參閱 [建立 SQL server 的清查](#create-inventory)。 |
-|**csvPath** | CSV 清查檔案的路徑。  只有當 **getServerListFrom** 設定為  **CSV**時，才會使用。 |
-|**serverName** | 在**getServerListFrom**參數中使用**SqlServer**時的清查 SQL Server 實例名稱。 |
+|**csvPath** | CSV 清查檔案的路徑。  只有當 **getServerListFrom** 設定為  **CSV** 時，才會使用。 |
+|**serverName** | 在 **getServerListFrom** 參數中使用 **SqlServer** 時的清查 SQL Server 實例名稱。 |
 |**databaseName** | 裝載清查資料表的資料庫。 |
 |**useInstancesOnly** | 位旗標，用來指定是否要使用實例清單進行評量。  如果設定為0，則會使用 DatabaseInventory 資料表來建立評量目標清單。 |
 |**AssessmentName** | DMA 評估的名稱。 |
-|**TargetPlatform** | 您要執行的評量目標型別。  可能的值為 **AzureSQLDatabase**、 **ManagedSqlServer**、 **SQLServer2012**、 **SQLServer2014**、 **SQLServer2016**、 **SQLServerLinux2017**、 **SQLServerWindows2017**、  **SqlServerWindows2019**和 **SqlServerLinux2019**。  |
+|**TargetPlatform** | 您要執行的評量目標型別。  可能的值為 **AzureSQLDatabase**、 **ManagedSqlServer**、 **SQLServer2012**、 **SQLServer2014**、 **SQLServer2016**、 **SQLServerLinux2017**、 **SQLServerWindows2017**、  **SqlServerWindows2019** 和 **SqlServerLinux2019**。  |
 |**AuthenticationMethod** | 用來連接到您想要評估之 SQL Server 目標的驗證方法。 可能的值為 **SQLAuth** 和 **WindowsAuth**。 |
 |**OutputLocation** | 要在其中儲存 JSON 評定輸出檔案的目錄。 根據要評估的資料庫數目以及資料庫內的物件數目，評定可能需要相當長的時間。 檔案會在所有評量完成後寫入。 |
 
@@ -147,10 +147,10 @@ ms.locfileid: "92523915"
 
 下表說明與 dmaProcessor 函數相關聯的參數。
 
-|參數  |說明 |
+|參數  |描述 |
 |---------|---------|
 |**processTo** | 將處理 JSON 檔案的位置。 可能的值為 **SQLServer** 和 **AzureSQLDatabase**。 |
-|**serverName** | 將處理資料的 SQL Server 實例。  如果您針對**processTo**參數指定**AzureSQLDatabase** ，則只包含 SQL Server 名稱 (不包含 database.windows.net) 。 以 Azure SQL Database 為目標時，系統會提示您輸入兩次登入。第一個是您的 Azure 租使用者認證，而第二個則是您的 Azure SQL Server 系統管理員登入。 |
+|**serverName** | 將處理資料的 SQL Server 實例。  如果您針對 **processTo** 參數指定 **AzureSQLDatabase** ，則只包含 SQL Server 名稱 (不包含 database.windows.net) 。 以 Azure SQL Database 為目標時，系統會提示您輸入兩次登入。第一個是您的 Azure 租使用者認證，而第二個則是您的 Azure SQL Server 系統管理員登入。 |
 |**CreateDMAReporting** | 要建立以處理 JSON 檔案的暫存資料庫。  如果您指定的資料庫已存在，而且您將此參數設定為其中一個，則不會建立物件。  這個參數適用于重新建立已卸載的單一物件。 |
 |**CreateDataWarehouse** | 建立 Power BI 報表將使用的資料倉儲。 |
 |**databaseName** | DMAReporting 資料庫的名稱。 |
@@ -173,7 +173,7 @@ DmaProcessor 函式應該只需要幾秒鐘的時間來處理單一檔案。
 
 ## <a name="set-your-database-owners"></a>設定您的資料庫擁有者
 
-雖然不是強制的，若要從報表中取得最大的值，建議您在**dimDBOwner**維度中設定資料庫擁有者，然後更新**FactAssessment**資料表中的**DBOwnerKey** 。  遵循此程式可讓您根據特定資料庫擁有者來切割和篩選 Power BI 報表。
+雖然不是強制的，若要從報表中取得最大的值，建議您在 **dimDBOwner** 維度中設定資料庫擁有者，然後更新 **FactAssessment** 資料表中的 **DBOwnerKey** 。  遵循此程式可讓您根據特定資料庫擁有者來切割和篩選 Power BI 報表。
 
 您也可以使用 LoadWarehouse 腳本提供基本的 TSQL 語句，讓您設定資料庫擁有者。
 

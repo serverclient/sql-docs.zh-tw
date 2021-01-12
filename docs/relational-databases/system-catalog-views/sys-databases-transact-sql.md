@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.databases catalog view
 ms.assetid: 46c288c1-3410-4d68-a027-3bbf33239289
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: fb80841037a9fc9b7fcb0bc48dff0dd436ea0f88
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 5794b2720340fac295720ac2a4ab05a7906a9226
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97462859"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093158"
 ---
 # <a name="sysdatabases-transact-sql"></a>sys.databases (Transact-SQL)
 

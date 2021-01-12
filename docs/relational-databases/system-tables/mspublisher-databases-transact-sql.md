@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSpublisher_databases system table
 ms.assetid: 59b0166e-a64c-46b8-befc-c222fa1ccce2
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: caba0fa6bf5bee0d00b182a82fc2add0c5061720
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 17ed976b8bbf6de028fb66144577b693889b58fc
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550968"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091397"
 ---
 # <a name="mspublisher_databases-transact-sql"></a>MSpublisher_databases (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSpublisher_databases**資料表會針對本機散發者所服務的每個發行者/發行者資料庫組，各包含一個資料列。 這份資料表儲存在散發資料庫中。  
+  **MSpublisher_databases** 資料表會針對本機散發者所服務的每個發行者/發行者資料庫組，各包含一個資料列。 這份資料表儲存在散發資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - IHpublishers system table
 ms.assetid: 77007246-f10b-4b87-8edf-7afc3c2096af
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 03d8633b8e859df67d60e8b535cb18c01d031a1e
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 037778000e56bf49e99d46d560fd6fda8f4ce484
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551028"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092427"
 ---
 # <a name="ihpublishers-transact-sql"></a>IHpublishers (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **IHpublishers**系統資料表會針對使用目前散發者的每個非 SQL Server 發行者，各包含一個資料列。 這份資料表儲存在散發資料庫中。  
+  **IHpublishers** 系統資料表會針對使用目前散發者的每個非 SQL Server 發行者，各包含一個資料列。 這份資料表儲存在散發資料庫中。  
   
 ## <a name="definition"></a>定義  
   

@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSrepl_errors system table
 ms.assetid: c6e023c1-2c32-4269-8d76-e442ea309e4b
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5afa86de5a33eab4f7e77da1c825619a738381de
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 96699d296c414d18d0d4fb8d8c892151e2013582
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540260"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98090441"
 ---
 # <a name="msrepl_errors-transact-sql"></a>MSrepl_errors (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSrepl_errors**資料表包含具有擴充散發代理程式和合併代理程式失敗資訊的資料列。 這份資料表儲存在散發資料庫中。  
+  **MSrepl_errors** 資料表包含具有擴充散發代理程式和合併代理程式失敗資訊的資料列。 這份資料表儲存在散發資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
@@ -36,7 +36,7 @@ ms.locfileid: "89540260"
 |**time**|**datetime**|發生錯誤的時間。|  
 |**error_type_id**|**int**|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
 |**source_type_id**|**int**|錯誤來源類型識別碼。|  
-|**source_name**|**Nvarchar (100) **|錯誤來源的名稱。|  
+|**source_name**|**Nvarchar (100)**|錯誤來源的名稱。|  
 |**error_code**|**sysname**|錯誤碼。|  
 |**error_text**|**ntext**|錯誤訊息。|  
 |**xact_seqno**|**varbinary(16)**|執行失敗之批次的起始交易記錄序號。 只供散發代理程式使用，這是在執行失敗的批次中，第一項交易的交易記錄序號。|  

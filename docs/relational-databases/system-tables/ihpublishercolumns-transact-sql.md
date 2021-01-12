@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - IHpublishercolumns system table
 ms.assetid: a5347750-224c-40d9-ae12-57e7213b7db9
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 49d4da72bc68d375b7c918768b656e025c4dc6f2
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 44704435eca9e065e7065f025b4c99accab7fa7f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89524825"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092468"
 ---
 # <a name="ihpublishercolumns-transact-sql"></a>IHpublishercolumns (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **IHpublishercolumns**系統資料表代表儲存在發行者端的中繼資料。 這份資料表會針對使用目前散發者，從非 SQL Server 發行者複寫的每個資料行，各包含一個資料列。 **IHpublishercolumns**中的資料類型資訊是發行資料 (DBMS) 的非 SQL Server 資料庫管理系統所特有。 這份資料表儲存在散發資料庫中。  
+  **IHpublishercolumns** 系統資料表代表儲存在發行者端的中繼資料。 這份資料表會針對使用目前散發者，從非 SQL Server 發行者複寫的每個資料行，各包含一個資料列。 **IHpublishercolumns** 中的資料類型資訊是發行資料 (DBMS) 的非 SQL Server 資料庫管理系統所特有。 這份資料表儲存在散發資料庫中。  
   
 ## <a name="definition"></a>定義  
   
@@ -40,7 +40,7 @@ ms.locfileid: "89524825"
 |**name**|**sysname**|已發行的資料行名稱。|  
 |**column_ordinal**|**int**|依序識別欄位。|  
 |**type**|**varchar(255)**|發行者之來源資料行的資料行資料類型。|  
-|**length**|**bigint**|發行者的來源資料行長度。|  
+|**length** (長度)|**bigint**|發行者的來源資料行長度。|  
 |**prec**|**int**|發行者來源資料行的有效位數。|  
 |**scale**|**int**|發行者來源資料行的小數位數。|  
 |**isnullable**|**bit**|指出資料行是否接受 Null 值，其中 **1** 表示接受 null 值。|  

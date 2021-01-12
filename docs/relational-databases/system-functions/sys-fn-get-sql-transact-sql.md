@@ -1,6 +1,6 @@
 ---
 description: sys.fn_get_sql (Transact-SQL)
-title: sys. fn_get_sql (Transact-sql) |Microsoft Docs
+title: sys.fn_get_sql (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -22,14 +22,14 @@ helpviewer_keywords:
 - valid SQL handles [SQL Server]
 - SQL handles
 ms.assetid: d5fe49b5-0813-48f2-9efb-9187716b2fd4
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 6f5e3f4af1cd1bae33f0a340333cb6afd3268158
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 4b3e28e4c66d45f28c6239431e8e6d5440d5d4a0
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88427800"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093818"
 ---
 # <a name="sysfn_get_sql-transact-sql"></a>sys.fn_get_sql (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88427800"
   傳回指定 SQL 控制代碼之 SQL 陳述式的文字。  
   
 > [!IMPORTANT]  
->  未來的 Microsoft SQL Server 版本將移除這項功能。 請避免在新的開發工作中使用這項功能，並規劃修改目前使用這項功能的應用程式。 請改用 sys.dm_exec_sql_text。 如需詳細資訊，請參閱 [sys. dm_exec_sql_text &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md)。  
+>  未來的 Microsoft SQL Server 版本將移除這項功能。 請避免在新的開發工作中使用這項功能，並規劃修改目前使用這項功能的應用程式。 請改用 sys.dm_exec_sql_text。 如需詳細資訊，請參閱 [sys.dm_exec_sql_text &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md)。  
   
  
   
@@ -52,7 +52,7 @@ sys.fn_get_sql ( SqlHandle )
   
 ## <a name="arguments"></a>引數  
  *SqlHandle*  
- 控制代碼值。 *SqlHandle* 是 **Varbinary (64) ** ，沒有預設值。  
+ 控制代碼值。 *SqlHandle* 是 **Varbinary (64)** ，沒有預設值。  
   
 ## <a name="tables-returned"></a>傳回的資料表  
   
@@ -65,9 +65,9 @@ sys.fn_get_sql ( SqlHandle )
 |文字|**text**|這是 SQL 陳述式的文字。 加密物件的這個值是 NULL。|  
   
 ## <a name="remarks"></a>備註  
- 您可以從 [sys. dm_exec_requests &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md) 動態管理檢視的 sql_handle 資料行取得有效的 SQL 控制碼。  
+ 您可以從 [sys.dm_exec_requests &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md) 動態管理檢視的 sql_handle 資料行取得有效的 SQL 控制碼。  
   
- 如果您傳遞的控制碼不再存在於快取中，fn_get_sq**l** 會傳回空的結果集。 如果您傳遞無效的控制代碼，批次會停止，且會傳回錯誤訊息。  
+ 如果您傳遞的控制碼不再存在於快取中，fn_get_sq **l** 會傳回空的結果集。 如果您傳遞無效的控制代碼，批次會停止，且會傳回錯誤訊息。  
   
  無法快取 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 某些 [!INCLUDE[tsql](../../includes/tsql-md.md)] 語句，例如大量複製語句，以及字串常值大於 8 KB 的語句。 這些陳述式的控制代碼無法利用 fn_get_sql 來擷取。  
   

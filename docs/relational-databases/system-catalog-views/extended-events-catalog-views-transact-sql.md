@@ -14,14 +14,14 @@ helpviewer_keywords:
 - xe
 - catalog views [SQL Server], extended events
 ms.assetid: a8c2fb81-9644-4943-9391-fa62b37056de
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 3d5716feb3fd79327ffdbe0f43701becf9958b5b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 8ac538bdcf2d54a4d0a2966871620e7c56e84cc6
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545113"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092623"
 ---
 # <a name="extended-events-catalog-views-transact-sql"></a>擴充的事件目錄檢視 (Transact-SQL)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]

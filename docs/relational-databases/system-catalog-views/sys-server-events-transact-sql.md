@@ -1,6 +1,6 @@
 ---
 description: sys.server_events (Transact-SQL)
-title: sys. server_events (Transact-sql) |Microsoft Docs
+title: sys.server_events (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.server_events catalog view
 ms.assetid: 996f6c9b-6426-4847-95d9-6b77541422be
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: f451456320e7248f48be5a9b7233f1a6cf5b2968
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: cbcefca57c89eaa218d6731d9587966ecaf2663c
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551368"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093042"
 ---
 # <a name="sysserver_events-transact-sql"></a>sys.server_events (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  針對伺服器層級事件通知或伺服器層級 DDL 觸發程序所引發的每個事件，各包含一個資料列。 **Object_id**和**類型**的資料行可唯一識別伺服器事件。  
+  針對伺服器層級事件通知或伺服器層級 DDL 觸發程序所引發的每個事件，各包含一個資料列。 **Object_id** 和 **類型** 的資料行可唯一識別伺服器事件。  
 
   
 |資料行名稱|資料類型|描述|  

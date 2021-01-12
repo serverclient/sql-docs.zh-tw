@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - IHpublisherconstraints system table
 ms.assetid: 537b1e1a-7228-4680-aa27-5ad7072ea01e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 24ab58c617748d52c8c7463454b4d701bf826c42
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: d53c7bdee115715b8513356f02a3afddc75ec118
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545747"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092441"
 ---
 # <a name="ihpublisherconstraints-transact-sql"></a>IHpublisherconstraints (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **IHpublisherconstraints**系統資料表會針對使用目前散發者的非 SQL Server 發行者所複寫的每個條件約束，各包含一個資料列。 這份資料表儲存在散發資料庫中。  
+  **IHpublisherconstraints** 系統資料表會針對使用目前散發者的非 SQL Server 發行者所複寫的每個條件約束，各包含一個資料列。 這份資料表儲存在散發資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
@@ -36,7 +36,7 @@ ms.locfileid: "89545747"
 |**table_id**|**int**|識別條件約束所屬的 [IHpublishertables](../../relational-databases/system-tables/ihpublishertables-transact-sql.md) 資料表。|  
 |**publisher_id**|**smallint**|識別發行資料行所在位置的非 SQL Server 發行者。|  
 |**名稱**|**Sysname**|已發行之條件約束的名稱。|  
-|**類型**|**nvarchar(255)**|[IHconstrainttypes](../../relational-databases/system-tables/ihconstrainttypes-transact-sql.md)系統資料表中支援的條件約束類型。|  
+|**型別**|**nvarchar(255)**|[IHconstrainttypes](../../relational-databases/system-tables/ihconstrainttypes-transact-sql.md)系統資料表中支援的條件約束類型。|  
   
 ## <a name="see-also"></a>另請參閱  
  [異質資料庫複寫](../../relational-databases/replication/non-sql/heterogeneous-database-replication.md)   

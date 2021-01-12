@@ -1,6 +1,6 @@
 ---
 description: sys.server_audits (Transact-SQL)
-title: sys. server_audits (Transact-sql) |Microsoft Docs
+title: sys.server_audits (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 04/05/2016
 ms.prod: sql
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.server_audits catalog view
 ms.assetid: c2c4a000-1127-46a8-b1e9-947fd1136e1e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ea8ed9b7b779b9a81743ab909aa2bbba1e3c4856
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 3bb5b8b56cb2fec01b6fe655f3f51841cc7ebb21
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539598"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093084"
 ---
 # <a name="sysserver_audits-transact-sql"></a>sys.server_audits (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "89539598"
 |**on_failure_desc**|**nvarchar(60)**|寫入動作項目失敗：<br /><br /> CONTINUE<br /><br /> SHUTDOWN SERVER INSTANCE<br /><br /> FAIL_OPERATION|  
 |**is_state_enabled**|**tinyint**|0-已停用<br /><br /> 1 - 已啟用|  
 |**queue_delay**|**int**|寫入磁碟前等候的最大時間值 (以毫秒計)。 如果為 0，則表示稽核將會保證寫入，然後事件才可以繼續。|  
-|**謂詞**|**Nvarchar (3000) **|套用至事件的述詞運算式。|  
+|**謂詞**|**Nvarchar (3000)**|套用至事件的述詞運算式。|  
   
 ## <a name="permissions"></a>權限  
  具有 **ALTER ANY SERVER AUDIT** 或 **VIEW any DEFINITION** 許可權的主體可存取此目錄檢視。 此外，主體也不得被拒絕 **VIEW ANY DEFINITION** 許可權。  

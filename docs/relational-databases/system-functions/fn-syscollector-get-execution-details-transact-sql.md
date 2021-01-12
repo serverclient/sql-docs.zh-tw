@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - fn_syscollector_get_execution_details function
 ms.assetid: d59ddf0c-72c0-4c57-bc83-aef260e4e105
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 615dd195f9553242b92b8830462036ab6384b665
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 40201cb1fed3938da075b3fd5e97380eb0dddfc5
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88474651"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093843"
 ---
 # <a name="fn_syscollector_get_execution_details-transact-sql"></a>fn_syscollector_get_execution_details (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -50,7 +50,7 @@ fn_syscollector_get_execution_details ( log_id )
 |id|**int**|記錄項目的唯一識別碼。|  
 |event|**sysname**|產生記錄項目的事件名稱。|  
 |computer|**nvarchar**|產生記錄項目時，封裝執行所在的電腦。|  
-|! 運算子之後|**nvarchar**|執行了產生記錄項目之封裝的人員或代理程式的使用者名稱。|  
+|運算子|**nvarchar**|執行了產生記錄項目之封裝的人員或代理程式的使用者名稱。|  
 |source|**nvarchar**|產生記錄項目的可執行檔名稱。|  
 |sourceid|**uniqueidentifier**|產生記錄項目之可執行檔的 GUID。|  
 |executionid|**uniqueidentifier**|產生記錄項目之可執行檔執行個體的 GUID。|  
@@ -58,10 +58,10 @@ fn_syscollector_get_execution_details ( log_id )
 |endtime|**datetime**|封裝完成的時間。|  
 |datacode|**int**|識別記錄項目相關事件的整數值。 "0" 表示事件沒有提供任何識別碼。|  
 |databytes|**image**|識別傳回值的位元組陣列。|  
-|訊息|**nvarchar**|事件的描述以及與此事件相關的資訊。|  
+|message|**nvarchar**|事件的描述以及與此事件相關的資訊。|  
   
 ## <a name="permissions"></a>權限  
- 需要 **dc_operator**的 SELECT 許可權。  
+ 需要 **dc_operator** 的 SELECT 許可權。  
   
 ## <a name="see-also"></a>另請參閱  
  [在 SQL Server Data Tools 中啟用套件記錄](../../integration-services/performance/integration-services-ssis-logging.md#server_logging)   
