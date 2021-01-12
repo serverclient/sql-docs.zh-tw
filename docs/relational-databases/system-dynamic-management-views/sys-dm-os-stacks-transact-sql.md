@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_os_stacks dynamic management view
 ms.assetid: a69b06c4-28f0-4535-8fa1-9f132db4d916
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 4539400253aecb4efc68500fea616bac23bfc2af
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 6e5c42d0a82ce7726883e46f2e633aacc624e4db
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97482699"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099718"
 ---
 # <a name="sysdm_os_stacks-transact-sql"></a>sys.dm_os_stacks (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]

@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_io_virtual_file_stats dynamic management function
 ms.assetid: fa3e321f-6fe5-45ff-b397-02a0dd3d6b7d
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 132add407f19a8a4ac33a1b2ee7587748807754e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: d7e5e19b8add37d3a544cfb75328f060d4551585
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97466899"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101566"
 ---
 # <a name="sysdm_io_virtual_file_stats-transact-sql"></a>sys.dm_io_virtual_file_stats (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]

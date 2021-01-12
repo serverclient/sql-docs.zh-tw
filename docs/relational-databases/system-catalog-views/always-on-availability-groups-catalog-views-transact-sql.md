@@ -14,14 +14,14 @@ helpviewer_keywords:
 - catalog views [SQL Server], AlwaysOn Availability Groups
 - YY
 ms.assetid: ff53e873-8ff6-4628-af84-4ec52fa4951c
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ea913109a9d981d0f59a7143746bda022edccf97
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 9c1210f5aa1932b9ebfe8f46a8b5e23963bbc8e5
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551528"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102158"
 ---
 # <a name="always-on-availability-groups-catalog-views-transact-sql"></a>Always On 可用性群組類別目錄檢視 (Transact-sql) 
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -54,7 +54,7 @@ ms.locfileid: "89551528"
   
 ## <a name="see-also"></a>另請參閱  
  [sys. 資料庫 (Transact-sql) ](sys-databases-transact-sql.md)   
- [sys. database_mirroring_endpoints (Transact-sql) ](sys-database-mirroring-endpoints-transact-sql.md)   
+ [sys.database_mirroring_endpoints (Transact-sql) ](sys-database-mirroring-endpoints-transact-sql.md)   
  [AlwaysOn 可用性群組 (SQL Server)](../../database-engine/availability-groups/windows/always-on-availability-groups-sql-server.md)   
  [監視可用性群組 (Transact-sql) ;](../../database-engine/availability-groups/windows/monitor-availability-groups-transact-sql.md)   
  [Always On 可用性群組動態管理檢視和函數 (Transact-sql) ](../system-dynamic-management-views/always-on-availability-groups-dynamic-management-views-functions.md)  

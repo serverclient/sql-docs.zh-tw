@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - IHpublishertables system table
 ms.assetid: 7d16ac39-633a-4fe2-8f22-1d9afc191ee9
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 3e1a7f5485768a0d8c80211dd3a33d992419f104
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 604f5ddba7eb007833adcab0a4a026cd1fe3a124
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540901"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100566"
 ---
 # <a name="ihpublishertables-transact-sql"></a>IHpublishertables (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **IHpublishertables**系統資料表代表儲存在發行者端的中繼資料。 這份資料表會針對使用目前散發者，從非 SQL Server 發行者發行的每份來源資料表，各包含一個資料列。 這份資料表儲存在散發資料庫中。  
+  **IHpublishertables** 系統資料表代表儲存在發行者端的中繼資料。 這份資料表會針對使用目前散發者，從非 SQL Server 發行者發行的每份來源資料表，各包含一個資料列。 這份資料表儲存在散發資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

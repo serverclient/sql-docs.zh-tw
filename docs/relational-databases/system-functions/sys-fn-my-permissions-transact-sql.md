@@ -1,6 +1,6 @@
 ---
 description: sys.fn_my_permissions (Transact-SQL)
-title: sys. fn_my_permissions (Transact-sql) |Microsoft Docs
+title: sys.fn_my_permissions (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - fn_my_permissions function
 - sys.fn_my_permissions function
 ms.assetid: 30f97f00-03d8-443a-9de9-9ec420b7699b
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 75ff0dfb3355158a3dedbc9d5e066dbce0ac441f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 5e67f2be709f91ee3214f490cfbcc2b932ad7dc5
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88427750"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101319"
 ---
 # <a name="sysfn_my_permissions-transact-sql"></a>sys.fn_my_permissions (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -44,7 +44,7 @@ fn_my_permissions ( securable , 'securable_class' )
   
 ## <a name="arguments"></a>引數  
  *securable*  
- 這是安全性實體的名稱。 如果安全性實體是伺服器或資料庫，這個值應該設為 NULL。 *securable* 為 **sysname** 類型的純量運算式。 安全性*實體可以是*多部分名稱。  
+ 這是安全性實體的名稱。 如果安全性實體是伺服器或資料庫，這個值應該設為 NULL。 *securable* 為 **sysname** 類型的純量運算式。 安全性 *實體可以是* 多部分名稱。  
   
  '*securable_class*'  
  這是列出權限之安全性實體的類別名稱。 *securable_class* 為 **sysname**。 *securable_class* 必須是下列其中一項：應用程式角色、元件、非對稱金鑰、憑證、合約、資料庫、端點、全文檢索目錄、登入、訊息類型、物件、遠端服務系結、角色、路由、架構、伺服器、服務、對稱金鑰、類型、使用者、XML 架構集合。  
@@ -81,7 +81,7 @@ SELECT DISTINCT class_desc FROM fn_builtin_permissions(default)
 GO  
 ```  
   
- 如果提供預設值做為安全性實體 *或* *securable_class*的值，此值將會被視為 Null。  
+ 如果提供預設值做為安全性實體 *或* *securable_class* 的值，此值將會被視為 Null。  
   
 ## <a name="examples"></a>範例  
   

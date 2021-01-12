@@ -19,15 +19,15 @@ helpviewer_keywords:
 - sys.dm_db_missing_index_columns dynamic management function
 - missing indexes feature [SQL Server], sys.dm_db_missing_index_columns dynamic management function
 ms.assetid: 3b24e5ed-0c79-47e5-805c-a0902d0aeb86
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 7402f7a1104c327b0d0a8fb24c5d5793b0a044a1
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 3cbebd83641c3cbffdc273f2b09c4037ff0f0795
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97462789"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099975"
 ---
 # <a name="sysdm_db_missing_index_columns-transact-sql"></a>sys.dm_db_missing_index_columns (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]

@@ -17,16 +17,16 @@ helpviewer_keywords:
 - dm_continuous_copy_status
 - sys.dm_continuous_copy_status
 ms.assetid: 411b2e71-4421-4ef5-900d-5af068750899
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: = azuresqldb-current
 ms.custom: seo-dt-2019
-ms.openlocfilehash: 69dfbde65d00f3d6995d1bce784a46a64515f8fe
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 94370b562160315e53feb46a83cbb68a848e064f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97472889"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099958"
 ---
 # <a name="sysdm_continuous_copy_status-azure-sql-database"></a>sys.dm_continuous_copy_status (Azure SQL Database)
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]

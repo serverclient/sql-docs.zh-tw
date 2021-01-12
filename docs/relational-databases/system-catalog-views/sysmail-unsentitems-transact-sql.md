@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - sysmail_unsentitems database mail view
 ms.assetid: 993c12da-41e5-4e53-a188-0323feb70c67
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 7ef61a0c08d1ddc2e3a268571521b4da47cee90f
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 0e8ffcc7ae60096de1b0355ed113ffb55e02e286
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543955"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100106"
 ---
 # <a name="sysmail_unsentitems-transact-sql"></a>sysmail_unsentitems (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
 
-  針對每個具有未傳送或正在**重試****狀態的 Database Mail**訊息，各包含一個資料列。 未傳送或正在重試狀態的訊息仍存在郵件佇列中，隨時可能傳送。 訊息可能會因為下列原因而**有尚未傳送的狀態：**  
+  針對每個具有未傳送或正在 **重試****狀態的 Database Mail** 訊息，各包含一個資料列。 未傳送或正在重試狀態的訊息仍存在郵件佇列中，隨時可能傳送。 訊息可能會因為下列原因而 **有尚未傳送的狀態：**  
   
 -   訊息是新的，雖然訊息已置於郵件佇列中，但 Database Mail 正在處理其他訊息而尚未到達這則訊息。  
   
@@ -49,13 +49,13 @@ ms.locfileid: "89543955"
 |**收件者**|**varchar(max)**|訊息收件者的電子郵件地址。|  
 |**copy_recipients**|**varchar(max)**|訊息副本收件者的電子郵件地址。|  
 |**blind_copy_recipients**|**varchar(max)**|名稱未顯示於訊息標頭之訊息副本收件者的電子郵件地址。|  
-|**subject**|**Nvarchar (510) **|訊息的主旨。|  
+|**subject**|**Nvarchar (510)**|訊息的主旨。|  
 |**body**|**varchar(max)**|訊息的主體。|  
-|**body_format**|**Varchar (20) **|訊息的主體格式。 可能的值是 **TEXT** 和 **HTML**。|  
-|**importance**|**Varchar (6) **|訊息的 **重要性** 參數。|  
-|**靈敏度**|**Varchar (12) **|訊息的 **敏感度** 參數。|  
+|**body_format**|**Varchar (20)**|訊息的主體格式。 可能的值是 **TEXT** 和 **HTML**。|  
+|**importance**|**Varchar (6)**|訊息的 **重要性** 參數。|  
+|**靈敏度**|**Varchar (12)**|訊息的 **敏感度** 參數。|  
 |**file_attachments**|**varchar(max)**|附加至電子郵件訊息中的檔案名稱清單，用分號分隔各檔案名稱。|  
-|**attachment_encoding**|**Varchar (20) **|郵件附加檔案的類型。|  
+|**attachment_encoding**|**Varchar (20)**|郵件附加檔案的類型。|  
 |**查詢**|**varchar(max)**|郵件程式執行的查詢。|  
 |**execute_query_database**|**sysname**|郵件程式執行查詢所在的資料庫內容。|  
 |**attach_query_result_as_file**|**bit**|當值是 0 時，查詢結果會包含在電子郵件訊息的主體中，在主體的內容之後。 當值是 1 時，會以附加檔案的方式傳回結果。|  
@@ -67,7 +67,7 @@ ms.locfileid: "89543955"
 |**send_request_date**|**datetime**|訊息置於郵件佇列的日期和時間。|  
 |**send_request_user**|**sysname**|提交訊息的使用者。 這是 database mail 程式的使用者內容，不是訊息的 [ **發件** 者] 欄位。|  
 |**sent_account_id**|**int**|用來傳送訊息之 Database Mail 帳戶的識別碼。 針對這個檢視一律為 NULL。|  
-|**sent_status**|**Varchar (8) **|如果 Database Mail 尚未嘗試傳送郵件，則將 **不會傳送** 。 如果 Database Mail 無法傳送訊息，但正在重試，將會 **重試** 。|  
+|**sent_status**|**Varchar (8)**|如果 Database Mail 尚未嘗試傳送郵件，則將 **不會傳送** 。 如果 Database Mail 無法傳送訊息，但正在重試，將會 **重試** 。|  
 |**sent_date**|**datetime**|Database Mail 上次嘗試傳送郵件的日期和時間。 如果 Database Mail 未嘗試傳送訊息，則是 NULL。|  
 |**last_mod_date**|**datetime**|資料列上次修改的日期和時間。|  
 |**last_mod_user**|**sysname**|上次修改資料列的使用者。|  
@@ -76,6 +76,6 @@ ms.locfileid: "89543955"
  對 Database Mail 進行疑難排解時，這個檢視可藉顯示等候傳送的訊息數和訊息已等候的時間量，來幫助您識別問題的本質。 如果未傳送任何訊息，Database Mail 外部程式可能不在執行中，或者可能有使 Database Mail 無法連絡 SMTP 伺服器的網路問題。 如果許多未傳送的訊息都有相同的 **profile_id**，可能是 SMTP 伺服器有問題。 請考慮將其他帳戶加入設定檔中。 如果正在傳送訊息，但訊息耗費太多時間在佇列中，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 可能需要更多資源來處理需要的訊息量。  
   
 ## <a name="permissions"></a>權限  
- 授與 **系統管理員（sysadmin** ）固定伺服器角色和 **DatabaseMailUserRole** 資料庫角色。 由 **系統管理員（sysadmin** ）固定伺服器角色的成員執行時，此視圖會 **顯示所有未** 傳送或正在 **重試** 的訊息。 所有其他使用者只會看到他們所提交的未**傳送或****重試**訊息。  
+ 授與 **系統管理員（sysadmin** ）固定伺服器角色和 **DatabaseMailUserRole** 資料庫角色。 由 **系統管理員（sysadmin** ）固定伺服器角色的成員執行時，此視圖會 **顯示所有未** 傳送或正在 **重試** 的訊息。 所有其他使用者只會看到他們所提交的未 **傳送或****重試** 訊息。  
   
   

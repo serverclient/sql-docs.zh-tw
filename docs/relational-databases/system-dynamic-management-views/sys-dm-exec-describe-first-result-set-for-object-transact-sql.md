@@ -16,15 +16,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_exec_describe_first_result_set_for_object catalog view
 ms.assetid: 63b0fde7-95d7-4ad7-a219-a9feacf1bd89
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: fb51b9913b8a45b582520174cf98a226918d6aa3
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 490f2197f1399bd89b83a920085829c96a4ed52c
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97474909"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101634"
 ---
 # <a name="sysdm_exec_describe_first_result_set_for_object-transact-sql"></a>sys.dm_exec_describe_first_result_set_for_object (Transact-SQL)
 [!INCLUDE [SQL Server Azure SQL Database ](../../includes/applies-to-version/sql-asdb.md)]

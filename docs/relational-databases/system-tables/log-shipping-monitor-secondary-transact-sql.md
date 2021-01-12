@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - log_shipping_monitor_secondary system table
 ms.assetid: afbe1bb7-89a7-4020-9408-0af64a043c2e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 823295ed5746abcf0e02fca4680a196c8687bc86
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: fbe298651268089a668e6be5a334c49d8623ddb9
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538288"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102118"
 ---
 # <a name="log_shipping_monitor_secondary-transact-sql"></a>log_shipping_monitor_secondary (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -42,10 +42,10 @@ ms.locfileid: "89538288"
 |**restore_threshold**|**int**|在產生警示之前，還原作業之間所能經歷的時間 (以分鐘為單位)。|  
 |**threshold_alert**|**int**|當超出還原臨界值時所產生的警示。|  
 |**threshold_alert_enabled**|**bit**|決定是否啟用還原臨界值警示。 1 = 已啟用。<br /><br /> 0 = 已停用。|  
-|**last_copied_file**|**Nvarchar (500) **|前一個複製到次要伺服器的備份檔之檔案名稱。|  
+|**last_copied_file**|**Nvarchar (500)**|前一個複製到次要伺服器的備份檔之檔案名稱。|  
 |**last_copied_date**|**datetime**|在次要伺服器中，前一個複製作業的日期和時間。|  
 |**last_copied_date_utc**|**datetime**|在次要伺服器中，前一個複製作業的日期和時間 (以國際標準時間 (UTC) 為單位)。|  
-|**last_restored_file**|**Nvarchar (500) **|前一個還原到次要資料庫的備份檔之檔案名稱。|  
+|**last_restored_file**|**Nvarchar (500)**|前一個還原到次要資料庫的備份檔之檔案名稱。|  
 |**last_restored_date**|**datetime**|在次要資料庫中，前一個還原作業的日期和時間。|  
 |**last_restored_date_utc**|**datetime**|在次要資料庫中，前一個還原作業的日期和時間 (以國際標準時間 (UTC) 為單位)。|  
 |**last_restored_latency**|**int**|在主要資料庫中建立記錄備份和在次要資料庫中還原這個記錄備份，其間所經歷的時間 (以分鐘為單位)。<br /><br /> 初始值是 NULL。|  

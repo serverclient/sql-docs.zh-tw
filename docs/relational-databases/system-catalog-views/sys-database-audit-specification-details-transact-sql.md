@@ -1,6 +1,6 @@
 ---
 description: sys.database_audit_specification_details (Transact-SQL)
-title: sys. database_audit_specification_details (Transact-sql) |Microsoft Docs
+title: sys.database_audit_specification_details (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 04/05/2016
 ms.prod: sql
@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.database_audit_specification_details catalog view
 ms.assetid: 03fc60a9-1696-4109-b15e-a50046310859
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c8bc8e09e9f48a7fc37b1ba0f1d308f3e17fde46
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 80eb02546225f3378c2ca8f139f3282e4651ea24
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542613"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102828"
 ---
 # <a name="sysdatabase_audit_specification_details-transact-sql"></a>sys.database_audit_specification_details (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  包含所有資料庫伺服器執行個體上 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 稽核內之資料庫稽核規格的資訊。 如需詳細資訊，請參閱 [SQL Server Audit &#40;Database Engine&#41;](../../relational-databases/security/auditing/sql-server-audit-database-engine.md)。 如需所有 audit_action_id 及其名稱的清單，請查詢 [sys. dm_audit_actions &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-audit-actions-transact-sql.md)。  
+  包含所有資料庫伺服器執行個體上 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 稽核內之資料庫稽核規格的資訊。 如需詳細資訊，請參閱 [SQL Server Audit &#40;Database Engine&#41;](../../relational-databases/security/auditing/sql-server-audit-database-engine.md)。 如需所有 audit_action_id 及其名稱的清單，請查詢 [sys.dm_audit_actions &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-audit-actions-transact-sql.md)。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
@@ -38,12 +38,12 @@ ms.locfileid: "89542613"
 |**audit_action_id**|**int**|稽核動作的識別碼。|  
 |**audit_action_name**|**Sysname**|稽核動作或稽核動作群組的名稱|  
 |**類別**|**int**|識別正在稽核之物件的類別。|  
-|**class_ desc**|**NVarchar (60) **|正在稽核之物件類別的描述：<br /><br /> - SCHEMA<br /><br /> - TABLE|  
+|**class_ desc**|**NVarchar (60)**|正在稽核之物件類別的描述：<br /><br /> - SCHEMA<br /><br /> - TABLE|  
 |**major_id**|**int**|正在稽核之物件的主要識別碼，例如資料表稽核動作的資料表識別碼。|  
 |**minor_id**|**整數**|正在稽核之物件的次要識別碼 (將會根據類別來解譯)，例如資料表稽核動作的資料行識別碼。|  
 |**audited_principal_id**|**int**|正在稽核的主體。|  
-|**audited_result**|**NVarchar (60) **|稽核動作結果：<br /><br /> - SUCCESS AND FAILURE - SUCCESS<br /><br /> - FAILURE|  
-|**is_group**|**位**|顯示物件是否為群組：<br /><br /> 0 - 不是群組<br /><br /> 1 - 群組|  
+|**audited_result**|**NVarchar (60)**|稽核動作結果：<br /><br /> - SUCCESS AND FAILURE - SUCCESS<br /><br /> - FAILURE|  
+|**is_group**|**bit**|顯示物件是否為群組：<br /><br /> 0 - 不是群組<br /><br /> 1 - 群組|  
   
 ## <a name="permissions"></a>權限  
  具有 **ALTER ANY DATABASE AUDIT** 或 **VIEW DEFINITION** 許可權、 **dbo** role 以及 **db_owners** 固定資料庫角色成員的主體可存取此目錄檢視。 此外，主體絕不能被拒絕 **VIEW DEFINITION** 許可權。  

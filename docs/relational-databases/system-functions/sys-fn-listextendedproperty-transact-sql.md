@@ -24,15 +24,15 @@ helpviewer_keywords:
 - extended properties [SQL Server], columns
 - table extended properties [SQL Server]
 ms.assetid: 59bbb91f-a277-4a35-803e-dcb91e847a49
-author: rothja
-ms.author: jroth
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 3efd2428f9eeae241c0ec9be497c854ba0d91417
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 9625e59f5ca6c7357e67116fc0bceaf8cc17c7ac
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97478949"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101355"
 ---
 # <a name="sysfn_listextendedproperty-transact-sql"></a>sys.fn_listextendedproperty (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -93,7 +93,7 @@ fn_listextendedproperty (
 |objtype|**sysname**|  
 |objname|**sysname**|  
 |NAME|**sysname**|  
-|值|**sql_variant**|  
+|value|**sql_variant**|  
   
  如果傳回的資料表是空的，可能是物件沒有擴充屬性，也可能是使用者沒有列出物件擴充屬性的權限。 傳回資料庫本身的擴充屬性時，objtype 和 objname 資料行將為 NULL。  
   

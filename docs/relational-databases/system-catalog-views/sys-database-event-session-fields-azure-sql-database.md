@@ -9,15 +9,15 @@ ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: language-reference
 ms.assetid: 9b5c94d6-612c-4e0f-976d-ac6ba55da3ac
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 729e24203a471cf3bdea3a18ee510cf2cced9987
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 864bccc837046ebeed303b66d9f3719b8ff67a9d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97458534"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102760"
 ---
 # <a name="sysdatabase_event_session_fields-azure-sql-database"></a>sys.database_event_session_fields (Azure SQL Database)
 [!INCLUDE [sqlserver2016-asdb-asdbmi](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "97458534"
 |event_session_id|**int**|事件工作階段的識別碼。 不可為 Null。|  
 |object_id|**int**|這個欄位相關聯之物件的識別碼。 不可為 Null。|  
 |NAME|**sysname**|欄位的名稱。 不可為 Null。|  
-|值|**sql_variant**|此欄位的值。 不可為 Null。|  
+|value|**sql_variant**|此欄位的值。 不可為 Null。|  
   
 ## <a name="permissions"></a>權限  
  需要伺服器的 VIEW DATABASE STATE 權限。  

@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSsync_states system table
 ms.assetid: b25e17e1-7718-432e-a442-c4946741d474
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: bc3ef439c3d5027e64eb988730c41c3f9bea12d9
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 999ce792f213ca20e598b4d7a9fbaa0fa3629d68
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545477"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102009"
 ---
 # <a name="mssync_states-transact-sql"></a>MSsync_states (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSsync_states**資料表會追蹤哪一個發行集仍在並行快照集模式中。 這份資料表儲存在散發資料庫中。  
+  **MSsync_states** 資料表會追蹤哪一個發行集仍在並行快照集模式中。 這份資料表儲存在散發資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

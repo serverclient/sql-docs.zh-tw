@@ -1,6 +1,6 @@
 ---
 description: sys.server_assembly_modules (Transact-SQL)
-title: sys. server_assembly_modules (Transact-sql) |Microsoft Docs
+title: sys.server_assembly_modules (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.server_assembly_modules catalog view
 ms.assetid: af799e38-2d16-49b2-bcf5-6f9199af899e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 412cd0ef0ed2fa42ce6c1add66ce26b3a863f413
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 9449fe5719934222532a251426436415a26cd233
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550400"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100158"
 ---
 # <a name="sysserver_assembly_modules-transact-sql"></a>sys.server_assembly_modules (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  針對 TA 類型伺服器層級觸發程序的每個組件模組，各包含一個資料列。 這份檢視會將組件觸發程序對應至基礎 CLR 實作。 您可以將此關聯性聯結到 **sys. server_triggers**。 元件必須載入到 **master** 資料庫中。 Tuple (object_id) 是關聯性的索引鍵。  
+  針對 TA 類型伺服器層級觸發程序的每個組件模組，各包含一個資料列。 這份檢視會將組件觸發程序對應至基礎 CLR 實作。 您可以將此關聯加入至 **sys.server_triggers**。 元件必須載入到 **master** 資料庫中。 Tuple (object_id) 是關聯性的索引鍵。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

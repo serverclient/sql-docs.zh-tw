@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSqreader_history system table
 ms.assetid: c5c91d39-513c-4a77-870b-c8ef74a1cd6b
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 65f1330aa14e52b3295a9514060ca9244721028b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 22053b5cae7f87c4cf2544ca0ed3ecc39dbda6a9
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540266"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100560"
 ---
 # <a name="msqreader_history-transact-sql"></a>MSqreader_history (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSqreader_history**資料表包含與本機散發者相關聯的佇列讀取器代理程式的記錄資料列。 這份資料表儲存在散發資料庫中。  
+  **MSqreader_history** 資料表包含與本機散發者相關聯的佇列讀取器代理程式的記錄資料列。 這份資料表儲存在散發資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

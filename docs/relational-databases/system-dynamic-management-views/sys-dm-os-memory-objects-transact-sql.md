@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_os_memory_objects dynamic management view
 ms.assetid: 5688bcf8-5da9-4ff9-960b-742b671d7096
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 9988a7d10342711a0a648496ed65dc6a84398278
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 274127f7fb255f6a0be4fe2cc78ca12519cae813
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97468429"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101485"
 ---
 # <a name="sysdm_os_memory_objects-transact-sql"></a>sys.dm_os_memory_objects (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

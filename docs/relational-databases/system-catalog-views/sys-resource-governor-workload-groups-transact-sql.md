@@ -1,6 +1,6 @@
 ---
 description: sys.resource_governor_workload_groups (Transact-SQL)
-title: sys. resource_governor_workload_groups (Transact-sql) |Microsoft Docs
+title: sys.resource_governor_workload_groups (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/16/2016
 ms.prod: sql
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.resource_governor_workload_groups catalog view
 ms.assetid: 619ba4b7-868f-4784-b527-ec1dfd703c4f
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: f85ef2691091911e937bae9fbf21649ace7a943e
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 83d699e2da5e1de1e25a2618171924843c569188
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550410"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101748"
 ---
 # <a name="sysresource_governor_workload_groups-transact-sql"></a>sys.resource_governor_workload_groups (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "89550410"
 |external_pool_id|**int**|**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。<br /><br /> 此工作負載群組使用的外部資源集區識別碼。|  
   
 ## <a name="remarks"></a>備註  
- 目錄檢視會顯示儲存的中繼資料。 若要查看記憶體內部設定，請使用對應的動態管理檢視 [sys. dm_resource_governor_workload_groups &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-workload-groups-transact-sql.md)。  
+ 目錄檢視會顯示儲存的中繼資料。 若要查看記憶體內部設定，請使用對應的動態管理檢視， [sys.dm_resource_governor_workload_groups &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-workload-groups-transact-sql.md)。  
   
  如果資源管理員組態已經變更，但是尚未套用 ALTER RESOURCE GOVERNOR RECONFIGURE 陳述式，儲存的組態與記憶體中組態可能會不同。  
   

@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_tran_locks dynamic management view
 ms.assetid: f0d3b95a-8a00-471b-9da4-14cb8f5b045f
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ba977b0b2f33e9c45a94c92aeb4d6fb9fba5cd0c
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: e3dad8a8c42e2189a29b2e75743653aca5055eae
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97474839"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101460"
 ---
 # <a name="sysdm_tran_locks-transact-sql"></a>sys.dm_tran_locks (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

@@ -1,6 +1,6 @@
 ---
-description: 'sys. resource_governor_external_resource_pools (Transact-sql) '
-title: sys. resource_governor_external_resource_pools (Transact-sql) |Microsoft Docs
+description: 'sys.resource_governor_external_resource_pools (Transact-sql) '
+title: sys.resource_governor_external_resource_pools (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 11/13/2017
 ms.prod: sql
@@ -17,16 +17,16 @@ helpviewer_keywords:
 - sys.resource_governor_external_resource_pools
 - resource_governor_external_resource_pools
 ms.assetid: 75063e36-a91b-496f-9936-88f3d57bd447
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 24b51d8970e9609e486c3a5623ba914aee5e64bd
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 47e09dba80cf7c1b931f8d6949d4667023baf4e6
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550453"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101747"
 ---
-# <a name="sysresource_governor_external_resource_pools-transact-sql"></a>sys. resource_governor_external_resource_pools (Transact-sql) 
+# <a name="sysresource_governor_external_resource_pools-transact-sql"></a>sys.resource_governor_external_resource_pools (Transact-sql) 
 [!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
 **適用於：** [!INCLUDE[sssql15-md](../../includes/sssql15-md.md)] [!INCLUDE[rsql-productname-md](../../includes/rsql-productname-md.md)] 和 [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] [!INCLUDE[rsql-productnamenew-md](../../includes/rsql-productnamenew-md.md)]
 
@@ -55,7 +55,7 @@ ms.locfileid: "89550453"
 
 [資源管理員](../../relational-databases/resource-governor/resource-governor.md)
 
-[sys. dm_resource_governor_resource_pool_affinity &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pool-affinity-transact-sql.md)
+[sys.dm_resource_governor_resource_pool_affinity &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pool-affinity-transact-sql.md)
 
 [外部指令碼已啟用伺服器組態選項](../../database-engine/configure-windows/external-scripts-enabled-server-configuration-option.md)
 

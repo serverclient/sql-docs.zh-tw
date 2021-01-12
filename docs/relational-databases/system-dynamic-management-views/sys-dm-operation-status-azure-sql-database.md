@@ -17,15 +17,15 @@ helpviewer_keywords:
 - dm_operation_status dynamic management view
 - sys.dm_operation_status dynamic management view
 ms.assetid: cc847784-7f61-4c69-8b78-5f971bb24d61
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: = azuresqldb-current || = azure-sqldw-latest
-ms.openlocfilehash: 7146d3455d4d9a36304cc0a1cc69ba3c4c841479
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 21028fd5cdabf435d7672074907b20ebeaaad3c4
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97477219"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101537"
 ---
 # <a name="sysdm_operation_status"></a>sys.dm_operation_status
 

@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - sysmail_mailattachments database mail view
 ms.assetid: aee87059-a4c1-459a-a95c-641b4e3f0e73
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: f3f29f688e750b853c288c901cd81b9891a285c8
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 9fe55316cc27c21849379afe400d2950a5bcf882
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542379"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100124"
 ---
 # <a name="sysmail_mailattachments-transact-sql"></a>sysmail_mailattachments (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "89542379"
 |-----------------|---------------|-----------------|  
 |**attachment_id**|**int**|附加檔案的識別碼。|  
 |**mailitem_id**|**int**|包含附加檔案之郵件項目的識別碼。|  
-|**filename**|**Nvarchar (520) **|附加檔案的檔案名稱。 當 **attach_query_result** 為1且 **query_attachment_filename** 為 Null 時，Database Mail 會建立任意的檔案名。|  
+|**filename**|**Nvarchar (520)**|附加檔案的檔案名稱。 當 **attach_query_result** 為1且 **query_attachment_filename** 為 Null 時，Database Mail 會建立任意的檔案名。|  
 |**filesize**|**int**|附加檔案的大小 (以位元組為單位)。|  
 |**附件**|**varbinary(max)**|附加檔案的內容。|  
 |**last_mod_date**|**datetime**|資料列上次修改的日期和時間。|  

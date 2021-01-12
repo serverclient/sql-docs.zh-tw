@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSdistributiondbs system table
 ms.assetid: d7ffa9df-bf1d-41b8-837e-b762c17c2764
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 70140091cdd3027538038301a86bc2611ba75c23
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 6e4d972d81942e09feab3517c16054921d4f272b
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545700"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102195"
 ---
 # <a name="msdistributiondbs-transact-sql"></a>MSdistributiondbs (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **Msdb..msdistributiondbs**資料表會針對本機散發者上定義的每個散發資料庫，各包含一個資料列。 此資料表儲存在 **msdb** 資料庫中。  
+  **Msdb..msdistributiondbs** 資料表會針對本機散發者上定義的每個散發資料庫，各包含一個資料列。 此資料表儲存在 **msdb** 資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

@@ -19,14 +19,14 @@ helpviewer_keywords:
 - Availability Groups [SQL Server], monitoring
 - sys.availability_groups catalog view
 ms.assetid: da7fa55f-c008-45d9-bcfc-3513b02d9e71
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: eabda9900b854037eca713ac343e04e930eea1e2
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c912d3cb46d4545bf0501281cec23c8f9ce4fb97
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91810189"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101808"
 ---
 # <a name="sysavailability_groups-transact-sql"></a>sys.availability_groups (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -42,11 +42,11 @@ ms.locfileid: "91810189"
 |**failure_condition_level**|**int**|必須觸發自動容錯移轉的使用者定義失敗狀況層級，這是在此資料表正下方的表格中所顯示的其中一個整數值。<br /><br /> 失敗狀況層級 (1-5) 的範圍從最低限制 (層級 1) 到最高限制 (層級 5)。 給定的狀況層級包含所有較少限制的層級。 因此，最嚴格的狀況層級 5 包含四個較少限制的狀況層級 (1-4)，層級 4 則包含層級 1-3，依此類推。<br /><br /> 若要變更這個值，請使用[ALTER AVAILABILITY GROUP](../../t-sql/statements/alter-availability-group-transact-sql.md)語句的 FAILURE_CONDITION_LEVEL 選項 [!INCLUDE[tsql](../../includes/tsql-md.md)] 。|  
 |**health_check_timeout**|**int**|在假設伺服器實例變慢或沒有回應之前， [sp_server_diagnostics](../../relational-databases/system-stored-procedures/sp-server-diagnostics-transact-sql.md) 系統預存程式傳回伺服器健全狀況資訊的等候時間 (以毫秒為單位) 。 預設值為 30000 毫秒 (30 秒)。<br /><br /> 若要變更這個值，請使用[ALTER AVAILABILITY GROUP](../../t-sql/statements/alter-availability-group-transact-sql.md)語句的 HEALTH_CHECK_TIMEOUT 選項 [!INCLUDE[tsql](../../includes/tsql-md.md)] 。|  
 |**automated_backup_preference**|**tinyint**|針對此可用性群組中的可用性資料庫執行備份的慣用位置。 以下是可能的值及其描述。<br /><br /> <br /><br /> 0：主要。 備份一定要在主要複本上進行。<br /><br /> 1：僅限次要。 偏好針對次要複本執行備份。<br /><br /> 2：偏好次要。 偏好針對次要複本執行備份，但是如果沒有次要複本可用來執行備份作業，可以接受針對主要複本執行備份。 這是預設行為。<br /><br /> 3：任何複本。 針對主要複本或次要複本執行備份沒有任何偏好。<br /><br /> <br /><br /> 如需詳細資訊，請參閱[使用中次要：在次要複本上備份 &#40;Always On 可用性群組&#41;](../../database-engine/availability-groups/windows/active-secondaries-backup-on-secondary-replicas-always-on-availability-groups.md)。|  
-|**automated_backup_preference_desc**|**nvarchar(60)**|**Automated_backup_preference**的描述，下列其中一個：<br /><br /> PRIMARY<br /><br /> SECONDARY_ONLY<br /><br /> SECONDARY<br /><br /> 無|  
+|**automated_backup_preference_desc**|**nvarchar(60)**|**Automated_backup_preference** 的描述，下列其中一個：<br /><br /> PRIMARY<br /><br /> SECONDARY_ONLY<br /><br /> SECONDARY<br /><br /> NONE|  
 |**version**|**smallint**|儲存在 Windows 容錯移轉叢集中的可用性群組中繼資料版本。 新增功能時，此版本號碼會遞增。|  
 |**basic_features**|**bit**|指定這是否為基本可用性群組。 如需詳細資訊，請參閱[基本可用性群組 &#40;AlwaysOn 可用性群組&#41;](../../database-engine/availability-groups/windows/basic-availability-groups-always-on-availability-groups.md)。|  
-|**dtc_support**|**bit**|指定是否已啟用此可用性群組的 DTC 支援。 **CREATE AVAILABILITY GROUP**的**DTC_SUPPORT**選項控制此設定。|  
-|**db_failover**|**bit**|指定可用性群組是否支援資料庫健康情況的容錯移轉。 **CREATE AVAILABILITY GROUP**的**DB_FAILOVER**選項控制此設定。|  
+|**dtc_support**|**bit**|指定是否已啟用此可用性群組的 DTC 支援。 **CREATE AVAILABILITY GROUP** 的 **DTC_SUPPORT** 選項控制此設定。|  
+|**db_failover**|**bit**|指定可用性群組是否支援資料庫健康情況的容錯移轉。 **CREATE AVAILABILITY GROUP** 的 **DB_FAILOVER** 選項控制此設定。|  
 |**is_distributed**|**bit**|指定這是否為分散式可用性群組。 如需詳細資訊，請參閱[分散式可用性群組 &#40;AlwaysOn 可用性群組&#41;](../../database-engine/availability-groups/windows/distributed-availability-groups.md)。|
 |**cluster_type**|**tinyint**|0： Windows Server 容錯移轉叢集 <br/><br/>1： External cluster (例如 Linux Pacemaker) <br/><br/>2：無|
 |**cluster_type_desc**|**nvarchar(60)**|叢集類型的文字描述|

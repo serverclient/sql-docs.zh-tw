@@ -1,6 +1,6 @@
 ---
-description: 資料庫鏡像-sys. dm_db_mirroring_connections
-title: sys. dm_db_mirroring_connections (Transact-sql) |Microsoft Docs
+description: 資料庫鏡像-sys.dm_db_mirroring_connections
+title: sys.dm_db_mirroring_connections (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
@@ -17,16 +17,16 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_db_mirroring_connections dynamic management view
 ms.assetid: e4df91b6-0240-45d0-ae22-cb2c0d52e0b3
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 1a9f7b7d1cb6f3c3f9af3dcb9f64b42fa48af78c
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: e0cd194ef04063bcd1500d4c3be59c352e905114
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551309"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101698"
 ---
-# <a name="database-mirroring---sysdm_db_mirroring_connections"></a>資料庫鏡像-sys. dm_db_mirroring_connections
+# <a name="database-mirroring---sysdm_db_mirroring_connections"></a>資料庫鏡像-sys.dm_db_mirroring_connections
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   針對為資料庫鏡像建立的每個連接，各傳回一個資料列。  

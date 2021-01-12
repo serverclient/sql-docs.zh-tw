@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sysjobsteps system table
 ms.assetid: 978b8205-535b-461c-91f3-af9b08eca467
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: a2f6fa46b0057680453b443186f6a4828195ab4a
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: a3f59ef0d9a3e2a38a7834ed4395319ec935fc59
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544568"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102133"
 ---
 # <a name="dbosysjobsteps-transact-sql"></a>dbo.sysjobsteps (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -38,21 +38,21 @@ ms.locfileid: "89544568"
 |**step_id**|**int**|作業中步驟的識別碼。|  
 |**step_name**|**sysname**|作業步驟的名稱。|  
 |**子系統**|**nvarchar(40)**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent 用來執行作業步驟的子系統名稱。|  
-|**command**|**nvarchar(max)**|要由 **子系統**執行的命令。|  
+|**command**|**nvarchar(max)**|要由 **子系統** 執行的命令。|  
 |**flags**|**int**|保留的。|  
 |**additional_parameters**|**ntext**|保留的。|  
-|**cmdexec_success_code**|**int**|**CmdExec**子系統步驟傳回的錯誤層級值，表示成功。|  
+|**cmdexec_success_code**|**int**|**CmdExec** 子系統步驟傳回的錯誤層級值，表示成功。|  
 |**on_success_action**|**tinyint**|當步驟執行成功時，所要執行的動作。<br /><br /> **1** = (預設) 結束但成功<br /><br /> **2** = 結束但失敗<br /><br /> **3** = 移至下一個步驟<br /><br /> **4** = 移至步驟 _on_success_step_id_|
 |**on_success_step_id**|**int**|當步驟執行成功時，所要執行的下一個步驟的識別碼。|  
 |**on_fail_action**|**tinyint**|當步驟執行不成功時，所要執行的動作。<br /><br /> **1** = 成功時結束<br /><br /> **2** = (預設) 結束但失敗<br /><br /> **3** = 移至下一個步驟<br /><br /> **4** = 移至步驟 _on_fail_step_id_|
 |**on_fail_step_id**|**int**|當步驟執行不成功時，所要執行的下一個步驟的識別碼。|  
 |**伺服器**|**sysname**|保留的。|  
-|**database_name**|**sysname**|如果**子系統**為 TSQL，則為執行**命令**的資料庫名稱。|  
+|**database_name**|**sysname**|如果 **子系統** 為 TSQL，則為執行 **命令** 的資料庫名稱。|  
 |**database_user_name**|**sysname**|當執行步驟時，將使用其帳戶的資料庫使用者名稱。|  
 |**retry_attempts**|**int**|作業失敗時的重試次數。|  
 |**retry_interval**|**int**|重試的間隔等待時間。|  
 |**os_run_priority**|**int**|保留的。|  
-|**output_file_name**|**nvarchar(200)**|當**子系統**為 TSQL、PowerShell 或**CmdExec**時，用來儲存步驟輸出的檔案名 _。_|  
+|**output_file_name**|**nvarchar(200)**|當 **子系統** 為 TSQL、PowerShell 或 **CmdExec** 時，用來儲存步驟輸出的檔案名 _。_|  
 |**last_run_outcome**|**int**|作業步驟上次執行的結果。<br /><br /> **0** = 失敗<br /><br /> **1** = 成功<br /><br /> **2** = 重試<br /><br /> **3** = 已取消<br /><br /> **5** = 未知|  
 |**last_run_duration**|**int**|上次執行步驟的持續期間 (hhmmss)。|  
 |**last_run_retries**|**int**|作業步驟上次執行的重試次數。|  

@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_tran_transactions_snapshot dynamic management view
 ms.assetid: 03f64883-07ad-4092-8be0-31973348c647
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 88742aeee209d0959fd5fb036f1f4631849fa4dd
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 8c6596b92ecd000b0742886ab6565caf2521f701
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97411059"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101416"
 ---
 # <a name="sysdm_tran_transactions_snapshot-transact-sql"></a>sys.dm_tran_transactions_snapshot (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]

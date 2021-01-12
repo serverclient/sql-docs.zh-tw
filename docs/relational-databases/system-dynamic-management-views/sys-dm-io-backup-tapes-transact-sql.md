@@ -1,6 +1,6 @@
 ---
 description: sys.dm_io_backup_tapes (Transact-SQL)
-title: sys. dm_io_backup_tapes (Transact-sql) |Microsoft Docs
+title: sys.dm_io_backup_tapes (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_io_backup_tapes dynamic management view
 ms.assetid: 2e27489e-cf69-4a89-9036-77723ac3de66
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c0d66f545b9e98525d293cf80967ba3ed929008c
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: bc4eb0de019ee40145c15c344850744d9fef3b15
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89532815"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101578"
 ---
 # <a name="sysdm_io_backup_tapes-transact-sql"></a>sys.dm_io_backup_tapes (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -33,10 +33,10 @@ ms.locfileid: "89532815"
  
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
-|**physical_device_name**|**Nvarchar (520) **|可以從中取出備份的實際實體裝置名稱。 不可為 Null。|  
-|**logical_device_name**|**nvarchar(256)**|使用者指定的磁片磁碟機名稱 (從 **sys. backup_devices**) 。 如果沒有使用者指定名稱可用，便是 NULL。 可為 Null。|  
+|**physical_device_name**|**Nvarchar (520)**|可以從中取出備份的實際實體裝置名稱。 不可為 Null。|  
+|**logical_device_name**|**nvarchar(256)**|從 **sys.backup_devices**)  (磁片磁碟機的使用者指定名稱。 如果沒有使用者指定名稱可用，便是 NULL。 可為 Null。|  
 |**status**|**int**|磁帶的狀態：<br /><br /> 1 = 已開啟，可供使用<br /><br /> 2 = 掛載暫止<br /><br /> 3 = 使用中<br /><br /> 4 = 載入中<br /><br /> **注意：** (**狀態 = 4**) 載入磁帶時，媒體標籤尚未讀取。 複製媒體標籤值的資料行（例如 **media_sequence_number**）會顯示預期的值，這可能會與磁帶上的實際值不同。 讀取標籤之後， **狀態** 會變更為 **3** (使用中) ，而媒體標籤資料行則會反映載入的實際磁帶。<br /><br /> 不可為 Null。|  
-|**status_desc**|**Nvarchar (520) **|磁帶狀態的描述：<br /><br /> AVAILABLE <br /><br /> MOUNT PENDING <br /><br /> IN USE <br /><br /> LOADING MEDIA<br /><br /> 不可為 Null。|  
+|**status_desc**|**Nvarchar (520)**|磁帶狀態的描述：<br /><br /> AVAILABLE <br /><br /> MOUNT PENDING <br /><br /> IN USE <br /><br /> LOADING MEDIA<br /><br /> 不可為 Null。|  
 |**mount_request_time**|**datetime**|要求掛載的時間。 如果沒有掛接暫止 (**status！ = 2**) ，則為 Null。 可為 Null。|  
 |**mount_expiration_time**|**datetime**|掛載要求將到期 (逾時) 的時間。 如果沒有掛接暫止 (**status！ = 2**) ，則為 Null。 可為 Null。|  
 |**database_name**|**nvarchar(256)**|將備份至這個裝置中的資料庫。 可為 Null。|  
@@ -49,8 +49,8 @@ ms.locfileid: "89532815"
 |**media_sequence_number**|**int**|媒體家族內的磁片區索引 (1 .。。*n*) 。 可為 Null。|  
 |**tape_operation**|**int**|正在執行的磁帶操作：<br /><br /> 1 = 讀取<br /><br /> 2 = 格式化<br /><br /> 3 = 初始化<br /><br /> 4 = 附加<br /><br /> 可為 Null。|  
 |**tape_operation_desc**|**nvarchar(120)**|要執行的磁帶作業：<br /><br /> READ<br /><br /> FORMAT<br /><br /> INIT<br /><br /> APPEND <br /><br /> 可為 Null。|  
-|**mount_request_type**|**int**|掛載要求的類型：<br /><br /> 1 = 特定磁帶。 **Media_ \* **欄位所識別的磁帶是必要的。<br /><br /> 2 = 下一個媒體家族。 要求下一個尚未還原的媒體家族。 當還原的來源裝置比媒體家族少時，便使用這個項目。<br /><br /> 3 = 接續磁帶。 將延伸媒體家族，並要求接續磁帶。<br /><br /> 可為 Null。|  
-|**mount_request_type_desc**|**nvarchar(120)**|掛載要求的類型：<br /><br /> SPECIFIC TAPE <br /><br /> NEXT MEDIA FAMILY <br /><br /> CONTINUATION VOLUME <br /><br /> 可為 Null。|  
+|**mount_request_type**|**int**|掛載要求的類型：<br /><br /> 1 = 特定磁帶。 **Media_ \** _ 欄位所識別的磁帶是必要的。<br /><br /> 2 = 下一個媒體家族。 要求下一個尚未還原的媒體家族。 當還原的來源裝置比媒體家族少時，便使用這個項目。<br /><br /> 3 = 接續磁帶。 將延伸媒體家族，並要求接續磁帶。<br /><br /> 可為 Null。|  
+|_ *mount_request_type_desc**|**nvarchar(120)**|掛載要求的類型：<br /><br /> SPECIFIC TAPE <br /><br /> NEXT MEDIA FAMILY <br /><br /> CONTINUATION VOLUME <br /><br /> 可為 Null。|  
   
 ## <a name="permissions"></a>權限  
  使用者必須有這部伺服器的 VIEW SERVER STATE 權限。  

@@ -16,30 +16,30 @@ dev_langs:
 helpviewer_keywords:
 - MSmerge_identity_range system table
 ms.assetid: 493a2028-88a0-4e83-ad89-ae5661d9f477
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 0c473f481bc2a997d222558654ae960d4359667b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: f4174aa0b720727ad765e8fa9b62b8d3730dab09
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89547091"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102028"
 ---
 # <a name="msmerge_identity_range-transact-sql"></a>MSmerge_identity_range (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSmerge_identity_range**資料表可用來追蹤指派給識別欄位的數值範圍，以訂閱發行集的訂閱，而複寫會自動管理這些範圍指派。 這份資料表儲存在發行集和訂閱資料庫中。  
+  **MSmerge_identity_range** 資料表可用來追蹤指派給識別欄位的數值範圍，以訂閱發行集的訂閱，而複寫會自動管理這些範圍指派。 這份資料表儲存在發行集和訂閱資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
 |**subid**|**uniqueidentifier**|給定訂閱的唯一識別碼。|  
 |**>artid**|**uniqueidentifier**|給定發行項的唯一識別碼。|  
-|**range_begin**|**數值 (38) **|在目前範圍開頭的識別值。|  
-|**range_end**|**數值 (38) **|在目前範圍結尾的識別值。|  
-|**next_range_begin**|**數值 (38) **|在下一個要指派之範圍開頭的識別值。|  
-|**next_range_end**|**數值 (38) **|在下一個要指派之範圍結尾的識別值。|  
+|**range_begin**|**數值 (38)**|在目前範圍開頭的識別值。|  
+|**range_end**|**數值 (38)**|在目前範圍結尾的識別值。|  
+|**next_range_begin**|**數值 (38)**|在下一個要指派之範圍開頭的識別值。|  
+|**next_range_end**|**數值 (38)**|在下一個要指派之範圍結尾的識別值。|  
 |**is_pub_range**|**bit**|如果將識別範圍指派給發行集，則值為 **1** 。|  
-|**max_used**|**數值 (38) **|所能指派的最大識別值。|  
+|**max_used**|**數值 (38)**|所能指派的最大識別值。|  
   
 ## <a name="see-also"></a>另請參閱  
  [複寫資料表 &#40;Transact-sql&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   

@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - log_shipping_secondary_databases system table
 ms.assetid: ba2374af-86b8-480c-a10c-51e7c4e3ae23
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5160975171ab32f0c44d807ec445eeaabc5ff4c2
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 9a7fb2574f436c5abe40b98723860f03f73a27c4
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540335"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102099"
 ---
 # <a name="log_shipping_secondary_databases-transact-sql"></a>log_shipping_secondary_databases (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "89540335"
 |**block_size**|**int**|用來做為備份裝置區塊大小的大小 (以位元組為單位)。|  
 |**buffer_count**|**int**|備份或還原作業所用的緩衝區總數。|  
 |**max_transfer_size**|**int**|[!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 向備份裝置發出的最大輸入或輸出要求大小 (以位元組為單位)。|  
-|**last_restored_file**|**Nvarchar (500) **|前一個還原到次要資料庫的備份檔之檔案名稱。|  
+|**last_restored_file**|**Nvarchar (500)**|前一個還原到次要資料庫的備份檔之檔案名稱。|  
 |**last_restored_date**|**datetime**|在次要資料庫中，前一個還原作業的日期和時間。|  
   
 ## <a name="see-also"></a>另請參閱  

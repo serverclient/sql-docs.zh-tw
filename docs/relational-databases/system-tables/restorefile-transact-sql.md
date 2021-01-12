@@ -18,14 +18,14 @@ helpviewer_keywords:
 - restoring files [SQL Server], restorefile system table
 - file restores [SQL Server], restorefile system table
 ms.assetid: 8e40145a-8559-4abe-8e2a-39b818928009
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 366c6bd83e46b2a8586590552bfd05e2975b9e04
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: a11f4e9e96a12b0c93c9812bde8422e17667d8ad
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89547003"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099591"
 ---
 # <a name="restorefile-transact-sql"></a>restorefile (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -34,8 +34,8 @@ ms.locfileid: "89547003"
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
-|**restore_history_id**|**int**|用來識別對應的還原作業的唯一識別碼。 參考 **restorehistory (restore_history_id) **。|  
-|**file_number**|**數值 (10，0) **|還原檔案的檔案識別碼。 每個資料庫內這個號碼必須唯一。 可以是 NULL。<br /><br /> 當資料庫還原為資料庫快照集時，會依照完整還原的相同方式來擴展這個值。|  
+|**restore_history_id**|**int**|用來識別對應的還原作業的唯一識別碼。 參考 **restorehistory (restore_history_id)**。|  
+|**file_number**|**數值 (10，0)**|還原檔案的檔案識別碼。 每個資料庫內這個號碼必須唯一。 可以是 NULL。<br /><br /> 當資料庫還原為資料庫快照集時，會依照完整還原的相同方式來擴展這個值。|  
 |**destination_phys_drive**|**nvarchar(260)**|將檔案還原到其中的磁碟機或分割區。 可以是 NULL。<br /><br /> 當資料庫還原為資料庫快照集時，會依照完整還原的相同方式來擴展這個值。|  
 |**destination_phys_name**|**nvarchar(260)**|檔案還原到其中的檔案名稱，不含磁碟機或分割區資訊。 可以是 NULL。<br /><br /> 當資料庫還原為資料庫快照集時，會依照完整還原的相同方式來擴展這個值。|  
   

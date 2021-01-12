@@ -16,23 +16,23 @@ dev_langs:
 helpviewer_keywords:
 - MSagent_parameters system table
 ms.assetid: be30abc9-c00d-446f-b1b4-1269772f37e6
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: f462e59611b33d35762ad0941e871c196990f2c5
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: ab6cb7e70ec2e8f8b778c4c04a0e16fb2a59ece1
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544521"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102085"
 ---
 # <a name="msagent_parameters-transact-sql"></a>MSagent_parameters (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSagent_parameters**資料表包含與代理程式設定檔相關聯的參數。 這些參數名稱與該代理程式所支援的參數同名。 此資料表儲存在 **msdb** 資料庫中。  
+  **MSagent_parameters** 資料表包含與代理程式設定檔相關聯的參數。 這些參數名稱與該代理程式所支援的參數同名。 此資料表儲存在 **msdb** 資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
-|**profile_id**|**int**|**MSagent_profiles**資料表中的設定檔識別碼。|  
+|**profile_id**|**int**|**MSagent_profiles** 資料表中的設定檔識別碼。|  
 |**parameter_name**|**sysname**|參數名稱。|  
 |**value**|**nvarchar(255)**|參數的值。|  
   

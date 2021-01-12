@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - sysmergesubsetfilters system table
 ms.assetid: f91d1c6c-3132-47f6-926c-88f56848cafe
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 932a237037073f81564b9a5f1a2cba89ba4d892b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 4978af42a06f1e54c8457f0db4a2d5c5fe2601ea
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542846"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099590"
 ---
 # <a name="sysmergesubsetfilters-transact-sql"></a>sysmergesubsetfilters (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "89542846"
 |**art_nickname**|**int**|發行項的暱稱。|  
 |**join_articlename**|**sysname**|要加以聯結以便判斷資料列是否屬於它的資料表名稱。|  
 |**join_nickname**|**int**|要加以聯結以便判斷資料列是否屬於它的資料表暱稱。|  
-|**join_unique_key**|**int**|指出 **join_tablename**的唯一索引鍵上的聯結：<br /><br /> 0 = 不是唯一索引鍵。<br /><br /> 1 = 唯一索引鍵。|  
+|**join_unique_key**|**int**|指出 **join_tablename** 的唯一索引鍵上的聯結：<br /><br /> 0 = 不是唯一索引鍵。<br /><br /> 1 = 唯一索引鍵。|  
 |**expand_proc**|**sysname**|合併代理程式用來識別需要從訂閱者中傳送或移除之資料列的預存程序名稱。|  
 |**join_filterclause**|**nvarchar(1000)**|用於聯結的篩選子句。|  
 |**filter_type**|**tinyint**|指定篩選類型，它可以是下列項目之一：<br /><br /> 1 = 聯結篩選。<br /><br /> 2 = 邏輯記錄連結。<br /><br /> 3 = 聯結篩選和邏輯記錄連結。|  

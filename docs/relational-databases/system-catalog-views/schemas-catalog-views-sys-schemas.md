@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.schemas catalog view
 ms.assetid: 29af5ce5-2af7-4103-8f08-3ec92603ba05
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 473dd22d2f19d29e5b778a585ad59d0d99acbaee
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: d41745e41db18f720f85fbc4aef0b8dcec89892f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97479099"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100654"
 ---
 # <a name="schemas-catalog-views---sysschemas"></a>架構目錄檢視-sys. 架構
 [!INCLUDE [sql-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdbmi-asa-pdw.md)]

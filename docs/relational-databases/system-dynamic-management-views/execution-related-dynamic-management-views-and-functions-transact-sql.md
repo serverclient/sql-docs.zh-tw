@@ -13,14 +13,14 @@ helpviewer_keywords:
 - dynamic management objects [SQL Server], execution
 - execution-related dynamic management objects [SQL Server]
 ms.assetid: aea07b33-f715-4b61-9d1e-8c77b03e9578
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 2acd26b8fb88fa6cf51c6b8715eee9cdfca8ad49
-ms.sourcegitcommit: 32135463a8494d9ed1600a58f51819359e3c09dc
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 6547b324318953f1c53a058361064480807482bb
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91834305"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101648"
 ---
 # <a name="execution-related-dynamic-management-views-and-functions-transact-sql"></a>執行相關的動態管理檢視和函數 (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -117,7 +117,7 @@ ms.locfileid: "91834305"
 :::row-end:::
 
 > [!NOTE]  
->  **Sys.dm_exec_query_transformation_stats**動態管理檢視的識別僅供參考之用。 不支援。 我們無法保證未來的相容性。  
+>  **Sys.dm_exec_query_transformation_stats** 動態管理檢視的識別僅供參考之用。 不支援。 我們無法保證未來的相容性。  
   
 ## <a name="see-also"></a>另請參閱  
  [動態管理檢視與函數 &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)   

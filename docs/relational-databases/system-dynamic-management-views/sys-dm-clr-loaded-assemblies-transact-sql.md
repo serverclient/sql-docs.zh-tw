@@ -1,6 +1,6 @@
 ---
 description: sys.dm_clr_loaded_assemblies (Transact-SQL)
-title: sys. dm_clr_loaded_assemblies (Transact-sql) |Microsoft Docs
+title: sys.dm_clr_loaded_assemblies (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/09/2016
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_clr_loaded_assemblies dynamic management view
 ms.assetid: 8523d8db-d8a0-4b1f-ae19-6705d633e0a6
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 42abc84bf1b5a78979da4c7443158abc6eddabc8
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: d132a0389ca636dbc24afe016b98389021d8d848
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539446"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099948"
 ---
 # <a name="sysdm_clr_loaded_assemblies-transact-sql"></a>sys.dm_clr_loaded_assemblies (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -36,15 +36,15 @@ ms.locfileid: "89539446"
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
-|**assembly_id**|**int**|載入組件的識別碼。 **Assembly_id**可以用來查閱 sys. 元件中有關元件的詳細資訊[&#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sys-assemblies-transact-sql.md)類別目錄檢視。 請注意， [!INCLUDE[tsql](../../includes/tsql-md.md)] [sys. 元件](../../relational-databases/system-catalog-views/sys-assemblies-transact-sql.md) 類別目錄只會顯示目前資料庫中的元件。 [ **Sqs] dm_clr_loaded_assemblies** 視圖會顯示伺服器上所有載入的元件。|  
-|**appdomain_address**|**int**|載入元件 (**AppDomain**) 應用程式域的位址。 單一使用者所擁有的所有元件一律會載入相同的 **AppDomain**中。 **Appdomain_address**可以用來查閱[sys. Dm_clr_appdomains](../../relational-databases/system-dynamic-management-views/sys-dm-clr-appdomains-transact-sql.md)視圖中**appdomain**的詳細資訊。|  
-|**load_time**|**datetime**|載入組件的時間。 請注意，元件會保持載入狀態，直到 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 記憶體不足的壓力，並卸載 **AppDomain**為止。 您可以監視 **load_time** ，以瞭解記憶體不足的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 壓力和卸載 **AppDomain**的頻率。|  
+|**assembly_id**|**int**|載入組件的識別碼。 **Assembly_id** 可以用來查閱 sys. 元件中有關元件的詳細資訊 [&#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sys-assemblies-transact-sql.md)類別目錄檢視。 請注意， [!INCLUDE[tsql](../../includes/tsql-md.md)] [sys. 元件](../../relational-databases/system-catalog-views/sys-assemblies-transact-sql.md) 類別目錄只會顯示目前資料庫中的元件。 **Sqs.dm_clr_loaded_assemblies** 視圖會顯示伺服器上所有載入的元件。|  
+|**appdomain_address**|**int**|載入元件 (**AppDomain**) 應用程式域的位址。 單一使用者所擁有的所有元件一律會載入相同的 **AppDomain** 中。 **Appdomain_address** 可以用來查閱 [Sys.dm_clr_appdomains](../../relational-databases/system-dynamic-management-views/sys-dm-clr-appdomains-transact-sql.md)視圖中 **appdomain** 的詳細資訊。|  
+|**load_time**|**datetime**|載入組件的時間。 請注意，元件會保持載入狀態，直到 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 記憶體不足的壓力，並卸載 **AppDomain** 為止。 您可以監視 **load_time** ，以瞭解記憶體不足的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 壓力和卸載 **AppDomain** 的頻率。|  
   
 ## <a name="permissions"></a>權限  
  需要伺服器的 VIEW SERVER STATE 權限。  
   
 ## <a name="remarks"></a>備註  
- **Dm_clr_loaded_assemblies。 appdomain_address** view 與**dm_clr_appdomains appdomain_address**有多對一關聯性。 **Dm_clr_loaded_assemblies assembly_id**視圖與**sys. 元件**具有一對多的關聯性。 assembly_id。  
+ **Dm_clr_loaded_assemblies. appdomain_address** view 與 **dm_clr_appdomains. appdomain_address** 具有多對一關聯性。 **Dm_clr_loaded_assemblies. assembly_id** view 與 **sys. assembly_id** 有一對多的關聯性。  
   
 ## <a name="examples"></a>範例  
  下列範例顯示如何檢視目前已載入現用資料庫中所有組件的詳細資料。  

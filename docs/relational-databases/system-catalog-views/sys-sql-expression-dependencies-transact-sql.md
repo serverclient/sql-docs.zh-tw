@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.sql_expression_dependencies catalog view
 ms.assetid: 78a218e4-bf99-4a6a-acbf-ff82425a5946
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2a9810d1c1fbda616b6dec588375529f4cbbb15c
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: fb846962b3790d171cd2eea7ee5cdcfebba3f89b
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97477409"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101771"
 ---
 # <a name="syssql_expression_dependencies-transact-sql"></a>sys.sql_expression_dependencies (Transact-SQL)
 [!INCLUDE [sql-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdbmi-asa-pdw.md)]

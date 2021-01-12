@@ -1,6 +1,6 @@
 ---
-description: 資料庫鏡像-sys. dm_db_mirroring_auto_page_repair
-title: sys. dm_db_mirroring_auto_page_repair (Transact-sql) |Microsoft Docs
+description: 資料庫鏡像-sys.dm_db_mirroring_auto_page_repair
+title: sys.dm_db_mirroring_auto_page_repair (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
@@ -19,16 +19,16 @@ helpviewer_keywords:
 - database mirroring [SQL Server], automatic page repair
 - sys.dm_db_mirroring_auto_page_repair dynamic management view
 ms.assetid: 49f0fc2a-e25e-47e1-a135-563adb509af1
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 1d82a2f1a152bacf4458a92727d62da5d93f4c31
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: cef38d675dde0d36ca97f63c16f8d4589760a620
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537258"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101668"
 ---
-# <a name="database-mirroring---sysdm_db_mirroring_auto_page_repair"></a>資料庫鏡像-sys. dm_db_mirroring_auto_page_repair
+# <a name="database-mirroring---sysdm_db_mirroring_auto_page_repair"></a>資料庫鏡像-sys.dm_db_mirroring_auto_page_repair
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   針對在伺服器執行個體之任何鏡像資料庫上進行的每個自動修復頁面嘗試行為，各傳回一個資料列。 這個檢視包含在指定鏡像資料庫上進行最新自動修復頁面嘗試行為的資料列，而且每個資料庫最多 100 個資料列。 一旦資料庫到達上限時，下一個自動修復頁面嘗試行為的資料列就會取代其中一個現有的項目。 下表定義各資料行的意義。  

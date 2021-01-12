@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - cdc.<capture_instance>_CT
 ms.assetid: 979c8110-3c54-4e76-953c-777194bc9751
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5d0a2dae85606a5e1cb0ffd5f86776e7aae25680
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 7fa737644611f24d9d0858fd04066d3ba0571ee3
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91809777"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102722"
 ---
 # <a name="cdcltcapture_instancegt_ct-transact-sql"></a>cdc。 &lt;capture_instance &gt; _CT (transact-sql) 
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  這是在來源資料表啟用異動資料擷取時所建立的變更資料表。 此資料表會針對在來源資料表上執行的每個插入和刪除作業傳回一個資料列，而且會針對在來源資料表上執行的每個更新作業傳回兩個資料列。 如果在啟用來源資料表時沒有指定變更資料表的名稱，就會衍生此名稱。 名稱的格式為 cdc。*capture_instance*_CT，其中 *capture_instance* 是來源資料表的架構名稱，以及格式 *schema_table*的來源資料表名稱。 例如，如果**AdventureWorks**範例資料庫中的資料表**Person**已啟用變更資料捕捉，則衍生的變更資料表名稱將會是**cdc。Person_Address_CT**。  
+  這是在來源資料表啟用異動資料擷取時所建立的變更資料表。 此資料表會針對在來源資料表上執行的每個插入和刪除作業傳回一個資料列，而且會針對在來源資料表上執行的每個更新作業傳回兩個資料列。 如果在啟用來源資料表時沒有指定變更資料表的名稱，就會衍生此名稱。 名稱的格式為 cdc。*capture_instance* _CT，其中 *capture_instance* 是來源資料表的架構名稱，以及格式 *schema_table* 的來源資料表名稱。 例如，如果 **AdventureWorks** 範例資料庫中的資料表 **Person** 已啟用變更資料捕捉，則會 **cdc.Person_Address_CT** 衍生的變更資料表名稱。  
   
  我們建議您不要 **直接查詢系統資料表**。 相反地，請執行 [cdc.fn_cdc_get_all_changes_<capture_instance>](../../relational-databases/system-functions/cdc-fn-cdc-get-all-changes-capture-instance-transact-sql.md) [和 cdc.fn_cdc_get_net_changes_<](../../relational-databases/system-functions/cdc-fn-cdc-get-net-changes-capture-instance-transact-sql.md) capture_instance 函數。  
   
@@ -51,14 +51,14 @@ ms.locfileid: "91809777"
 ## <a name="captured-column-data-types"></a>擷取資料行資料類型  
  包含在這個資料表中的擷取資料行與對應的來源資料行具有相同的資料類型和值，但下列情況除外：  
   
--   **時間戳記** 資料行定義為 **二進位 (8) **。  
+-   **時間戳記** 資料行定義為 **二進位 (8)**。  
   
 -   **標識** 列會定義為 **int** 或 **Bigint**。  
   
  不過，這些資料行中的值與來源資料行的值相同。  
   
 ### <a name="large-object-data-types"></a>大型物件資料類型  
- 當 __ $ operation = 1 **text**或**image** **ntext** **NULL** \_ \_ $operation = 3 時，資料類型為 image、Text 和 Ntext 的資料行一律會被指派 Null 值。 除非資料行在**NULL**更新期間變更，否則在 (= 3 時，資料類型為**Varbinary (max) **、 **Varchar (max) **或**Nvarchar) max $operation**最大值的資料行會指派 Null 值 \_ \_ 。 當 \_ \_ $operation = 1 時，會在刪除時將這些資料行的值指派給這些資料行。 包含在 capture 實例中的計算資料行，一律會有 **Null**值。  
+ 當 __ $ operation = 1 或   \_ \_ $operation = 3 時，資料類型為 image、Text 和 Ntext 的資料行一律會被指派 Null 值。 除非資料行在更新期間變更，否則在 (= 3 時，資料類型為 **Varbinary (max)**、 **Varchar (max)** 或 **Nvarchar) max $operation** 最大值的資料行會指派 Null 值 \_ \_ 。 當 \_ \_ $operation = 1 時，會在刪除時將這些資料行的值指派給這些資料行。 包含在 capture 實例中的計算資料行，一律會有 **Null** 值。  
   
  根據預設，在單一 INSERT、UPDATE、WRITETEXT 或 UPDATETEXT 陳述式中可加入至擷取資料行的大小上限為 65,536 個位元組或 64 KB。 若要增加此大小以支援較大的 LOB 資料，請使用 [ [設定最大文字複寫大小伺服器](../../database-engine/configure-windows/configure-the-max-text-repl-size-server-configuration-option.md) 設定] 選項來指定較大的大小上限。 如需詳細資訊，請參閱 [設定 max text repl size 伺服器組態選項](../../database-engine/configure-windows/configure-the-max-text-repl-size-server-configuration-option.md)。  
   
