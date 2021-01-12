@@ -28,15 +28,15 @@ helpviewer_keywords:
 - auto_update_statistics
 - Query Store options
 ms.assetid: f76fbd84-df59-4404-806b-8ecb4497c9cc
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: =azuresqldb-current||=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azure-sqldw-latest||=azuresqldb-mi-current
-ms.openlocfilehash: 97139ed9331853a5d84d261c69510993fb7231a2
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 652a4b13db3fdd98b774a5c884e68848a3b0b847
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642260"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099564"
 ---
 # <a name="alter-database-set-options-transact-sql"></a>ALTER DATABASE SET 選項 (Transact-SQL)
 
@@ -2004,10 +2004,6 @@ OFF
 如果資料庫是 OFFLINE，則您無法變更 ALLOW_SNAPSHOT_ISOLATION 的狀態。
 
 如果您在 READ_ONLY 資料庫中設定 ALLOW_SNAPSHOT_ISOLATION，資料庫後來又設為 READ_WRITE，會保留這個設定。
-
-您可以變更 master、model、msdb 和 tempdb 等資料庫的 ALLOW_SNAPSHOT_ISOLATION 設定。 如果您變更 tempdb 的設定，每次停止和重新啟動 [!INCLUDE[ssDE](../../includes/ssde-md.md)] 執行個體時，會保留這個設定。 如果您變更模型的設定，除了 tempdb 以外，任何新建資料庫都會以這個設定為預設值。
-
-依預設，master 和 msdb 資料庫的這個選項是 ON。
 
 您可以檢查 [sys.databases](../../relational-databases/system-catalog-views/sys-databases-transact-sql.md) 目錄檢視中 `snapshot_isolation_state` 資料行來判斷此選項的目前設定。
 

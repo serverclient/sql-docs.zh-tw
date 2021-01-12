@@ -15,12 +15,12 @@ ms.assetid: e1d03d74-2572-4a55-afd6-7edf0bc28bdb
 author: MightyPen
 ms.author: genemi
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 9f462f256c98c4482af67527401cc6d30f3f0776
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 281fe018c5c2d5e0717fb2c35dfcc8c3c9e8c3fc
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465379"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100227"
 ---
 # <a name="in-memory-oltp-and-memory-optimization"></a>記憶體內部 OLTP 與記憶體最佳化
 
@@ -56,7 +56,7 @@ ms.locfileid: "97465379"
 |[記憶體內部 OLTP 程式碼範例](./sample-database-for-in-memory-oltp.md)|包含程式碼範例，示範如何建立及使用記憶體最佳化資料表。|  
 |[記憶體最佳化資料表](./sample-database-for-in-memory-oltp.md)|介紹記憶體最佳化的資料表。|  
 |[記憶體最佳化資料表變數](./faster-temp-table-and-table-variable-by-using-memory-optimization.md)|程式碼範例，示範如何使用記憶體最佳化的資料表變數取代傳統資料表變數，以減少 tempdb 的使用量。|  
-|[記憶體最佳化資料表上的索引](/sql/relational-databases/in-memory-oltp/indexes-for-memory-optimized-tables)|介紹記憶體最佳化索引。|  
+|[記憶體最佳化資料表上的索引](./indexes-for-memory-optimized-tables.md)|介紹記憶體最佳化索引。|  
 |[原生編譯的預存程序](./a-guide-to-query-processing-for-memory-optimized-tables.md)|介紹原生編譯的預存程序。|  
 |[為記憶體內部 OLTP 管理記憶體](/previous-versions/sql/sql-server-2016/dn465872(v=sql.130))|了解及管理系統上的記憶體使用量。|  
 |[建立及管理記憶體最佳化物件的儲存體](../../relational-databases/in-memory-oltp/creating-and-managing-storage-for-memory-optimized-objects.md)|討論資料與差異檔案 (儲存記憶體最佳化之資料表中的交易資訊)。|  
@@ -136,4 +136,3 @@ ms.locfileid: "97465379"
 
 ## <a name="see-also"></a>另請參閱  
  [資料庫功能](../databases/databases.md)  
-  

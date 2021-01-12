@@ -25,15 +25,15 @@ helpviewer_keywords:
 - triggers [SQL Server], creating
 - database-scoped triggers [SQL Server]
 ms.assetid: edeced03-decd-44c3-8c74-2c02f801d3e7
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.reviewer: mathoma
-ms.openlocfilehash: dd33ad9e7cb64f11dfc70314ea7e72c1b8cbc067
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: c7bdee119d34181a59d8717957c228e6d24facdc
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89541342"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099521"
 ---
 # <a name="create-trigger-transact-sql"></a>CREATE TRIGGER (Transact-SQL)
 
@@ -172,7 +172,7 @@ OR ALTER
 DML 觸發程序所屬的結構描述名稱。 DML 觸發程序範圍僅限於其建立所在之資料表或檢視表的結構描述。 您不能為 DDL 或登入觸發程序指定 *schema_name*。  
   
 *trigger_name*  
-觸發程序的名稱。 *trigger_name* 必須遵循[識別碼](../../relational-databases/databases/database-identifiers.md)的規則，不過 *trigger_name* 的開頭不能是 # 或 ##。  
+觸發程序的名稱。 *trigger_name* 必須遵循 [識別碼](../../relational-databases/databases/database-identifiers.md)的規則，不過 *trigger_name* 的開頭不能是 # 或 ##。  
   
 *table* | *view*  
 執行 DML 觸發程序的資料表或檢視表。 這個資料表或檢視表有時也稱為觸發程序資料表或觸發程序檢視表。 您可以選擇性地指定資料表或檢視的完整名稱。 您僅可透過 INSTEAD OF 觸發程序來參考檢視表。 您不能在本機或全域暫存資料表上定義 DML 觸發程序。  
