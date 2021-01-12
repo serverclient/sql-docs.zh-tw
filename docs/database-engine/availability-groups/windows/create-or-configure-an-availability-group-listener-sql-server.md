@@ -16,12 +16,12 @@ ms.assetid: 2bc294f6-2312-4b6b-9478-2fb8a656e645
 author: cawrites
 ms.author: chadam
 manager: erikre
-ms.openlocfilehash: e8c0a889b764f81aaf8ac34cf566b52bf1e86c83
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 6e6b362f9e121f10515753d46ee098387348f272
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97643267"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091731"
 ---
 # <a name="configure-a-listener-for-an-always-on-availability-group"></a>設定 Always On 可用性群組的接聽程式
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -310,7 +310,7 @@ Start-Clustergroup yourListenerGroupName
   
     -   **使用適用容錯移轉叢集的 Windows PowerShell：**  
   
-        1.  使用 [Add-ClusterResource](https://technet.microsoft.com/library/ee460983.aspx) 建立網路名稱和 IP 位址資源。  
+        1.  使用 [Add-ClusterResource](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee460983(v=technet.10)) 建立網路名稱和 IP 位址資源。  
   
         2.  使用 [Start-ClusterResource](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee461056(v=technet.10)) 啟動網路名稱資源。  
   
@@ -328,4 +328,4 @@ Start-Clustergroup yourListenerGroupName
 
 既然已建立接聽程式，請將應用程式設定為[連線到接聽程式](listeners-client-connectivity-application-failover.md)。 您也可以檢閱各種[可用性群組監視策略](monitoring-of-availability-groups-sql-server.md)，以確保可用性群組的健全狀況。
 
-您也可以[檢視接聽程式的屬性](view-availability-group-listener-properties-sql-server.md)，或了解如何[移除接聽程式](remove-an-availability-group-listener-sql-server.md) (如有必要)。 
+您也可以[檢視接聽程式的屬性](view-availability-group-listener-properties-sql-server.md)，或了解如何[移除接聽程式](remove-an-availability-group-listener-sql-server.md) (如有必要)。

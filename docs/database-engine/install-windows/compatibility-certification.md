@@ -19,12 +19,12 @@ ms.assetid: 3c036813-36cf-4415-a0c9-248d0a433856
 author: pmasl
 ms.author: pelopes
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 8f680d2569bd05a5adb922e273378f920830a1ea
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 82d5aee8d0fa37ca66c49cf00b22385a896c653d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481489"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091776"
 ---
 # <a name="compatibility-certification"></a>相容性認證
 
@@ -41,7 +41,7 @@ ms.locfileid: "97481489"
 
 這是 [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] 持續整合作業模型的基本原則。 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] 會持續在 Azure 中改善並升級，但因為現有資料庫會保留其目前的相容性層級，因此即使在升級至基礎 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] 之後，仍會繼續以原先設計的方式運作。 
 
-這也是 SharePoint Server 2016 和 SharePoint Server 2019 在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 與 [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)]上的認證方式，其可供針對這些 SharePoint 伺服器版本使用支援的資料庫相容性層級來部署任何 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]。 如需詳細資訊，請參閱 [SharePoint Server 2016 的硬體和軟體需求](https://docs.microsoft.com/sharepoint/install/hardware-and-software-requirements#minimum-requirements-for-a-database-server-in-a-farm)以及 [SharePoint Server 2019 的硬體和軟體需求](https://docs.microsoft.com/sharepoint/install/hardware-and-software-requirements-2019#minimum-requirements-for-a-database-server-in-a-farm)。
+這也是 SharePoint Server 2016 和 SharePoint Server 2019 在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 與 [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)]上的認證方式，其可供針對這些 SharePoint 伺服器版本使用支援的資料庫相容性層級來部署任何 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]。 如需詳細資訊，請參閱 [SharePoint Server 2016 的硬體和軟體需求](/sharepoint/install/hardware-and-software-requirements#minimum-requirements-for-a-database-server-in-a-farm)以及 [SharePoint Server 2019 的硬體和軟體需求](/sharepoint/install/hardware-and-software-requirements-2019#minimum-requirements-for-a-database-server-in-a-farm)。
 
 ## <a name="managing-upgrade-risk-with-compatibility-certification"></a>使用相容性憑證管理升級風險
 使用相容性憑證是將資料庫現代化的重要方法。 藉由以相容性層級為基礎來進行認證，開發人員可以設定在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 和 [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] 上支援應用程式的技術需求，但會將應用程式生命週期從資料庫平台生命週期分離。 這可讓公司根據生命週期原則來保留升級 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 的需求、利用不相依於程式碼的新延展性和效能增強功能，並透過升級來連線應用程式以 **維護其功能狀態**。
@@ -115,4 +115,4 @@ ms.locfileid: "97481489"
 ## <a name="see-also"></a>另請參閱 
 [更改資料庫相容性層級](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md)       
 [檢視或變更資料庫的相容性層級](../../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md)       
-[升級資料庫相容性層級的最佳做法](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#best-practices-for-upgrading-database-compatibility-level)      
+[升級資料庫相容性層級的最佳做法](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#best-practices-for-upgrading-database-compatibility-level)

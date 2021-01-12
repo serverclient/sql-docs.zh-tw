@@ -9,12 +9,12 @@ ms.author: maghan
 ms.reviewer: jukoesma
 ms.custom: ''
 ms.date: 10/29/2020
-ms.openlocfilehash: cdb110059043741627300e1f6d080582363d834b
-ms.sourcegitcommit: 7f76975c29d948a9a3b51abce564b9c73d05dcf0
+ms.openlocfilehash: cd9145bb01350a2019f1bfaa12c5280151c35f49
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96900831"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091742"
 ---
 # <a name="kqlmagic-in-azure-data-studio"></a>Azure Data Studio 中的 Kqlmagic
 
@@ -254,8 +254,8 @@ ms.locfileid: "96900831"
 
 深入了解筆記本和 Kqlmagic：
 
-- [適用於 Azure Data Studio 的 Kusto (KQL) 延伸模組 (預覽)](https://docs.microsoft.com/sql/azure-data-studio/extensions/kusto-extension)
-- [建立並執行 Kusto (KQL) 筆記本 (預覽)](https://docs.microsoft.com/sql/azure-data-studio/notebooks/notebooks-kusto-kernel)
+- [適用於 Azure Data Studio 的 Kusto (KQL) 延伸模組 (預覽)](../extensions/kusto-extension.md)
+- [建立並執行 Kusto (KQL) 筆記本 (預覽)](./notebooks-kusto-kernel.md)
 - [使用 Jupyter Notebook 和 Kqlmagic 延伸模組來分析 Azure 資料總管中的資料](/azure/data-explorer/Kqlmagic) (機器翻譯)
 - [Jupyter Notebook 和 Jupyter 實驗室的延伸模組 (Magic)](https://github.com/Microsoft/jupyter-Kqlmagic)，其可在搭配 Kusto、Application Insights 和 LogAnalytics 資料使用時提供筆記本體驗。
 - [Kqlmagic](https://pypi.org/project/Kqlmagic/)

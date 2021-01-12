@@ -11,12 +11,12 @@ ms.assetid: a47c5005-20e3-4880-945c-9f78d311af7a
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 981ce2dcfadf234383382103a33faf4f0ab9302e
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 4fd420fd7d07af5a6efa81cdb7e716020c03a89b
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97643044"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091796"
 ---
 # <a name="how-to-cluster-the-dtc-service-for-an-always-on-availability-group"></a>如何叢集化 Always On 可用性群組的 DTC 服務
 
@@ -48,7 +48,7 @@ ms.locfileid: "97643044"
 |Task|參考|  
 |-----------------|----------|  
 |安全地啟用叢集 DTC 資源的網路存取。|[安全地啟用 MS DTC 的網路存取](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753620(v=ws.10))|
-|停止並停用本機 DTC 服務。|[設定如何啟動服務](https://technet.microsoft.com/library/cc755249(v=ws.11).aspx)|
+|停止並停用本機 DTC 服務。|[設定如何啟動服務](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755249(v=ws.11))|
 |針對可用性群組中的每個執行個體輪流使用 SQL Server 服務。  視需要容錯移轉可用性群組。|[執行可用性群組的已規劃手動容錯移轉 (SQL Server)](../../../database-engine/availability-groups/windows/perform-a-planned-manual-failover-of-an-availability-group-sql-server.md)<br /><br />[啟動、停止、暫停、繼續、重新啟動 Database Engine、SQL Server Agent 或 SQL Server Browser 服務](../../../database-engine/configure-windows/start-stop-pause-resume-restart-sql-server-services.md)|
 
 - 如果伺服器是 Windows Server 2012 R2，則作業系統必須套用 [KB 3030373](https://support.microsoft.com/kb/3090973) 。

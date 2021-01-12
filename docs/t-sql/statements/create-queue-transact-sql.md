@@ -24,14 +24,14 @@ helpviewer_keywords:
 - activation stored procedures [Service Broker]
 - queues [Service Broker], creating
 ms.assetid: fce80faf-2bdc-475d-8ca1-31438ed41fb0
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5af3da74b63578569c201f598cf63c891f9d4ee3
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: ce0306d204d4ce29a76e2041bebe67971e24c3a7
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89549338"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092014"
 ---
 # <a name="create-queue-transact-sql"></a>CREATE QUEUE (Transact-SQL)
 
@@ -133,7 +133,7 @@ ON *filegroup |* [**DEFAULT**] 會指定要在其上建立此佇列的 [!INCLUDE
 
 |資料行名稱|資料類型|描述|
 |-----------------|---------------|-----------------|
-|status|**tinyint**|訊息狀態。 RECEIVE 陳述式會傳回 status 為**1** 的所有訊息。 如果訊息保留開啟，則 status 會設定為 0。 如果訊息保留關閉，訊息會從佇列刪除。 佇列中的訊息可包含下列其中一個值：<br /><br /> **0**=已保留接收的訊息<br /><br /> **1**=準備好接收<br /><br /> **2**=未完成<br /><br /> **3**=已保留傳送的訊息|
+|status|**tinyint**|訊息狀態。 RECEIVE 陳述式會傳回 status 為 **1** 的所有訊息。 如果訊息保留開啟，則 status 會設定為 0。 如果訊息保留關閉，訊息會從佇列刪除。 佇列中的訊息可包含下列其中一個值：<br /><br /> **0**=已保留接收的訊息<br /><br /> **1**=準備好接收<br /><br /> **2**=未完成<br /><br /> **3**=已保留傳送的訊息|
 |priority|**tinyint**|指派給這個訊息的優先權等級。|
 |queuing_order|**bigint**|佇列中的訊息順序號碼。|
 |conversation_group_id|**uniqueidentifier**|這則訊息所屬的交談群組識別碼。|

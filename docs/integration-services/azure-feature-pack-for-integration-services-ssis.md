@@ -14,12 +14,12 @@ f1_keywords:
 ms.assetid: 31de555f-ae62-4f2f-a6a6-77fea1fa8189
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 63e40e66003737798c444f220058feceab69411a
-ms.sourcegitcommit: 22e97435c8b692f7612c4a6d3fe9e9baeaecbb94
+ms.openlocfilehash: b22910f0a794925d07358fa73f3bd6d7a7c6e15a
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92678920"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091656"
 ---
 # <a name="azure-feature-pack-for-integration-services-ssis"></a>Azure Feature Pack for Integration Services (SSIS)
 
@@ -28,7 +28,7 @@ ms.locfileid: "92678920"
 
 SQL Server Integration Services (SSIS) Feature Pack for Azure 是一個延伸模組，可提供此頁面上所列的元件，以便讓 SSIS 連接到 Azure 服務、在 Azure 和內部部署資料來源之間轉送資料，以及處理儲存在 Azure 中的資料。
 
-[![下載 SSIS Feature Pack for Azure](https://docs.microsoft.com/analysis-services/analysis-services/media/download.png)](https://www.microsoft.com/download/details.aspx?id=100430) **下載**
+[![下載 SSIS Feature Pack for Azure](/analysis-services/analysis-services/media/download.png)](https://www.microsoft.com/download/details.aspx?id=100430) **下載**
 
 - SQL Server 2019 - [Microsoft SQL Server 2019 Integration Services Feature Pack for Azure](https://www.microsoft.com/download/details.aspx?id=100430)
 - SQL Server 2017 - [Microsoft SQL Server 2017 Integration Services Feature Pack for Azure](https://www.microsoft.com/download/details.aspx?id=54798)
@@ -122,7 +122,7 @@ Java 組建架構 (32/64 位元) 應該符合要使用的 SSIS 執行階段架�
 9. 選取 [確定]  以關閉 [系統內容]  對話方塊。
 
 > [!TIP]
-> 如果您使用 Parquet 格式並遇到錯誤，指出「叫用 Java 時發生錯誤，訊息: **java.lang.OutOfMemoryError:Java heap space** 」，您可以新增環境變數 *`_JAVA_OPTIONS`* ，以調整 JVM 的最小/最大堆積大小。
+> 如果您使用 Parquet 格式並遇到錯誤，指出「叫用 Java 時發生錯誤，訊息:**java.lang.OutOfMemoryError:Java heap space**」，您可以新增環境變數 *`_JAVA_OPTIONS`* ，以調整 JVM 的最小/最大堆積大小。
 >
 >![JVM 堆積](media/azure-feature-pack-jvm-heap-size.png)
 >
@@ -149,7 +149,7 @@ powershell.exe -file install_openjdk.ps1
 ~~~
 
 > [!TIP]
-> 如果您使用 Parquet 格式並遇到錯誤，指出「叫用 Java 時發生錯誤，訊息: **java.lang.OutOfMemoryError:Java heap space** 」，您可以在 *`main.cmd`* 中新增命令，以調整 JVM 的最小/最大堆積大小。 範例：
+> 如果您使用 Parquet 格式並遇到錯誤，指出「叫用 Java 時發生錯誤，訊息:**java.lang.OutOfMemoryError:Java heap space**」，您可以在 *`main.cmd`* 中新增命令，以調整 JVM 的最小/最大堆積大小。 範例：
 > ~~~
 > setx /M _JAVA_OPTIONS "-Xms256m -Xmx16g"
 > ~~~

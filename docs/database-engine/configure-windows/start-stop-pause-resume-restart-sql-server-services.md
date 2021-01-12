@@ -41,12 +41,12 @@ ms.assetid: 32660a02-e5a1-411a-9e57-7066ca459df6
 author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
-ms.openlocfilehash: e971592b20dd2321e4265752cb8b01c38387b639
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+ms.openlocfilehash: 697cf043c4582796015b061c857145c214d105fb
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91670751"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091739"
 ---
 # <a name="start-stop-pause-resume-restart-sql-server-services"></a>啟動、停止、暫停、繼續、重新啟動 SQL Server 服務
 
@@ -198,7 +198,7 @@ Windows 服務，其會接聽傳入要求以找出 SQL Server 資源，並提供
   
 ### <a name="to-start-the-database-engine-with-startup-options"></a><a name="dbStartup"></a> 使用啟動選項來啟動資料庫引擎  
 
-- 將啟動選項加入 **net start "SQL Server (MSSQLSERVER)"** 陳述式結尾，並間隔一個空格。 使用 **net start**啟動時，啟動選項會使用斜線 (/)，而非連字號 (-)。  
+- 將啟動選項加入 **net start "SQL Server (MSSQLSERVER)"** 陳述式結尾，並間隔一個空格。 使用 **net start** 啟動時，啟動選項會使用斜線 (/)，而非連字號 (-)。  
   
     **net start "SQL Server (MSSQLSERVER)" /f /m**
   
@@ -342,7 +342,7 @@ Windows 服務，其會接聽傳入要求以找出 SQL Server 資源，並提供
   
 ##  <a name="using-service-controller-class"></a><a name="ServiceController"></a> 使用服務控制站類別
 
-您可以使用 ServiceController 類別來控制 SQL 伺服器服務或任何其他 Windows 服務。 如需如何執行此操作的範例，請參閱 [ServiceController 類別](/dotnet/api/system.serviceprocess.servicecontroller?view=netframework-4.8) \(部分機器翻譯\)。
+您可以使用 ServiceController 類別來控制 SQL 伺服器服務或任何其他 Windows 服務。 如需如何執行此操作的範例，請參閱 [ServiceController 類別](/dotnet/api/system.serviceprocess.servicecontroller) \(部分機器翻譯\)。
 
 ## <a name="manage-the-sql-server-service-on-linux"></a>管理 Linux 上的 SQL Server 服務
 

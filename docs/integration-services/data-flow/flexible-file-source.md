@@ -13,12 +13,12 @@ f1_keywords:
 - sql14.dts.designer.afpextfilesrc.f1
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 230ada5b116e5789b008a1562ba5e2ba9325a9e0
-ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
+ms.openlocfilehash: 4be8d36cb6bff0b8cc50bf479d41fcca2e7064f1
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96123459"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091668"
 ---
 # <a name="flexible-file-source"></a>彈性檔案來源
 
@@ -51,7 +51,7 @@ ms.locfileid: "96123459"
 - **escapeChar：** 用來逸出輸入檔內容中資料行分隔符號的特殊字元。 您無法為資料表同時指定 escapeChar 和 quoteChar。 只允許一個字元。 無預設值。
 - **quoteChar：** 用來為字串值加上引號的字元。 系統會將引號字元內資料行和資料列分隔符號視為字串值的一部分。 這個屬性同時適用於輸入和輸出資料集。 您無法為資料表同時指定 escapeChar 和 quoteChar。 只允許一個字元。 無預設值。
 - **nullValue：** 用來代表 Null 值的一或多個字元。 **預設** 值是 \N。
-- **encodingName：** 指定編碼名稱。 請參閱 [Encoding.EncodingName](/dotnet/api/system.text.encoding?view=netframework-4.8) 屬性。
+- **encodingName：** 指定編碼名稱。 請參閱 [Encoding.EncodingName](/dotnet/api/system.text.encoding) 屬性。
 - **skipLineCount：** 表示從輸入檔讀取資料時會略過非空白資料列的數目。 如果同時指定 skipLineCount 和 firstRowAsHeader，則會先略過行，然後從輸入檔讀取標頭資訊。
 - **treatEmptyAsNull：** 指定從輸入檔讀取資料時是否將 Null 或空字串視為 Null 值。 **預設** 值為 True。
 

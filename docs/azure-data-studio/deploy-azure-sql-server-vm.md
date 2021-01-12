@@ -9,12 +9,12 @@ ms.prod: azure-data-studio
 ms.technology: azure-data-studio
 ms.custom: ''
 ms.date: 10/14/2020
-ms.openlocfilehash: 453ec8226b018b1d5d756ba96ac174823657c5dd
-ms.sourcegitcommit: 76ab3b57718341c6057613c9bd38cf82fb17786e
+ms.openlocfilehash: d73e4b95059dab183f9a0af4896c5a6f86b7e564
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92060864"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091755"
 ---
 # <a name="create-sql-server-on-azure-virtual-machines-using-azure-data-studio"></a>使用 Azure Data Studio 在 Azure 虛擬機器上建立 SQL Server
 
@@ -47,7 +47,7 @@ ms.locfileid: "92060864"
 
 3. 輸入唯一的虛擬機器名稱和您的使用者名稱及密碼認證。
 
-4. 選取您偏好的映像、SKU 和版本，然後選取您慣用的 VM 大小。 您可深入了解[可用的 VM 大小](https://docs.microsoft.com/azure/virtual-machines/sizes)以利選擇。 然後選取 [下一步]  。
+4. 選取您偏好的映像、SKU 和版本，然後選取您慣用的 VM 大小。 您可深入了解[可用的 VM 大小](/azure/virtual-machines/sizes)以利選擇。 然後選取 [下一步]  。
 
 5. 從下拉式清單中選取現有的虛擬網路，或勾選 [新增虛擬網路] 核取方塊，輸入新虛擬網路的名稱。
 
@@ -75,6 +75,6 @@ ms.locfileid: "92060864"
 若要深入了解如何將資料移轉至新的 SQL VM，請參閱下列文章。
 
 > [!div class="nextstepaction"]
-> [將資料庫移轉至 SQL VM](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/migrate-to-vm-from-sql-server)
+> [將資料庫移轉至 SQL VM](/azure/azure-sql/virtual-machines/windows/migrate-to-vm-from-sql-server)
 
-如需在 Azure 中使用 SQL Server 的其他資訊，請參閱 [Azure 虛擬機器上的 SQL Server](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview) 和[常見問題集](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/frequently-asked-questions-faq)。
+如需在 Azure 中使用 SQL Server 的其他資訊，請參閱 [Azure 虛擬機器上的 SQL Server](/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview) 和[常見問題集](/azure/azure-sql/virtual-machines/windows/frequently-asked-questions-faq)。
