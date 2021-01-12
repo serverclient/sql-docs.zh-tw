@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: suresh-kandoth
 ms.author: ramakoni
-ms.openlocfilehash: 870f9b9f4d3fcc8186ed1d16faee861ed63e4135
-ms.sourcegitcommit: ead0b8c334d487a07e41256ce5d6acafa2d23c9d
+ms.openlocfilehash: 8b9d79dc7b23339b5b152695daf5efc5c47847a4
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92418722"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099343"
 ---
 # <a name="mssqlserver_17112"></a>MSSQLSERVER_17112
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "92418722"
 
 ## <a name="explanation"></a>說明
 
-此錯誤表示指定的 [Database Engine 服務啟動選項](/sql/database-engine/configure-windows/database-engine-service-startup-options)無效。 如果未正確指定啟動選項，SQL Server 可能無法啟動，或無法如預期般執行。 此狀況也會引發錯誤 17112。
+此錯誤表示指定的 [Database Engine 服務啟動選項](../../database-engine/configure-windows/database-engine-service-startup-options.md)無效。 如果未正確指定啟動選項，SQL Server 可能無法啟動，或無法如預期般執行。 此狀況也會引發錯誤 17112。
 
 儘管在某些情況下，仍可能會啟動執行個體，但當檢查 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 錯誤記錄檔時，啟動參數看起來不正確：
 
@@ -67,5 +67,5 @@ ms.locfileid: "92418722"
 
 如需本主題的詳細資訊，請參閱下列主題：
 
-- [Database Engine 服務啟動選項](/sql/database-engine/configure-windows/database-engine-service-startup-options)
-- [SCM 服務 - 設定伺服器啟動選項](/sql/database-engine/configure-windows/scm-services-configure-server-startup-options)
+- [Database Engine 服務啟動選項](../../database-engine/configure-windows/database-engine-service-startup-options.md)
+- [SCM 服務 - 設定伺服器啟動選項](../../database-engine/configure-windows/scm-services-configure-server-startup-options.md)

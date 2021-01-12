@@ -20,14 +20,14 @@ helpviewer_keywords:
 - DROP ENDPOINT statement
 - dropping endpoints
 ms.assetid: 6aca7412-66a5-4fa4-86b2-061512ff2080
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 1ebeeee770fc161d289a10f246559ca353446618
-ms.sourcegitcommit: 197a6ffb643f93592edf9e90b04810a18be61133
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 87359ee2b2059d27c0e49fc623bf42340d3fd89d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91380023"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095738"
 ---
 # <a name="drop-endpoint-transact-sql"></a>DROP ENDPOINT (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -52,7 +52,7 @@ DROP ENDPOINT endPointName
  ENDPOINT DDL 陳述式不能在使用者交易內執行。  
   
 ## <a name="permissions"></a>權限  
- 使用者必須是**系統管理員 (sysadmin)** 固定伺服器角色的成員、端點擁有者，或者已被授與端點的 CONTROL 權限。  
+ 使用者必須是 **系統管理員 (sysadmin)** 固定伺服器角色的成員、端點擁有者，或者已被授與端點的 CONTROL 權限。  
   
 ## <a name="examples"></a>範例  
  下列範例會移除先前建立稱為 `sql_endpoint` 的端點。  

@@ -2295,7 +2295,7 @@
   items:
     - name: 撰寫用戶端程式 >
       displayName: 'ADO, ADO.NET, connect, C#, C++, Java, Node.js, ODBC, OLE DB, PHP, Python, Ruby'
-      href: connect/index.md
+      href: ./connect/homepage-sql-connection-programming.md
     - name: 資料層應用程式
       href: relational-databases/data-tier-applications/data-tier-applications.md
       items:
@@ -4850,7 +4850,7 @@
     - name: 移轉文件
       href: sql-server/migrate/index.yml
     - name: SQL Server Integration Services (SSIS) >
-      href: integration-services/index.md
+      href: ./integration-services/sql-server-integration-services.md
     - name: 大量複製公用程式 (bcp)
       href: tools/bcp-utility.md
     - name: Azure 移轉服務 >
@@ -5340,7 +5340,7 @@
                 - name: 篩選發行的資料
                   href: relational-databases/replication/merge/filter-published-data-for-merge-replication.md
                 - name: 檢視衝突資訊
-                  href: relational-databases/replication/view-conflict-information-for-merge-publications.md
+                  href: ./relational-databases/replication/view-and-resolve-data-conflicts-for-merge-publications.md
                 - name: 衝突解決
                   items:
                     - name: 選擇解決器
@@ -7062,7 +7062,7 @@
     - name: 聯結
       href: relational-databases/performance/joins.md
     - name: 指令碼
-      href: relational-databases/scripting/database-engine-scripting.md
+      href: ./ssms/scripting/database-engine-scripting.md
     - name: 子查詢
       href: relational-databases/performance/subqueries.md
     - name: 資料虛擬化 (Polybase)
@@ -7118,7 +7118,7 @@
                 - name: 將資料虛擬化
                   href: relational-databases/polybase/data-virtualization.md
                 - name: 將 CSV 檔案虛擬化
-                  href: relational-databases/polybase/data-virtualization-csv.md
+                  href: ./big-data-cluster/data-virtualization-csv.md
             - name: 疑難排解
               items:
                 - name: 監視與疑難排解
@@ -7140,7 +7140,7 @@
             - name: Stack Overflow >>
               href: 'https://stackoverflow.com/questions/tagged/sql-server'
             - name: Microsoft Q&A >>
-              href: 'https://docs.microsoft.com/answers/products/sql-server'
+              href: /answers/products/sql-server
             - name: 提交意見反應 >>
               href: 'https://feedback.azure.com/forums/908035-sql-server'
             - name: Reddit >>
@@ -7245,11 +7245,11 @@
       href: machine-learning/
     - name: Analytics Platform System >
       displayName: 'APS, PDW, Parallel Data Warehouse'
-      href: analytics-platform-system/index.md
+      href: ./analytics-platform-system/home-analytics-platform-system-aps-pdw.md
     - name: SQL Server Analysis Services (SSAS) >
-      href: 'https://docs.microsoft.com/analysis-services/analysis-services-overview'
+      href: /analysis-services/analysis-services-overview
     - name: SQL Server Reporting Services (SSRS) >
-      href: reporting-services/index.md
+      href: ./reporting-services/create-deploy-and-manage-mobile-and-paginated-reports.md
     - name: Master Data Services
       displayName: MDS
       href: master-data-services/master-data-services-overview-mds.md
@@ -8682,7 +8682,7 @@
                     - name: 指令碼產生精靈支援的物件
                       href: ssms/scripting/objects-supported-by-the-generate-scripts-wizard.md
                 - name: 查詢與文字編輯器
-                  href: 'https://docs.microsoft.com/sql/ssms/f1-help/database-engine-query-editor-sql-server-management-studio?view=sql-server-ver15'
+                  href: ./ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md?view=sql-server-ver15
                   items:
                     - name: XML 編輯器
                       href: ssms/scripting/xml-editor-sql-server-management-studio.md
@@ -9104,7 +9104,7 @@
                 - name: 查詢與文字編輯器
                   href: /previous-versions/sql/sql-server-2012/ms173477(v=sql.110)?redirectedfrom=MSDN
                 - name: Database Engine 查詢編輯器
-                  href: ssms/scripting/database-engine-query-editor-sql-server-management-studio.md
+                  href: ./ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md
                 - name: XML 編輯器
                   href: ssms/scripting/xml-editor-sql-server-management-studio.md
                 - name: 設定編輯器
@@ -9180,7 +9180,7 @@
                 - name: 從 SQL Server Management Studio 連接到任何 SQL Server 元件
                   href: ssms/f1-help/connect-to-any-sql-server-component-from-sql-server-management-studio.md
                 - name: 連接屬性對話方塊
-                  href: ssms/f1-help/connection-properties-dialog-box.md
+                  href: ./ssms/f1-help/connect-to-server-connection-properties-page-database-engine.md
                 - name: 連線到伺服器 - 資料庫引擎
                   href: ssms/f1-help/connect-to-server-database-engine.md
                 - name: 連線到伺服器 - 屬性頁面 - 資料庫引擎
@@ -9188,31 +9188,31 @@
                 - name: 連線到伺服器 - 登入 - 資料庫引擎
                   href: ssms/f1-help/connect-to-server-login-page-database-engine.md
                 - name: 登入 - 連線到 SSAS 伺服器
-                  href: ssms/f1-help/connect-to-server-login-page-analysis-services.md
+                  href: /analysis-services/instances/connect-from-client-applications-analysis-services?viewFallbackFrom=sql-server-ver15
                 - name: 連線到 SSAS
-                  href: ssms/f1-help/connect-to-server-analysis-services.md
+                  href: /analysis-services/instances/connect-from-client-applications-analysis-services?viewFallbackFrom=sql-server-ver15
                 - name: 連線到 SSAS 伺服器 (連線屬性頁面)
-                  href: ssms/f1-help/connect-to-server-connection-properties-page-analysis-services.md
+                  href: /analysis-services/instances/connect-from-client-applications-analysis-services?viewFallbackFrom=sql-server-ver15
                 - name: 登入 - 連線到 SSRS 伺服器
-                  href: ssms/f1-help/connect-to-server-login-page-reporting-services.md
+                  href: ./reporting-services/tools/connect-to-a-report-server-in-management-studio.md
                 - name: 連線到 SSRS 伺服器
-                  href: ssms/f1-help/connect-to-server-reporting-services.md
+                  href: ./reporting-services/tools/connect-to-a-report-server-in-management-studio.md
                 - name: 連線到 SSRS 伺服器 (連線屬性頁面)
-                  href: ssms/f1-help/connect-to-server-connection-properties-page-reporting-services.md
+                  href: ./reporting-services/tools/connect-to-a-report-server-in-management-studio.md
                 - name: 瀏覽伺服器 (本機伺服器)
-                  href: ssms/f1-help/browse-for-servers-local-servers.md
+                  href: ./tools/configuration-manager/sql-server-browser-service.md
                 - name: 連線到伺服器 (其他連線參數)
-                  href: ssms/f1-help/connect-to-server-additional-connection-parameters-page.md
+                  href: ./relational-databases/native-client/applications/using-connection-string-keywords-with-sql-server-native-client.md
                 - name: 瀏覽伺服器 (網路伺服器)
-                  href: ssms/f1-help/browse-for-servers-network-servers.md
+                  href: ./tools/configuration-manager/sql-server-browser-service.md
                 - name: 密碼已過期
-                  href: ssms/f1-help/password-expired.md
+                  href: ./relational-databases/security/choose-an-authentication-mode.md
                 - name: 連線到 SSIS 伺服器
-                  href: ssms/f1-help/connect-to-server-integration-services.md
+                  href: ./integration-services/service/integration-services-service-ssis-service.md
                 - name: 連線到 SSIS 伺服器 (登入頁面)
-                  href: ssms/f1-help/connect-to-server-login-page-integration-services.md
+                  href: ./integration-services/service/integration-services-service-ssis-service.md
                 - name: 連線到 SSIS 伺服器 (連線屬性頁面)
-                  href: ssms/f1-help/connect-to-server-connection-properties-page-integration-services.md
+                  href: ./integration-services/service/integration-services-service-ssis-service.md
             - name: 功能表說明
               items:
                 - name: 'SQL Server Management Studio 功能表說明 [SQL Server]'
@@ -10051,7 +10051,7 @@
             - name: 連線程式庫
               href: linux/sql-server-linux-develop-connectivity-libraries.md
             - name: 使用 Visual Studio Code
-              href: linux/sql-server-linux-develop-use-vscode.md
+              href: ./tools/visual-studio-code/sql-server-develop-use-vscode.md
             - name: 使用 SSDT
               href: linux/sql-server-linux-develop-use-ssdt.md
         - name: 管理
@@ -10188,7 +10188,7 @@
         - name: Stack Overflow >>
           href: 'https://stackoverflow.com/questions/tagged/sql-server'
         - name: Microsoft Q&A >>
-          href: 'https://docs.microsoft.com/answers/products/sql-server'
+          href: /answers/products/sql-server
         - name: 提交意見反應 >>
           href: 'https://feedback.azure.com/forums/908035-sql-server'
         - name: Reddit >>
@@ -10224,7 +10224,7 @@
         - name: 教育性資源
           href: sql-server/educational-sql-resources.yml
         - name: Microsoft Learn >>
-          href: 'https://docs.microsoft.com/learn/'
+          href: /learn/
         - name: Channel 9 上的 SQL >>
           href: 'https://channel9.msdn.com/Search'
     - name: 説明
@@ -10232,7 +10232,7 @@
         - name: 取得說明
           href: sql-server/sql-server-get-help.md
         - name: Microsoft Q&A >>
-          href: 'https://docs.microsoft.com/answers/products/sql-server'
+          href: /answers/products/sql-server
         - name: DBA Stack Exchange >>
           href: 'https://dba.stackexchange.com/questions/tagged/sql-server'
         - name: Stack Overflow >>
@@ -10246,11 +10246,11 @@
         - name: SQL Server >>
           href: 'https://blogs.technet.microsoft.com/dataplatforminsider/'
         - name: 資料庫引擎 >>
-          href: 'https://blogs.msdn.microsoft.com/sqlserverstorageengine/'
+          href: /archive/blogs/sqlserverstorageengine/
         - name: 安全性 >>
-          href: 'https://blogs.msdn.microsoft.com/sqlsecurity/'
+          href: /archive/blogs/sqlsecurity/
         - name: Data Tools >>
-          href: 'https://blogs.msdn.microsoft.com/ssdt/'
+          href: /archive/blogs/ssdt/
     - name: 意見反應
       items:
         - name: SQL 文件 >>

@@ -25,14 +25,14 @@ helpviewer_keywords:
 - WAITFOR statement
 - timing executions
 ms.assetid: 8e896e73-af27-4cae-a725-7a156733f3bd
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: dec4eb37c00e524c019b07de3943efd4137e7ab9
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 0933c90f711f5c86425c7e2c6b4b350c47612ddc
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92194950"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095868"
 ---
 # <a name="waitfor-transact-sql"></a>WAITFOR (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -61,7 +61,7 @@ WAITFOR
  這是在繼續執行批次、預存程序或交易之前，必須經過的指定時段，最多 24 小時。  
   
  '*time_to_pass*'  
- 這是要等待的時間週期。 您可以使用 **datetime** 資料格式來指定 *time_to_pass*，或將它指定成區域變數。 不能指定日期，因此不接受 **datetime** 值的日期部分。 *time_to_pass*會格式化為 hh:mm[[:ss].mss]。
+ 這是要等待的時間週期。 您可以使用 **datetime** 資料格式來指定 *time_to_pass*，或將它指定成區域變數。 不能指定日期，因此不接受 **datetime** 值的日期部分。 *time_to_pass* 會格式化為 hh:mm[[:ss].mss]。
   
  TIME  
  此時執行批次、預存程序或交易時的指定時間。  

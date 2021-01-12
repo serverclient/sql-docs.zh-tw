@@ -7,12 +7,12 @@ ms.date: 10/23/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: 7b6583ce7fb4ae2d0b37d898b549a385cfc09763
-ms.sourcegitcommit: 22102f25db5ccca39aebf96bc861c92f2367c77a
+ms.openlocfilehash: dc5d54c3d64d43eb4b68a6762e3bd024587937ab
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92115431"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094648"
 ---
 # <a name="sql-server-on-linux-frequently-asked-questions-faq"></a>Linux 上的 SQL Server 常見問題集 (FAQ)
 
@@ -105,7 +105,7 @@ ms.locfileid: "92115431"
 
 1. **Linux 上是否執行 SSMS 之類的工具？**
 
-   新的 Azure Data Studio 是用於管理 SQL Server 的跨平台工具。 如需詳細資訊，請參閱[什麼是 Azure Data Studio](../azure-data-studio/what-is.md)。
+   新的 Azure Data Studio 是用於管理 SQL Server 的跨平台工具。 如需詳細資訊，請參閱[什麼是 Azure Data Studio](../azure-data-studio/what-is-azure-data-studio.md)。
 
 1. **Linux 上是否提供 sqlcmd 和 bcp 之類的命令？**
 

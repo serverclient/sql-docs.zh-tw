@@ -17,14 +17,14 @@ helpviewer_keywords:
 - sequence number object, altering
 - ALTER SEQUENCE statement
 ms.assetid: decc0760-029e-4baf-96c9-4a64073df1c2
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ae8e04d348f6a3146030d4f0bf8856b2d343b682
-ms.sourcegitcommit: ac9feb0b10847b369b77f3c03f8200c86ee4f4e0
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c32f4e9a6a020df9f7be879eb6e4327bbb9d51f2
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90688180"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094669"
 ---
 # <a name="alter-sequence-transact-sql"></a>ALTER SEQUENCE (Transact-SQL)
 [!INCLUDE [SQL Server Azure SQL Database ](../../includes/applies-to-version/sql-asdb.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "90688180"
   
  順序物件是使用 [CREATE SEQUENCE](../../t-sql/statements/create-sequence-transact-sql.md) 陳述式建立的。 順序是整數值，可以是任何傳回整數的資料類型。 資料類型無法透過 ALTER SEQUENCE 陳述式來變更。 若要變更資料類型，請卸除並重新建立順序物件。  
   
- 順序是使用者定義的結構描述繫結物件，該物件會根據規格產生數值序列。 藉由呼叫 NEXT VALUE FOR 函數，從順序產生新值。 您可以使用 **sp_sequence_get_range** 一次取得多個序號。 如需使用 CREATE SEQUENCE、**sp_sequence_get_range** 和 NEXT VALUE FOR 函式的詳細資料和案例，請參閱[序號](../../relational-databases/sequence-numbers/sequence-numbers.md)。  
+ 順序是使用者定義的結構描述繫結物件，該物件會根據規格產生數值序列。 藉由呼叫 NEXT VALUE FOR 函數，從順序產生新值。 您可以使用 **sp_sequence_get_range** 一次取得多個序號。 如需使用 CREATE SEQUENCE、**sp_sequence_get_range** 和 NEXT VALUE FOR 函式的詳細資料和案例，請參閱 [序號](../../relational-databases/sequence-numbers/sequence-numbers.md)。  
   
  ![主題連結圖示](../../database-engine/configure-windows/media/topic-link.gif "主題連結圖示") [Transact-SQL 語法慣例](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -102,7 +102,7 @@ GRANT ALTER ON OBJECT::Test.TinySeq TO [AdventureWorks\Larry]
  若要稽核 **ALTER SEQUENCE**，請監視 **SCHEMA_OBJECT_CHANGE_GROUP**。  
   
 ## <a name="examples"></a>範例  
- 如需建立順序和使用 **NEXT VALUE FOR** 函式產生序號的範例，請參閱[序號](../../relational-databases/sequence-numbers/sequence-numbers.md)。  
+ 如需建立順序和使用 **NEXT VALUE FOR** 函式產生序號的範例，請參閱 [序號](../../relational-databases/sequence-numbers/sequence-numbers.md)。  
   
 ### <a name="a-altering-a-sequence"></a>A. 改變順序  
  下列範例會建立名為 Test 的結構描述以及名為 TestSeq 的順序，其使用 **int** 資料類型，且範圍介於 100 到 200 之間。 順序開頭為 125，而且每次產生數字時會遞增 25。 因為順序設定為循環，所以當值超過最大值 200 時，順序會從最小值 100 重新啟動。  

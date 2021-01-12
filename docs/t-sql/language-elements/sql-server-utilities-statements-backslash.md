@@ -27,14 +27,14 @@ helpviewer_keywords:
 - line continuation character
 - reverse solidus
 ms.assetid: c97fbb20-3d12-4d0b-9b52-62a229bc83c0
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: e88c66f5f70845c1b6adbab669f44915afe85b8e
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 3451d6a9346fd1988cdfc509635967017a0b6cb9
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195429"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095910"
 ---
 # <a name="backslash-line-continuation-transact-sql"></a>反斜線 (行接續符號) (Transact-SQL)
 

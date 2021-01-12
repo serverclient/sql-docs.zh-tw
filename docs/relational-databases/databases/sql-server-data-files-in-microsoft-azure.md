@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 38ffd9c2-18a5-43d2-b674-e425addec4e4
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 23b04ae0e205a70b195b7da39a666256463bfa1c
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 85d9e42b9c0ac537d6f33bd884b898374119972d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192848"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099323"
 ---
 # <a name="sql-server-data-files-in-microsoft-azure"></a>Microsoft Azure 中的 SQL Server 資料檔案
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -145,7 +145,7 @@ ON
 ### <a name="sql-server-management-studio-support"></a>SQL Server Management Studio 支援  
  SQL Server Management Studio 可讓您經由許多對話方塊視窗使用此功能。 例如，`https://teststorageaccnt.blob.core.windows.net/testcontainer/` 代表儲存體容器的 URL 路徑。
  
- 作為**路徑**，例如 [新增資料庫]、[附加資料庫] 和 [還原資料庫]。 如需詳細資訊，請參閱[教學課程：搭配 SQL Server 2016 資料庫使用 Microsoft Azure Blob 儲存體服務](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md)。  
+ 作為 **路徑**，例如 [新增資料庫]、[附加資料庫] 和 [還原資料庫]。 如需詳細資訊，請參閱[教學課程：搭配 SQL Server 2016 資料庫使用 Microsoft Azure Blob 儲存體服務](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md)。  
   
 ### <a name="sql-server-management-objects-smo-support"></a>SQL Server 管理物件 (SMO) 支援  
  使用 Azure 功能中的 SQL Server 資料檔案時，可支援所有 SQL Server 管理物件 (SMO)。 如果 SMO 物件需要檔案路徑，請使用 BLOB URL 格式而非本機檔案路徑，例如 `https://teststorageaccnt.blob.core.windows.net/testcontainer/`。 如需 SQL Server 管理物件 (SMO) 的詳細資訊，請參閱《SQL Server 線上叢書》中的 [SQL Server 管理物件 &#40;SMO&#41; 程式設計指南](../../relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide.md)。  
@@ -153,7 +153,7 @@ ON
 ### <a name="transact-sql-support"></a>Transact-SQL 支援  
  這項新功能已經在 Transact-SQL 介面區中導入下列變更：
 
-- **sys.master_files** 系統檢視中的新 **int**資料行： **credential_id** 。 **credential_id** 資料行是用來讓 Azure 儲存體資料檔案能夠交互參考 `sys.credentials`，以便取得針對它們建立的認證。 您可以使用其進行疑難排解，例如某個資料庫檔案正在使用認證，導致無法刪除認證時。  
+- **sys.master_files** 系統檢視中的新 **int** 資料行： **credential_id** 。 **credential_id** 資料行是用來讓 Azure 儲存體資料檔案能夠交互參考 `sys.credentials`，以便取得針對它們建立的認證。 您可以使用其進行疑難排解，例如某個資料庫檔案正在使用認證，導致無法刪除認證時。  
   
 ##  <a name="troubleshooting-for-sql-server-data-files-in-microsoft-azure"></a><a name="bkmk_Troubleshooting"></a> Microsoft Azure 中的 SQL Server 資料檔案疑難排解  
  為了避免因為功能不支援或有限制而發生錯誤，請先檢閱＜ [Limitations](../../relational-databases/databases/sql-server-data-files-in-microsoft-azure.md#bkmk_Limitations)＞。  
@@ -177,7 +177,7 @@ ON
   
  **資料庫錯誤**  
   
-**建立資料庫時發生錯誤**的解決方案：請檢閱以下連結中第 4 課所提供的指示：[教學課程：搭配 SQL Server 2016 資料庫使用 Microsoft Azure Blob 儲存體服務](../lesson-4-restore-database-to-virtual-machine-from-url.md)。  
+**建立資料庫時發生錯誤** 的解決方案：請檢閱以下連結中第 4 課所提供的指示：[教學課程：搭配 SQL Server 2016 資料庫使用 Microsoft Azure Blob 儲存體服務](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md#4----restore-database-to-virtual-machine-from-url)。  
   
 **執行 Alter 陳述式時發生錯誤** 解決方式：請務必在資料庫上線時執行 Alter Database 陳述式。 將資料檔案複製到 Azure 儲存體時，一定要建立分頁 Blob 而非區塊 Blob。 否則，ALTER Database 將會失敗。 請檢閱以下連結中第 7 課所提供的指示：[教學課程：搭配 SQL Server 2016 資料庫使用 Microsoft Azure Blob 儲存體服務](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md)。  
   

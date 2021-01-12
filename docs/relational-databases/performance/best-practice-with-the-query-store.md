@@ -13,12 +13,12 @@ ms.assetid: 5b13b5ac-1e4c-45e7-bda7-ebebe2784551
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||= azure-sqldw-latest||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a973fd5ec66f101c162e35baec0269f7b6d3d601
-ms.sourcegitcommit: d8a9ad86401bff422d506078c6200494c795e7c0
+ms.openlocfilehash: cccb47e059938745aa6166902402c8b94b674722
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97765207"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099324"
 ---
 # <a name="best-practices-with-query-store"></a>使用查詢存放區的最佳做法
 
@@ -34,7 +34,7 @@ ms.locfileid: "97765207"
 
 ## <a name="use-query-performance-insight-in-azure-sql-database"></a><a name="Insight"></a> 在 Azure SQL 資料庫中使用查詢效能深入解析
 
-如果在 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 中執行查詢存放區，則可使用[查詢效能見解](/azure/sql-database/sql-database-query-performance)來分析隨時間的資源使用量。 雖然可使用 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] 和 [Azure Data Studio](../../azure-data-studio/what-is.md) 來取得所有查詢的資源耗用量詳細資訊 (例如 CPU、記憶體和 I/O)，但查詢效能見解能提供一個快速並有效率方式來判斷資源耗用量對資料庫整體 DTU 耗用量的影響。 如需詳細資訊，請參閱 [Azure SQL 資料庫查詢效能深入解析](/azure/azure-sql/database/query-performance-insight-use)。
+如果在 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 中執行查詢存放區，則可使用[查詢效能見解](/azure/sql-database/sql-database-query-performance)來分析隨時間的資源使用量。 雖然可使用 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] 和 [Azure Data Studio](../../azure-data-studio/what-is-azure-data-studio.md) 來取得所有查詢的資源耗用量詳細資訊 (例如 CPU、記憶體和 I/O)，但查詢效能見解能提供一個快速並有效率方式來判斷資源耗用量對資料庫整體 DTU 耗用量的影響。 如需詳細資訊，請參閱 [Azure SQL 資料庫查詢效能深入解析](/azure/azure-sql/database/query-performance-insight-use)。
 
 本節描述最佳的組態預設值，其設計目的是確保查詢存放區及相依功能可確實運作。 預設組態已針對持續收集資料最佳化，也就是在 OFF/READ_ONLY 狀態花費最少的時間。 如需所有可用查詢存放區選項的詳細資訊，請參閱 [LTER DATABASE SET 選項 (Transact-SQL)](../../t-sql/statements/alter-database-transact-sql-set-options.md#query-store)。
 

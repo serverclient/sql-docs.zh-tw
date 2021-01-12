@@ -21,14 +21,14 @@ helpviewer_keywords:
 - sequence object
 - number, sequence
 ms.assetid: 419f907b-8a72-4d6c-80cb-301df44c24c1
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 8eb9c50b7c30a53265c22b29d616ef3471515ea3
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 57dc922f5be1aac4a3a2fce713894353728a0e1c
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89547818"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096993"
 ---
 # <a name="create-sequence-transact-sql"></a>CREATE SEQUENCE (Transact-SQL)
 
@@ -158,7 +158,7 @@ INCREMENT BY \<constant>
 ## <a name="security"></a>安全性  
   
 ### <a name="permissions"></a>權限  
- 需要 SCHEMA 的 **CREATE SEQUENCE**、 **ALTER**或 **CONTROL** 權限。  
+ 需要 SCHEMA 的 **CREATE SEQUENCE**、 **ALTER** 或 **CONTROL** 權限。  
   
 -   db_owner 和 db_ddladmin 固定資料庫角色的成員可以建立、改變及卸除順序物件。  
   
@@ -178,7 +178,7 @@ GRANT CREATE SEQUENCE ON SCHEMA::Test TO [AdventureWorks\Larry]
  若要稽核 **CREATE SEQUENCE**，請監視 **SCHEMA_OBJECT_CHANGE_GROUP**。  
   
 ## <a name="examples"></a>範例  
- 如需建立順序和使用 **NEXT VALUE FOR** 函式產生序號的範例，請參閱[序號](../../relational-databases/sequence-numbers/sequence-numbers.md)。  
+ 如需建立順序和使用 **NEXT VALUE FOR** 函式產生序號的範例，請參閱 [序號](../../relational-databases/sequence-numbers/sequence-numbers.md)。  
   
  下列大部分的範例會在名為 Test 的結構描述中建立順序物件。  
   

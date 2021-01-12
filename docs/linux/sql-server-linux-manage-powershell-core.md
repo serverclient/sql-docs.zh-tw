@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: SQLvariant
 ms.author: aanelson
 ms.reviewer: vanto
-ms.openlocfilehash: d9df9281926008ddac99b6827c41a0b6e73b2290
-ms.sourcegitcommit: 22102f25db5ccca39aebf96bc861c92f2367c77a
+ms.openlocfilehash: a65ad9ad35e4feb2a55ffbdc259601a7b16106f9
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92115596"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094553"
 ---
 # <a name="manage-sql-server-on-linux-with-powershell-core"></a>使用 PowerShell Core 管理 Linux 上的 SQL Server
 
@@ -27,10 +27,10 @@ ms.locfileid: "92115596"
 
 如需在各種支援和實驗性平台上安裝 PowerShell Core 的詳細資訊，請參閱下列文章：
 
-- [在 Windows 上安裝 PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-6)
-- [在 Linux 上安裝 PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6)
-- [在 macOS 上安裝 PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6)
-- [在 ARM 上安裝 PowerShell Core](/powershell/scripting/install/powershell-core-on-arm?view=powershell-6)
+- [在 Windows 上安裝 PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows)
+- [在 Linux 上安裝 PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-linux)
+- [在 macOS 上安裝 PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-macos)
+- [在 ARM 上安裝 PowerShell Core](/powershell/scripting/install/powershell-core-on-arm)
 
 ## <a name="install-the-sqlserver-module"></a>安裝 SqlServer 模組
 
@@ -81,7 +81,7 @@ Script     21.1.18102 SqlServer     {Add-SqlAvailabilityDatabase, Add-SqlAvailab
 在 PowerShell 提示字元中複製並貼上下列命令。 當您執行這些命令時，PowerShell 將會：
 - 顯示對話方塊，提示您輸入執行個體的主機名稱或 IP 位址
 - 顯示 [PowerShell 認證要求]  對話方塊，它會提示您輸入認證。 您可以使用「SQL 使用者名稱」  和「SQL 密碼」  連線至 Linux 上的 SQL Server 執行個體
-- 使用 **Get-SqlInstance** Cmdlet 連線到**伺服器**，並顯示一些屬性
+- 使用 **Get-SqlInstance** Cmdlet 連線到 **伺服器**，並顯示一些屬性
 
 (選擇性) 您可以將 `$serverInstance` 變數取代為您 SQL Server 執行個體的 IP 位址或主機名稱。
 
@@ -183,7 +183,7 @@ tempdb               Normal       16.00 MB    5.49 MB Simple       140 sa
 在 PowerShell 提示字元中複製並貼上下列命令。 可能需要幾分鐘的時間執行。 這些命令會執行下列步驟：
 - 顯示對話方塊，提示您輸入執行個體的主機名稱或 IP 位址
 - 顯示 [PowerShell 認證要求]  對話方塊，它會提示您輸入認證。 您可以使用「SQL 使用者名稱」  和「SQL 密碼」  連線至 Linux 上的 SQL Server 執行個體
-- 使用 **Get-SqlErrorLog** Cmdlet 連線到 Linux 上的 SQL Server 執行個體，並擷取自**昨天**起的錯誤記錄檔
+- 使用 **Get-SqlErrorLog** Cmdlet 連線到 Linux 上的 SQL Server 執行個體，並擷取自 **昨天** 起的錯誤記錄檔
 
 (選擇性) 您可以將 `$serverInstance` 變數取代為您 SQL Server 執行個體的 IP 位址或主機名稱。
 

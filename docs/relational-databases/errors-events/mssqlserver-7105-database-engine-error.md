@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: rgward
 ms.author: ramakoni
-ms.openlocfilehash: bfcd8763c649f83bb9e72881c6facda29917f7b8
-ms.sourcegitcommit: ead0b8c334d487a07e41256ce5d6acafa2d23c9d
+ms.openlocfilehash: 7aa3b39996f8dc282e11d92706743a7ba42998da
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92418770"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099263"
 ---
 # <a name="mssqlserver_7105"></a>MSSQLSERVER_7105
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -55,7 +55,7 @@ ms.locfileid: "92418770"
 1. 如訊息所示，您應該採取的第一個步驟是針對資料庫執行 `DBCC CHECKDB`，或針對發生問題的資料表執行 `DBCC CHECKTABLE`。
 
     - 訊息中提供了資料庫識別碼。
-    - 若要在不執行 `DBCC CHECKDB` 的情況下，確實找出受影響的資料表，您必須找出發生錯誤的查詢所存取的資料表。 其中一個方法是使用 SQL Profiler 來追蹤查詢。 不過，在 [!INCLUDE[sskatmai](../../includes/sskatmai-md.md)] 與 [!INCLUDE[sskatmai](../../includes/sskatmai-md.md)] R2 中，您可使用 system_health 擴充事件工作階段來尋找查詢。 如需如何使用 system_health 工作階段的詳細資訊，請參閱此連結：[使用 system_health 工作階段](/sql/relational-databases/extended-events/use-the-system-health-session)。
+    - 若要在不執行 `DBCC CHECKDB` 的情況下，確實找出受影響的資料表，您必須找出發生錯誤的查詢所存取的資料表。 其中一個方法是使用 SQL Profiler 來追蹤查詢。 不過，在 [!INCLUDE[sskatmai](../../includes/sskatmai-md.md)] 與 [!INCLUDE[sskatmai](../../includes/sskatmai-md.md)] R2 中，您可使用 system_health 擴充事件工作階段來尋找查詢。 如需如何使用 system_health 工作階段的詳細資訊，請參閱此連結：[使用 system_health 工作階段](../extended-events/use-the-system-health-session.md)。
 
     - 就像所有資料庫一致性問題一樣，您可從沒有發生此問題的良好備份進行還原來解決這些錯誤。
 

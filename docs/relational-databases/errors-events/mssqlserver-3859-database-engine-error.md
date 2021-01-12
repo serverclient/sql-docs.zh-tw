@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: suresh-kandoth
 ms.author: ramakoni
-ms.openlocfilehash: 4a3857e9e98bfbe7fcc86ee07272698f0fcac763
-ms.sourcegitcommit: ead0b8c334d487a07e41256ce5d6acafa2d23c9d
+ms.openlocfilehash: 3228a21b43fd5b5ed2a23c5e13b47353e55cd028
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92418677"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093266"
 ---
 # <a name="mssqlserver_3859"></a>MSSQLSERVER_3859
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -52,10 +52,10 @@ ms.locfileid: "92418677"
 
     在手動更新系統資料表後執行 `DBCC_CHECKDB` 命令時，即會傳回以下警告訊息：
 
-    > ' **database_name** ' 的 DBCC 結果。  
+    > '**database_name**' 的 DBCC 結果。  
     訊息 8992，層級 16，狀態 1，第 1 行  
-    檢查目錄訊息 3859，狀態 1：警告：已直接在資料庫識別碼 \%d 中更新系統目錄，最近一次在 **date_time** 。  
-    CHECKDB 在資料庫 ' **db_name** ' 中發現了 0 個配置錯誤與 0 個一致性錯誤。  
+    檢查目錄訊息 3859，狀態 1：警告：已直接在資料庫識別碼 \%d 中更新系統目錄，最近一次在 **date_time**。  
+    CHECKDB 在資料庫 '**db_name**' 中發現了 0 個配置錯誤與 0 個一致性錯誤。  
     DBCC 的執行已經完成。 如果 DBCC 印出錯誤訊息，請連絡您的系統管理員。
 
 ## <a name="user-action"></a>使用者動作
@@ -77,4 +77,4 @@ ms.locfileid: "92418677"
 
 ## <a name="more-information"></a>詳細資訊
 
-如需詳細資訊，請參閱：[系統基底資料表](/sql/relational-databases/system-tables/system-base-tables)。
+如需詳細資訊，請參閱：[系統基底資料表](../system-tables/system-base-tables.md)。

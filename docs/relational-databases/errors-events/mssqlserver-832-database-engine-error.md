@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: suresh-kandoth
 ms.author: ramakoni
-ms.openlocfilehash: 846ce27ff8e7d9560a6d4cc691d1523fddd913fa
-ms.sourcegitcommit: ead0b8c334d487a07e41256ce5d6acafa2d23c9d
+ms.openlocfilehash: 5252cae293cd4c700f359b8168e0d5d5d10a70cf
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92418743"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099233"
 ---
 # <a name="mssqlserver_832"></a>MSSQLSERVER_832
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -60,4 +60,4 @@ ms.locfileid: "92418743"
 
 即使 `DBCC CHECKDB` 在寫入磁碟之後，也可能不會針對處於此狀態的頁面報告錯誤。 這是因為可能會在未保存任何資料的頁面上，也未包含任何重要頁面或資料列結構資訊的位置上不正確的修改，或者可能是 CHECKDB 無法偵測到的資料修改。  
 
-如需訊息 832 的詳細資料和詳細資訊，另請參閱 [SQL Server I/O 基本概念第 2 章](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/administrator/cc917726(v=technet.10)) (英文) 白皮書。
+如需訊息 832 的詳細資料和詳細資訊，另請參閱 [SQL Server I/O 基本概念第 2 章](/previous-versions/sql/sql-server-2005/administrator/cc917726(v=technet.10)) (英文) 白皮書。

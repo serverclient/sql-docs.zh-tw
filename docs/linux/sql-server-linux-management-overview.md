@@ -9,12 +9,12 @@ ms.prod: sql
 ms.technology: linux
 ms.assetid: 6bd8eb0b-593d-467e-87ea-ab1c4dbcd1ea
 moniker: '>= sql-server-linux-2017 || >= sql-server-2017 '
-ms.openlocfilehash: dd0151edd199c5627b9676db5ed2ff304c1f5c3f
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 04ece9daf696d73b9de96f48a08e32136fe6ab66
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97471549"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094625"
 ---
 # <a name="choose-the-right-tool-to-manage-sql-server-on-linux"></a>選擇適當的工具，管理 Linux 上的 SQL Server
 
@@ -32,7 +32,7 @@ ms.locfileid: "97471549"
 
 ## <a name="azure-data-studio"></a>Azure Data Studio
 
-新的 Azure Data Studio 是用於管理 SQL Server 的跨平台工具。 如需詳細資訊，請參閱 [Azure Data Studio](../azure-data-studio/what-is.md)。
+新的 Azure Data Studio 是用於管理 SQL Server 的跨平台工具。 如需詳細資訊，請參閱 [Azure Data Studio](../azure-data-studio/what-is-azure-data-studio.md)。
 
 ## <a name="sql-server-management-studio-on-windows"></a>Windows 上的 SQL Server Management Studio
 

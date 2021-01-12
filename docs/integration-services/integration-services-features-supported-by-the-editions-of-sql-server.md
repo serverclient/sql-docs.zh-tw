@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: e5018225-68bb-4f34-ae4a-ead79d8ad13a
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: b5cb516c1d7058d455919a3faffed5b653a1bae6
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 2a8b60c36831622713103786727c4225ac0c351c
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88449866"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095640"
 ---
 # <a name="integration-services-features-supported-by-the-editions-of-sql-server"></a>SQL Server 各版本支援的 Integration Services 功能
 
@@ -36,7 +36,7 @@ ms.locfileid: "88449866"
 
 SQL Server Evaluation Edition 提供了 180 天的試用期。  
     
-> [![從 Evaluation Center 下載](https://docs.microsoft.com/analysis-services/analysis-services/media/download.png)](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016) **[從 Evaluation Center 下載 SQL Server 2016](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016)**    
+> [![從 Evaluation Center 下載](/analysis-services/analysis-services/media/download.png)](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016) **[從 Evaluation Center 下載 SQL Server 2016](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016)**    
     
 ## <a name="new-integration-services-features-in-sql-server-2017"></a><a name="ISNew"></a> SQL Server 2017 的新 Integration Services 功能
   

@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - CONNECTIONPROPERTY statement
 ms.assetid: 6bd9ccae-af77-4a05-b97f-f8ab41cfde42
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 2d3de0c039ec6d2832e3f0e6100b97786d83e5f2
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 428201b41c42342df355df571763265e64a5da11
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91116831"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092325"
 ---
 # <a name="connectionproperty-transact-sql"></a>CONNECTIONPROPERTY (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -46,7 +46,7 @@ CONNECTIONPROPERTY ( property )
   
 |值|資料類型|描述|  
 |---|---|---|
-|net_transport|**nvarchar(40)**|傳回此連線使用的實體傳輸通訊協定。 這個值不可為 Null。 可能的傳回值：<br /><br /> **HTTP**<br /> **具名管道**<br /> **工作階段**<br /> **共用記憶體**<br /> **SSL**<br /> **TCP**<br /><br /> 和<br /><br /> **VIA**<br /><br /> 注意:當連線同時啟用兩個 Multiple Active Result Set (MARS) 並啟用連線共用後，一律會傳回**工作階段**。|  
+|net_transport|**nvarchar(40)**|傳回此連線使用的實體傳輸通訊協定。 這個值不可為 Null。 可能的傳回值：<br /><br /> **HTTP**<br /> **具名管道**<br /> **工作階段**<br /> **共用記憶體**<br /> **SSL**<br /> **TCP**<br /><br /> 和<br /><br /> **VIA**<br /><br /> 注意:當連線同時啟用兩個 Multiple Active Result Set (MARS) 並啟用連線共用後，一律會傳回 **工作階段**。|  
 |protocol_type|**nvarchar(40)**|傳回裝載通訊協定型別。 它目前會區分 TDS (TSQL) 和 SOAP。 可為 Null。|  
 |auth_scheme|**nvarchar(40)**|傳回連線 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 驗證配置。 驗證配置為 Windows 驗證 (NTLM、KERBEROS、DIGEST、BASIC、NEGOTIATE) 或 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 驗證。 不可為 Null。|  
 |local_net_address|**varchar(48)**|傳回此特定連線目標伺服器的 IP 位址。 只適用於使用 TCP 傳輸提供者的連線。 可為 Null。|  
