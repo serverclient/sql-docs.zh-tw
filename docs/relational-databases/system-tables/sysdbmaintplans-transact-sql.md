@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - sysdbmaintplans system table
 ms.assetid: 0363296a-3082-48a9-9eb5-a1020b2f541a
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 160abf3a360d18e3ba83df0f11cc9982984df049
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 2aec8e8b94dc341225a5e34e35f2f168fa83e56e
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89516869"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098067"
 ---
 # <a name="sysdbmaintplans-transact-sql"></a>sysdbmaintplans (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "89516869"
 |**remote_history_server**|**sysname**|可寫入記錄報表之遠端伺服器的名稱。|  
 |**max_remote_history_rows**|**int**|在遠端伺服器系統資料表中，可寫入記錄報表的資料列最大配置列數。|  
 |**user_defined_1**|**int**|預設值是 NULL。|  
-|**user_defined_2**|**Nvarchar (100) **|預設值是 NULL。|  
+|**user_defined_2**|**Nvarchar (100)**|預設值是 NULL。|  
 |**user_defined_3**|**datetime**|預設值是 NULL。|  
 |**user_defined_4**|**uniqueidentifier**|預設值是 NULL。|  
 |**log_shipping**|**bit**|記錄傳送狀態：<br /><br /> **0** = 停用 **1** = 已啟用|  

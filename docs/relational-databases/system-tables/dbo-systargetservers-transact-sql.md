@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - systargetservers system table
 ms.assetid: 479d1314-be37-4d19-ac9c-419fc9110e53
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 6ecf738591688ba3ad25c58f6b77dabec5df73b2
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 00e90f2c6911e1b80b37169fab67382f15997f03
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538310"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098231"
 ---
 # <a name="dbosystargetservers-transact-sql"></a>dbo.systargetservers (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "89538310"
 |**last_poll_date**|**datetime**|指定的目標伺服器上次輪詢多伺服器 **sysdownloadlist** 系統資料表以取得要執行之作業的日期和時間。|  
 |**status**|**int**|目標伺服器的狀態：<br /><br /> **1** = 一般<br /><br /> **2** = 重新同步處理擱置中<br /><br /> **4** = 可疑的離線|  
 |**local_time_at_last_poll**|**datetime**|前次輪詢目標伺服器來尋找作業的日期和時間。|  
-|**enlisted_by_nt_user**|**Nvarchar (100) **|在目標伺服器上執行 **sp_msx_enlist** 之人員的使用者名稱。|  
+|**enlisted_by_nt_user**|**Nvarchar (100)**|在目標伺服器上執行 **sp_msx_enlist** 之人員的使用者名稱。|  
 |**poll_internal**|**int**|目標伺服器經過多久 (秒) 之後，便輪詢主要伺服器來尋找新的下載指示。|  
   
   

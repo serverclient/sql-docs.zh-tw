@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSreplication_objects system table
 ms.assetid: 08f9710d-976d-448e-bead-ac9835e87bc5
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: d3c582b495702a46c51519f56dee1e977980840f
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 5989c75e30e866f4ff9083a7a9e6fdef49207019
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538255"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098143"
 ---
 # <a name="msreplication_objects-transact-sql"></a>MSreplication_objects (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSreplication_objects**資料表針對與訂閱者資料庫中複寫相關聯的每個物件，各包含一個資料列。 這份資料表儲存在訂閱資料庫中。  
+  **MSreplication_objects** 資料表針對與訂閱者資料庫中複寫相關聯的每個物件，各包含一個資料列。 這份資料表儲存在訂閱資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

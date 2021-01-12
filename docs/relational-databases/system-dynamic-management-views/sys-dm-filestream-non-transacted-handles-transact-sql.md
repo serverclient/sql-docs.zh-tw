@@ -1,6 +1,6 @@
 ---
 description: sys.dm_filestream_non_transacted_handles (Transact-SQL)
-title: sys. dm_filestream_non_transacted_handles (Transact-sql) |Microsoft Docs
+title: sys.dm_filestream_non_transacted_handles (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_filestream_non_transacted_handles dynamic management view
 ms.assetid: 507ec125-67dc-450a-9081-94cde5444a92
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: cde44e61d01f4995f1f3517f2144a36fff669177
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: e6b5082f5ad2105d91c23d3d1cca3e959b01343a
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550250"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097637"
 ---
 # <a name="sysdm_filestream_non_transacted_handles-transact-sql"></a>sys.dm_filestream_non_transacted_handles (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "89550250"
 |correlation_process_id|varbinary(8)|包含引發要求之處理序的唯一識別碼。|  
 |correlation_thread_id|varbinary(8)|包含引發要求之執行緒的唯一識別碼。|  
 |file_context|varbinary(8)|這個控制代碼所用之檔案物件的指標。|  
-|狀態|int|控制代碼的目前狀態。 可能是作用中、已關閉或已終止。|  
+|state|int|控制代碼的目前狀態。 可能是作用中、已關閉或已終止。|  
 |state_desc|nvarchar(120)|"ACTIVE"、<br />"CLOSED"、<br />取消|  
 |current_workitem_type|int|目前所處理之控制代碼的狀態。|  
 |current_workitem_type_desc|nvarchar(120)|"NoSetWorkItemType",<br />"FFtPreCreateWorkitem",<br />"FFtGetPhysicalFileNameWorkitem",<br />"FFtPostCreateWorkitem",<br />"FFtPreCleanupWorkitem",<br />"FFtPostCleanupWorkitem",<br />"FFtPreCloseWorkitem",<br />"FFtQueryDirectoryWorkItem",<br />"FFtQueryInfoWorkItem",<br />"FFtQueryVolumeInfoWorkItem",<br />"FFtSetInfoWorkitem",<br />"FFtWriteCompletionWorkitem"|  

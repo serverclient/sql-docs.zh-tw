@@ -16,15 +16,15 @@ helpviewer_keywords:
 - firewall_rules
 - sys.firewall_rules
 ms.assetid: 140d2cd8-9aa1-4cc5-870d-e1dbc873b3fe
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: = azuresqldb-current
-ms.openlocfilehash: b7e08498a9f3867c03c2198957af0ac35f9a0a01
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 351ca530c49051b61b6f44b8dc2fbff83623cf8f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97477429"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097986"
 ---
 # <a name="sysfirewall_rules-azure-sql-database"></a>sys.firewall_rules (Azure SQL Database)
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "97477429"
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
 |id|**INT**|伺服器層級防火牆設定的識別碼。|  
-|NAME|**NVARCHAR (128)**|您選擇用來描述和區分伺服器層級防火牆設定的名稱。|  
+|name|**NVARCHAR (128)**|您選擇用來描述和區分伺服器層級防火牆設定的名稱。|  
 |start_ip_address|**VARCHAR (45)**|伺服器層級防火牆設定範圍中最低的 IP 位址。 等於或大於這個位址的 IP 位址可以嘗試連接至 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 伺服器。 可能的最低 IP 位址為 `0.0.0.0`。|  
 |end_ip_address|**VARCHAR (45)**|伺服器層級防火牆設定範圍中最高的 IP 位址。 等於或小於這個位址的 IP 位址可以嘗試連接至 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 伺服器。 可能的最高 IP 位址為 `255.255.255.255`。<br /><br /> 注意：當這個欄位和 [ **start_ip_address** ] 欄位等於時，便允許 Azure 連接嘗試 `0.0.0.0` 。|  
 |create_date|**Datetime**|建立伺服器層級防火牆設定時的 UTC 日期和時間。<br /><br /> 注意： UTC 是國際標準時間的縮寫。|  

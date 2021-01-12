@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_exec_plan_attributes dynamic management function
 ms.assetid: dacf3ab3-f214-482e-aab5-0dab9f0a3648
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c80e576bd6f2872a2486da5fd09292609f86ba60
-ms.sourcegitcommit: 2991ad5324601c8618739915aec9b184a8a49c74
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 7fa0b60cc1c172ea8777286fda425c7714d6b363
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97331992"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096590"
 ---
 # <a name="sysdm_exec_plan_attributes-transact-sql"></a>sys.dm_exec_plan_attributes (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -48,7 +48,7 @@ sys.dm_exec_plan_attributes ( plan_handle )
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
 |屬性|**varchar(128)**|與這份計畫相關聯的屬性名稱。 下方的資料表會列出可能的屬性、其資料類型，以及其描述。|  
-|值|**sql_variant**|與這份計畫相關聯的屬性值。|  
+|value|**sql_variant**|與這份計畫相關聯的屬性值。|  
 |is_cache_key|**bit**|指出屬性是否作為計畫快取查閱金鑰的一部分使用。|  
 
 從上表中， **屬性** 可以具有下列值：
@@ -114,7 +114,7 @@ sys.dm_exec_plan_attributes ( plan_handle )
 |UPON<br /><br /> 表示當編譯計畫時，PARAMETERIZATION 資料庫選項設為 FORCED。|131072|  
 |ROWCOUNT|**適用于：** [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 自 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]<br /><br /> 262144|  
   
-## <a name="cursors"></a>資料指標  
+## <a name="cursors"></a>游標  
  非使用中的資料指標會快取在編譯的計畫中，讓用來儲存資料指標的記憶體可供資料指標的並行使用者重複使用。 例如，假設有個批次宣告並使用資料指標，但沒有取消配置。 如果有兩個使用者執行相同的批次，會有兩個使用中的資料指標。 一旦資料指標取消配置 (可能在不同的批次中)，用來儲存資料指標的記憶體就會快取，而不會釋出。 非使用中資料指標的清單會保留在編譯的計畫中。 等到下次使用者執行批次時，會重複使用快取的資料指標記憶體，並適當地初始化為使用中資料指標。  
   
 ### <a name="evaluating-cursor-options"></a>評估資料指標選項  
@@ -122,7 +122,7 @@ sys.dm_exec_plan_attributes ( plan_handle )
   
 |選項|值|  
 |------------|-----------|  
-|無|0|  
+|None|0|  
 |INSENSITIVE|1|  
 |SCROLL|2|  
 |READ ONLY|4|  

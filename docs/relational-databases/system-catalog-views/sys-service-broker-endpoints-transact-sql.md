@@ -1,6 +1,6 @@
 ---
 description: sys.service_broker_endpoints (Transact-SQL)
-title: sys. service_broker_endpoints (Transact-sql) |Microsoft Docs
+title: sys.service_broker_endpoints (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.service_broker_endpoints catalog view
 ms.assetid: 6979ec9b-0043-411e-aafb-0226fa26c5ba
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 7ee3bd0e5e09ab2e8511596f3920e0e8408f1b6f
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: d8e8a6590dedf9c43da14147c503d1e62423e595
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539548"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096681"
 ---
 # <a name="sysservice_broker_endpoints-transact-sql"></a>sys.service_broker_endpoints (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  這份目錄檢視會針對 Service Broker 端點，各包含一個資料列。 針對此視圖中的每個資料列，在包含 TCP 設定中繼資料的**sys. tcp_endpoints**視圖中，有一個具有相同**endpoint_id**的對應資料列。 TCP 是 Service Broker 唯一允許使用的通訊協定。  
+  這份目錄檢視會針對 Service Broker 端點，各包含一個資料列。 針對此視圖中的每個資料列，包含 TCP 設定中繼資料的 **sys.tcp_endpoints** 視圖中會有一個具有相同 **endpoint_id** 的對應資料列。 TCP 是 Service Broker 唯一允許使用的通訊協定。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

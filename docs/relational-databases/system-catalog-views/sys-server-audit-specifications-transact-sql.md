@@ -1,6 +1,6 @@
 ---
 description: sys.server_audit_specifications (Transact-SQL)
-title: sys. server_audit_specifications (Transact-sql) |Microsoft Docs
+title: sys.server_audit_specifications (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 04/05/2016
 ms.prod: sql
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.server_audit_specifications catalog view
 ms.assetid: fa496c6c-2a54-4fda-a238-db490c6b3afd
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 20ee22c169ef624b70ca2790bf5fef5e4ff4e532
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: bb9a5ccce39364cad6083b1fd9ca317dc4ba6aa0
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550374"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097941"
 ---
 # <a name="sysserver_audit_specifications-transact-sql"></a>sys.server_audit_specifications (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "89550374"
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
 |**name**|**Sysname**|伺服器規格的名稱。|  
-|**server_specification_id**|**整數**|**Server_specification**的識別碼。|  
+|**server_specification_id**|**整數**|**Server_specification** 的識別碼。|  
 |**create_date**|**Datetime**|建立稽核伺服器規格的日期。|  
 |**modified_date**|**Datetime**|上次修改稽核伺服器規格的日期。|  
 |**is_state_enabled**|**tinyint**|稽核規格狀態：<br /><br /> 0-已停用<br /><br /> 1-已啟用|  

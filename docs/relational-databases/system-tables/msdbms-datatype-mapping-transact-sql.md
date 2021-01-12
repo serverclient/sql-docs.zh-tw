@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSdbms_datatype_mapping system table
 ms.assetid: 13289a0b-dfb0-4771-ad80-4c5f83cded99
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 8364437100eebf74c976ba0be2b9ad2d0d6c472a
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 308e11275807ff11e3700bfcb443238c8c6ffeef
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544527"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098657"
 ---
 # <a name="msdbms_datatype_mapping-transact-sql"></a>MSdbms_datatype_mapping (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSdbms_datatype_mapping**資料表包含從源資料庫管理系統中資料類型所允許的資料類型對應， (DBMS) 到目的地 DBMS 中的一或多個特定資料類型。 此資料表儲存在 **msdb** 資料庫中，用於進行異質資料庫複寫。  
+  **MSdbms_datatype_mapping** 資料表包含從源資料庫管理系統中資料類型所允許的資料類型對應， (DBMS) 到目的地 DBMS 中的一或多個特定資料類型。 此資料表儲存在 **msdb** 資料庫中，用於進行異質資料庫複寫。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

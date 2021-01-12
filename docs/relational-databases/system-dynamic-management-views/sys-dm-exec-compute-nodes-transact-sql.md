@@ -20,15 +20,15 @@ helpviewer_keywords:
 - PolyBase management views
 - dm_exec_compute_nodes management view
 ms.assetid: 0de4b7a4-401f-4e2d-9ab0-c54587e05154
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6a9776a0fa0e1d6c939c41d66f32a6cc4855e360
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 947439df0c2ecf611507039ca203893f92cc13de
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97427971"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098972"
 ---
 # <a name="sysdm_exec_compute_nodes-transact-sql"></a>sys.dm_exec_compute_nodes (Transact-sql) 
 
@@ -42,7 +42,7 @@ ms.locfileid: "97427971"
 |-----------------|---------------|-----------------|-----------|  
 |compute_node_id|**int**|與節點相關聯的唯一數值識別碼。 此視圖的索引鍵。|不論類型為何，都是在相應放大叢集中唯一的。|  
 |類型|**nvarchar(32)**|節點的類型。|「計算」、「標頭」|  
-|NAME|**nvarchar(32)**|節點的邏輯名稱。|適當長度的任何字串。|  
+|name|**nvarchar(32)**|節點的邏輯名稱。|適當長度的任何字串。|  
 |address|**nvarchar(32)**|此節點的 IP 位址。|IP 位址範圍|  
   
 ## <a name="see-also"></a>另請參閱  

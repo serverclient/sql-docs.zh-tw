@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - sysmergearticlecolumns system table
 ms.assetid: 1ad8663f-a624-42a2-8641-fefac3433c97
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: e1e60d7bdb2b8b39d719a80b00ae5b87ab92c0da
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 52b61bdb3429f5f42bd5e9012a28e06f09f2377b
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540215"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098051"
 ---
 # <a name="sysmergearticlecolumns-transact-sql"></a>sysmergearticlecolumns (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **Sysmergearticlecolumns**資料表會針對合併式發行集中發行的每個資料表資料行，各包含一個資料列，並將每個資料行對應到它的合併發行項。 這份資料表儲存在發行集資料庫中。  
+  **Sysmergearticlecolumns** 資料表會針對合併式發行集中發行的每個資料表資料行，各包含一個資料列，並將每個資料行對應到它的合併發行項。 這份資料表儲存在發行集資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

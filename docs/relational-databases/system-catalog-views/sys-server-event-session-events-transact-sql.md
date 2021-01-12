@@ -1,6 +1,6 @@
 ---
 description: sys.server_event_session_events (Transact-SQL)
-title: sys. server_event_session_events (Transact-sql) |Microsoft Docs
+title: sys.server_event_session_events (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sys.server_event_session_events catalog view
 - xe
 ms.assetid: 75986e91-1fc7-4f14-98ac-4e90154a74db
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: d7f58a80a3d3d85fd7411d629d9d018a40002641
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 48e6ae7653dc4ba2bb37bab71d597c405f35d626
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551406"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096701"
 ---
 # <a name="sysserver_event_session_events-transact-sql"></a>sys.server_event_session_events (Transact-SQL)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
@@ -40,8 +40,8 @@ ms.locfileid: "89551406"
 |NAME|**sysname**|事件的名稱。 不可為 Null。|  
 |套件|**sysname**|包含此事件之事件封裝的名稱。 不可為 Null。|  
 |name|**sysname**|包含此事件之模組的名稱。 不可為 Null。|  
-|predicate|**Nvarchar (3000) **|套用至事件的述詞運算式。 可為 Null。|  
-|predicate_xml|**Nvarchar (3000) **|套用至事件的 XML 述詞運算式。 可為 Null。|  
+|predicate|**Nvarchar (3000)**|套用至事件的述詞運算式。 可為 Null。|  
+|predicate_xml|**Nvarchar (3000)**|套用至事件的 XML 述詞運算式。 可為 Null。|  
   
 ## <a name="permissions"></a>權限  
  需要伺服器的 VIEW SERVER STATE 權限。  
@@ -51,7 +51,7 @@ ms.locfileid: "89551406"
   
 | 寄件者 | 收件者 | 關聯性 |
 | ---- | -- | ------------ |
-|sys.server_event_session_events.event_session_id|sys. server_event_sessions. event_session_id|多對一|  
+|sys.server_event_session_events.event_session_id|sys.server_event_sessions sys.server_event_sessions.event_session_id|多對一|  
   
 ## <a name="see-also"></a>另請參閱  
  [目錄檢視 &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   

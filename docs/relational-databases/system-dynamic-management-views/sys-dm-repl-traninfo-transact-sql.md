@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_repl_traninfo dynamic management view
 ms.assetid: 5abe2605-0506-46ec-82b5-6ec08428ba13
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 6369fc0d1ee2c0b70cb3e6e13fd201fd718236dc
-ms.sourcegitcommit: 32135463a8494d9ed1600a58f51819359e3c09dc
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: f8a0613d83cebfed56ba5202a6c3535ef31c8a84
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91834569"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098836"
 ---
 # <a name="sysdm_repl_traninfo-transact-sql"></a>sys.dm_repl_traninfo (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -38,33 +38,33 @@ ms.locfileid: "91834569"
 |**comp_range_address**|**varbinary(8)**|定義必須略過的部分回復範圍。|  
 |**textinfo_address**|**varbinary(8)**|快取文字資訊結構的記憶體中位址。|  
 |**fsinfo_address**|**varbinary(8)**|快取檔案資料流資訊結構的記憶體中位址。|  
-|**begin_lsn**|**Nvarchar (64) **|交易之開始記錄的記錄序號 (LSN)。|  
-|**commit_lsn**|**Nvarchar (64) **|交易之認可記錄的 LSN。|  
+|**begin_lsn**|**Nvarchar (64)**|交易之開始記錄的記錄序號 (LSN)。|  
+|**commit_lsn**|**Nvarchar (64)**|交易之認可記錄的 LSN。|  
 |**dbid**|**smallint**|資料庫識別碼。|  
 |**rows**|**int**|交易內的複寫命令識別碼。|  
-|**xdesid**|**Nvarchar (64) **|交易識別碼。|  
+|**xdesid**|**Nvarchar (64)**|交易識別碼。|  
 |**artcache_table_address**|**varbinary(8)**|上次用於這項交易之快取發行項資料表結構的記憶體中位址。|  
-|**伺服器**|**Nvarchar (514) **|伺服器名稱。|  
+|**伺服器**|**Nvarchar (514)**|伺服器名稱。|  
 |**server_len_in_bytes**|**smallint**|伺服器名稱的字元長度 (以位元組為單位)。|  
-|**database**|**Nvarchar (514) **|資料庫名稱。|  
+|**database**|**Nvarchar (514)**|資料庫名稱。|  
 |**db_len_in_bytes**|**smallint**|資料庫名稱的字元長度 (以位元組為單位)。|  
-|**鼻祖**|**Nvarchar (514) **|引發交易的伺服器名稱。|  
+|**鼻祖**|**Nvarchar (514)**|引發交易的伺服器名稱。|  
 |**originator_len_in_bytes**|**smallint**|引發交易之伺服器的字元長度 (以位元組為單位)。|  
-|**orig_db**|**Nvarchar (514) **|引發交易的資料庫名稱。|  
+|**orig_db**|**Nvarchar (514)**|引發交易的資料庫名稱。|  
 |**orig_db_len_in_bytes**|**smallint**|引發交易之資料庫的字元長度 (以位元組為單位)。|  
 |**cmds_in_tran**|**int**|目前交易的複寫命令數目，用來決定何時要認可邏輯交易。|  
 |**is_boundedupdate_singleton**|**tinyint**|指定唯一資料行更新是否只影響單一資料列。|  
-|**begin_update_lsn**|**Nvarchar (64) **|用於唯一資料行更新的 LSN。|  
-|**delete_lsn**|**Nvarchar (64) **|刪除作為更新的一部分的 LSN。|  
-|**last_end_lsn**|**Nvarchar (64) **|邏輯交易的最後一個 LSN。|  
+|**begin_update_lsn**|**Nvarchar (64)**|用於唯一資料行更新的 LSN。|  
+|**delete_lsn**|**Nvarchar (64)**|刪除作為更新的一部分的 LSN。|  
+|**last_end_lsn**|**Nvarchar (64)**|邏輯交易的最後一個 LSN。|  
 |**fcomplete**|**tinyint**|指定命令是否為部分更新。|  
 |**fcompensated**|**tinyint**|指定交易是否涉及部分回復。|  
 |**fprocessingtext**|**tinyint**|指定交易是否包含二進位大型資料類型資料行。|  
 |**max_cmds_in_tran**|**int**|邏輯交易中的命令數目上限，如記錄讀取器代理程式所指定。|  
 |**begin_time**|**datetime**|交易開始的時間。|  
 |**commit_time**|**datetime**|認可交易的時間。|  
-|**session_id**|**int**|異動資料擷取記錄檔掃描工作階段的識別碼。 這個資料行會對應到[sys.dm_cdc_logscan_sessions](../../relational-databases/system-dynamic-management-views/change-data-capture-sys-dm-cdc-log-scan-sessions.md)中的**session_id**資料行。|  
-|**session_phase**|**int**|指出發生錯誤時工作階段所處階段的編號。 這個資料行會對應到[sys.dm_cdc_errors](../../relational-databases/system-dynamic-management-views/change-data-capture-sys-dm-cdc-errors.md)中的**phase_number**資料行。|  
+|**session_id**|**int**|異動資料擷取記錄檔掃描工作階段的識別碼。 這個資料行會對應到 [sys.dm_cdc_logscan_sessions](../../relational-databases/system-dynamic-management-views/change-data-capture-sys-dm-cdc-log-scan-sessions.md)中的 **session_id** 資料行。|  
+|**session_phase**|**int**|指出發生錯誤時工作階段所處階段的編號。 這個資料行會對應到 [sys.dm_cdc_errors](../../relational-databases/system-dynamic-management-views/change-data-capture-sys-dm-cdc-errors.md)中的 **phase_number** 資料行。|  
 |**is_known_cdc_tran**|**bit**|指出交易是由異動資料擷取所追蹤。<br /><br /> 0 = 交易複寫交易。<br /><br /> 1 = 異動資料擷取交易。|  
 |**error_count**|**int**|發生的錯誤數目。|  
   

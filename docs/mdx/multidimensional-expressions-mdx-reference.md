@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: owend
 ms.reviewer: owend
 author: minewiskan
-ms.openlocfilehash: 9358bec121704dba28739232c24dbb930cee7c30
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 6e524635d20f3d2bb669ac36d5b4b131af904ecf
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195585"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099144"
 ---
 # <a name="multidimensional-expressions-mdx-reference"></a>多維度運算式 (MDX) 參考
 
@@ -30,6 +30,6 @@ ms.locfileid: "92195585"
 ## <a name="see-also"></a>另請參閱  
  [使用 MDX 查詢多維度資料](/analysis-services/multidimensional-models/mdx/querying-multidimensional-data-with-mdx)   
  [XMLA&#41;的 Analysis Services 指令碼語言 &#40;ASSL ](/analysis-services/assl/analysis-services-scripting-language-assl-for-xmla)   
- [從分析資料源中取出資料](/analysis-services/adomd/multidimensional-models-adomd-net-client/retrieving-data-from-an-analytical-data-source?view=asallproducts-allversions)   
+ [從分析資料源中取出資料](/analysis-services/adomd/multidimensional-models-adomd-net-client/retrieving-data-from-an-analytical-data-source)   
  [定義指派和其他指令碼命令](/analysis-services/multidimensional-models/define-assignments-and-other-script-commands)  
   

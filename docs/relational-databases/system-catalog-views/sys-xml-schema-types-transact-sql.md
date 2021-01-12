@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.xml_schema_types catalog view
 ms.assetid: 441ba49d-f778-4fa1-98c4-ced375a01a34
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ced442c536a9c13f01e3a1ff0ea11e5629b0579f
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 2bd282bdecec59df5c1edf611cf2e2a8d6cfa08c
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542408"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097860"
 ---
 # <a name="sysxml_schema_types-transact-sql"></a>sys.xml_schema_types (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  針對每個 XML 架構元件，各傳回一個資料列，該元件是**T**類型的**symbol_space** 。  
+  針對每個 XML 架構元件，各傳回一個資料列，該元件是 **T** 類型的 **symbol_space** 。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

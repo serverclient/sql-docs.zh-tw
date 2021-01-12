@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - sysreplicationalerts system table
 ms.assetid: 6ed15828-8cca-4cf0-b2ff-1ecd0d8db11a
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: cce33fa91f6ea11cda33e622edd39ec764b2c2ce
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 2f44fb1f1b07b53705b45825955918c3026a2485
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537806"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097312"
 ---
 # <a name="sysreplicationalerts-transact-sql"></a>sysreplicationalerts (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -35,8 +35,8 @@ ms.locfileid: "89537806"
 |**alert_id**|**int**|警示的識別碼。|  
 |**status**|**int**|使用者自訂值：<br /><br /> **0** = Unserviced。<br /><br /> **1** = 服務。|  
 |**agent_type**|**int**|代理程式的類型：<br /><br /> **1** = 快照集代理程式。<br /><br /> **2** = 記錄讀取器代理程式。<br /><br /> **3** = 散發代理程式。<br /><br /> **4** = 合併代理程式。|  
-|**agent_id**|**int**|資料表中的代理程式識別碼 **MSsnapshot_agents**、 **MSlogreader_agents**、 **MSdistribution_agents**或 **MSmerge_agents**。|  
-|**error_id**|**int**|儲存在 **MSrepl_errors**中之錯誤的識別碼。|  
+|**agent_id**|**int**|資料表中的代理程式識別碼 **MSsnapshot_agents**、 **MSlogreader_agents**、 **MSdistribution_agents** 或 **MSmerge_agents**。|  
+|**error_id**|**int**|儲存在 **MSrepl_errors** 中之錯誤的識別碼。|  
 |**alert_error_code**|**int**|當記載這項記錄時，所引發之警示的訊息識別碼。|  
 |**time**|**datetime**|插入記錄的時間。|  
 |**publisher**|**sysname**|與引發這項警示之代理程式相關聯的發行者名稱。|  

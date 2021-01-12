@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.xml_schema_wildcards catalog view
 ms.assetid: 7cedfe9a-e99e-4777-8a28-98674b6e5cff
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 706db88cdc82c7b67105826091f826c62e7f3311
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 2cc2f255b528e07d075b29a3aabc0a110e2ba867
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89548622"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097815"
 ---
 # <a name="sysxml_schema_wildcards-transact-sql"></a>sys.xml_schema_wildcards (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  針對每個 XML 架構元件，各傳回一個資料列，該元件是 (**類型**的**V**) 或元素-萬用字元 (**類型**的**W**) ，兩者都是**N**的**symbol_space** 。  
+  針對每個 XML 架構元件，各傳回一個資料列，該元件是 Attribute-Wildcard (**類型** 的 **V**) 或 Element-Wildcard (**類型** 的 **W**) （兩者都有 **symbol_space** **N**）。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

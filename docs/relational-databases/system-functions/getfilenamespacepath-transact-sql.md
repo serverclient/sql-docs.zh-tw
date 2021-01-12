@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - GetFileNamespacePath function
 ms.assetid: b393ecef-baa8-4d05-a268-b2f309fce89a
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 046ff4071ae4ac45338d45916afeb9d2491d2d6d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 9ecda7d44603636ff12eef955dd83e7659cb9dc7
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88419572"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097479"
 ---
 # <a name="getfilenamespacepath-transact-sql"></a>GetFileNamespacePath (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -52,7 +52,7 @@ ms.locfileid: "88419572"
 |**1**|傳回以 `\\computer_name` 開始的完整 UNC 路徑。|  
   
  *\@選項*  
- 定義路徑之伺服器元件格式化方式的整數運算式。 * \@ 選項*可以有下列其中一個值：  
+ 定義路徑之伺服器元件格式化方式的整數運算式。 *\@ 選項* 可以有下列其中一個值：  
   
 |值|描述|  
 |-----------|-----------------|  
@@ -68,7 +68,7 @@ ms.locfileid: "88419572"
  當資料庫屬於 Always On 可用性群組時， **FileTableRootPath** 函數會傳回虛擬網路名稱 (VNN) ，而不是電腦名稱稱。  
   
 ## <a name="general-remarks"></a>一般備註  
- **GetFileNamespacePath**函式傳回的路徑是邏輯目錄或檔案路徑，格式如下：  
+ **GetFileNamespacePath** 函式傳回的路徑是邏輯目錄或檔案路徑，格式如下：  
   
  `\\<machine>\<instance-level FILESTREAM share>\<database-level directory>\<FileTable directory>\...`  
   

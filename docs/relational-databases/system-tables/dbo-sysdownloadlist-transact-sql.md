@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sysdownloadlist system table
 ms.assetid: 71087a4c-e829-488e-aa7d-a9476e2b4779
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 34e0ba69d668cd25b902f9decdf75c0039a74fc9
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: b523812f7923f6ba68a40fe70ab2076950a3463a
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551052"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098718"
 ---
 # <a name="dbosysdownloadlist-transact-sql"></a>dbo.sysdownloadlist (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -46,6 +46,6 @@ ms.locfileid: "89551052"
 |**status**|**tinyint**|作業的狀態：<br /><br /> **0** = 尚未下載<br /><br /> **1** = 成功下載|  
 |**deleted_object_name**|**sysname**|已刪除的物件名稱。|  
   
- <sup>1</sup> **object_id** 資料行可以是 **-1**的值，如果 **operation_code** 資料行是 [刪除] 的值，就會對應到 [全部] 的值。  
+ <sup>1</sup> **object_id** 資料行可以是 **-1** 的值，如果 **operation_code** 資料行是 [刪除] 的值，就會對應到 [全部] 的值。  
   
   

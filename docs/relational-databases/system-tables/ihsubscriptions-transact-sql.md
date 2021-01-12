@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - IHsubscriptions system table
 ms.assetid: 9ec21119-35f1-4e39-abaa-b2c790c485b1
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: b8dafdba96014fe7c60524a34d76d8bc36792762
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 163bf870e26fefc58181a5d3abcd28960195e2e5
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540922"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097416"
 ---
 # <a name="ihsubscriptions-transact-sql"></a>IHsubscriptions (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **IHsubscriptions**系統資料表會針對使用目前散發者的非 SQL Server 發行者，針對發行集的每個訂閱，各包含一個資料列。 這份資料表儲存在散發資料庫中。  
+  **IHsubscriptions** 系統資料表會針對使用目前散發者的非 SQL Server 發行者，針對發行集的每個訂閱，各包含一個資料列。 這份資料表儲存在散發資料庫中。  
   
 ## <a name="definition"></a>定義  
   

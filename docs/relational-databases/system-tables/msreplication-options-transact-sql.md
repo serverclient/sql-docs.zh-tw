@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSreplication_options system table
 ms.assetid: 23cf10d7-8bc1-4368-b5eb-e5576421e776
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 096eb8379363e3a193ecea12593638e033c3b1ec
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 263436f5bd3ff691191d74b29c7bced426ba4599
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538231"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098138"
 ---
 # <a name="msreplication_options-transact-sql"></a>MSreplication_options (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSreplication_options**資料表會儲存複寫在內部使用的中繼資料。 此資料表儲存在 **master** 資料庫中。  
+  **MSreplication_options** 資料表會儲存複寫在內部使用的中繼資料。 此資料表儲存在 **master** 資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
@@ -36,7 +36,7 @@ ms.locfileid: "89538231"
 |**value**|**bit**|僅供內部使用。|  
 |**major_version**|**int**|僅供內部使用。|  
 |**minor_version**|**int**|僅供內部使用。|  
-|**修訂**|**int**|僅供內部使用。|  
+|**revision**|**int**|僅供內部使用。|  
 |**install_failures**|**int**|僅供內部使用。|  
   
 ## <a name="see-also"></a>另請參閱  

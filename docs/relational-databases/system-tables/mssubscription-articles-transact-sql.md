@@ -16,26 +16,26 @@ dev_langs:
 helpviewer_keywords:
 - MSsubscription_articles system table
 ms.assetid: dbc1737f-261e-4017-b9cd-703b9fc4ac78
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: f1f046a44c3dcfbe2a44de93efe2185600633e3c
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: c8ae84063723c76745776a4e530f7fb8d63b008a
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89523631"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098507"
 ---
 # <a name="mssubscription_articles-transact-sql"></a>MSsubscription_articles (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSsubscription_articles**資料表包含佇列訂閱中的文章相關資訊。 這份資料表只能針對佇列更新和立即更新的複寫類型加以擴展 (佇列更新被當作容錯移轉)。  
+  **MSsubscription_articles** 資料表包含佇列訂閱中的文章相關資訊。 這份資料表只能針對佇列更新和立即更新的複寫類型加以擴展 (佇列更新被當作容錯移轉)。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
 |**agent_id**|**int**|服務這個發行項的代理程式識別碼。|  
-|**>artid**|**int**|**Sysarticles**資料表中的發行項識別碼。|  
-|**文章**|**sysname**|**Sysarticles**資料表中的發行項名稱。|  
-|**dest_table**|**sysname**|**Sysarticles**資料表中的目的地資料表名稱。|  
+|**>artid**|**int**|**Sysarticles** 資料表中的發行項識別碼。|  
+|**文章**|**sysname**|**Sysarticles** 資料表中的發行項名稱。|  
+|**dest_table**|**sysname**|**Sysarticles** 資料表中的目的地資料表名稱。|  
 |**擁有者**|**sysname**|訂閱的擁有者。|  
 |**cft_table**|**sysname**|這個佇列更新複寫類型之發行項的衝突資料表名稱。|  
   

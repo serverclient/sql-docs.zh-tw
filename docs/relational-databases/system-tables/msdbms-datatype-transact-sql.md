@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSdbms_datatype system table
 ms.assetid: 606168cc-79a8-442f-ab43-936f8f884d72
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 9fc19ad90c8dcf73c9e0bc368b30ee41ca4fa125
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: daf45f65ddc0e7ea496a60a3da8b9fc9d270fc73
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89524964"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098207"
 ---
 # <a name="msdbms_datatype-transact-sql"></a>MSdbms_datatype (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSdbms_datatype**資料表包含在每個支援的資料庫管理系統上的原生資料類型完整清單 (DBMS) 用來作為異質資料庫複寫中的「發行者」或「訂閱者」。 此資料表儲存在 **msdb** 資料庫中。  
+  **MSdbms_datatype** 資料表包含在每個支援的資料庫管理系統上的原生資料類型完整清單 (DBMS) 用來作為異質資料庫複寫中的「發行者」或「訂閱者」。 此資料表儲存在 **msdb** 資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  

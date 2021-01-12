@@ -1,6 +1,6 @@
 ---
 description: sys.dm_exec_cursors (Transact-SQL)
-title: sys. dm_exec_cursors (Transact-sql) |Microsoft Docs
+title: sys.dm_exec_cursors (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/09/2016
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_exec_cursors dynamic management function
 ms.assetid: f520b63c-36af-40f1-bf71-6901d6331d3d
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 351f97ed08d1a6a79f8611d19842dc93138277ce
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 8ab1ed9e722f2363c0568932e7eb337bc09dbe41
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543923"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098996"
 ---
 # <a name="sysdm_exec_cursors-transact-sql"></a>sys.dm_exec_cursors (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -53,8 +53,8 @@ dm_exec_cursors (session_id | 0 )
 |**name**|**nvarchar(256)**|由使用者自訂的資料指標名稱。|  
 |**properties**|**nvarchar(256)**|指定資料指標的屬性。 下列屬性的值會串連來形成這個資料行的值：<br />宣告介面<br />資料指標類型 <br />資料指標並行<br />資料指標範圍<br />資料指標巢狀層級<br /><br /> 例如，在此資料行中傳回的值可能是 "TSQL &#124; Dynamic &#124; 開放式 &#124; Global (0) "。|  
 |**sql_handle**|**varbinary(64)**|宣告資料指標的批次文字控制代碼。|  
-|**statement_start_offset**|**int**|目前執行的批次或預存程序中的字元數，目前執行的陳述式即從該處開始。 可以與 **sql_handle**、 **statement_end_offset**和 [sys. dm_exec_sql_text](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md) 動態管理函數一起使用，以取得要求的目前執行中語句。|  
-|**statement_end_offset**|**int**|目前執行的批次或預存程序中的字元數，目前執行的陳述式即在該處結束。 可以與 **sql_handle**、 **statement_start_offset**和 **sys. dm_exec_sql_text** 動態管理函數一起使用，以取得要求的目前執行中語句。|  
+|**statement_start_offset**|**int**|目前執行的批次或預存程序中的字元數，目前執行的陳述式即從該處開始。 可以與 **sql_handle**、 **statement_end_offset** 和 [sys.dm_exec_sql_text](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md) 動態管理函數一起使用，以取得要求的目前執行中語句。|  
+|**statement_end_offset**|**int**|目前執行的批次或預存程序中的字元數，目前執行的陳述式即在該處結束。 可以與 **sql_handle**、 **statement_start_offset** 和 **sys.dm_exec_sql_text** 動態管理函數一起使用，以取得要求的目前執行中語句。|  
 |**plan_generation_num**|**bigint**|可用來在重新編譯之後區分計畫執行個體的序號。|  
 |**creation_time**|**datetime**|建立這個資料指標的時間戳記。|  
 |**is_open**|**bit**|指定資料指標是否開啟。|  
@@ -99,10 +99,10 @@ dm_exec_cursors (session_id | 0 )
   
  下表提供有關資料指標範圍的資訊，並包括屬性資料行的可能值。  
   
-|範圍|描述|  
+|影響範圍|描述|  
 |-----------|-----------------|  
 |本機|指定已建立資料指標的批次、預存程序或觸發程序，其資料指標的範圍為本機範圍。|  
-|全球|指定連接的資料指標範圍為全域。|  
+|全域|指定連接的資料指標範圍為全域。|  
   
 ## <a name="examples"></a>範例  
   

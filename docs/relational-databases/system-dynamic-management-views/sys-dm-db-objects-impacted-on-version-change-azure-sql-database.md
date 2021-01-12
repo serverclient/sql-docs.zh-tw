@@ -17,16 +17,16 @@ helpviewer_keywords:
 - dm_db_objects_impacted_on_version_change
 - sys.dm_db_objects_impacted_on_version_change
 ms.assetid: b94af834-c4f6-4a27-80a6-e8e71fa8793a
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 monikerRange: = azuresqldb-current
 ms.custom: seo-dt-2019
-ms.openlocfilehash: 2996d419ae22b58c065eb2b6dbcdae6786703420
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: f7830e874026b9d5af250fde294c8c72294d013d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97466849"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097698"
 ---
 # <a name="sysdm_db_objects_impacted_on_version_change-azure-sql-database"></a>sys.dm_db_objects_impacted_on_version_change (Azure SQL Database)
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
@@ -66,7 +66,7 @@ class  class_desc        major_id    minor_id    dependency
 ### <a name="how-to-update-impacted-objects"></a>如何更新受影響的物件  
  以下的步驟順序說明了在六月即將發生的服務版本升級之後所要採取的更正動作。  
   
-|順序|受影響的物件|更正動作|  
+|單|受影響的物件|更正動作|  
 |-----------|---------------------|-----------------------|  
 |1|**索引數**|重建 **sys.dm_db_objects_impacted_on_version_change** 所識別的任何索引，例如：  `ALTER INDEX ALL ON <table> REBUILD`<br />或<br />`ALTER TABLE <table> REBUILD`|  
 |2|**Object**|在重新計算基礎資料表中的幾何和地理資料之後，必須重新驗證 **sys.dm_db_objects_impacted_on_version_change** 所識別的所有條件約束。 請針對條件約束使用 ALTER TABLE 重新驗證。 <br />例如： <br />`ALTER TABLE <tab> WITH CHECK CHECK CONSTRAINT <constraint name>`<br />或<br />`ALTER TABLE <tab> WITH CHECK CONSTRAINT ALL`|  

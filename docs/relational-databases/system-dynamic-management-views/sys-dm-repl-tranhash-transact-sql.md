@@ -1,6 +1,6 @@
 ---
 description: sys.dm_repl_tranhash (Transact-SQL)
-title: sys. dm_repl_tranhash (Transact-sql) |Microsoft Docs
+title: sys.dm_repl_tranhash (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_repl_tranhash dynamic management view
 ms.assetid: 0cc52338-e805-4ed4-9835-b19bbf72448e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 35bb540ff2b73a44de324a51937552ae7cc3ec56
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: d099f878fd2507d0f491723ffc494ce335246843
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89536881"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098841"
 ---
 # <a name="sysdm_repl_tranhash-transact-sql"></a>sys.dm_repl_tranhash (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,8 +37,8 @@ ms.locfileid: "89536881"
 |**hashed_trans**|**bigint**|在目前批次中複寫的認可交易數。|  
 |**completed_trans**|**bigint**|到目前為止完成的交易數。|  
 |**compensated_trans**|**bigint**|包含部分回復的交易數。|  
-|**first_begin_lsn**|**Nvarchar (64) **|目前批次中的最早開始記錄序號 (LSN)。|  
-|**last_commit_lsn**|**Nvarchar (64) **|目前批次中的最後認可 LSN。|  
+|**first_begin_lsn**|**Nvarchar (64)**|目前批次中的最早開始記錄序號 (LSN)。|  
+|**last_commit_lsn**|**Nvarchar (64)**|目前批次中的最後認可 LSN。|  
   
 ## <a name="permissions"></a>權限  
  需要發行集資料庫的 VIEW DATABASE STATE 許可權，才能呼叫 **dm_repl_tranhash**。  

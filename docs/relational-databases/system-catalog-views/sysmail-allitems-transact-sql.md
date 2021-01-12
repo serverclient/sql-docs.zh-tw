@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - sysmail_allitems database mail view
 ms.assetid: 21fb8432-7677-4435-902f-64a58bba4cbb
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 9eb8d8b48203b047df830670eb88b0956d04c4dc
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 6bc9b58549bbc20fe66caaf2adc61edd4345acd7
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537954"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096653"
 ---
 # <a name="sysmail_allitems-transact-sql"></a>sysmail_allitems (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -39,13 +39,13 @@ ms.locfileid: "89537954"
 |**收件者**|**varchar(max)**|訊息收件者的電子郵件地址。|  
 |**copy_recipients**|**varchar(max)**|訊息副本收件者的電子郵件地址。|  
 |**blind_copy_recipients**|**varchar(max)**|名稱未顯示於訊息標頭之訊息副本收件者的電子郵件地址。|  
-|**subject**|**Nvarchar (510) **|訊息的主旨。|  
+|**subject**|**Nvarchar (510)**|訊息的主旨。|  
 |**body**|**varchar(max)**|訊息的主體。|  
-|**body_format**|**Varchar (20) **|訊息的主體格式。 可能的值是 TEXT 和 HTML。|  
-|**importance**|**Varchar (6) **|訊息的 **重要性** 參數。|  
-|**靈敏度**|**Varchar (12) **|訊息的 **敏感度** 參數。|  
+|**body_format**|**Varchar (20)**|訊息的主體格式。 可能的值是 TEXT 和 HTML。|  
+|**importance**|**Varchar (6)**|訊息的 **重要性** 參數。|  
+|**靈敏度**|**Varchar (12)**|訊息的 **敏感度** 參數。|  
 |**file_attachments**|**varchar(max)**|附加至電子郵件訊息中的檔案名稱清單，用分號分隔各檔案名稱。|  
-|**attachment_encoding**|**Varchar (20) **|郵件附加檔案的類型。|  
+|**attachment_encoding**|**Varchar (20)**|郵件附加檔案的類型。|  
 |**查詢**|**varchar(max)**|郵件程式執行的查詢。|  
 |**execute_query_database**|**sysname**|郵件程式執行查詢所在的資料庫內容。|  
 |**attach_query_result_as_file**|**bit**|當值是 0 時，查詢結果會包含在電子郵件訊息的主體中，在主體的內容之後。 當值是 1 時，會以附加檔案的方式傳回結果。|  
@@ -57,7 +57,7 @@ ms.locfileid: "89537954"
 |**send_request_date**|**datetime**|訊息置於郵件佇列的日期和時間。|  
 |**send_request_user**|**sysname**|提交訊息的使用者。 這是 Database Mail 程序的使用者內容，不是訊息的「寄件者:」欄位。|  
 |**sent_account_id**|**int**|用來傳送訊息之 Database Mail 帳戶的識別碼。|  
-|**sent_status**|**Varchar (8) **|郵件的狀態。 可能的值包括：<br /><br /> **已傳送** -郵件已傳送。<br /><br /> **尚未** 傳送-Database mail 仍在嘗試傳送訊息。<br /><br /> **重試** -Database Mail 無法傳送訊息，但正在嘗試重新傳送。<br /><br /> **失敗** -Database mail 無法傳送訊息。|  
+|**sent_status**|**Varchar (8)**|郵件的狀態。 可能的值包括：<br /><br /> **已傳送** -郵件已傳送。<br /><br /> **尚未** 傳送-Database mail 仍在嘗試傳送訊息。<br /><br /> **重試** -Database Mail 無法傳送訊息，但正在嘗試重新傳送。<br /><br /> **失敗** -Database mail 無法傳送訊息。|  
 |**sent_date**|**datetime**|訊息傳送的日期和時間。|  
 |**last_mod_date**|**datetime**|資料列上次修改的日期和時間。|  
 |**last_mod_user**|**sysname**|上次修改資料列的使用者。|  

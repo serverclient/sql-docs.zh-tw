@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - log_shipping_monitor_error_detail system table
 ms.assetid: 0c38a625-60d2-4ee2-bcf3-2ba367914220
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 0f606f93697308a690451583267a5d77383fa723
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 131ee9bfe37dce356c6e1e4e604e8e8f0c3df2c1
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89547177"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097444"
 ---
 # <a name="log_shipping_monitor_error_detail-transact-sql"></a>log_shipping_monitor_error_detail (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -50,7 +50,7 @@ ms.locfileid: "89547177"
   
  除了儲存在遠端監視伺服器之外，主伺服器的相關資訊也會儲存在主伺服器的 **log_shipping_monitor_error_detail** 資料表中，而次要伺服器的相關資訊也會儲存在次要伺服器的 **log_shipping_monitor_error_detail** 資料表中。  
   
- 若要識別代理程式會話，請使用 **agent_id**、 **agent_type**和 **session_id**資料行。 依 **log_time** 排序，以查看錯誤的記錄順序。  
+ 若要識別代理程式會話，請使用 **agent_id**、 **agent_type** 和 **session_id** 資料行。 依 **log_time** 排序，以查看錯誤的記錄順序。  
   
 ## <a name="see-also"></a>另請參閱  
  [關於記錄傳送 &#40;SQL Server&#41;](../../database-engine/log-shipping/about-log-shipping-sql-server.md)   

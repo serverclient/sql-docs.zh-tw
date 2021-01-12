@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: owend
 ms.reviewer: owend
 author: minewiskan
-ms.openlocfilehash: d352a12a4567fc88d2d037862c4cab2f1cd20fe0
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: af9ff1465c23231637cac636bb63702e79cf054c
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92193960"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098331"
 ---
 # <a name="mdx-data-definition---create-measure"></a>MDX 資料定義 - CREATE MEASURE
 
@@ -41,9 +41,9 @@ CREATE MEASURE Table_Name[Measure_Name] = DAX_Expression
  傳回單一純量值的有效 DAX 運算式。  
   
 ## <a name="remarks"></a>備註  
- *Measure_Name*必須以括弧括住。  
+ *Measure_Name* 必須以括弧括住。  
   
- CREATE MEASURE 語句只能在 MDX 腳本定義內部使用;請參閱 [MdxScript 元素 &#40;ASSL&#41;](/analysis-services/assl/objects/mdxscript-element-assl?view=asallproducts-allversions)。  
+ CREATE MEASURE 語句只能在 MDX 腳本定義內部使用;請參閱 [MdxScript 元素 &#40;ASSL&#41;](/analysis-services/assl/objects/mdxscript-element-assl)。  
   
  您也可以定義供單一查詢使用的導出成員。 若要定義受限於單一查詢的導出成員，您可以在 SELECT 陳述式中使用 WITH 子句。 如需詳細資訊，請參閱 [在 MDX 中建立量值](/analysis-services/multidimensional-models/mdx/mdx-building-measures)。  
   

@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - syspublications system table
 ms.assetid: a86eb4f5-1f7b-493e-af55-3d15cf878228
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 20b5615cc4f0b11b05eb69f4233e20f7a7379378
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 8ba6fbe6033bff1f113a0ee128357d49a1f57e7f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550964"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097310"
 ---
 # <a name="syspublications-transact-sql"></a>syspublications (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -50,7 +50,7 @@ ms.locfileid: "89550964"
 |**autogen_sync_procs**|**bit**|指定是否在發行者端產生立即更新訂閱的同步處理預存程序。 **1** 表示在發行者端產生它。|  
 |**保留**|**int**|給定發行集的變更儲存量 (以小時為單位)。|  
 |**allowed_queued_tran**|**bit**|指定是否已啟用在訂閱者端將變更放入佇列中，直到可以在發行者端套用這些變更為止。 如果是 **1**，就會將訂閱者端的變更排入佇列。|  
-|**snapshot_in_defaultfolder**|**bit**|指定是否將快照集檔案儲存在預設資料夾中。<br /><br /> **0** = 快照集檔案已儲存在 *alternate_snapshot_folder*所指定的替代位置。<br /><br /> **1** = 快照集檔案可以在預設資料夾中找到。|  
+|**snapshot_in_defaultfolder**|**bit**|指定是否將快照集檔案儲存在預設資料夾中。<br /><br /> **0** = 快照集檔案已儲存在 *alternate_snapshot_folder* 所指定的替代位置。<br /><br /> **1** = 快照集檔案可以在預設資料夾中找到。|  
 |**alt_snapshot_folder**|**nvarchar(255)**|指定快照集替代資料夾的位置。|  
 |**pre_snapshot_script**|**nvarchar(255)**|指定 **.sql** 檔案位置的指標。 在訂閱者端套用快照集時，散發代理程式會在執行任何複寫的物件指令碼之前，先執行前快照集 (pre-snapshot) 指令碼。|  
 |**post_snapshot_script**|**nvarchar(255)**|指定 **.sql** 檔案位置的指標。 在初始同步處理期間，散發代理程式會先套用所有其他複寫的物件指令碼和資料，然後才執行後快照集 (post-snapshot) 指令碼。|  
@@ -59,7 +59,7 @@ ms.locfileid: "89550964"
 |**ftp_port**|**int**|散發者的 FTP 服務通訊埠編號。 指定發行集快照集檔案所在的位置，以便散發代理程式能夠加以收取|  
 |**ftp_subdirectory**|**nvarchar(255)**|指定在發行集支援利用 FTP 來傳播快照集時，散發代理程式能夠從中收取快照集檔案的位置。|  
 |**ftp_login**|**sysname**|用於連接到 FTP 服務的使用者名稱。|  
-|**ftp_password**|**Nvarchar (524) **|用來連接到 FTP 服務的使用者密碼。|  
+|**ftp_password**|**Nvarchar (524)**|用來連接到 FTP 服務的使用者密碼。|  
 |**allow_dts**|**bit**|指定發行集是否允許轉換資料。 **1** 指定允許 DTS 轉換。|  
 |**allow_subscription_copy**|**bit**|指定是否已啟用複製訂閱這個發行集之訂閱資料庫的能力。 **1** 表示允許複製。|  
 |**centralized_conflicts**|**bit**|指定是否將衝突記錄儲存在發行者端：<br /><br /> **0** = 衝突記錄同時儲存在發行者端和造成衝突的訂閱者端。<br /><br /> **1** = 將衝突記錄儲存在發行者端。|  

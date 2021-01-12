@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - log_shipping_monitor_primary system table
 ms.assetid: 5f629a29-1a62-40e6-ae33-6f6b7dd09a36
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: f349cd5cfc01141ea7127847cb9006adfeaa3bad
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 076398da53bf4886a0b8e3f387df949d29cb8b03
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89547157"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098688"
 ---
 # <a name="log_shipping_monitor_primary-transact-sql"></a>log_shipping_monitor_primary (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "89547157"
 |**backup_threshold**|**int**|在產生警示之前，備份作業之間所能經歷的時間 (以分鐘為單位)。|  
 |**threshold_alert**|**int**|當超出備份臨界值時，所產生的警示。|  
 |**threshold_alert_enabled**|**bit**|決定是否啟用備份臨界值警示。 1 = 已啟用。<br /><br /> 0 = 已停用。|  
-|**last_backup_file**|**Nvarchar (500) **|最近之交易記錄備份的絕對路徑。|  
+|**last_backup_file**|**Nvarchar (500)**|最近之交易記錄備份的絕對路徑。|  
 |**last_backup_date**|**datetime**|在主要資料庫中，前一個交易記錄備份作業的日期和時間。|  
 |**last_backup_date_utc**|**datetime**|在主要資料庫中，前一個交易記錄備份作業的日期和時間 (以國際標準時間 (UTC) 為單位)。|  
 |**history_retention_period**|**int**|給定主要資料庫的記錄傳送記錄，在刪除之前所保留的時間 (以分鐘為單位)。|  

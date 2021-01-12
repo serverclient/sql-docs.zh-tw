@@ -17,20 +17,20 @@ dev_langs:
 helpviewer_keywords:
 - syssessions system table
 ms.assetid: 187819b6-c7f4-4a26-b74c-0a89e96695cf
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 9f8a5cd825aba164796ec394709c8188367572cf
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 67e34792baf2dbcb49677ea13746dd9cd53034a6
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540993"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098284"
 ---
 # <a name="dbosyssessions-transact-sql"></a>dbo.syssessions (Transact-SQL)
 
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-每次啟動 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent 時，它都會建立新的工作階段。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent 利用工作階段來保留 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent 服務非預期地重新啟動或停止時的作業狀態。 **Syssessions**資料表的每個資料列都包含一個會話的相關資訊。 您可以使用 **sysjobactivity** 資料表來查看每個會話結束時的工作狀態。  
+每次啟動 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent 時，它都會建立新的工作階段。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent 利用工作階段來保留 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent 服務非預期地重新啟動或停止時的作業狀態。 **Syssessions** 資料表的每個資料列都包含一個會話的相關資訊。 您可以使用 **sysjobactivity** 資料表來查看每個會話結束時的工作狀態。  
   
  此資料表儲存在 **msdb** 資料庫中。  
   

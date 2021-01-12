@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSmerge_settingshistory system table
 ms.assetid: 0bdf2d5f-5502-44cd-aa9d-2d5006ad20ce
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 841f2986d09bd048f857e45a8bde3c5db6d0fc70
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 10beb9d65bba15ef0b21acd2242fcbaf1d515dca
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545598"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098578"
 ---
 # <a name="msmerge_settingshistory-transact-sql"></a>MSmerge_settingshistory (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSmerge_settingshistory**資料表是用來維護合併式複寫之發行項和發行集屬性的變更歷程記錄，每個對合併式複寫拓撲進行的變更都有一個資料列。 另外，這份資料表也儲存了何時設定初始屬性設定的相關資訊。 這份資料表儲存在發行集和訂閱資料庫中。  
+  **MSmerge_settingshistory** 資料表是用來維護合併式複寫之發行項和發行集屬性的變更歷程記錄，每個對合併式複寫拓撲進行的變更都有一個資料列。 另外，這份資料表也儲存了何時設定初始屬性設定的相關資訊。 這份資料表儲存在發行集和訂閱資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
@@ -39,7 +39,7 @@ ms.locfileid: "89545598"
 |**propertyname**|**sysname**|設定或變更的屬性名稱|  
 |**previousvalue**|**sysname**|如果變更了屬性，便是先前的屬性值。|  
 |**newvalue**|**sysname**|屬性所改成的值，或建立時的值。|  
-|**eventtext**|**Nvarchar (2000) **|描述事件的字元字串。|  
+|**eventtext**|**Nvarchar (2000)**|描述事件的字元字串。|  
   
 ## <a name="see-also"></a>另請參閱  
  [複寫資料表 &#40;Transact-sql&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   

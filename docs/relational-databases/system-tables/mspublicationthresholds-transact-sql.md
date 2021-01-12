@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSpublicationthresholds system table
 ms.assetid: 9da3879f-b1f4-4ab4-abd4-a9a8ac395eba
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 8f43705f8fec92e39e55a4fa4f62cf24aa9f25be
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 3fc1c3f5290e5c3f540e070c2de5790414ffb6dd
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540297"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098213"
 ---
 # <a name="mspublicationthresholds-transact-sql"></a>MSpublicationthresholds (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSpublicationthresholds**資料表是用來追蹤發行集的複寫效能標準，每個監視的臨界值都有一個資料列。 這份資料表儲存在散發資料庫中。  
+  **MSpublicationthresholds** 資料表是用來追蹤發行集的複寫效能標準，每個監視的臨界值都有一個資料列。 這份資料表儲存在散發資料庫中。  
   
 |資料行名稱|資料類型|描述|  
 |-----------------|---------------|-----------------|  
