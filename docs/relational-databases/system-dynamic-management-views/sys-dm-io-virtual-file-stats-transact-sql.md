@@ -21,17 +21,17 @@ ms.assetid: fa3e321f-6fe5-45ff-b397-02a0dd3d6b7d
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: d7e5e19b8add37d3a544cfb75328f060d4551585
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 48292ef07266a6dff28479a4f08e09d0be824d93
+ms.sourcegitcommit: e40e75055c1435c5e3f9b6e3246be55526807b4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98101566"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98151290"
 ---
 # <a name="sysdm_io_virtual_file_stats-transact-sql"></a>sys.dm_io_virtual_file_stats (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
 
-  傳回資料和記錄檔的 I/O 統計資料。 這個動態管理檢視會取代 [fn_virtualfilestats](../../relational-databases/system-functions/sys-fn-virtualfilestats-transact-sql.md) 函數。  
+  傳回資料和記錄檔的 I/O 統計資料。 這個動態管理函數會取代 [fn_virtualfilestats](../../relational-databases/system-functions/sys-fn-virtualfilestats-transact-sql.md) 函式。  
   
 > [!NOTE]  
 >  若要從呼叫這個 [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] ，請使用名稱 **sys.dm_pdw_nodes_io_virtual_file_stats**。 

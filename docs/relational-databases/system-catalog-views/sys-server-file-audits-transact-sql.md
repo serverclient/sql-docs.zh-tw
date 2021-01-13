@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 553288a0-be57-4d79-ae53-b7cbd065e127
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: aa516146c4db55cbfcb3b3f3817cdcf9d11216be
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: b72b618559f02fed01e1760168f72ea4a12065ae
+ms.sourcegitcommit: e40e75055c1435c5e3f9b6e3246be55526807b4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98096703"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98151281"
 ---
 # <a name="sysserver_file_audits-transact-sql"></a>sys.server_file_audits (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "98096703"
 |create_date|**datetime**|建立檔案稽核時的 UTC 日期。|  
 |modify_date|**datatime**|上次修改檔案稽核的 UTC 日期。|  
 |principal_id|**int**|在伺服器上註冊之稽核擁有者的識別碼。|  
-|類型|**char(2)**|稽核類型：<br /><br /> 0 = NT 安全性事件記錄檔<br /><br /> 1 = NT 應用程式事件記錄檔<br /><br /> 2 = 檔案系統上的檔案|  
+|type|**char(2)**|稽核類型：<br /><br /> SL = NT 安全性事件記錄檔<br /><br /> AL = NT 應用程式事件記錄檔<br /><br /> FL = 檔案系統上的檔案|  
 |type_desc|**nvarchar(60)**|稽核類型描述。|  
 |on_failure|**tinyint**|失敗時條件。<br /><br /> 0 = 繼續<br /><br /> 1 = 關閉伺服器執行個體<br /><br /> 2 = 讓作業失敗|  
 |on_failure_desc|**nvarchar(60)**|寫入動作項目失敗：<br /><br /> CONTINUE<br /><br /> SHUTDOWN SERVER INSTANCE<br /><br /> FAIL OPERATION|  
