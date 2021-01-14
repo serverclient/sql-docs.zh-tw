@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 181d1e22-379c-45d1-b03c-e1e22ff14164
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 232900f14580db1e09fe0b54c4dfcd77e5310283
-ms.sourcegitcommit: 6be9a0ff0717f412ece7f8ede07ef01f66ea2061
+ms.openlocfilehash: 6374bdcc748ab528c4cb70c2db6387d3b55f6cb6
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "92257547"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171530"
 ---
 # <a name="overview-importing-data-from-tables-master-data-services"></a>概觀：從資料表匯入資料 (Master Data Services)
 
@@ -50,10 +50,10 @@ ms.locfileid: "92257547"
      您可以使用暫存的預存程序或 [!INCLUDE[ssMDSmdm](../includes/ssmdsmdm-md.md)] 來載入資料。  
   
 > [!NOTE]  
->  [!INCLUDE[ssSQL15](../includes/sssql15-md.md)]已淘汰對 [!INCLUDE[ssKilimanjaro](../includes/sskilimanjaro-md.md)] 暫存處理序提供支援。  
+>  [!INCLUDE[ssSQL15](../includes/sssql16-md.md)]已淘汰對 [!INCLUDE[ssKilimanjaro](../includes/sskilimanjaro-md.md)] 暫存處理序提供支援。  
   
 ## <a name="deactivating-and-deleting-members-mds"></a>停用和刪除成員 (MDS)  
- 停用表示可以重新啟用該成員。 如果重新啟用成員，即會還原成員在階層和集合中的屬性及成員資格。 之前的所有交易會完整無缺。 系統管理員可以在主要資料的 [版本管理] **** 功能區域中，看到停用的交易。  
+ 停用表示可以重新啟用該成員。 如果重新啟用成員，即會還原成員在階層和集合中的屬性及成員資格。 之前的所有交易會完整無缺。 系統管理員可以在主要資料的 [版本管理]  功能區域中，看到停用的交易。  
   
  刪除表示從系統中永久清除該成員。 該成員的所有交易、所有關聯性及所有屬性都會遭到永久刪除。  
   

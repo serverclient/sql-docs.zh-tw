@@ -21,12 +21,12 @@ ms.assetid: f63c4914-1272-43ef-b135-fe1aabd953e0
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3b38844c891edaf9a7592a2dd573c86cc5fa1fcb
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 2db4a28a9199cc090f18cc1f79d8e755c621c7fd
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98097543"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172140"
 ---
 # <a name="sysdm_resource_governor_workload_groups-transact-sql"></a>sys.dm_resource_governor_workload_groups (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "98097543"
 |group_id|**int**|工作負載群組的識別碼。 不可為 Null。|  
 |NAME|**sysname**|工作負載群組的名稱。 不可為 Null。|  
 |pool_id|**int**|資源集區的識別碼。 不可為 Null。|  
-|external_pool_id|**int**|**適用** 于：開頭為 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 。<br /><br /> 外部資源集區的識別碼。 不可為 Null。|  
+|external_pool_id|**int**|**適用** 于：開頭為 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 。<br /><br /> 外部資源集區的識別碼。 不可為 Null。|  
 |statistics_start_time|**datetime**|針對工作負載群組重設之統計資料集合的時間。 不可為 Null。|  
 |total_request_count|**bigint**|已在工作負載群組中完成之要求的累計計數。 不可為 Null。|  
 |total_queued_request_count|**bigint**|到達 GROUP_MAX_REQUESTS 限制後所佇列之要求的累計計數。 不可為 Null。|  
@@ -65,7 +65,7 @@ ms.locfileid: "98097543"
 |group_max_requests|**int**|並行要求之最大數目的目前設定。 不可為 Null。|  
 |max_dop|**int**|已針對工作負載群組設定平行處理原則的最大程度。 預設值為 0 時，使用全域設定。 不可為 Null。| 
 |effective_max_dop|**int**|**適用** 于：開頭為 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 。<br /><br />工作負載群組的有效平行處理原則最大程度。 不可為 Null。| 
-|total_cpu_usage_preemptive_ms|**bigint**|**適用** 于：開頭為 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 。<br /><br />工作負載群組的先占式模式排程時，所使用的總 CPU 時間（以毫秒為單位）。 不可為 Null。<br /><br />若要執行 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 外部的程式碼 (例如，擴充預存程序和分散式查詢)，執行緒必須在非先佔式排程器的控制之外執行。 若要這麼做，工作者必須切換到先佔式模式。| 
+|total_cpu_usage_preemptive_ms|**bigint**|**適用** 于：開頭為 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 。<br /><br />工作負載群組的先占式模式排程時，所使用的總 CPU 時間（以毫秒為單位）。 不可為 Null。<br /><br />若要執行 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 外部的程式碼 (例如，擴充預存程序和分散式查詢)，執行緒必須在非先佔式排程器的控制之外執行。 若要這麼做，工作者必須切換到先佔式模式。| 
 |request_max_memory_grant_percent_numeric|**float**|**適用** 于：開頭為 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 。<br /><br />單一要求之最大記憶體授與的目前設定 (以百分比為單位)。 不可為 Null。| 
 |pdw_node_id|**int**|**適用** 于： [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> 此散發所在之節點的識別碼。|  
   

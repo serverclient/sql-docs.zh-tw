@@ -18,12 +18,12 @@ ms.assetid: ''
 author: jovanpop-msft
 ms.author: jovanpop
 monikerRange: =azuresqldb-current||>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 57a595a2bcb78d86c3a770db6b584974c229a0df
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 9c01a9e02576d666c39df13dc6e7e01f6d622a7d
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97483650"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98169870"
 ---
 # <a name="automatic-tuning"></a>自動微調
 [!INCLUDE[sqlserver2017-asdb](../../includes/applies-to-version/sqlserver2017-asdb.md)]
@@ -99,7 +99,7 @@ SET AUTOMATIC_TUNING ( FORCE_LAST_GOOD_PLAN = ON );
 
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 提供在查詢存放區中監視效能和修正問題所需的所有必要的視圖和程式。
 
-在中 [!INCLUDE[sssql15-md](../../includes/sssql15-md.md)] ，您可以使用查詢存放區系統檢視來尋找計畫選擇回歸。 從開始 [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] ， [!INCLUDE[ssde_md](../../includes/ssde_md.md)] 會偵測並顯示可能的計畫選擇回歸，以及應該套用在 [sys.dm_db_tuning_recommendations &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-tuning-recommendations-transact-sql.md) DMV 中的建議動作。 DMV 會顯示問題的相關資訊、問題的重要性，以及詳細資料（例如識別的查詢）、回歸計畫的識別碼、做為比較基準的計畫識別碼，以及 [!INCLUDE[tsql_md](../../includes/tsql-md.md)] 可執行以修正問題的語句。
+在中 [!INCLUDE[sssql15-md](../../includes/sssql16-md.md)] ，您可以使用查詢存放區系統檢視來尋找計畫選擇回歸。 從開始 [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] ， [!INCLUDE[ssde_md](../../includes/ssde_md.md)] 會偵測並顯示可能的計畫選擇回歸，以及應該套用在 [sys.dm_db_tuning_recommendations &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-tuning-recommendations-transact-sql.md) DMV 中的建議動作。 DMV 會顯示問題的相關資訊、問題的重要性，以及詳細資料（例如識別的查詢）、回歸計畫的識別碼、做為比較基準的計畫識別碼，以及 [!INCLUDE[tsql_md](../../includes/tsql-md.md)] 可執行以修正問題的語句。
 
 | 類型 | description | Datetime | score | 詳細資料 | ... |
 | --- | --- | --- | --- | --- | --- |

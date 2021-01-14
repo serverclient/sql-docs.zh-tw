@@ -21,12 +21,12 @@ ms.assetid: bf4032fe-7db1-40e9-a62e-d69cebff4b44
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 02d875cc2ee069c43ca04c16f374c5cb8afe2b31
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 37cdb1198817ab9f51f0b64a48aa074ac632180b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98097601"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170370"
 ---
 # <a name="sysdm_os_memory_nodes-transact-sql"></a>sys.dm_os_memory_nodes (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -55,7 +55,7 @@ ms.locfileid: "98097601"
 |**online_scheduler_mask**|**bigint**|**適用對象**：[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 及更新版本。<br /><br /> 僅供內部使用。 不可為 Null。|  
 |**processor_group**|**smallint**|**適用對象**：[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 及更新版本。<br /><br /> 僅供內部使用。 不可為 Null。|  
 |**foreign_committed_kb**|**bigint**|**適用對象**：[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 及更新版本。<br /><br /> 指定來自其他記憶體節點的認可記憶體數量 (以 KB 為單位)。 不可為 Null。|  
-|**target_kb** |**bigint** |**適用於**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本、[!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]。<br /><br /> 指定記憶體節點的記憶體目標（以 KB 為單位）。 |   
+|**target_kb** |**bigint** |**適用於**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本、[!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]。<br /><br /> 指定記憶體節點的記憶體目標（以 KB 為單位）。 |   
 |**pdw_node_id**|**int**|**適用** 于： [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> 此散發所在之節點的識別碼。|  
   
 ## <a name="permissions"></a>權限

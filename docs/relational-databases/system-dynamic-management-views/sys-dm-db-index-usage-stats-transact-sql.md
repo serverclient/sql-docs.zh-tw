@@ -21,12 +21,12 @@ ms.assetid: d06a001f-0f72-4679-bc2f-66fff7958b86
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 10a6691dc481c09f02b0bd1dff2850cbe90e0656
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 23907a0b37bbc4804b9972d830c0c64f0f0d1712
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98094129"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171290"
 ---
 # <a name="sysdm_db_index_usage_stats-transact-sql"></a>sys.dm_db_index_usage_stats (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -73,7 +73,7 @@ ms.locfileid: "98094129"
   
  使用索引時，如果索引的資料列不存在，則會將資料列加入 **sys.dm_db_index_usage_stats** 中。 加入資料列後，其計數器的初始設定為零。  
   
- 在升級為 [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] 、 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 或時 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] ，會移除 sys.dm_db_index_usage_stats 中的專案。 從開始 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] ，專案會保留在之前 [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] 。  
+ 在升級為 [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] 、 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 或時 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] ，會移除 sys.dm_db_index_usage_stats 中的專案。 從開始 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] ，專案會保留在之前 [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] 。  
   
 ## <a name="permissions"></a>權限  
 在上 [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] ，需要 `VIEW SERVER STATE` 許可權。   

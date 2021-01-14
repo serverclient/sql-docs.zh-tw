@@ -22,12 +22,12 @@ ms.assetid: d294dd8e-82d5-4628-aa2d-e57702230613
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 603ad99e126f1175cce21a48933362e4ad6d7aaa
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 1cdcf7bdcca72f8c80576dcd68146ebfbd36e672
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98094157"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171730"
 ---
 # <a name="sysdm_db_index_physical_stats-transact-sql"></a>sys.dm_db_index_physical_stats (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -66,7 +66,7 @@ sys.dm_db_index_physical_stats (
  *object_id* \| Null \| 0 \| 預設值  
  這是索引所在之資料表或檢視表的物件識別碼。 *object_id* 為 **int**。  
   
- 有效的輸入為資料表和檢視表的識別碼、NULL、0 或 DEFAULT。 預設值是 0。 NULL、0 和 DEFAULT 是這個內容中的對等值。 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] ，有效的輸入也包含 service broker 佇列名稱或佇列內部資料表名稱。 套用預設參數時 (也就是所有物件、所有索引等) ，都會將所有佇列的片段資訊都包含在結果集中。  
+ 有效的輸入為資料表和檢視表的識別碼、NULL、0 或 DEFAULT。 預設值是 0。 NULL、0 和 DEFAULT 是這個內容中的對等值。 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] ，有效的輸入也包含 service broker 佇列名稱或佇列內部資料表名稱。 套用預設參數時 (也就是所有物件、所有索引等) ，都會將所有佇列的片段資訊都包含在結果集中。  
   
  請指定 NULL 來傳回指定之資料庫中所有資料表和檢視表的相關資訊。 如果您指定 Null 做為 *object_id*，您也必須為 *index_id* 和 *partition_number* 指定 null。  
   
@@ -417,7 +417,7 @@ FROM sys.dm_db_index_physical_stats (db_id(),
   
 ||  
 |-|  
-|**適用於**： [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 至 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]。|  
+|**適用於**： [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 至 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]。|  
   
  下列範例示範如何查詢伺服器 broker 佇列的片段。  
   

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 538c93cf-c5bb-43d5-b758-186d9fb00c19
 author: nahk-ivanov
 ms.author: alexiva
-ms.openlocfilehash: 165287fd2d699c56dc635d85fd58a1b081a497a4
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 2f39965e87911f7fef8d50c0b0888d552a451a90
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88427030"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172650"
 ---
 # <a name="project-settings-conversion-db2tosql"></a>專案設定 (轉換)  (DB2ToSQL) 
 [ **專案設定** ] 對話方塊的 [轉換] 頁面包含自訂 SSMA 如何將 DB2 語法轉換成語法的設定 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。  
@@ -71,7 +71,7 @@ ms.locfileid: "88427030"
   
 1.  **架構到資料庫：** 在此模式中，DB2 架構 ' sch1 ' 在 SQL Server 資料庫 ' sch1 ' 中預設會對應至 ' dbo ' SQL Server 架構。  
   
-2.  架構**架構：** 在此模式中，DB2 架構 ' sch1 ' 預設會對應到 ' sch1 ' SQL Server 在 [連接] 對話方塊中提供的預設 SQL Server 資料庫中的架構。  
+2.  架構 **架構：** 在此模式中，DB2 架構 ' sch1 ' 預設會對應到 ' sch1 ' SQL Server 在 [連接] 對話方塊中提供的預設 SQL Server 資料庫中的架構。  
   
 當您在 [ **模式]** 方塊中選取轉換模式時，SSMA 會套用下列設定：  
   
@@ -257,9 +257,9 @@ SSMA 可以透過兩種方式來轉換 PL/SQL 子類型：
 ### <a name="convert-to_chardate-format"></a>轉換 TO_CHAR (日期，格式)   
 SSMA 可將 DB2 TO_CHAR 的 (date、format) 轉換成 sysdb 資料庫的程式。  
   
--   如果您選取 [ **使用 TO_CHAR_DATE**函式]，SSMA 會將 TO_CHAR (日期、格式) 轉換成使用英文語言進行轉換的 TO_CHAR_DATE 函數。  
+-   如果您選取 [ **使用 TO_CHAR_DATE** 函式]，SSMA 會將 TO_CHAR (日期、格式) 轉換成使用英文語言進行轉換的 TO_CHAR_DATE 函數。  
   
--   如果您選取 [使用 TO_CHAR_DATE_LS 函式] ** ([NLS 護理) **]，SSMA 會使用轉換的會話語言，將 TO_CHAR (日期、格式) 轉換成 TO_CHAR_DATE_LS 函數  
+-   如果您選取 [使用 TO_CHAR_DATE_LS 函式] **([NLS 護理)**]，SSMA 會使用轉換的會話語言，將 TO_CHAR (日期、格式) 轉換成 TO_CHAR_DATE_LS 函數  
   
 當您在 [ **模式]** 方塊中選取轉換模式時，SSMA 會套用下列設定：  
   
@@ -360,7 +360,7 @@ SSMA 可以藉由檢查 Null 值來模擬 DB2 ORDER BY 行為。 然後，它會
 **預設/開放式/完整模式：** 內嵌  
   
 ### <a name="use-isnull-in-string-concatenation"></a>在字串串連中使用 ISNull  
-[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]當字串串連包含 Null 值時，DB2 和會傳回不同的結果。 DB2 會將 Null 值視為空白字元集。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 傳回 Null。  
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]當字串串連包含 Null 值時，DB2 和會傳回不同的結果。 DB2 會將 Null 值視為空白字元集。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 會傳回 Null。  
   
 -   如果您選取 **[是]**，SSMA 會取代 (的 DB2 串連字號 | |具有 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 串連字號 (+) 的) 。 SSMA 也會檢查串連兩端的運算式是否有 Null 值。  
   
@@ -472,7 +472,7 @@ SSMA 也提供將 DB2 sequence 轉換成 SSMA sequence 模擬器的選項。 當
 最後，您也可以將指派給資料表中資料行的順序轉換成 SQL Server 的識別值。 您必須在 [DB2 **資料表** ] 索引標籤上指定序列與識別資料行之間的對應。  
   
 ### <a name="convert-currval-outside-triggers"></a>在觸發程式外轉換 CURRVAL  
-只有當轉換順序產生器設定為使用資料 **行識別**時，才會顯示。 由於 DB2 序列是與資料表不同的物件，因此使用順序的許多資料表都會使用觸發程式來產生和插入新的序列值。 SSMA 會將這些語句批註化，或在批註化產生錯誤時將它們標示為錯誤。  
+只有當轉換順序產生器設定為使用資料 **行識別** 時，才會顯示。 由於 DB2 序列是與資料表不同的物件，因此使用順序的許多資料表都會使用觸發程式來產生和插入新的序列值。 SSMA 會將這些語句批註化，或在批註化產生錯誤時將它們標示為錯誤。  
   
 -   如果您選取 **[是]**，SSMA 會在轉換的序列 CURRVAL 上將所有外部觸發程式的參考標示為警告。  
   

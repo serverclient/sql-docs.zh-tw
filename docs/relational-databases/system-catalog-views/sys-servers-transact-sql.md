@@ -21,12 +21,12 @@ ms.assetid: 4e774ed9-4e83-4726-9f1d-8efde8f9feff
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
-ms.openlocfilehash: 542db6b144471e2942bb160f1b91d7e2628ace69
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 5324370d1635914fbf6436e97cfaaee7d062329b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98097887"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171660"
 ---
 # <a name="sysservers-transact-sql"></a>sys.servers (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -60,7 +60,7 @@ ms.locfileid: "98097887"
 |**is_nonsql_subscriber**|**bit**|伺服器是非 SQL Server 複寫訂閱者。|  
 |**is_remote_proc_transaction_promotion_enabled**|**bit**|如果是 1，呼叫遠端預存程序就會啟動分散式交易，而且會利用 MS DTC 來編列這項交易。 如需詳細資訊，請參閱 [sp_serveroption &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-serveroption-transact-sql.md)的資料。|  
 |**modify_date**|**datetime**|上次變更伺服器資訊的日期。|  
-|**is_rda_server**|**bit**|**適用于：** 從開始 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 。<br /><br />伺服器是遠端資料封存功能，可 (已啟用延展功能的) 。 如需詳細資訊，請參閱在 [伺服器上啟用 Stretch Database](../../sql-server/stretch-database/enable-stretch-database-for-a-database.md#EnableTSQLServer)。|
+|**is_rda_server**|**bit**|**適用于：** 從開始 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 。<br /><br />伺服器是遠端資料封存功能，可 (已啟用延展功能的) 。 如需詳細資訊，請參閱在 [伺服器上啟用 Stretch Database](../../sql-server/stretch-database/enable-stretch-database-for-a-database.md#EnableTSQLServer)。|
   
 ## <a name="permissions"></a>權限  
  除非呼叫端具有 ALTER ANY 連結伺服器許可權，否則 **provider_string** 中的值一律為 Null。  

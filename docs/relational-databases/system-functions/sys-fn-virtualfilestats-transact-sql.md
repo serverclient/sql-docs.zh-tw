@@ -22,12 +22,12 @@ ms.assetid: 96b28abb-b059-48db-be2b-d60fe127f6aa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 21ebb356139cf33f87a4e3da84a5004bd7405ae9
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 4c49575ef666cf35c26dd4e924cbb75b17cb9c4e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98096369"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170140"
 ---
 # <a name="sysfn_virtualfilestats-transact-sql"></a>sys.fn_virtualfilestats (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -56,7 +56,7 @@ fn_virtualfilestats ( { database_id | NULL } , { file_id | NULL } )
 |-----------------|---------------|-----------------|  
 |**DbId**|**smallint**|資料庫識別碼。|  
 |**FileId**|**smallint**|檔案識別碼。|  
-|**時間 戳**|**bigint**|取得資料的資料庫時間戳記。 之前的版本中的 **int** [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 。 |  
+|**時間 戳**|**bigint**|取得資料的資料庫時間戳記。 之前的版本中的 **int** [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 。 |  
 |**NumberReads**|**bigint**|對檔案發出的讀取數。|  
 |**BytesRead**|**bigint**|對檔案發出的讀取位元組數。|  
 |**IoStallReadMS**|**bigint**|使用者等待完成檔案讀取 I/O 的時間總量 (以毫秒為單位)。|  

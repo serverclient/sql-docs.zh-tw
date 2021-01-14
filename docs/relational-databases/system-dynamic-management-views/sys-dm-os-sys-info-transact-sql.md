@@ -23,12 +23,12 @@ ms.assetid: 20f6bc9c-839a-4fa4-b3f3-a6c47d1b69af
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: eede187e90a838ae0e0a2c0051a5b4d496c7b4b6
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 60e2e6b9ff455156e0a2d074b325918d00c997d8
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98096526"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170490"
 ---
 # <a name="sysdm_os_sys_info-transact-sql"></a>sys.dm_os_sys_info (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -71,15 +71,15 @@ ms.locfileid: "98096526"
 |**time_source_desc**|**nvarchar(60)**|**適用於：** [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] 及更新版本。<br /><br /> 描述 **time_source** 資料行。 不可為 Null。<br /><br /> QUERY_PERFORMANCE_COUNTER = [QueryPerformanceCounter](/windows/win32/api/profileapi/nf-profileapi-queryperformancecounter) API 會捕獲時鐘時間。<br /><br /> MULTIMEDIA_TIMER = 可捕獲時鐘時間的 [多媒體計時器](/previous-versions//ms713418(v=vs.85)) API。|  
 |**virtual_machine_type**|**int**|**適用於：** [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] 及更新版本。<br /><br /> 指出 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 是否在虛擬化環境中執行。  不可為 Null。<br /><br /> 0 = NONE<br /><br /> 1 = HYPERVISOR<br /><br /> 2 = OTHER|  
 |**virtual_machine_type_desc**|**nvarchar(60)**|**適用於：** [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] 及更新版本。<br /><br /> 描述 **virtual_machine_type** 資料行。 不可為 Null。<br /><br /> NONE = 不 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 是在虛擬機器內執行。<br /><br /> 在執行程式管理平臺的作業系統所裝載的虛擬機器中，執行程式 = 正在執行的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 虛擬機器 (是採用硬體輔助虛擬化) 的主機作業系統。<br /><br /> OTHER = [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 是在作業系統所裝載的虛擬機器內執行，而該虛擬機器未採用硬體助理，例如 Microsoft VIRTUAL PC。|  
-|**softnuma_configuration**|**int**|**適用於：** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。<br /><br /> 指定 NUMA 節點的設定方式。 不可為 Null。<br /><br /> 0 = OFF 表示硬體預設<br /><br /> 1 = 自動化軟體 NUMA<br /><br /> 2 = 透過登錄手動軟體 NUMA|  
-|**softnuma_configuration_desc**|**nvarchar(60)**|**適用於：** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。<br /><br /> OFF = 軟體 NUMA 功能已關閉<br /><br /> ON = [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 自動判斷軟體 numa 的 numa 節點大小<br /><br /> 手動 = 手動設定的軟體 NUMA|
+|**softnuma_configuration**|**int**|**適用於：** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。<br /><br /> 指定 NUMA 節點的設定方式。 不可為 Null。<br /><br /> 0 = OFF 表示硬體預設<br /><br /> 1 = 自動化軟體 NUMA<br /><br /> 2 = 透過登錄手動軟體 NUMA|  
+|**softnuma_configuration_desc**|**nvarchar(60)**|**適用於：** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。<br /><br /> OFF = 軟體 NUMA 功能已關閉<br /><br /> ON = [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 自動判斷軟體 numa 的 numa 節點大小<br /><br /> 手動 = 手動設定的軟體 NUMA|
 |**process_physical_affinity**|**Nvarchar (3072)** |**適用于：** 從開始 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 。<br /><br />尚未推出的資訊。 |
-|**sql_memory_model**|**int**|**適用于：** [!INCLUDE[sssql11](../../includes/sssql11-md.md)] SP4、 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 和更新版本。<br /><br />指定用 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 來配置記憶體的記憶體模型。 不可為 Null。<br /><br />1 = 傳統記憶體模型<br />2 = 鎖定記憶體中的分頁<br /> 3 = 記憶體中的大型頁面|
-|**sql_memory_model_desc**|**nvarchar(120)**|**適用于：** [!INCLUDE[sssql11](../../includes/sssql11-md.md)] SP4、 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 和更新版本。<br /><br />指定用 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 來配置記憶體的記憶體模型。 不可為 Null。<br /><br />  =  傳統 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]使用傳統記憶體模型來配置記憶體。 當 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 服務帳戶在啟動期間沒有鎖定分頁的記憶體許可權時，這是預設的 sql 記憶體模型。<br />  =  LOCK_PAGES [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]使用記憶體中的鎖定分頁來配置記憶體。 這是預設的 sql 記憶體管理員，當 SQL Server 服務帳戶在 SQL Server 啟動期間擁有 [鎖定記憶體分頁] 許可權時。<br />   =  LARGE_PAGES [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]使用記憶體中的大型頁面來配置記憶體。 當 SQL Server 服務帳戶在伺服器啟動期間，以及開啟追蹤旗標834時，SQL Server 使用大型頁面配置器，只會使用 Enterprise edition 配置記憶體。|
+|**sql_memory_model**|**int**|**適用于：** [!INCLUDE[sssql11](../../includes/sssql11-md.md)] SP4、 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 和更新版本。<br /><br />指定用 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 來配置記憶體的記憶體模型。 不可為 Null。<br /><br />1 = 傳統記憶體模型<br />2 = 鎖定記憶體中的分頁<br /> 3 = 記憶體中的大型頁面|
+|**sql_memory_model_desc**|**nvarchar(120)**|**適用于：** [!INCLUDE[sssql11](../../includes/sssql11-md.md)] SP4、 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 和更新版本。<br /><br />指定用 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 來配置記憶體的記憶體模型。 不可為 Null。<br /><br />  =  傳統 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]使用傳統記憶體模型來配置記憶體。 當 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 服務帳戶在啟動期間沒有鎖定分頁的記憶體許可權時，這是預設的 sql 記憶體模型。<br />  =  LOCK_PAGES [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]使用記憶體中的鎖定分頁來配置記憶體。 這是預設的 sql 記憶體管理員，當 SQL Server 服務帳戶在 SQL Server 啟動期間擁有 [鎖定記憶體分頁] 許可權時。<br />   =  LARGE_PAGES [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]使用記憶體中的大型頁面來配置記憶體。 當 SQL Server 服務帳戶在伺服器啟動期間，以及開啟追蹤旗標834時，SQL Server 使用大型頁面配置器，只會使用 Enterprise edition 配置記憶體。|
 |**pdw_node_id**|**int**|**適用于：** [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> 此散發所在之節點的識別碼。|  
-|**socket_count** |**int** | **適用範圍：** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 及更新版本。<br /><br />指定系統上可用的處理器通訊端數目。 |  
-|**cores_per_socket** |**int** | **適用範圍：** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 及更新版本。<br /><br />指定系統上每個可用通訊端的處理器數目。 |  
-|**numa_node_count** |**int** | **適用範圍：** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 及更新版本。<br /><br />指定系統上可用的 numa 節點數目。 此資料行包含實體 numa 節點和軟體 numa 節點。 |  
+|**socket_count** |**int** | **適用範圍：** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 及更新版本。<br /><br />指定系統上可用的處理器通訊端數目。 |  
+|**cores_per_socket** |**int** | **適用範圍：** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 及更新版本。<br /><br />指定系統上每個可用通訊端的處理器數目。 |  
+|**numa_node_count** |**int** | **適用範圍：** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 及更新版本。<br /><br />指定系統上可用的 numa 節點數目。 此資料行包含實體 numa 節點和軟體 numa 節點。 |  
   
 ## <a name="permissions"></a>權限
 

@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 1a17b0c9-2535-4f3d-8013-cd0a6d08f773
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 18642535521a50c7beb005c0ae8181f04ac3c6d5
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 8287eab936b7f95cc0cbaba78d4d7a90e403c42c
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98097576"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171160"
 ---
 # <a name="sysdm_hadr_database_replica_states-transact-sql"></a>sys.dm_hadr_database_replica_states (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -72,7 +72,7 @@ ms.locfileid: "98097576"
 |**last_commit_lsn**|**數值 (25，0)**|實際記錄序號，對應到交易記錄中的上一個認可記錄。<br /><br /> 在主要資料庫上，這會對應到上一次處理的認可記錄。 次要資料庫的資料列會顯示次要複本傳送至主要複本的記錄序號。<br /><br /> 在次要複本上，這是上一次重做的認可記錄。|  
 |**last_commit_time**|**datetime**|對應到上一個認可記錄的時間。<br /><br /> 在次要資料庫上，此時間與主要資料庫上的時間相同。<br /><br /> 在主要複本上，每一個次要資料庫資料列都會顯示裝載該次要資料庫的次要複本回報給主要複本的時間。 主資料庫資料列與給定的次要資料庫資料列之間的時間差異，大約代表復原點目標 (RPO) ，假設重做進程已被攔截，且進度已由次要複本回報給主要複本。|  
 |**low_water_mark_for_ghosts**|**bigint**|資料庫的一個單純遞增的數字，表示主要資料庫上的準刪除清除所使用的下限標準。 如果這個數字不會隨著時間而遞增，則表示可能不會進行準刪除清除作業。 為了決定所要清除的準刪除資料列，主要複本會針對所有可用性複本 (包括主要複本) 中的這個資料庫，使用這個資料行的最小值。|  
-|**secondary_lag_seconds**|**bigint**|在同步處理期間，次要複本在主要複本後方的秒數。<br /><br />**適用於：** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
+|**secondary_lag_seconds**|**bigint**|在同步處理期間，次要複本在主要複本後方的秒數。<br /><br />**適用於：** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
   
 ##  <a name="understanding-the-lsn-column-values"></a><a name="LSNcolumns"></a> 瞭解 LSN 資料行值  
  **End_of_log_lsn**、 **last_hardened_lsn**、 **last_received_lsn**、 **last_sent_lsn**、 **recovery_lsn** 和 **truncation_lsn** 資料行的值不是實際的記錄序號 (lsn) 。 每一個值都會反映填滿零的記錄檔區塊識別碼。  

@@ -21,12 +21,12 @@ ms.assetid: 8a54889d-e263-4881-9fcb-b1db410a9453
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e0b3fc39ead58c75422ac5cdf69311d909d3cf59
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 35787c46218b327eacc33dc40f652a04786bb156
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98099915"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98168128"
 ---
 # <a name="sysdm_db_stats_properties-transact-sql"></a>sys.dm_db_stats_properties (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -57,8 +57,8 @@ sys.dm_db_stats_properties (object_id, stats_id)
 |rows_sampled|**bigint**|針對統計資料計算進行取樣的資料列總數。|  
 |steps|**int**|長條圖中的步驟數。 如需詳細資訊，請參閱 [DBCC SHOW_STATISTICS &#40;Transact-SQL&#41;](../../t-sql/database-console-commands/dbcc-show-statistics-transact-sql.md)。|  
 |unfiltered_rows|**bigint**|套用篩選運算式 (針對篩選的統計資料) 之前，資料表中的資料列總數。 如果統計資料未經過篩選，unfiltered_row 就會等於 rows 資料行中傳回的值。|  
-|modification_counter|**bigint**|自從上次更新統計資料以來，前端統計資料資料行 (用以建置長條圖的資料行) 的總修改次數。<br /><br /> 記憶體優化資料表：啟動 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 和在 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 此資料行中包含：自上一次更新統計資料或重新開機資料庫之後，資料表的修改總數。|  
-|persisted_sample_percent|**float**|使用於未明確指定取樣百分比之統計資料更新的保存取樣百分比。 如果值為零，表示這個統計資料未設定保存取樣百分比。<br /><br /> **適用範圍：** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 CU4|  
+|modification_counter|**bigint**|自從上次更新統計資料以來，前端統計資料資料行 (用以建置長條圖的資料行) 的總修改次數。<br /><br /> 記憶體優化資料表：啟動 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 和在 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 此資料行中包含：自上一次更新統計資料或重新開機資料庫之後，資料表的修改總數。|  
+|persisted_sample_percent|**float**|使用於未明確指定取樣百分比之統計資料更新的保存取樣百分比。 如果值為零，表示這個統計資料未設定保存取樣百分比。<br /><br /> **適用範圍：** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 CU4|  
   
 ## <a name="remarks"></a><a name="Remarks"></a> 備註  
  **sys.dm_db_stats_properties** 在下列任何情況下，都會傳回空的資料列集：  

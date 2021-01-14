@@ -19,19 +19,19 @@ helpviewer_keywords:
 ms.assetid: aa0db893-34d1-419c-b008-224852e71307
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: b11acf31ca9f20aaf70acbe530106e58ca787439
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 27585efd99f537e6b2f6d3082c341533e8bbea3b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98094128"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172090"
 ---
 # <a name="sysdm_db_incremental_stats_properties-transact-sql"></a>sys.dm_db_incremental_stats_properties (Transact-SQL)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
 
   針對目前 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資料庫中的指定資料庫物件 (資料表) 傳回累加統計資料的屬性。 `sys.dm_db_incremental_stats_properties` (其中包含資料分割編號) 的使用類似於用於非累加統計資料的 `sys.dm_db_stats_properties` 。 
   
-  此函數是在 [!INCLUDE[ssSQL14_md](../../includes/sssql14-md.md)] Service pack 2 和 [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] service pack 1 中引進。
+  此函數是在 [!INCLUDE[ssSQL14_md](../../includes/sssql14-md.md)] Service pack 2 和 [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] service pack 1 中引進。
   
 ## <a name="syntax"></a>語法  
   

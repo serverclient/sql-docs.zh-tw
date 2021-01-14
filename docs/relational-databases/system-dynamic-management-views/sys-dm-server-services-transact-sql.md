@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: 3f0defd0-478d-4e7f-96be-8795c9de4e3f
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 2133cd83a96a6db171f078c89dec887aec0e0646
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 65ba3ca60ceb6d1c4ba327ee191084fc63aca8d6
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98095072"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170650"
 ---
 # <a name="sysdm_server_services-transact-sql"></a>sys.dm_server_services (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "98095072"
 |filename|**nvarchar(256)**|服務可執行檔的路徑和檔案名稱。 不可以是 null。|  
 |is_clustered|**Nvarchar (1)**|指出服務是否安裝為叢集伺服器的資源。 不可以是 null。|  
 |cluster_nodename|**nvarchar(256)**|安裝服務所在之叢集節點的名稱。 可為 Null。|
-|instant_file_initialization_enabled|**Nvarchar (1)**|指定是否啟用服務的立即檔案初始化 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 。<br /><br />Y = 啟用服務的立即檔案初始化。<br /><br />N = 服務的立即檔案初始化已停用。<br /><br /> 可為 Null。<br /><br /> **注意：** 不會套用至其他服務，例如 SQL Server Agent。<br /><br /> **適用于：** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 從 SP4 開始 ([!INCLUDE[sssql11](../../includes/sssql11-md.md)] ，以及 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 和更新版本的) 。|  
+|instant_file_initialization_enabled|**Nvarchar (1)**|指定是否啟用服務的立即檔案初始化 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 。<br /><br />Y = 啟用服務的立即檔案初始化。<br /><br />N = 服務的立即檔案初始化已停用。<br /><br /> 可為 Null。<br /><br /> **注意：** 不會套用至其他服務，例如 SQL Server Agent。<br /><br /> **適用于：** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 從 SP4 開始 ([!INCLUDE[sssql11](../../includes/sssql11-md.md)] ，以及 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 和更新版本的) 。|  
 
 ## <a name="security"></a>安全性  
   

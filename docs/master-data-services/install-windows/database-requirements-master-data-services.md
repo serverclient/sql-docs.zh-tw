@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: fe731839-c5c4-4884-bb6a-644eca28bb30
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: f3e21ddbcf4d3599548a827e169f2c0d63f114e8
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 21224e52ae9109f5404fc6a6ee11ad59e525995b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92194420"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171170"
 ---
 # <a name="database-requirements-master-data-services"></a>資料庫需求 (Master Data Services)
 
@@ -36,9 +36,9 @@ ms.locfileid: "92194420"
  [!INCLUDE[ssMDSshort](../../includes/ssmdsshort-md.md)] 資料庫可以裝載在下列 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]版本上：  
   
  
--   [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] Enterprise (64 位元) x64  
+-   [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] Enterprise (64 位元) x64  
   
--   [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] Developer (64 位元) x64  
+-   [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] Developer (64 位元) x64  
   
 -   [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] Business Intelligence (64 位元) x64  
   
@@ -65,7 +65,7 @@ ms.locfileid: "92194420"
   
 |類型|描述|  
 |----------|-----------------|  
-|使用者帳戶|在 [!INCLUDE[ssMDScfgmgr](../../includes/ssmdscfgmgr-md.md)]中，您可以使用 Windows 帳戶或 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 帳戶連接到 [!INCLUDE[ssDE](../../includes/ssde-md.md)] 的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體，來主控 [!INCLUDE[ssMDSshort](../../includes/ssmdsshort-md.md)] 資料庫。 此使用者帳戶必須屬於 **** 執行個體的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssDE](../../includes/ssde-md.md)]. 如需有關 **系統管理員** 角色的詳細資訊，請參閱 [伺服器層級角色](../../relational-databases/security/authentication-access/server-level-roles.md)。|  
+|使用者帳戶|在 [!INCLUDE[ssMDScfgmgr](../../includes/ssmdscfgmgr-md.md)]中，您可以使用 Windows 帳戶或 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 帳戶連接到 [!INCLUDE[ssDE](../../includes/ssde-md.md)] 的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體，來主控 [!INCLUDE[ssMDSshort](../../includes/ssmdsshort-md.md)] 資料庫。 此使用者帳戶必須屬於  執行個體的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssDE](../../includes/ssde-md.md)]. 如需有關 **系統管理員** 角色的詳細資訊，請參閱 [伺服器層級角色](../../relational-databases/security/authentication-access/server-level-roles.md)。|  
 |[!INCLUDE[ssMDSmdm](../../includes/ssmdsmdm-md.md)] 系統管理員帳戶|當您建立 [!INCLUDE[ssMDSshort](../../includes/ssmdsshort-md.md)] 資料庫時，必須指定要成為 [!INCLUDE[ssMDSshort](../../includes/ssmdsshort-md.md)] 系統管理員的網域使用者帳戶。 對於所有與這個資料庫有關聯的 [!INCLUDE[ssMDSmdm](../../includes/ssmdsmdm-md.md)] Web 應用程式，這位使用者都可以更新所有功能區域中的所有模型和所有資料。 如需詳細資訊，請參閱系統 [管理員 &#40;Master Data Services&#41;](../../master-data-services/administrators-master-data-services.md)。|  
   
 ### <a name="database-backup"></a>資料庫備份  

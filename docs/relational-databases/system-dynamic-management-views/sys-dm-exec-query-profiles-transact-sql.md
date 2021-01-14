@@ -21,12 +21,12 @@ ms.assetid: 54efc6cb-eea8-4f6d-a4d0-aa05eeb54081
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 80c59436a83795f4111dfae2997b8678b94e617e
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 461898cf3bf9e694e8d8272608861fdbfa0aff79
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98096591"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170250"
 ---
 # <a name="sysdm_exec_query_profiles-transact-sql"></a>sys.dm_exec_query_profiles (Transact-SQL)
 [!INCLUDE[sql-asdb-asdbmi](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
@@ -73,7 +73,7 @@ ms.locfileid: "98096591"
 |segment_read_count|**int**|目前為止的區段預先讀取數目。|  
 |segment_skip_count|**int**|目前為止略過的區段數目。| 
 |actual_read_row_count|**bigint**|套用剩餘的述詞之前，由運算子讀取的資料列數目。| 
-|estimated_read_row_count|**bigint**|**適用于：** 從 [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] SP1 開始。 <br/>在套用剩餘的述詞之前，要由運算子讀取的資料列數目。|  
+|estimated_read_row_count|**bigint**|**適用于：** 從 [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] SP1 開始。 <br/>在套用剩餘的述詞之前，要由運算子讀取的資料列數目。|  
   
 ## <a name="general-remarks"></a>一般備註  
  如果查詢計劃節點沒有任何 i/o，則所有 i/o 相關的計數器都會設定為 Null。  
@@ -84,7 +84,7 @@ ms.locfileid: "98096591"
   
 -   如果有平行掃描，此 DMV 會針對掃描上運作的每個平行執行緒報告計數器。
  
-從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 開始， *標準的查詢執行統計資料分析基礎結構* 會與 *輕量查詢執行統計資料分析基礎結構* 並存存在。 `SET STATISTICS XML ON` 而且 `SET STATISTICS PROFILE ON` 一律使用 *標準的查詢執行統計資料分析基礎結構*。 `sys.dm_exec_query_profiles`若要填入，必須啟用其中一個查詢分析基礎結構。 如需詳細資訊，請參閱[查詢分析基礎結構](../../relational-databases/performance/query-profiling-infrastructure.md)。    
+從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 開始， *標準的查詢執行統計資料分析基礎結構* 會與 *輕量查詢執行統計資料分析基礎結構* 並存存在。 `SET STATISTICS XML ON` 而且 `SET STATISTICS PROFILE ON` 一律使用 *標準的查詢執行統計資料分析基礎結構*。 `sys.dm_exec_query_profiles`若要填入，必須啟用其中一個查詢分析基礎結構。 如需詳細資訊，請參閱[查詢分析基礎結構](../../relational-databases/performance/query-profiling-infrastructure.md)。    
 
 >[!NOTE]
 > 正在進行調查的查詢必須在啟用查詢分析基礎結構 **之後** 啟動，而在查詢開始之後啟用它將不會在中產生結果 `sys.dm_exec_query_profiles` 。 如需如何啟用查詢分析基礎結構的詳細資訊，請參閱 [查詢分析基礎結構](../../relational-databases/performance/query-profiling-infrastructure.md)。

@@ -21,12 +21,12 @@ ms.assetid: eb7b58b8-3508-4114-97c2-d877bcb12964
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: c9643374bd0992fb17ea216a868616c5759d2665
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 9456d3adf0e8e2ea0c3b31d9bb37dae24142dfab
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98098934"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170690"
 ---
 # <a name="sysdm_exec_query_stats-transact-sql"></a>sys.dm_exec_query_stats (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -80,42 +80,42 @@ ms.locfileid: "98098934"
 |**max_rows**|**bigint**|在一次執行期間，查詢所傳回的資料列數目上限。 不可以是 null。<br /><br /> 當原生編譯的預存程序查詢記憶體最佳化的資料表時，一律為 0。|  
 |**statement_sql_handle**|**varbinary(64)**|**適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。<br /><br /> 只有在查詢存放區開啟並收集該特定查詢的統計資料時，才會填入非 Null 值。|  
 |**statement_context_id**|**bigint**|**適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。<br /><br /> 只有在查詢存放區開啟並收集該特定查詢的統計資料時，才會填入非 Null 值。|  
-|**total_dop**|**bigint**|這個計畫在編譯以來使用之平行處理原則的總程度總和。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**last_dop**|**bigint**|此計畫最後一次執行時的平行處理原則程度。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**min_dop**|**bigint**|此計畫在一次執行期間使用的最小平行處理原則程度。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**max_dop**|**bigint**|這個計畫在單次執行期間曾使用的平行處理原則的最大程度。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**total_grant_kb**|**bigint**|從編譯起，此計畫所收到的保留記憶體授與的總金額（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**last_grant_kb**|**bigint**|此計畫最後一次執行時的保留記憶體授與數量（以 KB 為單位）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**min_grant_kb**|**bigint**|此計畫在一次執行期間收到的最小保留記憶體數量（以 KB 為單位）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**max_grant_kb**|**bigint**|此計畫在一次執行期間收到的保留記憶體授與的最大數量（以 KB 為單位）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**total_used_grant_kb**|**bigint**|此計畫自編譯以來使用的保留記憶體授與的總金額（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**last_used_grant_kb**|**bigint**|此計畫最後一次執行時，已使用的記憶體授與數量（以 KB 為單位）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**min_used_grant_kb**|**bigint**|此計畫在一次執行期間所使用的最小記憶體授與量（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**max_used_grant_kb**|**bigint**|此計畫在一次執行期間所使用的最大記憶體授與量（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**total_ideal_grant_kb**|**bigint**|此計畫從編譯以來預估的理想記憶體授與的總數量（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**last_ideal_grant_kb**|**bigint**|此計畫最後一次執行時的理想記憶體授與大小（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**min_ideal_grant_kb**|**bigint**|這項計畫在一次執行期間預估的最小記憶體授與量（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**max_ideal_grant_kb**|**bigint**|這項計畫在一次執行期間預估的最大理想記憶體授與量（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**total_reserved_threads**|**bigint**|這個計畫在編譯之後曾使用的保留平行線程總數。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**last_reserved_threads**|**bigint**|此計畫最後一次執行時的保留平行線程數目。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**min_reserved_threads**|**bigint**|這個計畫在單次執行期間曾使用的保留平行線程數目下限。  查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**max_reserved_threads**|**bigint**|此計畫在一次執行期間曾使用的保留平行線程數目上限。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**total_used_threads**|**bigint**|這個計畫在編譯之後曾使用過的已使用平行線程總數總和。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**last_used_threads**|**bigint**|當此計畫最後一次執行時，所使用的平行線程數目。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**min_used_threads**|**bigint**|此計畫在一次執行期間曾使用的最小平行線程數目。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**max_used_threads**|**bigint**|此計畫在一次執行期間曾使用的最大平行線程數目。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
-|**total_columnstore_segment_reads**|**bigint**|查詢讀取之資料行存放區區段的總總和。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|    
-|**last_columnstore_segment_reads**|**bigint**|上次執行查詢時所讀取的資料行存放區區段數目。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|    
-|**min_columnstore_segment_reads**|**bigint**|查詢在一次執行期間所讀取的資料行存放區區段數目下限。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|    
-|**max_columnstore_segment_reads**|**bigint**|查詢在一次執行期間所讀取的資料行存放區區段數目上限。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|    
-|**total_columnstore_segment_skips**|**bigint**|查詢略過資料行存放區區段的總和。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|    
-|**last_columnstore_segment_skips**|**bigint**|上次執行查詢時所略過的資料行存放區區段數目。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|    
-|**min_columnstore_segment_skips**|**bigint**|查詢在一次執行期間略過的資料行存放區區段數目下限。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|    
-|**max_columnstore_segment_skips**|**bigint**|查詢在一次執行期間略過的資料行存放區區段數目上限。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|
-|**total_spills**|**bigint**|此查詢在編譯後的執行溢出的總頁數。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|  
-|**last_spills**|**bigint**|上次執行查詢時溢出的頁面數目。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|  
-|**min_spills**|**bigint**|此查詢在單次執行期間已溢出的最小頁面數目。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|  
-|**max_spills**|**bigint**|此查詢在單次執行期間已溢出的最大頁面數目。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|  
+|**total_dop**|**bigint**|這個計畫在編譯以來使用之平行處理原則的總程度總和。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**last_dop**|**bigint**|此計畫最後一次執行時的平行處理原則程度。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**min_dop**|**bigint**|此計畫在一次執行期間使用的最小平行處理原則程度。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**max_dop**|**bigint**|這個計畫在單次執行期間曾使用的平行處理原則的最大程度。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**total_grant_kb**|**bigint**|從編譯起，此計畫所收到的保留記憶體授與的總金額（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**last_grant_kb**|**bigint**|此計畫最後一次執行時的保留記憶體授與數量（以 KB 為單位）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**min_grant_kb**|**bigint**|此計畫在一次執行期間收到的最小保留記憶體數量（以 KB 為單位）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**max_grant_kb**|**bigint**|此計畫在一次執行期間收到的保留記憶體授與的最大數量（以 KB 為單位）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**total_used_grant_kb**|**bigint**|此計畫自編譯以來使用的保留記憶體授與的總金額（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**last_used_grant_kb**|**bigint**|此計畫最後一次執行時，已使用的記憶體授與數量（以 KB 為單位）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**min_used_grant_kb**|**bigint**|此計畫在一次執行期間所使用的最小記憶體授與量（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**max_used_grant_kb**|**bigint**|此計畫在一次執行期間所使用的最大記憶體授與量（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**total_ideal_grant_kb**|**bigint**|此計畫從編譯以來預估的理想記憶體授與的總數量（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**last_ideal_grant_kb**|**bigint**|此計畫最後一次執行時的理想記憶體授與大小（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**min_ideal_grant_kb**|**bigint**|這項計畫在一次執行期間預估的最小記憶體授與量（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**max_ideal_grant_kb**|**bigint**|這項計畫在一次執行期間預估的最大理想記憶體授與量（KB）。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**total_reserved_threads**|**bigint**|這個計畫在編譯之後曾使用的保留平行線程總數。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**last_reserved_threads**|**bigint**|此計畫最後一次執行時的保留平行線程數目。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**min_reserved_threads**|**bigint**|這個計畫在單次執行期間曾使用的保留平行線程數目下限。  查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**max_reserved_threads**|**bigint**|此計畫在一次執行期間曾使用的保留平行線程數目上限。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**total_used_threads**|**bigint**|這個計畫在編譯之後曾使用過的已使用平行線程總數總和。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**last_used_threads**|**bigint**|當此計畫最後一次執行時，所使用的平行線程數目。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**min_used_threads**|**bigint**|此計畫在一次執行期間曾使用的最小平行線程數目。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**max_used_threads**|**bigint**|此計畫在一次執行期間曾使用的最大平行線程數目。 查詢記憶體優化資料表時，一律為0。<br /><br /> **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
+|**total_columnstore_segment_reads**|**bigint**|查詢讀取之資料行存放區區段的總總和。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|    
+|**last_columnstore_segment_reads**|**bigint**|上次執行查詢時所讀取的資料行存放區區段數目。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|    
+|**min_columnstore_segment_reads**|**bigint**|查詢在一次執行期間所讀取的資料行存放區區段數目下限。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|    
+|**max_columnstore_segment_reads**|**bigint**|查詢在一次執行期間所讀取的資料行存放區區段數目上限。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|    
+|**total_columnstore_segment_skips**|**bigint**|查詢略過資料行存放區區段的總和。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|    
+|**last_columnstore_segment_skips**|**bigint**|上次執行查詢時所略過的資料行存放區區段數目。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|    
+|**min_columnstore_segment_skips**|**bigint**|查詢在一次執行期間略過的資料行存放區區段數目下限。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|    
+|**max_columnstore_segment_skips**|**bigint**|查詢在一次執行期間略過的資料行存放區區段數目上限。 不可以是 null。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|
+|**total_spills**|**bigint**|此查詢在編譯後的執行溢出的總頁數。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|  
+|**last_spills**|**bigint**|上次執行查詢時溢出的頁面數目。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|  
+|**min_spills**|**bigint**|此查詢在單次執行期間已溢出的最小頁面數目。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|  
+|**max_spills**|**bigint**|此查詢在單次執行期間已溢出的最大頁面數目。<br /><br /> **適用** 于：從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始|  
 |**pdw_node_id**|**int**|此散發所在之節點的識別碼。<br /><br /> **適用** 于： [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]| 
 |**total_page_server_reads**|**bigint**|這個計畫在編譯以來執行所執行的遠端頁面伺服器讀取總數。<br /><br /> **適用于：** Azure SQL Database 超大規模 |  
 |**last_page_server_reads**|**bigint**|上次執行計畫時所執行的遠端頁面伺服器讀取數。<br /><br /> **適用于：** Azure SQL Database 超大規模 |  

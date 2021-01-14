@@ -19,16 +19,16 @@ helpviewer_keywords:
 ms.assetid: 75063e36-a91b-496f-9936-88f3d57bd447
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 47e09dba80cf7c1b931f8d6949d4667023baf4e6
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 49ea05c98551b8faa06b981d5a5b5b4c37e743fc
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98101747"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98169298"
 ---
 # <a name="sysresource_governor_external_resource_pools-transact-sql"></a>sys.resource_governor_external_resource_pools (Transact-sql) 
 [!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
-**適用於：** [!INCLUDE[sssql15-md](../../includes/sssql15-md.md)] [!INCLUDE[rsql-productname-md](../../includes/rsql-productname-md.md)] 和 [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] [!INCLUDE[rsql-productnamenew-md](../../includes/rsql-productnamenew-md.md)]
+**適用於：** [!INCLUDE[sssql15-md](../../includes/sssql16-md.md)] [!INCLUDE[rsql-productname-md](../../includes/rsql-productname-md.md)] 和 [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] [!INCLUDE[rsql-productnamenew-md](../../includes/rsql-productnamenew-md.md)]
 
 傳回中儲存的外部資源集區設定 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。 檢視的每個資料列都會決定集區的組態。
   

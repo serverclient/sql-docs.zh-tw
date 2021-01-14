@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: ad530f60-d480-4457-ba7a-93a10c8a1695
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 1aa72c49e5862621da193d4e4a400813c7cd0d91
-ms.sourcegitcommit: 827ad02375793090fa8fee63cc372d130f11393f
+ms.openlocfilehash: 7e731d14967d808aa57f3fa0e001e5e593238ffd
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89480574"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170430"
 ---
 # <a name="what39s-new-in-master-data-services-mds"></a>Master Data Services (MDS) 的新功能
 
@@ -26,11 +26,11 @@ ms.locfileid: "89480574"
   
  如需如何在 [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]中整理資料的概觀，請參閱 [Master Data Services 概觀](../master-data-services/master-data-services-overview-mds.md)。 
   
- 若要安裝 Master Data Services、設定資料庫和網站，以及部署範例模型，請參閱**** [Master Data Services 概觀 (MDS)](../master-data-services/master-data-services-overview-mds.md)。  
+ 若要安裝 Master Data Services、設定資料庫和網站，以及部署範例模型，請參閱 [Master Data Services 概觀 (MDS)](../master-data-services/master-data-services-overview-mds.md)。  
   
  **下載**  
   
--   若要下載 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)]，請前往  **[Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016)** 。  
+-   若要下載 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)]，請前往  **[Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016)** 。  
   
 -   有 Azure 帳戶嗎？  接著前往 **[這裡](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftsqlserver.sql2019-ws2019?tab=Overview)** ，來加速已安裝 [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)] 的虛擬機器。  
   
@@ -81,7 +81,7 @@ ms.locfileid: "89480574"
   
  在此版本的 [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] 中，我們藉由引進下列新的權限，來提供更多權限層級：讀取、建立、更新與刪除。 例如，具有更新權限的使用者現已可更新主要資料，而無須建立或刪除資料。 當您授與使用者建立、更新或刪除的權限時，使用者會自動獲派讀取權限。 您也可以合併讀取、建立、更新與刪除權限。  
   
- 當您升級至 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)][!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)]時，舊有權限會轉換成新的權限，如下表所示。  
+ 當您升級至 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)][!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)]時，舊有權限會轉換成新的權限，如下表所示。  
   
 |先前版本中的權限|新的權限|  
 |------------------------------------|--------------------|  
@@ -113,7 +113,7 @@ ms.locfileid: "89480574"
   
 ## <a name="improved-troubleshooting"></a>改良版疑難排解  
   
- 在 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)][!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)]中已加入能改善偵錯並更容易針對問題進行疑難排解的功能。 如需詳細資訊，請參閱[追蹤 &#40;Master Data Services&#41;](../master-data-services/tracing-master-data-services.md)。  
+ 在 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)][!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)]中已加入能改善偵錯並更容易針對問題進行疑難排解的功能。 如需詳細資訊，請參閱[追蹤 &#40;Master Data Services&#41;](../master-data-services/tracing-master-data-services.md)。  
   
 ## <a name="improved-manageability"></a>改良版管理性  
   
@@ -220,7 +220,7 @@ ms.locfileid: "89480574"
   
  **在適用於 Excel 的 MDS 增益集中儲存或開啟查詢檔案**  
   
- 您可以從實體總管頁面上按一下 [Excel] **** ，儲存查詢檔案的捷徑。 或是可以在適用於 Excel 的 MDS 增益集中，開啟儲存在電腦上的查詢檔案。 使用 QueryOpener 應用程式可開啟已儲存的檔案。 如需詳細資訊，請參閱[捷徑查詢檔案 &#40;適用於 Excel 的 MDS 增益集&#41;](../master-data-services/microsoft-excel-add-in/shortcut-query-files-mds-add-in-for-excel.md)。  
+ 您可以從實體總管頁面上按一下 [Excel]  ，儲存查詢檔案的捷徑。 或是可以在適用於 Excel 的 MDS 增益集中，開啟儲存在電腦上的查詢檔案。 使用 QueryOpener 應用程式可開啟已儲存的檔案。 如需詳細資訊，請參閱[捷徑查詢檔案 &#40;適用於 Excel 的 MDS 增益集&#41;](../master-data-services/microsoft-excel-add-in/shortcut-query-files-mds-add-in-for-excel.md)。  
   
  查詢檔案內含來自檔案總管頁面的篩選與階層資訊。  
    

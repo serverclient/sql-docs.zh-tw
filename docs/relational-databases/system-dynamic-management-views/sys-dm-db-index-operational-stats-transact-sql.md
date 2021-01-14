@@ -21,12 +21,12 @@ ms.assetid: 13adf2e5-2150-40a6-b346-e74a33ce29c6
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a6eb4083361d07fee44557d20dd4be4625cbdb12
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 819d0388ca7b358bb9b6cf455cfb061a1a38fd9a
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98095164"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172170"
 ---
 # <a name="sysdm_db_index_operational_stats-transact-sql"></a>sys.dm_db_index_operational_stats (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -91,7 +91,7 @@ sys.dm_db_index_operational_stats (
 |object_id|**int**|資料表或檢視表的識別碼。|    
 |**index_id**|**int**|索引或堆積的識別碼。<br /><br /> 0 = 堆積| 
 |**partition_number**|**int**|在索引或堆積內，以 1 為基底的資料分割編號。| 
-|**hobt_id**|**bigint**|**適用** 于： [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]) 的 [目前版本](../../sql-server/what-s-new-in-sql-server-2016.md) [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 。<br /><br /> 追蹤資料行存放區索引之內部資料堆積或 B 型樹狀結構資料列集的識別碼。<br /><br /> Null-這不是內部資料行存放區資料列集。<br /><br /> 如需詳細資訊，請參閱 [sys.internal_partitions &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sys-internal-partitions-transact-sql.md)|       
+|**hobt_id**|**bigint**|**適用** 于： [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]) 的 [目前版本](../../sql-server/what-s-new-in-sql-server-2016.md) [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 。<br /><br /> 追蹤資料行存放區索引之內部資料堆積或 B 型樹狀結構資料列集的識別碼。<br /><br /> Null-這不是內部資料行存放區資料列集。<br /><br /> 如需詳細資訊，請參閱 [sys.internal_partitions &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sys-internal-partitions-transact-sql.md)|       
 |**leaf_insert_count**|**bigint**|分葉層級插入的累計計數。|    
 |**leaf_delete_count**|**bigint**|分葉層級刪除的累計計數。 只有未標示為准刪除之已刪除記錄的 leaf_delete_count 才會遞增。 若為先刪除的記錄，則會改為遞增 **leaf_ghost_count** 。|    
 |**leaf_update_count**|**bigint**|分葉層級更新的累計計數。|    

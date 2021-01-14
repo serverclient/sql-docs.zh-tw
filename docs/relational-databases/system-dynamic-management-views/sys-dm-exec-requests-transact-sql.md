@@ -21,12 +21,12 @@ author: pmasl
 ms.author: pelopes
 ms.reviewer: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f1c9ac32f202766e118f7e44d3cf7c0d7fafdb6a
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a1ad13d4cdbcf8820a318a87f4ef9f52c488a406
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97482799"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171260"
 ---
 # <a name="sysdm_exec_requests-transact-sql"></a>sys.dm_exec_requests (Transact-SQL)
 
@@ -91,9 +91,9 @@ ms.locfileid: "97482799"
 |query_plan_hash|**二元 (8)**|從查詢執行計畫計算所得的二進位雜湊值將用於識別類似的查詢執行計畫。 您可以使用查詢計劃雜湊尋找具有類似執行計畫之查詢的累計成本。|  
 |statement_sql_handle|**varbinary(64)**|**適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。<br /><br /> 個別查詢的 SQL 控制碼。<br /><br />如果未針對資料庫啟用查詢存放區，則這個資料行是 Null。 |  
 |statement_context_id|**bigint**|**適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。<br /><br /> 要 sys.query_coNtext_settings 的選擇性外鍵。<br /><br />如果未針對資料庫啟用查詢存放區，則這個資料行是 Null。 |  
-|dop |**int** |**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。<br /><br /> 查詢的平行處理原則程度。 |  
-|parallel_worker_count |**int** |**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。<br /><br /> 如果這是平行查詢，則為保留的平行背景工作數目。  |  
-|external_script_request_id |**uniqueidentifier** |**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。<br /><br /> 與目前要求相關聯的外部腳本要求識別碼。 |  
+|dop |**int** |**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。<br /><br /> 查詢的平行處理原則程度。 |  
+|parallel_worker_count |**int** |**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。<br /><br /> 如果這是平行查詢，則為保留的平行背景工作數目。  |  
+|external_script_request_id |**uniqueidentifier** |**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。<br /><br /> 與目前要求相關聯的外部腳本要求識別碼。 |  
 |is_resumable |**bit** |**適用對象**：[!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] 及更新版本。<br /><br /> 指出要求是否為可繼續的索引作業。 |  
 |page_resource |**二元 (8)** |**適用於**：[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)]<br /><br /> 如果資料行包含頁面，則為頁面資源的8位元組十六進位標記法 `wait_resource` 。 如需詳細資訊，請參閱 [sys.fn_PageResCracker](../../relational-databases/system-functions/sys-fn-pagerescracker-transact-sql.md)。 |  
 |page_server_reads|**bigint**|**適用于**： Azure SQL Database 超大規模<br /><br /> 此要求所執行的頁面伺服器讀取數。 不可為 Null。|  

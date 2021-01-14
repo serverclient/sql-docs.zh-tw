@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 619ba4b7-868f-4784-b527-ec1dfd703c4f
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 83d699e2da5e1de1e25a2618171924843c569188
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 70718b01e07cc883a030107e461e4390ca4e7cac
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98101748"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98169636"
 ---
 # <a name="sysresource_governor_workload_groups-transact-sql"></a>sys.resource_governor_workload_groups (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "98101748"
 |max_dop|**int**|工作負載群組之平行處理原則的最大程度。 預設值為 0 時，使用全域設定。 不可為 Null。<br /><br /> **節點：** 這項設定會覆寫查詢選項 **maxdop**。|  
 |group_max_requests|**int**|並行要求的最大數目。 預設值為 0 時，不會指定任何限制。 不可為 Null。|  
 |pool_id|**int**|這個工作負載群組所使用之資源集區的識別碼。|  
-|external_pool_id|**int**|**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。<br /><br /> 此工作負載群組使用的外部資源集區識別碼。|  
+|external_pool_id|**int**|**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。<br /><br /> 此工作負載群組使用的外部資源集區識別碼。|  
   
 ## <a name="remarks"></a>備註  
  目錄檢視會顯示儲存的中繼資料。 若要查看記憶體內部設定，請使用對應的動態管理檢視， [sys.dm_resource_governor_workload_groups &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-workload-groups-transact-sql.md)。  

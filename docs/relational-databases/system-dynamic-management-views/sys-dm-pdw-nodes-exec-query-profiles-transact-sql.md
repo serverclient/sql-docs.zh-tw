@@ -13,12 +13,12 @@ ms.assetid: ''
 author: XiaoyuMSFT
 ms.author: xiaoyul
 monikerRange: =azure-sqldw-latest
-ms.openlocfilehash: c5c908d8db988e83d682bbf636de08ef86a8223a
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: f1917899d58262f670b58843c118864618702950
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97644056"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98169960"
 ---
 # <a name="sysdm_pdw_nodes_exec_query_profiles-transact-sql"></a>sys.dm_pdw_nodes_exec_query_profiles (Transact-sql) 
 
@@ -68,7 +68,7 @@ ms.locfileid: "97644056"
 |segment_read_count|**int**|目前為止的區段預先讀取數目。|  
 |segment_skip_count|**int**|目前為止略過的區段數目。| 
 |actual_read_row_count|**bigint**|套用剩餘的述詞之前，由運算子讀取的資料列數目。| 
-|estimated_read_row_count|**bigint**|**適用于：** 從 [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] SP1 開始。 <br/>在套用剩餘的述詞之前，要由運算子讀取的資料列數目。|  
+|estimated_read_row_count|**bigint**|**適用于：** 從 [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] SP1 開始。 <br/>在套用剩餘的述詞之前，要由運算子讀取的資料列數目。|  
   
 ## <a name="remarks"></a>備註
 
@@ -82,6 +82,6 @@ ms.locfileid: "97644056"
  [Azure Synapse Analytics 和平行處理資料倉儲動態管理檢視 &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)  
    
 
- ## <a name="next-steps"></a>後續步驟 
+ ## <a name="next-steps"></a>下一步 
 
 Azure Synapse Analytics 開發總覽] (/azure/sql-data-warehouse/sql-data-warehouse-overview-develop) 。

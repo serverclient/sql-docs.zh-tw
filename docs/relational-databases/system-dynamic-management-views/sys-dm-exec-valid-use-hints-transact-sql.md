@@ -1,6 +1,6 @@
 ---
-description: 'sys. dm_exec_valid_use_hints (Transact-sql) '
-title: sys. dm_exec_valid_use_hints (Transact-sql) |Microsoft Docs
+description: 'sys.dm_exec_valid_use_hints (Transact-sql) '
+title: sys.dm_exec_valid_use_hints (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 11/17/2016
 ms.prod: sql
@@ -19,14 +19,14 @@ helpviewer_keywords:
 ms.assetid: 65d50589-39c2-4046-92b6-0c4587d8c593
 author: pmasl
 ms.author: pelopes
-ms.openlocfilehash: f05b4e01f06c354d461b1455e499c83a13d2d76c
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: de99c9372846525349df3f9f312222e322bfe751
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88489899"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171390"
 ---
-# <a name="sysdm_exec_valid_use_hints-transact-sql"></a>sys. dm_exec_valid_use_hints (Transact-sql) 
+# <a name="sysdm_exec_valid_use_hints-transact-sql"></a>sys.dm_exec_valid_use_hints (Transact-sql) 
 [!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
 
 傳回 [使用提示](../../t-sql/queries/hints-transact-sql-query.md#use_hint) 支援的提示名稱。 它會針對每個資料列列出一個提示名稱。  
@@ -39,7 +39,7 @@ ms.locfileid: "88489899"
 
 如需每個提示的描述，請參閱 [查詢提示](../../t-sql/queries/hints-transact-sql-query.md#use_hint) 。
 
-在 SP1 中引進 [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 。
+在 SP1 中引進 [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 。
   
 ## <a name="see-also"></a>另請參閱  
     

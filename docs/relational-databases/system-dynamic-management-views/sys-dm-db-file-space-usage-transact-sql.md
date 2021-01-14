@@ -21,12 +21,12 @@ ms.assetid: 148a5276-a8d5-49d2-8146-3c63d24c2144
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: bca14dfbb84763a15791aa4bdefc8b857df9e87e
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 93bbb10cd8274b79aca1b40217f15b1ea19f65f4
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98095163"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172130"
 ---
 # <a name="sysdm_db_file_space_usage-transact-sql"></a>sys.dm_db_file_space_usage (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "98095163"
 |user_object_reserved_page_count|**bigint**|從一致範圍中配置給資料庫使用者物件的總頁數。 這個計數不包括已配置範圍中的未使用頁面。<br /><br /> 不包含 IAM 頁面，因為它們一律從混合範圍中配置。 如果 PFS 頁面是從一致範圍配置，則會包含它們。<br /><br /> 您可以使用 [sys.allocation_units](../../relational-databases/system-catalog-views/sys-allocation-units-transact-sql.md) 目錄檢視中的 [total_pages] 資料行，傳回使用者物件中每個配置單位的保留頁面計數。 不過請注意，total_pages 資料行包含 IAM 頁面。|  
 |internal_object_reserved_page_count|**bigint**|配置給檔案中內部物件之一致範圍中的總頁數。 這個計數不包括已配置範圍中的未使用頁面。<br /><br /> 不包含 IAM 頁面，因為它們一律從混合範圍中配置。 如果 PFS 頁面是從一致範圍配置，則會包含它們。<br /><br /> 沒有目錄檢視或動態管理物件可傳回每一個內部物件的頁數。|  
 |mixed_extent_page_count|**bigint**|檔案中已配置混合範圍的已配置和未配置總頁數。 混合範圍包含已配置給不同物件的頁面。 這個計數包含檔案中的所有 IAM 頁面。|
-|modified_extent_page_count|**bigint**|**適用於**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 及更新版本。<br /><br />自從最後一次完整資料庫備份之後，檔案配置範圍中修改的總頁數。 修改過的頁面計數可以用來追蹤自上次完整備份之後，資料庫中的差異變更量，以決定是否需要差異備份。|
+|modified_extent_page_count|**bigint**|**適用於**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 及更新版本。<br /><br />自從最後一次完整資料庫備份之後，檔案配置範圍中修改的總頁數。 修改過的頁面計數可以用來追蹤自上次完整備份之後，資料庫中的差異變更量，以決定是否需要差異備份。|
 |pdw_node_id|**int**|**適用** 于： [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> 此散發所在之節點的識別碼。|  
 |distribution_id|**int**|**適用** 于： [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> 與散發相關聯的唯一數值識別碼。|  
   

@@ -21,12 +21,12 @@ ms.assetid: 568d89ed-2c96-4795-8a0c-2f3e375081da
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 16226ba2a759e0455078330a7437a99c263ce49a
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 1dccbed2d872b2cd2973e644f9f02149f88b11d4
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98097614"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172750"
 ---
 # <a name="sysdm_os_wait_stats-transact-sql"></a>sys.dm_os_wait_stats (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -87,12 +87,12 @@ GO
   
  下表列出工作會遇到的等候類型。  
 
-|類型 |描述| 
+|類型 |Description| 
 |-------------------------- |--------------------------| 
 |ABR |僅供參考之用。 不支援。 我們無法保證未來的相容性。| | 
 |AM_INDBUILD_ALLOCATION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |AM_SCHEMAMGR_UNSHARED_CACHE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|ASSEMBLY_FILTER_HASHTABLE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|ASSEMBLY_FILTER_HASHTABLE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |ASSEMBLY_LOAD |在組件載入的獨佔存取期間發生。| 
 |ASYNC_DISKPOOL_LOCK |在同步處理執行建立檔案，或者檔案初始化等工作的平行執行緒時發生。| 
 |ASYNC_IO_COMPLETION |在工作等候 I/O 完成時發生。| 
@@ -100,7 +100,7 @@ GO
 |ASYNC_OP_COMPLETION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |ASYNC_OP_CONTEXT_READ |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |ASYNC_OP_CONTEXT_WRITE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
-|ASYNC_SOCKETDUP_IO |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|ASYNC_SOCKETDUP_IO |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |AUDIT_GROUPCACHE_LOCK |當控制特殊快取之存取權的鎖定上存在等候時發生。 此快取包含哪些稽核要用來稽核每個稽核動作群組的相關資訊。| 
 |AUDIT_LOGINCACHE_LOCK |當控制特殊快取之存取權的鎖定上存在等候時發生。 此快取包含哪些稽核要用來稽核登入稽核動作群組的相關資訊。| 
 |AUDIT_ON_DEMAND_TARGET_LOCK |當用來確保稽核相關「擴充事件」目標之單一初始化的鎖定上存在等候時發生。| 
@@ -111,12 +111,12 @@ GO
 |BACKUPIO |當備份工作正在等候資料，或者等候儲存資料的緩衝區時發生。 除非當工作正在等候磁帶掛載，否則這個類型並非標準類型。| 
 |BACKUPTHREAD |在工作等候備份工作完成時發生。 等候時間可能會很長，從幾分鐘到數小時都可能。 如果等候的工作是在 I/O 處理序中，這個類型就不表示發生問題。| 
 |BAD_PAGE_PROCESS |當背景可疑頁面記錄器想要避免執行間隔超過每 5 秒一次時發生。 可疑頁面過多將導致記錄器經常執行。| 
-|BLOB_METADATA |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|BLOB_METADATA |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |BMPALLOCATION |在同步處理大型點陣圖篩選的配置時，發生平行批次模式計畫。 如果等候時間過長，而且無法透過微調查詢 (例如加入索引) 來縮短，請考慮調整平行處理原則的成本臨界值，或降低平行處理原則的程度。<br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |BMPBUILD |在同步處理大型點陣圖篩選器的建立時，發生平行批次模式計畫。 如果等候時間過長，而且無法透過微調查詢 (例如加入索引) 來縮短，請考慮調整平行處理原則的成本臨界值，或降低平行處理原則的程度。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |BMPREPARTITION |在同步處理大型點陣圖篩選的重新分割時，發生平行批次模式計畫。 如果等候時間過長，而且無法透過微調查詢 (例如加入索引) 來縮短，請考慮調整平行處理原則的成本臨界值，或降低平行處理原則的程度。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |BMPREPLICATION |在跨背景工作執行緒同步大型點陣圖篩選的複寫時，會發生平行批次模式計畫。 如果等候時間過長，而且無法透過微調查詢 (例如加入索引) 來縮短，請考慮調整平行處理原則的成本臨界值，或降低平行處理原則的程度。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
-|BPSORT |在跨多個執行緒的資料集排序進行同步處理時，會發生平行批次模式計畫。 如果等候時間過長，而且無法透過微調查詢 (例如加入索引) 來縮短，請考慮調整平行處理原則的成本臨界值，或降低平行處理原則的程度。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|BPSORT |在跨多個執行緒的資料集排序進行同步處理時，會發生平行批次模式計畫。 如果等候時間過長，而且無法透過微調查詢 (例如加入索引) 來縮短，請考慮調整平行處理原則的成本臨界值，或降低平行處理原則的程度。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |BROKER_CONNECTION_RECEIVE_TASK |在連接端點上等候接收訊息的存取權時發生。 端點的接收存取是序列化的。| 
 |BROKER_DISPATCHER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |BROKER_ENDPOINT_STATE_MUTEX |當有爭用存取 Service Broker 連接端點的狀態時發生。 存取變更的狀態是序列化的。| 
@@ -128,7 +128,7 @@ GO
 |BROKER_REGISTERALLENDPOINTS |在 Service Broker 連接端點初始化時發生。 發生的時間相當短暫。| 
 |BROKER_SERVICE |當與目標服務相關聯的 Service Broker 目的地清單已更新或重新設定優先權時發生。| 
 |BROKER_SHUTDOWN |當 Service Broker 的計畫關閉時發生。 即使發生，時間也相當短暫。| 
-|BROKER_START |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|BROKER_START |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |BROKER_TASK_SHUTDOWN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |BROKER_TASK_STOP |當 Service Broker 佇列工作處理常式嘗試關閉工作時發生。 狀態檢查會序化列，而且必須事先處於執行中狀態。| 
 |BROKER_TASK_SUBMIT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
@@ -140,10 +140,10 @@ GO
 |BUILTIN_HASHKEY_MUTEX |可能在啟動執行個體之後，而內部資料結構正在初始化時發生。 資料結構初始化之後就不會再次發生。| 
 |CHANGE_TRACKING_WAITFORCHANGES |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |CHECK_PRINT_RECORD |僅供參考之用。 不支援。 我們無法保證未來的相容性。| 
-|CHECK_SCANNER_MUTEX |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|CHECK_TABLES_INITIALIZATION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|CHECK_TABLES_SINGLE_SCAN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|CHECK_TABLES_THREAD_BARRIER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|CHECK_SCANNER_MUTEX |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|CHECK_TABLES_INITIALIZATION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|CHECK_TABLES_SINGLE_SCAN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|CHECK_TABLES_THREAD_BARRIER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |CHECKPOINT_QUEUE |當檢查點工作在等候下一個檢查點要求時發生。| 
 |CHKPT |在伺服器啟動時發生，目的在告知檢查點執行緒，它可以啟動了。| 
 |CLEAR_DB |在變更資料庫狀態的作業期間發生，例如開啟或關閉資料庫。| 
@@ -161,13 +161,13 @@ GO
 |CMEMPARTITIONED |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |CMEMTHREAD |當工作在安全執行緒記憶體物件待命時發生。 如果有多個工作嘗試從同一個記憶體物件配置記憶體而導致競爭情形時，等候時間可能會增加。| 
 |COLUMNSTORE_BUILD_THROTTLE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
-|COLUMNSTORE_COLUMNDATASET_SESSION_LIST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|COLUMNSTORE_COLUMNDATASET_SESSION_LIST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |COMMIT_TABLE |僅供內部使用。| 
-|CONNECTION_ENDPOINT_LOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|CONNECTION_ENDPOINT_LOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |COUNTRECOVERYMGR |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |CREATE_DATINISERVICE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|CXCONSUMER <a name="cxconsumer"></a>|當取用者執行緒 (父) 等候生產者執行緒傳送資料列時發生平行查詢計劃。 CXCONSUMER 等候是由其生產者執行緒中的資料列用完的 Exchange Iterator 所造成。 這是平行查詢執行的正常部分。 <br /><br /> **適用于**： [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 開始， [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3) 、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] ， [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)]|
-|CXPACKET <a name="cxpacket"></a>|在等候同步處理查詢處理器 [Exchange Iterator](../../relational-databases/showplan-logical-and-physical-operators-reference.md)和產生和取用資料列時，平行查詢計劃發生。 如果等候過多，而且無法藉由微調查詢 (（例如新增索引) ）來降低，請考慮調整平行處理原則的成本閾值，或降低平行處理原則的最大程度 (MaxDOP) 。 <br /><br /> **注意：** 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始，CXPACKET 只是指等待同步處理 Exchange Iterator 和產生資料列。 使用資料列的執行緒會在 CXCONSUMER 等候類型中分開追蹤。 如果取用者執行緒太慢，Exchange Iterator 緩衝區可能會變成 full，並導致 CXPACKET 等候。 <br /><br /> **注意：** 在 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 和中 [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)] ，CXPACKET 只是指等候產生資料列的執行緒。 Exchange Iterator 同步處理會分別在 CXSYNC_PORT 和 CXSYNC_CONSUMER 等候類型中追蹤。 使用資料列的執行緒會在 CXCONSUMER 等候類型中分開追蹤。<br /> | 
+|CXCONSUMER <a name="cxconsumer"></a>|當取用者執行緒 (父) 等候生產者執行緒傳送資料列時發生平行查詢計劃。 CXCONSUMER 等候是由其生產者執行緒中的資料列用完的 Exchange Iterator 所造成。 這是平行查詢執行的正常部分。 <br /><br /> **適用于**： [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 開始， [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3) 、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] ， [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)]|
+|CXPACKET <a name="cxpacket"></a>|在等候同步處理查詢處理器 [Exchange Iterator](../../relational-databases/showplan-logical-and-physical-operators-reference.md)和產生和取用資料列時，平行查詢計劃發生。 如果等候過多，而且無法藉由微調查詢 (（例如新增索引) ）來降低，請考慮調整平行處理原則的成本閾值，或降低平行處理原則的最大程度 (MaxDOP) 。 <br /><br /> **注意：** 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始，CXPACKET 只是指等待同步處理 Exchange Iterator 和產生資料列。 使用資料列的執行緒會在 CXCONSUMER 等候類型中分開追蹤。 如果取用者執行緒太慢，Exchange Iterator 緩衝區可能會變成 full，並導致 CXPACKET 等候。 <br /><br /> **注意：** 在 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 和中 [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)] ，CXPACKET 只是指等候產生資料列的執行緒。 Exchange Iterator 同步處理會分別在 CXSYNC_PORT 和 CXSYNC_CONSUMER 等候類型中追蹤。 使用資料列的執行緒會在 CXCONSUMER 等候類型中分開追蹤。<br /> | 
 |CXSYNC_PORT|在等候開啟、關閉和同步處理生產者和取用者執行緒之間的 [Exchange Iterator](../../relational-databases/showplan-logical-and-physical-operators-reference.md) 埠時，平行查詢計劃發生。 例如，如果查詢計劃有長排序作業，CXSYNC_PORT 等候可能較高，因為在同步處理 Exchange Iterator 埠之前，必須先完成排序。 <br /><br /> **適用** 于： [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 、 [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)]| 
 |CXSYNC_CONSUMER|在等候到達所有取用者執行緒之間的 [Exchange 反覆運算器](../../relational-databases/showplan-logical-and-physical-operators-reference.md) 同步處理點時，平行查詢計劃發生。 <br /><br /> **適用** 于： [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 、 [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)]| 
 |CXROWSET_SYNC |在平行範圍掃描期間發生。| 
@@ -184,16 +184,16 @@ GO
 |DEADLOCK_ENUM_MUTEX  |當死結監視器和 sys.dm_os_waiting_tasks 嘗試確定 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 沒有同時執行多個死結搜尋時發生。| 
 |DEADLOCK_TASK_SEARCH  |在此資源上的等候時間如果很長，表示伺服器正在 sys.dm_os_waiting_tasks 之上執行查詢，而這些查詢則造成死結監視器無法執行死結搜尋。 只有死結監視器才會使用這種等候類型。 在 sys.dm_os_waiting_tasks 之上的查詢會使用 DEADLOCK_ENUM_MUTEX。| 
 |DEBUG |在 Transact-sql 和 CLR 偵錯工具進行內部同步處理時發生。| 
-|DIRECTLOGCONSUMER_LIST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|DIRECTLOGCONSUMER_LIST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |DIRTY_PAGE_POLL |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |DIRTY_PAGE_SYNC |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|DIRTY_PAGE_TABLE_LOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|DIRTY_PAGE_TABLE_LOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |DISABLE_VERSIONING |當 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 輪詢版本交易管理員，看看最早使用中交易的時間戳記，是否晚於狀態開啟改變時的時間戳記時發生。 如果是這樣，則表示所有在 ALTER DATABASE 陳述式執行之前所啟動的快照集交易，已經全部完成了。 這個等候狀態是在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 利用 ALTER DATABASE 陳述式停用版本控制時所使用。| 
 |DISKIO_SUSPEND |當外部備份在使用中時，工作正在等候存取檔案時發生。 這是針對每個等候中的使用者處理序所報告。 如果超過每個使用者處理序五次時，可能表示外部備份花了太多時間才完成。| 
 |DISPATCHER_PRIORITY_QUEUE_SEMAPHORE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |DISPATCHER_QUEUE_SEMAPHORE |當發送器集區的執行緒正在等候處理其他工作時發生。 這種等候類型的等候時間應該會在發送器閒置時增加。| 
 |DLL_LOADING_MUTEX |在等候 XML 剖析器 DLL 載入時發生一次。| 
-|DPT_ENTRY_LOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|DPT_ENTRY_LOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |DROP_DATABASE_TIMER_TASK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |DROPTEMP |卸除暫存物件時，如果前一次的嘗試失敗，就會在兩次嘗試之間發生這種等候類型。 等候持續時間將以指數方式，隨著每一次的卸除嘗試失敗而增加。| 
 |DTC |當工作在服務管理狀態轉移所用的事件時發生。 此狀態控制在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 收到 MS DTC 服務無法使用的通知之後，Microsoft Distributed Transaction Coordinator (MS DTC) 交易復原的時機。| 
@@ -202,11 +202,11 @@ GO
 |DTC_STATE  |當工作在保護您對內部 MS DTC 全域狀態物件所做變更的事件待命時發生。 這個狀態的保留時間很短。| 
 |DTC_TMDOWN_REQUEST |當 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 接收 MS DTC 服務無法使用的通知時，在 MS DTC 工作者工作階段發生。 首先，工作者會等候 MS DTC 復原處理序啟動。 接著，工作者會等候取得他所處理的分散式交易結果。 除非與 MS DTC 服務的連接已經重新建立，否則這項作業會繼續進行。| 
 |DTC_WAITFOR_OUTCOME  |當復原工作在等候 MS DTC 開始解析準備交易時發生。| 
-|DTCNEW_ENLIST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|DTCNEW_PREPARE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|DTCNEW_RECOVERY |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|DTCNEW_TM |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|DTCNEW_TRANSACTION_ENLISTMENT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|DTCNEW_ENLIST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|DTCNEW_PREPARE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|DTCNEW_RECOVERY |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|DTCNEW_TM |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|DTCNEW_TRANSACTION_ENLISTMENT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |DTCPNTSYNC |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |DUMP_LOG_COORDINATOR  |當主要工作正在等候子工作產生資料時發生。 這個狀態通常不會發生。 如果等候時間很長，就表示發生了非預期的封鎖。 您最好調查一下子工作。| 
 |DUMP_LOG_COORDINATOR_QUEUE |僅供內部使用。| 
@@ -220,11 +220,11 @@ GO
 |EXCHANGE |在平行查詢期間同步處理查詢處理器交換重複時發生。| 
 |EXECSYNC  |平行查詢期間在與交換重複無關之區域的查詢處理器中進行同步處理時發生。 這類區域的範例包括點陣圖、大型二進位物件 (LOB) 和多工緩衝處理重複。 LOB 可能會經常使用這個等候狀態。| 
 |EXECUTION_PIPE_EVENT_INTERNAL |在透過連接內容傳送的批次執行產生者與取用者部分之間同步處理期間發生。| 
-|EXTERNAL_RG_UPDATE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|EXTERNAL_RG_UPDATE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |EXTERNAL_SCRIPT_NETWORK_IO |僅供內部使用。 <br /><br /> **適用** 于： [!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 到目前。| 
-|EXTERNAL_SCRIPT_PREPARE_SERVICE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|EXTERNAL_SCRIPT_SHUTDOWN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|EXTERNAL_WAIT_ON_LAUNCHER， |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|EXTERNAL_SCRIPT_PREPARE_SERVICE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|EXTERNAL_SCRIPT_SHUTDOWN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|EXTERNAL_WAIT_ON_LAUNCHER， |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |FABRIC_HADR_TRANSPORT_CONNECTION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |FABRIC_REPLICA_CONTROLLER_LIST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |FABRIC_REPLICA_CONTROLLER_STATE_AND_CONFIG |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
@@ -252,7 +252,7 @@ GO
 |FFT_STORE_DB |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |FFT_STORE_ROWSET_LIST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |FFT_STORE_TABLE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|FILE_VALIDATION_THREADS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|FILE_VALIDATION_THREADS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |FILESTREAM_CACHE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |FILESTREAM_CHUNKER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |FILESTREAM_CHUNKER_INIT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
@@ -261,7 +261,7 @@ GO
 |FILESTREAM_WORKITEM_QUEUE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |FILETABLE_SHUTDOWN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |FOREIGN_REDO |僅供內部使用。 <br /><br /> **適用** 于： [!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 到目前。| 
-|FORWARDER_TRANSITION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|FORWARDER_TRANSITION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |FS_FC_RWLOCK |當 FILESTREAM 記憶體回收行程等候進行下列其中一項作業時發生：| 
 |FS_GARBAGE_COLLECTOR_SHUTDOWN |當 FILESTREAM 記憶體回收行程正在等候清除工作完成時發生。| 
 |FS_HEADER_RWLOCK |當系統等候取得 FILESTREAM 資料容器之 FILESTREAM 標頭的存取權來讀取或更新 FILESTREAM 標頭檔 (Filestream.hdr) 內容時發生。| 
@@ -285,11 +285,11 @@ GO
 |GHOSTCLEANUP_UPDATE_STATS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
 |GHOSTCLEANUPSYNCMGR |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |GLOBAL_QUERY_CANCEL |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
-|GLOBAL_QUERY_CLOSE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|GLOBAL_QUERY_CLOSE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |GLOBAL_QUERY_CONSUMER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
 |GLOBAL_QUERY_PRODUCER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
-|GLOBAL_TRAN_CREATE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|GLOBAL_TRAN_UCS_SESSION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|GLOBAL_TRAN_CREATE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|GLOBAL_TRAN_UCS_SESSION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |GUARDIAN |僅供參考之用。 不支援。 我們無法保證未來的相容性。| 
 |HADR_AG_MUTEX |當 Always On DDL 語句或 Windows Server 容錯移轉叢集命令正在等候可用性群組設定的獨佔讀取/寫入存取權時發生。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_AR_CRITICAL_SECTION_ENTRY |當 Always On DDL 語句或 Windows Server 容錯移轉叢集命令正在等候相關聯可用性群組之本機複本之執行時間狀態的獨佔讀取/寫入存取權時發生。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
@@ -303,7 +303,7 @@ GO
 |HADR_CONNECTIVITY_INFO |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_DATABASE_FLOW_CONTROL |在已達佇列訊息的數目上限時，等候要傳送至夥伴的訊息。 表示記錄掃描的執行速度比網路傳送的速度要快。 只有當網路傳送的速度比預期的速度要慢時，這才是問題。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_DATABASE_VERSIONING_STATE |在 Always On 次要資料庫的版本控制狀態變更時發生。 這項等候適用于內部資料結構，而且通常非常短，不會對資料存取有直接影響。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|HADR_DATABASE_WAIT_FOR_RECOVERY |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|HADR_DATABASE_WAIT_FOR_RECOVERY |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |HADR_DATABASE_WAIT_FOR_RESTART |正在等候資料庫在 Always On Availability Groups 控制項下重新開機。 在正常狀況下，這並非客戶問題，因為此處預期會發生等候。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_DATABASE_WAIT_FOR_TRANSITION_TO_VERSIONING |在可用性群組的可讀取輔助 Always On 資料庫中) 的物件 (上進行查詢，會在資料列版本設定時遭到封鎖，而在次要複本啟用讀取工作負載的情況下，則會在執行進行中的所有交易認可或回復。 這種等候類型可確保在快照集隔離底下執行查詢之前可以使用資料列版本。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_DB_COMMAND |等候交談式訊息的回應 (需要另一端的明確回應，並使用 Always On 交談式訊息基礎結構) 。 許多不同的訊息類型都會使用這種等候類型。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
@@ -321,7 +321,7 @@ GO
 |HADR_FILESTREAM_IOMGR |FILESTREAM Always On 傳輸管理員正在等候 R/W 鎖定，以便在啟動或關閉期間保護 FILESTREAM Always On i/o 管理員。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_FILESTREAM_IOMGR_IOCOMPLETION |FILESTREAM Always On i/o 管理員正在等候 i/o 完成。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_FILESTREAM_MANAGER |FILESTREAM Always On 傳輸管理員正在等候 R/W 鎖定，以便在啟動或關閉期間保護 FILESTREAM Always On 傳輸管理員。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|HADR_FILESTREAM_PREPROC |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|HADR_FILESTREAM_PREPROC |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |HADR_GROUP_COMMIT |交易認可處理正在等候允許群組認可，以便將多個認可記錄檔記錄放入單一記錄檔區塊中。 這項等候是最佳化記錄 I/O、擷取和傳送作業的預期狀況。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_LOGCAPTURE_SYNC |有關建立或終結掃描時記錄擷取或套用物件的並行控制。 當夥伴變更狀態或連接狀態時，這是預期的等候。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_LOGCAPTURE_WAIT |等候記錄檔記錄變成可用。 如果讀取不在快取中的記錄，等候連接產生新的記錄檔記錄或 I/O 完成時就可能會發生這種狀況。 如果記錄掃描已趕上記錄的結尾或者正在從磁碟讀取，這就是預期的等候。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
@@ -335,17 +335,17 @@ GO
 |HADR_RECOVERY_WAIT_FOR_CONNECTION |等候次要資料庫在執行復原之前連接到主要資料庫。 這是預期的等候，而且如果建立主要資料庫之連接的速度很慢，等候可能會延長。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_RECOVERY_WAIT_FOR_UNDO |資料庫復原正在等候次要資料庫完成還原和初始化階段，以便讓它返回與主要資料庫相同的記錄點。 在容錯移轉之後，這是預期的等候。您可以透過 Windows 系統監視器 (perfmon.exe) 和動態管理檢視追蹤恢復進度。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_REPLICAINFO_SYNC |等候並行控制更新目前複本狀態。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|HADR_SEEDING_CANCELLATION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|HADR_SEEDING_FILE_LIST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|HADR_SEEDING_LIMIT_BACKUPS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|HADR_SEEDING_SYNC_COMPLETION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|HADR_SEEDING_TIMEOUT_TASK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|HADR_SEEDING_WAIT_FOR_COMPLETION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|HADR_SEEDING_CANCELLATION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|HADR_SEEDING_FILE_LIST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|HADR_SEEDING_LIMIT_BACKUPS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|HADR_SEEDING_SYNC_COMPLETION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|HADR_SEEDING_TIMEOUT_TASK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|HADR_SEEDING_WAIT_FOR_COMPLETION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |HADR_SYNC_COMMIT |等候已同步處理之次要資料庫的交易認可處理強行寫入記錄。 Transaction Delay 效能計數器也會反映這項等候。 對於已同步處理的可用性群組而言，這是預期的等候類型，而且表示向次要資料庫傳送、寫入和確認記錄的時間。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_SYNCHRONIZING_THROTTLE |等候交易認可處理允許同步處理中的次要資料庫趕上主要記錄結尾，以便轉換成已同步處理的狀態。 當次要資料庫正在趕上時，這是預期的等候。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_TDS_LISTENER_SYNC |內部 Always On 系統或 WSFC 叢集都會要求啟動或停止接聽程式。 這項要求的處理方式一律為非同步，而且具有移除重複要求的機制。 此外，這個處理序有時候會由於組態變更而暫停。 與此接聽程式同步處理機制相關的所有等候都會使用此等候類型。 僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_TDS_LISTENER_SYNC_PROCESSING |用於需要啟動及/或停止可用性群組接聽程式的 Always On Transact-sql 語句的結尾。 因為啟動/停止作業是以非同步方式完成，所以使用者執行緒將會封鎖使用這種等候類型，直到了解接聽程式的情況為止。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|HADR_THROTTLE_LOG_RATE_GOVERNOR |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|HADR_THROTTLE_LOG_RATE_GOVERNOR |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |HADR_THROTTLE_LOG_RATE_MISMATCHED_SLO | 使用較低的計算大小設定異地複寫次要資料庫時， (低於主要的 SLO) 時發生。 主資料庫因為次要複本的延遲記錄耗用量而受到節流。 這是因為沒有足夠計算容量的次要資料庫可跟上主資料庫的變更速率。 <br /><br /> **適用** 于： Azure SQL Database| 
 |HADR_THROTTLE_LOG_RATE_LOG_SIZE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
 |HADR_THROTTLE_LOG_RATE_SEEDING |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
@@ -357,10 +357,10 @@ GO
 |HADR_WORK_POOL |Always On 可用性群組背景工作物件上的並行控制等候。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_WORK_QUEUE |Always On 可用性群組背景工作者執行緒等候指派新的工作。 當準備就緒的工作者等候新工作 (一般狀態) 時，這是預期的等候。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HADR_XRF_STACK_ACCESS |存取 (查閱、新增和刪除 Always On 可用性資料庫) 擴充復原分叉堆疊。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|HCCO_CACHE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|HK_RESTORE_FILEMAP |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|HKCS_PARALLEL_MIGRATION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|HKCS_PARALLEL_RECOVERY |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|HCCO_CACHE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|HK_RESTORE_FILEMAP |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|HKCS_PARALLEL_MIGRATION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|HKCS_PARALLEL_RECOVERY |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |HTBUILD |在雜湊聯結/匯總的輸入端同步處理雜湊表的建立時，會發生平行批次模式計畫。 如果等候時間過長，而且無法透過微調查詢 (例如加入索引) 來縮短，請考慮調整平行處理原則的成本臨界值，或降低平行處理原則的程度。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |HTDELETE |在雜湊聯結/匯總的結尾進行同步處理時，會發生平行批次模式計畫。 如果等候時間過長，而且無法透過微調查詢 (例如加入索引) 來縮短，請考慮調整平行處理原則的成本臨界值，或降低平行處理原則的程度。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |HTMEMO |在將雜湊表掃描到輸出符合/不符合雜湊聯結/匯總之前進行同步處理時，會發生平行批次模式計畫。 如果等候時間過長，而且無法透過微調查詢 (例如加入索引) 來縮短，請考慮調整平行處理原則的成本臨界值，或降低平行處理原則的程度。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
@@ -370,11 +370,11 @@ GO
 |HTTP_START |在連接等候 HTTP 完成初始化時發生。| 
 |HTTP_STORAGE_CONNECTION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |IMPPROV_IOWAIT |在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 等候大量載入 I/O 完成時發生。| 
-|INSTANCE_LOG_RATE_GOVERNOR |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|INSTANCE_LOG_RATE_GOVERNOR |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |INTERNAL_TESTING |僅供參考之用。 不支援。 我們無法保證未來的相容性。| 
 |IO_AUDIT_MUTEX  |在同步處理追蹤事件緩衝區時發生。| 
 |IO_COMPLETION |在等候 I/O 作業完成時發生。 這種等候類型通常代表非資料頁面 I/O。 資料頁面 i/o 完成等候會顯示為 PAGEIOLATCH \_ \* 等候。| 
-|IO_QUEUE_LIMIT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|IO_QUEUE_LIMIT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |IO_RETRY |當讀取或寫入磁碟等 I/O 作業由於資源不足而失敗，然後重試時發生。| 
 |IOAFF_RANGE_QUEUE |僅供參考之用。 不支援。 我們無法保證未來的相容性。| 
 |KSOURCE_WAKEUP |供服務控制工作在等候來自服務控制管理員的要求時使用。 等候時間長是正常情況，並不表示發生任何問題。| 
@@ -451,14 +451,14 @@ GO
 |LCK_M_X  |當工作在等候取得獨佔鎖定時發生。| 
 |LCK_M_X_ABORT_BLOCKERS |當工作在等候取得具有中止封鎖器的獨佔鎖定時發生   (與 ALTER TABLE 和 ALTER INDEX 的低優先順序等候選項相關。 ) ， <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |LCK_M_X_LOW_PRIORITY |當工作在等候取得低優先順序的獨佔鎖定時發生   (與 ALTER TABLE 和 ALTER INDEX 的低優先順序等候選項相關。 ) ， <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
-|LOG_POOL_SCAN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|LOG_RATE_GOVERNOR |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|LOG_POOL_SCAN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|LOG_RATE_GOVERNOR |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |LOGBUFFER  |當工作在等候記錄緩衝區的空間來儲存記錄時發生。 如果這個值一直居高不下，可能表示記錄裝置趕不上伺服器產生的記錄量。| 
 |LOGCAPTURE_LOGPOOLTRUNCPOINT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |LOGGENERATION |僅供參考之用。 不支援。 我們無法保證未來的相容性。| 
 |LOGMGR  |當工作在關閉資料庫時，於關閉記錄之前等候任何未完成的記錄 I/O 完成時發生。| 
 |LOGMGR_FLUSH  |僅供參考之用。 不支援。 我們無法保證未來的相容性。| 
-|LOGMGR_PMM_LOG |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|LOGMGR_PMM_LOG |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |LOGMGR_QUEUE |在記錄寫入器工作等候工作要求時發生。| 
 |LOGMGR_RESERVE_APPEND  |當工作在等候記錄截斷清出記錄空間，讓工作寫入新記錄時發生。 請考慮增加受影響之資料庫的記錄檔案大小，以縮短這個等候時間。| 
 |LOGPOOL_CACHESIZE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
@@ -471,7 +471,7 @@ GO
 |LOWFAIL_MEMMGR_QUEUE  |在等候記憶體變成可供使用的狀態時發生。| 
 |MD_AGENT_YIELD |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |MD_LAZYCACHE_RWLOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|MEMORY_ALLOCATION_EXT |從內部 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 記憶體集區或作業系統配置記憶體時發生。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|MEMORY_ALLOCATION_EXT |從內部 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 記憶體集區或作業系統配置記憶體時發生。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |MEMORY_GRANT_UPDATE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
 |METADATA_LAZYCACHE_RWLOCK |僅供內部使用。 <br /><br /> **適用** 于： [!INCLUDE[ssKilimanjaro_md](../../includes/sskilimanjaro-md.md)] 僅適用于。 |  
 |MIGRATIONBUFFER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
@@ -483,7 +483,7 @@ GO
 |MSQL_XP  |當工作在等候擴充預存程序結束時發生。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 會使用這個等候狀態來偵測可能發生的 MARS 應用程式死結。 這個等候會隨著擴充預存程序呼叫的結束而停止。| 
 |MSSEARCH |在使用全文檢索搜尋呼叫時發生。 這個等候會隨著全文檢索作業的完成而結束。 這並不表示發生競爭情況，而是指出全文檢索作業的持續時間。| 
 |NET_WAITFOR_PACKET |當連接在網路讀取期間等候網路封包時發生。| 
-|NETWORKSXMLMGRLOAD |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|NETWORKSXMLMGRLOAD |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |NODE_CACHE_MUTEX |僅供內部使用。| 
 |OLEDB |當 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 呼叫 SNAC OLE DB 提供者 (SQLNCLI) 或 Microsoft OLE DB Driver for SQL Server (msoledbsql.h) 時發生。 這個等候類型不用於同步處理， 而會指出呼叫 OLE DB 提供者的持續時間。| 
 |ONDEMAND_TASK_QUEUE |在背景工作等候高優先權的系統工作要求時發生。 如果等候時間很長，表示沒有高優先權的要求需要處理，而且應該不會造成任何問題。| 
@@ -500,16 +500,16 @@ GO
 |PAGELATCH_SH  |當工作不是在 I/O 要求中的緩衝區閂鎖待命時發生。 閂鎖要求是共用模式。| 
 |PAGELATCH_UP  |當工作不是在 I/O 要求中的緩衝區閂鎖待命時發生。 閂鎖要求是更新模式。| 
 |PARALLEL_BACKUP_QUEUE |在序列化 RESTORE HEADERONLY、RESTORE FILELISTONLY 或 RESTORE LABELONLY 所產生的輸出時發生。| 
-|PARALLEL_REDO_DRAIN_WORKER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|PARALLEL_REDO_FLOW_CONTROL |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|PARALLEL_REDO_LOG_CACHE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|PARALLEL_REDO_TRAN_LIST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|PARALLEL_REDO_TRAN_TURN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|PARALLEL_REDO_WORKER_SYNC |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|PARALLEL_REDO_WORKER_WAIT_WORK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|PARALLEL_REDO_DRAIN_WORKER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|PARALLEL_REDO_FLOW_CONTROL |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|PARALLEL_REDO_LOG_CACHE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|PARALLEL_REDO_TRAN_LIST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|PARALLEL_REDO_TRAN_TURN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|PARALLEL_REDO_WORKER_SYNC |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|PARALLEL_REDO_WORKER_WAIT_WORK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |PERFORMANCE_COUNTERS_RWLOCK |僅供內部使用。| 
 |PHYSICAL_SEEDING_DMV |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
-|POOL_LOG_RATE_GOVERNOR |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|POOL_LOG_RATE_GOVERNOR |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |PREEMPTIVE_ABR |僅供參考之用。 不支援。 我們無法保證未來的相容性。| 
 |PREEMPTIVE_AUDIT_ACCESS_EVENTLOG |在 [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] 作業系統 (SQLOS) 排程器切換到先佔式模式，以便將稽核事件寫入 Windows 事件記錄檔時發生。 <br /><br /> **適用** 于： [!INCLUDE[ssKilimanjaro_md](../../includes/sskilimanjaro-md.md)] 僅適用于。 |  
 |PREEMPTIVE_AUDIT_ACCESS_SECLOG |當 SQLOS 排程器切換到先佔式模式，以便將稽核事件寫入 Windows 安全性記錄檔時發生。 <br /><br /> **適用** 于： [!INCLUDE[ssKilimanjaro_md](../../includes/sskilimanjaro-md.md)] 僅適用于。 |  
@@ -574,8 +574,8 @@ GO
 |PREEMPTIVE_FSRECOVER_UNCONDITIONALUNDO |僅供內部使用。| 
 |PREEMPTIVE_GETRMINFO |僅供內部使用。| 
 |PREEMPTIVE_HADR_LEASE_MECHANISM |Microsoft 支援服務診斷的 Always On 可用性群組租用管理員排程。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|PREEMPTIVE_HTTP_EVENT_WAIT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|PREEMPTIVE_HTTP_REQUEST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|PREEMPTIVE_HTTP_EVENT_WAIT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|PREEMPTIVE_HTTP_REQUEST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |PREEMPTIVE_LOCKMONITOR |僅供內部使用。| 
 |PREEMPTIVE_MSS_RELEASE |僅供內部使用。| 
 |PREEMPTIVE_ODBCOPS |僅供內部使用。| 
@@ -632,7 +632,7 @@ GO
 |PREEMPTIVE_OS_GETDISKFREESPACE |僅供內部使用。| 
 |PREEMPTIVE_OS_GETFILEATTRIBUTES |僅供內部使用。| 
 |PREEMPTIVE_OS_GETFILESIZE |僅供內部使用。| 
-|PREEMPTIVE_OS_GETFINALFILEPATHBYHANDLE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|PREEMPTIVE_OS_GETFINALFILEPATHBYHANDLE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |PREEMPTIVE_OS_GETLONGPATHNAME |僅供內部使用。| 
 |PREEMPTIVE_OS_GETPROCADDRESS |僅供內部使用。| 
 |PREEMPTIVE_OS_GETVOLUMENAMEFORVOLUMEMOUNTPOINT |僅供內部使用。| 
@@ -669,9 +669,9 @@ GO
 |PREEMPTIVE_OS_SETFILEVALIDDATA |僅供內部使用。| 
 |PREEMPTIVE_OS_SETNAMEDSECURITYINFO |僅供內部使用。| 
 |PREEMPTIVE_OS_SQLCLROPS |僅供內部使用。| 
-|PREEMPTIVE_OS_SQMLAUNCH |僅供內部使用。 <br /><br /> **適用於**： [!INCLUDE[ssKilimanjaro_md](../../includes/sskilimanjaro-md.md)] 至 [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)]。 |  
+|PREEMPTIVE_OS_SQMLAUNCH |僅供內部使用。 <br /><br /> **適用於**： [!INCLUDE[ssKilimanjaro_md](../../includes/sskilimanjaro-md.md)] 至 [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)]。 |  
 |PREEMPTIVE_OS_VERIFYSIGNATURE |僅供內部使用。| 
-|PREEMPTIVE_OS_VERIFYTRUST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|PREEMPTIVE_OS_VERIFYTRUST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |PREEMPTIVE_OS_VSSOPS |僅供內部使用。| 
 |PREEMPTIVE_OS_WAITFORSINGLEOBJECT |僅供內部使用。| 
 |PREEMPTIVE_OS_WINSOCKOPS |僅供內部使用。| 
@@ -714,9 +714,9 @@ GO
 |PRU_ROLLBACK_DEFERRED |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |PWAIT_ALL_COMPONENTS_INITIALIZED |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |PWAIT_COOP_SCAN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|PWAIT_DIRECTLOGCONSUMER_GETNEXT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|PWAIT_DIRECTLOGCONSUMER_GETNEXT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |PWAIT_EVENT_SESSION_INIT_MUTEX |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|PWAIT_FABRIC_REPLICA_CONTROLLER_DATA_LOSS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|PWAIT_FABRIC_REPLICA_CONTROLLER_DATA_LOSS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |PWAIT_HADR_ACTION_COMPLETED |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |PWAIT_HADR_CHANGE_NOTIFIER_TERMINATION_SYNC |在背景工作正在等候接收 (經由輪詢) Windows Server 容錯移轉叢集通知的背景工作終止時發生。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |PWAIT_HADR_CLUSTER_INTEGRATION |附加、取代和/或移除作業正在等候抓取 Always On 內部清單的寫入鎖定 (例如網路、網路位址或可用性群組接聽程式) 的清單。 僅供內部使用， <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
@@ -727,7 +727,7 @@ GO
 |PWAIT_HADR_POST_ONLINE_COMPLETED |Always On 卸載可用性群組作業正在等候已排程為先前命令之一部分的任何背景工作終止。 例如，可能會存在將可用性資料庫轉換成主要角色的背景工作。 DROP AVAILABILITY GROUP DDL 必須等候此背景工作終止，才能避免競爭情形。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |PWAIT_HADR_SERVER_READY_CONNECTIONS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |PWAIT_HADR_WORKITEM_COMPLETED |等候非同步工作完成之執行緒的內部等候。 這是預期的等候，而且可供 CSS 使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|PWAIT_HADRSIM |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|PWAIT_HADRSIM |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |PWAIT_LOG_CONSOLIDATION_IO |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |PWAIT_LOG_CONSOLIDATION_POLL |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |PWAIT_MD_LOGIN_STATS |在登入統計資料的中繼資料中執行內部同步處理期間發生。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
@@ -745,18 +745,18 @@ GO
 |QDS_ASYNC_CHECK_CONSISTENCY_TASK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |QDS_ASYNC_PERSIST_TASK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |QDS_ASYNC_PERSIST_TASK_START |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
-|QDS_ASYNC_QUEUE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|QDS_ASYNC_QUEUE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |QDS_BCKG_TASK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
-|QDS_BLOOM_FILTER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|QDS_BLOOM_FILTER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |QDS_CLEANUP_STALE_QUERIES_TASK_MAIN_LOOP_SLEEP |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |QDS_CTXS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |QDS_DB_DISK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |QDS_DYN_VECTOR |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
-|QDS_EXCLUSIVE_ACCESS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|QDS_EXCLUSIVE_ACCESS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |QDS_HOST_INIT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
 |QDS_LOADDB |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |QDS_PERSIST_TASK_MAIN_LOOP_SLEEP |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
-|QDS_QDS_CAPTURE_INIT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|QDS_QDS_CAPTURE_INIT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |QDS_SHUTDOWN_QUEUE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |QDS_STMT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |QDS_STMT_DISK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
@@ -767,7 +767,7 @@ GO
 |QPJOB_WAITFOR_ABORT |指出非同步自動統計資料更新在執行時，已被 KILL 的呼叫所取消。 雖然這項更新已經完成了，但卻被暫停到終止執行緒訊息協調完成為止。 這種狀態雖然很平常，卻很少見，而且為時甚短。 其值最好少於一秒。| 
 |QRY_MEM_GRANT_INFO_MUTEX  |當查詢執行記憶體管理試圖控制靜態授與資訊清單的存取時發生。 這個狀態會列出目前已授與和等候中之記憶體要求的相關資訊。 這個狀態是一種簡單的存取控制狀態。 這個狀態應該不會有長時間的等候。 如果沒有釋出這個 Mutex，所有新的記憶體使用查詢都會停止回應。| 
 |QRY_PARALLEL_THREAD_MUTEX |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|QRY_PROFILE_LIST_MUTEX |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|QRY_PROFILE_LIST_MUTEX |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |QUERY_ERRHDL_SERVICE_DONE |僅供參考之用。 不支援。 <br /><br /> **適用** 于： [!INCLUDE[ssKilimanjaro_md](../../includes/sskilimanjaro-md.md)] 僅適用于。 |  
 |QUERY_WAIT_ERRHDL_SERVICE |僅供參考之用。  不支援。 <br /><br /> **適用** 于： [!INCLUDE[ssKilimanjaro_md](../../includes/sskilimanjaro-md.md)] 僅適用于。  |  
 |QUERY_EXECUTION_INDEX_SORT_EVENT_OPEN |在離線建立索引建置平行執行時，以及排序中的不同工作者執行緒同步處理排序檔存取作業時的某些情況中發生。| 
@@ -784,13 +784,13 @@ GO
 |RBIO_RG_REPLICA |當超大規模資料庫計算節點因為可讀取次要複本節點的延遲記錄耗用量（ (s) ）而受到節流時發生。 <br /><br /> **適用** 于： Azure SQL Database 超大規模。|
 |RBIO_RG_LOCALDESTAGE |在超大規模資料庫計算節點因為記錄服務的延遲記錄耗用量而受到節流時發生。 <br /><br /> **適用** 于： Azure SQL Database 超大規模。|
 |RECOVER_CHANGEDB |在同步處理暖待命資料庫中的資料庫狀態時發生。| 
-|RECOVERY_MGR_LOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|RECOVERY_MGR_LOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |REDO_THREAD_PENDING_WORK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |REDO_THREAD_SYNC |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |REMOTE_BLOCK_IO |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
-|REMOTE_DATA_ARCHIVE_MIGRATION_DMV |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|REMOTE_DATA_ARCHIVE_SCHEMA_DMV |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|REMOTE_DATA_ARCHIVE_SCHEMA_TASK_QUEUE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|REMOTE_DATA_ARCHIVE_MIGRATION_DMV |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|REMOTE_DATA_ARCHIVE_SCHEMA_DMV |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|REMOTE_DATA_ARCHIVE_SCHEMA_TASK_QUEUE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |REPL_CACHE_ACCESS |在複寫發行項快取上進行同步處理時發生。 在這些等候期間，複寫記錄讀取器將會暫停，而已發行資料表上的資料定義語言 (DDL) 陳述式也會遭到封鎖。| 
 |REPL_HISTORYCACHE_ACCESS |僅供內部使用。| 
 |REPL_SCHEMA_ACCESS |在同步處理複寫結構描述版本資訊時發生。 在已複寫物件上執行 DDL 陳述式時，以及當記錄讀取器依據 DDL 出現位置來建立或取用版本化結構描述時，都會出現這種狀態。 如果您在具有異動複寫的單一發行者上有許多已發行的資料庫，而且已發行的資料庫是非常活躍的，則在這種等候類型上可以看到爭用。| 
@@ -800,7 +800,7 @@ GO
 |REPLICA_WRITES |在工作等候頁面寫入資料庫快照集或 DBCC 複本完成時發生。| 
 |REQUEST_DISPENSER_PAUSE |當工作在等候所有未處理 I/O 完成，使其可凍結檔案 I/O 以供快照集備份時發生。| 
 |REQUEST_FOR_DEADLOCK_SEARCH |在死結監視器等候開始下個死結搜尋時發生。 這個等候應該在兩次死結偵測之間發生，在此資源上的等候時間如果很長，並不表示發生任何問題。| 
-|RESERVED_MEMORY_ALLOCATION_EXT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|RESERVED_MEMORY_ALLOCATION_EXT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |RESMGR_THROTTLED |當新的要求送入，然後根據 GROUP_MAX_REQUESTS 設定降低速度。| 
 |RESOURCE_GOVERNOR_IDLE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |RESOURCE_QUEUE |在同步處理各種內部資源佇列時發生。| 
@@ -808,15 +808,15 @@ GO
 |RESOURCE_SEMAPHORE_MUTEX |在查詢等候系統滿足其執行緒保留要求時發生。 同步處理查詢編譯與記憶體授權要求時也會發生這種等候類型。| 
 |RESOURCE_SEMAPHORE_QUERY_COMPILE |當並行查詢編譯數目達到調整流速上限時發生。 等候時間和等候時間過高可能表示有過多的編譯、重新編譯或 uncacheable 計畫。| 
 |RESOURCE_SEMAPHORE_SMALL_QUERY |在其他並行查詢導致小型查詢之記憶體要求無法立即取得授權時發生。 等候時間應該不會超過幾秒鐘，因為如果伺服器無法在幾秒鐘內授權使用要求的記憶體，它就會將要求傳送到主要查詢記憶體集區。 如果等候頻率很高，可能表示並行的小型查詢數目過多，而主要記憶體集區則受到等候中的查詢所封鎖。 <br /><br /> **適用** 于： [!INCLUDE[ssKilimanjaro_md](../../includes/sskilimanjaro-md.md)] 僅適用于。 |  
-|RESTORE_FILEHANDLECACHE_ENTRYLOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|RESTORE_FILEHANDLECACHE_LOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|RESTORE_FILEHANDLECACHE_ENTRYLOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|RESTORE_FILEHANDLECACHE_LOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |RG_RECONFIG |僅供內部使用。| 
-|ROWGROUP_OP_STATS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|ROWGROUP_VERSION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|ROWGROUP_OP_STATS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|ROWGROUP_VERSION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |RTDATA_LIST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
-|SATELLITE_CARGO |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|SATELLITE_SERVICE_SETUP |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|SATELLITE_TASK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|SATELLITE_CARGO |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|SATELLITE_SERVICE_SETUP |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|SATELLITE_TASK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |SBS_DISPATCH |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
 |SBS_RECEIVE_TRANSPORT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
 |SBS_TRANSPORT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
@@ -824,7 +824,7 @@ GO
 |SEC_DROP_TEMP_KEY |在嘗試卸除暫時安全性金鑰失敗之後，再次重試之前發生。| 
 |SECURITY_CNG_PROVIDER_MUTEX |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
 |SECURITY_CRYPTO_CONTEXT_MUTEX |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|SECURITY_DBE_STATE_MUTEX |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|SECURITY_DBE_STATE_MUTEX |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |SECURITY_KEYRING_RWLOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |SECURITY_MUTEX |當系統等候控制可延伸金鑰管理 (EKM) 密碼編譯提供者之全域清單和 EKM 工作階段之工作階段範圍清單存取權的 Mutex 時發生。| 
 |SECURITY_RULETABLE_MUTEX |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
@@ -833,25 +833,25 @@ GO
 |SEQUENTIAL_GUID |正在取得新的循序 GUID 時發生。| 
 |SERVER_IDLE_CHECK |在資源監視器嘗試將 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體宣告為閒置或嘗試喚醒期間，同步處理 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體閒置狀態時發生。| 
 |SERVER_RECONFIGURE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|SESSION_WAIT_STATS_CHILDREN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|SHARED_DELTASTORE_CREATION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|SESSION_WAIT_STATS_CHILDREN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|SHARED_DELTASTORE_CREATION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |SHUTDOWN |在關機陳述式等候使用中的連接結束時發生。| 
 |SLEEP_BPOOL_FLUSH |在檢查點調整流速發出新 I/O 之流速以避免磁碟子系統爆滿時發生。| 
-|SLEEP_BUFFERPOOL_HELPLW |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|SLEEP_BUFFERPOOL_HELPLW |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |SLEEP_DBSTARTUP |在啟動資料庫期間等候所有資料庫復原時發生。| 
 |SLEEP_DCOMSTARTUP |最多只在啟動 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體期間等候 DCOM 初始化完成時發生一次。| 
 |SLEEP_MASTERDBREADY |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |SLEEP_MASTERMDREADY |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |SLEEP_MASTERUPGRADED |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|SLEEP_MEMORYPOOL_ALLOCATEPAGES |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|SLEEP_MEMORYPOOL_ALLOCATEPAGES |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |SLEEP_MSDBSTARTUP |在 SQL 追蹤等候 msdb 資料庫啟動完成時發生。| 
-|SLEEP_RETRY_VIRTUALALLOC |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|SLEEP_RETRY_VIRTUALALLOC |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |SLEEP_SYSTEMTASK |在啟動背景工作期間等候 tempdb 啟動完成時發生。| 
 |SLEEP_TASK |當工作在等候一般事件發生期間進入休眠時發生。| 
 |SLEEP_TEMPDBSTARTUP |在工作等候 tempdb 完成啟動時發生。| 
-|SLEEP_WORKSPACE_ALLOCATEPAGE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|SLEEP_WORKSPACE_ALLOCATEPAGE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |SLO_UPDATE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
-|SMSYNC |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|SMSYNC |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |SNI_CONN_DUP |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |SNI_CRITICAL_SECTION |在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 網路元件內執行內部同步處理時發生。| 
 |SNI_HTTP_WAITFOR_0_DISCON |在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 關機期間等候未處理的 HTTP 連接結束時發生。| 
@@ -860,7 +860,7 @@ GO
 |SNI_WRITE_ASYNC |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
 |SOAP_READ |在等候 HTTP 網路讀取動作完成時發生。| 
 |SOAP_WRITE |在等候 HTTP 網路寫入動作完成時發生。| 
-|SOCKETDUPLICATEQUEUE_CLEANUP |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|SOCKETDUPLICATEQUEUE_CLEANUP |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |SOS_CALLBACK_REMOVAL |在回撥清單上執行同步處理以移除回撥時發生。 在伺服器初始化完成之後，此計數器不應該變更。| 
 |SOS_DISPATCHER_MUTEX |在發送器集區的內部同步處理期間發生。 這包括正在調整集區時。| 
 |SOS_LOCALALLOCATORLIST |在 [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] 記憶體管理員中執行內部同步處理時發生。 <br /><br /> **適用** 于： [!INCLUDE[ssKilimanjaro_md](../../includes/sskilimanjaro-md.md)] 僅適用于。 |  
@@ -904,9 +904,9 @@ GO
 |SQLTRACE_WAIT_ENTRIES |在 SQL 追蹤事件佇列等候封包到達佇列時發生。| 
 |SRVPROC_SHUTDOWN |在關機處理序等候內部資源釋出以完整關機時發生。| 
 |STARTUP_DEPENDENCY_MANAGER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
-|TDS_BANDWIDTH_STATE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|TDS_INIT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|TDS_PROXY_CONTAINER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|TDS_BANDWIDTH_STATE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|TDS_INIT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|TDS_PROXY_CONTAINER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |TEMPOBJ |在已同步處理暫存物件卸除時發生。 這種等候很罕見，只有在工作已要求 temp 資料表卸除的獨佔存取權時才會發生。| 
 |TEMPORAL_BACKGROUND_PROCEED_CLEANUP |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
 |TERMINATE_LISTENER |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
@@ -954,7 +954,7 @@ GO
 |WAIT_XTP_PROCEDURE_ENTRY |卸除程序等候該程序目前執行的所有作業完成時發生。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |WAIT_XTP_RECOVERY |當資料庫復原正在等候記憶體優化物件的復原完成時發生。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |WAIT_XTP_SERIAL_RECOVERY |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
-|WAIT_XTP_SWITCH_TO_INACTIVE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|WAIT_XTP_SWITCH_TO_INACTIVE |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |WAIT_XTP_TASK_SHUTDOWN |等候 In-Memory OLTP 執行緒完成時發生。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |WAIT_XTP_TRAN_DEPENDENCY |等候交易相依性時發生。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |WAITFOR |發生于 WAITFOR Transact-sql 語句的結果。 等候的持續時間由陳述式的參數決定。 這是使用者起始的等候。| 
@@ -962,10 +962,10 @@ GO
 |WAITFOR_TASKSHUTDOWN |僅供參考之用。 不支援。 我們無法保證未來的相容性。| 
 |WAITSTAT_MUTEX |在同步處理用來擴展 sys.dm_os_wait_stats 之統計資料集合的存取作業時發生。| 
 |WCC |僅供參考之用。 不支援。 我們無法保證未來的相容性。| 
-|WINDOW_AGGREGATES_MULTIPASS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|WINDOW_AGGREGATES_MULTIPASS |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |WINFAB_API_CALL |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |WINFAB_REPLICA_BUILD_OPERATION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
-|WINFAB_REPORT_FAULT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|WINFAB_REPORT_FAULT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |WORKTBL_DROP |在工作資料表卸除失敗之後，於重試之前暫停時發生。| 
 |WRITE_COMPLETION |當寫入作業正在進行時發生。| 
 |WRITELOG |在等候記錄排清完成時發生。 造成記錄排清的一般作業包括檢查點和交易認可。| 
@@ -973,7 +973,7 @@ GO
 |XACT_RECLAIM_SESSION |在等候工作階段目前的擁有者釋出工作階段擁有權時發生。| 
 |XACTLOCKINFO |在同步處理交易鎖定清單的存取作業時發生。 除了交易本身之外，諸如死結偵測和鎖定移轉等作業也會在頁面分割時存取鎖定清單。| 
 |XACTWORKSPACE_MUTEX |在同步處理從交易脫離的作業，以及交易之編列成員之間的資料庫鎖定數目時發生。| 
-|XDB_CONN_DUP_HASH |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|XDB_CONN_DUP_HASH |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |XDES_HISTORY |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |XDES_OUT_OF_ORDER_LIST |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |XDES_SNAPSHOT |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
@@ -985,7 +985,7 @@ GO
 |XE_DISPATCHER_CONFIG_SESSION_LIST |當使用非同步目標的擴充的事件工作階段啟動或停止時發生。 這個等候表示下列其中一個狀況：| 
 |XE_DISPATCHER_JOIN |當用於擴充的事件工作階段的背景執行緒結束時發生。| 
 |XE_DISPATCHER_WAIT |當用於擴充的事件工作階段的背景執行緒正在等候事件緩衝區處理時發生。| 
-|XE_FILE_TARGET_TVF |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|XE_FILE_TARGET_TVF |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |XE_LIVE_TARGET_TVF |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。| 
 |XE_MODULEMGR_SYNC |僅供參考之用。 不支援。 我們無法保證未來的相容性。| 
 |XE_OLS_LOCK |僅供參考之用。 不支援。 我們無法保證未來的相容性。| 
@@ -1000,18 +1000,18 @@ GO
 |XE_TIMER_EVENT |僅供內部使用。| 
 |XE_TIMER_MUTEX |僅供內部使用。| 
 |XE_TIMER_TASK_DONE |僅供內部使用。| 
-|XIO_CREDENTIAL_MGR_RWLOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|XIO_CREDENTIAL_RWLOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|XIO_CREDENTIAL_MGR_RWLOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|XIO_CREDENTIAL_RWLOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |XIO_EDS_MGR_RWLOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
 |XIO_EDS_RWLOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
 |XIO_IOSTATS_BLOBLIST_RWLOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
 |XIO_IOSTATS_FCBLIST_RWLOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 及更新版本。| 
-|XIO_LEASE_RENEW_MGR_RWLOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|XIO_LEASE_RENEW_MGR_RWLOCK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |XTP_HOST_DB_COLLECTION |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |XTP_HOST_LOG_ACTIVITY |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
-|XTP_HOST_PARALLEL_RECOVERY |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|XTP_PREEMPTIVE_TASK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
-|XTP_TRUNCATION_LSN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本。| 
+|XTP_HOST_PARALLEL_RECOVERY |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|XTP_PREEMPTIVE_TASK |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
+|XTP_TRUNCATION_LSN |僅供內部使用。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本。| 
 |XTPPROC_CACHE_ACCESS |存取所有原生編譯預存程序快取物件時發生。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。| 
 |XTPPROC_PARTITIONED_STACK_CREATE |依據每個 NUMA 節點配置特定程序的原生編譯預存程序快取結構 (必須以單一執行緒的方式執行) 時發生。 <br /><br /> **適用對象**：[!INCLUDE[ssSQL12](../../includes/sssql11-md.md)] 及更新版本。|
 

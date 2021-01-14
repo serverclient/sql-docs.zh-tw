@@ -20,16 +20,16 @@ helpviewer_keywords:
 ms.assetid: e32fac49-5161-47c0-8540-af3fe730c00c
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: eef4f3a36c61a24a1a90c5904db578634a791a80
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: c93e9c33174172311a7378219440b7c60b7ab4b8
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98097504"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172480"
 ---
 # <a name="sysdm_resource_governor_external_resource_pool_affinity-transact-sql"></a>sys.dm_resource_governor_external_resource_pool_affinity (Transact-sql) 
 [!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
-**適用於：** [!INCLUDE[sssql15-md](../../includes/sssql15-md.md)] [!INCLUDE[rsql-productname-md](../../includes/rsql-productname-md.md)] 和 [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] [!INCLUDE[rsql-productnamenew-md](../../includes/rsql-productnamenew-md.md)]
+**適用於：** [!INCLUDE[sssql15-md](../../includes/sssql16-md.md)] [!INCLUDE[rsql-productname-md](../../includes/rsql-productname-md.md)] 和 [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] [!INCLUDE[rsql-productnamenew-md](../../includes/rsql-productnamenew-md.md)]
 
 傳回關於目前外部資源集區設定的 CPU 親和性資訊。
   

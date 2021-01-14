@@ -12,18 +12,18 @@ ms.assetid: 45823fc8-723a-49f2-9a11-94d241245cfd
 author: lrtoyou1223
 ms.author: lle
 manager: erikre
-ms.openlocfilehash: eda1a559e9936deae31a5511dacd695e8ec6f24e
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: b67ff423ecfe90090c734f370e2d1df0c9958605
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195032"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172440"
 ---
 # <a name="tracing-master-data-services"></a>追蹤 (Master Data Services)
 
 [!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sql-windows-only-asdbmi.md)]
 
-  Web.config 檔案包含追蹤區段，如下所示。 這是 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)][!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)]  
+  Web.config 檔案包含追蹤區段，如下所示。 這是 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)][!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)]  
   
 ```  
 <sources>  
@@ -61,7 +61,7 @@ ms.locfileid: "92195032"
   
 -   記錄格式是 CSV。 下表描述記錄格式。  
   
-    |項目|描述|  
+    |元素|描述|  
     |-------------|-----------------|  
     |Time|追蹤項目的發生時間。|  
     |CorrelationID|每個要求會指派一個相互關聯識別碼。 此要求觸發的所有追蹤會共用相同的相互關聯識別碼。<br /><br /> 當 UI 中發生錯誤時，相互關聯識別碼會出現在錯誤訊息中。|  

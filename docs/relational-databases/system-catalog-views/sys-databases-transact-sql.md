@@ -21,12 +21,12 @@ ms.assetid: 46c288c1-3410-4d68-a027-3bbf33239289
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 5794b2720340fac295720ac2a4ab05a7906a9226
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: d17f07aa99165f71e5e88b3033fcf12793a6f86c
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98093158"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171190"
 ---
 # <a name="sysdatabases-transact-sql"></a>sys.databases (Transact-SQL)
 
@@ -43,7 +43,7 @@ ms.locfileid: "98093158"
 |**source_database_id**|**int**|Non-NULL = 這個資料庫快照集的來源資料庫識別碼。<br /> NULL = 不是資料庫快照集。|  
 |**owner_sid**|**varbinary(85)**|資料庫外部擁有者的 SID (安全性識別碼)，亦即在伺服器註冊所用的識別碼。 如需誰可以擁有資料庫的詳細資訊，請參閱 [ALTER authorization](../../t-sql/statements/alter-authorization-transact-sql.md)的 **alter authorization for** database 一節。|  
 |**create_date**|**datetime**|資料庫建立或重新命名的日期。 針對 **tempdb**，此值會在每次伺服器重新開機時變更。|  
-|**compatibility_level**|**tinyint**|對應於與行為相容之 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 版本的整數：<br /><br /><table border="0"><tr><td>**值**</td><td>**適用於**</td></tr><tr><td>70</td><td>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 7.0 到 [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)]</td></tr><tr><td>80</td><td>[!INCLUDE[ssVersion2000](../../includes/ssversion2000-md.md)] 通過 [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)]</td></tr><tr><td>90</td><td>[!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 通過 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]</td></tr><tr><td>100</td><td>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]</td></tr><tr><td>110</td><td>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]</td></tr><tr><td>120</td><td>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]</td></tr><tr><td>130</td><td>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]</td></tr><tr><td>140</td><td>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]</td></tr><tr><td>150</td><td>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]</td></tr></table>|  
+|**compatibility_level**|**tinyint**|對應於與行為相容之 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 版本的整數：<br /><br /><table border="0"><tr><td>**值**</td><td>**適用於**</td></tr><tr><td>70</td><td>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 7.0 到 [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)]</td></tr><tr><td>80</td><td>[!INCLUDE[ssVersion2000](../../includes/ssversion2000-md.md)] 通過 [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)]</td></tr><tr><td>90</td><td>[!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 通過 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]</td></tr><tr><td>100</td><td>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]</td></tr><tr><td>110</td><td>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]</td></tr><tr><td>120</td><td>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]</td></tr><tr><td>130</td><td>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]</td></tr><tr><td>140</td><td>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]</td></tr><tr><td>150</td><td>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]</td></tr></table>|  
 |**collation_name**|**sysname**|資料庫的定序。 它是資料庫中的預設定序。<br /> NULL = 資料庫不在線上，或者 AUTO_CLOSE 設為 ON 且資料庫已關閉。|  
 |**user_access**|**tinyint**|使用者存取設定：<br /> 0 = 指定了 MULTI_USER<br /> 1 = 指定了 SINGLE_USER<br /> 2 = 指定了 RESTRICTED_USER|  
 |**user_access_desc**|**nvarchar(60)**|使用者存取設定的描述。|  
@@ -82,7 +82,7 @@ ms.locfileid: "98093158"
 |**is_db_chaining_on**|**bit**|1 = 跨資料庫擁有權鏈結是 ON<br /> 0 = 跨資料庫擁有權鏈結是 OFF|  
 |**is_parameterization_forced**|**bit**|1 = 參數化是 FORCED<br /> 0 = 參數化是 SIMPLE|  
 |**is_master_key_encrypted_by_server**|**bit**|1 = 資料庫具有已加密的主要金鑰<br /> 0 = 資料庫沒有已加密的主要金鑰|  
-|**is_query_store_on**|**bit**|1 = 此資料庫的查詢存放區已啟用。 檢查 [sys.database_query_store_options](../../relational-databases/system-catalog-views/sys-database-query-store-options-transact-sql.md) 以查看查詢存放區的狀態。<br /> 0 = 未啟用查詢存放區<br /> **適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 起)。|  
+|**is_query_store_on**|**bit**|1 = 此資料庫的查詢存放區已啟用。 檢查 [sys.database_query_store_options](../../relational-databases/system-catalog-views/sys-database-query-store-options-transact-sql.md) 以查看查詢存放區的狀態。<br /> 0 = 未啟用查詢存放區<br /> **適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 起)。|  
 |**is_published**|**bit**|1 = 資料庫是交易式或快照式複寫拓撲的發行集資料庫<br /> 0 = 不是發行集資料庫|  
 |**is_subscribed**|**bit**|不使用這個資料行。 不論資料庫的訂閱者狀態為何，它一定會傳回 0。|  
 |**is_merge_published**|**bit**|1 = 資料庫是合併式複寫拓撲的發行集資料庫<br /> 0 = 不是合併式複寫拓撲的發行集資料庫|  
@@ -113,8 +113,8 @@ ms.locfileid: "98093158"
 |**delayed_durability_desc**|**nvarchar(60)**|延遲的持久性設定：<br /> DISABLED<br /> ALLOWED<br /> FORCED<br /> **適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 起) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|  
 |**is_memory_optimized_elevate_to_snapshot_on**|**bit**|當工作階段設定 TRANSACTION ISOLATION LEVEL 設定為較低的隔離等級 READ COMMITTED 或 READ UNCOMMITTED 時，會使用 SNAPSHOT 隔離存取記憶體最佳化的資料表。<br /> 1 = 最低隔離等級為 SNAPSHOT。<br /> 0 = 不提高隔離等級。|  
 |**is_federation_member**|**bit**|表示資料庫是否為同盟的成員。<br /> **適用於**：[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]|  
-|**is_remote_data_archive_enabled**|**bit**|指出資料庫是否已伸展。<br /> 0 = 資料庫未啟用 Stretch。<br /> 1 = 資料庫已啟用 Stretch。<br /> **適用于**： [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]) 開始<br /> 如需詳細資訊，請參閱 [Stretch Database](../../sql-server/stretch-database/stretch-database.md)。|  
-|**is_mixed_page_allocation_on**|**bit**|指出資料庫中的資料表和索引是否可以從混合範圍配置初始頁面。<br /> 0 = 資料庫中的資料表和索引一律會從統一範圍配置初始頁面。<br /> 1 = 資料庫中的資料表和索引可以從混合範圍配置初始頁面。<br /> 如需詳細資訊，請參閱 `SET MIXED_PAGE_ALLOCATION` [ALTER DATABASE SET Options &#40;transact-sql&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md)的選項。<br /> **適用于**： [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]) 開始|  
+|**is_remote_data_archive_enabled**|**bit**|指出資料庫是否已伸展。<br /> 0 = 資料庫未啟用 Stretch。<br /> 1 = 資料庫已啟用 Stretch。<br /> **適用于**： [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]) 開始<br /> 如需詳細資訊，請參閱 [Stretch Database](../../sql-server/stretch-database/stretch-database.md)。|  
+|**is_mixed_page_allocation_on**|**bit**|指出資料庫中的資料表和索引是否可以從混合範圍配置初始頁面。<br /> 0 = 資料庫中的資料表和索引一律會從統一範圍配置初始頁面。<br /> 1 = 資料庫中的資料表和索引可以從混合範圍配置初始頁面。<br /> 如需詳細資訊，請參閱 `SET MIXED_PAGE_ALLOCATION` [ALTER DATABASE SET Options &#40;transact-sql&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md)的選項。<br /> **適用于**： [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]) 開始|  
 |**is_temporal_history_retention_enabled**|**bit**|指出是否已啟用時態性保留原則清除工作。<br /><br />1 = 已啟用時態保留<br />0 = 已停用時態保留<br />**適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]|
 |**catalog_collation_type**|**int**|目錄定序設定：<br />0 = DATABASE_DEFAULT<br />2 = SQL_Latin_1_General_CP1_CI_AS<br /> **適用於**：[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]|
 |**catalog_collation_type_desc**|**nvarchar(60)**|目錄定序設定：<br />COLLATE<br />SQL_Latin_1_General_CP1_CI_AS<br /> **適用於**：[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]|
@@ -175,7 +175,7 @@ SELECT a.name, a.is_temporal_history_retention_enabled
 FROM sys.databases AS a;
 ```  
   
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>下一步
 
 - [ALTER DATABASE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql.md)
 - [sys.database_mirroring_witnesses &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/database-mirroring-witness-catalog-views-sys-database-mirroring-witnesses.md)

@@ -21,12 +21,12 @@ ms.assetid: 8cb239e9-eb8c-4109-9cec-0d35de95fa0e
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: cf190b2c0a973db9e2955cd928e1b716d847d26b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 43fb4dff1730aa0d8e19d411838f76b965fbca01
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97467019"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171990"
 ---
 # <a name="sysdatabase_principals-transact-sql"></a>sys.database_principals (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -49,7 +49,7 @@ ms.locfileid: "97467019"
 |**authentication_type_desc**|**nvarchar(60)**|**適用對象**：[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 及更新版本。<br /><br /> 驗證類型的描述。 以下是可能的值及其描述。<br /><br /> 無：無驗證<br />實例：實例驗證<br />資料庫：資料庫驗證<br />WINDOWS： Windows 驗證<br />EXTERNAL： Azure Active Directory authentication|  
 |**default_language_name**|**sysname**|**適用對象**：[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 及更新版本。<br /><br /> 表示此主體的預設語言。|  
 |**default_language_lcid**|**int**|**適用對象**：[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 及更新版本。<br /><br /> 表示此主體的預設 LCID。|  
-|**allow_encrypted_value_modifications**|**bit**|**適用於**：[!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 及更新版本、[!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]。<br /><br /> 在大量複製作業時隱藏伺服器上的密碼編譯中繼資料檢查。 這可讓使用者大量複製使用 Always Encrypted 在資料表或資料庫之間加密的資料，而不需要解密資料。 預設值為 OFF。 |      
+|**allow_encrypted_value_modifications**|**bit**|**適用於**：[!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 及更新版本、[!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]。<br /><br /> 在大量複製作業時隱藏伺服器上的密碼編譯中繼資料檢查。 這可讓使用者大量複製使用 Always Encrypted 在資料表或資料庫之間加密的資料，而不需要解密資料。 預設值為 OFF。 |      
   
 ## <a name="remarks"></a>備註  
  *PasswordLastSetTime* 屬性適用于 SQL Server 的所有支援設定，但只有當 SQL Server 在 Windows Server 2003 或更新版本上執行，而且已啟用 CHECK_POLICY 和 CHECK_EXPIRATION 時，才能使用其他屬性。 如需詳細資訊，請參閱 [密碼原則](../../relational-databases/security/password-policy.md) 。
