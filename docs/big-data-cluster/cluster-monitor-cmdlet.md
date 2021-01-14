@@ -10,22 +10,22 @@ ms.date: 09/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 80535a9baefe60301927723511a5bf1afeb805a8
-ms.sourcegitcommit: 29a2be59c56f8a4b630af47760ef38d2bf56a3eb
+ms.openlocfilehash: be07fa7f00f38f4f7ff3782593b19a584627e2f7
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378373"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091696"
 ---
 # <a name="monitor-cluster-with-azdata-and-kubectl"></a>使用 azdata 和 kubectl 監視叢集
 
 ## <a name="use-azdata"></a>使用 azdata
 
-您也可以使用 [azdata](deploy-install-azdata.md) 命令來同時檢視端點和叢集狀態。
+您也可以使用 [azdata](../azdata/install/deploy-install-azdata.md) 命令來同時檢視端點和叢集狀態。
 
 ### <a name="service-endpoints"></a>服務端點
 
-1. 使用 [azdata login](reference-azdata.md) 來登入巨量資料叢集。 將 **--controller-endpoint** 參數設定為控制器端點的外部 IP 位址。
+1. 使用 [azdata login](../azdata/reference/reference-azdata.md) 來登入巨量資料叢集。 將 **--controller-endpoint** 參數設定為控制器端點的外部 IP 位址。
 
    ```bash
    azdata login --endpoint https://<ip-address-of-controller-svc-external>:30080 --username <user-name>
@@ -39,7 +39,7 @@ ms.locfileid: "92378373"
    azdata login --endpoint https://<control_domain_name>:30080 --auth ad
    ```
 
-1. 請執行 [`azdata bdc endpoint list`](reference-azdata-bdc-endpoint.md) 以取得一份清單，其中包含每個端點的描述及其對應 IP 位址和連接埠值。 
+1. 請執行 [`azdata bdc endpoint list`](../azdata/reference/reference-azdata-bdc-endpoint.md) 以取得一份清單，其中包含每個端點的描述及其對應 IP 位址和連接埠值。 
 
    ```bash
    azdata bdc endpoint list -o table
@@ -65,7 +65,7 @@ ms.locfileid: "92378373"
 
 ### <a name="view-cluster-status"></a>檢視叢集狀態
 
-您可以使用 [`azdata bdc status show`](reference-azdata-bdc-status.md) 命令來檢視叢集的狀態。
+您可以使用 [`azdata bdc status show`](../azdata/reference/reference-azdata-bdc-status.md) 命令來檢視叢集的狀態。
 
 ```bash
 azdata bdc status show
@@ -150,7 +150,7 @@ azdata bdc status show
 
 ### <a name="view-specific-resource-status"></a>檢視特定資源狀態
 
-您可以使用 [azdata bdc status show](reference-azdata-bdc-status.md) 命令來檢視叢集內特定資源的狀態。 當您使用此命令時，可以使用 `--resource` 參數進行篩選。 `--resource` 參數的幾個輸入範例包括：
+您可以使用 [azdata bdc status show](../azdata/reference/reference-azdata-bdc-status.md) 命令來檢視叢集內特定資源的狀態。 當您使用此命令時，可以使用 `--resource` 參數進行篩選。 `--resource` 參數的幾個輸入範例包括：
 
 - master
 - 控制
@@ -242,7 +242,7 @@ azdata bdc status show --all --resource storage-0
 
 ### <a name="view-controller-status"></a>檢視控制器狀態
 
-您可以使用 [`azdata bdc control status show`](reference-azdata-bdc-control-status.md) 命令來檢視控制器狀態。 該命令可提供監視儀表板的類似連結，這些監視儀表板與巨量資料叢集的控制器元件相關。
+您可以使用 [`azdata bdc control status show`](../azdata/reference/reference-azdata-bdc-control-status.md) 命令來檢視控制器狀態。 該命令可提供監視儀表板的類似連結，這些監視儀表板與巨量資料叢集的控制器元件相關。
 
 
 ## <a name="next-steps"></a>後續步驟

@@ -10,12 +10,12 @@ ms.author: anmunde
 ms.reviewer: dphansen
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
-ms.openlocfilehash: 4cce378546ef8c6fa9405f24fb9157dc6a249969
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 49d62ab967f972d777a02659b5a87b9e11740604
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97471249"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094565"
 ---
 # <a name="loopback-connection-to-sql-server-from-a-python-or-r-script"></a>從 Python 或 R 指令碼對 SQL Server 的回送連線
 [!INCLUDE [SQL Server 2019 and later](../../includes/applies-to-version/sqlserver2019.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "97471249"
 
 伺服器位址、用戶端憑證檔案位置與用戶端金鑰檔案位置對每個 `sp_execute_external_script` 都是唯一的，而且可以透過使用適用於 Python 的 API **rx_get_sql_loopback_connection_string()** 或適用於 R 的 **rxGetSqlLoopbackConnectionString()** 來取得。
 
-如需連接字串屬性的詳細資訊，請參閱 Microsoft ODBC Driver for SQL Server 的 [DSN 和連接字串關鍵字和屬性](../../connect/odbc/dsn-connection-string-attribute.md?view=sql-server-linux-ver15#new-connection-string-keywords-and-connection-attributes) \(部分機器翻譯\)。
+如需連接字串屬性的詳細資訊，請參閱 Microsoft ODBC Driver for SQL Server 的 [DSN 和連接字串關鍵字和屬性](../../connect/odbc/dsn-connection-string-attribute.md#new-connection-string-keywords-and-connection-attributes) \(部分機器翻譯\)。
 
 ## <a name="generate-connection-string-with-revoscalepy-for-python"></a>使用適用於 Python 的 revoscalepy 產生連接字串
 

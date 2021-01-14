@@ -16,12 +16,12 @@ helpviewer_keywords:
 - SQL Server Management Studio for Analysis Services
 ms.custom: seo-lt-2019
 ms.date: 09/11/2019
-ms.openlocfilehash: 1b523e86ff04de37bf0177430502c92132872e6b
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 1961d2f831a8db86c782a5e2330d74f4346d6d19
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97641697"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096081"
 ---
 # <a name="what-is-sql-server-management-studio-ssms"></a>什麼是 SQL Server Management Studio (SSMS)？
 
@@ -103,6 +103,6 @@ ms.locfileid: "97641697"
 - [安裝非英文版本的 SSMS](install-other-languages.md)
 - [連線及查詢 SQL Server 執行個體](./quickstarts/connect-query-sql-server.md)
 - [撰寫 Transact-SQL 陳述式](../t-sql/tutorial-writing-transact-sql-statements.md)
-- [Azure Data Studio](../azure-data-studio/what-is.md)
+- [Azure Data Studio](../azure-data-studio/what-is-azure-data-studio.md)
 
 [!INCLUDE[contribute-to-content](../includes/paragraph-content/contribute-to-content.md)]

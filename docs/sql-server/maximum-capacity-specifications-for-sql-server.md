@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 13e95046-0e76-4604-b561-d1a74dd824d7
 ms.author: mikeray
 author: MikeRayMSFT
-ms.openlocfilehash: 81a36f15a68d3b122a0ba7651c11bfb22fbfa2e2
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: 126ac3c36d7e72205c4e0268fcd4b1cedf993169
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988554"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172380"
 ---
 # <a name="maximum-capacity-specifications-for-sql-server"></a>SQL Server 的最大容量規格
 
@@ -56,7 +56,7 @@ ms.locfileid: "91988554"
 |每個外部索引鍵的位元組數|900||
 |每個主索引鍵的位元組|900||
 |每個資料列的位元組數|8,060|[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 支援資料列溢位儲存，讓可變長度資料行可以非資料列形式推送。 只有 24 位元組的根會儲存在以非資料列形式所推送可變長度資料行其主要記錄中。 這項功能可讓限制比舊版 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 更有效率。 如需詳細資訊，請參閱[大型資料列支援](../relational-databases/pages-and-extents-architecture-guide.md#large-row-support)。|
-|記憶體最佳化資料表中每個資料列的位元組數|8,060|從 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] 開始，記憶體最佳化資料表支援非資料列儲存。 如果資料表中所有資料行的大小上限超過 8060 個位元組，則會以非資料列形式推送可變長度資料行；這是編譯時間的決策。 針對以非資料列形式儲存的資料行，只會以非資料列形式儲存 8 位元組參考。 如需詳細資訊，請參閱 [記憶體最佳化資料表中的資料表和資料列大小](../relational-databases/in-memory-oltp/table-and-row-size-in-memory-optimized-tables.md)。|
+|記憶體最佳化資料表中每個資料列的位元組數|8,060|從 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] 開始，記憶體最佳化資料表支援非資料列儲存。 如果資料表中所有資料行的大小上限超過 8060 個位元組，則會以非資料列形式推送可變長度資料行；這是編譯時間的決策。 針對以非資料列形式儲存的資料行，只會以非資料列形式儲存 8 位元組參考。 如需詳細資訊，請參閱 [記憶體最佳化資料表中的資料表和資料列大小](../relational-databases/in-memory-oltp/table-and-row-size-in-memory-optimized-tables.md)。|
 |預存程序之來源文字的位元組數|批次大小或 250 MB 當中較小者||
 |每個 `varchar(max) `、`varbinary(max)`、`xml`、`text` 或 `image` 資料行的位元組數|2^31-1||
 |每個 `ntext` 或 `nvarchar(max)` 資料行的字元數|2^30-1||
@@ -83,7 +83,7 @@ ms.locfileid: "91988554"
 |每個資料表的外部索引鍵資料表參考數|外寄 = 253。 內送 = 10,000。|相關限制，請參閱 [Create Foreign Key Relationships](../relational-databases/tables/create-foreign-key-relationships.md)。|
 |識別碼長度 (字元數)|128||
 |每部電腦的執行個體數|單機伺服器為 50 個執行個體。<br /><br />使用共用叢集磁碟作為儲存體時為 25 個容錯移轉叢集執行個體。<br/><br/>使用 SMB 檔案共用作為儲存選項時為 50 個容錯移轉叢集執行個體。||
-|每個記憶體最佳化資料表的索引|從 [!INCLUDE[ssSQL17](../includes/ssSQL17-md.md)] 開始及在 [!INCLUDE[ssSDSFull](../includes/ssSDSFull-md.md)]<br/>8 ([!INCLUDE[ssSQL14](../includes/ssSQL14-md.md)] 和 [!INCLUDE[ssSQL15](../includes/ssSQL15-md.md)]) 中為 999||
+|每個記憶體最佳化資料表的索引|從 [!INCLUDE[ssSQL17](../includes/ssSQL17-md.md)] 開始及在 [!INCLUDE[ssSDSFull](../includes/ssSDSFull-md.md)]<br/>8 ([!INCLUDE[ssSQL14](../includes/ssSQL14-md.md)] 和 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)]) 中為 999||
 |包含 SQL 陳述式的字串長度 (批次大小)|65,536 (網路封包大小)|網路封包大小是表格式資料流 (TDS) 封包的大小，這些封包會用於應用程式與關聯式 [!INCLUDE[ssDE](../includes/ssde-md.md)] 之間的通訊。 預設封包大小是 4 KB，由 network packet size 組態選項所控制。|
 |每個連接的鎖定數|每部伺服器的最大鎖定數||
 |每個 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]|僅受限於記憶體|這個值是針對靜態鎖定配置。 動態鎖定僅受限於記憶體。|

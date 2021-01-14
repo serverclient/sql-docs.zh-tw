@@ -21,12 +21,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 01/09/2017
-ms.openlocfilehash: ebeb72707e1dd65344b30ffe88c0ae5b4425f796
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: a80c3fc49962ad4a67430163f81d00b37c05329b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85786017"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98169216"
 ---
 # <a name="dta-utility"></a>dta 公用程式
 
@@ -164,7 +164,7 @@ dta -d AdventureWorks2012 ...
 >  如果工作階段遭到刪除， **dta** 公用程式就不會刪除使用者指定之微調記錄資料表的內容。 在微調超大型工作負載時，我們建議您對微調記錄指定資料表。 由於微調大型工作負載會產生大量微調記錄，因此，在使用資料表時可以更快刪除工作階段。  
   
  **-F**  
- 允許 **dta** 覆寫現有的輸出檔。 如果已存在相同名稱的輸出檔，且未指定 **-F** ， **dta**就會傳回錯誤。 您可以使用 **-F** 搭配 **-of**、 **-or**或 **-ox**。  
+ 允許 **dta** 覆寫現有的輸出檔。 如果已存在相同名稱的輸出檔，且未指定 **-F** ， **dta** 就會傳回錯誤。 您可以使用 **-F** 搭配 **-of**、 **-or** 或 **-ox**。  
   
  **-fa** _physical_design_structures_to_add_  
  指定 **dta** 應該在建議中包含的實體設計結構類型。 下表列出並說明這個引數所能指定的值。 未指定任何值時，**dta** 會使用預設的 **-fa IDX**。  
@@ -184,7 +184,7 @@ dta -d AdventureWorks2012 ...
 [Database Engine Tuning Advisor (DTA) 中的資料行存放區索引建議](../../relational-databases/performance/columnstore-index-recommendations-in-database-engine-tuning-advisor-dta.md)。
  ||  
 |-|  
-|**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
+|**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
 
   
  **-fk** _keep_existing_option_  
@@ -210,10 +210,10 @@ dta -d AdventureWorks2012 ...
  ALIGNED 表示在 **dta** 所產生的建議中，每個建議的索引都會完全依照定義索引之基礎資料表的相同方式進行分割。 索引檢視表中的非叢集索引會對齊索引檢視表。 這個引數只能指定一個值。 預設值是 **-fp NONE**。  
   
  **-fx** _drop_only_mode_  
- 指定 **dta** 只考慮卸除現有的實體設計結構。 不考慮任何新的實體設計結構。 指定此選項時， **dta** 會評估現有實體設計結構的可用程度，並建議您卸除不常使用的結構。 這個引數沒有任何值。 它不能搭配 **-fa**、 **-fp**或 **-fk ALL** 等引數一起使用。  
+ 指定 **dta** 只考慮卸除現有的實體設計結構。 不考慮任何新的實體設計結構。 指定此選項時， **dta** 會評估現有實體設計結構的可用程度，並建議您卸除不常使用的結構。 這個引數沒有任何值。 它不能搭配 **-fa**、 **-fp** 或 **-fk ALL** 等引數一起使用。  
   
  **-ID** _session_ID_  
- 指定微調工作階段的數值識別碼。 若未指定，則 **dta** 會產生一個識別碼。 您可以利用這個識別碼來檢視現有微調工作階段的資訊。 如果您沒有指定 **-ID**值，就必須利用 **-s**來指定工作階段名稱。  
+ 指定微調工作階段的數值識別碼。 若未指定，則 **dta** 會產生一個識別碼。 您可以利用這個識別碼來檢視現有微調工作階段的資訊。 如果您沒有指定 **-ID** 值，就必須利用 **-s** 來指定工作階段名稱。  
   
  **-ip**  
  指定計畫快取可用做為工作負載。 針對明確選定的資料庫排名前 1000 個計畫快取事件，進行分析。 您可以利用 **-n** 選項變更此值。  
@@ -222,7 +222,7 @@ dta -d AdventureWorks2012 ...
  指定將查詢存放區作為工作負載。 系統會針對明確選定的資料庫來分析查詢存放區排名前 1000 個事件。 您可以利用 **-n** 選項變更此值。  如需詳細資訊，請參閱[查詢存放區](../../relational-databases/performance/how-query-store-collects-data.md)和[使用查詢存放區的工作負載微調資料庫](../../relational-databases/performance/tuning-database-using-workload-from-query-store.md)。
  ||  
 |-|  
-|**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
+|**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
      
  **-if** _workload_file_  
  指定微調輸入所用的工作負載檔案之路徑與名稱。 檔案必須是下列其中一種格式：.trc (SQL Server Profiler 追蹤檔)、.sql (SQL 檔案) 或 .log ([!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 追蹤檔)。 您必須指定一個工作負載檔案或一份工作負載資料表。  
@@ -281,24 +281,24 @@ dta -iq -I 48
 在此情況下，DTA 會將查詢存放區作為工作負載的來源，並只考慮過去 48 小時內執行的查詢。  
   ||  
 |-|  
-|**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。|  
+|**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。|  
 
 
   
  **-of** _output_script_file_name_  
  指定 **dta** 將建議以 [!INCLUDE[tsql](../../includes/tsql-md.md)] 指令碼形式，寫入指定的檔案名稱與目的地。  
   
- 您可以搭配此選項來使用 **-F** 。 請確定檔案名稱沒有重複，特別是當您也正在使用 **-or** 和 **-ox**時。  
+ 您可以搭配此選項來使用 **-F** 。 請確定檔案名稱沒有重複，特別是當您也正在使用 **-or** 和 **-ox** 時。  
   
  **-or** _output_xml_report_file_name_  
  指定 **dta** 將建議以 XML 格式寫入輸出報表。 如果提供了檔案名稱，建議便會寫入該目的地。 否則， **dta** 將使用該工作階段名稱來產生檔案名稱，並將其寫入目前的目錄。  
   
- 您可以搭配此選項來使用 **-F** 。 請確定檔案名稱沒有重複，特別是當您也正在使用 **-of** 和 **-ox**時。  
+ 您可以搭配此選項來使用 **-F** 。 請確定檔案名稱沒有重複，特別是當您也正在使用 **-of** 和 **-ox** 時。  
   
  **-ox** _output_XML_file_name_  
  指定 **dta** 將建議以 XML 檔案格式寫入提供的檔案名稱與目的地。 請確定 Database Engine Tuning Advisor 有寫入目的地目錄的權限。  
   
- 您可以搭配此選項來使用 **-F** 。 請確定檔案名稱沒有重複，特別是當您也正在使用 **-of** 和 **-or**時。  
+ 您可以搭配此選項來使用 **-F** 。 請確定檔案名稱沒有重複，特別是當您也正在使用 **-of** 和 **-or** 時。  
   
  **-P** _password_  
  指定登入識別碼的密碼。 若未使用此選項， **dta** 將提示您輸入密碼。  
@@ -341,9 +341,9 @@ dta -iq -I 48
  指定微調工作階段的名稱。 若未指定 **-ID** ，則必須進行此步驟。  
   
  **-Tf** _table_list_file_  
- 指定包含要微調的資料表清單之檔案名稱。 檔案中所列出的每份資料表，都應該從新的一行中開始。 資料表名稱應該採用三部分命名，例如 **AdventureWorks2012.HumanResources.Department**。 另外，如果您要叫用資料表調整功能，現有資料表的名稱後面可以接著一個指示預計資料表列數的數字。 當微調或評估工作負載中參考這些資料表的陳述式時，Database Engine Tuning Advisor 會考量預計的列數。 請注意， *number_of_rows* 計數與 *table_name*之間可能有一個或多個空格。  
+ 指定包含要微調的資料表清單之檔案名稱。 檔案中所列出的每份資料表，都應該從新的一行中開始。 資料表名稱應該採用三部分命名，例如 **AdventureWorks2012.HumanResources.Department**。 另外，如果您要叫用資料表調整功能，現有資料表的名稱後面可以接著一個指示預計資料表列數的數字。 當微調或評估工作負載中參考這些資料表的陳述式時，Database Engine Tuning Advisor 會考量預計的列數。 請注意， *number_of_rows* 計數與 *table_name* 之間可能有一個或多個空格。  
   
- 這是 *table_list_file*的檔案格式：  
+ 這是 *table_list_file* 的檔案格式：  
   
  *database_name*.[*schema_name*].*table_name* [*number_of_rows*]  
   
@@ -409,13 +409,13 @@ AdventureWorks2012.Production.Product  2000000
 
 table_list.txt 的內容指定：  
 
-- 只應微調資料庫中的 **Customer**、 **Store**和 **Product** 等資料表。  
+- 只應微調資料庫中的 **Customer**、 **Store** 和 **Product** 等資料表。  
   
 - **Customer** 和 **Product** 資料表中的列數，分別假設為 100,000 和 2,000,000。  
   
 - **Store** 中的列數假設為資料表目前的列數。  
 
-    請注意，資料列計數與 *table_list_file*的先前資料表名稱之間可能有一個或多個空格。  
+    請注意，資料列計數與 *table_list_file* 的先前資料表名稱之間可能有一個或多個空格。  
     
     微調時間是 2 小時 (`-A 120`)，輸出寫在 XML 檔 (`-ox XMLTune.xml`) 中。  
 

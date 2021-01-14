@@ -16,12 +16,12 @@ ms.assetid: 5bf822fc-6dec-4806-a153-e200af28e9a5
 author: cawrites
 ms.author: chadam
 robots: noindex,nofollow
-ms.openlocfilehash: 837e1c099dba7d19100bdaf2216a2c0cf879c62e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 8a136b1158f31cf6369bb29f404f4f6f58d6901c
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97482312"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172410"
 ---
 # <a name="installation-wizard-help"></a>安裝精靈說明
 
@@ -365,11 +365,11 @@ ms.locfileid: "97482312"
   
 * **檔案數目** 是適用於 **tempdb** 的資料檔案總數。 預設值是低於 8 的數字，或是安裝程式偵測到的邏輯核心數目。 基於一般規則，如果邏輯處理器的數目小於或等於 8，則與邏輯處理器使用相同數目的資料檔案。 如果邏輯處理器的數目大於 8，則使用 8 個資料檔案。 如果發生競爭的情況，請以 4 的倍數增加資料檔案數目 (最多為邏輯處理器的數量)，直到競爭縮減到可接受的程度，或者對工作負載或代碼進行更改。
   
-* **初始大小 (MB)** 是每個 **tempdb** 資料檔案的初始大小 (MB)。 預設值為 8 MB ([!INCLUDE[ssexpress](../../includes/ssexpress_md.md)] 則為 4 MB)。 [!INCLUDE[sssqlv14](../../includes/sssqlv14-md.md)] 引入的初始檔案大小上限為 262,144 MB (256 GB)。 [!INCLUDE[sssql15](../../includes/sssql15-md.md)] 的初始檔案大小上限則為 1024 MB。 所有 **tempdb** 資料檔案的初始大小都一樣。 因為 **tempdb** 會在每次啟動 SQL Server 或容錯移轉重新建立，所以，您應該將大小指定為接近您的工作負載進行正常作業所需的大小。 若要在啟動期間進一步最佳化 **tempdb** 的建立，可啟用 [資料庫立即檔案初始化](../../relational-databases/databases/database-instant-file-initialization.md)。  
+* **初始大小 (MB)** 是每個 **tempdb** 資料檔案的初始大小 (MB)。 預設值為 8 MB ([!INCLUDE[ssexpress](../../includes/ssexpress_md.md)] 則為 4 MB)。 [!INCLUDE[sssqlv14](../../includes/sssqlv14-md.md)] 引入的初始檔案大小上限為 262,144 MB (256 GB)。 [!INCLUDE[sssql15](../../includes/sssql16-md.md)] 的初始檔案大小上限則為 1024 MB。 所有 **tempdb** 資料檔案的初始大小都一樣。 因為 **tempdb** 會在每次啟動 SQL Server 或容錯移轉重新建立，所以，您應該將大小指定為接近您的工作負載進行正常作業所需的大小。 若要在啟動期間進一步最佳化 **tempdb** 的建立，可啟用 [資料庫立即檔案初始化](../../relational-databases/databases/database-instant-file-initialization.md)。  
   
 * **初始大小總計 (MB)** 是所有 **tempdb** 資料檔案的累計大小。  
   
-* **自動成長 (MB)** 是以 MB 為單位的空間量，其中的每個 **tempdb** 資料檔案將會在其空間用盡時自動成長。 在 [!INCLUDE[sssql15](../../includes/sssql15-md.md)] 和更新版本中，所有資料檔案會依據此設定中指定的數量同時成長。  
+* **自動成長 (MB)** 是以 MB 為單位的空間量，其中的每個 **tempdb** 資料檔案將會在其空間用盡時自動成長。 在 [!INCLUDE[sssql15](../../includes/sssql16-md.md)] 和更新版本中，所有資料檔案會依據此設定中指定的數量同時成長。  
   
 * [自動成長總計 (MB)] 是每個自動成長事件的累計大小。  
 * **資料目錄** 會顯示所有保留 **tempdb** 資料檔案的目錄。 有多個目錄時，資料檔案會以循環配置資源方式放置於目錄中。 例如，假設您建立 3 個目錄並指定 8 個資料檔案，會在第一個目錄中建立 1、4 和 7 的資料檔案。 資料檔案 2、5 和 8 會建立於第二個目錄中。 資料檔案 3 和 6 則會在第三個目錄中。  
@@ -380,7 +380,7 @@ ms.locfileid: "97482312"
   
 **Tempdb 記錄檔** 是記錄檔的名稱。 此檔案會自動建立。 下列設定只會套用到 **tempdb** 記錄檔︰  
   
-* [初始大小 (MB)] 是 **tempdb** 記錄檔的初始大小。 預設值為 8 MB ([!INCLUDE[ssexpress](../../includes/ssexpress_md.md)] 則為 4 MB)。 [!INCLUDE[sssqlv14](../../includes/sssqlv14-md.md)] 引入的初始檔案大小上限為 262,144 MB (256 GB)。 [!INCLUDE[sssql15](../../includes/sssql15-md.md)] 的初始檔案大小上限則為 1024 MB。 因為 **tempdb** 會在每次啟動 SQL Server 或容錯移轉重新建立，所以，您應該將大小指定為接近您的工作負載進行正常作業所需的大小。 若要在啟動期間進一步最佳化 **tempdb** 的建立，可啟用 [資料庫立即檔案初始化](../../relational-databases/databases/database-instant-file-initialization.md)。  
+* [初始大小 (MB)] 是 **tempdb** 記錄檔的初始大小。 預設值為 8 MB ([!INCLUDE[ssexpress](../../includes/ssexpress_md.md)] 則為 4 MB)。 [!INCLUDE[sssqlv14](../../includes/sssqlv14-md.md)] 引入的初始檔案大小上限為 262,144 MB (256 GB)。 [!INCLUDE[sssql15](../../includes/sssql16-md.md)] 的初始檔案大小上限則為 1024 MB。 因為 **tempdb** 會在每次啟動 SQL Server 或容錯移轉重新建立，所以，您應該將大小指定為接近您的工作負載進行正常作業所需的大小。 若要在啟動期間進一步最佳化 **tempdb** 的建立，可啟用 [資料庫立即檔案初始化](../../relational-databases/databases/database-instant-file-initialization.md)。  
   
   > [!NOTE]
   > **Tempdb** 會使用最低限度的記錄。 **Tempdb** 記錄檔無法備份。 它會在每次啟動 SQL Server，或當容錯移轉叢集執行個體時重新建立。

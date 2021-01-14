@@ -9,12 +9,12 @@ ms.author: maghan
 ms.reviewer: matteot, drskwier
 ms.custom: ''
 ms.date: 10/14/2020
-ms.openlocfilehash: 21730bf32e66c5954b2447037286dfdc10717e9c
-ms.sourcegitcommit: 7eb80038c86acfef1d8e7bfd5f4e30e94aed3a75
+ms.openlocfilehash: 960f146d7cd6943d27a0ecce2c1edaedc41de472
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92081537"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102895"
 ---
 # <a name="install-the-sql-server-powershell-module"></a>安裝 SQL Server PowerShell 模組
 
@@ -165,11 +165,11 @@ Install-Module SqlServer -RequiredVersion 21.1.18218-preview -AllowPrerelease
 
 ## <a name="cmdlet-reference"></a>Cmdlet 參考
 
-- [SqlServer Cmdlet](https://docs.microsoft.com/powershell/module/sqlserver)
-- [SQLPS Cmdlet](https://docs.microsoft.com/powershell/module/sqlps)
+- [SqlServer Cmdlet](/powershell/module/sqlserver)
+- [SQLPS Cmdlet](/powershell/module/sqlps)
 
 ## <a name="next-steps"></a>後續步驟
 
 - [SQL Server PowerShell](sql-server-powershell.md)
-- [SQL Server PowerShell Cmdlet](https://docs.microsoft.com/powershell/module/sqlserver)
+- [SQL Server PowerShell Cmdlet](/powershell/module/sqlserver)
 - [使用 PowerShell 搭配 Azure Data Studio](../azure-data-studio/extensions/powershell-extension.md)

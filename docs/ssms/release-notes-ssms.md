@@ -11,12 +11,12 @@ ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
 ms.date: 12/17/2020
-ms.openlocfilehash: 346e964b30f76bf79c20d6f348636a626a8beee2
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 98211695d60592c8178c4b60e45f2105c3b86db4
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642369"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102659"
 ---
 # <a name="release-notes-for-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) 版本資訊
 
@@ -188,7 +188,7 @@ SSMS 18.7 是 SSMS 最新的正式發行 (GA) 版本。 如果您需要舊版 SS
 | 一般 SSMS | 已修正嘗試連線到 Azure SQL DB 可能會需要數秒鐘時間的問題 (使用者資料庫中的 SQL 登入)。 |
 | 一般 SSMS | 已修正 SSMS 無法處理/顯示所擷取鎖死 (.xdl 檔案) 的問題。 |
 | 一般 SSMS | 已修正嘗試開啟 SQL Server 2008 R2 及更低版本的錯誤記錄檔設定時，會因找不到 ErrorLogSizeKb 屬性而失敗的問題。 |
-| 一般 SSMS | 針對 [Azure Synapse Analytics 無伺服器 SQL 集區](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview)支援的一般修正和改善。 |
+| 一般 SSMS | 針對 [Azure Synapse Analytics 無伺服器 SQL 集區](/azure/synapse-analytics/sql/on-demand-workspace-overview)支援的一般修正和改善。 |
 | 匯入一般檔案 | 已修正精靈偵測不到檔案可能正由另一個應用程式使用，而改為擲回錯誤的問題。 請參閱 [SQL Server 使用者意見反應](https://feedback.azure.com/forums/908035/suggestions/40761574) \(英文\)。 |
 | 匯入/匯出資料層應用程式 | 已將匯入 bacpac 時的預設服務層級修正為標準 S0 (與 Azure 入口網站和 SqlPackage.exe 行為相同)。 |
 | 匯入一般檔案 | 已修正精靈偵測不到檔案可能正由另一個應用程式使用，而改為擲回錯誤的問題。 請參閱 [SQL Server 使用者意見反應](https://feedback.azure.com/forums/908035/suggestions/40761574) \(英文\)。 |
@@ -220,7 +220,7 @@ SSMS 18.7 是 SSMS 最新的正式發行 (GA) 版本。 如果您需要舊版 SS
 | 產生指令碼精靈 | 嘗試列舉 SQL Server 2014 和較舊版本上的資料庫物件時，此精靈失敗。 請參閱 [SQL Server 使用者意見反應](https://feedback.azure.com/forums/908035-sql-server/suggestions/41885587)。 | 在 SQL 2014 和更舊版本的 [產生指令碼精靈] 中，使用 SSMS 18.6 來選取物件。 |
 | Integration Services | 在 Integration Services 中匯入或匯出套件，或在 Azure-SSIS Integration Runtime 中匯出套件時，包含指令碼工作/元件的套件會遺失指令碼。 因應措施：移除資料夾 "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild"。 | N/A |
 | Integration Services | 從遠端連線至 Integration Services 的作業可能會失敗，並出現「指定的服務不是以已安裝的服務形式存在。」 (在較新的作業系統上)。 因應措施：在 Computer\HKEY_CLASSES_ROOT\AppID & Computer\HKEY_CLASSES_ROOT\ WOW6432Node\AppID 下找出 Integration Services 的相關登錄位置，然後在這些登錄區內，針對我們嘗試連線的特定 Integration Services 版本，將名為 'LocalService' 的登錄機碼重新命名為 'LocalService_A'得 | N/A |
-| 物件總管 | 18.7 之前的 SSMS 版本在物件總管中有中斷性變更，其原因是與 [Azure Synapse Analytics 無伺服器 SQL 集區](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview)相關的引擎變更。 | 若要繼續搭配 Azure Synapse Analytics 無伺服器 SQL 集區利用 SSMS 中的物件總管，您需要 SSMS 18.7 或更新版本。 |
+| 物件總管 | 18.7 之前的 SSMS 版本在物件總管中有中斷性變更，其原因是與 [Azure Synapse Analytics 無伺服器 SQL 集區](/azure/synapse-analytics/sql/on-demand-workspace-overview)相關的引擎變更。 | 若要繼續搭配 Azure Synapse Analytics 無伺服器 SQL 集區利用 SSMS 中的物件總管，您需要 SSMS 18.7 或更新版本。 |
 | 查詢存放區 | 查詢存放區的 [物件總管] 節點會在按一下滑鼠右鍵時擲回錯誤。 | 展開節點並以滑鼠右鍵按一下個別的子選項，可直接存取項目。 |
 
 ### <a name="186"></a>18.6

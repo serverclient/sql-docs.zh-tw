@@ -9,12 +9,12 @@ ms.author: maghan
 ms.reviewer: alayu
 ms.custom: ''
 ms.date: 08/26/2020
-ms.openlocfilehash: 92c6a5d9522d015786eafdefaeea64b46925b92b
-ms.sourcegitcommit: 63aef5a96905f0b026322abc9ccb862ee497eebe
+ms.openlocfilehash: d23e37065eb18a7a22d5717a95379161c10870a0
+ms.sourcegitcommit: e40e75055c1435c5e3f9b6e3246be55526807b4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364035"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98151234"
 ---
 # <a name="extend-functionality-by-creating-azure-data-studio-extensions"></a>藉由建立 Azure Data Studio 延伸模組來擴充功能
 
@@ -35,7 +35,7 @@ Azure Data Studio 中的延伸模組提供一種簡單方式，其可將更多�
 若要建立新的延伸模組，您可以使用 Azure Data Studio 延伸模組產生器。 Yeoman [延伸模組產生器](https://www.npmjs.com/package/generator-azuredatastudio)對於延伸模組專案而言是一個很好的起點。 若要啟動產生器，請在命令提示字元中輸入下列命令：
 
 ```console
-npm install -g yo generator-azuredatastudio # Install the generator
+npm install -g yo generator-azuredatastudio
 yo azuredatastudio
 ```
 

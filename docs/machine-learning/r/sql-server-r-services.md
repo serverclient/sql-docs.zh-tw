@@ -9,12 +9,12 @@ ms.topic: overview
 author: dphansen
 ms.author: davidph
 monikerRange: =sql-server-2016
-ms.openlocfilehash: d1910099e1f0aa4a8f3e58f1faa01dfbe177c517
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 66e023799f69f35b8e220983b261d9e5ae074f24
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97470759"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102229"
 ---
 # <a name="what-is-sql-server-2016-r-services"></a>什麼是 SQL Server 2016 R Services？
 
@@ -92,7 +92,7 @@ SQL Server 2016 Service Pack (SP) 2 和更新版本的累積更新 (CU) 14 包�
 
 1. 設定您的開發工具。 您可以使用：
 
-    + [Azure Data Studio](../../azure-data-studio/what-is.md) 或 [SQL Server Management Studio (SSMS)](../../ssms/sql-server-management-studio-ssms.md) 以使用 T-SQL 和預存程序 [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) 來執行您的 R 指令碼。
+    + [Azure Data Studio](../../azure-data-studio/what-is-azure-data-studio.md) 或 [SQL Server Management Studio (SSMS)](../../ssms/sql-server-management-studio-ssms.md) 以使用 T-SQL 和預存程序 [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) 來執行您的 R 指令碼。
     + 您自己的開發筆記型電腦或工作站上的 R 來執行指令碼。 您可以使用 [RevoScaleR](../r/ref-r-revoscaler.md)將資料提取至本機或將執行推送到遠端給 SQL Server。 如需詳細資訊，請參閱[設定資料科學用戶端 R 開發](../r/set-up-a-data-science-client.md)。
 
 1. 撰寫您的第一個 R 指令碼

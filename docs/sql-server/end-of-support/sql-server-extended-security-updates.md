@@ -10,12 +10,12 @@ author: cawrites
 ms.author: chadam
 ms.reviewer: pmasl
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 0ed29ad1b6a6b548b910ecce3d2b89da9bfb0180
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 94939adb2934e16ed7d1c81c33ebab4631c4b114
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97478879"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172510"
 ---
 # <a name="what-are-extended-security-updates-for-sql-server"></a>什麼是 SQL Server 的延伸安全性更新？
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
@@ -322,7 +322,7 @@ Azure SQL 受控執行個體是一項 Azure 服務，提供與內部部署 [!INC
 
 客戶可以將舊版 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 環境移至 Azure SQL 受控執行個體，這是一項完全受控的資料平台服務 (PaaS)，提供「無版本」選項，因此不必擔心終止支援日期；客戶也可以移至 Azure 虛擬機器，來存取安全性更新。 移轉後資料庫會保留其與舊版系統的相容性。 如需詳細資訊，請參閱[相容性憑證](../../database-engine/install-windows/compatibility-certification.md)。
 
-延伸安全性更新會在終止支援日期 2019 年 7 月 9 日後的未來三年，提供給 Azure 虛擬機器中的 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)] 和 [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)]。 對於想要從 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)] 和 [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 升級的客戶，我們將支援 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的所有後續版本。 針對 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 到 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]，客戶必須在最新支援的 Service Pack 上。 從 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 開始，建議客戶在最新的累積更新上。 請注意，從 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 開始，不會提供 Service Pack，只會提供累積更新和一般發行版本 (GDR)。
+延伸安全性更新會在終止支援日期 2019 年 7 月 9 日後的未來三年，提供給 Azure 虛擬機器中的 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)] 和 [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)]。 對於想要從 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)] 和 [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 升級的客戶，我們將支援 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的所有後續版本。 針對 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 到 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]，客戶必須在最新支援的 Service Pack 上。 從 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 開始，建議客戶在最新的累積更新上。 請注意，從 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 開始，不會提供 Service Pack，只會提供累積更新和一般發行版本 (GDR)。
 
 Azure SQL 受控執行個體是 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 中的執行個體範圍部署選項，其提供最廣泛的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 引擎相容性和原生虛擬網路 (VNET) 支援，讓您不必變更應用程式，即可將 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資料庫移轉到受控執行個體。 其結合豐富的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 介面區，以及智慧型、完全受控服務的營運和財務優勢。 利用新的 Azure 資料庫移轉服務，在最少或沒有應用程式程式碼變更的情況下，將 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)] 和 [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 移至 Azure SQL 受控執行個體。
 

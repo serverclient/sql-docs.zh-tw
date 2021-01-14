@@ -9,12 +9,12 @@ ms.date: 01/07/2020
 ms.topic: overview
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: bd3a092906bf2a7d46c7f343b7edf913bdd4d9cf
-ms.sourcegitcommit: ab9ddcc16fdfc245cf9a49d1e90bb1ffe3958c38
+ms.openlocfilehash: ced001726b7a8306f2064c1436ddb41cf65a6eb0
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92914335"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091804"
 ---
 # <a name="what-are-big-data-clusters-2019"></a>什麼是 [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]？
 
@@ -69,7 +69,7 @@ SQL Server 巨量資料叢集包含可調整的 HDFS「存放集區」  。 這�
 
 管理和監視是透過命令列工具、API、入口網站和動態管理檢視的組合來提供。
 
-您可以使用 [Azure Data Studio](../azure-data-studio/what-is.md) 對巨量資料叢集執行各種工作：
+您可以使用 [Azure Data Studio](../azure-data-studio/what-is-azure-data-studio.md) 對巨量資料叢集執行各種工作：
 - 常見管理工作的內建程式碼片段。
 - 能夠瀏覽 HDFS、上傳檔案、預覽檔案及建立目錄。
 - 能夠建立、開啟並執行與 Jupyter 相容的筆記本。
@@ -104,7 +104,7 @@ Kubernetes 是開放原始碼容器協調器，可根據需求調整容器部署
 
 ### <a name="compute-pool"></a><a id="computeplane"></a> 計算集區
 
-計算集區會將計算資源提供給叢集。 其中包含在 Linux Pod 上執行 SQL Server 的節點。 計算集區中的 Pod 會分割成 *SQL 計算執行個體* ，以進行特定的處理工作。 
+計算集區會將計算資源提供給叢集。 其中包含在 Linux Pod 上執行 SQL Server 的節點。 計算集區中的 Pod 會分割成 *SQL 計算執行個體*，以進行特定的處理工作。 
 
 ### <a name="data-pool"></a><a id="dataplane"></a> 資料集區
 

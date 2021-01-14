@@ -9,12 +9,12 @@ ms.date: 08/20/2020
 ms.topic: how-to
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: e23d45f9083e8acf1f8e889cda845b36eef087ee
-ms.sourcegitcommit: b3a711a673baebb2ff10d7142b209982b46973ae
+ms.openlocfilehash: ded5030adeff1b9ccccf3f6683d5dfb04e7b8a07
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93364500"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091671"
 ---
 # <a name="ad-mode-deployment-hangs---unhealthy-sparkhead-pods"></a>AD 模式部署停止回應 - 狀況不良的 `sparkhead` Pod
 
@@ -221,4 +221,4 @@ DC 的 Kubernetes 網路 DNS 伺服器遺失網域控制站的反向對應區域
 
 ## <a name="next-steps"></a>後續步驟
 
-[確認網域控制站的反向 DNS 項目 (PTR 記錄)](deploy-active-directory.md#verify-reverse-dns-entry-for-domain-controller)。
+[確認網域控制站的反向 DNS 項目 (PTR 記錄)](active-directory-deploy.md#verify-reverse-dns-entry-for-domain-controller)。

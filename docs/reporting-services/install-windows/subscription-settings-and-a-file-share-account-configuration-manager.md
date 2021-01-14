@@ -11,19 +11,19 @@ f1_keywords:
 ms.assetid: fefa7bdb-b5f2-4db7-b91c-b58869279f3c
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 05441d59b725a172fddfb83ae116cda2d3ca5596
-ms.sourcegitcommit: fe59f8dc27fd633f5dfce54519d6f5dcea577f56
+ms.openlocfilehash: 90e585e887e9415a8cf1f9d0104595547f2d1c87
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91935555"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171980"
 ---
 # <a name="subscription-settings-and-a-file-share-account-report-server-configuration-manager"></a>訂閱設定與檔案共用帳戶 (報表伺服器組態管理員)
   使用 **Configuration Manager 的 [訂閱設定]** [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 頁面，針對原生模式報表伺服器與檔案共用訂閱設定檔案共用帳戶。 檔案共用帳戶可讓您在將報表傳遞至檔案共用的多個訂閱中，使用單一認證組合。 當變更認證時，您可針對檔案共用帳戶設定變更，而無須更新每個個別訂閱。  
   
  [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 檔案共用訂閱具有兩個工作流程：  
   
--   您的 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 系統管理員可以使用 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 版本的新功能，設定可供一到多個訂閱使用的單一檔案共用帳戶。 設定 [指定檔案共用帳戶]  ，然後使用者要在個別的訂閱設定頁面上，選取 [使用檔案共用帳戶]  。  
+-   您的 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 系統管理員可以使用 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 版本的新功能，設定可供一到多個訂閱使用的單一檔案共用帳戶。 設定 [指定檔案共用帳戶]  ，然後使用者要在個別的訂閱設定頁面上，選取 [使用檔案共用帳戶]  。  
   
 -   針對目的檔案共用，使用特定認證設定個別訂閱。  
   
@@ -48,7 +48,7 @@ ms.locfileid: "91935555"
 >  `"Failure writing file {file} : An impersonation error occurred using the security context of the current user."`  
   
 ## <a name="powershell-sample-to-audit-use-of-the-file-share-account"></a>稽核使用檔案共用帳戶的 PowerShell 範例  
- 執行下列 Windows PowerShell 指令碼，以列出所有設為使用 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 檔案共用帳戶 **的**訂閱。 將 `SERVERNAME` 更新為報表伺服器的適當值。  
+ 執行下列 Windows PowerShell 指令碼，以列出所有設為使用 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 檔案共用帳戶 **的** 訂閱。 將 `SERVERNAME` 更新為報表伺服器的適當值。  
   
 ```  
 # get all file share subscriptions using the default file share account  

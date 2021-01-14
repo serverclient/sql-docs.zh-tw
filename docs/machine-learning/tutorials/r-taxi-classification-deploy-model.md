@@ -10,12 +10,12 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||>=azuresqldb-mi-current'
-ms.openlocfilehash: 0b32d12a694062e56611abaff18dc4f1e2f23061
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 026090f3eb61e2bd2ffe2b96eb09751cc3543dbf
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97470109"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101856"
 ---
 # <a name="r-tutorial-run-predictions-in-sql-stored-procedures"></a>R 教學課程：在 SQL 預存程序中執行預測
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
@@ -70,7 +70,7 @@ GO
 
 + 此 SELECT 陳述式可從資料庫取得序列化模型，並將模型儲存在 R 變數 `mod` 中，以使用 R 進一步處理。
 
-+ 您可以從預存程序的第一個參數 `@inquery` 中指定的 [!INCLUDE[tsql](../../includes/tsql-md.md)] 查詢，取得計分的新案例。 讀取查詢資料之後，這些資料列會儲存在預設資料框架 `InputDataSet`中。 此資料框架會傳遞至產生分數的 [PREDICT](/sql/t-sql/queries/predict-transact-sql) 函數。
++ 您可以從預存程序的第一個參數 `@inquery` 中指定的 [!INCLUDE[tsql](../../includes/tsql-md.md)] 查詢，取得計分的新案例。 讀取查詢資料之後，這些資料列會儲存在預設資料框架 `InputDataSet`中。 此資料框架會傳遞至產生分數的 [PREDICT](../../t-sql/queries/predict-transact-sql.md) 函數。
   
   `OutputDataSet <- data.frame(predict(mod, InputDataSet, type = "response"));`
   

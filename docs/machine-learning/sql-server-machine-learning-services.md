@@ -9,12 +9,12 @@ ms.topic: overview
 author: dphansen
 ms.author: davidph
 monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current'
-ms.openlocfilehash: b73b8521593b81e38d5b0b3931da793f943c45a0
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 98e9dd928f2639bfd1df3e6782bcc9aaed60f31e
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97470689"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102859"
 ---
 # <a name="what-is-sql-server-machine-learning-services-with-python-and-r"></a>什麼是使用 Python 和 R 的 SQL Server 機器學習服務？
 [!INCLUDE [SQL Server 2017 SQL MI](../includes/applies-to-version/sqlserver2017-asdbmi.md)]
@@ -47,7 +47,7 @@ SQL Server 機器學習服務，可讓您在資料庫中執行 Python 和 R 指�
 ::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 1. 在 [Windows](install/sql-machine-learning-services-windows-install.md) 或 [Linux](../linux/sql-server-linux-setup-machine-learning.md?toc=/sql/machine-learning/toc.json) 上安裝 SQL Server 機器學習服務。 您也可以使用[巨量資料叢集的機器學習服務](../big-data-cluster/machine-learning-services.md)和 [Azure SQL 受控執行個體中的機器學習服務 ](/azure/azure-sql/managed-instance/machine-learning-services-overview)。
 
-1. 設定您的開發工具。 您可以在 [Azure Data Studio 筆記本](install/sql-machine-learning-azure-data-studio.md)中使用和執行 Python 和 R 指令碼。 也可以在 [Azure Data Studio](../azure-data-studio/what-is.md) 中執行 T-SQL。
+1. 設定您的開發工具。 您可以在 [Azure Data Studio 筆記本](install/sql-machine-learning-azure-data-studio.md)中使用和執行 Python 和 R 指令碼。 也可以在 [Azure Data Studio](../azure-data-studio/what-is-azure-data-studio.md) 中執行 T-SQL。
 
 1. 撰寫您的第一個 Python 或 R 指令碼。
 
@@ -65,7 +65,7 @@ SQL Server 機器學習服務，可讓您在資料庫中執行 Python 和 R 指�
 ::: moniker range="=sql-server-2017"
 1. [在 Windows 上安裝 SQL Server 機器學習服務](install/sql-machine-learning-services-windows-install.md)。
 
-1. 設定您的開發工具。 您可以在 [Azure Data Studio 筆記本](install/sql-machine-learning-azure-data-studio.md)中使用和執行 Python 和 R 指令碼。 也可以在 [Azure Data Studio](../azure-data-studio/what-is.md) 中使用 T-SQL。
+1. 設定您的開發工具。 您可以在 [Azure Data Studio 筆記本](install/sql-machine-learning-azure-data-studio.md)中使用和執行 Python 和 R 指令碼。 也可以在 [Azure Data Studio](../azure-data-studio/what-is-azure-data-studio.md) 中使用 T-SQL。
 
 1. 撰寫您的第一個 Python 或 R 指令碼。
 

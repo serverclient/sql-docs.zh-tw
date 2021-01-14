@@ -37,12 +37,12 @@ helpviewer_keywords:
 ms.assetid: e5186f02-dd91-47d0-8fa4-de3f41c76903
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 8e1544a46e84b77ce290dded936f86b75a251f13
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 80b93a4a55b6d12ee5177230b78447c21fc0cae8
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642916"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172530"
 ---
 # <a name="editions-and-supported-features-of-sql-server-2016"></a>SQL Server 2016 的版本及支援功能
 [!INCLUDE [SQL Server 2016](../includes/applies-to-version/sqlserver2016.md)]  
@@ -67,7 +67,7 @@ SQL Server Evaluation Edition 提供了 180 天的試用期。
 
 ### <a name="try-sql-server"></a>試用 SQL Server！    
     
-> [![從 Evaluation Center 下載](https://docs.microsoft.com/analysis-services/analysis-services/media/download.png)](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016) **[從 Evaluation Center 下載 SQL Server 2016](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016)**    
+> [![從 Evaluation Center 下載](/analysis-services/analysis-services/media/download.png)](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016) **[從 Evaluation Center 下載 SQL Server 2016](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016)**    
 > 
 > ![Azure 虛擬機器 (小型)](/analysis-services/analysis-services/media/azure-virtual-machine-small.png) **[使用已安裝的 SQL Server 2016 加速虛擬機器](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftsqlserver.sql2017-ws2019?tab=Overview)**   
   
@@ -136,13 +136,13 @@ Developer Edition 只持續支援 1 個 [SQL Server Distributed Replay](../tools
 |每個 [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)]執行個體的緩衝集區記憶體上限|作業系統最大值|128 GB|64 GB|1410 MB|1410 MB|
 |每個 [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)]執行個體的資料行存放區區段快取記憶體上限|無限制的記憶體| 32 GB<sup>2</sup>| 16 GB<sup>2</sup>| 352 MB<sup>2</sup>| 352 MB<sup>2</sup>|  
 |每個 [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)]資料庫的記憶體最佳化資料大小上限|無限制的記憶體| 32 GB<sup>2</sup>| 16 GB<sup>2</sup>| 352 MB<sup>2</sup>| 352 MB<sup>2</sup>|  
-|每個 [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)]執行個體使用的記憶體上限|作業系統最大值|表格式：16 GB<br /><br /> MOLAP：64 GB|N/A|N/A|N/A|  
+|每個 [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)]執行個體使用的記憶體上限|作業系統最大值|表格式：16 GB<br /><br /> MOLAP：64 GB|N/A|不適用|N/A|  
 |每個 [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)]執行個體使用的記憶體上限|作業系統最大值|64 GB|64 GB|4 GB|N/A|
 |關聯式資料庫大小上限|524 PB|524 PB|524 PB|10 GB|10 GB|  
   
 <sup>1</sup> 新合約不適用的 Enterprise Edition (含伺服器 + 用戶端存取授權 (CAL)) 授權限制為每個 SQL Server 執行個體最多 20 個核心。 核心伺服器授權模式之下沒有任何限制。 如需詳細資訊，請參閱 [Compute Capacity Limits by Edition of SQL Server](../sql-server/compute-capacity-limits-by-edition-of-sql-server.md)。  
   
-<sup>2</sup> 在跨版本建立常見程式設計介面區 (CPSA) 的過程中，套用至 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] SP1。 
+<sup>2</sup> 在跨版本建立常見程式設計介面區 (CPSA) 的過程中，套用至 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] SP1。 
 
 ##  <a name="rdbms-high-availability"></a><a name="RDBMSHA"></a> RDBMS High Availability  
   
@@ -195,7 +195,7 @@ Developer Edition 只持續支援 1 個 [SQL Server Distributed Replay](../tools
 
 <sup>1</sup> 記憶體內部 OLTP 資料大小和資料行存放區區段快取都限制為版本「縮放限制」區段指定的記憶體數量。 平行處理原則的最大程度是有限的。 索引建置的平行處理原則 (DOP) 程度限制為 2 DOP (Standard Edition) 和 1 DOP (Web Edition 和 Express Edition)。 這會參考以磁碟式資料表和記憶體最佳化資料表建立的資料行存放區索引。
 
-<sup>2</sup> 在跨版本建立常見程式設計介面區 (CPSA) 的過程中，套用至 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] SP1。 彙總下推、字串述詞下推和 SIMD 最佳化是 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Enterprise Edition 的擴充性增強功能。 如需詳細資訊，請參閱[資料行存放區索引 - 新功能](../relational-databases/indexes/columnstore-indexes-what-s-new.md)。 
+<sup>2</sup> 在跨版本建立常見程式設計介面區 (CPSA) 的過程中，套用至 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] SP1。 彙總下推、字串述詞下推和 SIMD 最佳化是 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Enterprise Edition 的擴充性增強功能。 如需詳細資訊，請參閱[資料行存放區索引 - 新功能](../relational-databases/indexes/columnstore-indexes-what-s-new.md)。 
 
 <sup>3</sup> 這項功能不會納入 LocalDB 安裝選項。
 
@@ -215,7 +215,7 @@ Developer Edition 只持續支援 1 個 [SQL Server Distributed Replay](../tools
 |自主資料庫|是|是|是|是|是| 
 |備份的加密|是|是|否|否|否|  
 
-<sup>1</sup> 在跨版本建立常見程式設計介面區 (CPSA) 的過程中，套用至 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] SP1。      
+<sup>1</sup> 在跨版本建立常見程式設計介面區 (CPSA) 的過程中，套用至 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] SP1。      
 
 ##  <a name="replication"></a><a name="Replication"></a> 複寫  
   
@@ -276,7 +276,7 @@ Developer Edition 只持續支援 1 個 [SQL Server Distributed Replay](../tools
   
  <sup>1</sup> 如需詳細資訊，請參閱 [使用 SysPrep 安裝 SQL Server 的考量](../database-engine/install-windows/considerations-for-installing-sql-server-using-sysprep.md)。  
  
-<sup>2</sup> 在跨版本建立常見程式設計介面區 (CPSA) 的過程中，套用至 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] SP1。      
+<sup>2</sup> 在跨版本建立常見程式設計介面區 (CPSA) 的過程中，套用至 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] SP1。      
   
 ##  <a name="development-tools"></a><a name="DevTools"></a> Development Tools  
   
@@ -314,7 +314,7 @@ Developer Edition 只持續支援 1 個 [SQL Server Distributed Replay](../tools
 
 <sup>1</sup> 使用多個運算節點向外延展時需要標題節點。
 
-<sup>2</sup> 在跨版本建立常見程式設計介面區 (CPSA) 的過程中，套用至 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] SP1。     
+<sup>2</sup> 在跨版本建立常見程式設計介面區 (CPSA) 的過程中，套用至 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] SP1。     
   
 ## <a name="integration-services"></a><a name="IS"></a> Integration Services
 
@@ -336,7 +336,7 @@ Developer Edition 只持續支援 1 個 [SQL Server Distributed Replay](../tools
 |分割區資料表和索引上的查詢平行處理|是|否|否|否|否|   
 |全域批次彙總|是|否|否|否|否| 
 
-<sup>1</sup> 在跨版本建立常見程式設計介面區 (CPSA) 的過程中，套用至 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] SP1。     
+<sup>1</sup> 在跨版本建立常見程式設計介面區 (CPSA) 的過程中，套用至 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] SP1。     
 
 ##  <a name="analysis-services"></a><a name="SSAS"></a> Analysis Services  
   
@@ -389,9 +389,8 @@ Developer Edition 只持續支援 1 個 [SQL Server Distributed Replay](../tools
 |StreamInsight|StreamInsight Premium 版|StreamInsight Standard 版|StreamInsight Standard 版|否|否| 
 |StreamInsight HA|StreamInsight Premium 版|否|否|否|否|   
   
-> [![下載 SSMS](https://docs.microsoft.com/analysis-services/analysis-services/media/download.png)](../ssms/download-sql-server-management-studio-ssms.md) 下載最新版的 **[SQL Server Management Studio](../ssms/download-sql-server-management-studio-ssms.md)**      
+> [![下載 SSMS](/analysis-services/analysis-services/media/download.png)](../ssms/download-sql-server-management-studio-ssms.md) 下載最新版的 **[SQL Server Management Studio](../ssms/download-sql-server-management-studio-ssms.md)**      
   
 ## <a name="see-also"></a>另請參閱  
  [安裝 SQL Server](../database-engine/install-windows/install-sql-server.md)  
  
-  

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - failover clustering [SQL Server], upgrading
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 90ab761cdc9a84008803ebb4bc5493eb87778f20
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 4d9e3116902ae96eaa97e9624ea33ba3fa8952d3
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642674"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171580"
 ---
 # <a name="upgrade-sql-server-instances-running-on-windows-server-20082008-r22012-clusters"></a>升級在 Windows Server 2008/2008 R2/2012 叢集上執行的 SQL Server 執行個體
 
@@ -30,7 +30,7 @@ ms.locfileid: "97642674"
 
 -   在移轉之前，平行叢集應該未安裝 [!INCLUDE[sshadrc-md](../../../includes/sshadrc-md.md)]。
 
--   移轉使用嚴格可用性群組 (不論是否有 SQL FCI) 之叢集時的停機時間，大幅受限於使用分散式可用性群組，但這需要所有執行個體執行 [!INCLUDE[sssql15-md](../../../includes/sssql15-md.md)] RTM 版本 (或以上版本)。
+-   移轉使用嚴格可用性群組 (不論是否有 SQL FCI) 之叢集時的停機時間，大幅受限於使用分散式可用性群組，但這需要所有執行個體執行 [!INCLUDE[sssql15-md](../../../includes/sssql16-md.md)] RTM 版本 (或以上版本)。
 
 -   所有移轉策略都需要 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] sysadmin 角色。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 服務所使用的所有 Windows 使用者 (即執行複寫代理程式的 Windows) 都必須有新環境中每部電腦的 OS 層級權限。
 
@@ -54,11 +54,11 @@ ms.locfileid: "97642674"
 \* 排除可用性群組接聽程式名稱
 
 ## <a name="scenario-1-windows-cluster-with-sql-server-availability-groups-and-no-failover-cluster-instances-fcis"></a>案例 1：有 SQL Server 可用性群組、沒有容錯移轉叢集執行個體 (FCI) 的 Windows 叢集
-如果您的 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 安裝程式使用可用性群組 (AG) 且沒有容錯移轉叢集執行個體，則可以在具有 Windows Server 2016/2012 R2 的不同 Windows 叢集上建立平行 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 部署，來移轉至新叢集。 在此之後，您可以建立目標叢集為目前生產叢集之次要叢集的分散式 AG。 這需要使用者升級為 [!INCLUDE[sssql15-md](../../../includes/sssql15-md.md)] 或更新版本。
+如果您的 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 安裝程式使用可用性群組 (AG) 且沒有容錯移轉叢集執行個體，則可以在具有 Windows Server 2016/2012 R2 的不同 Windows 叢集上建立平行 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 部署，來移轉至新叢集。 在此之後，您可以建立目標叢集為目前生產叢集之次要叢集的分散式 AG。 這需要使用者升級為 [!INCLUDE[sssql15-md](../../../includes/sssql16-md.md)] 或更新版本。
 
 ###  <a name="to-perform-the-upgrade"></a>執行升級
 
-1.  如有需要，請將所有執行個體升級為 [!INCLUDE[sssql15-md](../../../includes/sssql15-md.md)] 或更新版本。 平行執行個體應該執行相同版本的 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]。
+1.  如有需要，請將所有執行個體升級為 [!INCLUDE[sssql15-md](../../../includes/sssql16-md.md)] 或更新版本。 平行執行個體應該執行相同版本的 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]。
 
 2.  建立目標叢集的可用性群組。 如果目標叢集的主要節點不是 FCI，請建立接聽程式。
 

@@ -9,12 +9,12 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: 85ee78e0d7558cf2ad683321a13a842ff5d8daf5
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 3e71b33eb08fd386232e992e9b47da7b5057aa32
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97471329"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170720"
 ---
 # <a name="manage-python-and-r-workloads-with-resource-governor-in-sql-server-machine-learning-services"></a>使用 SQL Server 機器學習服務中的 Resource Governor 管理 Python 與 R 工作負載
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -36,7 +36,7 @@ Python 與 R 中的機器學習演算法需要大量計算。 視您的工作負
  
 根據預設，外部處理序最多會在本機伺服器上使用 20% 的總主機記憶體。 您可以修改預設資源集區來進行全伺服器變更，其中 R 與 Python 處理序會利用您提供給外部處理序的任何容量。
 
-您也可以選擇使用關聯的工作負載群組與分類器來建立自訂 **外部資源集區**，以針對來自特定程式、主機或您提供之其他準則的要求決定資源配置。 外部資源集區是 [!INCLUDE[sssql15-md](../../includes/sssql15-md.md)] 中引進的資源集區類型，可協助管理資料庫引擎外部的 R 與 Python 執行階段。
+您也可以選擇使用關聯的工作負載群組與分類器來建立自訂 **外部資源集區**，以針對來自特定程式、主機或您提供之其他準則的要求決定資源配置。 外部資源集區是 [!INCLUDE[sssql15-md](../../includes/sssql16-md.md)] 中引進的資源集區類型，可協助管理資料庫引擎外部的 R 與 Python 執行階段。
 
 1. [啟用資源控管](../../relational-databases/resource-governor/enable-resource-governor.md) (預設為關閉)。
 

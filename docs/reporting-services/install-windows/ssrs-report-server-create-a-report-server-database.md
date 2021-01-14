@@ -8,12 +8,12 @@ ms.prod_service: reporting-services-native
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 9/2/2020
-ms.openlocfilehash: 922445116df06017b84aa84bf8dff8f924f2aeae
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 1b7eb1e521e1c987cb956d054c4c17beba819462
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97474549"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172360"
 ---
 # <a name="create-a-report-server-database-report-server-configuration-manager"></a>建立報表伺服器資料庫 (報表伺服器組態管理員)  
 
@@ -79,7 +79,7 @@ SQL Server [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] **Share
 - SQL Server 2017  
 ::: moniker-end
 
-- [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]  
+- [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]  
   
 - [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]  
   
