@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.assetid: 9a77dd32-d8c2-4961-ad37-2a971f9d6043
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: d83b2c6a19b7a73be4293dcb66edc6cbc22909d9
-ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
+ms.openlocfilehash: 57bf9bd3863e5486c890088324641a5100581a02
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "88449730"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099221"
 ---
 # <a name="lesson-1-2-add-and-configure-a-flat-file-connection-manager"></a>課程 1-2：新增及設定一般檔案連線管理員
 
@@ -48,7 +48,7 @@ ms.locfileid: "88449730"
   
 4.  在 [開啟] 對話方塊中，尋找電腦上的 **SampleCurrencyData.txt** 檔案。  
   
-5.  清除第一個資料列核取方塊中的資料行名稱。  
+5.  清除 [第一個資料列的資料行名稱] 核取方塊。  
   
 ### <a name="set-locale-sensitive-properties"></a>選取區分地區設定的屬性  
   

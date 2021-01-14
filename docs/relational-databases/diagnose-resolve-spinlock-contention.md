@@ -9,12 +9,12 @@ ms.topic: how-to
 author: bluefooted
 ms.author: pamela
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a25835dd5fbac5f95434d46ac152d44ea6974496
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 00b4856ab0c057b7f63aae44834884bc775d8e92
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97440129"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102166"
 ---
 # <a name="diagnose-and-resolve-spinlock-contention-on-sql-server"></a>診斷並解決 SQL Server 中的執行緒同步鎖定競爭
 
@@ -137,7 +137,7 @@ order by spins desc
 
 2. **步驟 2**：從 *sys.dm\_ os_spinlock_stats* 擷取統計資料，以找出發生最多競爭的執行緒同步鎖定類型。
 
-3. **步驟 3**：取得 sqlservr.exe (sqlservr.pdb) 的偵錯符號，並將該符號與 SQL Server 執行個體的 SQL Server 服務 .exe 檔案 (sqlservr.exe) 置於相同目錄中。您必須取得所正在執行 SQL Server 特定版本的符號，才能查看輪詢事件的呼叫堆疊。 您可從 Microsoft 符號伺服器上取得 SQL Server 的符號。 如需如何從 Microsoft 符號伺服器下載符號的詳細資訊，請參閱[使用符號進行偵錯](https://docs.microsoft.com/windows/win32/dxtecharts/debugging-with-symbols) (英文)。
+3. **步驟 3**：取得 sqlservr.exe (sqlservr.pdb) 的偵錯符號，並將該符號與 SQL Server 執行個體的 SQL Server 服務 .exe 檔案 (sqlservr.exe) 置於相同目錄中。您必須取得所正在執行 SQL Server 特定版本的符號，才能查看輪詢事件的呼叫堆疊。 您可從 Microsoft 符號伺服器上取得 SQL Server 的符號。 如需如何從 Microsoft 符號伺服器下載符號的詳細資訊，請參閱[使用符號進行偵錯](/windows/win32/dxtecharts/debugging-with-symbols) (英文)。
 
 4. **步驟 4**：使用 SQL Server 擴充事件，以追蹤欲知執行緒同步鎖定類型的輪詢事件。
 
@@ -237,7 +237,7 @@ drop event session spin_lock_backoff on server
 藉由分析輸出，即可看到 SOS_CACHESTORE 周旋中最常見程式碼路徑的呼叫堆疊。 在高 CPU 使用率期間多次執行該指令碼，以檢查所傳回呼叫堆疊的一致性。 請注意，位置值區計數最高的呼叫堆疊，在兩個輸出 (35,668 與 8,506) 之間是相同的。 這些呼叫堆疊具有「位置計數」，比下一個最大項目還要大兩個數量級。 此情況會指出欲知的程式碼路徑。
 
 > [!NOTE]
-> 先前指令碼所傳回的呼叫堆疊很常見。 當指令碼執行了 1 分鐘時，我們發現位置計數 \> 1000 的堆疊可能存在問題，位置計數 \> 10,000 的堆疊也可能存在問題。
+> 先前指令碼所傳回的呼叫堆疊很常見。 當指令碼執行 1 分鐘時，我們發現含 1000 個以上位置計數的呼叫堆疊有問題，但含 10000 個以上的位置計數更可能出現問題，因為後者的位置計數較高。
 
 > [!NOTE]
 > 為了便於閱讀，已清除下列輸出的格式。

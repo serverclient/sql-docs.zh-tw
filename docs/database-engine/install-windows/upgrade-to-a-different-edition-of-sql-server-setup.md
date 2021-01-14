@@ -11,12 +11,12 @@ ms.assetid: 31d16820-d126-4c57-82cc-27701e4091bc
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 0ffc98081b71cec996b2949fa13c6b222d7b85a2
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 87f1521927518446b355fea828e50901d6e35bc1
+ms.sourcegitcommit: 3ec49252e82590de0fe559a8574606ae213f6f3b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97460631"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97975525"
 ---
 # <a name="upgrade-to-a-different-edition-of-sql-server-setup"></a>升級為不同的 SQL Server 版本 (安裝程式)
 
@@ -24,6 +24,7 @@ ms.locfileid: "97460631"
 
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 安裝程式支援各種不同 [!INCLUDE[ssNoversion](../../includes/ssnoversion-md.md)] 版本之間的版本升級。 如需支援版本升級方式的詳細資訊，請參閱 [支援的版本與版本升級](../../database-engine/install-windows/supported-version-and-edition-upgrades-2017.md)。 在您起始 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] 執行個體的版本升級之前，請檢閱以下文章：  
 
+  [SQL Server 2019 的版本及支援功能](../../sql-server/editions-and-components-of-sql-server-version-15.md)
 - [版本及支援的 SQL Server 2017 功能](../../sql-server/editions-and-components-of-sql-server-2017.md)  
 - [版本及支援的 SQL Server 2016 功能](../../sql-server/editions-and-components-of-sql-server-2016.md)  
 - [SQL Server 版本的計算容量限制](../../sql-server/compute-capacity-limits-by-edition-of-sql-server.md)  

@@ -17,12 +17,12 @@ ms.assetid: 36af59d7-ce96-4a02-8598-ffdd78cdc948
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: cc6e5734edbf7203f98d1b7fc7a685e699aaa635
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: bbad843d482945a29cb03fde9545b1c19fb354f9
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481429"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098389"
 ---
 # <a name="contained-databases"></a>自主資料庫
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -128,15 +128,13 @@ ms.locfileid: "97481429"
 ##  <a name="limitations"></a><a name="Limitations"></a> 限制  
  部分自主資料庫不允許下列功能。  
   
--   部分自主資料庫無法使用複寫、異動資料擷取，或變更追蹤。  
+-   複寫、異動資料擷取或變更追蹤。  
   
 -   編號程序。  
   
 -   相依於具有定序變更之內建功能的結構描述繫結物件。  
   
--   定序變更所產生的繫結變更，包括物件、資料行、符號或類型的參考。  
-  
--   複寫、異動資料擷取與變更追蹤。  
+-   定序變更所產生的繫結變更，包括物件、資料行、符號或類型的參考。
   
 > [!WARNING]  
 >  目前允許暫存預存程序。 由於暫存預存程序違反內含項目，因此預計未來自主資料庫版本中不會支援這些預存程序。  

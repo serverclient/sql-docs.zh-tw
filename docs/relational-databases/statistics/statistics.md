@@ -2,11 +2,13 @@
 title: 統計資料
 description: 查詢最佳化工具會使用統計資料來建立可改善查詢效能的查詢計劃。 了解使用查詢最佳化的概念和指導方針。
 ms.custom: ''
-ms.date: 11/23/2020
+ms.date: 1/7/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: performance
 ms.topic: conceptual
+dev_langs:
+- TSQL
 helpviewer_keywords:
 - statistical information [SQL Server], query optimization
 - query performance [SQL Server], statistics
@@ -20,21 +22,20 @@ helpviewer_keywords:
 - index statistics [SQL Server]
 - query optimizer [SQL Server], statistics
 - statistics [SQL Server]
-ms.assetid: b86a88ba-4f7c-4e19-9fbd-2f8bcd3be14a
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: d88b24a6602ece47194997a829c4f2824d4a6c71
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 77bd2f1cb2cd3e028bccbc5185f2336812f3f891
+ms.sourcegitcommit: d681796e8c012eca2d9629d3b816749e9f50f868
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97475349"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98005423"
 ---
 # <a name="statistics"></a>統計資料
 
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
-  查詢最佳化工具會使用統計資料來建立可改善查詢效能的查詢計劃。 對於大部分查詢而言，查詢最佳化工具已經產生高品質查詢計劃的必要統計資料。不過，在少數情況下，您必須建立其他統計資料或修改查詢設計，以便獲得最佳結果。 本主題將討論有效使用查詢最佳化統計資料的概念和指導方針。  
+  查詢最佳化工具會使用統計資料來建立可改善查詢效能的查詢計劃。 對於大部分查詢而言，查詢最佳化工具已經產生高品質查詢計劃的必要統計資料。不過，在少數情況下，您必須建立其他統計資料或修改查詢設計，以便獲得最佳結果。 本文討論有效使用查詢最佳化統計資料的概念和指導方針。  
   
 ##  <a name="components-and-concepts"></a><a name="DefinitionQOStatistics"></a> 元件和概念  
 ### <a name="statistics"></a>統計資料  
@@ -48,7 +49,7 @@ ms.locfileid: "97475349"
 > [!NOTE]
 > <a name="frequency"></a>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 中的長條圖只會針對單一資料行建置；也就是統計資料物件的索引鍵資料行集合中第一個資料行。
   
-若要建立長條圖，查詢最佳化工具會排序資料行值、計算符合每一個相異資料行值的值數目，然後將資料行值彙總成最多 200 個連續長條圖步驟。 每一個長條圖步驟都包含某個範圍的資料行值，後面緊接著上限資料行值。 此範圍包括界限值之間的所有可能資料行值，但是不包括界限值本身。 最低的已排序資料行值就是第一個長條圖步驟的上限值。
+為了建立長條圖，查詢最佳化工具會排序資料行值、計算符合每一個相異資料行值的值數目，然後將資料行值彙總成最多 200 個連續長條圖步驟。 每一個長條圖步驟都包含某個範圍的資料行值，後面緊接著上限資料行值。 此範圍包括界限值之間的所有可能資料行值，但是不包括界限值本身。 最低的已排序資料行值就是第一個長條圖步驟的上限值。
 
 更詳細來說，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 會以下列三個步驟，從已排序的資料行值集合來建立「長條圖」：
 
@@ -85,10 +86,10 @@ ms.locfileid: "97475349"
 |(CustomerId, ItemId, Price)|與 CustomerId、ItemId 和 Price 的值相符的資料列| 
 
 ### <a name="filtered-statistics"></a>篩選的統計資料  
- 對於從定義完善的資料子集中選取的查詢而言，篩選的統計資料可以改善查詢效能。 篩選的統計資料會使用篩選述詞來選取統計資料中所含的資料子集。 設計完善的篩選統計資料可以改善查詢執行計畫 (相較於完整資料表統計資料而言)。 如需篩選述詞的詳細資訊，請參閱 [CREATE STATISTICS &#40;Transact-SQL&#41;](../../t-sql/statements/create-statistics-transact-sql.md)。 如需有關何時建立篩選統計資料的詳細資訊，請參閱本主題的 [何時建立統計資料](#CreateStatistics) 一節。  
+ 對於從定義完善的資料子集中選取的查詢而言，篩選的統計資料可以改善查詢效能。 篩選的統計資料會使用篩選述詞來選取統計資料中所含的資料子集。 設計完善的篩選統計資料可以改善查詢執行計畫 (相較於完整資料表統計資料而言)。 如需篩選述詞的詳細資訊，請參閱 [CREATE STATISTICS &#40;Transact-SQL&#41;](../../t-sql/statements/create-statistics-transact-sql.md)。 如需何時要建立篩選統計資料的詳細資訊，請參閱本文的[何時建立統計資料](#CreateStatistics)一節。  
  
 ### <a name="statistics-options"></a>統計資料選項  
- 您可以設定三個選項來影響何時及如何建立和更新統計資料。 這些選項只會在資料庫層級設定。  
+ 下列三個選項可影響統計資料的建立及更新時機和方式。 您只能在資料庫層級設定這些選項。  
   
 #### <a name="auto_create_statistics-option"></a><a name="AutoUpdateStats"></a>AUTO_CREATE_STATISTICS 選項  
  開啟自動建立統計資料選項 [AUTO_CREATE_STATISTICS](../../t-sql/statements/alter-database-transact-sql-set-options.md#auto_create_statistics) 時，查詢最佳化工具就會視需要針對查詢述詞中的個別資料行來建立統計資料，以便改善查詢計劃的基數估計值。 這些單一資料行統計資料是針對在現有統計資料物件中尚未具有[長條圖](#histogram)的資料行建立的。 AUTO_CREATE_STATISTICS 選項不會判斷系統是否針對索引建立了統計資料。 這個選項也不會產生篩選的統計資料。 它會嚴格套用至完整資料表的單一資料行統計資料。  
@@ -113,7 +114,7 @@ ORDER BY s.name;
     * 若資料表基數在評估統計資料時為 500 或更小的數值，將會在每 500 次修改之後更新。
     * 若資料表基數在評估統計資料時為超過 500 的數值，將會在每 500 + 20% 的修改次數之後更新。
 
-* 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始並 在[資料庫相容性層級](../../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md) 130 之下，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 會使用降低、動態的統計資料更新臨界值。此臨界值會根據資料表中的資料列數目來做出調整。 這是以 1000 乘以目前資料表基數的平方根來計算。 例如，如果您的資料表包含 2 百萬個資料列，則計算結果是 sqrt(1000 * 2000000) = 44721.359。 由於此變更，大型資料表上的統計資料會頻繁地更新。 不過，如果資料庫的相容性層級低於 130，便會套用 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 臨界值。 ?
+* 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始並 在[資料庫相容性層級](../../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md) 130 之下，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 會使用降低、動態的統計資料更新臨界值。此臨界值會根據資料表中的資料列數目來做出調整。 這是以 1000 乘以目前資料表基數的平方根來計算。 例如，如果您的資料表包含 2 百萬個資料列，則計算結果是 sqrt(1000 * 2000000) = 44721.359。 由於此變更，大型資料表上的統計資料會頻繁地更新。 不過，如果資料庫的相容性層級低於 130，便會套用 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 臨界值。 
 
 > [!IMPORTANT]
 > 在 [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 到 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 中，或在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 與更新版本[資料庫相容性層級](../../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md)在 120 以下的資料庫中，請啟用[追蹤旗標 2371](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md)，讓 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 使用遞減、動態統計資料更新閾值。
@@ -139,9 +140,13 @@ AUTO_UPDATE_STATISTICS 選項會套用至針對索引所建立的統計資料物
 > [!NOTE]
 > 若要在 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] 中設定非同步統計資料更新選項，請在 [資料庫屬性] 視窗的 [選項] 頁面中，將 [自動更新統計資料] 和 [自動非同步更新統計資料] 選項設定為 [True]。
   
-統計資料更新可以是同步 (預設值) 或非同步。 使用同步統計資料更新時，查詢一律會使用最新的統計資料進行編譯和執行。如果統計資料已過期，查詢最佳化工具就會先等候更新的統計資料，然後再編譯並執行查詢。 使用非同步統計資料更新時，查詢就會使用現有的統計資料進行編譯，即使現有的統計資料已過期也一樣。如果統計資料在查詢進行編譯時是過期的，查詢最佳化工具可能會選擇到次佳的查詢計劃。 在非同步更新完成之後進行編譯的查詢將會從使用更新的統計資料中獲益。  
-  
-當您執行變更資料分佈的作業時 (例如截斷資料表，或大量更新大部分的資料列)，請考慮使用同步統計資料。 如果您沒有在完成此作業之後更新統計資料，使用同步統計資料將可在針對變更的資料執行查詢之前，確保統計資料處於最新狀態。  
+統計資料更新可以是同步 (預設值) 或非同步。 
+
+* 使用同步統計資料更新時，查詢一律會依據最新的統計資料進行編譯和執行。 當統計資料過期時，查詢最佳化工具會先等待統計資料更新，再編譯並執行查詢。 
+
+* 使用非同步統計資料更新時，即使現有的統計資料已過期，查詢仍會依據現有的統計資料進行編譯。 如果查詢編譯時統計資料已過期，則查詢最佳化工具可能會選擇次佳的查詢計畫。 統計資料通常會在之後立即更新。 如果查詢是在統計資料更新完成之後進行編譯，即可照常使用更新的統計資料，並獲得相關優勢。   
+
+當您執行變更資料分佈的作業時 (例如截斷資料表，或大量更新大部分的資料列)，請考慮使用同步統計資料。 如果未在完成此作業之後手動更新統計資料，則可使用同步的統計資料先確保統計資料處於最新狀態，再針對變更的資料執行查詢。  
   
 在下列狀況中，請考慮使用非同步統計資料來達到更可預測的查詢回應時間：  
   
@@ -154,10 +159,13 @@ AUTO_UPDATE_STATISTICS 選項會套用至針對索引所建立的統計資料物
 
 非同步統計資料更新是由背景要求執行的。 當要求準備好將更新後的統計資料寫入資料庫時，要求會嘗試取得統計資料中繼資料物件的結構描述修改鎖定。 如果不同工作階段已取得相同物件的鎖定，非同步統計資料更新即會遭到封鎖，直到可取得結構描述修改鎖定為止。 同樣地，需要取得統計資料中繼資料物件結構描述穩定性鎖定，以編譯查詢的工作階段可能也會遭到非同步統計資料更新背景工作階段封鎖，因為後者已取得或正在等待取得結構描述修改鎖定。 因此，針對需要經常進行查詢編譯和統計資料更新的工作負載，使用非同步統計資料可能會增加因鎖定封鎖而產生並行問題的可能性。
 
-在 Azure SQL Database 中，若啟用 ASYNC_STATS_UPDATE_WAIT_AT_LOW_PRIORITY [資料庫範圍組態](../../t-sql/statements/alter-database-scoped-configuration-transact-sql.md)，即可使用非同步統計資料更新來避免潛在的並行問題。 啟用這項組態時，背景要求將會在另外一個低優先順序的佇列中等待取得結構描述修改鎖定，允許其他要求繼續使用現有的統計資料編譯查詢。 一旦沒有其他工作階段持有統計資料中繼資料物件的鎖定，背景要求便會取得其結構描述修改鎖定，並更新統計資料。 雖然不常發生，但若背景要求無法在數分鐘的逾時期間內取得鎖定，非同步統計資料更新即會中止，且統計資料將不會更新，直到觸發另一個自動統計資料更新，或直到統計資料都已[手動更新](update-statistics.md)為止。
+在 Azure SQL Database 和 Azure SQL 受控執行個體中，若啟用 ASYNC_STATS_UPDATE_WAIT_AT_LOW_PRIORITY [資料庫範圍組態](../../t-sql/statements/alter-database-scoped-configuration-transact-sql.md)，即可使用非同步統計資料更新來避免潛在的並行問題。 啟用這項組態時，背景要求將會在另外一個低優先順序的佇列中等待取得結構描述修改 (Sch-M) 鎖定，允許其他要求繼續使用現有的統計資料編譯查詢。 一旦沒有其他工作階段持有統計資料中繼資料物件的鎖定，背景要求便會取得其結構描述修改鎖定，並更新統計資料。 雖然不常發生，但若背景要求無法在數分鐘的逾時期間內取得鎖定，非同步統計資料更新即會中止，且統計資料將不會更新，直到觸發另一個自動統計資料更新，或直到統計資料都已[手動更新](update-statistics.md)為止。
+
+> [!Note]
+> Azure SQL Database 和 Azure SQL 受控執行個體現已提供 ASYNC_STATS_UPDATE_WAIT_AT_LOW_PRIORITY 資料庫範圍組態選項，且 SQL Server vNext 也預計會包含此選項。 
 
 #### <a name="incremental"></a>INCREMENTAL  
- 當 CREATE STATISTICS 的 INCREMENTAL 選項為 ON 時，所建立的統計資料會依據每個分割區統計資料累加。 關閉 (OFF) 時，會卸除統計資料樹狀結構，而 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 會重新計算統計資料。 預設值為 OFF。 此設定會覆寫資料庫層級 INCREMENTAL 屬性。 如需建立累加統計資料的詳細資訊，請參閱 [CREATE STATISTICS &#40;Transact-SQL&#41;](../../t-sql/statements/create-statistics-transact-sql.md)。 如需自動建立每個分割區統計資料的詳細資訊，請參閱[資料庫屬性 &#40;選項頁面&#41;](../../relational-databases/databases/database-properties-options-page.md#automatic) 和 [ALTER DATABASE SET 選項 &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md)。 
+ 當 CREATE STATISTICS 的 INCREMENTAL 選項為 ON 時，所建立的統計資料會依據每個分割區統計資料累加。 若為 OFF，則會卸除統計資料樹狀結構，且 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 會重新計算統計資料。 預設值為 OFF。 此設定會覆寫資料庫層級 INCREMENTAL 屬性。 如需建立累加統計資料的詳細資訊，請參閱 [CREATE STATISTICS &#40;Transact-SQL&#41;](../../t-sql/statements/create-statistics-transact-sql.md)。 如需自動建立每個分割區統計資料的詳細資訊，請參閱[資料庫屬性 &#40;選項頁面&#41;](../../relational-databases/databases/database-properties-options-page.md#automatic) 和 [ALTER DATABASE SET 選項 &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md)。 
   
  當新的分割區區加入到大型資料表時，應更新統計資料，以包含新的分割區區。 但是掃描整個資料表 (FULLSCAN 或 SAMPLE 選項) 所需的時間可能會很長。 此外，由於可能只需要新分割區區的統計資料，所以不需要掃描整個資料表。 累加選項會以每個分割區區為基礎，建立及儲存統計資料，更新時只會重新整理需要新統計資料之分割區區的統計資料。  
   
@@ -201,7 +209,7 @@ AUTO_UPDATE_STATISTICS 選項會套用至針對索引所建立的統計資料物
   
 建立多重資料行統計資料時，統計資料物件定義中的資料行順序會影響建立基數估計值之密度的有效性。 統計資料物件會將索引鍵資料行之每個前置詞的密度儲存在統計資料物件定義中。 如需有關密度的詳細資訊，請參閱本頁面中的[密度](#density)一節。  
   
-若要建立對於基數估計值有用的密度，查詢述詞中的資料行必須與統計資料物件定義的其中一個資料行前置詞相符。 例如，下列命令會針對 `LastName`、 `MiddleName`和 `FirstName`資料行建立多重資料行統計資料物件。  
+若要建立對於基數估計值有用的密度，查詢述詞中的資料行必須與統計資料物件定義的其中一個資料行前置詞相符。 例如，下列範例會針對 `LastName`、`MiddleName` 和 `FirstName` 資料行建立多重資料行統計資料物件。  
   
 ```sql  
 USE AdventureWorks2012;  
@@ -261,7 +269,7 @@ GO
  因為暫時統計資料會儲存在 **tempdb** 中，所以重新啟動 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 服務會導致所有暫時統計資料消失。  
     
 ## <a name="when-to-update-statistics"></a><a name="UpdateStatistics"></a> 何時更新統計資料  
- 查詢最佳化工具會判斷統計資料可能過期的時間，然後在查詢計劃需要它們時進行更新。 在某些情況下，您可以讓統計資料的更新頻率高於 [AUTO_UPDATE_STATISTICS](../../t-sql/statements/alter-database-transact-sql-set-options.md#auto_update_statistics) 開啟時的更新頻率，藉以改善查詢計劃，因而改善查詢效能。 您可以使用 UPDATE STATISTICS 陳述式或 sp_updatestats 預存程序來更新統計資料。  
+ 查詢最佳化工具會判斷統計資料可能過期的時間，然後在查詢計劃需要它們時進行更新。 在某些情況下，您可讓統計資料更新頻率高於 [AUTO_UPDATE_STATISTICS](../../t-sql/statements/alter-database-transact-sql-set-options.md#auto_update_statistics) 開啟時的更新頻率，藉此改善查詢計畫而提升查詢效能。 您可以使用 UPDATE STATISTICS 陳述式或 sp_updatestats 預存程序來更新統計資料。  
   
  更新統計資料可確保查詢使用最新的統計資料進行編譯。 不過，更新統計資料會導致查詢重新編譯。 我們建議您不要太頻繁地更新統計資料，因為改善查詢計劃與重新編譯查詢所花費的時間之間具有效能權衡取捨。 特定的權衡取捨完全取決於您的應用程式。  
   
@@ -390,7 +398,7 @@ GO
 ```  
   
 ### <a name="improving-cardinality-estimates-with-plan-guides"></a>使用計劃指南來改善基數估計值  
- 對於某些應用程式而言，查詢設計指導方針可能不適用，因為您無法變更查詢或者使用 RECOMPILE 查詢提示可能會導致重新編譯次數太多。 此時，您可以使用計畫指南來指定其他提示 (例如 USE PLAN)，以便控制查詢的行為，同時向應用程式廠商調查應用程式變更。 如需有關計畫指南的詳細資訊，請參閱 [計畫指南](../../relational-databases/performance/plan-guides.md)。  
+ 有些應用程式可能不適用查詢設計指導方針，因為您無法變更查詢，或 RECOMPILE 查詢提示可能會導致重新編譯次數太多。 此時，您可以使用計畫指南來指定其他提示 (例如 USE PLAN)，以便控制查詢的行為，同時向應用程式廠商調查應用程式變更。 如需有關計畫指南的詳細資訊，請參閱 [計畫指南](../../relational-databases/performance/plan-guides.md)。  
   
   
 ## <a name="see-also"></a>另請參閱  

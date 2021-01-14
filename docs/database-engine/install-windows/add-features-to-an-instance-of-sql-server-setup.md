@@ -15,18 +15,18 @@ ms.reviewer: ''
 ms.custom: ''
 ms.date: 09/07/2019
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 3481a3d5252752e1cf952375d1c35c1c4b9939f1
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a8a0e3db546f4a74e1ec9bcc3c6312d8ca848777
+ms.sourcegitcommit: 3ec49252e82590de0fe559a8574606ae213f6f3b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97438828"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97975471"
 ---
 # <a name="add-features-to-an-instance-of-sql-server-setup"></a>將功能新增至 SQL Server 的執行個體 (安裝程式)
 
 [!INCLUDE [ SQL Server - Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
 
-本文提供將功能新增至 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] 執行個體的逐步程序。 某些 SQL Server 元件或服務為 SQL Server 執行個體特有， 也可感知執行個體。 這些元件或服務也會與裝載它們的執行個體共用相同的版本，並專門用於該執行個體。 如果還未安裝執行個體感知元件與其共用元件，可以將其加入執行個體 SQL Server。 如需不同 SQL Server 版本支援的功能清單，請參閱 [SQL Server 2017 版本和支援的功能](../../sql-server/editions-and-components-of-sql-server-2017.md)。
+本文提供將功能新增至 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] 執行個體的逐步程序。 某些 SQL Server 元件或服務為 SQL Server 執行個體特有， 也可感知執行個體。 這些元件或服務也會與裝載它們的執行個體共用相同的版本，並專門用於該執行個體。 如果還未安裝執行個體感知元件與其共用元件，可以將其加入執行個體 SQL Server。 如需不同 SQL Server 版本支援的功能清單，請參閱 [SQL Server 2017 版本和支援的功能](../../sql-server/editions-and-components-of-sql-server-2017.md)或 [SQL Server 2019](../../sql-server/editions-and-components-of-sql-server-version-15.md)。
 
 若要從命令提示字元，將功能新增至 SQL Server 的執行個體，請參閱[從命令提示字元安裝 SQL Server](./install-sql-server-from-the-command-prompt.md)。
 
@@ -58,7 +58,7 @@ ms.locfileid: "97438828"
 
 7. 在 [安裝類型] 頁面上，選取 [將功能加入到現有的 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] 執行個體] 選項，然後選取要更新的執行個體。
 
-8. 在 [特徵選取] 頁面上，選取要安裝的元件。 當您選取功能名稱之後，每一個元件群組的描述就會出現在右手邊窗格中。 您可以選取核取方塊的任何組合。 如需詳細資訊，請參閱 [SQL Server 2017 的版本及支援功能](../../sql-server/editions-and-components-of-sql-server-2017.md)。 在給定的 SQL Server 執行個體上，每個元件都只能安裝一次。 若要安裝多個元件，您必須安裝其他 SQL Server 執行個體。
+8. 在 [特徵選取] 頁面上，選取要安裝的元件。 當您選取功能名稱之後，每一個元件群組的描述就會出現在右手邊窗格中。 您可以選取核取方塊的任何組合。 如需詳細資訊，請參閱 [SQL Server 2017 的版本和支援功能](../../sql-server/editions-and-components-of-sql-server-2017.md)和 [SQL Server 2019](../../sql-server/editions-and-components-of-sql-server-version-15.md)。 在給定的 SQL Server 執行個體上，每個元件都只能安裝一次。 若要安裝多個元件，您必須安裝其他 SQL Server 執行個體。
 
     右窗格會顯示選取功能的必要條件。 SQL Server 安裝程式將會在這個程序稍後說明的安裝步驟期間安裝尚未安裝的必要條件。
 

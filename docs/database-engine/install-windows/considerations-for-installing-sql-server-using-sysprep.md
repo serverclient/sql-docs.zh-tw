@@ -11,12 +11,12 @@ ms.assetid: e1792eeb-2874-4653-b20e-3063f4eb4e5d
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: b394c18d1db40bec24bfa0d676bb74b66d3b1faa
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 127d1a0bcac97d2b802460549b38c79012f71329
+ms.sourcegitcommit: 3ec49252e82590de0fe559a8574606ae213f6f3b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97460721"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97975419"
 ---
 # <a name="considerations-for-installing-sql-server-using-sysprep"></a>使用 SysPrep 安裝 SQL Server 的考量
 
@@ -69,7 +69,7 @@ ms.locfileid: "97460721"
   
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 當您準備 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的執行個體時，也會自動準備瀏覽器與 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]寫入器。 當您在完成映像步驟中完成 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體時，便會完成這兩個項目。  
   
-如需支援之 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 版本的資訊，請參閱 [SQL Server 2017 的版本及支援功能](../../sql-server/editions-and-components-of-sql-server-2017.md)。  
+如需支援的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 版本資訊，請參閱 [SQL Server 2017 的版本和支援功能](../../sql-server/editions-and-components-of-sql-server-2017.md)及 [SQL Server 2019](../../sql-server/editions-and-components-of-sql-server-version-15.md)  
   
 您可以執行版本升級，同時設定備妥的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]執行個體。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Express 版本不支援這個選項。  
   

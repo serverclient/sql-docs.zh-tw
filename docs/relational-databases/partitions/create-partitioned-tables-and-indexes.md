@@ -2,7 +2,7 @@
 description: 建立分割區資料表及索引
 title: 建立資料分割資料表及索引 | Microsoft Docs
 ms.custom: ''
-ms.date: 03/14/2017
+ms.date: 1/5/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -30,12 +30,12 @@ ms.assetid: 7641df10-1921-42a7-ba6e-4cb03b3ba9c8
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 791c2fa9d0ea4aad3c59f0edbafb2a28a2585d25
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 387a2f88afd22004f7146384ce29ddc2ba2f2da7
+ms.sourcegitcommit: 629229a7c33a3ed99db63b89127bb016449f7d3d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97464849"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952047"
 ---
 # <a name="create-partitioned-tables-and-indexes"></a>建立分割區資料表及索引
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -50,6 +50,9 @@ ms.locfileid: "97464849"
 3.  建立分割區配置，將分割區資料表或索引的分割區，對應至新的檔案群組。  
   
 4.  建立或修改資料表或索引，以及指定分割區配置做為儲存位置。  
+ 
+> [!NOTE]
+> Azure [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] 只支援主要檔案群組。  
   
  **本主題內容**  
   
@@ -96,7 +99,7 @@ ms.locfileid: "97464849"
 3.  按一下 **[資料列]** 底下的 **[加入]**。 在新資料列中，輸入檔案群組名稱。  
   
     > [!WARNING]  
-    >  建立分割區時，除了針對界限值指定的檔案群組數目以外，一定要有一個額外的檔案群組。  
+    >  建立分割區時，如果要指定多個檔案群組，除了針對界限值指定的檔案群組數目以外，一律要一個額外的檔案群組。  
   
 4.  繼續加入資料列，直到為分割區資料表建立所有的檔案群組。  
   
@@ -138,7 +141,7 @@ ms.locfileid: "97464849"
   
      完成這個頁面之後，請按 **[下一步]** 。  
   
-6.  在 **[對應分割區]** 頁面上，選取 **[範圍]** 底下的 **[左界限]** 或 **[右界限]** ，指定要在建立的每個檔案群組中包含最高或最低的界限值。 建立分割區時，除了針對界限值指定的檔案群組數目以外，您一定要輸入一個額外的檔案群組。  
+6.  在 **[對應分割區]** 頁面上，選取 **[範圍]** 底下的 **[左界限]** 或 **[右界限]** ，指定要在建立的每個檔案群組中包含最高或最低的界限值。 建立分割區時，如果要指定多個檔案群組，除了針對界限值指定的檔案群組數目以外，一律要輸入一個額外的檔案群組。  
   
      在 **[選取檔案群組並指定界限值]** 方格中的 **[檔案群組]** 底下，選取要用於分割資料的檔案群組。 在 **[界限]** 下方，輸入每個檔案群組的界限值。 如果界限值保持空白，分割區函數會使用分割區函數名稱，將整份資料表或索引對應到單一分割區。  
   
@@ -345,6 +348,34 @@ ms.locfileid: "97464849"
         ON myRangePS1 (col1) ;  
     GO  
     ```  
+
+
+#### <a name="to-create-a-partitioned-table-in-azure-sqldbesa"></a>在 Azure [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] 中建立資料分割資料表
+
+Azure [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] 不支援新增檔案和檔案群組，但只有跨 PRIMARY 檔案群組進行資料分割時支援資料表分割區。
+  
+1.  在 **[物件總管]** 中，連接到 [!INCLUDE[ssDE](../../includes/ssde-md.md)]的執行個體。  
+  
+1.  在標準列上，按一下 **[新增查詢]** 。  
+  
+1.  複製下列範例並將其貼到查詢視窗中，然後按一下 **[執行]** 。 此範例會建立資料分割函數和資料分割配置。 新資料表是以指定為儲存位置的分割區配置建立的。 
+
+    ```
+    -- Creates a partition function called myRangePF1 that will partition a table into four partitions  
+    CREATE PARTITION FUNCTION myRangePF1 (int)  
+        AS RANGE LEFT FOR VALUES (1, 100, 1000) ;  
+    GO  
+    -- Creates a partition scheme called myRangePS1 that applies myRangePF1 to the PRIMARY filegroup 
+    CREATE PARTITION SCHEME myRangePS1  
+        AS PARTITION myRangePF1  
+        ALL TO ('PRIMARY') ;  
+    GO  
+    -- Creates a partitioned table called PartitionTable that uses myRangePS1 to partition col1  
+    CREATE TABLE PartitionTable (col1 int PRIMARY KEY, col2 char(10))  
+        ON myRangePS1 (col1) ;  
+    GO
+    ```  
+
   
 #### <a name="to-determine-if-a-table-is-partitioned"></a>若要判斷資料表是否已分割  
   

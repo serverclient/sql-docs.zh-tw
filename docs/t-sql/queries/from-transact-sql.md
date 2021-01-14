@@ -1,8 +1,6 @@
 ---
+title: FROM 子句與 JOIN、APPLY、PIVOT (T-SQL)
 description: FROM 子句與 JOIN、APPLY、PIVOT (Transact-SQL)
-title: FROM：JOIN、APPLY、PIVOT (T-SQL) | Microsoft Docs
-ms.custom: ''
-ms.date: 06/01/2019
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
@@ -13,6 +11,8 @@ f1_keywords:
 - FROM_TSQL
 - FROM
 - JOIN_TSQL
+- OUTER_JOIN_TSQL
+- INNER_JOIN_TSQL
 - CROSS_TSQL
 - CROSS_APPLY_TSQL
 - APPLY_TSQL
@@ -34,13 +34,15 @@ helpviewer_keywords:
 ms.assetid: 36b19e68-94f6-4539-aeb1-79f5312e4263
 author: VanMSFT
 ms.author: vanto
+ms.custom: ''
+ms.date: 06/01/2019
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 188610b1f6eef0835bf20f7b86e99647df699539
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 70cda7e45f17bb1dbeeaa69178e0538296572ae7
+ms.sourcegitcommit: b652ff2f0f7edbb5bd2f8fdeac56348e4d84f8fc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97464219"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112670"
 ---
 # <a name="from-clause-plus-join-apply-pivot-transact-sql"></a>FROM 子句與 JOIN、APPLY、PIVOT (Transact-SQL)
 
@@ -56,9 +58,9 @@ SELECT 陳述式通常必須使用 FROM 子句。 例外狀況如下：未列出
 
 本文也會說明下列可用於 FROM 子句的關鍵字：
 
-- JOIN
+- [JOIN](../../relational-databases/performance/joins.md)
 - APPLY
-- PIVOT
+- [PIVOT](from-using-pivot-and-unpivot.md)
 
 ![主題連結圖示](../../database-engine/configure-windows/media/topic-link.gif "主題連結圖示") [Transact-SQL 語法慣例](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
 
@@ -199,20 +201,14 @@ FROM { <table_source> [ ,...n ] }
  WITH (\<table_hint> )  
  指定查詢最佳化工具必須搭配這份資料表，並針對這個陳述式來使用最佳化或鎖定策略。 如需詳細資訊，請參閱[資料表提示 &#40;Transact-SQL&#41;](../../t-sql/queries/hints-transact-sql-table.md)。  
   
- *rowset_function*  
-
+*rowset_function*  
 **適用於**：[!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 及更新版本和 [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-
-  
- 指定資料列集函數之一 (如 OPENROWSET)，利用該函數來傳回可使用的物件，而不是傳回資料表參考。 如需有關資料列集函數清單的詳細資訊，請參閱[資料列集函數 &#40;Transact-SQL&#41;](../functions/opendatasource-transact-sql.md)。  
+指定資料列集函數之一 (如 OPENROWSET)，利用該函數來傳回可使用的物件，而不是傳回資料表參考。 如需有關資料列集函數清單的詳細資訊，請參閱[資料列集函數 &#40;Transact-SQL&#41;](../functions/opendatasource-transact-sql.md)。  
   
  使用 OPENROWSET 和 OPENQUERY 函數來指定遠端物件時，主要取決於存取此物件之 OLE DB 提供者的功能。  
   
  *bulk_column_alias*  
-
 **適用於**：[!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 及更新版本和 [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-
-  
  這是一個用以取代結果集中之資料行名稱的選擇性別名。 資料行別名只能用在搭配 BULK 選項使用 OPENROWSET 函數的 SELECT 陳述式中。 當您使用 *bulk_column_alias* 時，請依照與檔案中資料行相同的順序，指定每個資料表資料行的別名。  
   
 > [!NOTE]  
@@ -221,12 +217,9 @@ FROM { <table_source> [ ,...n ] }
  *user_defined_function*  
  指定資料表值函式。  
   
- OPENXML \<openxml_clause>  
-
+OPENXML \<openxml_clause>  
 **適用於**：[!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 及更新版本和 [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-
-  
- 透過 XML 文件提供資料列集的檢視。 如需詳細資訊，請參閱 [OPENXML &#40;Transact-SQL&#41;](../../t-sql/functions/openxml-transact-sql.md)。  
+透過 XML 文件提供資料列集的檢視。 如需詳細資訊，請參閱 [OPENXML &#40;Transact-SQL&#41;](../../t-sql/functions/openxml-transact-sql.md)。  
   
  *derived_table*  
  這是從資料庫中擷取資料列的子查詢。 *derived_table* 可用來作為外部查詢的輸入。  
@@ -236,17 +229,12 @@ FROM { <table_source> [ ,...n ] }
  *column_alias*  
  這是一個用以取代衍生資料表結果集中之資料行名稱的選擇性別名。 選取清單中的每個資料行都包含一個資料行別名，且會利用括號包住資料行別名的完整清單。  
   
- *table_or_view_name* FOR SYSTEM_TIME \<system_time>  
-
-**適用於**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本和 [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-
-  
- 指定從所指定的時態表及其連結的系統版本設定記錄資料表，傳回特定版本的資料  
+ *table_or_view_name* FOR SYSTEM_TIME \<system_time>
+**適用於**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 和更新版本以及 [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
+指定從所指定的時態表及其連結的系統版本設定記錄資料表，傳回特定版本的資料  
   
 ### <a name="tablesample-clause"></a>TABLESAMPLE 子句
-**適用範圍：** SQL Server、SQL Database 
- 
- 指定必須從資料表傳回資料範例。 該範例可能只是近似資料。 這個子句可用於 SELECT 或 UPDATE 陳述式中的任何主要或聯結資料表。 TABLESAMPLE 不能利用檢視表來指定。  
+**適用範圍：** SQL Server、SQL Database 指定必須從資料表傳回資料範例。 該範例可能只是近似資料。 這個子句可用於 SELECT 或 UPDATE 陳述式中的任何主要或聯結資料表。 TABLESAMPLE 不能利用檢視表來指定。  
   
 > [!NOTE]  
 >  當您針對升級到 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的資料庫使用 TABLESAMPLE 時，而且資料庫的相容性層級設定為 110 或更高層級，則遞迴通用資料表運算式 (CTE) 查詢中不允許 PIVOT。 如需詳細資訊，請參閱 [ALTER DATABASE 相容性層級 &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md)。  
@@ -381,35 +369,24 @@ ON (p.ProductID = v.ProductID);
  UNPIVOT \<unpivot_clause>  
  指定將輸入資料表從 *column_list* 中的多個資料行縮減成一個名為 *pivot_column* 的單一資料行。 如需有關 PIVOT 和 UNPIVOT 的詳細資訊，請參閱[使用 PIVOT 和 UNPIVOT](../../t-sql/queries/from-using-pivot-and-unpivot.md)。  
   
- AS OF \<date_time>  
-
+AS OF \<date_time>  
 **適用於**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本和 [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-
+傳回含有每個資料列單一記錄的資料表，內含的值在過去的指定時間點為實際 (目前)。 就內部而言，時態表和其歷程記錄資料表之間會執行聯集，且會將結果篩選為傳回資料列中的值，該資料列在 *\<date_time>* 參數所指定的時間點有效。 如果 *system_start_time_column_name* 值小於或等於 *\<date_time>* 參數值，且 *system_end_time_column_name* 值大於 *\<date_time>* 參數值，資料列的值即視為有效。   
   
- 傳回含有每個資料列單一記錄的資料表，內含的值在過去的指定時間點為實際 (目前)。 就內部而言，時態表和其歷程記錄資料表之間會執行聯集，且會將結果篩選為傳回資料列中的值，該資料列在 *\<date_time>* 參數所指定的時間點有效。 如果 *system_start_time_column_name* 值小於或等於 *\<date_time>* 參數值，且 *system_end_time_column_name* 值大於 *\<date_time>* 參數值，資料列的值即視為有效。   
+FROM \<start_date_time> TO \<end_date_time>
+**適用於**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 和更新版本以及 [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。
+傳回資料表，其中內含所有記錄版本的值，該值在所指定的時間範圍內有效，而不論其是否在 FROM 引數的 *\<start_date_time>* 的參數值之前為作用中，或是在 TO 引數的 *\<end_date_time>* 參數值之後就不在作用中。 就內部而言，時態表和其歷程記錄資料表之間會執行等位，且會將結果篩選為傳回所有資料列版本的值，該值在指定的時間範圍任何時間點內皆為作用中。 這包含正好在 FROM 端點所定義範圍下限變成作用中的資料列，但不包含正好在 TO 端點所定義範圍上限變成作用中的資料列。  
   
- FROM \<start_date_time> TO \<end_date_time>
-
-**適用於**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本和 [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。
-
-  
- 傳回資料表，其中內含所有記錄版本的值，該值在所指定的時間範圍內有效，而不論其是否在 FROM 引數的 *\<start_date_time>* 的參數值之前為作用中，或是在 TO 引數的 *\<end_date_time>* 參數值之後就不在作用中。 就內部而言，時態表和其歷程記錄資料表之間會執行等位，且會將結果篩選為傳回所有資料列版本的值，該值在指定的時間範圍任何時間點內皆為作用中。 這包含正好在 FROM 端點所定義範圍下限變成作用中的資料列，但不包含正好在 TO 端點所定義範圍上限變成作用中的資料列。  
-  
- BETWEEN \<start_date_time> AND \<end_date_time>  
-
+BETWEEN \<start_date_time> AND \<end_date_time>  
 **適用於**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本和 [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
+與上面的 **FROM \<start_date_time> TO \<end_date_time>** 描述相同，唯一差別在於其包含在 \<end_date_time> 端點所定義的範圍上限變成作用中的資料列。  
   
- 與上面的 **FROM \<start_date_time> TO \<end_date_time>** 描述相同，唯一差別在於其包含在 \<end_date_time> 端點所定義的範圍上限變成作用中的資料列。  
-  
- CONTAINED IN (\<start_date_time> , \<end_date_time>)  
-
+CONTAINED IN (\<start_date_time> , \<end_date_time>)  
 **適用於**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本和 [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-
+傳回資料表，其中內含所有記錄版本的值，該值在 CONTAINED IN 引數兩個日期時間值所定義的指定時間範圍內為開啟及關閉。 包含恰好在範圍下限變為作用中的資料列，或是恰好在範圍上限就不在作用中的資料列。  
   
- 傳回資料表，其中內含所有記錄版本的值，該值在 CONTAINED IN 引數兩個日期時間值所定義的指定時間範圍內為開啟及關閉。 包含恰好在範圍下限變為作用中的資料列，或是恰好在範圍上限就不在作用中的資料列。  
-  
- ALL  
- 傳回含有目前資料表及記錄資料表之所有資料列值的資料表。  
+ALL  
+傳回含有目前資料表及記錄資料表之所有資料列值的資料表。  
   
 ## <a name="remarks"></a>備註  
  FROM 子句支援聯結資料表和衍生資料表的 SQL-92-SQL 語法。 SQL-92 語法提供 INNER、LEFT OUTER、RIGHT OUTER、FULL OUTER 及 CROSS 聯結運算子。  
@@ -635,8 +612,7 @@ GO
 ### <a name="m-using-for-system_time"></a>M. Using FOR SYSTEM_TIME  
   
 **適用於**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本和 [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-  
- 下列範例會使用 FOR SYSTEM_TIME AS OF date_time_literal_or_variable 引數來傳回截至 2014 年 1 月 1 日為止實際 (目前) 的資料表資料列。  
+下列範例會使用 FOR SYSTEM_TIME AS OF date_time_literal_or_variable 引數來傳回截至 2014 年 1 月 1 日為止實際 (目前) 的資料表資料列。  
   
 ```sql
 SELECT DepartmentNumber,   
@@ -648,7 +624,7 @@ FOR SYSTEM_TIME AS OF '2014-01-01'
 WHERE ManagerID = 5;
 ```  
   
- 下列範例會使用 FOR SYSTEM_TIME FROM date_time_literal_or_variable TO date_time_literal_or_variable 引數來傳回在所定義期間 (從 2013 年 1 月 1 日起，到 2014 年 1 月 1 日止，不含範圍上限) 處於作用中的所有資料列。  
+下列範例會使用 FOR SYSTEM_TIME FROM date_time_literal_or_variable TO date_time_literal_or_variable 引數來傳回在所定義期間 (從 2013 年 1 月 1 日起，到 2014 年 1 月 1 日止，不含範圍上限) 處於作用中的所有資料列。  
   
 ```sql
 SELECT DepartmentNumber,   

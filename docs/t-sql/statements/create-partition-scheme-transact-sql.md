@@ -27,14 +27,14 @@ helpviewer_keywords:
 - partitioned tables [SQL Server], filegroups
 - mapping partitions [SQL Server]
 ms.assetid: 5b21c53a-b4f4-4988-89a2-801f512126e4
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ea6018e34db8ddc07a1e30cec6089994e402b9e6
-ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 36b22f01bbc9bd089cf6f651d8f97d2d2d2b3d32
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96124036"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093466"
 ---
 # <a name="create-partition-scheme-transact-sql"></a>CREATE PARTITION SCHEME (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -160,9 +160,11 @@ TO (test1fg, test2fg, test3fg, test4fg, test5fg)
   
  如果將資料分割函數 `myRangePF4` 改成加入資料分割，`test5fg` 檔案群組會收到新建立的資料分割。  
 
-### <a name="e-creating-a-partition-scheme-only-on-primary---only-primary-is-supported-for-sqldbesa"></a>E. 只在 PRIMARY 上建立分割區配置 - [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] 僅支援 PRIMARY
+### <a name="e-creating-a-partition-scheme-only-on-primary"></a>E. 僅在 PRIMARY 上建立資料分割配置
 
- 下列範例會建立一個資料分割函數，將資料表或索引分割成四個資料分割。 然後，就會建立分割區配置，以指定在 PRIMARY 檔案群組中建立所有分割區。  
+ Azure [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] 不支援新增檔案和檔案群組，但只有跨 PRIMARY 檔案群組進行資料分割時支援資料表分割區。 
+
+下列範例會建立一個資料分割函數，將資料表或索引分割成四個資料分割。 然後，就會建立分割區配置，以指定在 PRIMARY 檔案群組中建立所有分割區。  
   
 ```sql  
 CREATE PARTITION FUNCTION myRangePF1 (INT)  
