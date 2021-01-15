@@ -19,12 +19,12 @@ ms.assetid: ''
 author: jovanpop-msft
 ms.author: jovanpop
 monikerRange: =azuresqldb-current
-ms.openlocfilehash: 142269f7c3cd8a5a1e764e2e48cf41f83490bd76
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 8a913c3bf4f01828fcf75df1e3c69dca9149e2de
+ms.sourcegitcommit: 23649428528346930d7d5b8be7da3dcf1a2b3190
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97464599"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98241819"
 ---
 # <a name="sysserver_resource_stats-azure-sql-database"></a>sys.server_resource_stats (Azure SQL Database) 
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
@@ -63,18 +63,17 @@ ms.locfileid: "97464599"
  **Sys.server_resource_stats** 所傳回的資料會以位元組或 mb (中所述的資料行名稱來表示，) 除了 avg_cpu 以外的資料行名稱中所述，這是以您正在執行之服務層級/效能層級的最大允許限制百分比表示。  
  
 ## <a name="examples"></a>範例  
- 下列範例會傳回上一週平均至少為 80% 運算使用率的所有資料庫。  
+下列範例會傳回過去七天的平均 CPU 使用量。  
   
 ```sql  
 DECLARE @s datetime;  
 DECLARE @e datetime;  
 SET @s= DateAdd(d,-7,GetUTCDate());  
 SET @e= GETUTCDATE();  
-SELECT resource_name, AVG(avg_cpu_percent) AS Average_Compute_Utilization   
+SELECT AVG(avg_cpu_percent) AS Average_Compute_Utilization   
 FROM sys.server_resource_stats   
 WHERE start_time BETWEEN @s AND @e  
-GROUP BY resource_name  
-HAVING AVG(avg_cpu_percent) >= 80  
+GO;
 ```  
     
 ## <a name="see-also"></a>另請參閱  
