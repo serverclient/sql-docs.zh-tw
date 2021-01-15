@@ -8681,9 +8681,6 @@
                       href: ssms/scripting/generate-and-publish-scripts-wizard.md
                     - name: 指令碼產生精靈支援的物件
                       href: ssms/scripting/objects-supported-by-the-generate-scripts-wizard.md
-                - name: 查詢與文字編輯器
-                  href: ./ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md?view=sql-server-ver15
-                  items:
                     - name: XML 編輯器
                       href: ssms/scripting/xml-editor-sql-server-management-studio.md
                     - name: 查詢編輯器中的色彩編碼
@@ -9103,8 +9100,6 @@
               items:
                 - name: 查詢與文字編輯器
                   href: /previous-versions/sql/sql-server-2012/ms173477(v=sql.110)?redirectedfrom=MSDN
-                - name: Database Engine 查詢編輯器
-                  href: ./ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md
                 - name: XML 編輯器
                   href: ssms/scripting/xml-editor-sql-server-management-studio.md
                 - name: 設定編輯器
@@ -9223,6 +9218,8 @@
                   href: ssms/menu-help/options-environment-fonts-and-colors-page.md
                 - name: 選項 (環境 - 說明 - 一般頁面)
                   href: ssms/menu-help/options-environment-help-general-page.md
+                - name: 選項 (查詢執行選項 - 說明 - 一般頁面)
+                  href: ssms/menu-help/options-query-execution.md
                 - name: 外部工具
                   href: ssms/menu-help/external-tools.md
                 - name: 自訂 (命令頁面)
