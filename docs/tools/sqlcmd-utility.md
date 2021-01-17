@@ -28,12 +28,12 @@ ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 09/11/2020
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017'
-ms.openlocfilehash: fcd184e195ce8c81e16ca4ceaaab03a1f156a812
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 0c822321323eb5f74fda34df2d540b7c5c79c382
+ms.sourcegitcommit: e40e75055c1435c5e3f9b6e3246be55526807b4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97471829"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98151299"
 ---
 # <a name="sqlcmd-utility"></a>sqlcmd 公用程式
 
@@ -917,13 +917,21 @@ sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net -G -U bob@contoso.com -P 
 
 - 使用整合式安全性。  
 
-- 在自動化環境中使用 **-X** 。  
+- 在自動化環境中使用 **-X[1]** 。
 
 - 利用 NTFS 檔案系統權限保護輸入檔和輸出檔。
 
 - 為提高效能，請盡可能在單一 **sqlcmd** 工作階段中執行所有工作，而不要使用一連串的工作階段。
 
 - 將批次或查詢執行的逾時值，設定成高於您預期執行批次或查詢所需的時間值。
+
+使用下列作法以協助將正確性最大化：
+
+- 使用 **-V16** 來記錄所有[嚴重性 16 層級訊息](../relational-databases/errors-events/database-engine-error-severities.md#levels-of-severity)。  嚴重性 16 訊息會指出使用者能夠更正的一般錯誤。
+
+- 在處理序結束之後檢查結束代碼與 DOS ERRORLEVEL 變數。  **sqlcmd** 在正常情況下會傳回 0，否則其將會設定由 **-V** 所設定的 ERRORLEVEL。  換句話說，不應該預期 ERRORLEVEL 會與 SQL Server 回報的「錯誤號碼」相同。 「錯誤號碼「是 SQL Server 特有值，其會與系統函式 [ **@@ERROR** ](../t-sql/functions/error-transact-sql.md) 相對應。  ERRORLEVEL 是 SQLCMD 特有值，是用來指出其 (即 SQLCMD) 終止的原因，且其值可透過指定 **-b** 命令列引數來加以影響。
+
+使用 **-V16** 搭配檢查結束代碼與 DOS ERRORLEVEL，有助於攔截自動化環境中的錯誤，其特別適用於生產發行之前的品質閘門。
 
 ## <a name="next-steps"></a>後續步驟
 

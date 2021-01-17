@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 93acefa8-bb41-4ccc-b763-7801f51134e0
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 3177050a3d7eaae65099e441792801292df11ec6
-ms.sourcegitcommit: 5a1ed81749800c33059dac91b0e18bd8bb3081b1
+ms.openlocfilehash: eea074af5270046bae6bb153cfb6fe79053335a4
+ms.sourcegitcommit: 3ec49252e82590de0fe559a8574606ae213f6f3b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96127474"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97975490"
 ---
 # <a name="work-with-multiple-versions-and-instances-of-sql-server"></a>使用 SQL Server 的多個版本與執行個體
 
@@ -124,6 +124,7 @@ ms.locfileid: "96127474"
 * [從安裝精靈 &#40;安裝程式&#41; 安裝 SQL Server](../../database-engine/install-windows/install-sql-server-from-the-installation-wizard-setup.md)
 * [支援的版本與版本升級](../../database-engine/install-windows/supported-version-and-edition-upgrades.md)
 * [升級 SQL Server](../../database-engine/install-windows/upgrade-sql-server.md)
+* [SQL Server 2019 的版本和支援功能](../../sql-server/editions-and-components-of-sql-server-version-15.md) 
 * [版本及支援的 SQL Server 2017 功能](../../sql-server/editions-and-components-of-sql-server-2017.md)
 * [版本及支援的 SQL Server 2016 功能](../../sql-server/editions-and-components-of-sql-server-2016.md)
 * [回溯相容性_已刪除](/previous-versions/sql/sql-server-2016/cc280407(v=sql.130))

@@ -3,18 +3,18 @@ title: 從命令提示字元安裝
 description: 執行 SQL Server 命令列安裝程式，以使用 Python 與 R 將機器學習服務新增到 SQL Server 資料庫引擎執行個體。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 11/25/2020
+ms.date: 01/07/2021
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: 7c9fb33f32a5807f46136ec1ede69386927621ca
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 9b0bf3444ab09cbbbb4aa8eca225dfa9964898c3
+ms.sourcegitcommit: d681796e8c012eca2d9629d3b816749e9f50f868
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97471139"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98005303"
 ---
 # <a name="install-sql-server-machine-learning-services-with-r-and-python-from-the-command-line"></a>從命令列安裝含 R 與 Python 的 SQL Server 機器學習服務
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -73,7 +73,7 @@ ms.locfileid: "97471139"
 | /FEATURES = AdvancedAnalytics | 安裝資料庫內版本：SQL Server 機器學習服務 (資料庫內)。  |
 | /FEATURES = SQL_INST_MR | 將此與 AdvancedAnalytics 配對。 安裝 (資料庫內) R 功能，包括 Microsoft R Open 和專屬的 R 套件。 |
 | /FEATURES = SQL_INST_MPY | 將此與 AdvancedAnalytics 配對。 安裝 (資料庫內) Python 功能，包括 Anaconda 和專屬 Python 套件。 |
-| /FEATURES = SQL_INST_MJAVA | 將此與 AdvancedAnalytics 配對。 安裝 (資料庫內) JAVA 功能，包括 Open JRE。 |
+| /FEATURES = SQL_INST_MJAVA | 將此與 AdvancedAnalytics 配對。 安裝 (資料庫內) JAVA 功能，包括 Open JRE。 適用於 [SQL Server Java 語言延伸模組](../../language-extensions/install/windows-java.md)。|
 | /FEATURES = SQL_SHARED_MR | 安裝獨立版本的 R 功能：SQL Server Machine Learning Server (獨立式)。 獨立伺服器是指未繫結至資料庫引擎執行個體的「共用功能」。|
 | /FEATURES = SQL_SHARED_MPY | 安裝獨立版本的 Python 功能：SQL Server Machine Learning Server (獨立式)。 獨立伺服器是指未繫結至資料庫引擎執行個體的「共用功能」。|
 | /IACCEPTROPENLICENSETERMS  | 表示您已接受授權合約以使用開放原始碼 R 元件。 |

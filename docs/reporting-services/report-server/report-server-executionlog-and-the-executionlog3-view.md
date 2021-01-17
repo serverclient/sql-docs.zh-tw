@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: a7ead67d-1404-4e67-97e7-4c7b0d942070
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 15e8b648603952226af45d485d5678f5d0d3bbd6
-ms.sourcegitcommit: f0772f614482e0b3cde3609e178689ce62ca3a19
+ms.openlocfilehash: 28d083e053e31c1fcce26e233ba22211e211a993
+ms.sourcegitcommit: 1f826eb3f73bd4d94bc9638b9cdd60991a2e2fa0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84548010"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98125582"
 ---
 # <a name="report-server-executionlog-and-the-executionlog3-view"></a>報表伺服器執行記錄和 ExecutionLog3 檢視
   [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]報表伺服器執行記錄包含有關在伺服器上執行，或在原生模式向外延展部署或 SharePoint 伺服器陣列中多個伺服器上執行之報表的資訊。 您可以使用報表執行記錄來了解要求報表的頻率、最常使用的輸出格式，以及每一個處理階段所花費處理時間的毫秒數。 此記錄會包含執行報表之資料集查詢所花費時間長度的資訊，以及處理資料所花費的時間。 如果您是報表伺服器管理員，可以檢閱記錄資訊、識別長時間執行工作，並且向報表作者提出有關他們能夠改善之報表區域 (資料集或處理) 的建議。  
@@ -27,7 +27,7 @@ ms.locfileid: "84548010"
 ##  <a name="viewing-log-information"></a><a name="bkmk_top"></a> 檢視記錄資訊  
  報表伺服器執行會將有關報表執行的資料記錄到內部資料庫資料表中。 您可以從 SQL Server 檢視取得此資料表的資訊。  
   
- 報表執行記錄會儲存在預設名為 **ReportServer**的報表伺服器資料庫中。 SQL 檢視會提供執行記錄資訊。 "2" 和 "3" 檢視是在較新版本中新增，而且包含新欄位或是名稱比舊版更易記的欄位。 舊版檢視仍然保留在產品中，因此相依於這些檢視的自訂應用程式不受影響。 如果您沒有舊版檢視 (例如 ExecutionLog) 的相依性，建議您使用最新檢視 ExecutionLog**3**。  
+ 報表執行記錄會儲存在預設名為 **ReportServer** 的報表伺服器資料庫中。 SQL 檢視會提供執行記錄資訊。 "2" 和 "3" 檢視是在較新版本中新增，而且包含新欄位或是名稱比舊版更易記的欄位。 舊版檢視仍然保留在產品中，因此相依於這些檢視的自訂應用程式不受影響。 如果您沒有舊版檢視 (例如 ExecutionLog) 的相依性，建議您使用最新檢視 ExecutionLog **3**。  
   
  本主題內容：  
   
@@ -328,11 +328,11 @@ select * from ExecutionLog2 order by TimeStart DESC
 |[格式]|轉譯格式。|  
 |參數|報表執行所使用的參數值。|  
 |ReportAction|可能的值：Render、Sort、BookMarkNavigation、DocumentNavigation、GetDocumentMap、Findstring|  
-|TimeStart|指出報表處理持續期間的開始與結束時間。|  
-|TimeEnd||  
-|TimeDataRetrieval|擷取資料、處理報表和轉譯報表所花費的毫秒數。|  
-|TimeProcessing||  
-|TimeRendering||  
+|TimeStart|指出報表處理持續期間的開始時間。|
+|TimeEnd|指出報表處理持續期間的結束時間。|
+|TimeDataRetrieval|擷取資料所花費的毫秒數。|
+|TimeProcessing|處理報表所花費的毫秒數。|
+|TimeRendering|轉譯報表所花費的毫秒數。|
 |來源|報表執行的來源 (1= 即時、2= 快取、3= 快照集、4= 記錄)。|  
 |狀態|狀態 (不是 rsSuccess 就是錯誤碼；如果發生多個錯誤，就只會記錄第一個錯誤)。|  
 |ByteCount|轉譯報表的大小 (以位元組為單位)。|  
