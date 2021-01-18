@@ -1986,6 +1986,8 @@
               href: relational-databases/track-changes/administer-and-monitor-change-data-capture-sql-server.md
             - name: 使用
               href: relational-databases/track-changes/work-with-change-data-sql-server.md
+            - name: 互通性
+              href: relational-databases/track-changes/change-data-capture-and-other-sql-server-features.md
         - name: 變更追蹤
           href: relational-databases/track-changes/about-change-tracking-sql-server.md
           items:
@@ -1995,8 +1997,6 @@
               href: relational-databases/track-changes/manage-change-tracking-sql-server.md
             - name: 使用
               href: relational-databases/track-changes/work-with-change-tracking-sql-server.md
-            - name: 互通性
-              href: relational-databases/track-changes/change-data-capture-and-other-sql-server-features.md
     - name: 觸發程序
       items:
         - name: 登入觸發程序
@@ -7785,11 +7785,12 @@
                     - name: 使用 .NET Framework 開發應用程式
                       href: relational-databases/security/encryption/develop-using-always-encrypted-with-net-framework-data-provider.md
             - name: 具有安全記憶體保護區的 Always Encrypted
-              href: relational-databases/security/encryption/configure-always-encrypted-enclaves.md
               items:
+                - name: 設定具有安全記憶體保護區的 Always Encrypted
+                  href: relational-databases/security/encryption/configure-always-encrypted-enclaves.md
                 - name: 設定您的環境以支援記憶體保護區和證明
                   items:
-                    - name: 使用主機守護者服務證明設定 VBS 記憶體保護區
+                    - name: Set up SQL Server
                       items:
                         - name: 規劃主機守護者服務證明
                           href: relational-databases/security/encryption/always-encrypted-enclaves-host-guardian-service-plan.md
@@ -7797,6 +7798,8 @@
                           href: relational-databases/security/encryption/always-encrypted-enclaves-host-guardian-service-deploy.md
                         - name: 向主機守護者服務註冊電腦
                           href: relational-databases/security/encryption/always-encrypted-enclaves-host-guardian-service-register.md
+                        - name: 在 SQL Server 中設定安全記憶體保護區
+                          href: relational-databases/security/encryption/always-encrypted-enclaves-configure-enclave-type.md
                 - name: 針對具有安全記憶體保護區的 Always Encrypted 管理金鑰
                   items:
                     - name: 管理已啟用記憶體保護區的金鑰
@@ -7813,12 +7816,10 @@
                       href: relational-databases/security/encryption/always-encrypted-enclaves-configure-encryption-tsql.md
                     - name: 為現有加密資料行啟用具有安全記憶體保護區的 Always Encrypted
                       href: relational-databases/security/encryption/always-encrypted-enclaves-enable-for-encrypted-columns.md
-                - name: 使用具有安全記憶體保護區的 Always Encrypted 查詢資料行
-                  items:
-                    - name: 使用具有安全記憶體保護區的 Always Encrypted 查詢資料行
-                      href: relational-databases/security/encryption/always-encrypted-enclaves-query-columns.md
-                    - name: 使用具有安全記憶體保護區的 Always Encrypted 與 SSMS 查詢資料行
-                      href: relational-databases/security/encryption/always-encrypted-enclaves-query-columns-ssms.md
+                - name: 使用安全記憶體保護區執行 Transact-SQL 陳述式
+                  href: relational-databases/security/encryption/always-encrypted-enclaves-query-columns.md
+                - name: 針對安全記憶體保護區常見問題進行疑難排解
+                  href: relational-databases/security/encryption/always-encrypted-enclaves-troubleshooting.md
                 - name: 在已啟用記憶體保護區的資料行上建立和使用索引
                   href: relational-databases/security/encryption/always-encrypted-enclaves-create-use-indexes.md
                 - name: 使用具有安全記憶體保護區的 Always Encrypted 開發應用程式
@@ -7964,8 +7965,10 @@
               href: /azure/sql-database/sql-database-always-encrypted-azure-key-vault
         - name: 具有安全記憶體保護區的 Always Encrypted
           items:
-            - name: 使用 SSMS，開始使用具有安全記憶體保護區的 Always Encrypted
+            - name: 開始搭配 SQL Server 中的安全記憶體保護區使用 Always Encrypted
               href: relational-databases/security/tutorial-getting-started-with-always-encrypted-enclaves.md
+            - name: 開始搭配 Azure SQL Database 中的安全記憶體保護區使用 Always Encrypted >
+              href: /azure/azure-sql/database/always-encrypted-enclaves-getting-started
             - name: 在具有安全記憶體保護區的 Always Encrypted 資料行建立及使用索引
               href: relational-databases/security/tutorial-creating-using-indexes-on-enclave-enabled-columns-using-randomized-encryption.md
             - name: 使用具有安全記憶體保護區的 Always Encrypted 開發 .NET Framework 應用程式
@@ -9220,6 +9223,8 @@
                   href: ssms/menu-help/options-environment-help-general-page.md
                 - name: 選項 (查詢執行選項 - 說明 - 一般頁面)
                   href: ssms/menu-help/options-query-execution.md
+                - name: '選項 ([Azure Service] - [說明] - [一般] 頁面)'
+                  href: ssms/menu-help/options-azure-services.md
                 - name: 外部工具
                   href: ssms/menu-help/external-tools.md
                 - name: 自訂 (命令頁面)
@@ -9990,6 +9995,8 @@
           href: linux/sql-server-linux-deploy-pacemaker-cluster.md
         - name: 建立及設定可用性群組
           href: linux/sql-server-linux-create-availability-group.md
+        - name: 搭配 HPE Serviceguard 使用 HA 建立
+          href: linux/sql-server-availability-group-ha-hpe.md
         - name: 在 Kubernetes 上部署
           href: linux/tutorial-sql-server-containers-kubernetes.md
         - name: 設定複寫
