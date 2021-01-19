@@ -10,12 +10,12 @@ ms.technology: ssma
 ms.topic: conceptual
 ms.assetid: a98a5e07-eb5e-47b9-a6f2-e2cb3a18309c
 ms.author: alexiva
-ms.openlocfilehash: 5c99ab8dec72a621ddb3f312e581907b0e4ba6d4
-ms.sourcegitcommit: a16b98d3bf3eeb58f5d2aeece2464f8a96e2b4a8
+ms.openlocfilehash: a999bcde42029b50772f18925a1f24432d558a3f
+ms.sourcegitcommit: 8fcee1bc2503bea81a0c9d02827193ab71d8ca32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97665855"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98564227"
 ---
 # <a name="project-settings-conversion-oracletosql"></a>專案設定 (轉換) (OracleToSQL)
 
@@ -66,7 +66,7 @@ ms.locfileid: "97665855"
 |-|-|
 |**在非 Null 的資料行上，使用 SET Null 參考動作來轉換外鍵**|Oracle 允許建立外鍵條件約束， `SET NULL` 因為參考的資料行不允許 null，所以無法執行動作。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 不允許這類外鍵設定。<br /><br />如果您選取 **[是]**，則 SSMA 將會在 Oracle 中產生參考動作，但您必須先進行手動變更，才能將條件約束載入 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。 例如，您可以選擇 `NO ACTION` 而不是 `SET NULL` 。<br /><br />如果您選取 [ **否**]，則會將條件約束標示為錯誤。<br /><br />當您在 [ **模式]** 方塊中選取轉換模式時，SSMA 會套用下列設定：<br /><br />**預設/開放式/完整模式：** 不|
 |**轉換子類型**|SSMA 可以透過兩種方式來轉換 PL/SQL 子類型：<br /><br />如果您選取 **[是]**，SSMA 會 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 從子類型建立使用者定義型別，並將它用於此子類型的每個變數。<br /><br />如果您選取 [ **否**]，SSMA 將會以基礎類型取代子類型的所有來源宣告，並照常轉換結果。 在此情況下，不會在中建立其他類型 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]<br /><br />當您在 [ **模式]** 方塊中選取轉換模式時，SSMA 會套用下列設定：<br /><br />**預設/開放式/完整模式：** 不|
-|**轉換同義字**|下列 Oracle 物件的同義字可遷移至 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ：<br /><br />資料表和物件資料表<br /><br />視圖和物件檢視<br /><br />預存程式和函數<br /><br />具體化檢視<br /><br />**下列的同義字** 您可以直接參考物件來取代 Oracle 物件：<br /><br />序列<br /><br />套件<br /><br />JAVA 類別架構物件<br /><br />使用者定義物件類型<br /><br />無法遷移其他同義字。 SSMA 將會產生同義字的錯誤訊息，以及所有使用同義字的參考。<br /><br />如果您選取 **[是]**，SSMA 會 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 根據先前的清單來建立同義字和直接物件參考。<br /><br />如果您選取 [ **否**]，SSMA 就會為此處所列的所有同義字建立直接的物件參考。<br /><br />當您在 [ **模式]** 方塊中選取轉換模式時，SSMA 會套用下列設定：<br /><br />**預設/開放式/完整模式：** 是的|
+|**轉換同義字**|下列 Oracle 物件的同義字可遷移至 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ：<br /><br />資料表和物件資料表<br /><br />視圖和物件檢視<br /><br />預存程式和函數<br /><br />具體化檢視<br /><br />**下列的同義字** 您可以直接參考物件來取代 Oracle 物件：<br /><br />序列<br /><br />Packages<br /><br />JAVA 類別架構物件<br /><br />使用者定義物件類型<br /><br />無法遷移其他同義字。 SSMA 將會產生同義字的錯誤訊息，以及所有使用同義字的參考。<br /><br />如果您選取 **[是]**，SSMA 會 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 根據先前的清單來建立同義字和直接物件參考。<br /><br />如果您選取 [ **否**]，SSMA 就會為此處所列的所有同義字建立直接的物件參考。<br /><br />當您在 [ **模式]** 方塊中選取轉換模式時，SSMA 會套用下列設定：<br /><br />**預設/開放式/完整模式：** 是的|
 |**本機模組轉換**|定義在獨立預存程式或函數) 轉換中宣告的 Oracle nested subprogram (類型。<br /><br />如果您選取 [ **內嵌**]，則會將嵌套的 subprogram 呼叫取代為其主體。<br /><br />如果您選取 **預存程式**，則會將嵌套 subprogram 轉換成 SQL Server 預存程式，而且會在此程序呼叫中取代其呼叫。<br /><br />當您在 [ **模式]** 方塊中選取轉換模式時，SSMA 會套用下列設定：<br /><br />**預設/開放式/完整模式：** 內嵌|
 
 ## <a name="records-conversion"></a>記錄轉換
