@@ -12,12 +12,12 @@ ms.assetid: 7925ebef-cdb1-4cfe-b660-a8604b9d2153
 author: markingmyname
 ms.author: maghan
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f742ece496377a224a67b12223b09d198327812a
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c0dac2b5d344969f96016a86622ee4e07ab8c23d
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97484490"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98167994"
 ---
 # <a name="manage-retention-of-historical-data-in-system-versioned-temporal-tables"></a>管理系統建立版本之時態表中的歷程記錄資料保留
 
@@ -70,7 +70,7 @@ ms.locfileid: "97484490"
 
 ### <a name="using-the-stretch-wizard-to-stretch-the-entire-history-table"></a>使用延展精靈來延展整個歷程記錄資料表
 
-對初學者來說，最簡單的方法是使用延展精靈來啟用整個資料庫的延展功能，接著在延展精靈中選取時態歷程記錄資料表 (以下範例假設您已將 Department 資料表設定為空資料庫中的系統設定版本時態資料表)。 在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 中，您無法以滑鼠右鍵按一下時態歷程記錄資料表本身，然後再按一下 [延展]。
+對初學者來說，最簡單的方法是使用延展精靈來啟用整個資料庫的延展功能，接著在延展精靈中選取時態歷程記錄資料表 (以下範例假設您已將 Department 資料表設定為空資料庫中的系統設定版本時態資料表)。 在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 中，您無法以滑鼠右鍵按一下時態歷程記錄資料表本身，然後再按一下 [延展]。
 
 1. 以滑鼠右鍵按一下資料庫，並指向 [工作]  和 [延展]  ，然後按一下 [啟用]  來啟動精靈。
 2. 在 [選取資料表]  視窗中，選取時態歷程記錄資料表的核取方塊，然後按 [下一步]。

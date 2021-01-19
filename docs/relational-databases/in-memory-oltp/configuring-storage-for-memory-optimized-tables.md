@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 6e005de0-3a77-4b91-b497-14cc0f9f6605
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: a88af1af1e814ee6340f72553d74fdba1247c51e
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: ebedb1071dc5953bc78918f928f0f53a7145e282
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542886"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98167800"
 ---
 # <a name="configuring-storage-for-memory-optimized-tables"></a>設定記憶體最佳化資料表的儲存體
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "89542886"
 -   如果空間允許，檢查點檔案通常會均勻分佈到所有容器。 在 SQL Server 2014 中，您必須佈建奇數的容器數目才能達到均勻分佈。從 2016 版開始，奇數和偶數的容器數目都可以達到均勻分佈。
   
 ## <a name="encryption"></a>加密  
- 在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 和更新版本中，作為在資料庫上啟用透明資料加密 (TDE) 的一部分，記憶體最佳化資料表的儲存體將會在待用時加密。 如需詳細資訊，請參閱[透明資料加密](../../relational-databases/security/encryption/transparent-data-encryption.md)。 在 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 中，檢查點檔案不會加密，即便在資料庫上啟用 TDE 也是一樣。
+ 在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 和更新版本中，作為在資料庫上啟用透明資料加密 (TDE) 的一部分，記憶體最佳化資料表的儲存體將會在待用時加密。 如需詳細資訊，請參閱[透明資料加密](../../relational-databases/security/encryption/transparent-data-encryption.md)。 在 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 中，檢查點檔案不會加密，即便在資料庫上啟用 TDE 也是一樣。
 
  [非持久性](../../relational-databases/in-memory-oltp/defining-durability-for-memory-optimized-objects.md) (SCHEMA_ONLY) 記憶體最佳化資料表中的資料並不會隨時寫入磁碟。 因此，TDE 不適用於這類資料表。
   

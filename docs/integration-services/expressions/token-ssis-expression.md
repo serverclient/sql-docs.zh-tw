@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 9fdd06bf-5bc9-445c-95bf-709e0ca5989b
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 2490c95bf099e586de9692b6057f59fc6a6ce2fc
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: cc99e599596658019c073b67dbf39b6dd7e573ce
+ms.sourcegitcommit: 1f826eb3f73bd4d94bc9638b9cdd60991a2e2fa0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88425350"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98125599"
 ---
 # <a name="token--ssis-expression"></a>TOKEN (SSIS 運算式)
 
@@ -95,7 +95,7 @@ TOKEN("        a little white dog", " ", 1)
  在下列範例中，TOKEN 函數會傳回日期起始年份 (year from a date) 字串。  
   
 ```  
-TOKEN("2009/01/01", "/"), 1  
+TOKEN("2009/01/01", "/", 1)
 ```  
   
  在下列範例中，TOKEN 函數會從指定路徑傳回檔名。 例如，如果 User::Path 的值為 "c:\program files\data\myfile.txt"，TOKEN 函式就會傳回 "myfile.txt"。 TOKENCOUNT 函式會傳回 4，而 TOKEN 函式會傳回第 4 個權杖 "myfile.txt"。  

@@ -26,12 +26,12 @@ ms.assetid: f47eda43-33aa-454d-840a-bb15a031ca17
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
-ms.openlocfilehash: d81ecf6b555022aeac47e810041d96a57f61b00b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 43f3bbae327731f6522b71c0fdaafbc9441fe9ca
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97468209"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98169747"
 ---
 # <a name="openrowset-transact-sql"></a>OPENROWSET (Transact-SQL)
 
@@ -249,7 +249,7 @@ SELECT *
 |ACP|將 **char**、**varchar** 或 **text** 資料類型的資料行，從 ANSI/[!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows 字碼頁 (ISO 1252) 轉換成 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 字碼頁。|
 |OEM (預設值)|將 **char**、**varchar** 或 **text** 資料類型的資料行，從系統 OEM 字碼頁轉換成 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 字碼頁。|
 |RAW|不進行字碼頁之間的轉換。 這是最快的選項。|
-|*code_page*|指出在哪一個來源字碼頁，將資料檔中的字元資料加以編碼；例如 850。<br /><br /> **重要**[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 之前的版本不支援字碼頁 65001 (UTF-8 編碼)。|
+|*code_page*|指出在哪一個來源字碼頁，將資料檔中的字元資料加以編碼；例如 850。<br /><br /> **重要**[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 之前的版本不支援字碼頁 65001 (UTF-8 編碼)。|
 
 ##### <a name="format"></a>FORMAT
 `FORMAT` **=** 'CSV' **適用於：** [!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] CTP 1.1。

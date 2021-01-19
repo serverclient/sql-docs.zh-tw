@@ -16,12 +16,12 @@ ms.assetid: ce4053fb-e37a-4851-b711-8e504059a780
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 345c02a175643967a509900ab415b90708a3d9e7
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 910db0887a50e12163ddeda927159f5e6c97b74b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97478299"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98169276"
 ---
 # <a name="tempdb-database"></a>tempdb 資料庫
 
@@ -213,7 +213,7 @@ GO
 將 `tempdb` 資料庫放在與使用者資料庫所使用磁不同的磁碟碟上。
 
 ## <a name="performance-improvements-in-tempdb-for-sql-server"></a>SQL Server 中的 tempdb 效能改善
-從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，`tempdb` 效能已針對下列各方面進一步最佳化：  
+從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，`tempdb` 效能已針對下列各方面進一步最佳化：  
   
 - 系統會快取暫存資料表和資料表變數。 快取可讓卸除及建立暫存物件的作業以極快的速度執行。 快取也可以減少分頁配置與中繼資料競爭。  
 - 已改善配置分頁閂鎖通訊協定，以減少所使用的 `UP` (更新) 閂鎖數目。  
