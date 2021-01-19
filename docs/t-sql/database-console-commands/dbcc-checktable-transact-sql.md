@@ -27,12 +27,12 @@ helpviewer_keywords:
 ms.assetid: 0d6cb620-eb58-4745-8587-4133a1b16994
 author: pmasl
 ms.author: umajay
-ms.openlocfilehash: 1c4563a10433d4cbead089da026d086f9c021ccb
-ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
+ms.openlocfilehash: 78a84099b202ca55588e1365b27d80004d2cdaa5
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96126281"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172610"
 ---
 # <a name="dbcc-checktable-transact-sql"></a>DBCC CHECKTABLE (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -156,7 +156,7 @@ DBCC CHECKTABLE 會確認指定資料表的下列項目：
          這些邏輯一致性檢查會交叉檢查索引物件的內部索引資料表 (其中包含它所參考的使用者資料表)。 若要尋找外圍的資料列，則會建構內部查詢來執行內部和使用者資料表的完整交集。 執行這個查詢對於效能會有極大的影響，而且無法追蹤其進度。 因此，只有當您懷疑發生了與實體損毀無關的索引問題，或是頁面層級總和檢查碼已經關閉，而且您懷疑發生了資料行層級的硬體損毀時，才建議您指定 WITH EXTENDED_LOGICAL_CHECKS。    
     -   如果此索引為已篩選的索引，DBCC CHECKDB 會執行一致性檢查，以確認索引項目可滿足篩選述詞。   
       
-- 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，預設不會在保存的計算資料行、UDT 資料行和篩選的索引上執行額外檢查，以避免需耗費大量資源的運算式評估作業。 這項變更可大幅減少對包含這些物件的資料庫執行 CHECKDB 的持續時間。 不過，系統一律會完成這些物件的實體一致性檢查。 只有在指定 EXTENDED_LOGICAL_CHECKS 選項時，才會執行運算式評估，以及執行 EXTENDED_LOGICAL_CHECKS 選項中已存在的邏輯性檢查 (索引檢視表、XML 索引及空間索引)。
+- 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，預設不會在保存的計算資料行、UDT 資料行和篩選的索引上執行額外檢查，以避免需耗費大量資源的運算式評估作業。 這項變更可大幅減少對包含這些物件的資料庫執行 CHECKDB 的持續時間。 不過，系統一律會完成這些物件的實體一致性檢查。 只有在指定 EXTENDED_LOGICAL_CHECKS 選項時，才會執行運算式評估，以及執行 EXTENDED_LOGICAL_CHECKS 選項中已存在的邏輯性檢查 (索引檢視表、XML 索引及空間索引)。
 -  如果相容性層級為 90 ([!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)]) 以下，則除非指定了 NOINDEX，否則 DBCC CHECKTABLE 會針對單一資料表或索引檢視表及其所有非叢集索引和 XML 索引進行實體和邏輯一致性檢查。 不支援空間索引。
     
  **了解資料庫的相容性層級**    

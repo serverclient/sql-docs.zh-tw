@@ -15,12 +15,12 @@ ms.assetid: 9d0ce165-8719-4007-9ae8-00f85cab3a0d
 author: dphansen
 ms.author: davidph
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: 8ebdef5d75c430ec5ba208613b72771939fdfc9b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 90a24ba11ce482e8d8608e1641d64ace067ad41b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481479"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170970"
 ---
 # <a name="external-scripts-enabled-server-configuration-option"></a>啟用外部指令碼伺服器設定選項
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -31,9 +31,9 @@ ms.locfileid: "97481479"
 
 您必須先啟用 external script enabled 選項，才能使用 [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) 程序來執行外部指令碼。 使用 **sp_execute_external_script** 執行以所支援語言 (例如 R 或 Python) 所撰寫的指令碼。 
 
-+ 針對 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]
++ 針對 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]
 
-    [!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)] 支援 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 中的 R 語言，以及一組 R 工作站工具和連線程式庫。
+    [!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)] 支援 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 中的 R 語言，以及一組 R 工作站工具和連線程式庫。
 
     在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 安裝程式期間安裝 [R 服務] 功能，以啟用 R 指令碼的執行。
 

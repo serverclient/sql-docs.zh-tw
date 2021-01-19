@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: daf87f90-2623-42ca-912c-b8f07d210510
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: a7c1e12e2e0253f0f22df8dd5ea841671adc94ec
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 60c298991f80586ed9b830b856b84b3640ac509e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97643777"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170790"
 ---
 # <a name="always-on-availability-groups-interoperability-sql-server"></a>Always On 可用性群組：互通性 (SQL Server)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -50,7 +50,7 @@ ms.locfileid: "97643777"
 
 下列可與 [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] 相互溝通的功能有特定限制。 如需詳細資訊，請參閱連結主題。
 
-- 跨資料庫交易/分散式交易 ([!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)] 和 Windows Server 2016)。 如需詳細資訊，請參閱 [AlwaysOn 可用性群組和資料庫鏡像的跨資料庫交易和分散式交易 &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/transactions-always-on-availability-and-database-mirroring.md)
+- 跨資料庫交易/分散式交易 ([!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)] 和 Windows Server 2016)。 如需詳細資訊，請參閱 [AlwaysOn 可用性群組和資料庫鏡像的跨資料庫交易和分散式交易 &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/transactions-always-on-availability-and-database-mirroring.md)
 - [查詢統計資料系統資料收集器](../../../relational-databases/data-collection/system-data-collection-set-reports.md#Query)無法在具有不可讀取次要項目的環境中可靠地執行。 若要使用查詢統計資料系統資料收集器，請將所有次要可用性群組複本設為允許[讀取存取](configure-read-only-access-on-an-availability-replica-sql-server.md)。 
 
 ## <a name="features-that-do-not-interoperate-with-always-on-availability-groups"></a><a name="NoInterop"></a> 不與 AlwaysOn 可用性群組互通的功能

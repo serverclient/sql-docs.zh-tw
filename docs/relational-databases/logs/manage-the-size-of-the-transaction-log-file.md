@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3a70e606-303f-47a8-96d4-2456a18d4297
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: a722331a28cf741adb5b17ac8a398c106e7cd1c5
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: e0d5c070d961e71711189b9b32ad12508812b277
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85668010"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171540"
 ---
 # <a name="manage-the-size-of-the-transaction-log-file"></a>管理交易記錄檔的大小
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -97,7 +97,7 @@ ms.locfileid: "85668010"
   
       |版本|預設值|  
       |-------------|--------------------|  
-      |從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始|資料 64 MB。 記錄檔 64 MB。|  
+      |從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始|資料 64 MB。 記錄檔 64 MB。|  
       |從 [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 開始|資料 1 MB。 記錄檔 10%。|  
       |[!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 之前|資料 10%。 記錄檔 10%。|  
 
@@ -109,9 +109,9 @@ ms.locfileid: "85668010"
 
 -   在資料庫中具有多個記錄檔將無法以任何方式強化效能，因為交易記錄檔不像相同檔案群組中的資料檔案那樣使用[比例填滿](../../relational-databases/pages-and-extents-architecture-guide.md#ProportionalFill)。  
 
--   可以將記錄檔設定為自動壓縮。 不過並**不建議**如此，且 **auto_shrink** 資料庫屬性預設會設定為 FALSE。 如果 **auto_shrink** 設定為 TRUE，只有當超過 25% 的空間未使用時，自動壓縮才會減少檔案的大小。 
+-   可以將記錄檔設定為自動壓縮。 不過並 **不建議** 如此，且 **auto_shrink** 資料庫屬性預設會設定為 FALSE。 如果 **auto_shrink** 設定為 TRUE，只有當超過 25% 的空間未使用時，自動壓縮才會減少檔案的大小。 
     -   此時，檔案會壓縮成只有 25% 的檔案是未使用空間的大小，或檔案的原始大小，以較大者為準。 
-    -   如需變更 **auto_shrink** 屬性設定的資訊，請參閱[檢視或變更資料庫的屬性](../../relational-databases/databases/view-or-change-the-properties-of-a-database.md)和 [ALTER DATABASE SET 選項 &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md)。 
+    -   如需變更 **auto_shrink** 屬性設定的資訊，請參閱 [檢視或變更資料庫的屬性](../../relational-databases/databases/view-or-change-the-properties-of-a-database.md)和 [ALTER DATABASE SET 選項 &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md)。 
   
 ## <a name="see-also"></a>另請參閱  
 [BACKUP &#40;Transact-SQL&#41;](../../t-sql/statements/backup-transact-sql.md)   

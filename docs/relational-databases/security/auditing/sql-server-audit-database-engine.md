@@ -17,12 +17,12 @@ ms.assetid: 0c1fca2e-f22b-4fe8-806f-c87806664f00
 author: davidtrigano
 ms.author: datrigan
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
-ms.openlocfilehash: e978c269a17f42bc75729303a860c61d4868f3fb
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 45b22073dd0ac7e4c87d8fb838e9e55e346b5b5d
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97468609"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171460"
 ---
 # <a name="sql-server-audit-database-engine"></a>SQL Server Audit (Database Engine)
 [!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "97468609"
   
  您可以依各個執行個體記錄伺服器稽核動作群組，然後依各個資料庫記錄資料庫稽核動作群組或資料庫稽核動作。 每次遇到可稽核的動作時，就會發生稽核事件。  
   
- 所有 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 版本都支援伺服器層級稽核。 所有版本都支援以 [!INCLUDE[ssSQL15_md](../../../includes/sssql15-md.md)] SP1 開頭的資料庫層級稽核。 在這之前，資料庫層級稽核則限於 Enterprise、Developer 和 Evaluation Edition。 如需詳細資訊，請參閱 [SQL Server 2016 版本支援的功能](~/sql-server/editions-and-supported-features-for-sql-server-2016.md)。  
+ 所有 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 版本都支援伺服器層級稽核。 所有版本都支援以 [!INCLUDE[ssSQL15_md](../../../includes/sssql16-md.md)] SP1 開頭的資料庫層級稽核。 在這之前，資料庫層級稽核則限於 Enterprise、Developer 和 Evaluation Edition。 如需詳細資訊，請參閱 [SQL Server 2016 版本支援的功能](~/sql-server/editions-and-supported-features-for-sql-server-2016.md)。  
   
 > [!NOTE]  
 >  本主題適用於 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]。  若是 [!INCLUDE[ssSDS](../../../includes/sssds-md.md)]，請參閱 [開始使用 SQL 資料庫稽核](/azure/azure-sql/database/auditing-overview)。  

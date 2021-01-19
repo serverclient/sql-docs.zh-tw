@@ -16,12 +16,12 @@ ms.assetid: baa8a304-5713-4cfe-a699-345e819ce6df
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f2d814c604ac742723fc1fb9c7e3c12dc375884f
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: fcbc86a73fb6ac70fce78c381a5aac1f1accc108
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97417999"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171780"
 ---
 # <a name="cardinality-estimation-sql-server"></a>基數估計 (SQL Server)
 
@@ -98,7 +98,7 @@ WHERE name = 'LEGACY_CARDINALITY_ESTIMATION';
 GO
 ```  
  
-或者從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 開始，使用[查詢提示](../../t-sql/queries/hints-transact-sql-query.md#use_hint) `USE HINT ('FORCE_LEGACY_CARDINALITY_ESTIMATION')`。
+或者從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 開始，使用[查詢提示](../../t-sql/queries/hints-transact-sql-query.md#use_hint) `USE HINT ('FORCE_LEGACY_CARDINALITY_ESTIMATION')`。
  
  ```sql  
 SELECT CustomerId, OrderAddedDate  
@@ -107,7 +107,7 @@ WHERE OrderAddedDate >= '2016-05-01'
 OPTION (USE HINT ('FORCE_LEGACY_CARDINALITY_ESTIMATION'));  
 ```
  
-**查詢存放區：** 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，提供查詢存放區工具，方便您檢查查詢的效能。 在 [!INCLUDE[ssManStudio](../../includes/ssManStudio-md.md)] 中，啟用查詢存放區的情況下，**物件總管** 中的資料庫節點下會顯示 **查詢存放區** 節點。  
+**查詢存放區：** 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，提供查詢存放區工具，方便您檢查查詢的效能。 在 [!INCLUDE[ssManStudio](../../includes/ssManStudio-md.md)] 中，啟用查詢存放區的情況下，**物件總管** 中的資料庫節點下會顯示 **查詢存放區** 節點。  
   
 ```sql  
 ALTER DATABASE <yourDatabase>  

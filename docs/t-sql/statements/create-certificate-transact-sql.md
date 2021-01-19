@@ -28,12 +28,12 @@ ms.assetid: a4274b2b-4cb0-446a-a956-1c8e6587515d
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 793adfcb5bbb59dc836bd7ec05728a9ccf979200
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 238fcde63bf0af459ab741f54a411fefb317bfe9
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97471979"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170350"
 ---
 # <a name="create-certificate-transact-sql"></a>CREATE CERTIFICATE (Transact-SQL)
 [!INCLUDE [sql-asdb-pdw](../../includes/applies-to-version/sql-asdb-pdw.md)]
@@ -168,7 +168,7 @@ CREATE CERTIFICATE certificate_name
 ## <a name="remarks"></a>備註  
  憑證是遵照 X.509 標準及支援 X.509 V1 欄位的資料庫層級安全性實體。 `CREATE CERTIFICATE` 可以從檔案、二進位常數或組件載入憑證。 這個陳述式也可以產生金鑰組及建立自簽憑證。  
   
- 私密金鑰必須為 \<= 2500 位元組的加密格式。 截至 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 止，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 產生的私密金鑰長度為 1024 個位元；從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始則為 2048 位元。 從外部來源匯入的私密金鑰，其最小長度為 384 個位元，其最大長度為 4,096 個位元。 匯入的私密金鑰，其長度必須為 64 個位元的整數倍。 用於 TDE 的憑證限制在 3456 位元的私密金鑰大小。  
+ 私密金鑰必須為 \<= 2500 位元組的加密格式。 截至 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 止，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 產生的私密金鑰長度為 1024 個位元；從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始則為 2048 位元。 從外部來源匯入的私密金鑰，其最小長度為 384 個位元，其最大長度為 4,096 個位元。 匯入的私密金鑰，其長度必須為 64 個位元的整數倍。 用於 TDE 的憑證限制在 3456 位元的私密金鑰大小。  
   
  系統會儲存憑證的完整「序號」，但只有前 16 個位元組會出現在 sys.certificates 目錄檢視中。  
   
@@ -187,7 +187,7 @@ CREATE CERTIFICATE certificate_name
   
  您可以使用 [CERTENCODED &#40;Transact-SQL&#41;](../../t-sql/functions/certencoded-transact-sql.md) 和 [CERTPRIVATEKEY &#40;Transact-SQL&#41;](../../t-sql/functions/certprivatekey-transact-sql.md) 函式來建立憑證的二進位描述。 如需使用 **CERTPRIVATEKEY** 和 **CERTENCODED** 將憑證複製到其他資料庫的範例，請參閱 [CERTENCODED &#40;Transact-SQL&#41;](../../t-sql/functions/certencoded-transact-sql.md) 一文中的範例 B。  
 
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 已淘汰 MD2、MD4、MD5、SHA 和 SHA1 演算法。 在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 之前，會使用 SHA1 建立自我簽署憑證。 從 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 開始，則使用 SHA2_256 建立自我簽署憑證。
+[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 已淘汰 MD2、MD4、MD5、SHA 和 SHA1 演算法。 在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 之前，會使用 SHA1 建立自我簽署憑證。 從 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 開始，則使用 SHA2_256 建立自我簽署憑證。
 
 ## <a name="permissions"></a>權限  
  需要資料庫的 `CREATE CERTIFICATE` 權限。 只有 Windows 登入、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 登入，以及應用程式角色可以擁有憑證。 群組和角色無法擁有憑證。  

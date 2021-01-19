@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: f039d0de-ade7-4aaf-8b7b-d207deb3371a
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 5c80e55d2a2dc54e90d33785bc64153fa1dbf8a6
-ms.sourcegitcommit: bd3a135f061e4a49183bbebc7add41ab11872bae
+ms.openlocfilehash: 23cd700fd8b25778118b2141bf0205dcbd87c92e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92300851"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170460"
 ---
 # <a name="alter-availability-group-transact-sql"></a>ALTER AVAILABILITY GROUP (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -94,7 +94,7 @@ ALTER AVAILABILITY GROUP group_name
      | PRIMARY_ROLE ( {   
             [ ALLOW_CONNECTIONS = { READ_WRITE | ALL } ]   
         [,] [ READ_ONLY_ROUTING_LIST = { ( '<server_instance>' [ ,...n ] ) | NONE } ]  
-        [,] [ READ_WRITE_ROUTING_URL = { ( '<server_instance>' ) ] 
+        [,] [ READ_WRITE_ROUTING_URL = { ( '<server_instance>' ) ] 
      } )  
      | SESSION_TIMEOUT = integer
   
@@ -228,10 +228,10 @@ ALTER AVAILABILITY GROUP group_name
  如需此設定的詳細資訊，請參閱[資料庫層級健康情況偵測選項](../../database-engine/availability-groups/windows/sql-server-always-on-database-health-detection-failover-option.md) 
 
 DTC_SUPPORT  **=** { PER_DB | NONE }  
-指定是否為此可用性群組啟用分散式交易。 只有從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始的可用性群組資料庫才支援分散式交易，且從 [!INCLUDE[ssSQL16](../../includes/sssql15-md.md)] SP2 開始才支援跨資料庫交易。 `PER_DB` 會建立支援這些交易的可用性群組，並會將涉及可用性群組中資料庫的跨資料庫交易自動升級為分散式交易。 `NONE` 可防止將跨資料庫交易自動升級為分散式交易，且不會向 DTC 中穩定的 RMID 註冊資料庫。 使用 `NONE` 設定時不會防止分散式交易，但資料庫容錯移轉和自動復原在某些情況下可能無法成功。 如需詳細資訊，請參閱[資料庫鏡像或 AlwaysOn 可用性群組不支援跨資料庫交易 &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/transactions-always-on-availability-and-database-mirroring.md)。 
+指定是否為此可用性群組啟用分散式交易。 只有從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始的可用性群組資料庫才支援分散式交易，且從 [!INCLUDE[ssSQL16](../../includes/sssql16-md.md)] SP2 開始才支援跨資料庫交易。 `PER_DB` 會建立支援這些交易的可用性群組，並會將涉及可用性群組中資料庫的跨資料庫交易自動升級為分散式交易。 `NONE` 可防止將跨資料庫交易自動升級為分散式交易，且不會向 DTC 中穩定的 RMID 註冊資料庫。 使用 `NONE` 設定時不會防止分散式交易，但資料庫容錯移轉和自動復原在某些情況下可能無法成功。 如需詳細資訊，請參閱[資料庫鏡像或 AlwaysOn 可用性群組不支援跨資料庫交易 &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/transactions-always-on-availability-and-database-mirroring.md)。 
  
 > [!NOTE]
-> 在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] Service Pack 2 中引入了變更可用性群組 DTC_SUPPORT 設定的支援。 此選項不能與舊版搭配使用。 若要變更舊版 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] 中的這項設定，您必須 DROP (卸除) 並再次 CREATE (建立) 可用性群組。
+> 在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] Service Pack 2 中引入了變更可用性群組 DTC_SUPPORT 設定的支援。 此選項不能與舊版搭配使用。 若要變更舊版 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] 中的這項設定，您必須 DROP (卸除) 並再次 CREATE (建立) 可用性群組。
  
  REQUIRED_SYNCHRONIZED_SECONDARIES_TO_COMMIT   
  在 SQL Server 2017 中導入。 用來在主要認可交易之前，設定認可所需的同步次要複本最小數目。 保證 SQL Server 交易會等候，直到最小數目之次要複本上的交易記錄都已更新為止。 預設值為 0，所提供的行為和 SQL Server 2016 相同。 最小值為 0。 最大值是複本數目減 1。 此選項會與同步認可模式下的複本關聯。 當複本處於同步認可模式時，主要複本上的寫入會等候，直到次要同步複本上的寫入認可到複本資料庫交易記錄為止。 如果裝載次要同步複本的 SQL Server 停止回應，則裝載主要複本的 SQL Server 會將該次要複本標記為 NOT SYNCHRONIZED 並繼續進行。 當沒有回應的資料庫回到線上，會處於「未同步」狀態，而且該複本會被標記為狀況不良，直到主要複本再次使其變成同步為止。 此設定可確保在每個交易認可的複本達到最小數目之前，主要複本不會繼續進行。 如果無法使用複本的最小數目，則主要複本上的認可會失敗。 針對叢集類型 `EXTERNAL`，設定會在可用性群組被新增到叢集資源時變更。 請參閱[可用性群組設定的高可用性和資料保護](../../linux/sql-server-linux-availability-group-ha.md)。
@@ -259,7 +259,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
  \<server_instance>  
  指定複本主機的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體位址。 此位址格式取決於執行個體為預設執行個體還是具名執行個體，以及它是獨立的執行個體還是容錯移轉叢集執行個體 (FCI)。 語法如下所示：  
   
- { ' *system_name* [\\*instance_name* ]' | ' *FCI_network_name* [\\*instance_name* ]' }  
+ { '*system_name*[\\*instance_name*]' | '*FCI_network_name*[\\*instance_name*]' }  
   
  這個位址的元件如下所示：  
   
@@ -267,7 +267,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
  這是 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 目標執行個體所在之電腦系統的 NetBIOS 名稱。 這部電腦必須是 WSFC 節點。  
   
  *FCI_network_name*  
- 這是用來存取 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 容錯移轉叢集的網路名稱。 如果伺服器執行個體當做 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 容錯移轉夥伴來參與，則使用它。 在 FCI 伺服器執行個體上執行 SELECT [@@SERVERNAME](../../t-sql/functions/servername-transact-sql.md)，會傳回它的完整 ' *FCI_network_name* [\\*instance_name* ]' 字串 (這是完整複本名稱)。  
+ 這是用來存取 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 容錯移轉叢集的網路名稱。 如果伺服器執行個體當做 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 容錯移轉夥伴來參與，則使用它。 在 FCI 伺服器執行個體上執行 SELECT [@@SERVERNAME](../../t-sql/functions/servername-transact-sql.md)，會傳回它的完整 '*FCI_network_name*[\\*instance_name*]' 字串 (這是完整複本名稱)。  
   
  *instance_name*  
  這是 *system_name* 或 *FCI_network_name* 所裝載且已啟用 Always On 的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體名稱。 如果是預設伺服器執行個體， *instance_name* 為選擇性。 執行個體名稱不區分大小寫。 在獨立伺服器執行個體上，這個值名稱與執行 SELECT [@@SERVERNAME](../../t-sql/functions/servername-transact-sql.md) 所傳回的值相同。  
@@ -277,7 +277,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
   
  如需 WSFC 節點與伺服器執行個體先決條件的詳細資訊，請參閱 [Always On 可用性群組的先決條件、限制與建議 &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability.md)。  
   
- ENDPOINT_URL ='TCP:// *system-address* : *port* '  
+ ENDPOINT_URL ='TCP://*system-address*:*port*'  
  在要裝載您正在加入或修改之可用性複本的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體上，指定[資料庫鏡像端點](../../database-engine/database-mirroring/the-database-mirroring-endpoint-sql-server.md)的 URL 路徑。  
   
  ENDPOINT_URL 在 ADD REPLICA ON 子句中是必要的，而在 MODIFY REPLICA ON 子句中則是選擇性。  如需詳細資訊，請參閱 [在加入或修改可用性複本時指定端點 URL &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/specify-endpoint-url-adding-or-modifying-availability-replica.md)設定伺服器執行個體時常見的問題。  
@@ -371,7 +371,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
  READ_ONLY_ROUTING_URL **='** TCP **://** _system-address_ **:** _port_ **'**  
  指定向此可用性複本路由傳送讀取意圖連接要求所使用的 URL。 這是 SQL Server Database Engine 接聽的 URL。 SQL Server Database Engine 的預設執行個體通常會接聽 TCP 通訊埠 1433。  
   
- 針對具名執行個體，您可以查詢 [sys.dm_tcp_listener_states](../../relational-databases/system-dynamic-management-views/sys-dm-tcp-listener-states-transact-sql.md) 動態管理檢視的 **port** 和 **type_desc** 資料行來取得連接埠號碼。 伺服器執行個體會使用 Transact-SQL 接聽程式 ( **type_desc='TSQL'** )。  
+ 針對具名執行個體，您可以查詢 [sys.dm_tcp_listener_states](../../relational-databases/system-dynamic-management-views/sys-dm-tcp-listener-states-transact-sql.md) 動態管理檢視的 **port** 和 **type_desc** 資料行來取得連接埠號碼。 伺服器執行個體會使用 Transact-SQL 接聽程式 (**type_desc='TSQL'** )。  
   
  如需計算可用性複本之唯讀路由 URL 的詳細資訊，請參閱[計算 Always On 的 read_only_routing_url](/archive/blogs/mattn/calculating-read_only_routing_url-for-alwayson)。  
   
@@ -392,7 +392,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
  ALL  
  主要複本的資料庫允許所有連接。 此為預設行為。  
   
- READ_ONLY_ROUTING_LIST **=** { **('** \<server_instance> **'** [ **,** ... *n* ] **)** | NONE }  
+ READ_ONLY_ROUTING_LIST **=** { **('** \<server_instance> **'** [ **,** ...*n* ] **)** | NONE }  
  針對這個可用性群組，指定裝載可用性複本之伺服器執行個體的逗號分隔清單，以次要角色執行時，這些可用性複本會符合下列需求：  
   
 -   設定為允許所有連接或唯讀連接 (請參閱 SECONDARY_ROLE 選項的 ALLOW_CONNECTIONS 引數，如上所示)。  
@@ -406,7 +406,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
   
  使用逗號分隔清單指定可能裝載可讀取之次要複本的所有伺服器執行個體。 唯讀的路由將遵循清單中指定伺服器執行個體的順序。 如果您將複本的主機伺服器執行個體包含在複本的唯讀路由清單中，將此伺服器執行個體放在清單結尾通常是很好的作法，讓讀取意圖的連接通往次要複本 (如果有一個可用的次要複本的話)。  
   
- 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，您可以針對可讀取次要複本之間的讀取意圖要求進行負載平衡。 這可以透過將複本放在唯讀路由清單內的一組巢狀括號中來指定。 如需詳細資訊與範例，請參閱[設定唯讀複本之間的負載平衡](../../database-engine/availability-groups/windows/configure-read-only-routing-for-an-availability-group-sql-server.md#loadbalancing)。  
+ 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，您可以針對可讀取次要複本之間的讀取意圖要求進行負載平衡。 這可以透過將複本放在唯讀路由清單內的一組巢狀括號中來指定。 如需詳細資訊與範例，請參閱[設定唯讀複本之間的負載平衡](../../database-engine/availability-groups/windows/configure-read-only-routing-for-an-availability-group-sql-server.md#loadbalancing)。  
   
  無  
  指定當此可用性複本是主要複本時，將不支援唯讀路由。 此為預設行為。 搭配 MODIFY REPLICA ON 使用時，此值會停用現有的清單 (如果有的話)。  
@@ -462,7 +462,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
  > [!CAUTION]  
 >  強制容錯移轉 (可能包含某些資料遺失) 嚴格來說是一種災害復原方法。 因此，我們強烈建議您只有在主要複本不再執行、您願意承擔遺失資料的風險，而且您必須立即將服務還原到可用性群組時，才進行強制容錯移轉。  
   
- 僅在角色處於 SECONDARY 或 RESOLVING 狀態的複本上支援。 --您輸入容錯移轉命令所在的複本，稱為 *容錯移轉目標* 。  
+ 僅在角色處於 SECONDARY 或 RESOLVING 狀態的複本上支援。 --您輸入容錯移轉命令所在的複本，稱為 *容錯移轉目標*。  
   
  強制可用性群組容錯移轉至容錯移轉目標 (可能會遺失資料)。 容錯移轉目標將會接管主要角色，並復原每個資料庫的副本，然後讓這兩個資料庫連線，做為新的主要資料庫。 在任一個剩餘的次要複本上，會暫停每個次要資料庫，到手動繼續為止。 當之前的主要複本變成可用複本時，會切換到次要角色，且其資料庫會變成暫停的次要資料庫。  
   
@@ -493,7 +493,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
 >  NetBIOS 只會辨識 DNS 名稱中的前 15 個字元。 如果您有兩個由相同 Active Directory 所控制的 WSFC 叢集，而且嘗試使用超過 15 個字元的名稱以及完全相同的 15 個字元前置詞，在這兩個叢集中建立可用性群組接聽程式，就會收到一則錯誤，指出系統無法讓虛擬網路名稱資源上線。 如需有關 DNS 名稱之前置詞命名規則的詳細資訊，請參閱＜ [指派網域名稱](https://technet.microsoft.com/library/cc731265\(WS.10\).aspx)＞。  
   
  JOIN AVAILABILITY GROUP ON  
- 加入 *分散式可用性群組* 。 當您建立分散式可用性群組時，叢集上建立所在的可用性群組就是主要可用性群組。 加入該分散式可用性群組的可用性群組是次要可用性群組。  
+ 加入 *分散式可用性群組*。 當您建立分散式可用性群組時，叢集上建立所在的可用性群組就是主要可用性群組。 加入該分散式可用性群組的可用性群組是次要可用性群組。  
   
  \<ag_name>  
  指定組成半組分散式可用性群組的可用性群組名稱。  
@@ -565,7 +565,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
   
  `WITH DHCP ON ('10.120.19.0','255.255.254.0')`  
   
- WITH IP **(** { **('** _four\_part\_ipv4\_address_ **','** _four\_part\_ipv4\_mask_ **')**  |  **('** _ipv6\_address_ **')** } [ **,** ... _n_ ] **)** [ **,** PORT **=** _listener\_port_ ]  
+ WITH IP **(** { **('** _four\_part\_ipv4\_address_ **','** _four\_part\_ipv4\_mask_ **')**  |  **('** _ipv6\_address_ **')** } [ **,** ..._n_ ] **)** [ **,** PORT **=** _listener\_port_ ]  
  指定可用性群組接聽程式將使用一個或多個靜態 IP 位址，而不使用 DHCP。 若要建立跨多個子網路的可用性群組，接聽程式組態中每個子網路都需要一個靜態 IP 位址。 對於給定的子網路，靜態 IP 位址可以是 IPv4 位址或 IPv6 位址。 請與網路系統管理員連絡以取得將主控新可用性群組的可用性複本之每個子網路的靜態 IP 位址。  
   
  例如：  
@@ -582,7 +582,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
  指定可用性群組接聽程式的 IPv6 位址。 例如： `2001::4898:23:1002:20f:1fff:feff:b3a3` 。  
   
  PORT **=** *listener_port*  
- 指定將供 WITH IP 子句所指定之可用性群組接聽程式使用的連接埠號碼 ( *listener_port* )。 PORT 為選擇性。  
+ 指定將供 WITH IP 子句所指定之可用性群組接聽程式使用的連接埠號碼 (*listener_port*)。 PORT 為選擇性。  
   
  支援預設通訊埠編號 1433。 但是，如果您有安全考量，我們建議您使用不同的通訊埠編號。  
   

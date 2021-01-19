@@ -41,12 +41,12 @@ helpviewer_keywords:
 ms.assetid: 864b393f-225f-4895-8c8d-4db59ea60032
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: cb4c79d1f4c8c7b8103ff9d34b8f32fd497b8c6a
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 717ffe936bef35c9794e160e56c7ea7b0658058f
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98095787"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170700"
 ---
 # <a name="create-function-transact-sql"></a>CREATE FUNCTION (Transact-SQL)
 
@@ -271,12 +271,12 @@ RETURNS return_data_type
 ## <a name="arguments"></a>引數
 
 *OR ALTER*
-**適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 及更新版本) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
+**適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 及更新版本) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
 
 只有在函數已經存在時，才能有條件地更改它。
 
 > [!NOTE]
-> 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 CU1 開始有提供 CLR 的選擇性 [OR ALTER] 語法。
+> 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 CU1 開始有提供 CLR 的選擇性 [OR ALTER] 語法。
 
 *schema_name*：這是使用者定義函式所屬的結構描述名稱。
 

@@ -38,12 +38,12 @@ ms.assetid: ''
 author: bluefooted
 ms.author: pamela
 manager: amitban
-ms.openlocfilehash: b273762ea8218106a35a23f02f95d1b156b50ae9
-ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
+ms.openlocfilehash: 2de4f0e84b39d1384e342eab3b7b3d0bfd101611
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96128617"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172580"
 ---
 # <a name="dbcc-clonedatabase-transact-sql"></a>DBCC CLONEDATABASE (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -73,23 +73,23 @@ DBCC CLONEDATABASE
 要複製來源資料庫的目標資料庫名稱。 DBCC CLONEDATABASE 將會建立此資料庫，因此不應該已經存在。 
   
 NO_STATISTICS  
-指定是否需要從複本排除資料表/索引統計資料。 如果未指定此選項，則會自動包含資料表/索引統計資料。 此選項從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 CU3 和 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 開始提供。
+指定是否需要從複本排除資料表/索引統計資料。 如果未指定此選項，則會自動包含資料表/索引統計資料。 此選項從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 CU3 和 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 開始提供。
 
 NO_QUERYSTORE<br>
-指定是否需要從複本排除查詢存放區資料。 如果未指定此選項，且已啟用來源資料庫中的查詢存放區，則會將查詢存放區資料複製到複本。 此選項從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 開始提供。
+指定是否需要從複本排除查詢存放區資料。 如果未指定此選項，且已啟用來源資料庫中的查詢存放區，則會將查詢存放區資料複製到複本。 此選項從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 開始提供。
 
 VERIFY_CLONEDB  
-驗證新資料庫的一致性。  如果複製資料庫要用於生產環境，則需要此選項。  啟用 VERIFY_CLONEDB 也會停用統計資料和查詢存放區集合，因此相當於執行 WITH VERIFY_CLONEDB、NO_STATISTICS、NO_QUERYSTORE。  此選項從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP3、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU8 開始提供。
+驗證新資料庫的一致性。  如果複製資料庫要用於生產環境，則需要此選項。  啟用 VERIFY_CLONEDB 也會停用統計資料和查詢存放區集合，因此相當於執行 WITH VERIFY_CLONEDB、NO_STATISTICS、NO_QUERYSTORE。  此選項從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP3、[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU8 開始提供。
 
 > [!NOTE]  
 > 下列命令可用來確認複製資料庫已準備好用於生產環境： <br/>`SELECT DATABASEPROPERTYEX('clone_database_name', 'IsVerifiedClone')`
 
 
 SERVICEBROKER<br>
-指定 Service Broker 相關系統目錄是否應該包含在複本中。  SERVICEBROKER 選項無法與 VERIFY_CLONEDB 搭配使用。  此選項從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP3、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU8 開始提供。
+指定 Service Broker 相關系統目錄是否應該包含在複本中。  SERVICEBROKER 選項無法與 VERIFY_CLONEDB 搭配使用。  此選項從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP3、[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU8 開始提供。
 
 BACKUP_CLONEDB  
-建立並驗證複製資料庫的備份。  如果搭配 VERIFY_CLONEDB 使用，則會驗證複製資料庫，再進行備份。  此選項從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP3、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU8 開始提供。
+建立並驗證複製資料庫的備份。  如果搭配 VERIFY_CLONEDB 使用，則會驗證複製資料庫，再進行備份。  此選項從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP3、[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU8 開始提供。
   
 ## <a name="remarks"></a>備註
 DBCC CLONEDATABASE 會執行下列驗證。 如果任一項驗證失敗，則命令會失敗。
@@ -149,11 +149,11 @@ DBCC CLONEDATABASE 使用來源資料庫的內部資料庫快照集，以取得�
 - COLUMNSTORE INDEX
 - CDB
 - CDC
-- CLR (從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 CU3、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 和更新版本開始)
+- CLR (從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 CU3、[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 和更新版本開始)
 - DATABASE PROPERTIES
 - DEFAULT
 - FILES AND FILEGROUPS
-- 全文檢索 (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 CU2 開始)
+- 全文檢索 (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 CU2 開始)
 - FUNCTION
 - INDEX
 - LOGIN
@@ -161,9 +161,9 @@ DBCC CLONEDATABASE 使用來源資料庫的內部資料庫快照集，以取得�
 - PARTITION SCHEME
 - PROCEDURE   
 > [!NOTE]   
-> 從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 開始，所有版本都支援 [!INCLUDE[tsql](../../includes/tsql-md.md)] 程序。 從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 CU3 開始，支援 CLR 程序。 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 開始，支援原生編譯程序。  
+> 從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 開始，所有版本都支援 [!INCLUDE[tsql](../../includes/tsql-md.md)] 程序。 從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 CU3 開始，支援 CLR 程序。 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 開始，支援原生編譯程序。  
 
-- QUERY STORE (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 開始)   
+- QUERY STORE (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 開始)   
 > [!NOTE]   
 > 只有在來源資料庫上啟用時，才能複製查詢存放區資料。 若要將最新的執行階段統計資料當作查詢存放區的一部分來複製，請執行 sp_query_store_flush_db 將執行階段統計資料排清到查詢存放區，再執行 DBCC CLONEDATABASE。  
 
@@ -175,8 +175,8 @@ DBCC CLONEDATABASE 使用來源資料庫的內部資料庫快照集，以取得�
 - STATISTICS
 - SYNONYM
 - TABLE
-- MEMORY OPTIMIZED TABLES (僅限 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 和更新版本)。
-- FILESTREAM AND FILETABLE OBJECTS (從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 CU3、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 和更新版本開始)。 
+- MEMORY OPTIMIZED TABLES (僅限 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 和更新版本)。
+- FILESTREAM AND FILETABLE OBJECTS (從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 CU3、[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 和更新版本開始)。 
 - TRIGGER
 - TYPE
 - UPGRADED DB
@@ -215,7 +215,7 @@ DBCC CLONEDATABASE 使用來源資料庫的內部資料庫快照集，以取得�
 ## <a name="examples"></a>範例  
   
 ### <a name="a-creating-a-clone-of-a-database-that-includes-schema-statistics-and-query-store"></a>A. 建立資料庫複本，其中包含結構描述、統計資料和查詢存放區 
-下列範例會建立 AdventureWorks 資料庫複本，其中包含結構描述、統計資料和查詢存放區資料 ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 和更新版本)
+下列範例會建立 AdventureWorks 資料庫複本，其中包含結構描述、統計資料和查詢存放區資料 ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 和更新版本)
 
 ```sql  
 DBCC CLONEDATABASE (AdventureWorks, AdventureWorks_Clone);    
@@ -231,7 +231,7 @@ GO
 ```  
 
 ### <a name="c-creating-a-schema-only-clone-of-a-database-without-statistics-and-query-store"></a>C. 建立僅限結構描述的資料庫複本，其中不含統計資料和查詢存放區 
-下列範例會建立 AdventureWorks 資料庫複本，其中不含統計資料和查詢存放區資料 ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 和更新版本)
+下列範例會建立 AdventureWorks 資料庫複本，其中不含統計資料和查詢存放區資料 ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 和更新版本)
 
 ```sql  
 DBCC CLONEDATABASE (AdventureWorks, AdventureWorks_Clone) WITH NO_STATISTICS, NO_QUERYSTORE;    
@@ -239,7 +239,7 @@ GO
 ```  
 
 ### <a name="d-creating-a-clone-of-a-database-that-is-verified-for-production-use"></a>D. 建立資料庫複本，並已經過驗證可用於生產環境
-下列範例會建立僅限結構描述的 AdventureWorks 資料庫複本，其中不含統計資料和查詢存放區，並已經過驗證可用作生產資料庫 ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和更新版本)。
+下列範例會建立僅限結構描述的 AdventureWorks 資料庫複本，其中不含統計資料和查詢存放區，並已經過驗證可用作生產資料庫 ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和更新版本)。
 
 ```sql  
 DBCC CLONEDATABASE (AdventureWorks, AdventureWorks_Clone) WITH VERIFY_CLONEDB;    
@@ -247,7 +247,7 @@ GO
 ```  
   
 ### <a name="e-creating-a-clone-of-a-database-that-is-verified-for-production-use-that-includes-a-backup-of-the-cloned-database"></a>E. 建立資料庫複本，並已經過驗證可用於生產環境，其中包含複製資料庫的備份
-下列範例會建立僅限結構描述的 AdventureWorks 資料庫複本，其中不含統計資料和查詢存放區，並已經過驗證可用作生產資料庫。  同時會建立已驗證複製資料庫的備份 ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和更新版本)。
+下列範例會建立僅限結構描述的 AdventureWorks 資料庫複本，其中不含統計資料和查詢存放區，並已經過驗證可用作生產資料庫。  同時會建立已驗證複製資料庫的備份 ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和更新版本)。
 
 ```sql  
 DBCC CLONEDATABASE (AdventureWorks, AdventureWorks_Clone) WITH VERIFY_CLONEDB, BACKUP_CLONEDB;    

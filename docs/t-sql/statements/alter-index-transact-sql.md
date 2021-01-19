@@ -47,12 +47,12 @@ ms.assetid: b796c829-ef3a-405c-a784-48286d4fb2b9
 author: pmasl
 ms.author: pelopes
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 7854c78f0643294b1b5111c1b6f2e0b0ef07afa6
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: f04986f085653957bd685ae0db72a14a109e8079
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98099570"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170750"
 ---
 # <a name="alter-index-transact-sql"></a>ALTER INDEX (Transact-SQL)
 
@@ -293,7 +293,7 @@ LOB_COMPACTION = OFF
 -   不需要使用 REORGANIZE，也能將關閉的差異資料列群組移到壓縮的資料列群組中。 背景 tuple-mover (TM) 流程會定期喚醒，以壓縮關閉的差異資料列群組。 當 tuple-mover 進度落後時，我們建議使用 REORGANIZE。 REORGANIZE 可以更積極地壓縮資料列群組。  
 -   若要壓縮所有 OPEN 和 CLOSED 的資料列群組，請參閱本節中的 `REORGANIZE WITH (COMPRESS_ALL_ROW_GROUPS)` 選項。  
   
-對於 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 中的資料行存放區索引，REORGANIZE 會線上執行以下額外的重組最佳化：  
+對於 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 中的資料行存放區索引，REORGANIZE 會線上執行以下額外的重組最佳化：  
   
 -   當 10% 或更多資料列已經以邏輯方式刪除時，會實際將資料列從資料列群組移除。 已刪除的位元組會在實體媒體上回收。 例如，如果在包含 1 百萬個資料列的壓縮資料列群組中刪除 10 萬個資料列，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 將會移除刪除的資料列，並重新壓縮包含 90 萬個資料列的資料列群組。 將刪除的資料列移除可以節省儲存空間。  
   
@@ -304,7 +304,7 @@ LOB_COMPACTION = OFF
 REORGANIZE WITH ( COMPRESS_ALL_ROW_GROUPS = { ON | **OFF** } )  
  適用資於料行存放區索引。 
 
- **適用範圍：** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
+ **適用範圍：** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
 
 COMPRESS_ALL_ROW_GROUPS 可用來將開啟或關閉的差異資料列群組強制移動到資料行存放區中。 使用此選項時，不需要重建資料行存放區索引來清空差異資料列群組。  此功能和其他移除與合併重組功能結合之後，可讓它在大部分情況下都不再需要重建索引。    
 
@@ -410,7 +410,7 @@ STATISTICS_INCREMENTAL = { ON | **OFF** }
  如果是 XML 索引或空間索引，則只支援 `ONLINE = OFF`，而如果將 ONLINE 設定為 ON，將會引發錯誤。  
   
 > [!IMPORTANT]
-> 並非所有版本的 [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 都可以使用線上索引作業。 如需 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 版本支援的功能清單，請參閱 [[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 版本和支援的功能](../../sql-server/editions-and-supported-features-for-sql-server-2016.md)和 [SQL Server 2017 版本和支援的功能](../../sql-server/editions-and-components-of-sql-server-2017.md)。  
+> 並非所有版本的 [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 都可以使用線上索引作業。 如需 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 版本支援的功能清單，請參閱 [[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 版本和支援的功能](../../sql-server/editions-and-supported-features-for-sql-server-2016.md)和 [SQL Server 2017 版本和支援的功能](../../sql-server/editions-and-components-of-sql-server-2017.md)。  
   
  開啟  
  索引作業持續期間不會保留長期資料表鎖定。 在索引作業的主要階段期間，來源資料表上只保留意圖共用 (IS) 鎖定。 這使得基礎資料表和索引的查詢或更新能夠繼續運作。 在作業開始時，共用 (S) 鎖定會在來源物件上保留一段很短的時間。 在作業結束時，如果建立非叢集索引，S (共用) 鎖定會在來源上保留一段很短的時間；在線上建立或卸除叢集索引時，以及重建叢集或非叢集索引時，將會取得 SCH-M (結構描述修改) 鎖定。 建立本機暫存資料表的索引時，ONLINE 不可設為 ON。  
@@ -512,7 +512,7 @@ ALLOW_PAGE_LOCKS **=** { **ON** | OFF }
   
 COMPRESSION_DELAY **=** { **0** |*持續時間 [分鐘]* }  
 
-**適用範圍：** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始)  
+**適用範圍：** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始)  
   
  針對磁碟型資料表，延遲會指定處於「關閉」狀態的差異資料列群組必須在差異資料列群組中至少保留多少分鐘的時間，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 才能將它壓縮到壓縮的資料列群組。 由於磁碟型資料表不會追蹤個別資料列的插入和更新時間，因此 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 會將這段延遲時間套用於「關閉」狀態下的差異資料列群組。  
   
@@ -835,7 +835,7 @@ CREATE TABLE cci_target (
 CREATE CLUSTERED COLUMNSTORE INDEX idxcci_cci_target ON cci_target;  
 ```  
   
- 使用 TABLOCK 選項來以平行處理方式插入資料列。 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 起，INSERT INTO 作業可以在使用 TABLOCK 時以平行處理方式執行。  
+ 使用 TABLOCK 選項來以平行處理方式插入資料列。 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 起，INSERT INTO 作業可以在使用 TABLOCK 時以平行處理方式執行。  
   
 ```sql  
 INSERT INTO cci_target WITH (TABLOCK) 
@@ -875,7 +875,7 @@ ALTER INDEX cci_FactInternetSales2 ON FactInternetSales2 REORGANIZE PARTITION = 
 ```  
   
 ### <a name="c-compress-all-open-and-closed-delta-rowgroups-into-the-columnstore"></a>C. 將所有開啟和關閉的差異資料列群組壓縮到資料行存放區中  
- **適用範圍：** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 
+ **適用範圍：** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 
   
  REORGANIZE WITH ( COMPRESS_ALL_ROW_GROUPS = ON ) 命令會以壓縮的資料列群組方式，將每個 OPEN 和 CLOSED 的差異資料列群組壓縮到資料行存放區中。 這會清空差異存放區，並將所有資料列強制壓縮到資料行存放區。 這在執行許多插入作業之後特別有用，因為這些作業會將資料列儲存在一或多個差異資料行群組中。  
   
@@ -893,10 +893,10 @@ ALTER INDEX cci_FactInternetSales2 ON FactInternetSales2 REORGANIZE PARTITION = 
 ### <a name="d-defragment-a-columnstore-index-online"></a>D. 線上重組資料行存放區索引  
  不適用於：[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 和 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]。  
   
- 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 起，REORGANIZE 不只能將差異資料列群組壓縮到資料行存放區，還能執行其他作業。 它也會執行線上重組。 首先，它會在資料列群組中 10% 或更多資料列已遭到刪除時，實際移除已刪除的資料列，以縮小資料行存放區大小。  然後，它會合併資料列群組以構成較大的資料列群組，每個資料列群組最多可包含 1,024,576 個資料列。  所有變更的資料列群組都會重新壓縮。  
+ 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 起，REORGANIZE 不只能將差異資料列群組壓縮到資料行存放區，還能執行其他作業。 它也會執行線上重組。 首先，它會在資料列群組中 10% 或更多資料列已遭到刪除時，實際移除已刪除的資料列，以縮小資料行存放區大小。  然後，它會合併資料列群組以構成較大的資料列群組，每個資料列群組最多可包含 1,024,576 個資料列。  所有變更的資料列群組都會重新壓縮。  
   
 > [!NOTE]
-> 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 起，在大部分情況下已不再需要重建資料行存放區索引，因為 REORGANIZE 會實際移除已刪除的資料列並合併資料列群組。 COMPRESS_ALL_ROW_GROUPS 選項會將所有開啟或關閉的差異資料列群組強制移動到資料行存放區中，之前只能使用重建執行這項作業。 REORGANIZE 在線上且會在背景執行，因此可以在作業執行時繼續進行查詢。  
+> 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 起，在大部分情況下已不再需要重建資料行存放區索引，因為 REORGANIZE 會實際移除已刪除的資料列並合併資料列群組。 COMPRESS_ALL_ROW_GROUPS 選項會將所有開啟或關閉的差異資料列群組強制移動到資料行存放區中，之前只能使用重建執行這項作業。 REORGANIZE 在線上且會在背景執行，因此可以在作業執行時繼續進行查詢。  
   
 ```sql  
 -- Uses AdventureWorks  
@@ -908,7 +908,7 @@ ALTER INDEX cci_FactInternetSales2 ON FactInternetSales2 REORGANIZE;
 適用於：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 開始)   
   
 > [!TIP]
-> 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 起且在 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 中，我們建議使用 ALTER INDEX REORGANIZE，不要使用 ALTER INDEX REBUILD。  
+> 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 起且在 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 中，我們建議使用 ALTER INDEX REORGANIZE，不要使用 ALTER INDEX REBUILD。  
   
 > [!NOTE]
 > 在 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 和 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 中，REORGANIZE 僅用於將關閉的資料列群組壓縮到資料行存放區。 若要執行重組作業並將所有差異資料列群組強制移動到資料行存放區，重建索引是唯一的方式。  
@@ -946,7 +946,7 @@ SELECT * FROM sys.column_store_row_groups;
 ### <a name="f-rebuild-a-partition-of-a-clustered-columnstore-index-offline"></a>F. 離線重建叢集資料行存放區索引的分割區  
  **適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 開始)  
  
- 若要重建大型叢集資料行存放區索引的分割區，請使用 ALTER INDEX REBUILD 與分割區選項。 這個範例會重建分割區 12。 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 起，我們建議使用 REORGANIZE 取代 REBUILD。  
+ 若要重建大型叢集資料行存放區索引的分割區，請使用 ALTER INDEX REBUILD 與分割區選項。 這個範例會重建分割區 12。 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 起，我們建議使用 REORGANIZE 取代 REBUILD。  
   
 ```sql  
 ALTER INDEX cci_fact3   

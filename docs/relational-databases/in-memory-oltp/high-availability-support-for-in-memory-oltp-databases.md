@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 2113a916-3b1e-496c-8650-7f495e492510
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 92a09ac4702cae987c4fa5f4ccd420819c29073a
-ms.sourcegitcommit: d56a834269132a83e5fe0a05b033936776cda8bb
+ms.openlocfilehash: 9b275387efa5cc44b012cccef82fb3284e594abb
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91529429"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170540"
 ---
 # <a name="high-availability-support-for-in-memory-oltp-databases"></a>記憶體內部 OLTP 資料庫的高可用性支援
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "91529429"
     次要複本可維護持久性記憶體最佳化資料表的記憶體內部狀態。 在自動或強制容錯移轉的情況下，由於不需要進行復原，因此，容錯移轉至新主要複本的時間相當於容錯移轉至磁碟基底資料表的時間。 這項設定支援建立為 SCHEMA_ONLY 的記憶體最佳化資料表。 不過，系統不會記錄這些資料表的變更，因此次要複本上的這些資料表中不會有資料。  
   
 -   **可讀取次要**   
-    您可以存取與查詢次要複本上的經記憶體最佳化的資料表 (如果已設定讀取權限)。 在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 中，次要複本上的讀取時間戳記與主要複本上的讀取時間戳記接近同步，這表示主要複本上的變更會快速顯示於次要複本上。 此接近同步的行為與 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 記憶體內部 OLTP 不同。  
+    您可以存取與查詢次要複本上的經記憶體最佳化的資料表 (如果已設定讀取權限)。 在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 中，次要複本上的讀取時間戳記與主要複本上的讀取時間戳記接近同步，這表示主要複本上的變更會快速顯示於次要複本上。 此接近同步的行為與 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 記憶體內部 OLTP 不同。  
 
 ### <a name="considerations"></a>考量
 

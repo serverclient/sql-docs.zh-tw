@@ -17,12 +17,12 @@ ms.assetid: 8227028c-a9c9-489d-bd27-fbf8242634ae
 author: jaszymas
 ms.author: jaszymas
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 16964047afc48102e89b92c807b6ed49c8f39d46
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 8fb31365f95cddc23739db02df9ba4ad9db0345e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97468549"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171810"
 ---
 # <a name="choose-an-encryption-algorithm"></a>選擇加密演算法
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "97468549"
  加密演算法會定義資料轉換，讓未經授權的使用者無法輕鬆地反轉資料轉換。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 可讓管理員和開發人員在數種演算法中進行選擇，包括 DES、Triple DES、TRIPLE_DES_3KEY、RC2、RC4、128 位元 RC4、DESX、128 位元 AES、192 位元 AES 和 256 位元 AES。  
   
 > [!NOTE]  
->  開頭為 [!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)]，取代 AES_128、AES_192 和 AES_256 以外的所有演算法。 若要使用較舊的演算法 (不建議使用)，您必須將資料庫相容性層級設定為 120 或更低。  
+>  開頭為 [!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)]，取代 AES_128、AES_192 和 AES_256 以外的所有演算法。 若要使用較舊的演算法 (不建議使用)，您必須將資料庫相容性層級設定為 120 或更低。  
   
  同一種演算法不可能適用於所有情況，各種演算法優缺點的指南也超出《 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 線上叢書》的範疇。 不過，下列為一般適用的原則：  
   

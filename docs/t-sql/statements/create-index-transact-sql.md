@@ -55,12 +55,12 @@ ms.assetid: d2297805-412b-47b5-aeeb-53388349a5b9
 author: pmasl
 ms.author: pelopes
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 01a80dd71397a4528c1d56882cec5934d750bb8f
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: c472b3996683512fb6ac7cd3f001d53ca1fd73ae
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98093502"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170680"
 ---
 # <a name="create-index-transact-sql"></a>CREATE INDEX (Transact-SQL)
 
@@ -90,7 +90,7 @@ CREATE UNIQUE INDEX i1 ON t1 (col1 DESC, col2 ASC, col3 DESC);
 
 **關鍵案例：**
 
-從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 和 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 開始，使用資料行存放區索引上的非叢集索引來改善資料倉儲查詢效能。 如需詳細資訊，請參閱[資料行存放區索引 - 資料倉儲](../../relational-databases/indexes/columnstore-indexes-data-warehouse.md)。
+從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 和 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 開始，使用資料行存放區索引上的非叢集索引來改善資料倉儲查詢效能。 如需詳細資訊，請參閱[資料行存放區索引 - 資料倉儲](../../relational-databases/indexes/columnstore-indexes-data-warehouse.md)。
 
 針對其他索引類型，請參閱：
 
@@ -250,7 +250,7 @@ NONCLUSTERED
 *column*      
  這是做為索引根據的資料行。 您可以指定兩個或兩個以上的資料行名稱，在指定之資料行的合計值上建立複合索引。 在 *table_or_view_name* 後面的括號內，依排序優先權順序列出要併入複合式索引的資料行。
 
-單一複合式索引鍵中最多只能結合 32 個資料行。 複合索引鍵中的所有資料行都必須在相同的資料表或檢視表中。 針對叢集索引，組合索引值的允許大小上限是 900 個位元組，非叢集索引則為 1,700 個位元組。 針對 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 和 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 之前的版本，限制為 16 個資料行與 900 個位元組。
+單一複合式索引鍵中最多只能結合 32 個資料行。 複合索引鍵中的所有資料行都必須在相同的資料表或檢視表中。 針對叢集索引，組合索引值的允許大小上限是 900 個位元組，非叢集索引則為 1,700 個位元組。 針對 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 和 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 之前的版本，限制為 16 個資料行與 900 個位元組。
 
 屬於大型物件 (LOB) 資料類型 **ntext**、**text**、**varchar(max)** 、**nvarchar(max)** 、**varbinary(max)** 、**xml** 或 **image** 的資料行無法指定為索引的索引鍵資料行。 此外，即使 CREATE INDEX 陳述式中未參考 **ntext**、**text** 或 **image** 資料行，檢視定義也不能包含這些資料行。
 
@@ -351,7 +351,7 @@ _database_name_
 
 必須利用 SCHEMABINDING 定義檢視表，才能在該檢視表上建立索引。 必須先在檢視表上建立唯一叢集索引，才能建立任何非叢集索引。 如需有關索引檢視表的詳細資訊，請參閱「備註」一節。
 
-從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，此物件可以是與叢集資料行存放區索引一併儲存的資料表。
+從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，此物件可以是與叢集資料行存放區索引一併儲存的資料表。
 
 當 *database_name* 是目前的資料庫或 _database_name_ 是 `tempdb`，且 _object_name_ 的開頭為 # 時，[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 支援三部分名稱格式 _database_name_.[_schema_name_]._object_name_。
 
@@ -621,7 +621,7 @@ CREATE INDEX 陳述式的最佳化方式與其他任何查詢一樣。 若要儲
 若要在資料表 (堆積) 上建立叢集索引，或要卸除及重新建立現有的叢集索引，則資料庫中必須有可用的其他工作空間，才能容納資料排序和原始資料表或現有叢集索引資料的暫存複本。 如需叢集索引的詳細資訊，請參閱[建立叢集索引](../../relational-databases/indexes/create-clustered-indexes.md)及 [SQL Server 索引架構和設計指南](../../relational-databases/sql-server-index-design-guide.md)。
 
 ## <a name="nonclustered-indexes"></a>非叢集索引
-從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始以及在 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 中，您可以在儲存為叢集資料行存放區索引的資料表上建立非叢集索引。 如果您先在儲存為堆積或叢集索引的資料表上建立非叢集索引，當您稍後將該資料表轉換為叢集資料行存放區索引時，索引將持續保留。 當您重建叢集資料行存放區索引時，也不需卸除非叢集索引。
+從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始以及在 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 中，您可以在儲存為叢集資料行存放區索引的資料表上建立非叢集索引。 如果您先在儲存為堆積或叢集索引的資料表上建立非叢集索引，當您稍後將該資料表轉換為叢集資料行存放區索引時，索引將持續保留。 當您重建叢集資料行存放區索引時，也不需卸除非叢集索引。
 
 限制事項：
 
@@ -682,7 +682,7 @@ CREATE INDEX 陳述式的最佳化方式與其他任何查詢一樣。 若要儲
 如需 XML 索引的資訊，請參閱 [CREATE XML INDEX](../../t-sql/statements/create-xml-index-transact-sql.md) 和 [XML 索引 &#40;SQL Server&#41;](../../relational-databases/xml/xml-indexes-sql-server.md)。
 
 ## <a name="index-key-size"></a>索引鍵大小
-叢集索引的索引鍵大小上限為 900 個位元組，而非叢集索引為 1,700 個位元組 (在 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 和 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 之前，限制一律為 900 個位元組)。如果資料行中現有資料未超出建立索引時的限制，則可在 **varchar** 資料行上建立超過位元組限制的索引；但是，如果後續在資料行進行插入或更新動作時造成總計大小超過限制，則動作會失敗。 叢集索引的索引鍵所包含的 **varchar** 資料行不能在 ROW_OVERFLOW_DATA 配置單位中有現有的資料。 如果在 **varchar** 資料行上建立叢集索引，且現有的資料在 IN_ROW_DATA 配置單位中，則後續在可能發送資料非資料列的資料行上進行的插入或更新動作會失敗。
+叢集索引的索引鍵大小上限為 900 個位元組，而非叢集索引為 1,700 個位元組 (在 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 和 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 之前，限制一律為 900 個位元組)。如果資料行中現有資料未超出建立索引時的限制，則可在 **varchar** 資料行上建立超過位元組限制的索引；但是，如果後續在資料行進行插入或更新動作時造成總計大小超過限制，則動作會失敗。 叢集索引的索引鍵所包含的 **varchar** 資料行不能在 ROW_OVERFLOW_DATA 配置單位中有現有的資料。 如果在 **varchar** 資料行上建立叢集索引，且現有的資料在 IN_ROW_DATA 配置單位中，則後續在可能發送資料非資料列的資料行上進行的插入或更新動作會失敗。
 
 非叢集索引可將非索引鍵資料行併入索引的分葉層級中。 在計算索引鍵大小時，[!INCLUDE[ssDE](../../includes/ssde-md.md)] 不會考量這些資料行。 如需詳細資訊，請參閱[建立內含資料行的索引](../../relational-databases/indexes/create-indexes-with-included-columns.md)及 [SQL Server 索引架構和設計指南](../../relational-databases/sql-server-index-design-guide.md)。
 

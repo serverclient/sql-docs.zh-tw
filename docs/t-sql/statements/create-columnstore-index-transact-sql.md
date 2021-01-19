@@ -30,12 +30,12 @@ ms.assetid: 7e1793b3-5383-4e3d-8cef-027c0c8cb5b1
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b650e0fa1d1d6c02e657d3d5860908164ed5cd91
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 57665811cd12b4c31effb82a91a722780a774874
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98099554"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170450"
 ---
 # <a name="create-columnstore-index-transact-sql"></a>CREATE COLUMNSTORE INDEX (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "98099554"
 將資料列存放區資料表轉換為叢集資料行存放區索引或建立一個非叢集資料行存放區索引。 有效率地對 OLTP 工作負載執行即時作業分析，或是改善資料倉儲工作負載的資料壓縮和查詢效能，請使用資料行存放區索引。  
   
 > [!NOTE]
-> 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，您可以建立資料表作為叢集資料行存放區索引。   您再也不用先建立資料列存放區資料表，然後將它轉換成叢集資料行存放區索引。  
+> 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，您可以建立資料表作為叢集資料行存放區索引。   您再也不用先建立資料列存放區資料表，然後將它轉換成叢集資料行存放區索引。  
 
 > [!TIP]
 > 如需索引設計指導方針的詳細資訊，請參閱 [SQL Server 索引設計指南](../../relational-databases/sql-server-index-design-guide.md)。
@@ -120,10 +120,10 @@ CREATE CLUSTERED COLUMNSTORE INDEX index_name
 
 |選項| CLUSTERED | NONCLUSTERED |
 |---|---|---|
-| COMPRESSION_DELAY | [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] | [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] |
-| DATA_COMPRESSION | [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] | [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] | 
+| COMPRESSION_DELAY | [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] | [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] |
+| DATA_COMPRESSION | [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] | [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] | 
 | ONLINE | [!INCLUDE[ssSQLv15_md](../../includes/sssqlv15-md.md)] | [!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] |
-| WHERE 子句 | N/A | [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] |
+| WHERE 子句 | N/A | [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] |
 
 所有選項皆可在 Azure SQL Database 中使用。
 
@@ -369,7 +369,7 @@ CREATE COLUMNSTORE INDEX ncci ON Sales.OrderLines (StockItemID, Quantity, UnitPr
   
 **使用任何下列資料類型的資料行不可加入資料行存放區索引：**
 -   ntext、text 和 image  
--   nvarchar(max), varchar(max), and varbinary(max) (適用於 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 和先前版本，以及非叢集資料行存放區索引) 
+-   nvarchar(max), varchar(max), and varbinary(max) (適用於 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 和先前版本，以及非叢集資料行存放區索引) 
 -   rowversion (和 timestamp)  
 -   sql_variant  
 -   CLR 類型 (hierarchyid 和空間類型)  
@@ -387,7 +387,7 @@ CREATE COLUMNSTORE INDEX ncci ON Sales.OrderLines (StockItemID, Quantity, UnitPr
 
 
 > [!NOTE]  
-> 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，您可以在索引檢視表上建立非叢集資料行存放區索引。  
+> 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，您可以在索引檢視表上建立非叢集資料行存放區索引。  
 
 
  **資料行存放區索引無法與下列功能結合：**  
@@ -453,7 +453,7 @@ GO
 ```  
   
 ### <a name="c-handle-nonclustered-indexes-when-converting-a-rowstore-table-to-a-columnstore-index"></a>C. 將資料列存放區資料表轉換成資料行存放區索引時，處理非叢集索引。  
- 這個範例顯示將資料列存放區資料表轉換成資料行存放區索引時，如何處理非叢集索引。 實際上，從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，不需要任何特殊的動作；[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 會針對新的叢集資料行存放區索引，自動定義並重建非叢集索引。  
+ 這個範例顯示將資料列存放區資料表轉換成資料行存放區索引時，如何處理非叢集索引。 實際上，從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，不需要任何特殊的動作；[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 會針對新的叢集資料行存放區索引，自動定義並重建非叢集索引。  
   
  如果您想要卸除非叢集索引，可在建立資料行存放區索引之前，先使用 DROP INDEX 陳述式。 DROP EXISTING 選項只會卸除目前轉換中的叢集索引。 它不會卸除非叢集索引。  
   
@@ -582,7 +582,7 @@ ON MyFactTable;
  有兩種方式可重建完整的叢集資料行存放區索引。 您可以使用 CREATE CLUSTERED COLUMNSTORE INDEX，或 [ALTER INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/alter-index-transact-sql.md) 以及 REBUILD 選項。 這兩種方法會獲得相同的結果。  
   
 > [!NOTE]  
-> 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，請使用 `ALTER INDEX...REORGANIZE`，而不是使用此範例中描述的方法來重建。  
+> 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，請使用 `ALTER INDEX...REORGANIZE`，而不是使用此範例中描述的方法來重建。  
   
 ```sql  
 --Determine the Clustered Columnstore Index name of MyDimTable.  

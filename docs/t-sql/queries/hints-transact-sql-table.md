@@ -37,12 +37,12 @@ helpviewer_keywords:
 ms.assetid: 8bf1316f-c0ef-49d0-90a7-3946bc8e7a89
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 830b03042589ac1e9f03e94b134a48d510a37c31
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+ms.openlocfilehash: 2043bf4c60a1154b719d81b583d055b60b85c6ec
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92035831"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172330"
 ---
 # <a name="hints-transact-sql---table"></a>提示 (Transact-SQL) - 資料表
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -398,7 +398,7 @@ GO
 如果 SET 選項不具已篩選之索引的必要值，查詢最佳化工具將不會考慮索引提示。 如需詳細資訊，請參閱 [CREATE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-index-transact-sql.md)。  
   
 ## <a name="using-noexpand"></a>使用 NOEXPAND  
-NOEXPAND 只適用於*索引檢視表*。 索引檢視表是建立了唯一叢集索引的檢視表。 如果查詢包含同時在索引檢視表和基底資料表中的資料行參考，而且查詢最佳化工具判斷使用索引檢視表能夠提供最好的查詢執行方法，則查詢最佳化工具會使用檢視表的索引。 此功能稱為*索引檢視表比對*。 在 [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] SP1 之前，只有特定版本的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 支援由查詢最佳化工具自動使用索引檢視表。 如需 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 版本所支援的功能清單，請參閱 [SQL Server 2016 版本所支援的功能](../../sql-server/editions-and-components-of-sql-server-2016.md)、[SQL Server 2017 版本所支援的功能](../../SQL-server/editions-and-components-of-SQL-server-2017.md)與 [SQL Server 2019 版本所支援的功能](../../sql-server/editions-and-components-of-sql-server-version-15.md)。  
+NOEXPAND 只適用於 *索引檢視表*。 索引檢視表是建立了唯一叢集索引的檢視表。 如果查詢包含同時在索引檢視表和基底資料表中的資料行參考，而且查詢最佳化工具判斷使用索引檢視表能夠提供最好的查詢執行方法，則查詢最佳化工具會使用檢視表的索引。 此功能稱為 *索引檢視表比對*。 在 [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] SP1 之前，只有特定版本的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 支援由查詢最佳化工具自動使用索引檢視表。 如需 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 版本所支援的功能清單，請參閱 [SQL Server 2016 版本所支援的功能](../../sql-server/editions-and-components-of-sql-server-2016.md)、[SQL Server 2017 版本所支援的功能](../../SQL-server/editions-and-components-of-SQL-server-2017.md)與 [SQL Server 2019 版本所支援的功能](../../sql-server/editions-and-components-of-sql-server-version-15.md)。  
   
 不過，若要讓查詢最佳化工具考慮比對索引檢視表，或使用由 NOEXPAND 提示所參考的索引檢視表，就必須將下列 SET 選項設為 ON。  
 
@@ -419,7 +419,7 @@ NOEXPAND 只適用於*索引檢視表*。 索引檢視表是建立了唯一叢�
  若要強制查詢最佳化工具使用索引檢視表的索引，請指定 NOEXPAND 選項。 僅當查詢中指定了檢視的名稱時，才可使用此提示。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 不會提供提示以強制於未在 FROM 子句中直接為檢視命名的查詢中使用特定的索引檢視表，但是，即使查詢中未直接參考索引檢視表，查詢最佳化工具仍會考慮使用索引檢視表。 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 只有在使用 NOEXPAND 資料表提示時，才會自動建立索引檢視表的相關統計資料。 省略此提示可能會導致遺漏統計資料的相關執行計畫警告，該警告無法透過手動建立統計資料來解決。 在查詢最佳化期間，若查詢會直接參考檢視並使用了 NOEXPAND 提示，[!INCLUDE[ssde_md](../../includes/ssde_md.md)] 將會使用自動或手動建立的檢視統計資料。    
   
 ## <a name="using-a-table-hint-as-a-query-hint"></a>將資料表提示當做查詢提示使用  
- 也可以使用 OPTION (TABLE HINT) 子句將*資料表提示*指定為查詢提示。 我們建議您只在 [計劃指南](../../relational-databases/performance/plan-guides.md)的內容中，才將資料表提示當做查詢提示使用。 如果是特定的查詢，只將這些提示指定為資料表提示。 如需詳細資訊，請參閱[查詢提示 &#40;Transact-SQL&#41;](../../t-sql/queries/hints-transact-sql-query.md)。  
+ 也可以使用 OPTION (TABLE HINT) 子句將 *資料表提示* 指定為查詢提示。 我們建議您只在 [計劃指南](../../relational-databases/performance/plan-guides.md)的內容中，才將資料表提示當做查詢提示使用。 如果是特定的查詢，只將這些提示指定為資料表提示。 如需詳細資訊，請參閱[查詢提示 &#40;Transact-SQL&#41;](../../t-sql/queries/hints-transact-sql-query.md)。  
   
 ## <a name="permissions"></a>權限  
  KEEPIDENTITY、IGNORE_CONSTRAINTS 與 IGNORE_TRIGGERS 提示需要資料表的 `ALTER` 權限。  

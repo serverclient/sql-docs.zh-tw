@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 78f3f81a-066a-4fff-b023-7725ff874fdf
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: c8f93191b689599a24ad960d316a02901de2e6e0
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 1b7be0ce3e3be27633c32e031f7c674804a43d8b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97643808"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170810"
 ---
 # <a name="offload-read-only-workload-to-secondary-replica-of-an-always-on-availability-group"></a>將唯讀工作負載卸載至 Always On 可用性群組的次要複本
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -134,7 +134,7 @@ ms.locfileid: "97643808"
  這表示，主要複本和次要複本之間會有一些延遲 (通常只有幾秒鐘)。 但在很少見的情況下 (例如網路問題減少輸送量的狀況下)，延遲可能會比較長。 在發生 I/O 瓶頸和資料移動暫停時，會增加延遲。 若要監視暫停的資料移動，您可以使用 [AlwaysOn 儀表板](../../../database-engine/availability-groups/windows/use-the-always-on-dashboard-sql-server-management-studio.md) 或 [sys.dm_hadr_database_replica_states](../../../relational-databases/system-dynamic-management-views/sys-dm-hadr-database-replica-states-transact-sql.md) 動態管理檢視。  
   
 ####  <a name="data-latency-on-databases-with-memory-optimized-tables"></a><a name="bkmk_LatencyWithInMemOLTP"></a> 具有記憶體最佳化資料表之資料庫的資料延遲  
- 在 [!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)] 中，使用中次要上的資料延遲有其特殊考量 - 請參閱 [[!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)] 使用中次要：可讀取的次要複本](https://technet.microsoft.com/library/ff878253(v=sql.120).aspx)。 從 [!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)] 開始，沒有記憶體最佳化資料表之資料延遲的特殊考量。 記憶體最佳化資料表的預期資料延遲相當於以磁碟為基礎的資料表的延遲。  
+ 在 [!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)] 中，使用中次要上的資料延遲有其特殊考量 - 請參閱 [[!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)] 使用中次要：可讀取的次要複本](https://technet.microsoft.com/library/ff878253(v=sql.120).aspx)。 從 [!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)] 開始，沒有記憶體最佳化資料表之資料延遲的特殊考量。 記憶體最佳化資料表的預期資料延遲相當於以磁碟為基礎的資料表的延遲。  
   
 ###  <a name="read-only-workload-impact"></a><a name="ReadOnlyWorkloadImpact"></a> 唯讀工作負載的影響  
  將次要複本設定為唯讀存取時，次要資料庫上的唯讀工作負載會耗用系統資源，例如重做執行緒的 CPU 和 I/O (針對以磁碟為基礎之資料表)，特別是當以磁碟為基礎之資料表的唯讀工作負載高密度使用 I/O 資料時。 存取記憶體最佳化的資料表時，不會造成任何 IO 影響，因為所有資料列都位於記憶體中。  

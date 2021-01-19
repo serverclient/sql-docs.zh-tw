@@ -24,12 +24,12 @@ ms.assetid: cba3b6a0-b48e-4c94-812b-5b3cbb408bd6
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
-ms.openlocfilehash: 00926a8ee1244112d1fb5a01273e90d22a5753a7
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: eeae562c4cfbf093d3b7237a044c51084331e8a9
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97463975"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172240"
 ---
 # <a name="restore-statements---verifyonly-transact-sql"></a>RESTORE 陳述式 - VERIFYONLY (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md.md )]
@@ -110,7 +110,7 @@ FROM <backup_device> [ ,...n ]
 >  RESTORE VERIFYONLY 無法處理資料庫快照集。 若要在還原作業之前驗證資料庫快照集，您可以執行 DBCC CHECKDB。  
   
 > [!NOTE]  
->  使用快照集備份時，RESTORE VERIFYONLY 會確認備份檔案指定的位置是否存在快照集。 快照集備份是 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 的新功能。 如需快照集備份的詳細資訊，請參閱 [Azure 資料庫檔案的檔案快照集備份](../../relational-databases/backup-restore/file-snapshot-backups-for-database-files-in-azure.md)。  
+>  使用快照集備份時，RESTORE VERIFYONLY 會確認備份檔案指定的位置是否存在快照集。 快照集備份是 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 的新功能。 如需快照集備份的詳細資訊，請參閱 [Azure 資料庫檔案的檔案快照集備份](../../relational-databases/backup-restore/file-snapshot-backups-for-database-files-in-azure.md)。  
   
 ## <a name="security"></a>安全性  
  備份作業可以選擇性地指定媒體集的密碼及 (或) 備份組的密碼。 當在媒體集或備份組上定義密碼時，您必須在 RESTORE 陳述式中，指定一個或多個正確的密碼。 這些密碼可以防止他人利用 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 工具，在未獲授權的情況下，在媒體上執行還原作業及附加備份組。 不過，密碼無法防止使用者利用 BACKUP 陳述式的 FORMAT 選項來覆寫媒體。  

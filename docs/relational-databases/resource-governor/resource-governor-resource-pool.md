@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 306b6278-e54f-42e6-b746-95a9315e0cbe
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: d7de8dcd6291330e2e18136e2c16e16b36f3ef71
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: 4028f19dc9d7ac319b083b5e6077021da59e7a9b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96506562"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172310"
 ---
 # <a name="resource-governor-resource-pool"></a>資源管理員資源集區
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -105,7 +105,7 @@ ms.locfileid: "96506562"
   
 **預設集區**  
   
-預設集區是第一個預先定義的使用者集區。 進行任何組態設定之前，預設集區僅包含預設群組。 您無法建立或卸除預設集區，但是可以變更此集區。 除了預設群組以外，預設集區可以包含使用者定義的群組。 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，例行的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 作業會有預設資源集區，而外部處理序 (例如執行 R 指令碼) 會有預設外部資源集區。  
+預設集區是第一個預先定義的使用者集區。 進行任何組態設定之前，預設集區僅包含預設群組。 您無法建立或卸除預設集區，但是可以變更此集區。 除了預設群組以外，預設集區可以包含使用者定義的群組。 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，例行的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 作業會有預設資源集區，而外部處理序 (例如執行 R 指令碼) 會有預設外部資源集區。  
   
 > [!NOTE]  
 >  雖然預設群組可變更，但是您無法將它移出預設集區之外。  

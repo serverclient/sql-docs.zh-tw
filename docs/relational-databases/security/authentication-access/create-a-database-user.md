@@ -25,12 +25,12 @@ ms.assetid: 782798d3-9552-4514-9f58-e87be4b264e4
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c06db04136d3e38ad62fe71313490c0a54670c46
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 5088cb94c4c4387cd77835bbe02502764d3c2384
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97479429"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171700"
 ---
 # <a name="create-a-database-user"></a>建立資料庫使用者
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -49,7 +49,7 @@ ms.locfileid: "97479429"
   
  如果您不熟悉 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]，就很難判斷您要建立的使用者類型。 先問問自己，需要存取資料庫的個人或群組是否有登入？ Master 資料庫中的登入通常是管理 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 的人員，以及需要在 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]的執行個體上存取許多或所有資料庫的人員。 針對此情況，您將建立 **有登入的 SQL 使用者**。 連接到資料庫時，資料庫使用者是登入的識別。 資料庫使用者可以使用相同的名稱做為登入，但是並非必要。 本主題假設 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]中已有登入存在。 如需如何建立登入的相關資訊，請參閱 [建立登入](../../../relational-databases/security/authentication-access/create-a-login.md)。  
   
- 如果需要存取資料庫的個人或群組沒有登入，以及如果他們只需要存取一個或數個資料庫，請建立 **Windows 使用者** 或 **有密碼的 SQL 使用者**。 也稱為自主資料庫使用者，它不會與 master 資料庫中的登入相關聯。 當您想要能夠輕鬆地在 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]執行個體之間移動資料庫時，這是很好的選擇。 若要在 [!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)]上使用此選項，系統管理員必須先針對 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]啟用自主資料庫，以及針對內含項目啟用資料庫。 如需詳細資訊，請參閱 [自主的資料庫使用者 - 使資料庫可攜](../../../relational-databases/security/contained-database-users-making-your-database-portable.md)。  
+ 如果需要存取資料庫的個人或群組沒有登入，以及如果他們只需要存取一個或數個資料庫，請建立 **Windows 使用者** 或 **有密碼的 SQL 使用者**。 也稱為自主資料庫使用者，它不會與 master 資料庫中的登入相關聯。 當您想要能夠輕鬆地在 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]執行個體之間移動資料庫時，這是很好的選擇。 若要在 [!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)]上使用此選項，系統管理員必須先針對 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]啟用自主資料庫，以及針對內含項目啟用資料庫。 如需詳細資訊，請參閱 [自主的資料庫使用者 - 使資料庫可攜](../../../relational-databases/security/contained-database-users-making-your-database-portable.md)。  
   
 > **重要！** 以自主資料庫使用者身分連接時，您必須提供資料庫的名稱做為連接字串的一部分。 若要在 [!INCLUDE[ssManStudio](../../../includes/ssmanstudio-md.md)]中指定資料庫，可在 [連接到]  對話方塊中，按一下 [選項] ，然後按一下 [連接屬性]  索引標籤。  
   

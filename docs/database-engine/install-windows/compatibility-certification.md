@@ -19,12 +19,12 @@ ms.assetid: 3c036813-36cf-4415-a0c9-248d0a433856
 author: pmasl
 ms.author: pelopes
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 82d5aee8d0fa37ca66c49cf00b22385a896c653d
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 14b78d968fcb3350c488c9353df6017c4616f632
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98091776"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170900"
 ---
 # <a name="compatibility-certification"></a>相容性認證
 
@@ -37,7 +37,7 @@ ms.locfileid: "98091776"
 針對 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的每個新版本，預設相容性層級設為 [!INCLUDE[ssDE](../../includes/ssde-md.md)] 的版本。 但是會保留舊版的相容性層級，以保持現有應用程式的相容性。 您可以在[這裡](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#supported-dbcompats)查看此相容性矩陣。
 因此，經認證使用指定 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 版本的應用程式，**實際上已經認證使用該版本的預設相容性層級**。
 
-例如，資料庫相容性層級 130 是 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 中的預設值。 由於相容性層級會強制執行特定的 [!INCLUDE[tsql](../../includes/tsql-md.md)] 功能性和查詢最佳化行為，因此 **經認證在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 上運作的資料庫已在資料庫相容性層級 130 上以隱含方式認證**。 只要資料庫相容性層級保留為 130，則此資料庫可以在較新版本 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (例如 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]) 和 [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] 中依再現況工作。 
+例如，資料庫相容性層級 130 是 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 中的預設值。 由於相容性層級會強制執行特定的 [!INCLUDE[tsql](../../includes/tsql-md.md)] 功能性和查詢最佳化行為，因此 **經認證在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 上運作的資料庫已在資料庫相容性層級 130 上以隱含方式認證**。 只要資料庫相容性層級保留為 130，則此資料庫可以在較新版本 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (例如 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]) 和 [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] 中依再現況工作。 
 
 這是 [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] 持續整合作業模型的基本原則。 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] 會持續在 Azure 中改善並升級，但因為現有資料庫會保留其目前的相容性層級，因此即使在升級至基礎 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] 之後，仍會繼續以原先設計的方式運作。 
 
@@ -95,7 +95,7 @@ ms.locfileid: "98091776"
 您可使用 [Microsoft Data Migration Assistant](https://www.microsoft.com/download/details.aspx?id=53595) 工具 (DMA) 輕鬆完成這項作業。 在 DMA 工具輸出中，由於沒有關於遺失或不相容功能的錯誤，因此可防止應用程式在新的目標版本上出現任何功能迴歸的情況。 如果需要變更以確保資料庫可在新版本中運作，則 DMA 將可供找出需要變更的位置，以及可用的因應措施。 如需詳細資訊，請參閱 [Data Migration Assistant 總覽](../../dma/dma-overview.md) (機器翻譯)。   
 
 > [!TIP]
-> 將資料庫從舊版本 (例如 [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 或 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]) 移至 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 或 [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] 的新版本時，這項功能驗證特別重要，因為應用程式程式碼可能使用了已中止的 [!INCLUDE[tsql](../../includes/tsql-md.md)]，而不受資料庫相容性層級的保護。 但是，從較新版本 (例如 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]) 移至 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] 或 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 時，則無需擔心 [!INCLUDE[tsql](../../includes/tsql-md.md)] 已中止的情況發生。 如需 [!INCLUDE[tsql](../../includes/tsql-md.md)] 已中止的詳細資訊，請參閱[使用相容性層級以提供回溯相容性](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#backwardCompat)。
+> 將資料庫從舊版本 (例如 [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 或 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]) 移至 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 或 [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] 的新版本時，這項功能驗證特別重要，因為應用程式程式碼可能使用了已中止的 [!INCLUDE[tsql](../../includes/tsql-md.md)]，而不受資料庫相容性層級的保護。 但是，從較新版本 (例如 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]) 移至 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] 或 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 時，則無需擔心 [!INCLUDE[tsql](../../includes/tsql-md.md)] 已中止的情況發生。 如需 [!INCLUDE[tsql](../../includes/tsql-md.md)] 已中止的詳細資訊，請參閱[使用相容性層級以提供回溯相容性](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#backwardCompat)。
 
 > [!NOTE]
 > DMA 支援資料庫相容性層級 100 (含) 以上。 已排除 [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 作為來源版本。   

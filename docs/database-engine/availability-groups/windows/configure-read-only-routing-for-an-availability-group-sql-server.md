@@ -17,18 +17,18 @@ helpviewer_keywords:
 ms.assetid: 7bd89ddd-0403-4930-a5eb-3c78718533d4
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 8e64eb57dbcfecabaa5c6f24881206152df4d8d0
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: f7e96df4eba36bbcb3da18a1423b5162aef557a7
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97639770"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170800"
 ---
 # <a name="configure-read-only-routing-for-an-always-on-availability-group"></a>設定 Always On 可用性群組的唯讀路由
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   若要在 [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] 中將 AlwaysOn 可用性群組設定為支援唯讀路由，可以使用 [!INCLUDE[tsql](../../../includes/tsql-md.md)] 或 PowerShell。 「唯讀路由」  是指 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 將合格的唯讀連接要求路由至可用之 AlwaysOn [可讀取的次要複本](../../../database-engine/availability-groups/windows/active-secondaries-readable-secondary-replicas-always-on-availability-groups.md) (亦即在以次要角色執行時，設定為允許唯讀工作負載的複本) 的功能。 若要支援唯讀路由，可用性群組必須具有 [可用性群組接聽程式](../../../database-engine/availability-groups/windows/listeners-client-connectivity-application-failover.md)。 唯讀用戶端必須將其連接要求導向至此接聽程式，且用戶端的連接字串必須將應用程式的意圖指定為「唯讀」。 換句話說必須是 *「讀取意圖的連接要求」* (Read-Intent Connection Request)。  
 
-唯讀路由可在 [!INCLUDE[sssql15](../../../includes/sssql15-md.md)] 及更新版本中使用。
+唯讀路由可在 [!INCLUDE[sssql15](../../../includes/sssql16-md.md)] 及更新版本中使用。
 
 > [!NOTE]  
 >  如需如何設定可讀取之次要複本的相關資訊，請參閱 [設定可用性複本上的唯讀存取 &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/configure-read-only-access-on-an-availability-replica-sql-server.md)。  
@@ -104,7 +104,7 @@ ms.locfileid: "97639770"
         >  您必須先設定唯讀路由 URL，然後再設定唯讀路由清單。  
   
 ###  <a name="configure-load-balancing-across-read-only-replicas"></a><a name="loadbalancing"></a> 設定唯讀複本之間的負載平衡  
- 從 [!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)]開始，您可以在一組唯讀複本中設定負載平衡。 以往，唯讀路由一律會將流量導向路由清單中第一個可用的複本。 若要利用這項功能，使用單層巢狀括弧括住 **CREATE AVAILABILITY GROUP** 或 **ALTER AVAILABILITY GROUP** 命令中的 **READ_ONLY_ROUTING_LIST** 伺服器執行個體。  
+ 從 [!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)]開始，您可以在一組唯讀複本中設定負載平衡。 以往，唯讀路由一律會將流量導向路由清單中第一個可用的複本。 若要利用這項功能，使用單層巢狀括弧括住 **CREATE AVAILABILITY GROUP** 或 **ALTER AVAILABILITY GROUP** 命令中的 **READ_ONLY_ROUTING_LIST** 伺服器執行個體。  
   
  例如，下列路由清單會跨 `Server1` 和 `Server2`這兩個唯讀複本，進行讀取意圖連接要求的負載平衡。 括住這些伺服器的巢狀括弧可識別負載平衡集。 如果該負載平衡集中都沒有可用的複本，它將繼續嘗試循序連接到唯讀路由清單中的其他複本 `Server3` 和 `Server4`。  
   

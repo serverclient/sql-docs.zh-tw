@@ -15,12 +15,12 @@ ms.assetid: 07f8f594-75b4-4591-8c29-d63811d7753e
 author: pelopes
 ms.author: pelopes
 manager: amitban
-ms.openlocfilehash: 03bd2039fc132724ba78222c81a79c75f37764ff
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: ef87d8cdfb44d36faff5e06cfdc0b0f691142c03
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96505120"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170400"
 ---
 # <a name="performance-dashboard"></a>效能儀表板
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -76,7 +76,7 @@ ms.locfileid: "96505120"
 
 [等候] 報表會篩選掉所有閒置和睡眠等候。 如需有關等候的詳細資訊，請參閱 [sys.dm_os_wait_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md) 和[使用等候和佇列來調整 SQL Server 2005 效能](https://download.microsoft.com/download/4/7/a/47a548b9-249e-484c-abd7-29f31282b04d/performance_tuning_waits_queues.doc) \(英文\)。
 
-[佔用大量資源的查詢] 報表在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 重新啟動時會重設，因為系統會清除基礎 DMV 中的資料。 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，可在 [查詢存放區] 中找到有關佔用大量資源查詢的詳細資訊。 
+[佔用大量資源的查詢] 報表在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 重新啟動時會重設，因為系統會清除基礎 DMV 中的資料。 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，可在 [查詢存放區] 中找到有關佔用大量資源查詢的詳細資訊。 
 
 
 > [!NOTE]

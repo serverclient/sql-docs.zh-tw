@@ -11,12 +11,12 @@ ms.date: 10/02/2019
 ms.prod: sql
 ms.prod_service: polybase, sql-data-warehouse, pdw
 monikerRange: '>= sql-server-2016'
-ms.openlocfilehash: edf0b261b6046d63e037e601ab9e92dd13d8728e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 24a228fb504f53c1afe88b0955500e811f1073b6
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97464779"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171490"
 ---
 # <a name="troubleshoot-polybase-kerberos-connectivity"></a>對 PolyBase Kerberos 的連線問題進行疑難排解
 
@@ -33,7 +33,7 @@ ms.locfileid: "97464779"
 
 ## <a name="prerequisites"></a>必要條件
 
-1. [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] RTM CU6/[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 CU3/[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 或更新版本 (已安裝 PolyBase)
+1. [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] RTM CU6/[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 CU3/[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 或更新版本 (已安裝 PolyBase)
 1. 受 Kerberos (Active Directory 或 MIT) 保護的 Hadoop 叢集 (Cloudera 或 Hortonworks)
 
 ## <a name="introduction"></a>簡介
@@ -71,7 +71,7 @@ PolyBase 具備下列 XML 設定檔，其中包含 Hadoop 叢集的屬性：
 
 `\[System Drive\]:{install path}\{MSSQL##.INSTANCENAME}\MSSQL\Binn\PolyBase\Hadoop\conf`
 
-例如，[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 的預設位置為 `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Binn\PolyBase\Hadoop\conf`。
+例如，[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 的預設位置為 `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Binn\PolyBase\Hadoop\conf`。
 
 更新 **core-site.xml**，並新增下列三個屬性。 根據環境設定值：
 

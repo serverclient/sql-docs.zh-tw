@@ -15,12 +15,12 @@ ms.assetid: 0300e777-d56b-4d10-9c33-c9ebd2489ee5
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 52ad20f534dc865014a760ee0408ccb77181c688
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 1930f2e9d41bb212b01a9417fb7d6c861fda228f
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97463639"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172040"
 ---
 # <a name="sql-server-installation-guide"></a>SQL Server 安裝指南
 
@@ -34,14 +34,14 @@ ms.locfileid: "97463639"
 - [Docker 容器](../../linux/sql-server-linux-docker-container-deployment.md)
 - [Kubernetes - 巨量資料叢集](../../big-data-cluster/deploy-get-started.md)
 
-從 [!INCLUDE[sssql15](../../includes/sssql15-md.md)] 開始，[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] 才可以用作 64 位元應用程式。 下列重要詳細資料說明如何取得 SQL Server 及其安裝方式。
+從 [!INCLUDE[sssql15](../../includes/sssql16-md.md)] 開始，[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] 才可以用作 64 位元應用程式。 下列重要詳細資料說明如何取得 SQL Server 及其安裝方式。
 
 ## <a name="getting-started"></a>開始使用
   
 * **版本和功能**：請檢閱 SQL Server 不同版本和版次的支援功能，以判斷哪一種最適合您的商務需求。 
     - [[!INCLUDE[ss2019](../../includes/sssqlv15-md.md)]](~/sql-server/editions-and-components-of-sql-server-version-15.md)＞。  
     - [[!INCLUDE[ss2017](../../includes/sssqlv14-md.md)]](~/sql-server/editions-and-components-of-sql-server-2017.md)＞。  
-    - [[!INCLUDE[ss2016](../../includes/sssql15-md.md)]](~/sql-server/editions-and-components-of-sql-server-2016.md)＞。  
+    - [[!INCLUDE[ss2016](../../includes/sssql16-md.md)]](~/sql-server/editions-and-components-of-sql-server-2016.md)＞。  
     - [[!INCLUDE[ss2014](../../includes/sssql14-md.md)]](https://docs.microsoft.com/previous-versions/sql/2014/getting-started/features-supported-by-the-editions-of-sql-server-2014)
 
 *  **需求**：請先檢閱 [SQL Server 2016 與 2017](../../sql-server/install/hardware-and-software-requirements-for-installing-sql-server.md)、[SQL Server 2019](../../sql-server/install/hardware-and-software-requirements-for-installing-sql-server.md) 或 [Linux 上 SQL Server](../../linux/sql-server-linux-setup.md) 中所列的軟硬體安裝需求，以及 [規劃 SQL Server 安裝](../../sql-server/install/planning-a-sql-server-installation.md)中的系統組態檢查與安全性考量 

@@ -12,17 +12,17 @@ ms.assetid: b0a248a4-4488-4cc8-89fc-46906a8c24a1
 author: MightyPen
 ms.author: genemi
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2e16ef746dd970926e61098eb66e8f8ddf6a98b1
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: ddc8c6bf630994b66ecd2977edc44bec888a0e8e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97438743"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172670"
 ---
 # <a name="table-and-row-size-in-memory-optimized-tables"></a>記憶體最佳化資料表中的資料表和資料列大小
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 之前，記憶體最佳化資料表的 in-row 資料大小不能超過 [8,060 個位元組](?viewFallbackFrom=sql-server-2014)。 不過，自 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，可在 Azure SQL Database 中建立具有多個大型資料行 (例如，多個 varbinary(8000) 資料行) 和 LOB 資料行 (即 varbinary(max)、varchar(max) 和 nvarchar(max)) 的記憶體最佳化資料表，並可使用原生編譯的 T-SQL 模組和資料表類型對它們執行作業。 
+在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 之前，記憶體最佳化資料表的 in-row 資料大小不能超過 [8,060 個位元組](?viewFallbackFrom=sql-server-2014)。 不過，自 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，可在 Azure SQL Database 中建立具有多個大型資料行 (例如，多個 varbinary(8000) 資料行) 和 LOB 資料行 (即 varbinary(max)、varchar(max) 和 nvarchar(max)) 的記憶體最佳化資料表，並可使用原生編譯的 T-SQL 模組和資料表類型對它們執行作業。 
   
 無法放入 8060 位元組資料列大小限制的資料行都會置於個別內部資料表中的 off-row。 每個 off-row 資料行都會有對應的內部資料表，而內部資料表接著會有單一非叢集索引。 如需 off-row 資料行所用之內部資料表的詳細資料，請參閱 [sys.memory_optimized_tables_internal_attributes &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-memory-optimized-tables-internal-attributes-transact-sql.md)。 
  

@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a9fc87cef0244afc4459c789f94855c0c0530ddd
-ms.sourcegitcommit: e5664d20ed507a6f1b5e8ae7429a172a427b066c
+ms.openlocfilehash: 58f0348a84362b48520c9bd5cf46868cdaea60e0
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97697122"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171180"
 ---
 # <a name="columnstore-indexes---what39s-new"></a>資料行存放區索引 - 新功能
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -24,12 +24,12 @@ ms.locfileid: "97697122"
   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的每個版本以及 [!INCLUDE[ssSDS](../../includes/sssds-md.md)]、[!INCLUDE[ssSDW](../../includes/sssdw-md.md)] 和 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] 的最新版本，皆可使用資料行存放區功能的摘要。  
 
  > [!NOTE]
- > 針對 [!INCLUDE[ssSDS](../../includes/sssds-md.md)]，[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 進階層、標準層 - S3 及更新版本，和所有 vCore 層可使用資料行存放區索引。 針對 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 及更新版本，則所有版本皆可使用資料行存放區索引。 針對 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] (SP1 以前) 及舊版，則只有 Enterprise Edition 才可使用資料行存放區索引。
+ > 針對 [!INCLUDE[ssSDS](../../includes/sssds-md.md)]，[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 進階層、標準層 - S3 及更新版本，和所有 vCore 層可使用資料行存放區索引。 針對 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 及更新版本，則所有版本皆可使用資料行存放區索引。 針對 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] (SP1 以前) 及舊版，則只有 Enterprise Edition 才可使用資料行存放區索引。
  
 ## <a name="feature-summary-for-product-releases"></a>產品版本的功能摘要  
  本表會摘要說明資料行存放區索引的重要功能以及提供它們的產品。  
 
-|資料行存放區索引功能|[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]|[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]|[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]|[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]|[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)]|[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]|[!INCLUDE[ssSDW](../../includes/sssdw-md.md)]|  
+|資料行存放區索引功能|[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]|[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]|[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]|[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]|[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)]|[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]|[!INCLUDE[ssSDW](../../includes/sssdw-md.md)]|  
 |-------------------------------|---------------------------|---------------------------|---------------------------|---------------------------|--------------------------------------------|-------------------------|---|  
 |多執行緒查詢的批次模式執行|是|是|是|是|是|是|是| 
 |單一執行緒查詢的批次模式執行|||是|是|是|是|是|  
@@ -67,8 +67,8 @@ ms.locfileid: "97697122"
 ### <a name="functional"></a>函數
 - [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 支援叢集資料行存放區索引中的非保存計算資料行。 叢集資料行存放區索引中不支援保存的計算資料行。 您無法在具有計算資料行的資料行存放區索引上建立非叢集索引。 
 
-## [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]  
- [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 會加入索引鍵增強功能，以改善資料行存放區索引的效能和彈性。 這些改善會強化資料倉儲案例，並進行即時作業分析。  
+## [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]  
+ [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 會加入索引鍵增強功能，以改善資料行存放區索引的效能和彈性。 這些改善會強化資料倉儲案例，並進行即時作業分析。  
   
 ### <a name="functional"></a>函數  
   

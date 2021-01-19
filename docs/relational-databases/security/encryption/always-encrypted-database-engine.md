@@ -17,12 +17,12 @@ ms.assetid: 54757c91-615b-468f-814b-87e5376a960f
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 1f097d500c1d1b0a035f2bb0e737214d65803414
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 534d7238316fe2037ea0ce43e2b4aeeb11e6eea2
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97477719"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171330"
 ---
 # <a name="always-encrypted"></a>Always Encrypted
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -31,14 +31,14 @@ ms.locfileid: "97477719"
   
  Always Encrypted 是一個設計來保護儲存於 [!INCLUDE[ssSDSFull](../../../includes/sssdsfull-md.md)] 或 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 資料庫中之敏感性資料的功能，像是信用卡號碼或全國性的身分證字號 (例如美國社會安全號碼)。 Always Encrypted 可讓用戶端將用戶端應用程式內的敏感性資料進行加密，且絕不會顯示 [!INCLUDE[ssDE](../../../includes/ssde-md.md)] ([!INCLUDE[ssSDS](../../../includes/sssds-md.md)] 或 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]) 的加密金鑰。 如此一來，Always Encrypted 在資料擁有者 (且可以檢視資料) 和資料管理者 (但應該不具備存取權) 之間做出區隔。 透過確定內部部署資料庫系統管理員，雲端資料庫操作員，或其他高權限未經授權的使用者則無法存取加密資料，Always Encrypted 可讓客戶有信心地將機密資料存放在他們無法直接控制的位置。 這讓組織能夠將其資料儲存在 Azure 中，並將內部部署資料庫管理委派給第三方，或是降低組織本身 DBA 人員的安全性許可需求。
 
- Always Encrypted 藉由啟用 [!INCLUDE[ssDE](../../../includes/ssde-md.md)] 來處理對加密資料的一些查詢，同時保留資料的機密性並提供上述安全性優點，從而提供機密計算功能。 在 [!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)]、[!INCLUDE[sssSQLv14](../../../includes/sssqlv14-md.md)] 和 [!INCLUDE[ssSDSFull](../../../includes/sssdsfull-md.md)] 中，Always Encrypted 透過決定性加密支援相等比較。 請參閱[選擇決定性加密或隨機加密](#selecting--deterministic-or-randomized-encryption)。 
+ Always Encrypted 藉由啟用 [!INCLUDE[ssDE](../../../includes/ssde-md.md)] 來處理對加密資料的一些查詢，同時保留資料的機密性並提供上述安全性優點，從而提供機密計算功能。 在 [!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)]、[!INCLUDE[sssSQLv14](../../../includes/sssqlv14-md.md)] 和 [!INCLUDE[ssSDSFull](../../../includes/sssdsfull-md.md)] 中，Always Encrypted 透過決定性加密支援相等比較。 請參閱[選擇決定性加密或隨機加密](#selecting--deterministic-or-randomized-encryption)。 
 
   > [!NOTE] 
   > 在 [!INCLUDE[sql-server-2019](../../../includes/sssqlv15-md.md)] 中，安全記憶體保護區會利用模式比對、其他比較運算子和就地加密，大幅擴充 Always Encrypted 的機密計算功能。 請參閱[具有安全記憶體保護區的 Always Encrypted](always-encrypted-enclaves.md)。
 
  永遠加密讓應用程式加密變得透明化。 安裝在用戶端電腦上且啟用永遠加密的驅動程式，透過自動將用戶端應用程式中的機密資料進行加密與解密，進而達成此目的。 驅動程式會先將敏感資料行中的資料進行加密，才會將資料傳遞至 [!INCLUDE[ssDE](../../../includes/ssde-md.md)]，並自動重寫查詢以保留應用程式的語意。 同樣地，驅動程式會將儲存在加密資料庫資料行並包含在查詢結果中的資料明確解密。  
   
- Always Encrypted 在 [!INCLUDE[ssSDSFull](../../../includes/sssdsfull-md.md)] 所有的版本中都有提供，從 [!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)] 和 [!INCLUDE[ssSDS](../../../includes/sssds-md.md)] 的所有服務層級開始。 (在 [!INCLUDE[ssSQL15_md](../../../includes/sssql15-md.md)] SP1 之前，Always Encrypted 僅限於 Enterprise Edition 中使用)。如需包含「永遠加密」的 Channel 9 簡報，請參閱 [使用 [永遠加密] 保護機密資料安全性](https://channel9.msdn.com/events/DataDriven/SQLServer2016/AlwaysEncrypted)。  
+ Always Encrypted 在 [!INCLUDE[ssSDSFull](../../../includes/sssdsfull-md.md)] 所有的版本中都有提供，從 [!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)] 和 [!INCLUDE[ssSDS](../../../includes/sssds-md.md)] 的所有服務層級開始。 (在 [!INCLUDE[ssSQL15_md](../../../includes/sssql16-md.md)] SP1 之前，Always Encrypted 僅限於 Enterprise Edition 中使用)。如需包含「永遠加密」的 Channel 9 簡報，請參閱 [使用 [永遠加密] 保護機密資料安全性](https://channel9.msdn.com/events/DataDriven/SQLServer2016/AlwaysEncrypted)。  
 
   
 ## <a name="typical-scenarios"></a>典型案例  

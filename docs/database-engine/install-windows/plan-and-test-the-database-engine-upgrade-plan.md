@@ -11,12 +11,12 @@ ms.assetid: 19c5b725-7400-4881-af8f-fd232ca28234
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 73c70e347de00a18f4c4ec5ce3228d6d000d16f0
-ms.sourcegitcommit: 3ec49252e82590de0fe559a8574606ae213f6f3b
+ms.openlocfilehash: 45b0ba2a207be68b0faaea0af0ba7592ae1f0f94
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97975445"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172270"
 ---
 # <a name="plan-and-test-the-database-engine-upgrade-plan"></a>計劃和測試資料庫引擎升級計畫
 
@@ -39,7 +39,7 @@ ms.locfileid: "97975445"
   
 -   **目前的環境：** 研究您目前的環境，了解正在使用之 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 元件和連線到您環境的用戶端。  
   
-    -   **用戶端提供者：** 雖然升級時您不需要更新每個用戶端的提供者，但您也可以選擇更新。 如果您要從 [!INCLUDE[sql14](../../includes/sssql14-md.md)] 或更舊版本升級，下列 [!INCLUDE[sql15](../../includes/sssql15-md.md)] 功能將需要每個用戶端的已更新提供者，或提供額外功能的已更新提供者：  
+    -   **用戶端提供者：** 雖然升級時您不需要更新每個用戶端的提供者，但您也可以選擇更新。 如果您要從 [!INCLUDE[sql14](../../includes/sssql14-md.md)] 或更舊版本升級，下列 [!INCLUDE[sql15](../../includes/sssql16-md.md)] 功能將需要每個用戶端的已更新提供者，或提供額外功能的已更新提供者：  
   
        -   [永遠加密 &#40;Database Engine&#41;](../../relational-databases/security/encryption/always-encrypted-database-engine.md)  
   

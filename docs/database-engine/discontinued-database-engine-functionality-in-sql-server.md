@@ -36,12 +36,12 @@ ms.assetid: d686cdf0-d11d-4dba-9ec8-de1a5f189f25
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>= sql-server-linux-2017  || >= sql-server-2016'
-ms.openlocfilehash: 705cd4be70b642a6436bdecf58ae8c18adaff281
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 2d265fa2ed17f10485bb3d9009eef25375fb2de4
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97643998"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170870"
 ---
 # <a name="discontinued-database-engine-functionality-in-sql-server"></a>SQL Server 中已中止的資料庫引擎功能
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
@@ -61,9 +61,9 @@ ms.locfileid: "97643998"
 >[!NOTE]
 >[!INCLUDE[ssSQLv14](../includes/sssqlv14-md.md)] 中沒有任何已中止的功能。
 
-## <a name="discontinued-features-in-sssql15"></a>[!INCLUDE[ssSQL15](../includes/sssql15-md.md)] 中已中止的功能
+## <a name="discontinued-features-in-sssql15"></a>[!INCLUDE[ssSQL15](../includes/sssql16-md.md)] 中已中止的功能
 
-- [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] 是 64 位元應用程式。 即使有些元素是以 32 位元元件的形式執行，32 位元安裝已然中止。  
+- [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] 是 64 位元應用程式。 即使有些元素是以 32 位元元件的形式執行，32 位元安裝已然中止。  
 
 - 已停止相容性層級 90。 如需詳細資訊，請參閱 [ALTER DATABASE 相容性層級 &#40;Transact-SQL&#41;](../t-sql/statements/alter-database-transact-sql-compatibility-level.md)。  
 

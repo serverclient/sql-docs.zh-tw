@@ -15,12 +15,12 @@ ms.assetid: 83a4aa90-1c10-4de6-956b-7c3cd464c2d2
 author: rothja
 ms.author: jroth
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4fdc13dcfa509ed2df3ec39afe5a9aa591aa6e39
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 22e1a4832e3ef02d2b596ecd0dd4af3a08a7ec6e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97461939"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171870"
 ---
 # <a name="pages-and-extents-architecture-guide"></a>分頁與範圍架構指南
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -92,12 +92,12 @@ ms.locfileid: "97461939"
 
 最高到 (並包含) [!INCLUDE[ssSQL14](../includes/sssql14-md.md)]，[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 並不會將整個範圍配置給包含少量資料的資料表。 新的資料表或索引，一般會從混合的範圍中配置分頁。 當資料表或索引成長至擁有八個分頁之後，接著會為後續配置切換成使用制式的範圍。 如果現有資料表有足夠的資料列可在索引中產生八個分頁，若對該資料表建立索引，索引的所有配置都將採用制式的範圍。 
 
-從 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] 開始，使用者資料庫與 tempdb 中大部分配置的預設值都會使用統一範圍，但屬於 [IAM 鏈結](#IAM)前八個分頁的配置除外。 針對 master、msdb 與 model 資料庫的配置仍會保留先前的行為。 
+從 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] 開始，使用者資料庫與 tempdb 中大部分配置的預設值都會使用統一範圍，但屬於 [IAM 鏈結](#IAM)前八個分頁的配置除外。 針對 master、msdb 與 model 資料庫的配置仍會保留先前的行為。 
 
 > [!NOTE]
 > 最高到 (並包含) [!INCLUDE[ssSQL14](../includes/sssql14-md.md)]，追蹤旗標 1118 可以用來將預設配置變更為一律使用統一範圍。 如需此追蹤旗標的詳細資訊，請參閱 [DBCC TRACEON - 追蹤旗標](../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md)。   
 >   
-> 從 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] 開始，會針對 tempdb 與所有使用者資料庫自動啟用 TF 1118 所提供的功能。 對於使用者資料庫，此行為由 `ALTER DATABASE` 的 `SET MIXED_PAGE_ALLOCATION` 選項 (預設值設定為 OFF) 所控制，而且追蹤旗標 1118 沒有作用。 如需詳細資訊，請參閱 [ALTER DATABASE SET 選項 (Transact-SQL)](../t-sql/statements/alter-database-transact-sql-set-options.md)。
+> 從 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] 開始，會針對 tempdb 與所有使用者資料庫自動啟用 TF 1118 所提供的功能。 對於使用者資料庫，此行為由 `ALTER DATABASE` 的 `SET MIXED_PAGE_ALLOCATION` 選項 (預設值設定為 OFF) 所控制，而且追蹤旗標 1118 沒有作用。 如需詳細資訊，請參閱 [ALTER DATABASE SET 選項 (Transact-SQL)](../t-sql/statements/alter-database-transact-sql-set-options.md)。
 
 從 [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] 開始，`sys.dm_db_database_page_allocations` 系統函數可以報告資料庫、資料表、索引與資料分割的分頁配置資訊。
 

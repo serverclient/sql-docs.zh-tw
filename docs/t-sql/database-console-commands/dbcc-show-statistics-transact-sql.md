@@ -34,12 +34,12 @@ ms.assetid: 12be2923-7289-4150-b497-f17e76a50b2e
 author: pmasl
 ms.author: umajay
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c0d83ada5889c27e960c8ab798c3784d2095a818
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 710a6211b588ab0dd4745b41af1f330c81241294
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97480519"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170500"
 ---
 # <a name="dbcc-show_statistics-transact-sql"></a>DBCC SHOW_STATISTICS (Transact-SQL)
 
@@ -58,7 +58,7 @@ DBCC SHOW_STATISTICS 會根據儲存在統計資料物件中的資料來顯示�
 > 從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 和 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] SP1 開始，[sys.dm_db_incremental_stats_properties](../../relational-databases/system-dynamic-management-views/sys-dm-db-incremental-stats-properties-transact-sql.md) 動態管理檢視可讓您以程式設計方式擷取統計資料物件中包含的標頭資訊，以取得累加統計資料。
 
 > [!IMPORTANT]
-> 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 CU2 開始，[sys.dm_db_stats_histogram](../../relational-databases/system-dynamic-management-views/sys-dm-db-stats-histogram-transact-sql.md) 動態管理檢視可讓您以程式設計方式擷取統計資料物件中包含的長條圖資訊。
+> 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 CU2 開始，[sys.dm_db_stats_histogram](../../relational-databases/system-dynamic-management-views/sys-dm-db-stats-histogram-transact-sql.md) 動態管理檢視可讓您以程式設計方式擷取統計資料物件中包含的長條圖資訊。
 
 ![主題連結圖示](../../database-engine/configure-windows/media/topic-link.gif "主題連結圖示") [Transact-SQL 語法慣例](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
   
@@ -120,7 +120,7 @@ DBCC SHOW_STATISTICS ( table_name , target )
 |String Index|Yes 表示統計資料物件包含了字串摘要統計資料來改善使用 LIKE 運算子之查詢述詞的基數預估，例如 `WHERE ProductName LIKE '%Bike'`。 字串摘要統計資料會與長條圖分開儲存，而且會在具有 **char**、**varchar**、**nchar**、**nvarchar**、**varchar(max)** 、**nvarchar(max)** 、**text** 或 **ntext** 類型時於統計資料物件的第一個索引鍵資料行上建立。|  
 |篩選運算式|包含在統計資料物件中之資料表資料列子集的述詞。 NULL = 非篩選的統計資料。 如需篩選述詞的詳細資訊，請參閱[建立篩選的索引](../../relational-databases/indexes/create-filtered-indexes.md)。 如需已篩選統計資料的詳細資訊，請參閱[統計資料](../../relational-databases/statistics/statistics.md)。|  
 |Unfiltered Rows|套用篩選運算式之前，資料表中的資料列總數。 如果 Filter Expression 為 NULL，Unfiltered Rows 就會等於 Rows。|  
-|保存取樣百分比|使用於未明確指定取樣百分比之統計資料更新的保存取樣百分比。 如果值為零，表示這個統計資料未設定保存取樣百分比。<br /><br /> **適用範圍：** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 CU4| 
+|保存取樣百分比|使用於未明確指定取樣百分比之統計資料更新的保存取樣百分比。 如果值為零，表示這個統計資料未設定保存取樣百分比。<br /><br /> **適用範圍：** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 CU4| 
   
 下表描述指定 DENSITY_VECTOR 時，結果集所傳回的資料行。
   

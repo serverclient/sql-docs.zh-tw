@@ -18,12 +18,12 @@ ms.assetid: 07f8f594-75b4-4591-8c29-d63811d7753e
 author: pmasl
 ms.author: pelopes
 manager: amitban
-ms.openlocfilehash: 125a95f14f7082a3ed806d6dfa7fcb05b6d11c81
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: 57372929f190ff2fe32e7688d16acc75fafc9700
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96505065"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171550"
 ---
 # <a name="query-profiling-infrastructure"></a>查詢分析基礎結構
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -53,16 +53,16 @@ ms.locfileid: "96505065"
 
 ## <a name="the-lightweight-query-execution-statistics-profiling-infrastructure"></a><a name="lwp"></a> 輕量型查詢執行統計資料分析基礎結構
 
-從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 和 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，引進了新的 *輕量型查詢執行統計資料分析基礎結構* (或 **輕量型分析**)。 
+從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 和 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，引進了新的 *輕量型查詢執行統計資料分析基礎結構* (或 **輕量型分析**)。 
 
 > [!NOTE]
 > 輕量型分析不支援原生編譯的預存程序。  
 
 ### <a name="lightweight-query-execution-statistics-profiling-infrastructure-v1"></a>輕量型查詢執行統計資料分析基礎結構 v1
 
-**適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 至 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)])。 
+**適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 至 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)])。 
   
-從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 和[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，已藉由引進輕量型分析來降低收集執行計畫相關資訊的效能額外負荷。 不同於標準分析，輕量型分析不會收集 CPU 執行階段資訊。 不過，輕量型分析仍會收集資料列計數和 I/O 使用量資訊。
+從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 和[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，已藉由引進輕量型分析來降低收集執行計畫相關資訊的效能額外負荷。 不同於標準分析，輕量型分析不會收集 CPU 執行階段資訊。 不過，輕量型分析仍會收集資料列計數和 I/O 使用量資訊。
 
 同時，也引進了新的 **_query_thread_profile_* _ 擴充事件來利用輕量型分析。 此擴充事件會公開每個運算子執行統計資料，以便更深入了解每個節點和執行緒的效能。 您可以設定使用此擴充事件的範例工作階段，如下列範例所示：
 
@@ -90,11 +90,11 @@ WITH (MAX_MEMORY=4096 KB,
 
 ### <a name="lightweight-query-execution-statistics-profiling-infrastructure-v2"></a>輕量型查詢執行統計資料分析基礎結構 v2
 
-**適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 至 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)])。 
+**適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 至 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)])。 
 
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 包含額外負荷最低的輕量型分析修訂版。 針對上方「適用於」中所述的版本，也可以使用[追蹤旗標 7412](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md) 全域啟用輕量型分析。 已引進新的 DMF [sys.dm_exec_query_statistics_xml](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-statistics-xml-transact-sql.md)，針對進行中的要求傳回查詢執行計畫。
+[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 包含額外負荷最低的輕量型分析修訂版。 針對上方「適用於」中所述的版本，也可以使用[追蹤旗標 7412](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md) 全域啟用輕量型分析。 已引進新的 DMF [sys.dm_exec_query_statistics_xml](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-statistics-xml-transact-sql.md)，針對進行中的要求傳回查詢執行計畫。
 
-從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 CU3 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU11 開始，如果未全域啟用輕量型分析，則可使用新的 [USE HINT 查詢提示](../../t-sql/queries/hints-transact-sql-query.md#use_hint)引數 **QUERY_PLAN_PROFILE**，針對任何工作階段啟用查詢層級的輕量型分析。 當包含這個新提示的查詢完成時，也會輸出新的 **_query_plan_profile_* _ 擴充事件，以提供類似 _query_post_execution_showplan* 擴充事件的實際執行計畫 XML。 
+從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 CU3 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU11 開始，如果未全域啟用輕量型分析，則可使用新的 [USE HINT 查詢提示](../../t-sql/queries/hints-transact-sql-query.md#use_hint)引數 **QUERY_PLAN_PROFILE**，針對任何工作階段啟用查詢層級的輕量型分析。 當包含這個新提示的查詢完成時，也會輸出新的 **_query_plan_profile_* _ 擴充事件，以提供類似 _query_post_execution_showplan* 擴充事件的實際執行計畫 XML。 
 
 > [!NOTE]
 > 即使未使用查詢提示，*query_plan_profile* 擴充事件也會利用輕量型分析。 
@@ -178,17 +178,17 @@ WITH (MAX_MEMORY=4096 KB, EVENT_RETENTION_MODE=ALLOW_SINGLE_EVENT_LOSS,
 
 |影響範圍|標準分析|輕量型分析|
 |---------------|---------------|---------------|
-|全域|具有 `query_post_execution_showplan` XE 的 xEvent 工作階段；從 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 開始|追蹤旗標 7412；從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 開始|
+|全域|具有 `query_post_execution_showplan` XE 的 xEvent 工作階段；從 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 開始|追蹤旗標 7412；從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 開始|
 |全域|具有 `Showplan XML` 追蹤事件的 SQL 追蹤與 SQL Server Profiler；從 SQL Server 2000 開始|具有 `query_thread_profile` XE 的 xEvent 工作階段；從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 開始|
 |全域|-|具有 `query_post_execution_plan_profile` XE 的 xEvent 工作階段；從 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU14 與 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 開始|
-|工作階段|使用 `SET STATISTICS XML ON`；從 SQL Server 2000 開始|使用 `query_plan_profile` XE 搭配 xEvent 工作階段使用 `QUERY_PLAN_PROFILE` 查詢提示；從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 CU3 與 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU11 開始|
+|工作階段|使用 `SET STATISTICS XML ON`；從 SQL Server 2000 開始|使用 `query_plan_profile` XE 搭配 xEvent 工作階段使用 `QUERY_PLAN_PROFILE` 查詢提示；從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 CU3 與 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU11 開始|
 |工作階段|使用 `SET STATISTICS PROFILE ON`；從 SQL Server 2000 開始|-|
 |工作階段|按一下 SSMS 中的[即時查詢統計資料](../../relational-databases/performance/live-query-statistics.md)按鈕；從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 開始|-|
 
 ## <a name="remarks"></a>備註
 
 > [!IMPORTANT]
-> 由於執行參考 [sys.dm_exec_query_statistics_xml](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-statistics-xml-transact-sql.md) 的監視預存程序時可能會產生隨機 AV，因而請確保會在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 中安裝 [KB 4078596](https://support.microsoft.com/help/4078596)。
+> 由於執行參考 [sys.dm_exec_query_statistics_xml](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-statistics-xml-transact-sql.md) 的監視預存程序時可能會產生隨機 AV，因而請確保會在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 中安裝 [KB 4078596](https://support.microsoft.com/help/4078596)。
 
 從輕量型分析 v2 及其低額外負荷開始，尚未受限於 CPU 的任何伺服器都可 **持續** 執行輕量型分析，並讓資料庫專業人員可隨時點選任何執行中的執行 (例如，使用活動監視器，或直接查詢 `sys.dm_exec_query_profiles`)，並取得含執行階段統計資料的查詢計畫。
 

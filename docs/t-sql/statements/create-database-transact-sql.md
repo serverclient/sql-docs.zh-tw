@@ -37,12 +37,12 @@ ms.assetid: 29ddac46-7a0f-4151-bd94-75c1908c89f8
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-current||=azuresqldb-mi-current||=azure-sqldw-latest||>=aps-pdw-2016'
-ms.openlocfilehash: fbca8f9ddae17466aa99ae096efbf9b23d03c24c
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 7898cec5362efc7902623993f568600271c033d5
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98100853"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171610"
 ---
 # <a name="create-database"></a>CREATE DATABASE
 
@@ -371,7 +371,7 @@ SIZE *size* 指定檔案的大小。
 
 *size* 這是檔案的初始大小。
 
-未提供主要檔案的 *size* 時，[!INCLUDE[ssDE](../../includes/ssde-md.md)]會使用模型資料庫中主要檔案的大小。 模型的預設大小是 8 MB (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始) 或 1 MB (適用於舊版)。 已指定次要資料檔或記錄檔，但未指定檔案的 *size* 時，[!INCLUDE[ssDE](../../includes/ssde-md.md)]會將檔案大小設定為 8 MB (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始) 或 1 MB (適用於舊版)。 所指定的主要檔案大小至少必須跟 model 資料庫的主要檔案大小一樣大。
+未提供主要檔案的 *size* 時，[!INCLUDE[ssDE](../../includes/ssde-md.md)]會使用模型資料庫中主要檔案的大小。 模型的預設大小是 8 MB (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始) 或 1 MB (適用於舊版)。 已指定次要資料檔或記錄檔，但未指定檔案的 *size* 時，[!INCLUDE[ssDE](../../includes/ssde-md.md)]會將檔案大小設定為 8 MB (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始) 或 1 MB (適用於舊版)。 所指定的主要檔案大小至少必須跟 model 資料庫的主要檔案大小一樣大。
 
 您可以使用千位元組 (KB)、百萬位元組 (MB)、十億位元組 (GB) 或兆位元組 (TB) 後置詞。 預設值是 MB。 請指定一個整數，不包括小數點。 *Size* 是一個整數值。 如果是大於 2147483647 的值，請使用較大的單位。
 
@@ -396,7 +396,7 @@ FILEGROWTH *growth_increment* 指定檔案的自動成長遞增。 檔案的 FIL
 
 |版本|預設值|
 |-------------|--------------------|
-|從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始|資料 64 MB。 記錄檔 64 MB。|
+|從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始|資料 64 MB。 記錄檔 64 MB。|
 |從 [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 開始|資料 1 MB。 記錄檔 10%。|
 |[!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 之前|資料 10%。 記錄檔 10%。|
 

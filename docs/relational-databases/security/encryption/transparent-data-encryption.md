@@ -19,12 +19,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2dfa929e7a669ef20eb178353fb7055f5f244f8a
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 06288dc0bc6e16ab8928322005254f5fac1ddc61
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97475569"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171480"
 ---
 # <a name="transparent-data-encryption-tde"></a>透明資料加密 (TDE)
 
@@ -314,7 +314,7 @@ ALTER DATABASE <db_name> SET ENCRYPTION OFF;
 
 ## <a name="tde-and-in-memory-oltp"></a>TDE 和記憶體內部 OLTP
 
-您可對具有記憶體中 OLTP 物件的資料庫啟用 TDE。 在 [!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)] 和 [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)] 中，如果啟用 TDE，即會加密記憶體中 OLTP 記錄和資料。 在 [!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)] 中，如果啟用 TDE，即會加密記憶體中 OLTP 記錄檔的記錄，但不會加密 MEMORY_OPTIMIZED_DATA 檔案群組中的檔案。
+您可對具有記憶體中 OLTP 物件的資料庫啟用 TDE。 在 [!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)] 和 [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)] 中，如果啟用 TDE，即會加密記憶體中 OLTP 記錄和資料。 在 [!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)] 中，如果啟用 TDE，即會加密記憶體中 OLTP 記錄檔的記錄，但不會加密 MEMORY_OPTIMIZED_DATA 檔案群組中的檔案。
 
 ## <a name="related-tasks"></a>相關工作
 

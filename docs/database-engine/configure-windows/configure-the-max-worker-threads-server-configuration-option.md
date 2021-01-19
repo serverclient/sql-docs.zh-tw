@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: abeadfa4-a14d-469a-bacf-75812e48fac1
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 89da087dd829642653fee6ae8648af3c1c00c2a0
-ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
+ms.openlocfilehash: 4d95d8f774d2b9daba6bd2a0e7a179dd901ef0ac
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97878884"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171040"
 ---
 # <a name="configure-the-max-worker-threads-server-configuration-option"></a>設定 max worker threads 伺服器組態選項
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -69,7 +69,7 @@ ms.locfileid: "97878884"
   
 -   下表顯示根據 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的不同 CPU、電腦架構和版本組合自動設定的最大背景工作執行緒數目 (值設為 0 時)，使用的公式為：**預設最大背景工作角色 + ((邏輯 CPU 數目** - 4) * 每個 CPU 的背景工作角色)**。  
   
-    |CPU 數|32 位元電腦 (最多為 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)])|64 位元電腦 (最多為 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1)|64 位元電腦 (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 開始)|   
+    |CPU 數|32 位元電腦 (最多為 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)])|64 位元電腦 (最多為 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1)|64 位元電腦 (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 開始)|   
     |------------|------------|------------|------------|  
     |\<= 4|256|512|512|   
     |8|288|576|576|   
@@ -79,14 +79,14 @@ ms.locfileid: "97878884"
     |128|1248|2496|4480|   
     |256|2272|4544|8576|   
     
-    最多為 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1，每個 CPU 的「背景工作角色」只取決於架構 (32 位元或 64 位元)：
+    最多為 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1，每個 CPU 的「背景工作角色」只取決於架構 (32 位元或 64 位元)：
     
     |CPU 數|32 位元電腦 <sup>1</sup>|64 位元電腦|   
     |------------|------------|------------|   
     |\<= 4|256|512|   
     |\> 4|256 + ((邏輯 CPU 數 - 4) * 8)|512 <sup>2</sup> + ((邏輯 CPU 數目 - 4) * 16)|   
     
-    從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 開始，「每個 CPU 的背景工作角色」取決於架構和處理器數目 (介於 4 到 64，或大於 64)：
+    從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 開始，「每個 CPU 的背景工作角色」取決於架構和處理器數目 (介於 4 到 64，或大於 64)：
     
     |CPU 數|32 位元電腦 <sup>1</sup>|64 位元電腦|   
     |------------|------------|------------|   
@@ -94,7 +94,7 @@ ms.locfileid: "97878884"
     |\> 4 和 \<= 64|256 + ((邏輯 CPU 數 - 4) * 8)|512 <sup>2</sup> + ((邏輯 CPU 數目 - 4) * 16)|   
     |\> 64|256 + ((邏輯 CPU 數目 - 4) * 32)|512 <sup>2</sup> + ((邏輯 CPU 數目 - 4) * 32)|   
   
-    <sup>1</sup> 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 不可以安裝在 32 位元作業系統上。 列出 32 位元電腦值以協助客戶執行 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 或更早版本。 建議在 32 位元電腦上執行的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體的背景工作執行緒最大數目設為 1,024。
+    <sup>1</sup> 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 不可以安裝在 32 位元作業系統上。 列出 32 位元電腦值以協助客戶執行 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 或更早版本。 建議在 32 位元電腦上執行的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體的背景工作執行緒最大數目設為 1,024。
     
     <sup>2</sup> 從 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 開始，針對記憶體小於 2GB 的機器，「預設最大背景工作角色」值會除以 2。
   

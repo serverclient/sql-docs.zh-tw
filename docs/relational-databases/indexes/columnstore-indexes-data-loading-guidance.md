@@ -12,12 +12,12 @@ ms.assetid: b29850b5-5530-498d-8298-c4d4a741cdaf
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3dd7431a208db3f0da1e2ee53522920319b40af0
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: b6a0b60d8b690490074187d977d9bd636d88aea3
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97407468"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172680"
 ---
 # <a name="columnstore-indexes---data-loading-guidance"></a>資料行存放區索引 - 資料載入指導
 
@@ -89,7 +89,7 @@ INSERT INTO <columnstore index>
 SELECT <list of columns> FROM <Staging Table>  
 ```  
   
- 此命令會以 BCP 或大量插入等類似方式，將資料載入資料行存放區索引，但是為單一批次。 如果在暫存表格中的資料列數目 < 102400，資料列會載入差異資料列群組，否則資料列會直接載入壓縮的資料列群組中。 有一項很重要的限制是，這項 `INSERT` 作業為單一執行緒。 若要平行載入資料，可以建立多個暫存表格，或發出 `INSERT`/`SELECT` 同時設定暫存表格不重疊的資料列範圍。 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 時已無這項限制。 下列命令會從暫存表格以平行方式載入資料，但您必須指定 `TABLOCK`。 您可能會發現這與稍早所述的大量載入有所矛盾，但主要差異在於從暫存表格以平行方式載入資料會在相同的交易下執行。
+ 此命令會以 BCP 或大量插入等類似方式，將資料載入資料行存放區索引，但是為單一批次。 如果在暫存表格中的資料列數目 < 102400，資料列會載入差異資料列群組，否則資料列會直接載入壓縮的資料列群組中。 有一項很重要的限制是，這項 `INSERT` 作業為單一執行緒。 若要平行載入資料，可以建立多個暫存表格，或發出 `INSERT`/`SELECT` 同時設定暫存表格不重疊的資料列範圍。 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 時已無這項限制。 下列命令會從暫存表格以平行方式載入資料，但您必須指定 `TABLOCK`。 您可能會發現這與稍早所述的大量載入有所矛盾，但主要差異在於從暫存表格以平行方式載入資料會在相同的交易下執行。
   
 ```sql  
 INSERT INTO <columnstore index> WITH (TABLOCK) 

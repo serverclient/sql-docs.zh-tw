@@ -72,7 +72,7 @@ ALTER WORKLOAD GROUP { group_name | "default" }
 > 根據預設，Resource Governor 不會在超過最大時間時，阻止要求繼續執行。 不過，系統將會產生某個事件。 如需詳細資訊，請參閱[超過 CPU 閾值事件類別](../relational-databases/event-classes/cpu-threshold-exceeded-event-class.md)。 
 
 > [!IMPORTANT]
-> 從 [!INCLUDE[ssSQL15](sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](sssql17-md.md)] CU3 開始，並使用[追蹤旗標 2422](../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md)，Resource Governor 將在超過時間上限時中止要求。
+> 從 [!INCLUDE[ssSQL15](sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](sssql17-md.md)] CU3 開始，並使用[追蹤旗標 2422](../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md)，Resource Governor 將在超過時間上限時中止要求。
   
  REQUEST_MEMORY_GRANT_TIMEOUT_SEC =*value*  
  指定查詢能夠等待記憶體授權 (工作緩衝區記憶體) 變成可用的最大時間 (以秒為單位)。  

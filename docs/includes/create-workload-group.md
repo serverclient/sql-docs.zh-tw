@@ -64,7 +64,7 @@ REQUEST_MAX_CPU_TIME_SEC = *value*</br>
 > [!NOTE]
 > 根據預設，Resource Governor 不會在超過最大時間時，阻止要求繼續執行。 不過，系統將會產生某個事件。 如需詳細資訊，請參閱[超過 CPU 閾值事件類別](../relational-databases/event-classes/cpu-threshold-exceeded-event-class.md)。
 > [!IMPORTANT]
-> 從 [!INCLUDE[ssSQL15](sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](sssql17-md.md)] CU3 開始，並使用[追蹤旗標 2422](../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md)，Resource Governor 將在超過時間上限時中止要求。
+> 從 [!INCLUDE[ssSQL15](sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](sssql17-md.md)] CU3 開始，並使用[追蹤旗標 2422](../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md)，Resource Governor 將在超過時間上限時中止要求。
 
 REQUEST_MEMORY_GRANT_TIMEOUT_SEC = *value*</br>
 指定查詢能夠等待記憶體授權 (工作緩衝區記憶體) 變成可用的最大時間 (以秒為單位)。 *value* 必須是 0 或正整數。 *value* 的預設設定 0 會根據查詢成本使用內部計算來判斷最大時間。
@@ -97,7 +97,7 @@ USING { *pool_name* |  **"default"** }</br>
 > 預先定義的工作負載群組和資源集區都會使用小寫名稱，例如 "default"。 如果是使用區分大小寫之定序的伺服器，則應該將此列入考量。 具有不區分大小寫之定序 (如 SQL_Latin1_General_CP1_CI_AS) 的伺服器會將 "default" 和 "Default" 視為相同。
 
 EXTERNAL external_pool_name | "default"</br>
-**適用於** ：[!INCLUDE[ssNoVersion](ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](sssql15-md.md)] 起)。
+**適用於**：[!INCLUDE[ssNoVersion](ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](sssql16-md.md)] 起)。
 
 工作負載群組可指定外部資源集區。 您可以定義工作負載群組，並與兩個集區產生關聯：
 

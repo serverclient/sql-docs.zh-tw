@@ -15,23 +15,23 @@ helpviewer_keywords:
 ms.assetid: 0a992ea8-3ec6-4a4d-97b5-460ae7326247
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: f5790d5eb416f789bbe67f10d28f18a375b4c572
-ms.sourcegitcommit: 21c14308b1531e19b95c811ed11b37b9cf696d19
+ms.openlocfilehash: 893400411c6f3d2faf6313923aa0f6127a3f2cf0
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158926"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171070"
 ---
 # <a name="access-check-cache-server-configuration-options"></a>存取檢查快取伺服器組態選項
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-當資料庫物件是由 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]所存取時，存取檢查會在稱為 **access check result cache**的內部結構中進行快取。 
+當資料庫物件是由 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]所存取時，存取檢查會在稱為 **access check result cache** 的內部結構中進行快取。 
   
 [存取檢查快取 Bucket 計數] 選項可控制用於存取檢查結果快取的雜湊貯體數目。 
 
 [存取檢查快取配額] 選項可控制儲存在存取檢查結果快取中的項目數。 達到最大項目數時，會從存取檢查結果快取中移除最舊的項目。
   
-預設值 0 表示 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 正在管理這些選項。 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，預設值會轉譯為下列內部組態：
+預設值 0 表示 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 正在管理這些選項。 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，預設值會轉譯為下列內部組態：
 -   針對存取檢查快取 Bucket 計數，值 0 會設定預設值 256 個貯體。
 -   針對存取檢查快取配額，值 0 會設定預設值 1,024 個項目。
 

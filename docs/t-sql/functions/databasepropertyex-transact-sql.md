@@ -21,12 +21,12 @@ ms.assetid: 8a9e0ffb-28b5-4640-95b2-a54e3e5ad941
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 62ee92cdbe0b086b167f31e7eb67685b6d7061e4
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 096d215aa0962b3a580cdd43a337075aab638964
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98093701"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171140"
 ---
 # <a name="databasepropertyex-transact-sql"></a>DATABASEPROPERTYEX (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -86,9 +86,9 @@ DATABASEPROPERTYEX ( database , property )
 |IsSubscribed|將資料庫訂閱到發行集中。|1：TRUE<br /><br /> 0：FALSE<br /><br /> NULL：輸入無效<br /><br /> 基底資料類型：**int**|  
 |IsSyncWithBackup|該資料庫是已發行的資料庫或散發資料庫，並支援在不干擾異動複寫的情況下進行還原。|1：TRUE<br /><br /> 0：FALSE<br /><br /> NULL：輸入無效<br /><br /> 基底資料類型：**int**|  
 |IsTornPageDetectionEnabled|[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 偵測到因為斷電或其他系統失效所造成的不完全 I/O 作業。|1：TRUE<br /><br /> 0：FALSE<br /><br /> NULL：輸入無效<br /><br /> 基底資料類型：**int**| 
-|IsVerifiedClone|資料庫僅為使用 DBCC CLONEDATABASE 之 WITH VERIFY_CLONEDB 選項所建立之使用者資料庫的結構描述和統計資料複本。 如需詳細資訊，請參閱此 [Microsoft 支援服務文章](https://support.microsoft.com/help/3177838)。|**適用於**：從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 開始。<br /><br /> <br /><br /> 1：TRUE<br /><br /> 0：FALSE<br /><br /> NULL：輸入無效<br /><br /> 基底資料類型：**int**| 
-|IsXTPSupported|指出資料庫是否支援記憶體內部 OLTP，即建立及使用經記憶體最佳化的資料表和原生編譯模組。<br /><br /> 特定於 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]：<br /><br /> IsXTPSupported 是獨立於任何建立記憶體內部 OLTP 物件所必須之 MEMORY_OPTIMIZED_DATA 檔案群組的存在之外。|**適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。<br /><br /> 1：TRUE<br /><br /> 0：FALSE<br /><br /> NULL：輸入無效、發生錯誤或不適用<br /><br /> 基底資料類型：**int**|  
-|LastGoodCheckDbTime|最後一個成功 DBCC CHECKDB 在指定的資料庫上執行的日期和時間。<sup>1</sup> 如果 DBCC CHECKDB 尚未在資料庫上執行，則回傳回 1900-01-01 00:00:00.000。|**適用於**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] (從 SP2 開始)。</br>[!INCLUDE[sssqlv14](../../includes/sssqlv14-md.md)] 從 CU9 開始。</br>[!INCLUDE[sssqlv15](../../includes/sssqlv15-md.md)] 或更新版本。</br>Azure SQL Database。<br/><br/>日期時間值<br /><br /> NULL：輸入無效<br /><br /> 基底資料型別：**datetime**| 
+|IsVerifiedClone|資料庫僅為使用 DBCC CLONEDATABASE 之 WITH VERIFY_CLONEDB 選項所建立之使用者資料庫的結構描述和統計資料複本。 如需詳細資訊，請參閱此 [Microsoft 支援服務文章](https://support.microsoft.com/help/3177838)。|**適用於**：從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 開始。<br /><br /> <br /><br /> 1：TRUE<br /><br /> 0：FALSE<br /><br /> NULL：輸入無效<br /><br /> 基底資料類型：**int**| 
+|IsXTPSupported|指出資料庫是否支援記憶體內部 OLTP，即建立及使用經記憶體最佳化的資料表和原生編譯模組。<br /><br /> 特定於 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]：<br /><br /> IsXTPSupported 是獨立於任何建立記憶體內部 OLTP 物件所必須之 MEMORY_OPTIMIZED_DATA 檔案群組的存在之外。|**適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。<br /><br /> 1：TRUE<br /><br /> 0：FALSE<br /><br /> NULL：輸入無效、發生錯誤或不適用<br /><br /> 基底資料類型：**int**|  
+|LastGoodCheckDbTime|最後一個成功 DBCC CHECKDB 在指定的資料庫上執行的日期和時間。<sup>1</sup> 如果 DBCC CHECKDB 尚未在資料庫上執行，則回傳回 1900-01-01 00:00:00.000。|**適用於**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] (從 SP2 開始)。</br>[!INCLUDE[sssqlv14](../../includes/sssqlv14-md.md)] 從 CU9 開始。</br>[!INCLUDE[sssqlv15](../../includes/sssqlv15-md.md)] 或更新版本。</br>Azure SQL Database。<br/><br/>日期時間值<br /><br /> NULL：輸入無效<br /><br /> 基底資料型別：**datetime**| 
 |LCID|Windows 的定序地區設定識別碼 (LCID)。|LCID 值 (十進位格式)。<br /><br /> 基底資料類型：**int**|  
 |MaxSizeInBytes|資料庫的大小上限 (以位元組為單位)。|**適用於**：[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]、[!INCLUDE[ssSDW](../../includes/sssdw-md.md)]。<br /><br />[Azure SQL Database 與 Azure Synapse Analytics](/azure/sql-database/sql-database-single-database-scale#dtu-based-purchasing-model) - 值會以 SLO 為基礎，除非已購買額外的儲存體。<br /><br />[vCore](/azure/sql-database/sql-database-single-database-scale#vcore-based-purchasing-model) - 值會以 1GB 為單位遞增，直到大小上限為止。<br /><br />NULL：資料庫未啟動<br /><br /> 基底資料型別：**bigint**|  
 |復原|資料庫復原模式|FULL：完整復原模式<br /><br /> BULK_LOGGED：大量記錄模式<br /><br /> SIMPLE：簡單復原模式<br /><br /> 基底資料型別：**nvarchar(128)**|  

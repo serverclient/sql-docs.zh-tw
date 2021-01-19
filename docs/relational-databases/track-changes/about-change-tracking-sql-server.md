@@ -18,12 +18,12 @@ ms.assetid: 5e0ef05a-8317-4c98-be20-b19d4cd78f12
 author: rothja
 ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 345601ea43048fca18fabb93b52d5d5f4eb153d0
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 0271ca850648af434d225429976b4e111e49d498
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97472599"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171380"
 ---
 # <a name="about-change-tracking-sql-server"></a>關於變更追蹤 (SQL Server)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -76,7 +76,7 @@ ms.locfileid: "97472599"
 
 針對變更追蹤啟用的每個資料表都有內部的磁碟資料表，變更追蹤函式用來判斷變更版本以及在特定版本之後變更的資料列。 每次喚醒 **自動清除** 執行緒時，它會掃描 SQL Server 執行個體上的所有使用者資料庫，識別已啟用變更追蹤的資料庫。 根據資料庫的保留期限設定，會將每個內部磁碟資料表的過期記錄清除。
 
-在 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 和 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 的 Service Pack 中新增了預存程序，以便為內部變更追蹤內部資料表執行手動清除。 此預存程序的詳細資訊位於 [KB173157](https://support.microsoft.com/help/3173157/adds-a-stored-procedure-for-the-manual-cleanup-of-the-change-tracking-side-table-in-sql-server-2014-sp2-or-2016-sp1)。 
+在 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 和 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 的 Service Pack 中新增了預存程序，以便為內部變更追蹤內部資料表執行手動清除。 此預存程序的詳細資訊位於 [KB173157](https://support.microsoft.com/help/3173157/adds-a-stored-procedure-for-the-manual-cleanup-of-the-change-tracking-side-table-in-sql-server-2014-sp2-or-2016-sp1)。 
   
 ## <a name="see-also"></a>另請參閱  
  [啟用和停用變更追蹤 &#40;SQL Server&#41;](../../relational-databases/track-changes/enable-and-disable-change-tracking-sql-server.md)   

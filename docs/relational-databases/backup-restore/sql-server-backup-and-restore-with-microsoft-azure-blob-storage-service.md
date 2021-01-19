@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.assetid: 6a0c9b6a-cf71-4311-82f2-12c445f63935
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: d28d41c85b267d3920e62773f3694cabb252c64b
-ms.sourcegitcommit: 5a1ed81749800c33059dac91b0e18bd8bb3081b1
+ms.openlocfilehash: e1dcbea42043d1077dd2b0c9e0f1127c9319842b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96125454"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170740"
 ---
 # <a name="sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service"></a>使用 Microsoft Azure Blob 儲存體服務進行 SQL Server 備份及還原
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "96125454"
   
  SQL Server 可以下列方式將備份儲存到 Microsoft Azure BLOB 儲存體服務：  
   
--   **管理 Microsoft Azure 的備份：** 現在，您可使用備份到磁碟和磁帶的相同方式，指定 URL 作為備份目的地以備份至 Microsoft Azure 儲存體。 一如您對於本機儲存體或其他異地選項的處理方式，您可以使用此功能手動備份或設定您自己的備份策略。 此功能又稱為 **SQL Server 備份至 URL**。 如需詳細資訊，請參閱 [SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md)。 SQL Server 2012 SP1 CU2 或更新版本皆提供此功能。 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 已增強這項功能，透過使用區塊 Blob、共用存取簽章和等量配置，提升效能和功能。  
+-   **管理 Microsoft Azure 的備份：** 現在，您可使用備份到磁碟和磁帶的相同方式，指定 URL 作為備份目的地以備份至 Microsoft Azure 儲存體。 一如您對於本機儲存體或其他異地選項的處理方式，您可以使用此功能手動備份或設定您自己的備份策略。 此功能又稱為 **SQL Server 備份至 URL**。 如需詳細資訊，請參閱 [SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md)。 SQL Server 2012 SP1 CU2 或更新版本皆提供此功能。 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 已增強這項功能，透過使用區塊 Blob、共用存取簽章和等量配置，提升效能和功能。  
   
     > [!NOTE]  
     >  若是使用 SQL Server 2012 SP1 CU2 之前的 SQL Server 版本，則可使用 Microsoft Azure 工具的 SQL Server 備份增益集，快速而輕鬆地建立要儲存到 Microsoft Azure 儲存體的備份。 如需詳細資訊，請參閱＜ [下載中心](https://go.microsoft.com/fwlink/?LinkID=324399)＞。  
@@ -42,7 +42,7 @@ ms.locfileid: "96125454"
 -   彈性、可靠且沒有限制的異地儲存體：將您的備份儲存在 Microsoft Azure Blob 服務上是一種方便、彈性且容易存取的異地選項。 針對您的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 備份建立異地儲存體就像修改現有的指令碼/作業一樣簡單。 異地儲存體通常應該遠離實際執行資料庫位置，防止單一災害同時影響異地和實際執行資料庫位置。 透過選擇異地備援 Blob 儲存體，您就可以在發生可能影響整個地區的災害時，獲得一層額外的保護。 此外，您可以隨時隨地取得備份，輕鬆地針對還原作業進行存取。  
   
     > [!IMPORTANT]  
-    >  透過使用 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]中的區塊 Blob，您可以將備份組等量配置以支援高達 12.8 TB 的備份檔案大小。  
+    >  透過使用 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]中的區塊 Blob，您可以將備份組等量配置以支援高達 12.8 TB 的備份檔案大小。  
   
 -   備份封存：Microsoft Azure Blob 儲存體服務提供了較佳的替代方案，有效取代封存備份的常用磁帶選項。 磁帶儲存體可能需要實際運輸至異地設施並採取措施來保護媒體。 將您的備份儲存在 Microsoft Azure Blob 儲存體中，即可提供立即、高可用性且耐用的封存選項。  
   

@@ -19,17 +19,17 @@ ms.assetid: f98af4a5-4523-43b1-be8d-1b03c3217839
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 8ee9585dcc63aef88d88bedf597ec34439cea030
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c7b30279b49a21bbc50492b5a17224fe42d0b335
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481199"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171230"
 ---
 # <a name="columnstore-indexes-overview"></a>資料行存放區索引：概觀
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-「資料行存放區索引」是儲存和查詢大型資料倉儲事實資料表的標準。 此索引使用以資料行為基礎的資料儲存和查詢處理，相較於傳統的資料列導向儲存，最高可在您的資料倉儲中達到 10 倍的查詢效能改善。 相較於未壓縮的資料大小，您也可以將資料壓縮提升高達 10 倍。 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 開始，資料行存放區索引可啟用作業分析：在交易式工作負載上執行高效能即時分析的能力。  
+「資料行存放區索引」是儲存和查詢大型資料倉儲事實資料表的標準。 此索引使用以資料行為基礎的資料儲存和查詢處理，相較於傳統的資料列導向儲存，最高可在您的資料倉儲中達到 10 倍的查詢效能改善。 相較於未壓縮的資料大小，您也可以將資料壓縮提升高達 10 倍。 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 開始，資料行存放區索引可啟用作業分析：在交易式工作負載上執行高效能即時分析的能力。  
   
 深入了解相關案例：  
   
@@ -109,7 +109,7 @@ ms.locfileid: "97481199"
 批次模式執行是用來同時處理多個資料列的查詢處理方法。 批次模式執行與資料行存放區儲存格式緊密整合，並以其為中心進行最佳化。 批次模式執行有時又稱為 *向量式* 或 *向量化* 執行。 資料行存放區索引的查詢使用批次模式執行，通常可改善查詢效能 2 至 4 倍。 如需詳細資訊，請參閱[查詢處理架構指南](../query-processing-architecture-guide.md#execution-modes)。 
   
 ##  <a name="why-should-i-use-a-columnstore-index"></a><a name="benefits"></a> 為什麼應該使用資料行存放區索引？  
-資料行存放區索引可提供非常高度的資料壓縮，通常是 10 倍，因此可大幅降低資料倉儲儲存體成本。 資料行存放區索引在分析時所提供的效能遠比 Btree 索引還高。 資料行存放區索引是資料倉儲和分析工作負載的慣用資料儲存格式。 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]開始，您可以使用資料行存放區索引，對您的作業工作負載進行即時分析。  
+資料行存放區索引可提供非常高度的資料壓縮，通常是 10 倍，因此可大幅降低資料倉儲儲存體成本。 資料行存放區索引在分析時所提供的效能遠比 Btree 索引還高。 資料行存放區索引是資料倉儲和分析工作負載的慣用資料儲存格式。 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]開始，您可以使用資料行存放區索引，對您的作業工作負載進行即時分析。  
   
 資料行存放區索引之所以很快的原因︰  
   
@@ -134,9 +134,9 @@ ms.locfileid: "97481199"
 資料行存放區索引可提升分析查詢的效能，現在可掃描大量資料，特別是大型資料表上的資料。 請在資料倉儲和分析工作負載上 (尤其是在事實資料表上) 使用資料行存放區索引，因為它們通常需要完整資料表掃描，而不是資料表搜尋。  
   
 ### <a name="can-i-combine-rowstore-and-columnstore-on-the-same-table"></a>我可以將資料列存放區和資料行存放區合併到同一個資料表嗎？  
-是。 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，您可以在資料列存放區資料表上建立可更新的非叢集資料行存放區索引。 資料行存放區索引會儲存所選資料行的複本，因此您需要額外的空間來存放此資料，但所選資料平均會壓縮 10 倍。 您就可以同時在資料行存放區索引上執行分析，並在資料列存放區索引上執行交易。 當資料列存放區資料表中的資料變更時，會更新資料行存放區，讓兩個索引針對相同的資料執行。  
+是。 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，您可以在資料列存放區資料表上建立可更新的非叢集資料行存放區索引。 資料行存放區索引會儲存所選資料行的複本，因此您需要額外的空間來存放此資料，但所選資料平均會壓縮 10 倍。 您就可以同時在資料行存放區索引上執行分析，並在資料列存放區索引上執行交易。 當資料列存放區資料表中的資料變更時，會更新資料行存放區，讓兩個索引針對相同的資料執行。  
   
-從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，您在資料行存放區索引上可以有一個或多個非叢集資料列存放區索引，而且可以針對基礎資料行存放區執行有效率的資料表搜尋。 其他選項現在也可以使用。 例如，您可以在資料列存放區資料表上使用 UNIQUE 條件約束，強制執行主索引鍵條件約束。 由於非唯一值將無法插入至資料列存放區資料表，因此 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 無法將值插入至資料行存放區。  
+從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，您在資料行存放區索引上可以有一個或多個非叢集資料列存放區索引，而且可以針對基礎資料行存放區執行有效率的資料表搜尋。 其他選項現在也可以使用。 例如，您可以在資料列存放區資料表上使用 UNIQUE 條件約束，強制執行主索引鍵條件約束。 由於非唯一值將無法插入至資料列存放區資料表，因此 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 無法將值插入至資料行存放區。  
   
 ## <a name="metadata"></a>中繼資料  
 資料行存放區索引中的所有資料行都將儲存於中繼資料內成為內含資料行。 資料行存放區索引沒有索引鍵資料行。  
@@ -205,11 +205,11 @@ ms.locfileid: "97481199"
   
 |Task|參考主題|注意|  
 |----------|----------------------|-----------|  
-|建立資料表作為資料行存放區。|[CREATE TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql.md)|從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]開始，您可以建立資料表作為叢集資料行存放區索引。 您不需要先建立資料列存放區資料表，再將它轉換成資料行存放區。|  
-|建立具有資料行存放區索引的記憶體資料表。|[CREATE TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql.md)|從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]開始，您可以建立具有資料行存放區索引的記憶體最佳化資料表。 建立資料表之後，也可以使用 `ALTER TABLE ADD INDEX` 語法來加入資料行存放區索引。|  
+|建立資料表作為資料行存放區。|[CREATE TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql.md)|從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]開始，您可以建立資料表作為叢集資料行存放區索引。 您不需要先建立資料列存放區資料表，再將它轉換成資料行存放區。|  
+|建立具有資料行存放區索引的記憶體資料表。|[CREATE TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql.md)|從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]開始，您可以建立具有資料行存放區索引的記憶體最佳化資料表。 建立資料表之後，也可以使用 `ALTER TABLE ADD INDEX` 語法來加入資料行存放區索引。|  
 |將資料列存放區資料表轉換成資料行存放區。|[CREATE COLUMNSTORE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-columnstore-index-transact-sql.md)|將現有的堆積或二進位樹狀目錄轉換成資料行存放區。 範例示範如何在執行這項轉換時處理現有的索引及索引名稱。|  
 |將資料行存放區資料表轉換成資料列存放區。|[建立叢集索引X &#40;Transact-SQL&#41;](../../t-sql/statements/create-columnstore-index-transact-sql.md#d-convert-a-columnstore-table-to-a-rowstore-table-with-a-clustered-index) 或[將資料行存放區資料表轉換回資料列存放區堆積](../../t-sql/statements/create-columnstore-index-transact-sql.md#e-convert-a-columnstore-table-back-to-a-rowstore-heap) |此轉換通常並非必要，但有時您仍舊需要轉換。 範例示範如何將資料行存放區轉換成堆積或叢集索引。|  
-|在資料列存放區資料表上建立資料行存放區索引。|[CREATE COLUMNSTORE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-columnstore-index-transact-sql.md)|資料列存放區資料表可以有一個資料行存放區索引。 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]開始，資料行存放區索引可以有一個篩選條件。 範例示範基本語法。|  
+|在資料列存放區資料表上建立資料行存放區索引。|[CREATE COLUMNSTORE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-columnstore-index-transact-sql.md)|資料列存放區資料表可以有一個資料行存放區索引。 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]開始，資料行存放區索引可以有一個篩選條件。 範例示範基本語法。|  
 |為作業分析建立高效能的索引。|[開始使用資料行存放區進行即時作業分析](../../relational-databases/indexes/get-started-with-columnstore-for-real-time-operational-analytics.md)|描述如何建立互補資料行存放區和 Btree 索引，讓 OLTP 查詢使用 Btree 索引，而分析查詢使用資料行存放區索引。|  
 |為資料倉儲建立高效能的資料行存放區索引。|[資料倉儲的資料行存放區索引](~/relational-databases/indexes/columnstore-indexes-data-warehouse.md)|描述如何在資料行存放區資料表上使用 Btree 索引，建立高效能的資料倉儲查詢。|  
 |使用 Btree 索引，在資料行存放區索引上強制執行主索引鍵條件約束。|[資料倉儲的資料行存放區索引](~/relational-databases/indexes/columnstore-indexes-data-warehouse.md)|示範如何合併 Btree 和資料行存放區索引，在資料行存放區索引上強制執行主索引鍵條件約束。|  

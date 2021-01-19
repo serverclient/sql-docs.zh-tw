@@ -17,12 +17,12 @@ ms.assetid: 86b65bf1-a6a1-4670-afc0-cdfad1558032
 author: markingmyname
 ms.author: maghan
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: e42d6b716202a5080e5d6330bc0a674f0c627878
-ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
+ms.openlocfilehash: 7b0e4b8abf21d918e7d4d627c7ed82d5507394ec
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97878926"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171060"
 ---
 # <a name="configure-the-max-degree-of-parallelism-server-configuration-option"></a>設定 max degree of parallelism 伺服器組態選項
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -55,9 +55,9 @@ ms.locfileid: "97878926"
 -   除了查詢作業和索引作業外，此選項也會控制 DBCC CHECKTABLE、DBCC CHECKDB 和 DBCC CHECKFILEGROUP 的平行處理原則。 您可以使用追蹤旗標 2528 來停用這些陳述式的平行執行計畫。 如需詳細資訊，請參閱[追蹤旗標 &#40;Transact-SQL&#41;](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md)。
 
 ###  <a name="recommendations"></a><a name="Recommendations"></a> <a name="Guidelines"></a> 建議  
-從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，若 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] 在服務啟動期間偵測到啟動時每個 NUMA 節點或通訊端有超過八個實體核心，則會根據預設自動建立軟體式 NUMA 節點。 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] 會將來自相同實體核心的邏輯處理器放入不同軟體式 NUMA 節點。 下表中建議事項目標是使所有平行查詢的背景工作執行緒保持在相同軟體式 NUMA 節點內。 這會改善查詢效能及工作負載 NUMA 節點中的背景工作執行緒分佈。 如需詳細資訊，請參閱[軟體式 NUMA](../../database-engine/configure-windows/soft-numa-sql-server.md)。
+從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，若 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] 在服務啟動期間偵測到啟動時每個 NUMA 節點或通訊端有超過八個實體核心，則會根據預設自動建立軟體式 NUMA 節點。 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] 會將來自相同實體核心的邏輯處理器放入不同軟體式 NUMA 節點。 下表中建議事項目標是使所有平行查詢的背景工作執行緒保持在相同軟體式 NUMA 節點內。 這會改善查詢效能及工作負載 NUMA 節點中的背景工作執行緒分佈。 如需詳細資訊，請參閱[軟體式 NUMA](../../database-engine/configure-windows/soft-numa-sql-server.md)。
 
-從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，請在您設定 **最大平行處理程度** 伺服器設定值時，使用下列方針：
+從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，請在您設定 **最大平行處理程度** 伺服器設定值時，使用下列方針：
 
 |伺服器組態|處理器數目|指引|
 |----------------|-----------------|-----------------|
@@ -67,7 +67,7 @@ ms.locfileid: "97878926"
 |具有多個 NUMA 節點的伺服器|每個 NUMA 節點多於 16 個邏輯處理器|將 MAXDOP 保持在最大 (MAX) 值為每個 NUMA 節點 16 個邏輯伺服器數量的一半|
   
 > [!NOTE]
-> 上表中的 NUMA 節點指的是由 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更高版本自動建立的軟體式 NUMA 節點，若已停用軟體式 NUMA，則為硬體式 NUMA 節點。   
+> 上表中的 NUMA 節點指的是由 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更高版本自動建立的軟體式 NUMA 節點，若已停用軟體式 NUMA，則為硬體式 NUMA 節點。   
 >  請在您為 Resource Governor 工作負載群組設定平行處理最大程度的選項時，使用這些相同的方針。 如需詳細資訊，請參閱 [CREATE WORKLOAD GROUP (Transact-SQL)](../../t-sql/statements/create-workload-group-transact-sql.md)。
   
 從 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)] 到 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]，請在您設定 **最大平行處理程度** 伺服器設定值時，使用下列方針：

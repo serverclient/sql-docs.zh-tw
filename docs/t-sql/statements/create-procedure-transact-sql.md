@@ -47,12 +47,12 @@ ms.assetid: afe3d86d-c9ab-44e4-b74d-4e3dbd9cc58c
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: d8ebd5ecac550537f13d20e25a19222477ccebb6
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: a23a11bf4968179baad9d3cc88e5a64acae68b76
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98092092"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170160"
 ---
 # <a name="create-procedure-transact-sql"></a>CREATE PROCEDURE (Transact-SQL)
 
@@ -148,7 +148,7 @@ AS { [ BEGIN ] sql_statement [;][ ,...n ] [ END ] }
 
 OR ALTER
 
-**適用於**：Azure [!INCLUDE[ssSDS](../../includes/sssds-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 開始)。
+**適用於**：Azure [!INCLUDE[ssSDS](../../includes/sssds-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 開始)。
 
 如果程序已經存在，即會將它改變。
 
@@ -220,7 +220,7 @@ ENCRYPTION
 
 EXECUTE AS 「子句」 指定執行程序時所在的資訊安全內容。
 
-針對原生編譯的預存程序，從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 起和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 的 EXECUTE AS 子句均無限制。 在 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 中，SELF、OWNER 和 *'user_name'* 子句均支援原生編譯的預存程序。
+針對原生編譯的預存程序，從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 起和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 的 EXECUTE AS 子句均無限制。 在 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 中，SELF、OWNER 和 *'user_name'* 子句均支援原生編譯的預存程序。
 
 如需詳細資訊，請參閱 [EXECUTE AS 子句 &#40;Transact-SQL&#41;](../../t-sql/statements/execute-as-clause-transact-sql.md)。
 

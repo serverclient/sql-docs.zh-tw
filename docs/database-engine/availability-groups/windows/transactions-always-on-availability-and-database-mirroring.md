@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 9f7ed895-ad65-43e3-ba08-00d7bff1456d
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 79e04e64a4fc89bb3e745d67b1cdbe929850b6ec
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: f2295f8694a9573b0e9c541ea817e9e03e70f83e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642957"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171080"
 ---
 # <a name="transactions---availability-groups-and-database-mirroring"></a>交易 - 可用性群組和資料庫鏡像
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -34,9 +34,9 @@ ms.locfileid: "97642957"
 SQL Server 2017 支援可用性群組中多個資料庫的分散式交易。 這項支援包含相同 SQL Server 執行個體上的資料庫或不同 SQL Server 執行個體上的資料庫。 針對資料庫鏡像所設定的資料庫不支援分散式交易。
 
 > [!NOTE]
-> [!INCLUDE[SQL Server 2016](../../../includes/sssql15-md.md)] Service Pack 2 和更新版本提供對於可用性群組中分散式交易的完整支援。 
+> [!INCLUDE[SQL Server 2016](../../../includes/sssql16-md.md)] Service Pack 2 和更新版本提供對於可用性群組中分散式交易的完整支援。 
 > 
-> 在 Service Pack 2 之前的 [!INCLUDE[SQL Server 2016](../../../includes/sssql15-md.md)] 版本中，不支援牽涉到可用性群組中資料庫的跨資料庫分散式交易 (也就是使用相同 SQL Server 執行個體上資料庫的交易)。
+> 在 Service Pack 2 之前的 [!INCLUDE[SQL Server 2016](../../../includes/sssql16-md.md)] 版本中，不支援牽涉到可用性群組中資料庫的跨資料庫分散式交易 (也就是使用相同 SQL Server 執行個體上資料庫的交易)。
 
 若要設定分散式交易的可用性群組，請參閱[設定分散式交易的可用性群組](configure-availability-group-for-distributed-transactions.md)。
 

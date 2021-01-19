@@ -23,12 +23,12 @@ ms.assetid: 27569888-f8b5-4cec-a79f-6ea6d692b4ae
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 7e8fb26ecf962b797d227f84b3e1cb67f39fd64e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 652d705c92aede4592a079733c8dd281e9dd8e91
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97480439"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170530"
 ---
 # <a name="objectproperty-transact-sql"></a>OBJECTPROPERTY (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -159,7 +159,7 @@ OBJECTPROPERTY ( id , property )
 |TableUpdateTrigger|Table|資料表有 UPDATE 觸發程序。<br /><br /> >1 = 具有指定類型之第一個觸發程序的識別碼。|  
 |TableUpdateTriggerCount|Table|資料表有指定數目的 UPDATE 觸發程序。<br /><br /> >0 = UPDATE 觸發程序的數目。|  
 |TableHasColumnSet|Table|資料表有資料行集。<br /><br /> 0 = False<br /><br /> 1 = True<br /><br /> 如需詳細資訊，請參閱 [使用資料行集](../../relational-databases/tables/use-column-sets.md)。|  
-|TableTemporalType|Table|**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。<br /><br /> 指定資料表的類型。<br /><br /> 0 = 非時態表<br /><br /> 1 = 系統版本設定資料表的記錄資料表<br /><br /> 2 = 系統版本設定的時態表|  
+|TableTemporalType|Table|**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。<br /><br /> 指定資料表的類型。<br /><br /> 0 = 非時態表<br /><br /> 1 = 系統版本設定資料表的記錄資料表<br /><br /> 2 = 系統版本設定的時態表|  
   
 ## <a name="return-types"></a>傳回型別  
  **int**  

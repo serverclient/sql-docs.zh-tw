@@ -14,12 +14,12 @@ ms.assetid: 867a54b8-5be4-46e6-9702-49ae6dabf67c
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: fdd110fd51d42ae13054a5d189c1180a9af623ee
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 933532a516f18aab01e1a32584590d65940c75b6
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97484510"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170200"
 ---
 # <a name="create-foreign-key-relationships"></a>建立外部索引鍵關聯性
 
@@ -42,7 +42,7 @@ ms.locfileid: "97484510"
 - FOREIGN KEY 條件約束可以參考相同資料表中的另一個資料行，這稱為自我參考。
 - 資料行層級上指定的 FOREIGN KEY 條件約束只能列出一個參考資料行。 這個資料行必須有定義了條件約束的資料行之相同資料類型。
 - 資料表層級上指定的 FOREIGN KEY 條件約束，必須有與條件約束資料行清單中資料行一樣多的參考資料行。 每個參考資料行的資料類型，也必須與資料行清單中的對應資料行相同。
-- [!INCLUDE[ssDE](../../includes/ssde-md.md)] 沒有預先定義可能包含資料表參考其他資料表的 FOREIGN KEY 條件約束數目限制。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] 也不會限制參考特定資料表的其他資料表所擁有的 FOREIGN KEY 條件約束數目。 不過，FOREIGN KEY 條件約束的實際可用數目，會受到硬體設定及資料庫與應用程式設計的限制。 一個資料表最多可以參考其他 253 個資料表和資料行作為外部索引鍵 (連出參考)。 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 接著將單一資料表中資料行可以參考的其他資料表和資料行數目限制 (連入參考) 從 253 提高至 10,000。 (至少需要 130 相容性層級)。此增加具有下列限制：
+- [!INCLUDE[ssDE](../../includes/ssde-md.md)] 沒有預先定義可能包含資料表參考其他資料表的 FOREIGN KEY 條件約束數目限制。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] 也不會限制參考特定資料表的其他資料表所擁有的 FOREIGN KEY 條件約束數目。 不過，FOREIGN KEY 條件約束的實際可用數目，會受到硬體設定及資料庫與應用程式設計的限制。 一個資料表最多可以參考其他 253 個資料表和資料行作為外部索引鍵 (連出參考)。 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 接著將單一資料表中資料行可以參考的其他資料表和資料行數目限制 (連入參考) 從 253 提高至 10,000。 (至少需要 130 相容性層級)。此增加具有下列限制：
 
   - DELETE 和 UPDATE DML 作業支援大於 253 的外部索引鍵參考數目。 但是，不支援 MERGE 作業。
   - 如果資料表具有參考本身的外部索引鍵，則仍會限制為 253 個外部索引鍵參考。

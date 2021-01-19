@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 1ad468f5-4f75-480b-aac6-0b01b048bd67
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 6598dc9812aed56b170c22d0ed1b4a470c5f7209
-ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
+ms.openlocfilehash: 47bb374abb29374fade7a4c2c158ea4e76abe71b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97878749"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171740"
 ---
 # <a name="database-instant-file-initialization"></a>資料庫立即檔案初始化
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "97878749"
 > 使用[透明資料加密 (TDE)](../../relational-databases/security/encryption/transparent-data-encryption.md) 等某些功能時，會防止檔案立即初始化。  
 
 > [!NOTE]
-> 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，此權限可在安裝期間進行安裝時授與給服務帳戶。 <br><br>如果使用[命令提示字元安裝](../../database-engine/install-windows/install-sql-server-from-the-command-prompt.md)，請新增 /SQLSVCINSTANTFILEINIT 引數，或在[安裝精靈](../../database-engine/install-windows/install-sql-server-from-the-installation-wizard-setup.md)中核取 [對 SQL Server Database Engine 服務授與「執行磁碟區維護工作」權限] 方塊。
+> 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，此權限可在安裝期間進行安裝時授與給服務帳戶。 <br><br>如果使用[命令提示字元安裝](../../database-engine/install-windows/install-sql-server-from-the-command-prompt.md)，請新增 /SQLSVCINSTANTFILEINIT 引數，或在[安裝精靈](../../database-engine/install-windows/install-sql-server-from-the-installation-wizard-setup.md)中核取 [對 SQL Server Database Engine 服務授與「執行磁碟區維護工作」權限] 方塊。
   
 授與帳戶「 `Perform volume maintenance tasks` 」權限：  
   
@@ -65,7 +65,7 @@ ms.locfileid: "97878749"
 1. 請在啟動時檢查 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 錯誤記錄檔。
    
   
-    **適用範圍：** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] SP4、[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 與 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 和更新版本開始)。
+    **適用範圍：** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] SP4、[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 與 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 和更新版本開始)。
     1. 如果 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 服務啟動帳戶獲授與 *SE_MANAGE_VOLUME_NAME*，會記錄如下資訊訊息：
 
         `Database Instant File Initialization: enabled. For security and performance considerations see the topic 'Database Instant File Initialization' in SQL Server Books Online. This is an informational message only. No user action is required.`

@@ -25,12 +25,12 @@ ms.assetid: ca5fd220-d5ea-4182-8950-55d4101a86f6
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 168f902453d2897e50186cc513977b2eb10e8627
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 0f62ced8657ee943a947e26c5a2a2ed65a9d78b9
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98094727"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171910"
 ---
 # <a name="alter-database-transact-sql-compatibility-level"></a>ALTER DATABASE (Transact-SQL) 相容性層級
 
@@ -63,7 +63,7 @@ COMPATIBILITY_LEVEL { 150 \| 140 \| 130 \| 120 \| 110 \| 100 \| 90 \| 80 } 是�
 |[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]|14|140|140、130、120、110、100|
 |[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]|12|150|150, 140, 130, 120, 110, 100|
 |[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 受控執行個體|12|150|150, 140, 130, 120, 110, 100|
-|[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]|13|130|130、120、110、100|
+|[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]|13|130|130、120、110、100|
 |[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]|12|120|120、110、100|
 |[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]|11|110|110、100、90|
 |[!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)]|10.5|100|100、90、80|
@@ -93,7 +93,7 @@ COMPATIBILITY_LEVEL { 150 \| 140 \| 130 \| 120 \| 110 \| 100 \| 90 \| 80 } 是�
 若要檢視資料庫目前的相容性層級，請查詢 [sys.databases](../../relational-databases/system-catalog-views/sys-databases-transact-sql.md) 目錄檢視中的 `compatibility_level` 資料行。
 
 > [!NOTE]
-> 舊版 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 所建立並升級至 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] RTM 或 Service Pack 1 的[散發資料庫](../../relational-databases/replication/distribution-database.md)具有相容性層級 90，其他資料庫則不予支援。 這不會影響複寫功能。 升級至更新版本的 Service Pack 和 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 版本會增加散發資料庫的相容性層級，以符合 **master** 資料庫的相容性層級。
+> 舊版 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 所建立並升級至 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] RTM 或 Service Pack 1 的[散發資料庫](../../relational-databases/replication/distribution-database.md)具有相容性層級 90，其他資料庫則不予支援。 這不會影響複寫功能。 升級至更新版本的 Service Pack 和 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 版本會增加散發資料庫的相容性層級，以符合 **master** 資料庫的相容性層級。
 
 > [!NOTE]
 > 從 **2019 年 11 月** 開始，在 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 中，新建資料庫的預設相容性層級是 150。 [!INCLUDE[msCoName](../../includes/msconame-md.md)] 不會更新現有資料庫的資料庫相容性層級。 這是由客戶自己決定。        
@@ -167,9 +167,9 @@ SELECT name, compatibility_level FROM sys.databases;
 
 僅新增至新版本 [!INCLUDE[ssDE](../../includes/ssde-md.md)] 的預設相容性層級上，影響計劃的基本變更是：
 
-1.  **針對舊版 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (追蹤旗標 4199) 所發行的查詢最佳化工具修正，會在較新版 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的預設相容性層級中自動啟用**。 **適用範圍：** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+1.  **針對舊版 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (追蹤旗標 4199) 所發行的查詢最佳化工具修正，會在較新版 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的預設相容性層級中自動啟用**。 **適用範圍：** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始) 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
-    例如，當 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 發行時，針對舊版 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (以及各自的相容性層級 100 到 120) 發行的所有查詢最佳化工具修正，都會變成針對使用 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 預設相容性層級 (130) 的資料庫自動啟用。 僅 RTM 後查詢最佳化工具修正程式需要明確啟用。
+    例如，當 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 發行時，針對舊版 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (以及各自的相容性層級 100 到 120) 發行的所有查詢最佳化工具修正，都會變成針對使用 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 預設相容性層級 (130) 的資料庫自動啟用。 僅 RTM 後查詢最佳化工具修正程式需要明確啟用。
     
     > [!NOTE]
     > 若要啟用查詢最佳化工具修正程式，您可以使用下列方法：    
@@ -178,13 +178,13 @@ SELECT name, compatibility_level FROM sys.databases;
     > - 在資料庫層級，使用 [ALTER 資料庫範圍設定 (Transact-SQL)](../../t-sql/statements/alter-database-scoped-configuration-transact-sql.md) 中的 [`QUERY_OPTIMIZER_HOTFIXES`] 選項。
     > - 在查詢層級，使用 `USE HINT 'ENABLE_QUERY_OPTIMIZER_HOTFIXES'`[查詢提示](../../t-sql/queries/hints-transact-sql-query.md#use_hint)。
     
-    之後，當 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 發行時，在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] RTM 之後所發行的所有查詢最佳化工具修正程式都會針對使用 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 預設相容性層級 (140) 的資料庫自動啟用。 這是包含所有舊版修正的累計行為。 同樣地，僅 RTM 後查詢最佳化工具修正程式需要明確啟用。  
+    之後，當 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 發行時，在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] RTM 之後所發行的所有查詢最佳化工具修正程式都會針對使用 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 預設相容性層級 (140) 的資料庫自動啟用。 這是包含所有舊版修正的累計行為。 同樣地，僅 RTM 後查詢最佳化工具修正程式需要明確啟用。  
     
     下表摘要說明這個行為：
     
     |資料庫引擎 (DE) 版本|資料庫相容性層級|TF 4199|來自所有先前資料庫相容性層級的的 QO 變更|RTM 後 DE 版本的 QO 變更|
     |----------|----------|---|------------|--------|
-    |13 ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)])|100 至 120<br /><br /><br />130|關閉<br />另一<br /><br />關閉<br />另一|**Disabled**<br />啟用<br /><br />**已啟用**<br />啟用|已停用<br />啟用<br /><br />已停用<br />啟用|
+    |13 ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)])|100 至 120<br /><br /><br />130|關閉<br />另一<br /><br />關閉<br />另一|**Disabled**<br />啟用<br /><br />**已啟用**<br />啟用|已停用<br />啟用<br /><br />已停用<br />啟用|
     |14 ([!INCLUDE[ssSQL17](../../includes/sssql17-md.md)])|100 至 120<br /><br /><br />130<br /><br /><br />140|關閉<br />另一<br /><br />關閉<br />另一<br /><br />關閉<br />另一|**Disabled**<br />啟用<br /><br />**已啟用**<br />啟用<br /><br />**已啟用**<br />啟用|已停用<br />啟用<br /><br />已停用<br />啟用<br /><br />已停用<br />啟用|
     |15 ([!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)]) 和 12 ([!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)])|100 至 120<br /><br /><br />130 至 140<br /><br /><br />150|關閉<br />另一<br /><br />關閉<br />另一<br /><br />關閉<br />另一|**Disabled**<br />啟用<br /><br />**已啟用**<br />啟用<br /><br />**已啟用**<br />啟用|已停用<br />啟用<br /><br />已停用<br />啟用<br /><br />已停用<br />啟用|
     
@@ -193,15 +193,15 @@ SELECT name, compatibility_level FROM sys.databases;
  
 2.  **[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 和 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 上發行的 [基數估計工具](../../relational-databases/performance/cardinality-estimation-sql-server.md)的變更，僅在新版本[!INCLUDE[ssDE](../../includes/ssde-md.md)]的預設相容性層級中啟用**，但無法在先前的相容性層級上使用。 
 
-    例如，當 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 發行時，基數估計工具的變更僅適用於使用 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 預設相容性層級 (130) 的資料庫。 先前的相容性層級會保留 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 之前可用的基數估計行為。 
+    例如，當 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 發行時，基數估計工具的變更僅適用於使用 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 預設相容性層級 (130) 的資料庫。 先前的相容性層級會保留 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 之前可用的基數估計行為。 
     
-    之後，當 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 發行時，基數估計程序的較新變更僅適用於使用 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 預設相容性層級 (140) 的資料庫。 資料庫相容性層級 130 保留 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 基數估計行為。
+    之後，當 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 發行時，基數估計程序的較新變更僅適用於使用 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 預設相容性層級 (140) 的資料庫。 資料庫相容性層級 130 保留 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 基數估計行為。
     
     下表摘要說明這個行為：
     
     |資料庫引擎版本|資料庫相容性層級|新版本 CE 變更|
     |----------|--------|-------------|
-    |13 ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)])|< 130<br />130|已停用<br />啟用|
+    |13 ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)])|< 130<br />130|已停用<br />啟用|
     |14 ([!INCLUDE[ssSQL17](../../includes/sssql17-md.md)])<sup>1</sup>|< 140<br />140|已停用<br />啟用|
     |15 ([!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)])<sup>1</sup>|< 150<br />150|已停用<br />啟用|
     
@@ -250,14 +250,14 @@ SQL Server 2017 之前的 SQL Server 較早版本中，追蹤旗標 4199 之下�
 |已導入 SQL 2014 基數估計工具 **CardinalityEstimationModelVersion="120"**|搭配基數估計模型 130 取得進一步的基數估計 ( CE) 改進，這可從查詢計畫中看到。 **CardinalityEstimationModelVersion="130"**|
 |批次模式與資料列模式會隨資料行存放區索引而改變：<br /><ul><li>在具有資料行存放區索引的資料表上執行的排序會以資料列模式執行 <li>視窗型函式彙總會以資料列模式 (例如 `LAG` 或 `LEAD`) 運作 <li>使用多個不同子句在資料行存放區資料表上進行的查詢會以資料列模式運作 <li>在 MAXDOP 1 之下執行，或以資料列模式執行的序列計畫</li></ul>| 批次模式與資料列模式會隨資料行存放區索引而改變：<br /><ul><li>在具有資料行存放區索引的表格上進行的排序現在會以批次模式運作 <li>視窗型彙總現在會以批次模式 (例如`LAG` 或 `LEAD`) 運作 <li>使用多個不同子句在資料行存放區資料表上進行的查詢會以批次模式運作 <li>在 MAXDOP 1 下執行的查詢，或以批次模式執行序列計畫</li></ul>|
 |統計資料可以自動更新。 | 自動更新統計資料的邏輯在大型資料表上會更積極。 在實務上，這應該會減少客戶已經看到在查詢上發生效能問題的案例，其中的問題在於新插入的資料列會受到頻繁查詢，但統計資料卻尚未更新以包含那些值。 |
-|追蹤 2371 在 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 中預設為「關閉」。 | [追蹤 2371](/archive/blogs/psssql/default-auto-statistics-update-threshold-change-for-sql-server-2016) 在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 中預設為「開啟」。 追蹤旗標 2371 會告知自動統計資料更新程式，在擁有很多資料列的資料表中，以較小但更聰明的資料列子集方式進行取樣。 <br/> <br/> 其中一項改進是在樣本中包含更多最近插入的資料列。 <br/> <br/> 另一項改進是讓查詢在更新統計資料程序執行時執行，而不是封鎖查詢。 |
+|追蹤 2371 在 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 中預設為「關閉」。 | [追蹤 2371](/archive/blogs/psssql/default-auto-statistics-update-threshold-change-for-sql-server-2016) 在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 中預設為「開啟」。 追蹤旗標 2371 會告知自動統計資料更新程式，在擁有很多資料列的資料表中，以較小但更聰明的資料列子集方式進行取樣。 <br/> <br/> 其中一項改進是在樣本中包含更多最近插入的資料列。 <br/> <br/> 另一項改進是讓查詢在更新統計資料程序執行時執行，而不是封鎖查詢。 |
 |對於層級 120，統計資料會由單一執行緒程序進行取樣。|對於層級 130，統計資料則會由多執行緒程序 (平行處理序) 進行取樣。 |
 |其限制為 253 個傳入外部索引鍵。| 指定資料表最多可由 10,000 個傳入外部索引鍵或類似參考進行參考。 相關限制，請參閱 [Create Foreign Key Relationships](../../relational-databases/tables/create-foreign-key-relationships.md)。 |
 |允許使用已被取代的 MD2、MD4、MD5、SHA 和 SHA1 雜湊演算法。|只允許使用 SHA2_256 和 SHA2_512 雜湊演算法。|
-||[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 包括在某些資料類型轉換和某些不常見作業中的改善。 如需詳細資料，請參閱[處理某些資料類型和不常見作業的 SQL Server 2016 改進 (機器翻譯)](https://support.microsoft.com/help/4010261/sql-server-2016-improvements-in-handling-some-data-types-and-uncommon)。|
+||[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 包括在某些資料類型轉換和某些不常見作業中的改善。 如需詳細資料，請參閱[處理某些資料類型和不常見作業的 SQL Server 2016 改進 (機器翻譯)](https://support.microsoft.com/help/4010261/sql-server-2016-improvements-in-handling-some-data-types-and-uncommon)。|
 |`STRING_SPLIT` 函式無法使用。|`STRING_SPLIT` 函式適用於相容性層級 130 或以上。 如果您的資料庫相容性層級低於 130，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 將找不到且無法執行 `STRING_SPLIT` 函式。|
 
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 之前的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 較早版本中，追蹤旗標 4199 之下的修正程式現在已經預設啟用。 具備相容性模式 130。 追蹤旗標 4199 將仍然適用於在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 之後發行的新查詢最佳化工具修正程式。 若要在 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 中使用較舊的查詢最佳化工具，您必須選取相容性層級 110。 如需有關追蹤旗標 4199 的詳細資訊，請參閱[追蹤旗標 4199](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md#4199)。
+[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 之前的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 較早版本中，追蹤旗標 4199 之下的修正程式現在已經預設啟用。 具備相容性模式 130。 追蹤旗標 4199 將仍然適用於在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 之後發行的新查詢最佳化工具修正程式。 若要在 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 中使用較舊的查詢最佳化工具，您必須選取相容性層級 110。 如需有關追蹤旗標 4199 的詳細資訊，請參閱[追蹤旗標 4199](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md#4199)。
 
 ## <a name="differences-between-lower-compatibility-levels-and-level-120"></a>更低相容性層級和層級 120 之間的差異
 

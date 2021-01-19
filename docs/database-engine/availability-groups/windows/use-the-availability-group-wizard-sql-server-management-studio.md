@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: e1f1dccc-9e65-471d-8fd1-b45085c9484a
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: f4361019a3f65dbe1fc4a1b65fe54e388175a84d
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 59b0e82558e14e29e4fad69ddc86b76d982a634a
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97641769"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171100"
 ---
 # <a name="use-the-availability-group-wizard-sql-server-management-studio"></a>使用可用性群組精靈 (SQL Server Management Studio)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -105,7 +105,7 @@ ms.locfileid: "97641769"
   
     -   **自動植入**  
   
-         SQL Server 會自動為群組中的每個資料庫建立次要複本。 自動植入要求參與群組之每個 SQL Server 執行個體上的資料和記錄檔案路徑都必須相同。 適用於 [!INCLUDE[sssql15-md.md](../../../includes/sssql15-md.md)] 和更新版本。 請參閱[自動初始化 AlwaysOn 可用性群組](automatically-initialize-always-on-availability-group.md)。
+         SQL Server 會自動為群組中的每個資料庫建立次要複本。 自動植入要求參與群組之每個 SQL Server 執行個體上的資料和記錄檔案路徑都必須相同。 適用於 [!INCLUDE[sssql16-md.md](../../../includes/sssql16-md.md)] 和更新版本。 請參閱[自動初始化 AlwaysOn 可用性群組](automatically-initialize-always-on-availability-group.md)。
     
     -   **完整的資料庫及記錄備份**  
   

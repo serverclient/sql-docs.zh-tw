@@ -11,12 +11,12 @@ ms.assetid: 92a44d4d-0e53-4fb0-b890-de264c65c95a
 author: MightyPen
 ms.author: genemi
 monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 63e19c205bf635257d8b5b4957fe64b6ec310c64
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c88fd07e9af86a3c12561935364514b23bc2ea91
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465459"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172280"
 ---
 # <a name="accessing-memory-optimized-tables-using-interpreted-transact-sql"></a>使用解譯的 Transact-SQL 存取記憶體最佳化的資料表
 [!INCLUDE[tsql-appliesto-ss2014-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-asdb-xxxx-xxx-md.md)]
@@ -25,7 +25,7 @@ ms.locfileid: "97465459"
   
 解譯的 [!INCLUDE[tsql](../../includes/tsql-md.md)] 指的是非原生編譯預存程序的 [!INCLUDE[tsql](../../includes/tsql-md.md)] 批次或預存程序。 記憶體最佳化資料表的 [!INCLUDE[tsql](../../includes/tsql-md.md)] 解譯存取指的是 Interop 存取。  
 
-從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]開始，解譯之 [!INCLUDE[tsql](../../includes/tsql-md.md)] 中的查詢可以平行掃描記憶體最佳化資料表，而不是只能以循序模式來進行掃描。
+從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]開始，解譯之 [!INCLUDE[tsql](../../includes/tsql-md.md)] 中的查詢可以平行掃描記憶體最佳化資料表，而不是只能以循序模式來進行掃描。
 
 記憶體最佳化的資料表也可以透過原生編譯的預存程序存取。 建議針對效能嚴重不足的 OLTP 作業使用以原生方式編譯的預存程序。  
   

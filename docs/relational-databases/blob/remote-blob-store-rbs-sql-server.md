@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 31c947cf-53e9-4ff4-939b-4c1d034ea5b1
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 83abd087cab67c0b048ed6333e912ac1edc76f7c
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+ms.openlocfilehash: bfd234025664e7508d7d9cf942ff81a216b447a2
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91810154"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171750"
 ---
 # <a name="remote-blob-store-rbs-sql-server"></a>遠端 Blob 存放區 (RBS) (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "91810154"
 
 | [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 版本 | RBS 下載位置 |
 |:---|:---|
-| [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] | [[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 功能套件](https://www.microsoft.com/download/details.aspx?id=56833) |
+| [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] | [[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 功能套件](https://www.microsoft.com/download/details.aspx?id=56833) |
 | [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] | [[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] Feature Pack](https://www.microsoft.com/download/details.aspx?id=55992) |
 | [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] | [[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] RBS 下載頁面](https://go.microsoft.com/fwlink/?linkid=2109005) |
 | &nbsp; | &nbsp; |
@@ -59,7 +59,7 @@ ms.locfileid: "91810154"
  有好幾個協力廠商儲存方案廠商已經開發了符合這些標準 API，並在多種儲存平台上支援 BLOB 儲存的 RBS 提供者。  
   
 ## <a name="rbs-requirements"></a>RBS 需求  
- - RBS 在儲存 BLOB 中繼資料所在的主要資料庫伺服器中，需要使用 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Enterprise。  不過，如果您使用提供的 FILESTREAM 提供者，可以將 BLOB 本身儲存在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Standard 上。 若要連接到 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]，RBS 至少需要 [!INCLUDE[ssSQL14_md](../../includes/sssql14-md.md)] 的 ODBC 驅動程式第 11 版和 [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)]的 ODBC 驅動程式第 13 版。 這些驅動程式可透過 [Download ODBC Driver for SQL Server](../../connect/odbc/download-odbc-driver-for-sql-server.md)(下載 ODBC Driver for SQL Server) 取得。    
+ - RBS 在儲存 BLOB 中繼資料所在的主要資料庫伺服器中，需要使用 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Enterprise。  不過，如果您使用提供的 FILESTREAM 提供者，可以將 BLOB 本身儲存在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Standard 上。 若要連接到 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]，RBS 至少需要 [!INCLUDE[ssSQL14_md](../../includes/sssql14-md.md)] 的 ODBC 驅動程式第 11 版和 [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)]的 ODBC 驅動程式第 13 版。 這些驅動程式可透過 [Download ODBC Driver for SQL Server](../../connect/odbc/download-odbc-driver-for-sql-server.md)(下載 ODBC Driver for SQL Server) 取得。    
   
  RBS 包含一個 FILESTREAM 提供者，可讓您使用 RBS，將 BLOB 儲存在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]的執行個體上。 如果您要使用 RBS 將 BLOB 儲存在不同的儲存方案中，您必須使用針對該儲存方案開發的 RBS 提供者，或使用 RBS API 開發一個自訂的 RBS 提供者。 將 BLOB 儲存在 NTFS 檔案系統中的範例提供者，在 [Codeplex](https://go.microsoft.com/fwlink/?LinkId=210190)上作為學習資源提供。  
   
@@ -72,7 +72,7 @@ ms.locfileid: "91810154"
 ### <a name="credential-store-symmetric-key"></a>認證存放區對稱金鑰  
  如果提供者需要設定及使用儲存在認證存放區中的祕密，RBS 會針對用戶端可能用來取得提供者 Blob 存放區授權的提供者祕密，使用對稱金鑰進行加密。  
   
--   RBS 2016 使用 **AES_128** 對稱金鑰。 除了回溯相容性原因之外，[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 不允許建立新的 **TRIPLE_DES** 金鑰。 如需詳細資訊，請參閱 [CREATE SYMMETRIC KEY &#40;Transact-SQL&#41;](../../t-sql/statements/create-symmetric-key-transact-sql.md)。  
+-   RBS 2016 使用 **AES_128** 對稱金鑰。 除了回溯相容性原因之外，[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 不允許建立新的 **TRIPLE_DES** 金鑰。 如需詳細資訊，請參閱 [CREATE SYMMETRIC KEY &#40;Transact-SQL&#41;](../../t-sql/statements/create-symmetric-key-transact-sql.md)。  
   
 -   RBS 2014 和先前版本使用的認證存放區，包含了使用過時的對稱金鑰演算法 **TRIPLE_DES** 所加密的密碼。 如果您目前使用 **TRIPLE_DES**[!INCLUDE[msCoName](../../includes/msconame-md.md)] ，建議您遵循本主題中的步驟，將您的金鑰更換為更強的加密方法，以增強安全性。  
   

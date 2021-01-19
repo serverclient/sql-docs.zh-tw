@@ -12,20 +12,20 @@ ms.assetid: 21fd153b-116d-47fc-a926-f1528299a391
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 702d2adcfda0f75937b9629467f14ca66f4acdad
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 0ca8263c5d75fca3bc59164d8d3ff7acaa9c5f2e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97407465"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172730"
 ---
 # <a name="columnstore-indexes---data-warehouse"></a>資料行存放區索引 - 資料倉儲
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   結合資料分割的資料行存放區索引對於建置 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資料倉儲非常重要。  
   
-## <a name="whats-new"></a>最新消息  
- [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 導入了這些增強資料行存放區效能的功能：  
+## <a name="whats-new"></a>新功能  
+ [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 導入了這些增強資料行存放區效能的功能：  
   
 -   AlwaysOn 支援在可讀取之次要複本上的資料行存放區索引進行查詢。  
 -   Multiple Active Result Sets (MARS) 支援資料行存放區索引。  
@@ -39,7 +39,7 @@ ms.locfileid: "97407465"
 -   資料庫相容性等級 130 及更高層級的快照集隔離。  
   
 ## <a name="improve-performance-by-combining-nonclustered-and-columnstore-indexes"></a>透過結合非叢集和資料行存放區索引來改善效能  
- 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，您可以在叢集資料行存放區索引上定義非叢集索引。   
+ 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，您可以在叢集資料行存放區索引上定義非叢集索引。   
   
 ### <a name="example-improve-efficiency-of-table-seeks-with-a-nonclustered-index"></a>例如：以非叢集索引改善資料表搜尋的效率  
  若要改善在資料倉儲中搜尋資料表的效率，您可以建立專用的非叢集索引來執行對資料表搜尋有最佳效能的查詢。 例如，針對 B 型樹狀結構索引執行比對值或傳回小範圍值的查詢，其執行效能會比針對資料行存放區索引為佳。 它們不需要透過資料行存放區索引的完整資料表掃描，且透過 B 型樹狀結構索引執行二進位搜尋會較快傳回正確的結果。  
@@ -101,7 +101,7 @@ WITH CHECK ADD FOREIGN KEY([AccountKey]) REFERENCES my_dimension(Accountkey);
 ```  
   
 ### <a name="improve-performance-by-enabling-row-level-and-row-group-level-locking"></a>藉由啟用資料列層級和資料列群組層級鎖定來改善效能  
- 為了補充資料行存放區索引功能上的非叢集索引， [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 提供選取、更新和刪除作業的詳細鎖定功能。 查詢能夠針對非叢集索引在索引搜尋上以資料列層級鎖定執行，或針對資料行存放區索引在完整資料表掃描上以資料行群組層級鎖定執行。 藉由適當地使用資料列層級和資料列群組層級鎖定，來以此方法達到更高的獨取/寫入並行。  
+ 為了補充資料行存放區索引功能上的非叢集索引， [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 提供選取、更新和刪除作業的詳細鎖定功能。 查詢能夠針對非叢集索引在索引搜尋上以資料列層級鎖定執行，或針對資料行存放區索引在完整資料表掃描上以資料行群組層級鎖定執行。 藉由適當地使用資料列層級和資料列群組層級鎖定，來以此方法達到更高的獨取/寫入並行。  
   
 ```sql  
 --Granular locking example  

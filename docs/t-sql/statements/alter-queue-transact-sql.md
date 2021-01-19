@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: d54aa325-8761-4cd4-8da7-acf33df12296
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 385a84a0f92c41cbf661abe327d244a2e9b6ebd3
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 09303d17e8cb284251d9c8e585eeadb5a1a1e898
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98092073"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170840"
 ---
 # <a name="alter-queue-transact-sql"></a>ALTER QUEUE (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -107,12 +107,12 @@ WITH
  指定佇列是否啟用預存程序。 當 STATUS = ON 時，如果目前執行的程序數目低於 MAX_QUEUE_READERS，且訊息到達佇列的速度比預存程序接收訊息快，佇列便會啟動 PROCEDURE_NAME 所指定的預存程序。 當 STATUS = OFF 時，佇列不會啟用預存程序。  
   
  REBUILD [ WITH \<queue_rebuild_options> ]  
- **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。  
+ **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。  
   
  重建佇列內部資料表的所有索引。 當您遇到因為高負載而產生的片段問題時，請使用此功能。 MAXDOP 是唯一支援的佇列重建選項。 REBUILD 一律是離線作業。  
   
  REORGANIZE [ WITH ( LOB_COMPACTION = { ON | OFF } ) ]  
- **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。  
+ **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。  
   
  重新組織佇列內部資料表上的所有索引。   
 不同於使用者資料表上的 REORGANIZE，佇列上的 REORGANIZE 一律會以離線作業執行，因為佇列上會明確停用頁面層級鎖定。  
@@ -121,7 +121,7 @@ WITH
 >  如需有關索引片段的一般指引，當片段介於 5% 和 30% 之間時重新組織索引。 當片段高於 30% 重建索引。 不過，這些數字僅是作為您環境起點的一般指引。 若要判斷索引片段的數量，請使用 [sys.dm_db_index_physical_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-index-physical-stats-transact-sql.md) - 如需範例，請參閱該文章中的範例 G。  
   
  MOVE TO { *file_group* | "default" }  
- **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。  
+ **適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。  
   
  將佇列內部資料表 (包含其索引) 移動至使用者指定的檔案群組。  新的檔案群組不得為唯讀。  
   
@@ -226,7 +226,7 @@ ALTER QUEUE ExpenseQueue WITH ACTIVATION (DROP) ;
   
 ### <a name="g-rebuilding-queue-indexes"></a>G. 重建佇列索引  
   
-**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。  
+**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。  
   
  下列範例會重建佇列索引  
   
@@ -236,7 +236,7 @@ ALTER QUEUE ExpenseQueue REBUILD WITH (MAXDOP = 2)
   
 ### <a name="h-reorganizing-queue-indexes"></a>H. 重新組織佇列索引  
   
-**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。  
+**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。  
   
  下列範例會重新組織佇列索引  
   
@@ -246,7 +246,7 @@ ALTER QUEUE ExpenseQueue REORGANIZE
   
 ### <a name="i-moving-queue-internal-table-to-another-filegroup"></a>I.將佇列內部資料表移至另一個檔案群組  
   
-**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。  
+**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。  
   
 ```sql  
 ALTER QUEUE ExpenseQueue MOVE TO [NewFilegroup]   

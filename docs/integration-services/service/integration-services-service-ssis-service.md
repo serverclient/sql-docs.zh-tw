@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: 2c785b3b-4a0c-4df7-b5cd-23756dc87842
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 465aef4e631602a645bbeff5b437cb2f09994d3c
-ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
+ms.openlocfilehash: a665d78d180d87fe0d412b025bcce75d509285d4
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "90990391"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171200"
 ---
 # <a name="integration-services-service-ssis-service"></a>Integration Services 服務 (SSIS 服務)
 
@@ -274,7 +274,7 @@ to the user NT SERVICE\SQLSERVERAGENT SID (S-1-5-80-344959196-2060754871-2302487
 ```  
   
 ### <a name="modify-the-configuration-file-location"></a>修改設定檔位置  
- 登錄機碼 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\130\SSIS\ServiceConfigFile** 指定 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] 服務所使用之設定檔的位置和名稱。 此登錄機碼的預設值為 **C:\Program Files\Microsoft SQL Server\130\DTS\Binn\MsDtsSrvr.ini.xml**。 您可以更新此登錄機碼的值，以便針對組態檔使用不同的名稱和位置。 請注意，路徑中的版本號碼 (120 適用於 SQL Server [!INCLUDE[ssSQL14_md](../../includes/sssql14-md.md)]、130 適用於 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 等等) 將會根據 SQL Server 版本而不同。
+ 登錄機碼 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\130\SSIS\ServiceConfigFile** 指定 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] 服務所使用之設定檔的位置和名稱。 此登錄機碼的預設值為 **C:\Program Files\Microsoft SQL Server\130\DTS\Binn\MsDtsSrvr.ini.xml**。 您可以更新此登錄機碼的值，以便針對組態檔使用不同的名稱和位置。 請注意，路徑中的版本號碼 (120 適用於 SQL Server [!INCLUDE[ssSQL14_md](../../includes/sssql14-md.md)]、130 適用於 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 等等) 將會根據 SQL Server 版本而不同。
   
 > [!CAUTION]  
 >  不當地編輯登錄可能會造成嚴重問題，並導致您必須重新安裝作業系統。 [!INCLUDE[msCoName](../../includes/msconame-md.md)] 不保證能夠解決不當編輯登錄所產生的問題。 在編輯登錄之前，請先備份重要資料。 如需有關如何備份、還原及編輯登錄的詳細資訊，請參閱 [!INCLUDE[msCoName](../../includes/msconame-md.md)] 知識庫文件： [Microsoft Windows 登錄說明](https://support.microsoft.com/kb/256986)。  

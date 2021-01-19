@@ -28,12 +28,12 @@ ms.assetid: edeced03-decd-44c3-8c74-2c02f801d3e7
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: mathoma
-ms.openlocfilehash: c7bdee119d34181a59d8717957c228e6d24facdc
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: d4b71ddb3cb0b8dbd60ccfb9df778baaaff3f68d
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98099521"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170330"
 ---
 # <a name="create-trigger-transact-sql"></a>CREATE TRIGGER (Transact-SQL)
 
@@ -164,7 +164,7 @@ AS { sql_statement  [ ; ] [ ,...n ]  [ ; ] }
 
 ## <a name="arguments"></a>引數
 OR ALTER  
-**適用於**：Azure [!INCLUDE[ssSDS](../../includes/sssds-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 開始)。 
+**適用於**：Azure [!INCLUDE[ssSDS](../../includes/sssds-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 開始)。 
   
 只有在觸發程序已存在時，才能有條件地更改它。 
   

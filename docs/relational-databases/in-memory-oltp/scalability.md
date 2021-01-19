@@ -12,25 +12,25 @@ ms.assetid: a4891c57-56bb-49f4-9bb5-f11b745279e5
 author: MightyPen
 ms.author: genemi
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 251af732e6c55ee2b5567bb181859b1fdec1360a
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 3e72e67bf033ecef94b318d69b31f33604572cf8
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97485220"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172060"
 ---
 # <a name="scalability"></a>延展性
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 包含記憶體最佳化資料表磁碟上儲存體的延展性增強功能。 
+[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 包含記憶體最佳化資料表磁碟上儲存體的延展性增強功能。 
 
 ## <a name="multiple-threads-to-persist-memory-optimized-tables"></a>保存記憶體最佳化資料表的多個執行緒  
   
 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 中具有單一離線檢查點執行緒，可掃描交易記錄中是否有記憶體最佳化資料表變更，並將其保存在檢查點檔案 (例如資料和差異檔案) 中。 若電腦有較多的核心數，單一離線檢查點執行緒可能會落後。  
   
-從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，有多個並行執行緒負責保存記憶體最佳化資料表的變更。  
+從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，有多個並行執行緒負責保存記憶體最佳化資料表的變更。  
   
 ## <a name="multi-threaded-recovery"></a>多執行緒復原
-在舊版 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]中，作為部分復原作業的記錄套用為單一執行緒。 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，記錄套用為多執行緒。  
+在舊版 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]中，作為部分復原作業的記錄套用為單一執行緒。 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，記錄套用為多執行緒。  
   
 ## <a name="merge-operation"></a>MERGE 作業  
 MERGE 作業現在為多執行緒。  

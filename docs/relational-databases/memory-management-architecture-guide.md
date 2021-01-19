@@ -27,12 +27,12 @@ ms.assetid: 7b0d0988-a3d8-4c25-a276-c1bdba80d6d5
 author: rothja
 ms.author: jroth
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a8165d82fa5db393b3f2f66737910ba4de9d11a8
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 6af1077d46fa6378e0853eb570ba560d49e6eaec
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97473879"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171340"
 ---
 # <a name="memory-management-architecture-guide"></a>記憶體管理架構指南
 
@@ -97,7 +97,7 @@ ms.locfileid: "97473879"
 從 [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] 開始，單頁配置、多頁配置及 CLR 配置皆一併整合為 **「任何大小」分頁配置器**，且包含在 [最大伺服器記憶體 (MB)] 與 [最小伺服器記憶體 (MB)] 設定選項所控制的記憶體限制之中。 這些變更為經由 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 記憶體管理員的所有記憶體需求，提供了更準確的調整大小功能。 
 
 > [!IMPORTANT]
-> 請在升級到 [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] 至 [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]之後，仔細檢閱目前的 [最大伺服器記憶體 (MB)] 與 [最小伺服器記憶體 (MB)] 設定。 這是因為從 [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] 開始，這類設定目前所包含且納入記憶體配置，較舊版來得多。 這些變更適用 32 位元及 64 位元版本的 [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] 與 [!INCLUDE[ssSQL14](../includes/sssql14-md.md)]，以及 64 位元版本的 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] 到 [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]。
+> 請在升級到 [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] 至 [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]之後，仔細檢閱目前的 [最大伺服器記憶體 (MB)] 與 [最小伺服器記憶體 (MB)] 設定。 這是因為從 [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] 開始，這類設定目前所包含且納入記憶體配置，較舊版來得多。 這些變更適用 32 位元及 64 位元版本的 [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] 與 [!INCLUDE[ssSQL14](../includes/sssql14-md.md)]，以及 64 位元版本的 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] 到 [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]。
 
 下表指出特定類型的記憶體配置是否受 [最大伺服器記憶體 (MB)] 與 [最小伺服器記憶體 (MB)] 設定選項的控制：
 
@@ -341,9 +341,9 @@ FROM sys.dm_os_process_memory;
 不過，如果有許多執行緒是以高度並行的方式從相同的記憶體物件配置，則 mutex 的使用可能會導致爭用。 因此，[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 具有分割記憶體物件 (PMO) 的概念，而且每個資料分割都是由單一 CMemThread 物件來表示。 記憶體物件的資料分割會以靜態方式定義，而且無法在建立後變更。 由於記憶體配置模式根據硬體和記憶體使用量等方面而有很大的差異，因此無法預先提供完美的資料分割模式。 在大部分的情況下，使用單一分割區就已足夠，但在某些情況下，這可能會導致爭用，而只有在高度分割的記憶體物件上才可避免爭用發生。 不建議將每個記憶體物件都加以分割，因為多個磁碟分割區可能會導致其他部分效率不足並增加記憶體片段。
 
 > [!NOTE]
-> 在 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] 之前，追蹤旗標 8048 可用來強制以節點為基礎的 PMO 成為以 CPU 為基礎的 PMO。 從 [!INCLUDE[ssSQL14](../includes/sssql14-md.md)] SP2 和 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] 開始，此行為是動態的且由引擎所控制。
+> 在 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] 之前，追蹤旗標 8048 可用來強制以節點為基礎的 PMO 成為以 CPU 為基礎的 PMO。 從 [!INCLUDE[ssSQL14](../includes/sssql14-md.md)] SP2 和 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] 開始，此行為是動態的且由引擎所控制。
 
-從 [!INCLUDE[ssSQL14](../includes/sssql14-md.md)] SP2 和 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] 開始，[!INCLUDE[ssde_md](../includes/ssde_md.md)] 可以動態偵測特定 CMemThread 物件上的爭用，並將物件升階為以每個節點或每個 CPU 為基礎的實作。  一旦升階之後，PMO 就會保持升階，直到 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 程序重新開始為止。 [sys.dm_os_wait_stats](../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md) DMV 中是否有高 CMEMTHREAD 等候，以及透過觀察 [sys.dm_os_memory_objects](../relational-databases/system-dynamic-management-views/sys-dm-os-memory-objects-transact-sql.md) DMV 資料行 *contention_factor*、*partition_type*、*exclusive_allocations_count* 和 *waiting_tasks_count*，都可以偵測到 CMemThread 爭用。
+從 [!INCLUDE[ssSQL14](../includes/sssql14-md.md)] SP2 和 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] 開始，[!INCLUDE[ssde_md](../includes/ssde_md.md)] 可以動態偵測特定 CMemThread 物件上的爭用，並將物件升階為以每個節點或每個 CPU 為基礎的實作。  一旦升階之後，PMO 就會保持升階，直到 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 程序重新開始為止。 [sys.dm_os_wait_stats](../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md) DMV 中是否有高 CMEMTHREAD 等候，以及透過觀察 [sys.dm_os_memory_objects](../relational-databases/system-dynamic-management-views/sys-dm-os-memory-objects-transact-sql.md) DMV 資料行 *contention_factor*、*partition_type*、*exclusive_allocations_count* 和 *waiting_tasks_count*，都可以偵測到 CMemThread 爭用。
 
 ## <a name="see-also"></a>另請參閱
 [伺服器記憶體伺服器組態選項](../database-engine/configure-windows/server-memory-server-configuration-options.md)   

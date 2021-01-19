@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: ''
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 4ccfc459fb5dbbc2a607fd0eb87853a776820098
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: c8f5f050598129e674a74e8b924c6b2ba274cb34
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642475"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171120"
 ---
 # <a name="use-read-scale-with-always-on-availability-groups"></a>在 Always On 可用性群組使用讀取級別
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "97642475"
 
 ## <a name="read-scale-availability-groups-without-cluster"></a>沒有叢集的讀取級別可用性群組
 
-在 [!INCLUDE[sssql15-md](../../../includes/sssql15-md.md)] 和舊版中，所有可用性群組都必須有叢集。 叢集提供了高可用性和災害復原 (HADR) 的商務持續性。 另外還會為讀取作業設定次要複本。 如果目標不是高可用性，設定和操作叢集會耗用相當多的作業額外負荷。 SQL Server 2017 引進沒有叢集的讀取級別可用性群組。 
+在 [!INCLUDE[sssql15-md](../../../includes/sssql16-md.md)] 和舊版中，所有可用性群組都必須有叢集。 叢集提供了高可用性和災害復原 (HADR) 的商務持續性。 另外還會為讀取作業設定次要複本。 如果目標不是高可用性，設定和操作叢集會耗用相當多的作業額外負荷。 SQL Server 2017 引進沒有叢集的讀取級別可用性群組。 
 
 如果您的業務需求是節省資源以供主要複本上執行的任務關鍵性工作負載使用，可以使用唯讀路由，或直接連線至可讀取的次要複本。 您無須仰賴任何叢集技術的整合。 這些新功能可供在 Windows 和 Linux 平台上執行的 SQL Server 2017 使用。
 

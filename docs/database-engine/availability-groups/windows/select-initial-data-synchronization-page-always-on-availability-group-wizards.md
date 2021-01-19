@@ -14,12 +14,12 @@ f1_keywords:
 ms.assetid: 457b1140-4819-4def-8f7c-54a406e6db12
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: fd729c01993f06c9017a898e1e804dde844e10f2
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 73ee631c0dc853a60e07f09aa2ade5ce58487a0e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642149"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171090"
 ---
 # <a name="select-initial-data-synchronization-page-always-on-availability-group-wizards"></a>選取初始資料同步頁面 (Always On 可用性群組精靈)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "97642149"
   
 ## <a name="automatic-seeding"></a><a name="Auto"></a> 自動植入
  
- SQL Server 會自動為群組中的每個資料庫建立次要複本。 自動植入要求參與群組之每個 SQL Server 執行個體上的資料和記錄檔案路徑都必須相同。 適用於 [!INCLUDE[sssql15-md.md](../../../includes/sssql15-md.md)] 和更新版本。 請參閱[自動初始化 AlwaysOn 可用性群組](automatically-initialize-always-on-availability-group.md)。
+ SQL Server 會自動為群組中的每個資料庫建立次要複本。 自動植入要求參與群組之每個 SQL Server 執行個體上的資料和記錄檔案路徑都必須相同。 適用於 [!INCLUDE[sssql16-md.md](../../../includes/sssql16-md.md)] 和更新版本。 請參閱[自動初始化 AlwaysOn 可用性群組](automatically-initialize-always-on-availability-group.md)。
 
 ##  <a name="full-database-and-log-backup"></a><a name="Full"></a> 完整的資料庫及記錄備份 
  [完整的資料庫及記錄備份]  選項會在一個工作流程中，對每一個主要資料庫執行數項作業，包括建立主要資料庫的完整和記錄備份；透過還原裝載次要複本之每個伺服器執行個體上的這些備份，建立對應的次要資料庫；以及將每個次要資料庫加入可用性群組。  

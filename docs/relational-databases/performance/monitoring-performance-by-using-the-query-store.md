@@ -15,12 +15,12 @@ ms.assetid: e06344a4-22a5-4c67-b6c6-a7060deb5de6
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest
-ms.openlocfilehash: 24d5c3ff3e1b1c3f5c4be81af7a51e525dd102f4
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: e61f723ddbc3010cc705c076675b731482fdee6b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97417953"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171840"
 ---
 # <a name="monitoring-performance-by-using-the-query-store"></a>使用查詢存放區監視效能
 
@@ -31,7 +31,7 @@ ms.locfileid: "97417953"
 如需操作 Azure [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 中查詢存放區的資訊，請參閱[操作 Azure SQL Database 中的查詢存放區](best-practice-with-the-query-store.md#Insight)。
 
 > [!IMPORTANT]
-> 若您只針對 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 中的 Just-In-Time 負載見解使用查詢存放區，請計畫儘快安裝 [KB 4340759](https://support.microsoft.com/help/4340759) 中的效能延展性修正程式。
+> 若您只針對 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 中的 Just-In-Time 負載見解使用查詢存放區，請計畫儘快安裝 [KB 4340759](https://support.microsoft.com/help/4340759) 中的效能延展性修正程式。
 
 ## <a name="enabling-the-query-store"></a><a name="Enabling"></a> 啟用查詢存放區
 

@@ -11,12 +11,12 @@ ms.assetid: e466419a-d8a4-48f7-8d97-13a903ad6b15
 author: MashaMSFT
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: cbc9d56a0c084fe912ad9af0136166cdcf804ebf
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 00c7778583545c56b886bfc30c4763bacd1404b3
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85734966"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171560"
 ---
 # <a name="change-the-target-recovery-time-of-a-database-sql-server"></a>變更資料庫的目標復原時間 (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -62,7 +62,7 @@ ms.locfileid: "85734966"
      TARGET_RECOVERY_TIME **=** _target_recovery_time_ { SECONDS | MINUTES }  
   
      *目標復原時間*  
-     從 [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)]開始，預設值為 1 分鐘。 如果大於 0 (舊版的預設值)，便指定發生損毀時，指定之資料庫的復原時間上限。  
+     從 [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)]開始，預設值為 1 分鐘。 如果大於 0 (舊版的預設值)，便指定發生損毀時，指定之資料庫的復原時間上限。  
   
      SECONDS  
      指出 *target_recovery_time* 應以秒數表示。  

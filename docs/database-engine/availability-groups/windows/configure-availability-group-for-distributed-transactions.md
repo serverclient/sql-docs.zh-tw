@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 93876b488d5e265bca363d213c04cb0611c185f4
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 5587622f0f61b7b7063b246d0599d46cc8c16f0c
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642174"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170780"
 ---
 # <a name="configure-distributed-transactions-for-an-always-on-availability-group"></a>為 Always On 可用性群組設定分散式交易
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -31,9 +31,9 @@ ms.locfileid: "97642174"
 為確保分散式交易，必須設定可用性群組，將資料庫註冊為分散式交易資源管理員。  
 
 >[!NOTE]
->[!INCLUDE[SQL2016](../../../includes/sssql15-md.md)] Service Pack 2 和更新版本提供對於可用性群組中分散式交易的完整支援。 在 Service Pack 2 之前的 [!INCLUDE[SQL2016](../../../includes/sssql15-md.md)] 版本中，不支援牽涉到可用性群組中資料庫的跨資料庫分散式交易 (也就是使用相同 SQL Server 執行個體上資料庫的交易)。 [!INCLUDE[SQL2017](../../../includes/sssqlv14-md.md)] 沒有這項限制。 
+>[!INCLUDE[SQL2016](../../../includes/sssql16-md.md)] Service Pack 2 和更新版本提供對於可用性群組中分散式交易的完整支援。 在 Service Pack 2 之前的 [!INCLUDE[SQL2016](../../../includes/sssql16-md.md)] 版本中，不支援牽涉到可用性群組中資料庫的跨資料庫分散式交易 (也就是使用相同 SQL Server 執行個體上資料庫的交易)。 [!INCLUDE[SQL2017](../../../includes/sssqlv14-md.md)] 沒有這項限制。 
 >
->[!INCLUDE[SQL2016](../../../includes/sssql15-md.md)] 和 [!INCLUDE[SQL2017](../../../includes/sssqlv14-md.md)] 的組態步驟相同。
+>[!INCLUDE[SQL2016](../../../includes/sssql16-md.md)] 和 [!INCLUDE[SQL2017](../../../includes/sssqlv14-md.md)] 的組態步驟相同。
 
 在分散式交易中，用戶端應用程式使用 Microsoft Distributed Transaction Coordinator (MS DTC 或 DTC) 保證跨多個資料來源的交易一致性。 DTC 是受支援的 Windows Server 型作業系統上提供的服務。 就分散式交易而言，DTC 是「交易協調器」  。 一般而言，SQL Server 執行個體是「資源管理員」  。 當資料庫位在可用性群組中時，每個資料庫都需要是自己的資源管理員。 
 
@@ -45,7 +45,7 @@ ms.locfileid: "97642174"
 
 設定可用性群組支援分散式交易之前，必須先符合下列必要條件：
 
-* 所有參與分散式交易的 [!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] 執行個體都必須是 [!INCLUDE[SQL2016](../../../includes/sssql15-md.md)] 或更新版本。
+* 所有參與分散式交易的 [!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] 執行個體都必須是 [!INCLUDE[SQL2016](../../../includes/sssql16-md.md)] 或更新版本。
 
 * 可用性群組必須在 Windows Server 2016 或 Windows Server 2012 R2 上執行。 針對 Windows Server 2012 R2，您必須安裝 [https://support.microsoft.com/kb/3090973](https://support.microsoft.com/kb/3090973) 上所提供 KB3090973 中的更新。  
 
@@ -55,7 +55,7 @@ ms.locfileid: "97642174"
 
 
 
-您可以在 [!INCLUDE[SQL2016](../../../includes/sssql15-md.md)] 或更新版本上建立分散式交易的可用性群組。 在可用性群組定義中建立分散式交易的可用性群組，包括 `DTC_SUPPORT = PER_DB`。 下列指令碼會建立分散式交易的可用性群組。 
+您可以在 [!INCLUDE[SQL2016](../../../includes/sssql16-md.md)] 或更新版本上建立分散式交易的可用性群組。 在可用性群組定義中建立分散式交易的可用性群組，包括 `DTC_SUPPORT = PER_DB`。 下列指令碼會建立分散式交易的可用性群組。 
 
 ```sql
 CREATE AVAILABILITY GROUP MyAG
@@ -91,7 +91,7 @@ ALTER AVAILABILITY GROUP MyaAG
 ```
 
 >[!NOTE]
->從 [!INCLUDE[SQL2016](../../../includes/sssql15-md.md)] Service Pack 2 開始，您可以改變分散式交易的可用性群組。 若為 Service Pack 2 之前的 [!INCLUDE[SQL2016](../../../includes/sssql15-md.md)] 版本，您必須卸除可用性群組並使用 `DTC_SUPPORT = PER_DB` 設定來重新建立。 
+>從 [!INCLUDE[SQL2016](../../../includes/sssql16-md.md)] Service Pack 2 開始，您可以改變分散式交易的可用性群組。 若為 Service Pack 2 之前的 [!INCLUDE[SQL2016](../../../includes/sssql16-md.md)] 版本，您必須卸除可用性群組並使用 `DTC_SUPPORT = PER_DB` 設定來重新建立。 
 
 若要停用分散式交易，請使用下列 Transact-SQL 命令：
 

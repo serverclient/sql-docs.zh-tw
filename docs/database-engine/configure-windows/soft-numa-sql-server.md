@@ -18,23 +18,23 @@ helpviewer_keywords:
 ms.assetid: 1af22188-e08b-4c80-a27e-4ae6ed9ff969
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: e2674f1453242e6f9b580ff41524254a10896f76
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: df2d323f8978ea5ce9cdaf23c2acf177517ff1ff
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538029"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170930"
 ---
 # <a name="soft-numa-sql-server"></a>軟體 NUMA (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-現代處理器的每個插槽有多個核心。 每個插槽通常代表單一 NUMA 節點。 SQL Server 資料庫引擎資料分割將每個 NUMA 節點分為內部結構和資料分割服務執行緒。  只要有了在每個插槽都含有 10 個或更多核心的處理器，使用軟體 NUMA 分割硬體 NUMA 節點通常會增加延展性和效能。 在 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 之前，軟體 NUMA 會要求您編輯登錄來新增節點設定親和性遮罩，並且是在主機層級進行設定，而不是根據執行個體。 從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 和 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，當 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 服務啟動時，會自動在資料庫執行個體層級設定軟體 NUMA。  
+現代處理器的每個插槽有多個核心。 每個插槽通常代表單一 NUMA 節點。 SQL Server 資料庫引擎資料分割將每個 NUMA 節點分為內部結構和資料分割服務執行緒。  只要有了在每個插槽都含有 10 個或更多核心的處理器，使用軟體 NUMA 分割硬體 NUMA 節點通常會增加延展性和效能。 在 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 之前，軟體 NUMA 會要求您編輯登錄來新增節點設定親和性遮罩，並且是在主機層級進行設定，而不是根據執行個體。 從 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 和 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，當 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 服務啟動時，會自動在資料庫執行個體層級設定軟體 NUMA。  
   
 > [!NOTE]  
 > 軟體 NUMA 不支援熱新增處理器。  
   
 ## <a name="automatic-soft-numa"></a>自動軟體 NUMA  
-使用 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 時，只要 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 在啟動時於每個 NUMA 節點或通訊端偵測到超過八個實體核心，就會根據預設自動建立軟體 NUMA 節點。 計算節點中的實體核心時，不會區分超執行緒處理器核心。  當偵測到每個通訊端的實體核心超過八個時，[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 會建立軟體 NUMA 節點，此節點在理想情況下會包含八個核心，但可以減少至每個節點五個或增加至最多九個邏輯核心。 硬體節點的大小可由 CPU 關連遮罩限制。 NUMA 節點數目永遠不會超過支援的 NUMA 節點數目上限。  
+使用 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 時，只要 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 在啟動時於每個 NUMA 節點或通訊端偵測到超過八個實體核心，就會根據預設自動建立軟體 NUMA 節點。 計算節點中的實體核心時，不會區分超執行緒處理器核心。  當偵測到每個通訊端的實體核心超過八個時，[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 會建立軟體 NUMA 節點，此節點在理想情況下會包含八個核心，但可以減少至每個節點五個或增加至最多九個邏輯核心。 硬體節點的大小可由 CPU 關連遮罩限制。 NUMA 節點數目永遠不會超過支援的 NUMA 節點數目上限。  
   
 您可以搭配使用 [ALTER SERVER CONFIGURATION &#40;Transact-SQL&#41;](../../t-sql/statements/alter-server-configuration-transact-sql.md) 陳述式與 `SET SOFTNUMA` 引數來停用或重新啟用軟體 NUMA。 變更此設定值需要重新啟動資料庫引擎才會生效。  
   
@@ -51,7 +51,7 @@ ms.locfileid: "89538029"
 ```   
 
 > [!NOTE]
-> 以 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 開頭，使用追蹤旗標 8079 讓 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 使用自動軟體 NUMA。 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，此行為由引擎控制，且追蹤旗標 8079 沒有任何作用。 如需詳細資訊，請參閱 [DBCC TRACEON - 追蹤旗標](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md)。
+> 以 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] SP2 開頭，使用追蹤旗標 8079 讓 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 使用自動軟體 NUMA。 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，此行為由引擎控制，且追蹤旗標 8079 沒有任何作用。 如需詳細資訊，請參閱 [DBCC TRACEON - 追蹤旗標](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md)。
 
 ## <a name="manual-soft-numa"></a>手動軟體 NUMA  
 若要手動設定 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 使用軟體 NUMA，請停用自動軟體 NUMA，並編輯登錄來新增節點設定親和性遮罩。 當使用此方法時，軟體 NUMA 遮罩可陳述為二進位、DWORD (十六進位或十進位) 或 QWORD (十六進位或十進位) 登錄項目。 若要設定超過前 32 個 CPU，請使用 QWORD 或 BINARY 登錄值 (在 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 之前無法使用 QWORD 值)。 在修改登錄之後，您必須重新啟動 [!INCLUDE[ssDE](../../includes/ssde-md.md)]，軟體 NUMA 設定才會生效。  
@@ -101,7 +101,7 @@ SET PROCESS AFFINITY CPU=4 TO 7;
   
  下列範例假設您有 DL580 G9 伺服器。該伺服器的每個插槽 (共有四個插槽) 安裝有 18 顆核心，且每個插槽各位在其 K 群組中。 您可建立的軟體 NUMA 設定可能如下所示：每個節點有六個核心、每個群組有三個節點、四個群組。  
   
-|具有多個 K 群組的 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 伺服器範例|類型|值名稱|值資料|  
+|具有多個 K 群組的 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 伺服器範例|類型|值名稱|值資料|  
 |-----------------------------------------------------------------------------------------------------------------|----------|----------------|----------------|  
 |HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\130\NodeConfiguration\Node0|DWORD|CPUMask|0x3F|  
 |HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\130\NodeConfiguration\Node0|DWORD|群組|0|  

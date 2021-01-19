@@ -33,12 +33,12 @@ ms.assetid: 1054c76e-0fd5-4131-8c07-a6c5d024af50
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6cccb11c84b9b5354d418dae19557f7f76e027cf
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 206aefdd3cd58b94124a0840cef7e788c5a29390
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98095728"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171270"
 ---
 # <a name="insert-transact-sql"></a>INSERT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -319,7 +319,7 @@ OUTPUT 子句
   
 與 `BULK INSERT` 陳述式 (其持有較不嚴格的大量更新 (BU) 鎖定) 不同，具 `TABLOCK` 提示的 `INSERT INTO … SELECT` 對資料表持有獨佔 (X) 鎖定。 這代表您無法使用同時執行的多個插入作業來插入資料列。 
 
-不過，從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 和資料庫相容性層級 130 開始，`INSERT INTO … SELECT` 陳述式可以在插入堆積或叢集資料行存放區索引 (CCI) 時，以平行方式執行。 使用 `TABLOCK` 提示時，可以平行插入。  
+不過，從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 和資料庫相容性層級 130 開始，`INSERT INTO … SELECT` 陳述式可以在插入堆積或叢集資料行存放區索引 (CCI) 時，以平行方式執行。 使用 `TABLOCK` 提示時，可以平行插入。  
 
 上述陳述式的平行處理原則有下列需求，其類似於最低限度記錄的需求：  
 -   目標資料表是空白或非空白的堆積。  

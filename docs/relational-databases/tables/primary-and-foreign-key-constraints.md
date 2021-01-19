@@ -17,12 +17,12 @@ ms.assetid: 31fbcc9f-2dc5-4bf9-aa50-ed70ec7b5bcd
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 7c16f1f430f0291d30d56faadee9e2779543ef61
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 091ebaf16d46cdde5604e532a80f1dd1177586c6
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97427194"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172460"
 ---
 # <a name="primary-and-foreign-key-constraints"></a>主要與外部索引鍵條件約束
 
@@ -64,7 +64,7 @@ ms.locfileid: "97427194"
   
  例如， **Sales.SalesOrderHeader** 資料表具有與 **Sales.SalesPerson** 資料表的外部索引鍵連結，因為銷售訂單與銷售人員之間存在邏輯關聯性。 **SalesOrderHeader** 資料表中的 **SalesPersonID** 資料行符合 **SalesPerson** 資料表的主索引鍵資料行。 **SalesOrderHeader** 資料表中的 **SalesPersonID** 資料行是 **SalesPerson** 資料表的外部索引鍵。 透過建立這個外部索引鍵關聯性，如果 **SalesPersonID** 的值尚未存在於 **SalesPerson** 資料表中，就不能將其插入至 **SalesOrderHeader** 資料表。  
   
- 一個資料表最多可以參考其他 253 個資料表和資料行作為外部索引鍵 (連出參考)。 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 將單一資料表中資料行可以參考的其他資料表和資料行數目限制 (連入參考) 從 253 提高至 10,000。 (至少需要 130 相容性層級)。此增加具有下列限制：  
+ 一個資料表最多可以參考其他 253 個資料表和資料行作為外部索引鍵 (連出參考)。 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 將單一資料表中資料行可以參考的其他資料表和資料行數目限制 (連入參考) 從 253 提高至 10,000。 (至少需要 130 相容性層級)。此增加具有下列限制：  
   
 -   只有 DELETE DML 作業才支援大於 253 的外部索引鍵參考數目。 不支援 UPDATE 和 MERGE 作業。  
   

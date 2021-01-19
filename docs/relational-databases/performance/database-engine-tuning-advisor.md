@@ -12,12 +12,12 @@ f1_keywords:
 ms.assetid: 50dd0a0b-a407-4aeb-bc8b-b02a793aa30a
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 0fd814ec47548406eef0b8436751a034c97f4717
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: f3b5176bb0b9ac123090f032e0908d57155ff592
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96505295"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172180"
 ---
 # <a name="database-engine-tuning-advisor"></a>Database Engine Tuning Advisor
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -73,7 +73,7 @@ Database Engine Tuning Advisor 的設計目的為處理下列查詢工作負載�
  Database Engine Tuning Advisor 的命令提示字元版本。 **dta** 公用程式的設計，是為了讓您在應用程式和指令碼中使用 Database Engine Tuning Advisor 功能。  
   
  **工作負載**  
- Transact-SQL 指令碼檔案、追蹤檔案或追蹤資料表，內含代表您要微調之資料庫的工作負載。 從 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]開始，您可以將計畫快取指定為工作負載。  從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，您可以[將查詢存放區指定為工作負載](../../relational-databases/performance/tuning-database-using-workload-from-query-store.md)。 
+ Transact-SQL 指令碼檔案、追蹤檔案或追蹤資料表，內含代表您要微調之資料庫的工作負載。 從 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]開始，您可以將計畫快取指定為工作負載。  從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，您可以[將查詢存放區指定為工作負載](../../relational-databases/performance/tuning-database-using-workload-from-query-store.md)。 
   
  **XML 輸入檔**  
  Database Engine Tuning Advisor 可用來調整工作負載的 XML 格式檔案。 XML 輸入檔支援 GUI 或 **dta** 公用程式未提供的進階微調選項。  

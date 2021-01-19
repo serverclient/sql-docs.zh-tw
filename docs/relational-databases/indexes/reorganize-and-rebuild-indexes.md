@@ -31,12 +31,12 @@ ms.assetid: a28c684a-c4e9-4b24-a7ae-e248808b31e9
 author: pmasl
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: eca1dbef6ff7d519200e46cff7879d7cb0a9b128
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 991a30108d0683d89d8bece48eb0d2de1c1e0d37
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97478249"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171880"
 ---
 # <a name="resolve-index-fragmentation-by-reorganizing-or-rebuilding-indexes"></a>藉由重新組織或重建索引來解決索引片段
 
@@ -110,7 +110,7 @@ ms.locfileid: "97478249"
 |**computed fragmentation in percent** 值|套用至版本|修正的陳述式|
 |-----------------------------------------------|--------------------------|--------------------------|
 |> = 20%|[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 和 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]|ALTER INDEX REBUILD|
-|> = 20%|從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始|ALTER INDEX REORGANIZE|
+|> = 20%|從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始|ALTER INDEX REORGANIZE|
 
 ### <a name="to-check-the-fragmentation-of-a-rowstore-index-using-tsql"></a>使用 [!INCLUDE[tsql](../../includes/tsql-md.md)] 檢查資料列存放區索引的片段
 
@@ -234,7 +234,7 @@ object_id   TableName                   index_id    IndexName                   
 - 針對[資料行存放區](columnstore-indexes-overview.md)索引，重建會移除片段，將所有資料列移至資料行存放區，然後透過將已從資料表上以邏輯方式刪除的資料列實體刪除來回收磁碟空間。 
   
   > [!TIP]
-  > 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，通常無須重建資料行存放區索引，這是因為 `REORGANIZE` 會在背景以線上作業方式執行必要的重建作業。 
+  > 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，通常無須重建資料行存放區索引，這是因為 `REORGANIZE` 會在背景以線上作業方式執行必要的重建作業。 
   
   如需語法範例，請參閱[範例：資料行存放區重建](../../t-sql/statements/alter-index-transact-sql.md#examples-columnstore-indexes)。
 
@@ -382,7 +382,7 @@ ALTER INDEX ALL ON HumanResources.Employee
 
 ## <a name="considerations-specific-to-reorganizing-a-columnstore-index"></a>重新組織資料行存放區索引的特定考量
 
-重新組織資料行存放區索引時，[!INCLUDE[ssde_md](../../includes/ssde_md.md)] 會以壓縮資料列群組的方式，將每個 CLOSED 差異資料列群組壓縮至資料行存放區中。 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始且在 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 中，`REORGANIZE` 命令會在線上執行以下額外的重組最佳化：
+重新組織資料行存放區索引時，[!INCLUDE[ssde_md](../../includes/ssde_md.md)] 會以壓縮資料列群組的方式，將每個 CLOSED 差異資料列群組壓縮至資料行存放區中。 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始且在 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 中，`REORGANIZE` 命令會在線上執行以下額外的重組最佳化：
 
 - 當 10% 或更多資料列已經以邏輯方式刪除時，會實際將資料列從資料列群組移除。 已刪除的位元組會在實體媒體上回收。 例如，如果在包含 1 百萬個資料列的壓縮資料列群組中刪除 10 萬個資料列，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 將會移除刪除的資料列，並重新壓縮包含 90 萬個資料列的資料列群組。 將刪除的資料列移除可以節省儲存空間。
 

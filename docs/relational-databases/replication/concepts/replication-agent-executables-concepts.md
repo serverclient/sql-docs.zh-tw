@@ -18,12 +18,12 @@ ms.assetid: cba476df-d4ea-44c9-bb86-81488971e328
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016
-ms.openlocfilehash: 41525854d161d029beae6e0956bc11e536ab813b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: bd6886f7ad5569d4eba40e9e603c9fccead17f71
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97460301"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171220"
 ---
 # <a name="replication-agent-executables-concepts"></a>複寫代理程式可執行檔概念
 [!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
@@ -57,7 +57,7 @@ ms.locfileid: "97460301"
 >  在這些範例中加入了分行符號，以提升可讀性。 在批次檔中，必須在單一行中撰寫命令。  
   
 ### <a name="running-the-snapshot-agent"></a>執行快照集代理程式。  
- 這個範例批次檔會從命令提示字元叫用「快照集代理程式」，以產生 **AdvWorksSalesOrdersMerge** 發行集的快照集 (下面的指令碼使用 [!INCLUDE[ssSQL15_md](../../../includes/sssql15-md.md)] 檔案的路徑 (130 版)。 您應該調整指令碼，以指向您 [!INCLUDE[ssNoVersion_md](../../../includes/ssnoversion-md.md)] 版本的檔案)。  
+ 這個範例批次檔會從命令提示字元叫用「快照集代理程式」，以產生 **AdvWorksSalesOrdersMerge** 發行集的快照集 (下面的指令碼使用 [!INCLUDE[ssSQL15_md](../../../includes/sssql16-md.md)] 檔案的路徑 (130 版)。 您應該調整指令碼，以指向您 [!INCLUDE[ssNoVersion_md](../../../includes/ssnoversion-md.md)] 版本的檔案)。  
   
 ```  
 REM -- Declare variables  

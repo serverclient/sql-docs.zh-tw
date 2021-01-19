@@ -22,12 +22,12 @@ ms.assetid: 919158f2-38d0-4f68-82ab-e1633bd0d308
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c8d9cc3f1218ab0e374359a57dce6cb13dc0b8a6
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 3680ba07e290f8b531ab46576f76bd3ffeee3460
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98099400"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170440"
 ---
 # <a name="update-statistics-transact-sql"></a>UPDATE STATISTICS (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -108,7 +108,7 @@ UPDATE STATISTICS [ schema_name . ] table_name
   
  在特殊情況下，根據預設取樣的查詢計劃並非最佳化，此時 SAMPLE 便非常有用。 通常，查詢最佳化工具會依預設使用取樣並決定具有統計價值的取樣大小，因此不需要使用 SAMPLE 便可以建立高品質的查詢計劃。 
  
-從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，使用相容性層級 130 時，對資料進行取樣以建置統計資料將會以平行方式完成，來改善收集統計資料的效能。 每當資料表大小超過某個臨界值時，查詢最佳化工具將使用平行樣本統計資料。 
+從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，使用相容性層級 130 時，對資料進行取樣以建置統計資料將會以平行方式完成，來改善收集統計資料的效能。 每當資料表大小超過某個臨界值時，查詢最佳化工具將使用平行樣本統計資料。 
    
  SAMPLE 不能和 FULLSCAN 選項一起使用。 如果 SAMPLE 或 FULLSCAN 都未指定，查詢最佳化工具會依預設使用取樣資料並計算取樣大小。  
   
@@ -136,7 +136,7 @@ PERSIST_SAMPLE_PERCENT = { ON | OFF }
  > [!TIP] 
  > [DBCC SHOW_STATISTICS](../../t-sql/database-console-commands/dbcc-show-statistics-transact-sql.md) 和 [sys.dm_db_stats_properties](../../relational-databases/system-dynamic-management-views/sys-dm-db-stats-properties-transact-sql.md) 會針對選取的統計資料公開保存的取樣百分比值。
  
- **適用於**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 CU4 開始) 及更新版本 (從 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU1 開始)。  
+ **適用於**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 CU4 開始) 及更新版本 (從 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU1 開始)。  
  
  ON PARTITIONS ( { \<partition_number> | \<range> } [, ...n] ) ] 強制重新計算包含 ON PARTITIONS 子句所指定分割區的分葉層級統計資料，然後合併以建立全域統計資料。 由於無法將使用不同取樣率建立的分割區區統計資料合併在一起，因此需要 WITH RESAMPLE。  
   
@@ -171,7 +171,7 @@ PERSIST_SAMPLE_PERCENT = { ON | OFF }
 **適用於**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 和更新版本
 
 MAXDOP = *max_degree_of_parallelism*  
-**適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始)。  
+**適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 和 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 開始)。  
   
  在統計作業期間，覆寫 **max degree of parallelism** 設定選項。 如需詳細資訊，請參閱 [設定 max degree of parallelism 伺服器組態選項](../../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md)。 請利用 MAXDOP 來限制執行平行計畫所用的處理器數目。 最大值是 64 個處理器。  
   

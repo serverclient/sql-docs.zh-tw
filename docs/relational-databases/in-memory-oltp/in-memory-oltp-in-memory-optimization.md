@@ -15,12 +15,12 @@ ms.assetid: e1d03d74-2572-4a55-afd6-7edf0bc28bdb
 author: MightyPen
 ms.author: genemi
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 281fe018c5c2d5e0717fb2c35dfcc8c3c9e8c3fc
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 7af10ecc4753034948cc616cc85301afd7a7046d
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98100227"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172070"
 ---
 # <a name="in-memory-oltp-and-memory-optimization"></a>記憶體內部 OLTP 與記憶體最佳化
 
@@ -37,7 +37,7 @@ ms.locfileid: "98100227"
  
  請注意， [!INCLUDE[hek_2](../../includes/hek-2-md.md)] 是 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 技術，可改善交易處理的效能。 如需改善報告和分析查詢效能的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 技術，請參閱 [資料行存放區索引指南](../../relational-databases/indexes/columnstore-indexes-overview.md)。
   
- [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]、[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 及 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 中的記憶體內部 OLTP 進行了幾項改進。 已增加 Transact-SQL 介面區，讓移轉資料庫應用程式更容易。 已新增對記憶體最佳化資料表和原生編譯預存程序的執行 ALTER 作業支援，讓維護應用程式更容易。
+ [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]、[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 及 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 中的記憶體內部 OLTP 進行了幾項改進。 已增加 Transact-SQL 介面區，讓移轉資料庫應用程式更容易。 已新增對記憶體最佳化資料表和原生編譯預存程序的執行 ALTER 作業支援，讓維護應用程式更容易。
   
 > [!NOTE]  
 >  **現在就試試看**  

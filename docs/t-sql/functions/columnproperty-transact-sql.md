@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 2408c264-6eca-4120-bb71-df043c7c2792
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 287b8ff6085658b863601fcc11a3e8c37cd50faa
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 4bd06800692eb8f27494055dfa391169ced45803
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98097261"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171360"
 ---
 # <a name="columnproperty-transact-sql"></a>COLUMNPROPERTY (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -57,7 +57,7 @@ COLUMNPROPERTY ( id , column , property )
 |**AllowsNull**|允許 Null 值|1：TRUE<br /><br /> 0：FALSE<br /><br /> NULL：無效的輸入。|  
 |**ColumnId**|對應於 **sys.columns.column_id** 的資料行識別碼值。|資料行識別碼<br /><br /> **注意：** 當查詢多個資料行時，資料行識別碼值順序可能會有間距。|  
 |**FullTextTypeColumn**|資料表中保存 *column* 之文件類型資訊的 TYPE COLUMN。|此函式的第二個參數所傳遞之資料行名稱運算式的全文檢索 TYPE COLUMN 識別碼。|  
-|**GeneratedAlwaysType**|是系統產生的資料行值。 對應到 **sys.columns.generated_always_type**|**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 及更新版本。<br /><br /> 0：不一律會產生<br /><br /> 1：一律作為資料列開頭產生<br /><br /> 2：一律作為資料列結尾產生|  
+|**GeneratedAlwaysType**|是系統產生的資料行值。 對應到 **sys.columns.generated_always_type**|**適用對象**：[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 及更新版本。<br /><br /> 0：不一律會產生<br /><br /> 1：一律作為資料列開頭產生<br /><br /> 2：一律作為資料列結尾產生|  
 |**IsColumnSet**|資料行是資料行集。 如需詳細資訊，請參閱 [使用資料行集](../../relational-databases/tables/use-column-sets.md)。|1：TRUE<br /><br /> 0：FALSE<br /><br /> NULL：無效的輸入。|  
 |**IsComputed**|資料行是一個計算資料行。|1：TRUE<br /><br /> 0：FALSE<br /><br /> NULL：無效的輸入。|  
 |**IsCursorType**|程序參數的類型是 CURSOR。|1：TRUE<br /><br /> 0：FALSE<br /><br /> NULL：無效的輸入。|  

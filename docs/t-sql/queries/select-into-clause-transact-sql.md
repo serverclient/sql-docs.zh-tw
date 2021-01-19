@@ -30,12 +30,12 @@ ms.assetid: b48d69e8-5a00-48bf-b2f3-19278a72dd88
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 1e1d8f3d96adfd912ae1e4707d8aaaf17ffec20b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 7afde8d9db8beedc46ea597dc47e31877d170942
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97476689"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172720"
 ---
 # <a name="select---into-clause-transact-sql"></a>SELECT - INTO 子句 (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -66,7 +66,7 @@ SELECT...INTO 會在預設的檔案群組中建立新的資料表，然後將查
  *filegroup*    
  指定將作為新資料表建立位置的檔案群組名稱。 指定的檔案群組應該存在於資料庫上，否則 SQL Server 引擎會擲回錯誤。   
  
- **適用範圍：** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 及更新版本。
+ **適用範圍：** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 及更新版本。
   
 ## <a name="data-types"></a>資料類型  
  FILESTREAM 屬性不會傳送至新的資料表。 FILESTREAM BLOB 會以 **varbinary(max)** BLOB 的形式被複製並儲存在新資料表中。 在沒有 FILESTREAM 屬性的情況下，**varbinary(max)** 資料類型會有 2 GB 的限制。 如果 FILESTREAM BLOB 超過這個值，系統就會引發錯誤 7119 並且停止此陳述式。  
@@ -236,7 +236,7 @@ ORDER BY YearlyIncome;
 ### <a name="f-copying-the-data-from-one-table-to-another-and-create-the-new-table-on-a-specified-filegroup"></a>F. 將資料從一個資料表複製到另一個資料表，並在指定的檔案群組中建立新的資料表
 下列範例示範如何將新資料表建立成另一個資料表的複本，然後載入至與使用者預設檔案群組不同的指定檔案群組中。
 
- **適用範圍：** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 及更新版本。
+ **適用範圍：** [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 及更新版本。
 
 ```sql
 ALTER DATABASE [AdventureWorksDW2016] ADD FILEGROUP FG2;

@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: b7422911-7524-4bcd-9ab9-e460d5897b3d
 author: DavidTrigano
 ms.author: datrigan
-ms.openlocfilehash: 51f971caef999424e002a49ab357e33fd1f0657a
-ms.sourcegitcommit: 80701484b8f404316d934ad2a85fd773e26ca30c
+ms.openlocfilehash: e435d8c94dfdfc8f989875d48440554e04405376
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93243567"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172490"
 ---
 # <a name="sql-server-audit-action-groups-and-actions"></a>SQL Server Audit 動作群組和動作
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -126,7 +126,7 @@ ms.locfileid: "93243567"
  伺服器層級的動作不允許詳細篩選資料庫層級的動作。 必須有資料庫層級稽核 (例如 Employee 群組登入之 Customers 資料表的 SELECT 動作稽核)，才能實作詳細動作篩選。 請勿在使用者資料庫稽核規格中包含伺服器範圍的物件，例如系統檢視表。  
 
  > [!NOTE]
- > 由於啟用交易層級稽核所涉及的額外負荷之故，從 [!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)] SP2 CU3 和 [!INCLUDE[ssSQL17](../../../includes/sssql17-md.md)] CU4 開始，除非您已啟用通用條件合規性，否則預設會停用交易層級稽核。  如果已停用通用條件合規性，您仍然可以從 TRANSACTION_GROUP 將動作新增至稽核規格，但它不會實際收集任何交易動作。  如果您想要從 TRANSACTION_GROUP 設定任何稽核動作，自 [!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)] SP2 CU3 和 [!INCLUDE[ssSQL17](../../../includes/sssql17-md.md)] CU4 和更新版本開始，請務必透過啟用通用條件合規性來啟用交易層級稽核基礎結構。  請注意，還可以使用從 SP1 CU2 開始的追蹤旗標 3427 來停用 [!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)] 交易層級稽核。
+ > 由於啟用交易層級稽核所涉及的額外負荷之故，從 [!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)] SP2 CU3 和 [!INCLUDE[ssSQL17](../../../includes/sssql17-md.md)] CU4 開始，除非您已啟用通用條件合規性，否則預設會停用交易層級稽核。  如果已停用通用條件合規性，您仍然可以從 TRANSACTION_GROUP 將動作新增至稽核規格，但它不會實際收集任何交易動作。  如果您想要從 TRANSACTION_GROUP 設定任何稽核動作，自 [!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)] SP2 CU3 和 [!INCLUDE[ssSQL17](../../../includes/sssql17-md.md)] CU4 和更新版本開始，請務必透過啟用通用條件合規性來啟用交易層級稽核基礎結構。  請注意，還可以使用從 SP1 CU2 開始的追蹤旗標 3427 來停用 [!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)] 交易層級稽核。
   
 ## <a name="database-level-audit-action-groups"></a>資料庫層級的稽核動作群組  
  資料庫層級稽核動作群組是類似 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Security Audit 事件類別的動作。 如需有關事件類別的詳細資訊，請參閱＜ [SQL Server Event Class Reference](../../../relational-databases/event-classes/sql-server-event-class-reference.md)＞。  

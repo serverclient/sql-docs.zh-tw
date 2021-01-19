@@ -23,12 +23,12 @@ ms.assetid: 925b42e0-c5ea-4829-8ece-a53c6cddad3b
 author: pmasl
 ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 8b2e8810783bb3341f10b21c3068881558dfc611
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 02ddc1ad96f45ba67ed613ee7446d8a1c12e1e5b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97403876"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171400"
 ---
 # <a name="thread-and-task-architecture-guide"></a>執行緒和工作架構指南
 [!INCLUDE [SQL Server Azure SQL Database](../includes/applies-to-version/sql-asdb.md)]
@@ -74,7 +74,7 @@ ms.locfileid: "97403876"
 > -  背景工作角色 2 會執行短於一毫秒的工作，因此必須在其完整的配量耗盡之前必須暫止。     
 >
 > 在此案例中，最高可達 [!INCLUDE[ssSQL14](../includes/sssql14-md.md)]，背景工作角色 1 基本上可允許擁有更多的整體配量時間來獨佔排程器。   
-> 從 [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] 開始，合作式排程包括大型不足額優先 (LDF) 排程。 使用 LDF 排程時，系統會監視配量使用模式，而單一背景工作執行緒不會獨佔一個排程器。 在相同的情況下，背景工作角色 2 可以在背景工作角色1 取用更多的配量之前取用重複配量，因此可防止背景工作角色 1 在不友善的模式下獨佔排程器。
+> 從 [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] 開始，合作式排程包括大型不足額優先 (LDF) 排程。 使用 LDF 排程時，系統會監視配量使用模式，而單一背景工作執行緒不會獨佔一個排程器。 在相同的情況下，背景工作角色 2 可以在背景工作角色1 取用更多的配量之前取用重複配量，因此可防止背景工作角色 1 在不友善的模式下獨佔排程器。
 
 ### <a name="scheduling-parallel-tasks"></a>排程平行工作
 假設 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 以 MaxDOP 8 設定，且 CPU 親和性設為跨 NUMA 節點 0 和 1 的 24 個 CPU (排程器)。 排程器 0 到 11 屬於 NUMA 節點 0，而排程器 12 到 23 屬於 NUMA 節點 1。 應用程式會將下列查詢 (要求) 傳送至 [!INCLUDE[ssde_md](../includes/ssde_md.md)]：

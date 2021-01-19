@@ -22,12 +22,12 @@ ms.assetid: d198648d-fea5-416d-9f30-f9d4aebbf4ec
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ce010e0093e234c9095c440f3283b8c7942c78bc
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: d972f88744b6c8b108b1f52a54d4bf8507975017
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97480049"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171150"
 ---
 # <a name="create-indexes-with-included-columns"></a>建立內含資料行的索引
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "97480049"
   
 -   重新設計具有大型索引鍵大小的非叢集索引，如此僅有用於搜尋與查閱的資料行才會是索引鍵資料行。 讓涵蓋查詢的所有其他資料行都做為非索引鍵資料行。 如此一來，您將擁有涵蓋查詢所需的所有資料行，但是索引鍵本身會變得很小而且很有效率。  
   
--   在非叢集索引中包含非索引鍵資料行，以避免超出目前索引大小限制：最大 32 個索引鍵資料行，最大 1,700 個位元組索引鍵大小 (在 [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 之前為 16 個索引鍵資料行和 900 個位元組)。 計算索引鍵資料行數或索引鍵大小時， [!INCLUDE[ssDE](../../includes/ssde-md.md)] 不會考慮非索引鍵之索引資料行。  
+-   在非叢集索引中包含非索引鍵資料行，以避免超出目前索引大小限制：最大 32 個索引鍵資料行，最大 1,700 個位元組索引鍵大小 (在 [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 之前為 16 個索引鍵資料行和 900 個位元組)。 計算索引鍵資料行數或索引鍵大小時， [!INCLUDE[ssDE](../../includes/ssde-md.md)] 不會考慮非索引鍵之索引資料行。  
   
 ###  <a name="limitations-and-restrictions"></a><a name="Restrictions"></a> 限制事項  
   

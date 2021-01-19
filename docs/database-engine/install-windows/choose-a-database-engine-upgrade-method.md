@@ -11,12 +11,12 @@ ms.assetid: 5e57a427-2e88-4ef6-b142-4ccad97bcecc
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: c36d6718455f85314f98219b860a801984804d9d
-ms.sourcegitcommit: 3ec49252e82590de0fe559a8574606ae213f6f3b
+ms.openlocfilehash: 4acdd7f1d8b6a39af4054f30381665d1504bcb71
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97975443"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171830"
 ---
 # <a name="choose-a-database-engine-upgrade-method"></a>選擇資料庫引擎升級方法
 [!INCLUDE [SQL Server -Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
@@ -86,10 +86,10 @@ ms.locfileid: "97975443"
  例如，您可以使用此方法來升級：  
   
 -   不支援之作業系統上的 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 安裝。    
--   [!INCLUDE[ss2016](../../includes/sssql15-md.md)] 和更新版本的 SQL Server x86 安裝不支援 x86 安裝。   
+-   [!INCLUDE[ss2016](../../includes/sssql16-md.md)] 和更新版本的 SQL Server x86 安裝不支援 x86 安裝。   
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 新硬體和/或新版作業程式。    
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。   
--   [!INCLUDE[ss2016](../../includes/sssql15-md.md)] 和更新版本的 SQL Server 2005 不支援 SQL Server 2005 的就地升級。 如需詳細資訊，請參閱[是否從 SQL Server 2005 升級？](../../sql-server/end-of-support/sql-server-end-of-life-overview.md)
+-   [!INCLUDE[ss2016](../../includes/sssql16-md.md)] 和更新版本的 SQL Server 2005 不支援 SQL Server 2005 的就地升級。 如需詳細資訊，請參閱[是否從 SQL Server 2005 升級？](../../sql-server/end-of-support/sql-server-end-of-life-overview.md)
 
   
 新安裝升級的必要步驟會依據您使用連接儲存體還是 SAN 儲存體而有些微不同。  
