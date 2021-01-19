@@ -12,12 +12,12 @@ ms.assetid: 83acbcc4-c51e-439e-ac48-6d4048eba189
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: e662c2fe2037725785b7c7caeeff1c52f45c34d1
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 1ea031ed8c733a2ced272bf05c952b7f32aa7da4
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97480139"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172770"
 ---
 # <a name="columnstore-indexes---query-performance"></a>資料行存放區索引 - 查詢效能
 
@@ -32,7 +32,7 @@ ms.locfileid: "97480139"
     
 ### <a name="1-organize-data-to-eliminate-more-rowgroups-from-a-full-table-scan"></a>1.藉由全資料表掃描來組織資料以排除更多資料列群組    
     
--   **運用插入順序。** 在一般的傳統資料倉儲案例中，資料確實是按照時間順序插入且分析是在時間維度中進行。 例如，按照季來分析銷售量。 針對這類型的工作負載，會自動發生列群組刪除。 在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 中，您會發現查詢程序略過數字資料列群組。    
+-   **運用插入順序。** 在一般的傳統資料倉儲案例中，資料確實是按照時間順序插入且分析是在時間維度中進行。 例如，按照季來分析銷售量。 針對這類型的工作負載，會自動發生列群組刪除。 在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 中，您會發現查詢程序略過數字資料列群組。    
     
 -   **運用資料列存放區叢集索引。** 如果一般查詢述詞位於與資料列插入順序無關的資料行上 (例如 C1)，您可以在資料行 C1 上建立資料列存放區叢集索引，然後透過卸除資料列存放區叢集索引來建立資料行存放區叢集索引。 如果您使用 `MAXDOP = 1` 明確地建立叢集資料行存放區索引，產生的叢集資料行存放區索引會在資料行 C1 上完美地排序。 如果您指定 `MAXDOP = 8`，您將會看到跨八個資料列群組重疊的值。 在您使用大型資料集建立資料行存放區索引的初期，這是此策略的常見情況。 請注意，對於非叢集資料行存放區索引 (NCCI)，如果基底的資料列存放區資料表具有叢集索引，表示資料列已排序過。 在此情況下，產生的非叢集資料行存放區索引將會自動排序。 一項需要注意的重點是，資料行存放區索引不會因繼承而維持資料列的順序。 隨著插入新資料列或更新舊資料列，您可能需要重複該程序，因為分析查詢的效能可能會下降。    
     
@@ -52,7 +52,7 @@ ms.locfileid: "97480139"
     
  如果資料表的資料列數目超過一百萬個，但是 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 無法取得足夠的記憶體授權可使用 MAXDOP 建立索引，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 則會視需要自動降低 `MAXDOP` 以符合所提供的記憶體授權。  在某些情況下若記憶體受到限制，DOP 就必須降至 1 才能建立索引。    
     
- 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，查詢一律會以批次模式進行。 在舊版中，只有當 DOP 大於 1 時才會使用批次執行。    
+ 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，查詢一律會以批次模式進行。 在舊版中，只有當 DOP 大於 1 時才會使用批次執行。    
     
 ## <a name="columnstore-performance-explained"></a>資料行存放區效能說明    
  資料行存放區索引結合了高速記憶體內批次模式處理，以及大幅減少 I/O 要求的技術，來達到高效能查詢。 由於分析查詢會搜尋大量的資料列 (它們通常與 IO 關聯)，因此減少查詢執行期間的 I/O 對於資料行存放區索引的設計相當重要。 一旦將資料讀取到記憶體中，減少記憶體內作業數量就非常重要。    
@@ -82,7 +82,7 @@ ms.locfileid: "97480139"
     
  **資料行存放區索引何時需要執行完整資料表掃描？**    
     
- 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，您可以在叢集資料行存放區索引建立一或多個一般非叢集 B 型樹狀結構索引，就如同在資料列存放區堆積上建立一樣。 非叢集 B 型樹狀結構索引可以加快具有等號比較述詞或述詞的值範圍較小的查詢。 對於更複雜的述詞，查詢最佳化工具可能會選擇完整資料表掃描。 因為無法略過資料列群組，完整資料表掃描會很費時，尤其對於大型資料表。    
+ 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，您可以在叢集資料行存放區索引建立一或多個一般非叢集 B 型樹狀結構索引，就如同在資料列存放區堆積上建立一樣。 非叢集 B 型樹狀結構索引可以加快具有等號比較述詞或述詞的值範圍較小的查詢。 對於更複雜的述詞，查詢最佳化工具可能會選擇完整資料表掃描。 因為無法略過資料列群組，完整資料表掃描會很費時，尤其對於大型資料表。    
     
  **什麼時候完整資料表掃描的資料列群組刪除會有利於分析查詢？**    
     
@@ -99,7 +99,7 @@ ms.locfileid: "97480139"
     
  並非所有查詢執行操作子都能在批次模式中執行。 例如，Insert、Delete 或 Update 等 DML 作業是以資料列為單位來執行。 批次模式運算子的目標是加速查詢效能的運算子，例如 Scan、Join、Aggregate、Sort 等等。 因為資料行存放區索引是在 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 中引進，所以仍需要一些努力來擴增可在批次模式中執行的運算子。 下表根據產品版本顯示在批次模式中執行的運算子。    
     
-|批次模式運算子|何時使用？|[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]|[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]|[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 與 [!INCLUDE[ssSDS](../../includes/sssds-md.md)]<sup>1</sup>|註解|    
+|批次模式運算子|何時使用？|[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]|[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]|[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 與 [!INCLUDE[ssSDS](../../includes/sssds-md.md)]<sup>1</sup>|註解|    
 |---------------------------|------------------------|---------------------|---------------------|---------------------------------------|--------------|    
 |DML 運算子 (insert、delete、update、merge)||否|否|否|DML 不是批次模式運算子，因為它不是平行處理。 即使我們啟用序列模式批次處理，仍看不出允許 DML 以批次模式處理之後能有顯著改善。|    
 |資料行存放區索引掃描|SCAN|NA|是|是|對於資料行存放區索引，我們可以將述詞推送到 SCAN 節點。|    
@@ -116,14 +116,14 @@ ms.locfileid: "97480139"
 |具有序列查詢計畫的單一執行序查詢||否|否|是||    
 |sort|在 SCAN 上搭配資料行存放區索引由子句排序。|否|否|是||    
 |頂端排序||否|否|是||    
-|視窗彙總||NA|NA|是|[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 中的新運算子。|    
+|視窗彙總||NA|NA|是|[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 中的新運算子。|    
     
-<sup>1</sup> 適用於 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] 進階層、標準層 - S3 及更新版本，和所有 vCore 層，以及 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]    
+<sup>1</sup> 適用於 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] 進階層、標準層 - S3 及更新版本，和所有 vCore 層，以及 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]    
 
 如需詳細資訊，請參閱[查詢處理架構指南](../../relational-databases/query-processing-architecture-guide.md#batch-mode-execution)。
     
 ### <a name="aggregate-pushdown"></a>彙總下推    
- 彙總計算從 SCAN 擷取符合之資料列並在「批次模式」中彙總其值的一般執行路徑。 儘管這提供良好的效能，但在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 中，可將彙總作業推入 SCAN 節點，若符合下列條件，則能夠以依據重要順序提升「批次模式」執行上彙總運算的效能： 
+ 彙總計算從 SCAN 擷取符合之資料列並在「批次模式」中彙總其值的一般執行路徑。 儘管這提供良好的效能，但在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 中，可將彙總作業推入 SCAN 節點，若符合下列條件，則能夠以依據重要順序提升「批次模式」執行上彙總運算的效能： 
  
 -    彙總是 `MIN`、`MAX`、`SUM`、`COUNT` 和 `COUNT(*)`。 
 -  彙總運算子必須在 SCAN 節點頂端或包含 `GROUP BY` 的 SCAN 節點頂端。
@@ -157,7 +157,7 @@ FROM FactResellerSalesXL_CCI;
     
 讓我們考慮維度資料表 `Products`。 一般的主索引鍵通常會是以字串資料類型表示的 `ProductCode`。 為了查詢的效能，最佳做法是建立替代索引鍵 (通常是整數資料行)，以從事實資料表來參照維度資料表中的資料列。 
     
-資料行存放區索引可以非常有效率地執行具有涉及數字或整數型索引鍵之聯結/述詞的分析查詢。 不過，在許多客戶工作負載中，我們發現以字串型資料行連結事實/維度資料表的用法，而結果是具有資料行存放區索引的查詢效能無法望其項背。 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 藉由將包含字串資料行的述詞下推至 SCAN 節點，大幅改善對字串型資料行分析查詢的效能。    
+資料行存放區索引可以非常有效率地執行具有涉及數字或整數型索引鍵之聯結/述詞的分析查詢。 不過，在許多客戶工作負載中，我們發現以字串型資料行連結事實/維度資料表的用法，而結果是具有資料行存放區索引的查詢效能無法望其項背。 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 藉由將包含字串資料行的述詞下推至 SCAN 節點，大幅改善對字串型資料行分析查詢的效能。    
     
 字串述詞下推利用為資料行建立的主要/次要字典來改善查詢效能。 例如，讓我們考慮位在包含 100 個不同字串值的資料列群組中的字串資料行區段。 假設有 1 百萬個資料列，則表示每個不同的字串值平均都被參照 10,000 次。    
     

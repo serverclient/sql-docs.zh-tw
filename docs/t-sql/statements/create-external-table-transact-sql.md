@@ -22,12 +22,12 @@ ms.assetid: 6a6fd8fe-73f5-4639-9908-2279031abdec
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2595db017ce9572f6ceb7a4c7eca16f9db9e5abc
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: be0e9f5298430dc1abb6ca6b0c2c59c84d601ba2
+ms.sourcegitcommit: 23649428528346930d7d5b8be7da3dcf1a2b3190
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98095791"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98241782"
 ---
 # <a name="create-external-table-transact-sql"></a>CREATE EXTERNAL TABLE (Transact-SQL)
 
@@ -849,8 +849,6 @@ LOCATION = '*folder_or_filepath*' 指定 Azure Data Lake、Hadoop 或 Azure Blob
 在此範例中，若 LOCATION='/webdata/'，PolyBase 查詢將會傳回來自 mydata.txt 和 mydata2.txt 的資料列。 它不會傳回 mydata3.txt，因為它是隱藏資料夾的子資料夾。 它不會傳回 _hidden.txt，因為它是隱藏的檔案。
 
 ![外部資料表的遞迴資料](../../t-sql/statements/media/aps-polybase-folder-traversal.png "外部資料表的遞迴資料")
-
-若要變更預設設定並僅從根資料夾讀取，請在 core-site.xml 設定檔中將 \<polybase.recursive.traversal> 屬性設為 'false'。 此檔案位於 `<SqlBinRoot>\PolyBase\Hadoop\Conf with SqlBinRoot the bin root of SQl Server`。 例如： `C:\\Program Files\\Microsoft SQL Server\\MSSQL13.XD14\\MSSQL\\Binn` 。
 
 DATA_SOURCE = *external_data_source_name* 指定包含外部資料位置的外部資料來源名稱。 此位置位於 Azure Data Lake 中。 若要建立外部資料來源，請使用 [CREATE EXTERNAL DATA SOURCE](../../t-sql/statements/create-external-data-source-transact-sql.md)。
 

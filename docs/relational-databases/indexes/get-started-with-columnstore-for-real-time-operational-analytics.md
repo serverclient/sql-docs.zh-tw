@@ -12,17 +12,17 @@ ms.assetid: e1328615-6b59-4473-8a8d-4f360f73187d
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e89b5ab77b4b77d5cca83f6b3691027122444fe1
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 4e62692402f33bfc42957363794bad9a698b18bb
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465339"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172760"
 ---
 # <a name="get-started-with-columnstore-for-real-time-operational-analytics"></a>開始使用資料行存放區進行即時作業分析
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-  [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 引進即時作業分析，能夠同時在同一個資料庫資料表上執行分析和 OLTP 工作負載。 除了執行即時分析，您也可免除 ETL 和資料倉儲的需要。  
+  [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 引進即時作業分析，能夠同時在同一個資料庫資料表上執行分析和 OLTP 工作負載。 除了執行即時分析，您也可免除 ETL 和資料倉儲的需要。  
   
 ## <a name="real-time-operational-analytics-explained"></a>說明即時作業分析  
  傳統上，企業會有個別可用於作業 (也就是 OLTP) 和分析工作負載的系統。 在這類系統中，擷取、轉換和載入 (ETL) 工作會定期將資料從作業存放區移至分析存放區。 分析資料通常儲存於專門用來執行分析查詢的資料倉儲或資料超市中。 儘管此解決方案已是標準，但它仍有下列這三個主要挑戰︰  

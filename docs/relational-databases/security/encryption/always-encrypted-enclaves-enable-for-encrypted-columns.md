@@ -2,7 +2,7 @@
 description: 為現有加密資料行啟用具有安全記憶體保護區的 Always Encrypted
 title: 為現有加密資料行啟用具有安全記憶體保護區的 Always Encrypted | Microsoft Docs
 ms.custom: ''
-ms.date: 10/30/2019
+ms.date: 01/15/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: vanto
@@ -11,15 +11,15 @@ ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
 monikerRange: '>= sql-server-ver15'
-ms.openlocfilehash: 3c23c10d99ab16e3da138a03eac14b48d2468909
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 03a57949624897b2cd2e0552892803c21a408b52
+ms.sourcegitcommit: 8ca4b1398e090337ded64840bcb8d6c92d65c29e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97477669"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98534807"
 ---
 # <a name="enable-always-encrypted-with-secure-enclaves-for-existing-encrypted-columns"></a>為現有加密資料行啟用具有安全記憶體保護區的 Always Encrypted 
-[!INCLUDE [sqlserver2019-windows-only](../../../includes/applies-to-version/sqlserver2019-windows-only.md)]
+[!INCLUDE [sqlserver2019-windows-only-asdb](../../../includes/applies-to-version/sqlserver2019-windows-only-asdb.md)]
 
 本文描述如何解除鎖定具有安全記憶體保護區的 Always Encrypted 功能，以及如何針對現有的加密資料行啟用記憶體保護區計算。  
 
@@ -74,5 +74,5 @@ ms.locfileid: "97477669"
 如需如何透過用戶端工具輪替資料行加密金鑰的詳細資訊，請參閱[使用 SQL Server Management Studio 輪替 Always Encrypted 金鑰](rotate-always-encrypted-keys-using-ssms.md)和[使用 PowerShell 輪替 Always Encrypted 金鑰](rotate-always-encrypted-keys-using-powershell.md)。
 
 ## <a name="next-steps"></a>後續步驟
-- [使用具有安全記憶體保護區的 Always Encrypted 查詢資料行](always-encrypted-enclaves-query-columns.md)
+- [使用安全記憶體保護區執行 Transact-SQL 陳述式](always-encrypted-enclaves-query-columns.md)
 - [使用具有安全記憶體保護區的 Always Encrypted 開發應用程式](always-encrypted-enclaves-client-development.md)

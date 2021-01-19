@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: e1e55519-97ec-4404-81ef-881da3b42006
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: b18a3131329e0485221a0ae2cdaafd0726a4f31c
-ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
+ms.openlocfilehash: 1b5726aad103012b0ed7619749c1f6f669baa234
+ms.sourcegitcommit: 23649428528346930d7d5b8be7da3dcf1a2b3190
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97878952"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98241829"
 ---
 # <a name="enable-encrypted-connections-to-the-database-engine"></a>啟用資料庫引擎的加密連線
 
@@ -40,7 +40,7 @@ ms.locfileid: "97878952"
  伺服器電腦必須已佈建憑證。 若要在伺服器電腦上佈建憑證，則需要[將其匯入至 Windows](#single-server)。 用戶端電腦必須設定為[信任憑證的根授權單位](#about)。  
   
 > [!IMPORTANT]
-> 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始，已中止使用安全通訊端層 (SSL)。 請改用傳輸層安全性 (TLS)。
+> 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始，已中止使用安全通訊端層 (SSL)。 請改用傳輸層安全性 (TLS)。
 
 ## <a name="transport-layer-security-tls"></a>傳輸層安全性 (TLS)
 
@@ -92,7 +92,7 @@ TLS 使用的加密層級 (40 位元或 128 位元) 視應用程式和資料庫�
 
 - 憑證的 [主旨] 屬性必須指出一般名稱 (CN) 與伺服器電腦的主機名稱或完整網域名稱 (FQDN) 是相同的。 使用主機名稱時，必須在憑證中指定 DNS 尾碼。 如果 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 是在容錯移轉叢集上執行，則一般名稱必須符合虛擬伺服器的主機名稱或 FQDN，且容錯移轉叢集中的所有節點都必須提供憑證。
 
-- [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 和 [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 的原生用戶端 (SNAC) 支援萬用字元憑證。 SNAC 已淘汰，並已替換成 [Microsoft OLE DB Driver for SQL Server](../../connect/oledb/oledb-driver-for-sql-server.md) 和 [Microsoft ODBC Driver for SQL Server](../../connect/odbc/microsoft-odbc-driver-for-sql-server.md)。 其他用戶端可能不支援萬用字元憑證。 如需詳細資訊，請參閱用戶端文件和 [KB 258858](https://support.microsoft.com/kb/258858)。       
+- [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 和 [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 的原生用戶端 (SNAC) 支援萬用字元憑證。 SNAC 已淘汰，並已替換成 [Microsoft OLE DB Driver for SQL Server](../../connect/oledb/oledb-driver-for-sql-server.md) 和 [Microsoft ODBC Driver for SQL Server](../../connect/odbc/microsoft-odbc-driver-for-sql-server.md)。 其他用戶端可能不支援萬用字元憑證。      
   使用 SQL Server 組態管理員不能選取萬用字元憑證。 若要使用萬用字元憑證，您必須編輯 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQLServer\SuperSocketNetLib` 登錄機碼，在 [憑證] 值輸入不含空格的憑證指紋。  
 
   > [!WARNING]  

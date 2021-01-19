@@ -25,12 +25,12 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 77bd2f1cb2cd3e028bccbc5185f2336812f3f891
-ms.sourcegitcommit: d681796e8c012eca2d9629d3b816749e9f50f868
+ms.openlocfilehash: 7800e75ee2b35b491053bbcbc2ef3c05e86e1939
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98005423"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172780"
 ---
 # <a name="statistics"></a>統計資料
 
@@ -114,12 +114,12 @@ ORDER BY s.name;
     * 若資料表基數在評估統計資料時為 500 或更小的數值，將會在每 500 次修改之後更新。
     * 若資料表基數在評估統計資料時為超過 500 的數值，將會在每 500 + 20% 的修改次數之後更新。
 
-* 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 開始並 在[資料庫相容性層級](../../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md) 130 之下，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 會使用降低、動態的統計資料更新臨界值。此臨界值會根據資料表中的資料列數目來做出調整。 這是以 1000 乘以目前資料表基數的平方根來計算。 例如，如果您的資料表包含 2 百萬個資料列，則計算結果是 sqrt(1000 * 2000000) = 44721.359。 由於此變更，大型資料表上的統計資料會頻繁地更新。 不過，如果資料庫的相容性層級低於 130，便會套用 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 臨界值。 
+* 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 開始並 在[資料庫相容性層級](../../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md) 130 之下，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 會使用降低、動態的統計資料更新臨界值。此臨界值會根據資料表中的資料列數目來做出調整。 這是以 1000 乘以目前資料表基數的平方根來計算。 例如，如果您的資料表包含 2 百萬個資料列，則計算結果是 sqrt(1000 * 2000000) = 44721.359。 由於此變更，大型資料表上的統計資料會頻繁地更新。 不過，如果資料庫的相容性層級低於 130，便會套用 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 臨界值。 
 
 > [!IMPORTANT]
-> 在 [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 到 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 中，或在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 與更新版本[資料庫相容性層級](../../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md)在 120 以下的資料庫中，請啟用[追蹤旗標 2371](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md)，讓 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 使用遞減、動態統計資料更新閾值。
+> 在 [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 到 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 中，或在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 與更新版本[資料庫相容性層級](../../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md)在 120 以下的資料庫中，請啟用[追蹤旗標 2371](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md)，讓 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 使用遞減、動態統計資料更新閾值。
 
-您可以使用下列指導方針，在 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 之前的環境中啟用追蹤旗標 2371：
+您可以使用下列指導方針，在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 之前的環境中啟用追蹤旗標 2371：
 
  - 如果您未發現因統計資料過期造成的效能問題，則不需要啟用此追蹤旗標。
  - 如果您是在 SAP 系統上，請啟用此追蹤旗標。  如需詳細資訊，請參閱此[部落格](/archive/blogs/saponsqlserver/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371) \(英文\)。
@@ -297,7 +297,7 @@ GO
  重建、重組或重新組織索引等作業都不會變更資料的分佈。 因此，在執行 [ALTER INDEX REBUILD](../../t-sql/statements/alter-index-transact-sql.md#rebuilding-indexes)、[DBCC DBREINDEX](../../t-sql/database-console-commands/dbcc-dbreindex-transact-sql.md)、[DBCC INDEXDEFRAG](../../t-sql/database-console-commands/dbcc-indexdefrag-transact-sql.md) 或 [ALTER INDEX REORGANIZE](../../t-sql/statements/alter-index-transact-sql.md#reorganizing-indexes) 作業之後，您就不需要更新統計資料。 當您使用 ALTER INDEX REBUILD 或 DBCC DBREINDEX 來重建資料表或檢視表的索引時，查詢最佳化工具就會更新統計資料。不過，這種統計資料更新是重新建立索引的副產品。 在 DBCC INDEXDEFRAG 或 ALTER INDEX REORGANIZE 作業之後，查詢最佳化工具則不會更新統計資料。 
  
 > [!TIP]
-> 從 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 CU4 開始，請使用 [CREATE STATISTICS &#40;Transact-SQL&#41;](../../t-sql/statements/create-statistics-transact-sql.md) 或 [UPDATE STATISTICS &#40;Transact-SQL&#41;](../../t-sql/statements/update-statistics-transact-sql.md) 的 PERSIST_SAMPLE_PERCENT 選項，來針對後續不會明確指定取樣百分比的統計資料更新，設定並保留特定的取樣百分比。
+> 從 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 CU4 開始，請使用 [CREATE STATISTICS &#40;Transact-SQL&#41;](../../t-sql/statements/create-statistics-transact-sql.md) 或 [UPDATE STATISTICS &#40;Transact-SQL&#41;](../../t-sql/statements/update-statistics-transact-sql.md) 的 PERSIST_SAMPLE_PERCENT 選項，來針對後續不會明確指定取樣百分比的統計資料更新，設定並保留特定的取樣百分比。
 
 ### <a name="automatic-index-and-statistics-management"></a>自動索引與統計資料管理
 
