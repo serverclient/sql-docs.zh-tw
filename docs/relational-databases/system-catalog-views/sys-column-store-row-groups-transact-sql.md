@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 76e7fef2-d1a4-4272-a2bb-5f5dcd84aedc
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: c6e99ae69d27bbaebbd0fa8bd720820f14064d9b
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: bb30e3c829dcdabde66fd1a330ec617eea7e5b34
+ms.sourcegitcommit: 7791bd2ba339edc5cd2078a6537c8f6bfe72a19b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98095618"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98564466"
 ---
 # <a name="syscolumn_store_row_groups-transact-sql"></a>sys.column_store_row_groups (Transact-SQL)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "98095618"
 |**index_id**|int|內含此資料行存放區索引之資料表的索引識別碼。|  
 |**partition_number**|int|保存資料列群組 row_group_id 之資料表分割區的識別碼。 您可以使用 partition_number 將此 DMV 聯結至 sys.partitions。|  
 |**row_group_id**|int|與此資料列群組相關聯的資料列群組號碼。 此號碼在分割區中是唯一的。<br /><br /> -1 = 記憶體中資料表的結尾。|  
-|* * delta_store_hobt_id|Bigint * *|差異存放區中的 OPEN row 群組 hobt_id。<br /><br /> 如果資料列群組不在差異存放區中，則為 Null。<br /><br /> 如果是記憶體中資料表的結尾，則為 Null。|  
+|**delta_store_hobt_id**|BIGINT|差異存放區中的 OPEN row 群組 hobt_id。<br /><br /> 如果資料列群組不在差異存放區中，則為 Null。<br /><br /> 如果是記憶體中資料表的結尾，則為 Null。|  
 |**state**|TINYINT|與 state_description 相關聯的識別碼。<br /><br /> 0 = INVISIBLE<br /><br /> 1 = OPEN<br /><br /> 2 = CLOSED<br /><br /> 3 = COMPRESSED <br /><br /> 4 = 標記|  
 |**state_description**|nvarchar(60)|資料列群組的持續狀態描述：<br /><br /> 隱藏-從差異存放區中的資料建立的隱藏壓縮區段。 讀取動作將會使用差異存放區，直到不可見的壓縮區段完成為止。 然後新的區段會變成可見，並移除來源差異存放區。<br /><br /> 開啟-正在接受新記錄的讀取/寫入資料列群組。 開啟的資料列群組仍採用資料列存放區格式，且尚未壓縮為資料行存放區格式。<br /><br /> 已關閉-已填滿但尚未由元組移動器進程壓縮的資料列群組。<br /><br /> 已壓縮-已填滿和壓縮的資料列群組。|  
 |**total_rows**|BIGINT|實際儲存在資料列群組中的總列數。 有些可能已刪除，但是仍然保存。 資料列群組中資料列數目的上限為 1,048,576 (十六進位 FFFFF)。|  
@@ -78,7 +78,7 @@ AND i.index_id = CSRowGroups.index_id
 ORDER BY object_name(i.object_id), i.name, row_group_id;  
 ```  
   
-## <a name="see-also"></a>另請參閱  
+## <a name="see-also"></a>請參閱  
  [物件目錄檢視 &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/object-catalog-views-transact-sql.md)   
  [目錄檢視 &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   
  [查詢 SQL Server 系統目錄常見問題](../../relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.md)   
