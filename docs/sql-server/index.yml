@@ -9,12 +9,12 @@ metadata:
   author: MashaMSFT
   ms.author: mathoma
   ms.date: 10/14/2019
-  ms.openlocfilehash: e5fc8f3df8974ebde59f1ed2443565a0ab538b5e
-  ms.sourcegitcommit: 8a8c89b0ff6d6dfb8554b92187aca1bf0f8bcc07
+  ms.openlocfilehash: 15ee670a0f489ab9922a90514d501bf177ec7fe1
+  ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 12/17/2020
-  ms.locfileid: "97617527"
+  ms.lasthandoff: 01/20/2021
+  ms.locfileid: "98595781"
 landingContent:
 - title: Azure 上的 SQL
   linkLists:
@@ -41,7 +41,7 @@ landingContent:
     - text: 資料移轉指南
       url: https://datamigration.microsoft.com/
     - text: 資料庫相容性認證
-      url: https://aka.ms/dbcompat
+      url: ../database-engine/install-windows/compatibility-certification.md
     - text: Data Migration Assistant (DMA)
       url: ../dma/dma-overview.md
     - text: SQL Server 移轉小幫手 (SSMA)
@@ -55,7 +55,7 @@ landingContent:
     - text: SQL Server 巨量資料叢集
       url: ../big-data-cluster/big-data-cluster-overview.md
     - text: Azure Data Studio
-      url: ../azure-data-studio/what-is.md
+      url: ../azure-data-studio/what-is-azure-data-studio.md
     - text: Linux 上的 SQL Server
       url: ../linux/sql-server-linux-overview.md
     - text: 適用於 Azure Arc 的 SQL Server (預覽)
@@ -73,21 +73,21 @@ landingContent:
     - text: SQL Server Management Studio
       url: ../ssms/download-sql-server-management-studio-ssms.md
     - text: Azure Data Studio
-      url: ../azure-data-studio/download.md
+      url: ../azure-data-studio/download-azure-data-studio.md
   - linkListType: reference
     links:
     - text: Transact-SQL (T-SQL)
       url: ../t-sql/language-reference.md
     - text: SQL Server 2014 文件
-      url: https://docs.microsoft.com/sql/sql-server/sql-server-2014-release-notes
+      url: ./sql-server-2014-release-notes.md
     - text: 教育性 SQL 資源
       url: ../sql-server/educational-sql-resources.yml
     - text: 範例資料庫
-      url: https://docs.microsoft.com/sql/samples/sql-samples-where-are
+      url: ../samples/sql-samples-where-are.md
     - text: 內部與架構指南
-      url: https://aka.ms/sqlserverguides
+      url: ../relational-databases/sql-server-guides.md
     - text: 舊版 2005-2012
-      url: https://docs.microsoft.com/sql/toc/previous-versions-sql-server
+      url: ./previous-versions-sql-server.md
 - title: 業務持續性
   linkLists:
   - linkListType: overview
@@ -171,7 +171,7 @@ landingContent:
     - text: 效能中心
       url: ../relational-databases/performance/performance-center-for-sql-server-database-engine-and-azure-sql-database.md
     - text: 智慧查詢處理
-      url: https://aka.ms/IQP
+      url: ../relational-databases/performance/intelligent-query-processing.md
     - text: 自動調整
       url: ../relational-databases/automatic-tuning/automatic-tuning.md
     - text: Database Tuning Advisor
@@ -211,7 +211,7 @@ landingContent:
     - text: 分析平台系統
       url: https://www.microsoft.com/sql/analytics-platform-system/
     - text: SQL Server 機器學習服務 (R 與 Python)
-      url: https://docs.microsoft.com/sql/machine-learning/
+      url: ../machine-learning/index.yml
     - text: 使用 Polybase 的資料虛擬化
       url: ../relational-databases/polybase/polybase-guide.md
 - title: 商業智慧
@@ -225,4 +225,4 @@ landingContent:
     - text: SQL Server Integration Services (SSIS)
       url: ../integration-services/sql-server-integration-services.md
     - text: Azure Data Factory
-      url: https://docs.microsoft.com/azure/data-factory/
+      url: /azure/data-factory/

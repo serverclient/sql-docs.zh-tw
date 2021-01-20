@@ -415,8 +415,6 @@
       href: ../reporting-services/report-server-sharepoint/high-availability-reporting-services.md
     - name: 啟用及停用 RDL 沙箱
       href: ../reporting-services/report-server-sharepoint/enable-and-disable-rdl-sandboxing.md
-    - name: 設定 Reporting Services 來使用主體別名
-      href: ../reporting-services/report-server-sharepoint/configure-reporting-services-to-use-a-subject-alternative-name.md
 - name: SharePoint 網站上的報表檢視器網頁組件
   href: ../reporting-services/report-server-sharepoint/report-viewer-web-part-sharepoint-site.md
   items:
@@ -1267,6 +1265,8 @@
               href: ../reporting-services/security/set-permissions-for-report-server-items-on-a-sharepoint-site.md
     - name: 在原生模式報表伺服器上設定 SSL 連接
       href: ../reporting-services/security/configure-ssl-connections-on-a-native-mode-report-server.md
+    - name: 設定 Reporting Services 來使用主體別名
+      href: ../reporting-services/report-server-sharepoint/configure-reporting-services-to-use-a-subject-alternative-name.md
 - name: 報表訂閱
   items:
     - name: SSRS 排程概觀
