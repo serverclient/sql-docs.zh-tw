@@ -1,6 +1,6 @@
 ---
-title: SQL Server 移轉小幫手 Oracle (OracleToSQL) |Microsoft Docs
-description: 瞭解 SSMA for Oracle，並遵循將 Oracle 資料庫移轉至 SQL Server 的逐步指示。
+title: SQL Server 移轉小幫手 for Oracle (OracleToSQL) |Microsoft Docs
+description: 深入瞭解 SSMA for Oracle，並遵循將 Oracle 資料庫移轉至 SQL Server 的逐步指示。
 ms.prod: sql
 ms.custom: ''
 ms.date: 10/10/2019
@@ -11,26 +11,26 @@ ms.assetid: 84abdd92-682c-404b-879d-7879bdf5b468
 author: nahk-ivanov
 ms.author: alexiva
 manager: alexiva
-ms.openlocfilehash: a88f1ff774d3c731600f4db718b86ed3b3433c59
-ms.sourcegitcommit: e8f6c51d4702c0046aec1394109bc0503ca182f0
+ms.openlocfilehash: f6b00e473822a9f326dc28151feedbe8e26d3c8a
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87932859"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596785"
 ---
 # <a name="sql-server-migration-assistant-for-oracle-oracletosql"></a>SQL Server 移轉小幫手 Oracle (OracleToSQL) 
-[!INCLUDE[msCoName](../../includes/msconame_md.md)]適用于 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] oracle 的移轉小幫手 (SSMA) 是將 oracle 資料庫移轉至 [!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的工具2012、 [!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 2014、 [!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 2016、 [!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] windows 和 linux 上的2017、 [!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] windows 和 linux 上的2019，以及 Azure SQL Database。 SSMA for Oracle 會將 Oracle 資料庫物件轉換成 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資料庫物件，在中建立這些物件， [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 然後將資料從 Oracle 遷移至 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。  
+[!INCLUDE[msCoName](../../includes/msconame_md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Migration Assistant (SSMA) For oracle 是將 oracle 資料庫移轉至 [!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的工具[!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Windows 和 linux 上的2012、2014、 [!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 2016、 [!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 2017、 [!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] windows 和 linux 上的2019，以及 Azure SQL Database。 SSMA for Oracle 會將 Oracle 資料庫物件轉換為 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資料庫物件，在中建立這些物件， [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 然後將資料從 Oracle 遷移至 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。  
   
-本檔將為您介紹 SSMA for Oracle，並提供將 Oracle 資料庫移轉至的逐步指示 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。 下表顯示可協助您深入瞭解的文章：  
+本檔將為您介紹 SSMA for Oracle，並提供將 Oracle 資料庫移轉至的逐步指示 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。 下表顯示的文章可協助您深入瞭解：  
   
 ## <a name="contents"></a>目錄  
   
 |區段|描述|
 |-----------|---------------|
-|[SSMA for Oracle 的新功能](https://msdn.microsoft.com/f305ebb6-7393-4a43-abb3-6332b739d690)|這一版的 SSMA for Oracle 的新功能|  
-|[安裝 SSMA for Oracle &#40;OracleToSQL&#41;](../../ssma/oracle/installing-ssma-for-oracle-oracletosql.md)|包含的文章可提供在執行的電腦上安裝 SSMA for Oracle client 和必要元件的必要條件和指示 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。|  
-|[SSMA for Oracle &#40;OracleToSQL&#41;的消費者入門](../../ssma/oracle/getting-started-with-ssma-for-oracle-oracletosql.md)|介紹使用者介面、專案和設定選項。|  
-|[將 Oracle 資料庫移轉至 SQL Server &#40;OracleToSQL&#41;](../../ssma/oracle/migrating-oracle-databases-to-sql-server-oracletosql.md)|提供轉換程式的總覽，以及處理常式中每個步驟的詳細資訊。|  
-|[&#40;OracleToSQL&#41;的使用者介面參考](../../ssma/oracle/user-interface-reference-oracletosql.md)|包含 SSMA for Oracle 對話方塊的檔。|  
+|[SSMA for Oracle 的新功能](./what-s-new-in-ssma-for-oracle-oracletosql.md)|此版本 SSMA for Oracle 的新功能|  
+|[安裝 SSMA for Oracle &#40;OracleToSQL&#41;](../../ssma/oracle/installing-ssma-for-oracle-oracletosql.md)|包含的文章提供在執行的電腦上安裝 SSMA for Oracle 用戶端和必要元件的必要條件和指示 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。|  
+|[使用 SSMA for Oracle 進行消費者入門 &#40;OracleToSQL&#41;](../../ssma/oracle/getting-started-with-ssma-for-oracle-oracletosql.md)|介紹使用者介面、專案和設定選項。|  
+|[將 Oracle 資料庫移轉至 SQL Server &#40;OracleToSQL&#41;](../../ssma/oracle/migrating-oracle-databases-to-sql-server-oracletosql.md)|提供轉換程式的總覽，以及程式中每個步驟的詳細資訊。|  
+|[消費者介面參考 &#40;OracleToSQL&#41;](../../ssma/oracle/user-interface-reference-oracletosql.md)|包含 SSMA for Oracle 對話方塊的檔。|  
 |[使用 SSMA for Oracle 主控台](working-with-ssma-for-oracle-console-oracletosql.md)|包含 SSMA 主控台應用程式的檔|  
-|[取得 Oracle 協助的 SSMA](https://go.microsoft.com/fwlink/?LinkID=708538&clcid=0x409)|提供有關取得其他協助的資訊。|  
+|[取得 Oracle 協助的 SSMA](../sql-server-migration-assistant.md)|提供有關取得其他協助的資訊。|

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: d0233525-a83b-4279-813e-c554042abd0e
 author: nahk-ivanov
 ms.author: alexiva
-ms.openlocfilehash: 74420edaffb43ba1ea7d6ee20b7c1d12ea5d589d
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+ms.openlocfilehash: 2de9fc7fdc730cb09f96bff6633cab29521e175e
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92005571"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596983"
 ---
 # <a name="sql-server-migration-assistant"></a>SQL Server 移轉小幫手
 
@@ -66,13 +66,13 @@ Microsoft SQL Server 移轉小幫手 (SSMA) 工具的設計目的，是要自動
   
 - **SQL Server 的社區論壇** -在 SQL Server 社區中詢問問題  
   
-  - [SQL Server 的社團](https://go.microsoft.com/fwlink/?LinkId=42455) -SQL Server 社區所監視的新聞群組和論壇。 此網站還會列出社群資訊來源，例如部落格或網站。  
+  - [SQL Server 的社團](../sql-server/index.yml) -SQL Server 社區所監視的新聞群組和論壇。 此網站還會列出社群資訊來源，例如部落格或網站。  
   
-  - [SQL Server Developer Center 的社區](https://go.microsoft.com/fwlink/?LinkId=42456) -新聞群組、論壇和其他對 SQL Server 開發人員很有用的資源  
+  - [SQL Server Developer Center 的社區](../sql-server/index.yml) -新聞群組、論壇和其他對 SQL Server 開發人員很有用的資源  
   
 - **輔助支援** -移至 [https://support.microsoft.com/assistedsupportproducts](https://support.microsoft.com/assistedsupportproducts) 並搜尋「SQL Server 移轉小幫手」。  選取您的版本，然後選取 [啟動要求]。  SQL Server 移轉小幫手工具組含協助支援。  
   
-- 頂級**支援**-如果您有頂級合約，您可以在[premier Online 入口網站](https://premier.microsoft.com/)上取得頂級支援。  
+- 頂級 **支援**-如果您有頂級合約，您可以在 [premier Online 入口網站](https://premier.microsoft.com/)上取得頂級支援。  
   
 - **諮詢服務** -如需合作夥伴輔助的遷移，請移至 [Azure 資料庫移轉指南](https://datamigration.microsoft.com/)。
   
@@ -102,4 +102,4 @@ SQL Server 文件集中的內容均經過充分測試才發佈。 產品檔集-S
   
 客戶不得使用未記載的 API，包括 (但不限於)：預存程序、擴充預存程序、函式、檢視、資料表、資料行、屬性或中繼資料。 Microsoft 客戶支援不支援利用或使用未記載之進入點的資料庫或應用程式。  
   
-對於利用及使用未記載之進入點的應用程式或資料庫，則不保證能夠升級至 SQL Server 未來版本的伺服器或資料庫。 SQL Server 功能的用途不得超出 Microsoft SQL Server 文件集所含內容。 如果某功能未記載於 Microsoft SQL Server 文件集，即屬於 SQL Server 不支援的部分。  
+對於利用及使用未記載之進入點的應用程式或資料庫，則不保證能夠升級至 SQL Server 未來版本的伺服器或資料庫。 SQL Server 功能的用途不得超出 Microsoft SQL Server 文件集所含內容。 如果某功能未記載於 Microsoft SQL Server 文件集，即屬於 SQL Server 不支援的部分。
