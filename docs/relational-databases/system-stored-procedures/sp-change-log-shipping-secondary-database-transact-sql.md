@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 3ebcf2f1-980f-4543-a84b-fbaeea54eeac
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: 5fc10c705564c88fe157860d00a61fa5ea682cc0
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 81a5c562ddade5c60458ad491a401dab916c59d4
+ms.sourcegitcommit: fc24f7ecc155d97e789676fffe55e45840fcb088
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88486268"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620292"
 ---
 # <a name="sp_change_log_shipping_secondary_database-transact-sql"></a>sp_change_log_shipping_secondary_database (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -74,9 +74,9 @@ sp_change_log_shipping_secondary_database
   
 `[ @restore_threshold = ] 'restore_threshold'` 在產生警示之前，還原作業之間所能經歷的分鐘數。 *restore_threshold* 是 **int** ，不能是 Null。  
   
-`[ @threshold_alert = ] 'threshold_alert'` 這是超過還原臨界值時要引發的警示。 *threshold_alert* 是 **int**，預設值是14420。  
+`[ @threshold_alert = ] 'threshold_alert'` 這是超過還原臨界值時要引發的警示。 *threshold_alert* 是 **int**，預設值是14421。  
   
-`[ @threshold_alert_enabled = ] 'threshold_alert_enabled'` 指定當超出 *restore_threshold*時，是否會引發警示。 1 = 已啟用；0 = 已停用。 *threshold_alert_enabled* 是 **bit** ，不能是 Null。  
+`[ @threshold_alert_enabled = ] 'threshold_alert_enabled'` 指定當超出 *restore_threshold* 時，是否會引發警示。 1 = 已啟用；0 = 已停用。 *threshold_alert_enabled* 是 **bit** ，不能是 Null。  
   
 `[ @history_retention_period = ] 'history_retention_period'` 這是將保留記錄的時間長度（以分鐘為單位）。 *history_retention_period* 為 **int**。如果未指定任何值，則會使用1440的值。  
   
@@ -97,7 +97,7 @@ sp_change_log_shipping_secondary_database
  只有 **系統管理員（sysadmin** ）固定伺服器角色的成員，才能夠執行這個程式。  
   
 ## <a name="examples"></a>範例  
- 此範例說明如何使用 **sp_change_log_shipping_secondary_database** 來更新資料庫 **LogShipAdventureWorks**的次要資料庫參數。  
+ 此範例說明如何使用 **sp_change_log_shipping_secondary_database** 來更新資料庫 **LogShipAdventureWorks** 的次要資料庫參數。  
   
 ```  
 EXEC master.dbo.sp_change_log_shipping_secondary_database   
