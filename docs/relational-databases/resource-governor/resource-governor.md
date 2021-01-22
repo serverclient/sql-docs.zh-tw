@@ -13,19 +13,19 @@ helpviewer_keywords:
 ms.assetid: 2bc89b66-e801-45ba-b30d-8ed197052212
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 6b5f22541039f781e49615b5e8916d138a5c375b
-ms.sourcegitcommit: bb54e4c9dd8c97365b7a96dfcd557b8b86d06978
-ms.translationtype: HT
+ms.openlocfilehash: fea1ba3712f07548d259867f931188d9e5798802
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97736886"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596407"
 ---
 # <a name="resource-governor"></a>資源管理員
 [!INCLUDE [SQL Server SQL MI](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Resource Governor 是一項功能，其可用於管理 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 工作負載和系統資源耗用量。 Resource Governor 可供指定內送應用程式要求所能使用的 CPU、實體 I/O 和記憶體數量限制。  
   
 > [!NOTE]
-> 雖然 [Azure SQL Database 會利用 Resource Governor](https://azure.microsoft.com/blog/resource-governance-in-azure-sql-database/) (及其他技術) 來管理資源，Azure SQL Database 中並不支援使用者設定自訂資源集區和工作負載群組。 Azure Synapse Analytics 會透過[工作負載分類功能](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-workload-classification) \(部分機器翻譯\)，以不同的方式實作類似 Resource Governor 的行為。
+> 雖然 [Azure SQL Database 會利用 Resource Governor](https://azure.microsoft.com/blog/resource-governance-in-azure-sql-database/) (及其他技術) 來管理資源，Azure SQL Database 中並不支援使用者設定自訂資源集區和工作負載群組。 Azure Synapse Analytics 會透過[工作負載分類功能](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-workload-classification) \(部分機器翻譯\)，以不同的方式實作類似 Resource Governor 的行為。
 
 ## <a name="benefits-of-resource-governor"></a>資源管理員的優點  
  資源管理員可讓您藉由指定內送要求的資源耗用量限制來管理 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 工作負載和資源。 在「資源管理員」環境中，工作負載是一組大小類似的查詢或要求，可以也應該將其視為單一實體。 這不是一項規定，但是當工作負載的資源使用模式越一致時，您就可以從「資源管理員」得到更多的好處。 可以即時重新設定資源限制，對正在執行的工作負載造成最低的影響。  
@@ -95,5 +95,4 @@ ms.locfileid: "97736886"
   
 ## <a name="see-also"></a>另請參閱  
  [Database Engine 執行個體 &#40;SQL Server&#41;](../../database-engine/configure-windows/database-engine-instances-sql-server.md)  
-  
   

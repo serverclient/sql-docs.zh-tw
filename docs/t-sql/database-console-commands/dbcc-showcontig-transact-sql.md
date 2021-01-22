@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: 1df2123a-1197-4fff-91a3-25e3d8848aaa
 author: pmasl
 ms.author: umajay
-ms.openlocfilehash: baa64e35a39d1f61f2e5b5cda6ce64e2fc72c455
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
-ms.translationtype: HT
+ms.openlocfilehash: ed1ba4d3fb6114a74dbf972ff0a04f84a463af06
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91114976"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597084"
 ---
 # <a name="dbcc-showcontig-transact-sql"></a>DBCC SHOWCONTIG (Transact-SQL)
 
@@ -40,7 +40,7 @@ ms.locfileid: "91114976"
 > [!IMPORTANT]  
 >  [!INCLUDE[ssNoteDepFutureDontUse](../../includes/ssnotedepfuturedontuse-md.md)] 請改用 [sys.dm_db_index_physical_stats](../../relational-databases/system-dynamic-management-views/sys-dm-db-index-physical-stats-transact-sql.md)。  
   
-**適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 至[目前版本](https://go.microsoft.com/fwlink/p/?LinkId=299658))
+**適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 至 [目前版本](../../sql-server/what-s-new-in-sql-server-2016.md))
   
 ![主題連結圖示](../../database-engine/configure-windows/media/topic-link.gif "主題連結圖示") [Transact-SQL 語法慣例](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
   
@@ -99,7 +99,7 @@ DBCC SHOWCONTIG
 |**掃描範圍**|資料表或索引中的範圍數目。|  
 |**範圍切換**|當 DBCC 陳述式往返資料表或索引頁面時，在各範圍之間的移動次數。|  
 |**平均範圍平均頁數**|在頁面鏈結中，每個範圍的頁數。|  
-|**掃描密度 [最佳計數:實際計數]**|這是一個百分比。 它是**最佳次數**與**實際次數**的比例。 如果每個項目都是連續的，這個值就是 100；如果這個值小於 100，就會有某些片段存在。<br /><br /> **最佳次數**是每個項目都連續連結時，理想的範圍變更數目。 **實際次數**是實際的範圍變更數目。|  
+|**掃描密度 [最佳計數:實際計數]**|這是一個百分比。 它是 **最佳次數** 與 **實際次數** 的比例。 如果每個項目都是連續的，這個值就是 100；如果這個值小於 100，就會有某些片段存在。<br /><br /> **最佳次數** 是每個項目都連續連結時，理想的範圍變更數目。 **實際次數** 是實際的範圍變更數目。|  
 |**邏輯掃描片段**|掃描索引分葉頁時所傳回失序頁面的百分比。 這個數字與堆積無關。 失序頁面是指配置給索引之下一個實體頁面的頁面，而不是目前分葉頁中下一頁  指標所指向的頁面。|  
 |**範圍掃描片段**|掃描索引分葉頁時之失序範圍的百分比。 這個數字與堆積無關。 失序範圍是索引目前頁面所在之範圍，實際上不是索引上一頁所在範圍之下一範圍的範圍。<br /><br /> 注意:當索引跨越許多檔案時，這個數目沒有意義。|  
 |**平均平均可用位元組**|掃描頁面的平均可用位元組數。 數目愈大，頁面的飽和度愈低。 如果索引沒有許多隨機的插入，數目低會比較好。 這個數目也受到資料列大小的影響；資料列愈大，這個數目也愈大。|  
@@ -170,26 +170,26 @@ DBCC SHOWCONTIG 會判斷資料表是否嚴重片段化。 資料表的片段化
 -   重建索引。  
      請利用 ALTER INDEX 和 REBUILD 重建索引。 如需詳細資訊，請參閱 [ALTER INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/alter-index-transact-sql.md)。  
   
-**每頁平均可用位元組**和**平均頁面密度 (全滿)** 統計資料能指出索引頁面的飽和度。 **每頁平均可用位元組**的數目應該很小，而**平均頁面密度 (全滿)** 的數目數應該很大，這樣索引才不會有許多隨機的插入。 指定 FILLFACTOR 選項來卸除和重建索引，可以改進統計資料。 另外，設定 REORGANIZE 的 ALTER INDEX 也會壓縮索引，將它的 FILLFACTOR 考量在內，可以改進統計資料。
+**每頁平均可用位元組** 和 **平均頁面密度 (全滿)** 統計資料能指出索引頁面的飽和度。 **每頁平均可用位元組** 的數目應該很小，而 **平均頁面密度 (全滿)** 的數目數應該很大，這樣索引才不會有許多隨機的插入。 指定 FILLFACTOR 選項來卸除和重建索引，可以改進統計資料。 另外，設定 REORGANIZE 的 ALTER INDEX 也會壓縮索引，將它的 FILLFACTOR 考量在內，可以改進統計資料。
   
 > [!NOTE]  
 >  有許多隨機插入且非常飽和的頁面之索引，頁面分割數會增加。 這會造成更多的片段。  
   
 您可以利用下列方式來判斷索引的片段化層級：
--   比較**範圍切換**和**掃描範圍**的值。  
-     **範圍切換**值應該盡可能接近**掃描範圍**值。 這個比例會計算成**掃描密度**值。 這個值應該盡可能高，您可以縮減索引的片段化來改進它。  
+-   比較 **範圍切換** 和 **掃描範圍** 的值。  
+     **範圍切換** 值應該盡可能接近 **掃描範圍** 值。 這個比例會計算成 **掃描密度** 值。 這個值應該盡可能高，您可以縮減索引的片段化來改進它。  
   
     > [!NOTE]  
     >  如果索引跨越許多檔案時，這個方法便無法運作。  
   
--   了解**邏輯掃描片段化**和**範圍掃描片段化**值。  
-     **邏輯掃描片段化**和 (某種程度上的) **範圍掃描片段化**值，是資料表片段化程度的最佳指標。 這兩個值都應該盡可能接近零，不過，百分比 0 至 10 的值可能比較合適。  
+-   了解 **邏輯掃描片段化** 和 **範圍掃描片段化** 值。  
+     **邏輯掃描片段化** 和 (某種程度上的) **範圍掃描片段化** 值，是資料表片段化程度的最佳指標。 這兩個值都應該盡可能接近零，不過，百分比 0 至 10 的值可能比較合適。  
   
     > [!NOTE]  
-    >  如果索引跨越多個檔案，**範圍掃描片段化**值會比較高。 若要縮減這些值，您必須減少索引片段化。  
+    >  如果索引跨越多個檔案，**範圍掃描片段化** 值會比較高。 若要縮減這些值，您必須減少索引片段化。  
   
 ## <a name="permissions"></a>權限  
-使用者必須擁有資料表，或是**系統管理員 (sysadmin)** 固定伺服器角色、**db_owner** 固定資料庫角色，或 **db_ddladmin** 固定資料庫角色的成員。
+使用者必須擁有資料表，或是 **系統管理員 (sysadmin)** 固定伺服器角色、**db_owner** 固定資料庫角色，或 **db_ddladmin** 固定資料庫角色的成員。
   
 ## <a name="examples"></a>範例  
 ### <a name="a-displaying-fragmentation-information-for-a-table"></a>A. 顯示資料表的片段資訊  
@@ -354,5 +354,3 @@ GO
 [OBJECT_ID &#40;Transact-SQL&#41;](../../t-sql/functions/object-id-transact-sql.md)  
 [sys.indexes &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-indexes-transact-sql.md)
   
-  
-

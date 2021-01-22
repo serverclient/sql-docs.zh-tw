@@ -2,7 +2,7 @@
 description: DROP VIEW (Transact-SQL)
 title: DROP VIEW (Transact-SQL) | Microsoft Docs
 ms.custom: ''
-ms.date: 10/11/2018
+ms.date: 01/19/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
@@ -24,12 +24,12 @@ ms.assetid: 03cea355-e39c-46e1-b7db-8832038669dd
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3eafbb102cbd58d6d9684f083e82078a8f578feb
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
-ms.translationtype: HT
+ms.openlocfilehash: 274607fa47f7319c3dc4ec09ab58a354bce2d5e0
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98170390"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596903"
 ---
 # <a name="drop-view-transact-sql"></a>DROP VIEW (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -41,11 +41,17 @@ ms.locfileid: "98170390"
 ## <a name="syntax"></a>語法  
   
 ```syntaxsql
--- Syntax for SQL Server, Azure SQL Database, and Azure Synapse Analytics
+-- Syntax for SQL Server and Azure SQL Database
   
 DROP VIEW [ IF EXISTS ] [ schema_name . ] view_name [ ...,n ] [ ; ]  
 ```  
+
+```syntaxsql
+-- Syntax for Azure Synapse Analytics
   
+DROP VIEW [ IF EXISTS ] [ schema_name . ] view_name [ ; ]  
+```  
+
 ```syntaxsql
 -- Syntax for Parallel Data Warehouse  
   

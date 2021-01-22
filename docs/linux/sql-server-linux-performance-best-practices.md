@@ -8,12 +8,12 @@ ms.date: 12/11/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: 89b8a7c087fb87ed911be640126ec81021b045a7
-ms.sourcegitcommit: 2991ad5324601c8618739915aec9b184a8a49c74
-ms.translationtype: HT
+ms.openlocfilehash: 2a6ae62d517bc9ceefa1e97e5242ee238278bdc6
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97323294"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597286"
 ---
 # <a name="performance-best-practices-and-configuration-guidelines-for-sql-server-on-linux"></a>Linux 上 SQL Server 的效能最佳作法和設定方針
 
@@ -33,7 +33,7 @@ ms.locfileid: "97323294"
 
 裝載資料、交易記錄以及其他相關檔案 (例如記憶體內部 OLTP 的檢查點檔案) 的儲存體子系統，必須能夠妥善管理平均及尖峰工作負載。 一般而言，在內部部署環境中，儲存體廠商支援多個磁碟上分割的適當硬體 RAID組態，以確保適當的 IOPS、輸送量以及備援。 不過，因為不同儲存體廠商與不同儲存體供應項目之間存在各種架構，所以實際情況可能有所不同。
 
-針對 Azure 虛擬機器上部署的 Linux SQL Server，請考慮使用軟體 RAID，以確保能達到適當的 IOPS 與輸送量需求。 如在 Azure 虛擬機器上設定 SQL Server 時，需要類似的儲存體考量，請參閱下列文章：[SQL Server VM 的儲存體組態](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/storage-configuration)
+針對 Azure 虛擬機器上部署的 Linux SQL Server，請考慮使用軟體 RAID，以確保能達到適當的 IOPS 與輸送量需求。 如在 Azure 虛擬機器上設定 SQL Server 時，需要類似的儲存體考量，請參閱下列文章：[SQL Server VM 的儲存體組態](/azure/azure-sql/virtual-machines/windows/storage-configuration)
 
 以下範例說明如何在 Azure 虛擬機器上的 Linux 中建立軟體 RAID。 以下提供範例，但仍應該根據資料、交易記錄以及 tempdb IO 需求，使用適當的資料磁碟數目來取得磁碟區所需輸送量與 IOPS。 在此範例中，連結到 Azure 虛擬機器的資料磁碟有八個; 其中 4 個用於裝載資料檔案、2 個用於交易記錄，最後 2 個則用於 tempdb 工作負載。
 
@@ -195,7 +195,8 @@ tuned-adm list
 
 **描述：**
 
-- **vm. swappiness**：這個參數會藉由限制核心交換 SQL Server 處理序記憶體頁面，以控制指定要交換執行階段記憶體的相對權數。
+- **swappiness**：此參數會控制指定為交換執行時間進程記憶體的相對權數，相較于 filesystem 快取。 這個參數的預設值是60，這表示相較于移除檔案系統快取頁面的比率為60:140，這表示交換執行時間進程記憶體頁面。 設定值1表示在實體記憶體中保留執行時間進程記憶體的強式喜好設定，以 filesystem 快取的費用來保存。 由於 SQL Server 使用緩衝集區作為資料頁面快取，且強烈偏好寫入至實體硬體，以避免可靠復原的 filesystem 快取，因此積極的 swappiness 設定對於高效能且專用的 SQL Server 而言很有説明。
+您可以在檔中找到 [/proc/sys/vm/的其他資訊-#swappiness](https://www.kernel.org/doc/html/latest/admin-guide/sysctl/vm.html#swappiness)
 
 - **vm.dirty_\** _：未快取 SQL Server 檔案寫入存取，其滿足其資料完整性需求。 這些參數能夠實現高度的非同步寫入效能，並在節流排清時允許足夠大的快取，以降低儲存體 IO 對 Linux 快取寫入的影響。
 
@@ -215,7 +216,7 @@ sysctl -w kernel.numa_balancing=0
 
 #### <a name="kernel-settings-for-virtual-address-space"></a>虛擬位址空間的核心設定
 
-**vm.max_map_count** 的預設設定 (也就是 65536) 可能不足以安裝 SQL Server。 基於這個理由，請將 SQL Server 部署的 **vm.max_map_count** 值變更為 262144 以上，並參閱[使用 Tuned mssql 設定檔的 Linux 建議設定](#proposed-linux-settings-using-a-tuned-mssql-profile)一節，以進一步微調這些核心參數。 vm.max_map_count 的最大值為 2147483647。
+**vm.max_map_count** 的預設設定 (也就是 65536) 可能不足以安裝 SQL Server。 基於這個理由，請將 SQL Server 部署的 **vm.max_map_count** 值變更為 262144 以上，並參閱 [使用 Tuned mssql 設定檔的 Linux 建議設定](#proposed-linux-settings-using-a-tuned-mssql-profile)一節，以進一步微調這些核心參數。 vm.max_map_count 的最大值為 2147483647。
 
 ```bash
 sysctl -w vm.max_map_count=1600000

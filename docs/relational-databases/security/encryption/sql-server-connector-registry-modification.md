@@ -9,12 +9,12 @@ ms.technology: security
 ms.topic: how-to
 author: rupp29
 ms.author: arupp
-ms.openlocfilehash: 85be425e0e352961841f5317c7db219153a6c008
-ms.sourcegitcommit: 9122251ab8bbd46ea3c699e741d6842c995195fa
-ms.translationtype: HT
+ms.openlocfilehash: 8d3f89803711e96cb1e37adc9792c54bceb259c4
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91847741"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596506"
 ---
 # <a name="sql-server-connector-error-and-information-logging"></a>SQL Server 連接器錯誤及資訊記錄
 
@@ -24,7 +24,7 @@ ms.locfileid: "91847741"
 
 [適用於 Microsoft Azure Key Vault 的 SQL Server 連接器](https://www.microsoft.com/download/details.aspx?id=45344)可讓 SQL Server 加密使用 Microsoft Azure Key Vault 作為可延伸金鑰管理 (EKM) 提供者，以保護其加密金鑰。
 
-此[下載內容](https://www.microsoft.com/download/details.aspx?id=45344)包含 SQL Server 連接器及範例指令碼，可讓 SQL Server 系統管理員了解如何設定 SQL Server 連接器及啟用 SQL Server 加密案例。 如需詳細資訊，請參閱[使用 Key Vault 進行可延伸金鑰管理 (SQL Server)](https://go.microsoft.com/fwlink/p/?LinkId=521690)。
+此[下載內容](https://www.microsoft.com/download/details.aspx?id=45344)包含 SQL Server 連接器及範例指令碼，可讓 SQL Server 系統管理員了解如何設定 SQL Server 連接器及啟用 SQL Server 加密案例。 如需詳細資訊，請參閱[使用 Key Vault 進行可延伸金鑰管理 (SQL Server)](./extensible-key-management-using-azure-key-vault-sql-server.md)。
 
 使用 [Azure Key Vault 論壇](https://social.msdn.microsoft.com/Forums/AzureKeyVault)提出問題、共用見解，並討論 SQL Server 連接器。
 
@@ -44,9 +44,9 @@ ms.locfileid: "91847741"
     1. DLL 檔案日期：2018 年 1 月 30 日下午 3:00
 1. 安裝 (升級) 新的適用於 Microsoft Azure Key Vault 的 SQL Server 連接器
     1. 版本：15.0.2000.367
-    1. DLL 檔案日期：2020 年 9 月 11 日上午 5:17
+    1. DLL 檔案日期：2020 年 9 月 11 日 ‏‎ 上午 5:17
 1. 啟動 SQL Server 服務
-1. 測試加密的資料庫是否可供存取
+1. 測試加密資料庫是否可供存取
 
 ### <a name="rollback"></a>復原
 
@@ -54,8 +54,8 @@ ms.locfileid: "91847741"
 1. 使用 **Control Panel\Programs\Programs and Features** 解除安裝新版本
     1. 應用程式名稱：適用於 Microsoft Azure Key Vault 的 SQL Server 連接器
     1. 版本：15.0.2000.367
-    1. DLL 檔案日期：2020 年 9 月 11 日上午 5:17
-1. 安裝舊版適用於 Microsoft Azure Key Vault 的 SQL Server 連接器
+    1. DLL 檔案日期：2020 年 9 月 11 日 ‏‎ 上午 5:17
+1. 安裝適用於 Microsoft Azure Key Vault 的 SQL Server 連接器的舊版本
     1. 版本：15.0.300.96
     1. DLL 檔案日期：2018 年 1 月 30 日下午 3:00
 1. 啟動 SQL Server 服務
@@ -116,7 +116,7 @@ ms.locfileid: "91847741"
 
     ![ekm regedit akv 記錄](../../../relational-databases/security/encryption/media/ekm-registry/ekm-regedit-akv-log.png "ekm regedit akv log.png")  
 
-1. 在**記錄**金鑰底下，新增名為 `Level` 的 DWORD (32 位元) 值：
+1. 在 **記錄** 金鑰底下，新增名為 `Level` 的 DWORD (32 位元) 值：
 
     **HKLM\SOFTWARE\Microsoft\SQL Server Cryptographic Provider\Azure Key Vault\\Log\\**
 

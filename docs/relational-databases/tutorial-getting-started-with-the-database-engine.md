@@ -18,12 +18,12 @@ ms.assetid: 655e709b-346b-469c-bddc-a5a0238d07e0
 author: rothja
 ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 7007db1b4be0abc75e8a20cf5874b6157b63b399
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
-ms.translationtype: HT
+ms.openlocfilehash: 247b3deec1e5f5d14fafc1d29475a5087c57e40b
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97426400"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596820"
 ---
 # <a name="tutorial-getting-started-with-the-database-engine"></a>教學課程：Database Engine 使用者入門
 [!INCLUDE [SQL Server Azure SQL Database](../includes/applies-to-version/sql-asdb.md)]
@@ -49,6 +49,5 @@ ms.locfileid: "97426400"
 -   [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)]. 若要安裝 [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)]，請參閱[下載 SQL Server Management Studio](../ssms/download-sql-server-management-studio-ssms.md)。  
   
 ## <a name="see-also"></a>另請參閱  
-[教學課程：SQL Server Management Studio](../ssms/quickstarts/connect-query-sql-server.md)  
-  
+[教學課程：SQL Server Management Studio](../ssms/quickstarts/ssms-connect-query-sql-server.md)  
   

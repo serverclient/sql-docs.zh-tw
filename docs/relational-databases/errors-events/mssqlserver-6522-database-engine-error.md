@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: suresh-kandoth
 ms.author: ramakoni
-ms.openlocfilehash: 836ad79e049d7c5613755e64ca441f9ed5d73048
-ms.sourcegitcommit: d819173fb91af6f20ca6ee59686c35c71b060fbc
-ms.translationtype: HT
+ms.openlocfilehash: f48534e104139ee7cbd4eb7602fce2a8e51eeb73
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97797798"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597142"
 ---
 # <a name="mssqlserver_6522"></a>MSSQLSERVER_6522
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -205,7 +205,7 @@ CLR 常式包括下列使用 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-m
 ## <a name="references"></a>參考資料
 
 - 如需有關組件版本的詳細資訊，請參閱[已淘汰的 Visual Studio 2005 文件](https://www.microsoft.com/download/details.aspx?id=55984)。
-- 如需有關如何更新組件的詳細資訊，請參閱 [ALTER ASSEMBLY (Transact-SQL)](/sql/t-sql/statements/alter-assembly-transact-sql)。
-- 如需有關如何卸除組件的詳細資訊，請參閱 [DROP ASSEMBLY (Transact-SQL)](/sql/t-sql/statements/drop-assembly-transact-sql)。
-- 如需有關如何在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資料庫中註冊組件的詳細資訊，請參閱 [CREATE ASSEMBLY (Transact-SQL)](/sql/t-sql/statements/create-assembly-transact-sql)。
-- 如需有關 Bcp.exe 公用程式的詳細資訊，請參閱 [https://msdn2.microsoft.com/library/ms162802.aspx](/sql/tools/bcp-utility)。
+- 如需有關如何更新組件的詳細資訊，請參閱 [ALTER ASSEMBLY (Transact-SQL)](../../t-sql/statements/alter-assembly-transact-sql.md)。
+- 如需有關如何卸除組件的詳細資訊，請參閱 [DROP ASSEMBLY (Transact-SQL)](../../t-sql/statements/drop-assembly-transact-sql.md)。
+- 如需有關如何在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資料庫中註冊組件的詳細資訊，請參閱 [CREATE ASSEMBLY (Transact-SQL)](../../t-sql/statements/create-assembly-transact-sql.md)。
+- 如需有關 Bcp.exe 公用程式的詳細資訊，請參閱 [https://msdn2.microsoft.com/library/ms162802.aspx](../../tools/bcp-utility.md)。

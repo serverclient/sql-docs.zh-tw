@@ -23,12 +23,12 @@ ms.assetid: 11f8017e-5bc3-4bab-8060-c16282cfbac1
 author: rothja
 ms.author: jroth
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 9d7e51afb97a5ff698ef9a504375783b93ef9640
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
-ms.translationtype: HT
+ms.openlocfilehash: d8e1c8af9fbd147c7a20ae773dc1797026240293
+ms.sourcegitcommit: 0576ce6d7c9c5514306a90e27fa621ef25825186
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98170660"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98575736"
 ---
 # <a name="sql-server-index-architecture-and-design-guide"></a>SQL Server 索引架構和設計指南
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -69,7 +69,7 @@ ms.locfileid: "98170660"
  <sup>1</sup> 資料列存放區一直是傳統儲存關聯式資料表資料的方式。 在 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 中，資料列存放區是指其基礎資料格式為堆積、B 型樹狀結構 ([叢集索引](#Clustered)) 或記憶體最佳化資料表的資料表。
 
 ### <a name="index-design-tasks"></a>索引設計工作  
- 下列工作是針對設計索引所建議的策略：  
+ 下列工作會構成我們建議的設計索引策略：  
   
 1.  了解資料庫本身的特性。 
     * 例如，是否為必須維持高輸送量，經常修改資料的線上交易處理 (OLTP) 資料庫。 自 [!INCLUDE[ssSQL14](../includes/sssql14-md.md)] 開始，記憶體最佳化資料表和索引因為提供不需閂鎖的設計，就特別適合此案例。 如需詳細資訊，請參閱本指南中的[記憶體最佳化資料表的索引](../relational-databases/in-memory-oltp/indexes-for-memory-optimized-tables.md)，或[記憶體最佳化資料表設計指導的非叢集索引](#inmem_nonclustered_index)和[記憶體最佳化資料表設計指導的雜湊索引](#hash_index)。

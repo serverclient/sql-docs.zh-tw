@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8893ea9d-634c-4309-b52c-6337222dcb39
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: eba3e72558433acab3ba1a0edc3cd921b15281bd
-ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
-ms.translationtype: HT
+ms.openlocfilehash: 905c5988860aef1a2e495bb17d98a48eaf91c5ce
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "88457339"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98594833"
 ---
 # <a name="parsing-data"></a>剖析資料
 
@@ -205,5 +205,4 @@ ms.locfileid: "88457339"
 ## <a name="standard-parse"></a>Standard Parse
 標準剖析是一組區分地區設定的剖析常式，它支援 Oleaut32.dll 和 Ole2dsip.dll 中可用的 Automation 資料類型轉換 API 所提供的所有資料類型轉換。 標準剖析相當於 OLE DB 剖析 API。  
   
- 標準剖析提供對國際性資料之資料類型轉換的支援，它應在「快速剖析」不支援資料格式時使用。 如需 Automation 資料類型轉換 API 的詳細資訊，請參閱 [MSDN Library](https://go.microsoft.com/fwlink/?LinkId=79427)中的＜資料類型轉換 API＞。 
- 
+ 標準剖析提供對國際性資料之資料類型轉換的支援，它應在「快速剖析」不支援資料格式時使用。 如需 Automation 資料類型轉換 API 的詳細資訊，請參閱 [MSDN Library](/documentation/)中的＜資料類型轉換 API＞。 

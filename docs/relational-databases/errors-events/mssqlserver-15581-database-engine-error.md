@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: suresh-kandoth
 ms.author: ramakoni
-ms.openlocfilehash: f1221474d86d95400ca955d64b4a0812cffe1c0d
-ms.sourcegitcommit: f87f2f0f1edc91fe400040d8e3a5810347aa8d70
-ms.translationtype: HT
+ms.openlocfilehash: 018252ff40ebf2ea7bd52b34f03ed25ef124a8d7
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96868894"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596316"
 ---
 # <a name="mssqlserver_15581"></a>MSSQLSERVER_15581
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -51,7 +51,7 @@ go
 alter master key drop encryption by service master key
 ```
 
-服務主要金鑰是用於加密資料庫主要金鑰所使用的憑證。 嘗試使用已啟用 TDE 的資料庫時，需要存取 master 資料庫中的資料庫主要金鑰。 不是由服務主要金鑰加密的主要金鑰，必須在需要存取主要金鑰的每個工作階段上，使用 [OPEN MASTER KEY (Transact-SQL)](/sql/t-sql/statements/open-master-key-transact-sql) 陳述式以及密碼開啟。 因為此命令無法在系統工作階段上執行，所以無法在已啟用 TDE 的資料庫上完成復原。
+服務主要金鑰是用於加密資料庫主要金鑰所使用的憑證。 嘗試使用已啟用 TDE 的資料庫時，需要存取 master 資料庫中的資料庫主要金鑰。 不是由服務主要金鑰加密的主要金鑰，必須在需要存取主要金鑰的每個工作階段上，使用 [OPEN MASTER KEY (Transact-SQL)](../../t-sql/statements/open-master-key-transact-sql.md) 陳述式以及密碼開啟。 因為此命令無法在系統工作階段上執行，所以無法在已啟用 TDE 的資料庫上完成復原。
 
 ## <a name="user-action"></a>使用者動作
 

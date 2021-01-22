@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: b5bb52e9-a77e-41e1-93f9-d4c3bc6b2c9a
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: d40281b9c233b55b41cfc8fc18040fb3e6c4d927
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
-ms.translationtype: HT
+ms.openlocfilehash: 8b4e04871bf0264c9e9c723365f2a29d95265ffa
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195965"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98594933"
 ---
 # <a name="wmi-event-watcher-task"></a>WMI 事件監看員工作
 
@@ -45,7 +45,7 @@ ms.locfileid: "92195965"
 -   [WMI 資料讀取器工作](../../integration-services/control-flow/wmi-data-reader-task.md)  
   
 ## <a name="wql-queries"></a>WQL 查詢  
- WQL 是 SQL 用語，其包含的延伸模組可支援 WMI 事件通知和其他 WMI 特定功能。 如需有關 WQL 的詳細資訊，請參閱 [MSDN Library](https://go.microsoft.com/fwlink/?linkid=62553)中的 Windows Management Instrumentation 文件集。  
+ WQL 是 SQL 用語，其包含的延伸模組可支援 WMI 事件通知和其他 WMI 特定功能。 如需有關 WQL 的詳細資訊，請參閱 [MSDN Library](/documentation/)中的 Windows Management Instrumentation 文件集。  
   
 > [!NOTE]  
 >  不同 Windows 版本的 WMI 類別也有所不同。  
@@ -178,4 +178,4 @@ SELECT * FROM __InstanceCreationEvent WITHIN 10 WHERE TargetInstance ISA "CIM_Di
  **WQLQuerySource**  
  在清單中選取變數，或按一下 \<**New variable...**> 來建立新的變數。  
   
- **相關主題：** [Integration Services &#40;SSIS&#41; 變數](../../integration-services/integration-services-ssis-variables.md)、[新增變數](../integration-services-ssis-variables.md)  
+ **相關主題：** [Integration Services &#40;SSIS&#41; 變數](../../integration-services/integration-services-ssis-variables.md)、[新增變數](../integration-services-ssis-variables.md)

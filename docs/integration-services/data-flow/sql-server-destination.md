@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: a0227cd8-6944-4547-87e8-7b2507e26442
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: f2e7bc60bcfd7578d70528d92ef025370c28134e
-ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
-ms.translationtype: HT
+ms.openlocfilehash: 6e980e075f23d3a943870fc6dd02aa420797f8a4
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "92194730"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596481"
 ---
 # <a name="sql-server-destination"></a>SQL Server 目的地
 
@@ -117,7 +117,7 @@ ms.locfileid: "92194730"
   
 ## <a name="related-content"></a>相關內容  
   
--   support.microsoft.com 上的技術文件： [您可能會在啟用 UAC 的系統上收到「無法準備 SSIS 大量插入來進行資料插入」錯誤](https://go.microsoft.com/fwlink/?LinkId=199482)。  
+-   support.microsoft.com 上的技術文件： [您可能會在啟用 UAC 的系統上收到「無法準備 SSIS 大量插入來進行資料插入」錯誤](/troubleshoot/sql/integration-services/error-you-run-ssis-package)。  
   
 -   msdn.microsoft.com 上的技術文章： [資料載入效能指南](/previous-versions/sql/sql-server-2008/dd425070(v=sql.100))。  
   
@@ -206,4 +206,3 @@ ms.locfileid: "92194730"
   
 ## <a name="see-also"></a>另請參閱  
  [資料流程](../../integration-services/data-flow/data-flow.md)  
-  

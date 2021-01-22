@@ -18,12 +18,12 @@ ms.assetid: dad6f24c-b8d9-4dbe-a561-9b167b8f20c8
 author: cawrites
 ms.author: chadam
 monikerRange: = azuresqldb-current||>= sql-server-2016||>= sql-server-linux-2017||=azure-sqldw-latest
-ms.openlocfilehash: bfd9a1079dded6f6ffa466e8161aa98eb20c0106
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
-ms.translationtype: HT
+ms.openlocfilehash: 9c247a8316e99373add9d34614d3f6ff4af85c07
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98093570"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597347"
 ---
 # <a name="format-transact-sql"></a>FORMAT (Transact-SQL)
 
@@ -49,7 +49,7 @@ FORMAT( value, format [, culture ] )
  *format*  
  **nvarchar** 格式模式。  
   
- *format* 引數必須包含有效的 .NET Framework 格式字串，其可以是標準格式字串 (例如 "C" 或 "D")，也可以是日期與數值的自訂字元模式 (如 "MMMM DD, yyyy (dddd)")。 不支援複合格式。 如需這些格式模式的完整說明，請參閱 .NET Framework 文件中有關一般字串格式、自訂日期與時間格式，以及自訂數字格式的資訊。 您不妨從「[格式類型](https://go.microsoft.com/fwlink/?LinkId=211776)」主題開始著手。  
+ *format* 引數必須包含有效的 .NET Framework 格式字串，其可以是標準格式字串 (例如 "C" 或 "D")，也可以是日期與數值的自訂字元模式 (如 "MMMM DD, yyyy (dddd)")。 不支援複合格式。 如需這些格式模式的完整說明，請參閱 .NET Framework 文件中有關一般字串格式、自訂日期與時間格式，以及自訂數字格式的資訊。 您不妨從「[格式類型](/dotnet/standard/base-types/formatting-types)」主題開始著手。  
   
  *culture*  
  指定文化特性的選用 **nvarchar** 引數。  
@@ -129,7 +129,7 @@ Sunday, November 22, 2020   22 November 2020       Sonntag, 22. November 2020  2
   
 ### <a name="b-format-with-custom-formatting-strings"></a>B. 包含自訂格式字串的 FORMAT
 
- 下列範例會藉由指定自訂格式顯示格式數值。 此範例假設目前的日期為 2012 年 9 月 27 日。 如需有關這些自訂格式和其他自訂格式的詳細資訊，請參閱[自訂數值格式字串](https://msdn.microsoft.com/library/0c899ak8.aspx)。  
+ 下列範例會藉由指定自訂格式顯示格式數值。 此範例假設目前的日期為 2012 年 9 月 27 日。 如需有關這些自訂格式和其他自訂格式的詳細資訊，請參閱[自訂數值格式字串](/dotnet/standard/base-types/custom-numeric-format-strings)。  
   
 ```sql  
 DECLARE @d DATE = GETDATE();  
@@ -148,7 +148,7 @@ Date        Custom Number
   
 ### <a name="c-format-with-numeric-types"></a>C. 數值類型的 FORMAT
 
- 下列範例會從 [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] 資料庫的 **Sales.CurrencyRate** 資料表傳回 5 個資料列。 **EndOfDateRate** 資料行會以 **money** 類型，儲存在資料表中。 在此範例中，資料行會以未格式化的狀態傳回，然後藉由指定 .NET Number 格式、General 格式和 Currency 格式類型進行格式化。 如需有關這些數值格式和其他數值格式的詳細資訊，請參閱[標準數值格式字串](https://msdn.microsoft.com/library/dwhawy9k.aspx)。  
+ 下列範例會從 [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] 資料庫的 **Sales.CurrencyRate** 資料表傳回 5 個資料列。 **EndOfDateRate** 資料行會以 **money** 類型，儲存在資料表中。 在此範例中，資料行會以未格式化的狀態傳回，然後藉由指定 .NET Number 格式、General 格式和 Currency 格式類型進行格式化。 如需有關這些數值格式和其他數值格式的詳細資訊，請參閱[標準數值格式字串](/dotnet/standard/base-types/standard-numeric-format-strings)。  
   
 ```sql  
 SELECT TOP(5) CurrencyRateID, EndOfDayRate  

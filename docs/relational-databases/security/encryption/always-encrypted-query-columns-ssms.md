@@ -2,7 +2,7 @@
 title: 使用 Always Encrypted 與 SQL Server Management Studio 查詢資料行 | Microsoft Docs
 description: 了解如何使用 SQL Server Management Studio 在 Always Encrypted 中查詢資料行。 擷取加密資料行中儲存的加密文字或文字值。
 ms.custom: ''
-ms.date: 10/31/2019
+ms.date: 01/15/2021
 ms.prod: sql
 ms.reviewer: vanto
 ms.technology: security
@@ -13,12 +13,12 @@ ms.assetid: 29816a41-f105-4414-8be1-070675d62e84
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 1406b28cae6d73228d54059cf7463b8eaa578385
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
-ms.translationtype: HT
+ms.openlocfilehash: 4bdf43c821bd278e6080e6f9244f3bb169388653
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97405970"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596247"
 ---
 # <a name="query-columns-using-always-encrypted-with-sql-server-management-studio"></a>使用 Always Encrypted 與 SQL Server Management Studio 查詢資料行
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -90,16 +90,17 @@ ms.locfileid: "97405970"
 您可以在建立新連接或變更現有的連接時，使用 [連接到伺服器] 對話方塊來啟用或停用 Always Encrypted。 
 
 若要啟用 (停用) Always Encrypted：
-1. 開啟 [連接到伺服器] 對話方塊 (如需詳細資料，請參閱[連接到 SQL Server 執行個體](../../../ssms/quickstarts/connect-query-sql-server.md#connect-to-a-sql-server-instance))。
+1. 開啟 [連接到伺服器] 對話方塊 (如需詳細資料，請參閱[連接到 SQL Server 執行個體](../../../ssms/quickstarts/ssms-connect-query-sql-server.md#connect-to-a-sql-server-instance))。
 1. 按一下 [選項 >>]。
 1. 如果您使用 SSMS 18 或更新版本：
     1. 選取 [Always Encrypted] 索引標籤。
     1. 若要啟用 Always Encrypted，請選取 [啟用 Always Encrypted (資料行加密)]。 若要停用 Always Encrypted，請確定未選取 [啟用 Always Encrypted (資料行加密)]。
-    1. 如果您使用 [!INCLUDE [sssqlv15-md](../../../includes/sssqlv15-md.md)]，且您的 SQL Server 執行個體已設定安全記憶體保護區，您可以指定記憶體保護區證明 URL。 如果您的 SQL Server 執行個體未使用安全記憶體保護區，請確定將 [記憶體保護區證明 URL] 文字方塊留白。 如需詳細資訊，請參閱[具有安全記憶體保護區的 Always Encrypted](always-encrypted-enclaves.md)。
 1. 如果您使用 SSMS 17 或更舊版本：
     1. 選取 [其他屬性] 索引標籤。
     1. 若要啟用 Always Encrypted，請鍵入 `Column Encryption Setting = Enabled`。 若要停用 Always Encrypted，請指定 `Column Encryption Setting = Disabled`，或從 [其他屬性] 索引標籤中移除 [資料行加密設定] 的設定 (預設值為 [停用])。   
  1. 按一下 [ **連接**]。
+
+若要在搭配 [安全記憶體保護區使用 Always Encrypted](always-encrypted-enclaves.md)時，執行利用伺服器端安全記憶體保護區的語句，除了啟用連接的 Always Encrypted 之外，還需要指定記憶體保護區證明 URL。 如需詳細資訊，請參閱  [在 SSMS 中使用記憶體保護區執行 t-sql 語句的必要條件](always-encrypted-enclaves-query-columns.md#prerequisites-for-running-t-sql-statements-using-enclaves-in-ssms)。
 
 > [!TIP]
 > 在已針對現有的 [查詢編輯器] 視窗啟用和停用的 Always Encrypted 之間進行切換：   

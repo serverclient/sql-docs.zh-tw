@@ -9,12 +9,12 @@ ms.author: alayu
 ms.reviewer: maghan
 ms.custom: seodec18
 ms.date: 12/9/2020
-ms.openlocfilehash: cd990278d7478c089df7b01fa4a3738ad36368c3
-ms.sourcegitcommit: d983ad60779d90bb1c89a34d7b3d6da18447fdd8
-ms.translationtype: HT
+ms.openlocfilehash: 796499f38c9af2d7b2f6af8f860bb945d14bdac2
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96933844"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596507"
 ---
 # <a name="release-notes-for-azure-data-studio"></a>Azure Data Studio 的版本資訊
 
@@ -50,7 +50,7 @@ ms.locfileid: "96933844"
 | 新項目 | 詳細資料 | 因應措施 |
 |----------|---------|------------|
 | Azure Arc 延伸模組 | [已知問題：](https://github.com/microsoft/azuredatastudio/issues/13319)Arc MIAA & PG 部署的 [Script to Notebook] 按鈕不會在撰寫筆記本指令碼之前執行欄位驗證。 這表示，如果使用者在密碼確認輸入中輸入錯誤的密碼，最後可能會使得筆記本具有錯誤的密碼值。| 不過 [部署] 按鈕會如預期般運作，因此使用者應該可以改為加以使用。 |
-| 物件總管 | 1\.24.0 之前的 ADS 版本在物件總管中有中斷性變更，其原因是與 [Azure Synapse Analytics 無伺服器 SQL 集區](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview)相關的引擎變更。 | 若要繼續搭配 Azure Synapse Analytics 無伺服器 SQL 集區在 Azure Data Studio 中使用物件總管，您必須使用 Azure Data Studio 1.24.0 或更新版本。 |
+| 物件總管 | 1\.24.0 之前的 ADS 版本在物件總管中有中斷性變更，其原因是與 [Azure Synapse Analytics 無伺服器 SQL 集區](/azure/synapse-analytics/sql/on-demand-workspace-overview)相關的引擎變更。 | 若要繼續搭配 Azure Synapse Analytics 無伺服器 SQL 集區在 Azure Data Studio 中使用物件總管，您必須使用 Azure Data Studio 1.24.0 或更新版本。 |
 
 針對其他已知問題，您可參考 [Azure Data Studio 使用者意見反應](https://github.com/microsoft/azuredatastudio)並為產品小組提供意見反應。
 

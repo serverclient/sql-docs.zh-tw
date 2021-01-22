@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: e06d2cab-f1ff-42f1-8550-6aaec57be36f
 author: julieMSFT
 ms.author: jrasnick
-ms.openlocfilehash: 4fe754848be676d40387d4887a5a7e519da697f7
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
-ms.translationtype: HT
+ms.openlocfilehash: 7bed17ea5142acb2e9e2168491046b13d5868c44
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91111053"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597313"
 ---
 # <a name="newsequentialid-transact-sql"></a>NEWSEQUENTIALID (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "91111053"
 > [!IMPORTANT]  
 >  如果您有隱私權顧慮，請勿使用這個函數。 因為使用者不難猜出下一個產生的 GUID 值，進而存取與該 GUID 相關聯的資料。  
   
- NEWSEQUENTIALID 是 Windows [UuidCreateSequential](https://go.microsoft.com/fwlink/?LinkId=164027) 函式上的一個包裝函式，其[套用了一些隨機位元組](https://blogs.msdn.microsoft.com/dbrowne/2012/07/03/how-to-generate-sequential-guids-for-sql-server-in-net/)。
+ NEWSEQUENTIALID 是 Windows [UuidCreateSequential](/windows/win32/api/rpcdce/nf-rpcdce-uuidcreatesequential) 函式上的一個包裝函式，其[套用了一些隨機位元組](/archive/blogs/dbrowne/how-to-generate-sequential-guids-for-sql-server-in-net)。
   
 > [!WARNING]  
 >  UuidCreateSequential 函式有硬體相依性。 在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 上，當資料庫 (例如自主資料庫) 移動到另一部電腦時，順序值的叢集便可進行開發。 使用 Always On 和在 [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] 上時，若資料庫容錯移轉至不同的電腦，順序值的叢集便可進行開發。  
@@ -77,5 +77,4 @@ CREATE TABLE myTable (ColumnA uniqueidentifier DEFAULT dbo.myfunction(NEWSEQUENT
 ## <a name="see-also"></a>另請參閱  
  [NEWID &#40;Transact-SQL&#41;](../../t-sql/functions/newid-transact-sql.md)   
  [比較運算子 &#40;Transact-SQL&#41;](../../t-sql/language-elements/comparison-operators-transact-sql.md)  
-  
   

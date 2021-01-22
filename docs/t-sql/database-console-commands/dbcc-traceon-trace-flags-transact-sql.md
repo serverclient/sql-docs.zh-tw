@@ -2,7 +2,7 @@
 description: DBCC TRACEON - 追蹤旗標 (Transact-SQL)
 title: 追蹤旗標 (Transact-SQL) | Microsoft Docs
 ms.custom: ''
-ms.date: 03/27/2020
+ms.date: 01/19/2021
 ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: b971b540-1ac2-435b-b191-24399eb88265
 author: pmasl
 ms.author: pelopes
-ms.openlocfilehash: 0332cd817851ff1152d6dc476bd757d971e41bc2
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
-ms.translationtype: HT
+ms.openlocfilehash: 2cc8cbcc737c1f77c11aee6826ab39bd8b1ec4f1
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98170210"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597241"
 ---
 # <a name="dbcc-traceon---trace-flags-transact-sql"></a>DBCC TRACEON - 追蹤旗標 (Transact-SQL)
 
@@ -193,6 +193,7 @@ ms.locfileid: "98170210"
 |**9929**|將記憶體中的檢查點檔案大小減少至各 1 MB。 如需詳細資訊，請參閱此 [Microsoft 支援服務文章](https://support.microsoft.com/kb/3147012) \(機器翻譯\)。<br /><br />**範圍**：只限全域|  
 |**9939**|在參考記憶體最佳化資料表或資料表變數的 DML 作業中，啟用平行計畫和平行掃描記憶體最佳化資料表和資料表變數 (只要它們不是 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 中 DML 作業的目標)。 如需詳細資訊，請參閱此 [Microsoft 支援服務文章](https://support.microsoft.com/kb/4013877) \(機器翻譯\)。<br /><br />**注意：** 如果同時也明確啟用追蹤旗標 4199，則不需要追蹤旗標 9939。<br /><br />**範圍**：全域或工作階段或查詢 (QUERYTRACEON)|   
 |**9944**|當資料庫具有大量記憶體最佳化資料表或記憶體最佳化資料表類型，而且可能觀察到 PREMPTIVE_OS_FINDFILE 或 PREEMPTIVE_OS_CREATEDIRECTORY 等候類型的封鎖時，啟用緩慢資料庫復原時間的非預設修正程式。 如需詳細資訊，請參閱此 [Microsoft 支援服務文章](https://support.microsoft.com/kb/4090789)和此 [Microsoft 支援服務文章](https://support.microsoft.com/kb/4052338)。<br /><br />**範圍**：只限全域|  
+|**10054**|停 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 用查詢最佳化工具規則，將 decorrelates 中的子查詢或述詞加入外部聯結。<br /><br />**注意：** 此追蹤旗標適用於 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 和更新版本的組建。<br /><br />**注意：** 請確定您已徹底測試此選項後，再將其部署到生產環境。<br /><br />**範圍**：全域或工作階段或查詢 (QUERYTRACEON)| 
 |**10204**|在資料行存放區索引重組期間停用合併/重新壓縮。 在 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 中，當重新組織資料行存放區索引時，新功能會自動將任何小型的壓縮資料列群組合併成較大的壓縮資料列群組，並重新壓縮有大量已刪除資料列的任何資料列群組。<br /><br />**注意：** 追蹤旗標 10204 不適用於在記憶體最佳化資料表上建立的資料行存放區索引。<br /><br />**範圍**：全域或工作階段|   
 |**10207**|允許叢集資料行存放區索引 (CCI) 掃描略過損毀的區段或中繼資料，進而允許從損毀的 CCI 擷取資料。 如需詳細資訊，請參閱此 [Microsoft 支援服務文章](https://support.microsoft.com/kb/3067257) \(機器翻譯\)。<br /><br />**範圍**：全域或工作階段| 
 |**10316**|在[內部記憶體最佳化暫存時態表](../../relational-databases/tables/system-versioned-temporal-tables-with-memory-optimized-tables.md)上建立預設索引和額外的索引。 如果您有特定的查詢模式，而其中包含預設索引未涵蓋的資料行，您可以考慮加入額外的索引。<br /><br />**注意：** 記憶體最佳化資料表的系統建立版本時態表，是專為提供高交易輸送量所設計。 請留意，對負責更新或刪除目前資料表資料列的 DML 作業來說，建立額外的索引可能會造成額外負荷。 使用額外的索引，您的目標應該是在時態性查詢和 DML 額外負荷之間尋求適當的平衡。<br /><br />**範圍**：全域或工作階段|

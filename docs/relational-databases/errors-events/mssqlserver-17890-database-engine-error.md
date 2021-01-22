@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ''
 author: suresh-kandoth
 ms.author: ramakoni
-ms.openlocfilehash: 6a854486d1867e84bcd9b13cb148d3026a41d51f
-ms.sourcegitcommit: d819173fb91af6f20ca6ee59686c35c71b060fbc
-ms.translationtype: HT
+ms.openlocfilehash: c6611fcc392d37545f50e12fa8007923d8bc5846
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97797759"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596352"
 ---
 # <a name="mssqlserver_17890"></a>MSSQLSERVER_17890
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -154,7 +154,7 @@ ms.locfileid: "97797759"
 
 - 在您為多個 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 執行個體設定 [最大伺服器記憶體] 選項與 [最小伺服器記憶體] 選項之前，請考慮針對每個 SQL Server 執行個體的非緩衝集區記憶體需求。 然後，針對每個 SQL Server 執行個體設定這些選項。
 
-在理想的情況下，您會在尖峰負載期間收集此基準資訊。 因此，您可以判斷各種應用程式與元件的記憶體需求，以支援尖峰負載。 視系統上執行的活動和應用程式而定，記憶體需求會因系統而異。 您可以查詢動態管理檢視 sys.dm_os_process_memory 中提供的資訊，以了解系統是否遇到記憶體不足的狀況。 如需詳細資訊，請參閱 [sys.dm_os_process_memory (Transact-SQL)](/sql/relational-databases/system-dynamic-management-views/sys-dm-os-process-memory-transact-sql)。
+在理想的情況下，您會在尖峰負載期間收集此基準資訊。 因此，您可以判斷各種應用程式與元件的記憶體需求，以支援尖峰負載。 視系統上執行的活動和應用程式而定，記憶體需求會因系統而異。 您可以查詢動態管理檢視 sys.dm_os_process_memory 中提供的資訊，以了解系統是否遇到記憶體不足的狀況。 如需詳細資訊，請參閱 [sys.dm_os_process_memory (Transact-SQL)](../system-dynamic-management-views/sys-dm-os-process-memory-transact-sql.md)。
 
 ## <a name="improvements-added-in-windows-server-2008-and-r2-version"></a>Windows Server 2008 與 R2 版本中新增的改進
 

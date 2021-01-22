@@ -53,24 +53,24 @@ ms.assetid: a0df1ac2-6699-4ac0-8f79-f362f23496f1
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6510f4310126667ac8d48382c6ff3a856b37da00
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
-ms.translationtype: HT
+ms.openlocfilehash: 0fbc4c09e7d00c8836f7c3efd17dbfe660cd669a
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97402247"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597125"
 ---
 # <a name="odbc-scalar-functions-transact-sql"></a>ODBC 純量函數 (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  您可以在 [!INCLUDE[tsql](../../includes/tsql-md.md)] 陳述式中使用 [ODBC 純量函式](https://go.microsoft.com/fwlink/?LinkID=88579)。 這些陳述式會由 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 進行解譯。 它們可用於預存程序和使用者自訂函數中。 這些項目包括字串、數值、時間、日期、間隔和系統函數。  
+  您可以在 [!INCLUDE[tsql](../../includes/tsql-md.md)] 陳述式中使用 [ODBC 純量函式](../../odbc/reference/appendixes/appendix-e-scalar-functions.md)。 這些陳述式會由 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 進行解譯。 它們可用於預存程序和使用者自訂函數中。 這些項目包括字串、數值、時間、日期、間隔和系統函數。  
   
-## <a name="usage"></a>使用量  
+## <a name="usage"></a>使用方式  
  ```syntaxsql
  SELECT {fn <function_name> [ (<argument>,....n) ] }
  ```
   
-## <a name="functions"></a>函式  
+## <a name="functions"></a>函數  
  下表將列出不會在 [!INCLUDE[tsql](../../includes/tsql-md.md)] 中重複的 ODBC 純量函式。  
   
 ### <a name="string-functions"></a>字串函式  
@@ -251,4 +251,4 @@ SELECT {fn WEEK( @date_exp )};
 ```  
   
 ## <a name="see-also"></a>另請參閱  
- [內建函數 &#40;Transact-SQL&#41;](~/t-sql/functions/functions.md)  
+ [內建函數 &#40;Transact-SQL&#41;](~/t-sql/functions/functions.md)
