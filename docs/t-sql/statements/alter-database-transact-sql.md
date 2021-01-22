@@ -27,12 +27,12 @@ ms.assetid: 15f8affd-8f39-4021-b092-0379fc6983da
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-current||=azuresqldb-mi-current||=azure-sqldw-latest||>=aps-pdw-2016'
-ms.openlocfilehash: 9086c0e4dcda0a98daad3e372e719bde7fc628d7
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
-ms.translationtype: HT
+ms.openlocfilehash: 1f25887409183593230d44dfd813e1ff36a3ee36
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98099505"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98689040"
 ---
 # <a name="alter-database-transact-sql"></a>ALTER DATABASE (Transact-SQL)
 
@@ -876,6 +876,17 @@ CURRENT
 清除計畫快取會導致重新編譯所有後續執行計畫，而且可能會導致查詢效能突然暫時下降。 針對每次清除計畫快取的快取存放區，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 錯誤記錄檔會包含下列資訊訊息：「由於某些資料庫維護或重新設定作業，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的 '%s' 快取存放區 (計畫快取的一部分) 發生 %d 次快取存放區排清」。 只要在該時間間隔內快取發生排清，這個訊息就會每五分鐘記錄一次。
 
 在針對具有預設選項的資料庫執行數個查詢時，系統也會排清計畫快取。 然後卸除資料庫。
+
+某些 `ALTER DATABASE` 語句需要執行資料庫的獨佔鎖定。 這就是為什麼當另一個使用中的 proces cannot 持有資料庫鎖定時，它們可能會失敗。 像這樣的情況所報告的錯誤是 `Msg 5061, Level 16, State 1, Line 38` 使用 message `ALTER DATABASE failed because a lock could not be placed on database '<database name>'. Try again later` 。 這通常是暫時性的失敗，若要解決此問題，請在資料庫上的所有鎖定都釋出之後，重試失敗的 ALTER DATABASE 語句。 系統檢視會 `sys.dm_tran_locks` 保存作用中鎖定的資訊。 若要檢查資料庫上是否有共用或獨佔鎖定，請使用下列查詢。
+
+```sql
+SELECT
+    resource_type, resource_database_id, request_mode, request_type, request_status, request_session_id 
+FROM 
+    sys.dm_tran_locks
+WHERE
+    resource_database_id = DB_ID('testdb')
+```
 
 ## <a name="viewing-database-information"></a>檢視資料庫資訊
 

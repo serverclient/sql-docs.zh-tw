@@ -37,12 +37,12 @@ ms.assetid: 29ddac46-7a0f-4151-bd94-75c1908c89f8
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-current||=azuresqldb-mi-current||=azure-sqldw-latest||>=aps-pdw-2016'
-ms.openlocfilehash: 7898cec5362efc7902623993f568600271c033d5
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
-ms.translationtype: HT
+ms.openlocfilehash: 5321af1026b82d2ed49f077d7cf5604bce3a8e69
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98171610"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98689015"
 ---
 # <a name="create-database"></a>CREATE DATABASE
 
@@ -276,7 +276,7 @@ Windows 相容的目錄名稱。 在 [!INCLUDE[ssNoVersion](../../includes/ssnov
 
 - **PERSISTENT_LOG_BUFFER=ON ( DIRECTORY_NAME='' )**
 
-  指定此選項時，會在位於存放裝置類別記憶體 (NVDIMM-N 非揮發性儲存體) 所支援磁碟裝置上的磁碟區，建立交易記錄緩衝區，也就是持續記錄緩衝區。 如需詳細資訊，請參閱[使用存放裝置類別記憶體加速交易認可延遲](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2016/12/02/transaction-commit-latency-acceleration-using-storage-class-memory-in-windows-server-2016sql-server-2016-sp1/) \(英文\)。 **適用於**：[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 和更新版本。
+  指定此選項時，會在位於存放裝置類別記憶體 (NVDIMM-N 非揮發性儲存體) 所支援磁碟裝置上的磁碟區，建立交易記錄緩衝區，也就是持續記錄緩衝區。 如需詳細資訊，請參閱[使用存放裝置類別記憶體加速交易認可延遲](/archive/blogs/sqlserverstorageengine/transaction-commit-latency-acceleration-using-storage-class-memory-in-windows-server-2016sql-server-2016-sp1) \(英文\)。 **適用於**：[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 和更新版本。
 
 FOR ATTACH [ WITH \< attach_database_option > ] 指定資料庫是藉由[附加](../../relational-databases/databases/database-detach-and-attach-sql-server.md)一組現有的作業系統檔案所建立。 必須有一個指定主要檔案的 \<filespec> 項目。 任何檔案如果其路徑與第一次建立資料庫或最後一次附加資料庫時的路徑不同，則其 \<filespec> 項目是唯一所需的其他 <filespec> 項目。 您必須針對這些檔案指定 \<filespec> 項目。
 
@@ -489,7 +489,7 @@ AS SNAPSHOT OF *source_database_name* 指定要建立的資料庫是 *source_dat
 
 ## <a name="viewing-database-information"></a>檢視資料庫資訊
 
-您可以利用目錄檢視、系統函數和系統預存程序，以傳回資料庫、檔案和檔案群組的相關資訊。 如需詳細資訊，請參閱[系統檢視](https://msdn.microsoft.com/library/35a6161d-7f43-4e00-bcd3-3091f2015e90)。
+您可以利用目錄檢視、系統函數和系統預存程序，以傳回資料庫、檔案和檔案群組的相關資訊。 如需詳細資訊，請參閱[系統檢視](../language-reference.md)。
 
 ## <a name="permissions"></a>權限
 
@@ -966,7 +966,7 @@ CREATE DATABASE database_name
 
 ## <a name="arguments"></a>引數
 
-*database_name* 新資料庫的名稱。 這個名稱在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 上必須是唯一的，且符合 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的識別碼規則。 如需詳細資訊，請參閱[識別碼](https://go.microsoft.com/fwlink/p/?LinkId=180386)。
+*database_name* 新資料庫的名稱。 這個名稱在 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 上必須是唯一的，且符合 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的識別碼規則。 如需詳細資訊，請參閱[識別碼](../../relational-databases/databases/database-identifiers.md)。
 
 *Collation_name* 指定資料庫的預設定序。 定序名稱可以是 Windows 定序名稱或 SQL 定序名稱。 如果未指定，則會將資料庫指派預設定序，即 SQL_Latin1_General_CP1_CI_AS。
 
@@ -1015,7 +1015,7 @@ MAXSIZE 指定資料庫的大小上限。 MAXSIZE 對於指定的 EDITION (服�
 |1024 GB|N/A|N/A|√|√|√ (D)|
 |從 1024 GB 至最大 4096 GB (以每 256 GB 的大小遞增)* |N/A|N/A|不適用|不適用|√|√|
 
-\* P11 和 P15 允許 MAXSIZE 最大至 4 TB，並以 1024 GB 作為預設大小。 P11 和 P15 最多可使用 4 TB 的隨附儲存體，且不另收費。 在進階層中，大於 1 TB 的 MAXSIZE 目前可用於下列區域：美國東部 2、美國西部、US Gov 維吉尼亞州、西歐、德國中部、東南亞、日本東部、澳大利亞東部、加拿大中部和加拿大東部。 如需 DTU 模型的資源限制的額外詳細資訊，請參閱 [DTU 資源限制](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits) \(部分機器翻譯\)。
+\* P11 和 P15 允許 MAXSIZE 最大至 4 TB，並以 1024 GB 作為預設大小。 P11 和 P15 最多可使用 4 TB 的隨附儲存體，且不另收費。 在進階層中，大於 1 TB 的 MAXSIZE 目前可用於下列區域：美國東部 2、美國西部、US Gov 維吉尼亞州、西歐、德國中部、東南亞、日本東部、澳大利亞東部、加拿大中部和加拿大東部。 如需 DTU 模型的資源限制的額外詳細資訊，請參閱 [DTU 資源限制](/azure/sql-database/sql-database-dtu-resource-limits) \(部分機器翻譯\)。
 
 對於 DTU 模型，若指定了 MAXSIZE 值，則此值必須為上表中所示適用於所指定服務層的有效值。
 
@@ -1111,7 +1111,7 @@ MAXSIZE 指定資料庫的大小上限。 MAXSIZE 對於指定的 EDITION (服�
 |:----- | -------: | -------: | -------: | -------: | -------: |
 |資料大小上限 (GB)|1280|1536|2048|4096|4096|
 
-當使用 vCore 模型時，如果未設定 `MAXSIZE` 值，預設值為 32 GB。 如需有關虛擬核心模型資源限制的其他詳細資訊，請參閱[虛擬核心資源限制](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits)。
+當使用 vCore 模型時，如果未設定 `MAXSIZE` 值，預設值為 32 GB。 如需有關虛擬核心模型資源限制的其他詳細資訊，請參閱[虛擬核心資源限制](/azure/sql-database/sql-database-dtu-resource-limits)。
 
 以下規則會套用到 MAXSIZE 和 EDITION 引數：
 
@@ -1132,10 +1132,10 @@ SERVICE_OBJECTIVE
 
   - 指定計算大小 (服務目標)。 服務目標的可用值為：`HS_GEN4_1`、`HS_GEN4_2`、`HS_GEN4_4`、`HS_GEN4_8`、`HS_GEN4_16`、`HS_GEN4_24`、`HS_Gen5_2`、`HS_Gen5_4`、`HS_Gen5_8`、`HS_Gen5_16`、`HS_Gen5_24`、`HS_Gen5_32`、`HS_Gen5_48`、`HS_Gen5_80`。
 
-如需服務目標描述和大小、版本及服務目標組合的詳細資訊，請參閱 [Azure SQL Database 服務層](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers)。 如果 EDITION 不支援指定的 SERVICE_OBJECTIVE，您就會收到錯誤。 若要將 SERVICE_OBJECTIVE 值從某一層變更為另一層 (例如，從 S1 到 P1)，您還必須變更 EDITION 值。 如需服務目標描述和大小、版本及服務目標組合的詳細資訊，請參閱 [Azure SQL Database 服務層和效能層級](https://azure.microsoft.com/documentation/articles/sql-database-service-tiers/) \(部分機器翻譯\)、[DTU 資源限制](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits) \(部分機器翻譯\) 和[虛擬核心資源限制](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits) \(部分機器翻譯\)。 目前已移除對 PRS 服務目標的支援。 如有疑問，請使用此電子郵件別名： premium-rs@microsoft.com。
+如需服務目標描述和大小、版本及服務目標組合的詳細資訊，請參閱 [Azure SQL Database 服務層](/azure/sql-database/sql-database-service-tiers)。 如果 EDITION 不支援指定的 SERVICE_OBJECTIVE，您就會收到錯誤。 若要將 SERVICE_OBJECTIVE 值從某一層變更為另一層 (例如，從 S1 到 P1)，您還必須變更 EDITION 值。 如需服務目標描述和大小、版本及服務目標組合的詳細資訊，請參閱 [Azure SQL Database 服務層和效能層級](/azure/azure-sql/database/purchasing-models) \(部分機器翻譯\)、[DTU 資源限制](/azure/sql-database/sql-database-dtu-resource-limits) \(部分機器翻譯\) 和[虛擬核心資源限制](/azure/sql-database/sql-database-dtu-resource-limits) \(部分機器翻譯\)。 目前已移除對 PRS 服務目標的支援。 如有疑問，請使用此電子郵件別名： premium-rs@microsoft.com。
 
 ELASTIC_POOL (name = \<elastic_pool_name>) **適用於：** 僅單一和集區資料庫。 不適用於超大規模服務層中的資料庫。
-若要在彈性資料庫集區中建立新資料庫，請將資料庫的 SERVICE_OBJECTIVE 設定為 ELASTIC_POOL 並提供集區的名稱。 如需詳細資訊，請參閱[建立和管理 SQL Database 彈性資料庫集區](https://azure.microsoft.com/documentation/articles/sql-database-elastic-pool-portal/)。
+若要在彈性資料庫集區中建立新資料庫，請將資料庫的 SERVICE_OBJECTIVE 設定為 ELASTIC_POOL 並提供集區的名稱。 如需詳細資訊，請參閱[建立和管理 SQL Database 彈性資料庫集區](/azure/azure-sql/database/elastic-pool-overview)。
 
 AS COPY OF [source_server_name.]source_database_name **適用於：** 僅單一和集區資料庫。
 用於將資料庫複製到相同或不同的 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 伺服器上。
@@ -1172,12 +1172,12 @@ AS COPY OF [source_server_name.]source_database_name **適用於：** 僅單一�
 下列語法和語意規則適用於使用 `AS COPY OF` 引數的情況：
 
 - 來源伺服器名稱和複製目標的伺服器名稱可以相同，也可以不同。 兩個名稱相同時，則這是是選擇性參數，而且根據預設會使用目前工作階段的伺服器內容。
-- 來源和目的地資料庫名稱必須加以指定、是唯一的，並且符合 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的識別碼規則。 如需詳細資訊，請參閱[識別碼](https://go.microsoft.com/fwlink/p/?LinkId=180386)。
+- 來源和目的地資料庫名稱必須加以指定、是唯一的，並且符合 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的識別碼規則。 如需詳細資訊，請參閱[識別碼](../../relational-databases/databases/database-identifiers.md)。
 - `CREATE DATABASE` 陳述式必須在將要建立新資料庫之 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 伺服器的 master 資料庫內容中執行。
 - 複製完成後，目的地資料庫必須做為獨立資料庫管理。 您可以在與來源資料庫不相關的情況下，單獨對新資料庫執行 `ALTER DATABASE` 和 `DROP DATABASE` 陳述式。 您也可以將新資料庫複製到另一個新資料庫。
 - 資料庫複製正在進行時，可能會繼續存取來源資料庫。
 
-如需詳細資訊，請參閱[使用 Transact-SQL 建立 Azure SQL 資料庫的複本](https://azure.microsoft.com/documentation/articles/sql-database-copy-transact-sql/)。
+如需詳細資訊，請參閱[使用 Transact-SQL 建立 Azure SQL 資料庫的複本](/azure/azure-sql/database/database-copy)。
 
 > [!IMPORTANT]
 > 根據預設，會使用與源資料庫相同的備份儲存體備援來建立資料庫複本。 不支援透過 T-SQL 在建立資料庫複本時變更備份儲存體備援。 
@@ -1328,7 +1328,7 @@ CREATE DATABASE database_name [ COLLATE collation_name ]
 
 ## <a name="arguments"></a>引數
 
-*database_name* 新資料庫的名稱。 此名稱在 SQL 伺服器上必須是唯一的，並且符合 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的識別碼規則。 如需詳細資訊，請參閱[識別碼](https://go.microsoft.com/fwlink/p/?LinkId=180386)。
+*database_name* 新資料庫的名稱。 此名稱在 SQL 伺服器上必須是唯一的，並且符合 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的識別碼規則。 如需詳細資訊，請參閱[識別碼](../../relational-databases/databases/database-identifiers.md)。
 
 *Collation_name* 指定資料庫的預設定序。 定序名稱可以是 Windows 定序名稱或 SQL 定序名稱。 如果未指定，則會將資料庫指派預設定序，即 SQL_Latin1_General_CP1_CI_AS。
 
@@ -1432,11 +1432,11 @@ CREATE DATABASE database_name [ COLLATE collation_name ]
 
 ## <a name="arguments"></a>引數
 
-*database_name* 新資料庫的名稱。 此名稱在 SQL Server 上必須是唯一名稱，其可同時裝載 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 資料庫和 [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] 資料庫，且必須符合 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的識別碼規則。 如需詳細資訊，請參閱[識別碼](https://go.microsoft.com/fwlink/p/?LinkId=180386)。
+*database_name* 新資料庫的名稱。 此名稱在 SQL Server 上必須是唯一名稱，其可同時裝載 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 資料庫和 [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] 資料庫，且必須符合 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的識別碼規則。 如需詳細資訊，請參閱[識別碼](../../relational-databases/databases/database-identifiers.md)。
 
 *collation_name* 指定資料庫的預設定序。 定序名稱可以是 Windows 定序名稱或 SQL 定序名稱。 如果未指定，則會將資料庫指派預設定序，即 SQL_Latin1_General_CP1_CI_AS。
 
-如需有關 Windows 和 SQL 定序名稱的詳細資訊，請參閱 [COLLATE (Transact-SQL)](https://msdn.microsoft.com/library/ms184391.aspx)。
+如需有關 Windows 和 SQL 定序名稱的詳細資訊，請參閱 [COLLATE (Transact-SQL)](./collations.md)。
 
 *EDITION* 指定資料庫的服務層。 若是 [!INCLUDE[ssSDW](../../includes/sssdw-md.md)]，請使用 'datawarehouse'。
 
@@ -1450,7 +1450,7 @@ CREATE DATABASE database_name [ COLLATE collation_name ]
 
 資料庫中資料列存放區資料的允許大小上限。 儲存在資料列存放區資料表、資料行存放區索引的差異存放區，或叢集資料行存放區索引上非叢集索引的資料，其大小不可超過 MAXSIZE。壓縮成資料行存放區格式的資料沒有大小限制，因此不受 MAXSIZE 限制。
 
-SERVICE_OBJECTIVE 指定計算大小 (服務目標)。 如需適用於 Azure Synapse 之服務目標的詳細資訊，請參閱[資料倉儲單位 (DWU)](https://docs.microsoft.com/azure/sql-data-warehouse/what-is-a-data-warehouse-unit-dwu-cdwu) \(部分機器翻譯\)。
+SERVICE_OBJECTIVE 指定計算大小 (服務目標)。 如需適用於 Azure Synapse 之服務目標的詳細資訊，請參閱[資料倉儲單位 (DWU)](/azure/sql-data-warehouse/what-is-a-data-warehouse-unit-dwu-cdwu) \(部分機器翻譯\)。
 
 ## <a name="general-remarks"></a>一般備註
 
@@ -1458,7 +1458,7 @@ SERVICE_OBJECTIVE 指定計算大小 (服務目標)。 如需適用於 Azure Syn
 
 使用 [ALTER DATABASE - Azure Synapse Analytics](../../t-sql/statements/alter-database-transact-sql.md?view=aps-pdw-2016-au7&preserve-view=true) 來在稍後變更大小上限或服務目標值。
 
-Azure Synapse 已設定為 COMPATIBILITY_LEVEL 130 且無法變更。 如需詳細資料，請參閱 [Azure SQL Database 中改善的查詢效能與相容性層級 130](https://azure.microsoft.com/documentation/articles/sql-database-compatibility-level-query-performance-130/)。
+Azure Synapse 已設定為 COMPATIBILITY_LEVEL 130 且無法變更。 如需詳細資料，請參閱 [Azure SQL Database 中改善的查詢效能與相容性層級 130](./alter-database-transact-sql-compatibility-level.md)。
 
 ## <a name="permissions"></a>權限
 

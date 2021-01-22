@@ -41,12 +41,12 @@ ms.assetid: 877ecd57-3f2e-4237-890a-08f16e944ef1
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current||>=aps-pdw-2016'
-ms.openlocfilehash: 80e415f7f5029e96c6093b5cd72695201fa336d6
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
-ms.translationtype: HT
+ms.openlocfilehash: b3a8b853913581092424101c24b951cd0584c3b7
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97644353"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98688866"
 ---
 # <a name="restore-statements-transact-sql"></a>RESTORE 陳述式 (Transact-SQL)
 
@@ -378,7 +378,7 @@ RESTORE 可以在發生錯誤之後，重新啟動。 另外，您也可以指�
 您也可以利用 RESTORE 陳述式，將全文檢索資料還原到替代位置，以及執行全文檢索資料的差異還原、檔案和檔案群組還原及差異檔案和檔案群組還原。 另外，RESTORE 只能連同資料庫資料一起還原全文檢索檔案。
 
 > [!NOTE]
-> 從 [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 匯入的全文檢索目錄仍然會視為資料庫檔案。 對於這些檔案而言，備份全文檢索目錄的 [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 程序會維持適用狀態，不過不再需要於備份作業期間暫停和繼續。 如需詳細資訊，請參閱[備份並還原全文檢索目錄](https://go.microsoft.com/fwlink/?LinkId=107381)。
+> 從 [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 匯入的全文檢索目錄仍然會視為資料庫檔案。 對於這些檔案而言，備份全文檢索目錄的 [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 程序會維持適用狀態，不過不再需要於備份作業期間暫停和繼續。 如需詳細資訊，請參閱[備份並還原全文檢索目錄](../../relational-databases/search/back-up-and-restore-full-text-catalogs-and-indexes.md)。
 
 ### [!INCLUDE [ssbigdataclusters-ss-nover](../../includes/ssbigdataclusters-ss-nover.md)]
 
@@ -761,7 +761,7 @@ RESTORE DATABASE Sales
 - [RESTORE VERIFYONLY (Transact-SQL)](../../t-sql/statements/restore-statements-verifyonly-transact-sql.md)
 
 > [!IMPORTANT]
-> 若要從 SQL 受控執行個體自動備份進行還原，請參閱 [SQL Database 還原](https://docs.microsoft.com/azure/sql-database/sql-database-recovery-using-backups) \(部分機器翻譯\)。
+> 若要從 SQL 受控執行個體自動備份進行還原，請參閱 [SQL Database 還原](/azure/sql-database/sql-database-recovery-using-backups) \(部分機器翻譯\)。
 
 ## <a name="syntax"></a>語法
 
@@ -784,7 +784,7 @@ FROM URL
 指定放置於 URL而且將用於還原作業的一或多個備份裝置。 URL 格式可用於從 Microsoft Azure 儲存體服務還原備份。
 
 > [!IMPORTANT]
-> 為了在從 URL 還原時能從多部裝置還原，您必須使用共用存取簽章 (SAS) 權杖。 如需建立共用存取簽章的範例，請參閱 [SQL Server 備份至 URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md) 和[在 Azure 儲存體上使用 Powershell 搭配共用存取簽章 (SAS) 權杖來簡化 SQL 認證的建立](https://docs.microsoft.com/archive/blogs/sqlcat/simplifying-creation-of-sql-credentials-with-shared-access-signature-sas-tokens-on-azure-storage-with-powershell) \(英文\)。
+> 為了在從 URL 還原時能從多部裝置還原，您必須使用共用存取簽章 (SAS) 權杖。 如需建立共用存取簽章的範例，請參閱 [SQL Server 備份至 URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md) 和[在 Azure 儲存體上使用 Powershell 搭配共用存取簽章 (SAS) 權杖來簡化 SQL 認證的建立](/archive/blogs/sqlcat/simplifying-creation-of-sql-credentials-with-shared-access-signature-sas-tokens-on-azure-storage-with-powershell) \(英文\)。
 
 *n* 這是一個預留位置，表示可以在逗號分隔清單中指定最多達 64 個備份裝置。
 

@@ -9,12 +9,12 @@ ms.prod: sql
 ms.custom: seo-lt-2019
 ms.technology: linux
 ms.assetid: 31c8c92e-12fe-4728-9b95-4bc028250d85
-ms.openlocfilehash: fd314ea1723786e514b6eb8320b373216de70aa8
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
-ms.translationtype: HT
+ms.openlocfilehash: 109de9dabe9a0fb4d169d7be64448c51d9ec7384
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97471659"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98689112"
 ---
 # <a name="quickstart-install-sql-server-and-create-a-database-on-ubuntu"></a>快速入門：在 Ubuntu 上安裝 SQL Server 並建立資料庫
 [!INCLUDE [SQL Server - Linux](../includes/applies-to-version/sql-linux.md)]
@@ -23,7 +23,7 @@ ms.locfileid: "97471659"
 <!--SQL Server 2017 on Linux-->
 ::: moniker range="= sql-server-linux-2017 || = sql-server-2017"
 
-在此快速入門中，您將會在 Ubuntu 18.04 上安裝 SQL Server 2017。 然後與 **sqlcmd** 連線，建立您的第一個資料庫並執行查詢。
+在本快速入門中，您會在 Ubuntu 16.04/18.04 上安裝 SQL Server 2017。 然後與 **sqlcmd** 連線，建立您的第一個資料庫並執行查詢。
 
 > [!TIP]
 > 本教學課程需要使用者輸入和網際網路連線。 如果您對自動或離線安裝程序感興趣，請參閱 [Linux 上的 SQL Server 安裝指引](sql-server-linux-setup.md)。 如需支援的平台清單，請參閱[版本資訊](sql-server-linux-release-notes.md)。
@@ -33,7 +33,7 @@ ms.locfileid: "97471659"
 <!--SQL Server 2019 on Linux-->
 ::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
-您會在本快速入門中，了解如何在 Ubuntu 18.04 上安裝 SQL Server 2019。 然後與 **sqlcmd** 連線，建立您的第一個資料庫並執行查詢。
+在本快速入門中，您會在 Ubuntu 16.04/18.04 上安裝 SQL Server 2019。 然後與 **sqlcmd** 連線，建立您的第一個資料庫並執行查詢。
 
 > [!TIP]
 > 本教學課程需要使用者輸入和網際網路連線。 如果您對自動或離線安裝程序感興趣，請參閱 [Linux 上的 SQL Server 安裝指引](sql-server-linux-setup.md)。 如需支援的平台清單，請參閱[版本資訊](sql-server-linux-release-notes-2019.md)。
@@ -92,13 +92,29 @@ Ubuntu 16.04 或 18.04 機器必須 **至少有 2 GB** 的記憶體。
    ```
 
 2. 註冊 Microsoft SQL Server Ubuntu 存放庫：
-
+   
+   針對 Ubuntu 16.04：
+   
+   ```bash
+   sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/16.04/mssql-server-2017.list)"
+   ```
+   
+   針對 Ubuntu 18.04：
+   
    ```bash
    sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2017.list)"
    ```
 
    > [!TIP]
    > 如果您想要安裝 SQL Server 2019，則必須改為註冊 SQL Server 2019 存放庫。 請使用下列命令安裝 SQL Server 2019：
+   >
+   > 針對 Ubuntu 16.04：
+   >
+   > ```bash
+   > sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/16.04/mssql-server-2019.list)"
+   > ```
+   >
+   > 針對 Ubuntu 18.04：
    >
    > ```bash
    > sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)"
@@ -152,7 +168,15 @@ Ubuntu 16.04 或 18.04 機器必須 **至少有 2 GB** 的記憶體。
    ```
 
 2. 為 SQL Server 2019 註冊 Microsoft SQL Server Ubuntu 存放庫：
-
+   
+   針對 Ubuntu 16.04：
+   
+   ```bash
+   sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/16.04/mssql-server-2019.list)"
+   ```
+   
+   針對 Ubuntu 18.04：
+   
    ```bash
    sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)"
    ```
@@ -198,7 +222,15 @@ Ubuntu 16.04 或 18.04 機器必須 **至少有 2 GB** 的記憶體。
    ```
 
 1. 註冊 Microsoft Ubuntu 存放庫。
+   
+   針對 Ubuntu 16.04：
+   
+   ```bash
+   curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+   ```
 
+   針對 Ubuntu 18.04：
+   
    ```bash
    curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
    ```
@@ -212,10 +244,11 @@ Ubuntu 16.04 或 18.04 機器必須 **至少有 2 GB** 的記憶體。
 
    > [!Note] 
    > 若要更新為最新版本的 **mssql-tools**，請執行下列命令：
-   >    ```bash
-   >   sudo apt-get update 
-   >   sudo apt-get install mssql-tools 
-   >   ```
+   >
+   > ```bash
+   > sudo apt-get update 
+   > sudo apt-get install mssql-tools 
+   > ```
 
 1. **選擇性**：在 Bash Shell 中將 `/opt/mssql-tools/bin/` 新增至您的 **PATH** 環境變數。
 

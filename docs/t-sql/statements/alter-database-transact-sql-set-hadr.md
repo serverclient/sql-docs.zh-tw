@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: 20e6e803-d6d5-48d5-b626-d1e0a73d174c
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 93fed90647a3a6e86e3f2cfa2fe2016727b481e2
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
-ms.translationtype: HT
+ms.openlocfilehash: 405ed385004aa0ad23d93ef4dbbf2dbd3c2c5726
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98094736"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98689168"
 ---
 # <a name="alter-database-transact-sql-set-hadr"></a>ALTER DATABASE (Transact-SQL) SET HADR 
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -69,7 +69,7 @@ ALTER DATABASE database_name
   
 -   資料庫必須已加入主要複本上的可用性群組。  
   
--   主要複本必須處於作用中狀態。 如需如何對非作用中的主要複本進行疑難排解的資訊，請參閱[對 AlwaysOn 可用性群組設定進行疑難排解 (SQL Server)](https://go.microsoft.com/fwlink/?LinkId=225834)。  
+-   主要複本必須處於作用中狀態。 如需如何對非作用中的主要複本進行疑難排解的資訊，請參閱[對 AlwaysOn 可用性群組設定進行疑難排解 (SQL Server)](/previous-versions/sql/sql-server-2012/ff878308(v=sql.110))。  
   
 -   主要複本必須在線上，而次要複本必須連接至主要複本。  
   
@@ -148,5 +148,4 @@ ALTER DATABASE AccountsDb1 SET HADR AVAILABILITY GROUP = AccountsAG;
  [ALTER AVAILABILITY GROUP &#40;Transact-SQL&#41;](../../t-sql/statements/alter-availability-group-transact-sql.md)   
  [CREATE AVAILABILITY GROUP &#40;Transact-SQL&#41;](../../t-sql/statements/create-availability-group-transact-sql.md)   
  [AlwaysOn 可用性群組概觀 &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server.md) [針對 AlwaysOn 可用性群組組態進行疑難排解 &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/troubleshoot-always-on-availability-groups-configuration-sql-server.md) 
-  
   

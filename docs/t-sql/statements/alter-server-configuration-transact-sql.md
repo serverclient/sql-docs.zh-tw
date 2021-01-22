@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: f3059e42-5f6f-4a64-903c-86dca212a4b4
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: bab0801b0193d9f675ef69e566eef375f0930e5b
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
-ms.translationtype: HT
+ms.openlocfilehash: ce637e88679747faf40ec7f262ceaea3c0f01f5f
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98170860"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98688847"
 ---
 # <a name="alter-server-configuration-transact-sql"></a>ALTER SERVER CONFIGURATION (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -184,13 +184,13 @@ VERBOSE LOGGING = { 'logging_detail' | DEFAULT }
 在資源容錯移轉案例中，SQL Server 資源 DLL 可在執行容錯移轉前取得傾印檔案。 這同時適用於 FCI 和可用性群組技術。 當 SQL Server 資源 DLL 判斷 SQL Server 資源失敗時，SQL Server 資源 DLL 會使用 Sqldumper.exe 公用程式取得 SQL Server 流程的傾印檔案。 為確保 Sqldumper.exe 公用程式在資源容錯移轉時成功產生傾印檔案，您必須將下列三個屬性設為必要條件：SqlDumperDumpTimeOut、SqlDumperDumpPath、SqlDumperDumpFlags。
 
 SQLDUMPEREDUMPFLAGS  
-決定 SQL Server SQLDumper 公用程式所產生的傾印檔案類型。 預設設定為 0。 此設定使用十進位值，不使用十六進位值。 迷你傾印請使用 288，具有間接記憶體的迷你傾印請使用 296，已篩選的傾印請使用 33024。 如需詳細資訊，請參閱 [SQL Server 傾印工具公用程式知識庫文章](https://go.microsoft.com/fwlink/?LinkId=206173)。  
+決定 SQL Server SQLDumper 公用程式所產生的傾印檔案類型。 預設設定為 0。 此設定使用十進位值，不使用十六進位值。 迷你傾印請使用 288，具有間接記憶體的迷你傾印請使用 296，已篩選的傾印請使用 33024。 如需詳細資訊，請參閱 [SQL Server 傾印工具公用程式知識庫文章](/troubleshoot/sql/tools/use-sqldumper-generate-dump-file)。  
   
 SQLDUMPERDUMPPATH = { 'os_file_path' | DEFAULT }  
-SQLDumper 公用程式儲存傾印檔案的位置。 如需詳細資訊，請參閱 [SQL Server 傾印工具公用程式知識庫文章](https://go.microsoft.com/fwlink/?LinkId=206173)。  
+SQLDumper 公用程式儲存傾印檔案的位置。 如需詳細資訊，請參閱 [SQL Server 傾印工具公用程式知識庫文章](/troubleshoot/sql/tools/use-sqldumper-generate-dump-file)。  
   
 SQLDUMPERDUMPTIMEOUT = { 'dump_time-out' | DEFAULT }  
-如果 SQL Server 發生失敗，SQLDumper 公用程式產生傾印的逾時值 (以毫秒為單位)。 預設值為 0，表示完成傾印沒有時間限制。 如需詳細資訊，請參閱 [SQL Server 傾印工具公用程式知識庫文章](https://go.microsoft.com/fwlink/?LinkId=206173)。  
+如果 SQL Server 發生失敗，SQLDumper 公用程式產生傾印的逾時值 (以毫秒為單位)。 預設值為 0，表示完成傾印沒有時間限制。 如需詳細資訊，請參閱 [SQL Server 傾印工具公用程式知識庫文章](/troubleshoot/sql/tools/use-sqldumper-generate-dump-file)。  
   
  FAILURECONDITIONLEVEL = { 'failure_condition_level' | DEFAULT }  
  SQL Server 容錯移轉叢集執行個體應該容錯移轉或重新啟動的條件。 預設值為 3，表示 SQL Server 資源將在發生嚴重伺服器錯誤時容錯移轉或重新啟動。 如需失敗條件層次的詳細資訊，請參閱[設定 FailureConditionLeve 屬性設定](../../sql-server/failover-clusters/windows/configure-failureconditionlevel-property-settings.md)。  
@@ -484,4 +484,3 @@ GO
 [sys.dm_os_memory_nodes &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-nodes-transact-sql.md)   
 [sys.dm_os_buffer_pool_extension_configuration &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-buffer-pool-extension-configuration-transact-sql.md)   
 [緩衝集區擴充](../../database-engine/configure-windows/buffer-pool-extension.md)  
-  

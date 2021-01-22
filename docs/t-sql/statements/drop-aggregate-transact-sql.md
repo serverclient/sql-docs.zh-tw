@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: 84ffc4e7-c451-4f1f-9a67-7fc3a120e53f
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: f536d06a8351b514490f645c46922b3ff38e09e5
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
-ms.translationtype: HT
+ms.openlocfilehash: c9eee09f1c0612434f0facda8bd4db1015f04e84
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98172430"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98688992"
 ---
 # <a name="drop-aggregate-transact-sql"></a>DROP AGGREGATE (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -47,7 +47,7 @@ DROP AGGREGATE [ IF EXISTS ] [ schema_name . ] aggregate_name
 
 ## <a name="arguments"></a>引數
  *IF EXISTS*  
- **適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 至 [目前版本](https://go.microsoft.com/fwlink/p/?LinkId=299658))。  
+ **適用於**：[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 至 [目前版本](../../sql-server/what-s-new-in-sql-server-2016.md))。  
   
  只有在彙總已存在時，才能有條件地將其卸除。  
   
@@ -73,5 +73,3 @@ DROP AGGREGATE dbo.Concatenate;
 ## <a name="see-also"></a>另請參閱  
  [CREATE AGGREGATE &#40;Transact-SQL&#41;](../../t-sql/statements/create-aggregate-transact-sql.md)   
  [建立使用者定義彙總](../../relational-databases/user-defined-functions/create-user-defined-aggregates.md)  
-  
-  

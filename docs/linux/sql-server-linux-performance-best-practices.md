@@ -4,16 +4,16 @@ description: 本文提供在 Linux 上執行 SQL Server 的效能最佳做法與
 author: tejasaks
 ms.author: tejasaks
 ms.reviewer: vanto
-ms.date: 12/11/2020
+ms.date: 01/19/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: 2a6ae62d517bc9ceefa1e97e5242ee238278bdc6
-ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.openlocfilehash: 9a73013e7d49523f8aba418a2961336998190fc5
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98597286"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98689102"
 ---
 # <a name="performance-best-practices-and-configuration-guidelines-for-sql-server-on-linux"></a>Linux 上 SQL Server 的效能最佳作法和設定方針
 
@@ -48,6 +48,31 @@ mdadm --create --verbose /dev/md1 --level=raid10 --chunk=64K --raid-devices=2 /d
 # For tempdb volume, using 2 devices in RAID 0 configuration with 64KB stripes
 mdadm --create --verbose /dev/md2 --level=raid0 --chunk=64K --raid-devices=2 /dev/sdi /dev/sdj
 ```
+
+#### <a name="disk-partitioning-and-configuration-recommendations"></a>磁碟分割和設定建議
+
+針對 SQL Server，建議使用 RAID 設定。 已部署的檔案系統 stripe 單位 (sunit) 和 stripe 寬度應符合 RAID 幾何。 以下是記錄磁片區的 XFS 檔案系統型範例。 
+
+```bash
+# Creating a log volume, using 6 devices, in RAID 10 configuration with 64KB stripes
+mdadm --create --verbose /dev/md3 --level=raid10 --chunk=64K --raid-devices=6 /dev/sda /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf
+
+mkfs.xfs /dev/sda1 -f -L log 
+meta-data=/dev/sda1              isize=512    agcount=32, agsize=18287648 blks 
+         =                       sectsz=4096  attr=2, projid32bit=1 
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0 
+         =                       reflink=1 
+data     =                       bsize=4096   blocks=585204384, imaxpct=5 
+         =                       sunit=16     swidth=48 blks 
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1 
+log      =internal log           bsize=4096   blocks=285744, version=2 
+         =                       sectsz=4096  sunit=1 blks, lazy-count=1 
+realtime =none                   extsz=4096   blocks=0, rtextents=0 
+```
+
+記錄陣列是具有 64k stripe 的6磁片磁碟機 RAID 10。 如您所見：
+   1. "Sunit = 16 blks"，16 * 4096 blk size = 64k，符合 stripe 大小。 
+   2. "Swidth = 48 blks"、swidth/sunit = 3，這是陣列中的資料磁片磁碟機數目，不包括同位磁片磁碟機。 
 
 #### <a name="file-system-configuration-recommendation"></a>檔案系統組態建議
 
@@ -246,6 +271,114 @@ tuned-adm profile mssql
 ```
 
 使用 **mssql** **_Tuned_ *_ 設定檔來設定 _* transparent_hugepage** 選項。
+
+#### <a name="network-setting-recommendations"></a>網路設定建議
+
+如同有儲存體和 CPU 的建議，以下列出的網路特定建議也可供參考。 並非以下提及的所有設定都可在不同的 Nic 上使用。 如需每個選項的指引，請參閱並諮詢 NIC 廠商。 在開發環境中測試及設定此專案，然後將其套用至生產環境。 以下所述的選項會以範例說明，而使用的命令則是 NIC 類型和廠商特有的。 
+
+1. 設定網路埠緩衝區大小：在下列範例中，NIC 的名稱為 ' eth0 '，這是 Intel 架構的 NIC。 針對 Intel NIC，建議的緩衝區大小為 4 KB (4096) 。 確認預先設定的上限，然後使用如下所示的範例命令加以設定：
+
+ ```bash
+         #To check the pre-set maximums please run the command, example NIC name used here is:"eth0"
+         ethtool -g eth0
+         #command to set both the rx(recieve) and tx (transmit) buffer size to 4 KB. 
+         ethtool -G eth0 rx 4096 tx 4096
+         #command to check the value is properly configured is:
+         ethtool -g eth0
+  ```
+
+2. 啟用巨型幀：啟用大型框架之前，請確認在用戶端與 SQL server 之間的網路封包路徑中，所有網路交換器 (es) 、路由器和任何其他必要的畫面都支援巨型個框架。 只有如此一來，啟用巨型幀可以改善效能。 啟用巨型框架之後，請連線至 SQL Server 並使用來將網路封包大小變更為8060， `sp_configure` 如下所示：
+
+```bash
+         #command to set jumbo frame to 9014 for a Intel NIC named eth0 is
+         ifconfig eth0 mtu 9014
+         #verify the setting using the command:
+         ip addr | grep 9014
+```
+
+```sql
+         sp_configure 'network packet size' , '8060'
+         go
+         reconfigure with override
+         go
+```
+
+3. 根據預設，我們建議您設定自動調整 RX/TX IRQ 聯合的埠，這表示當封包速率很低時，系統會調整中斷傳遞來改善延遲，並在封包速率很高時提高輸送量。 請注意，這項設定可能不適用於所有不同的網路基礎結構，因此請檢查現有的網路基礎結構，並確認是否支援此功能。 以下範例適用于名為 ' eth0 ' 的 NIC，也就是 intel NIC：
+
+```bash
+         #command to set the port for adaptive RX/TX IRQ coalescing
+         echtool -C eth0 adaptive-rx on
+         echtool -C eth0 adaptive-tx on
+         #confirm the setting using the command:
+         ethtool -c eth0
+```
+
+> [!NOTE]
+> 針對高效能環境的可預測行為（例如要進行效能評定的環境），請停用調適型 RX/TX IRQ 聯合，然後特別設定 RX/TX 中斷聯合。 請參閱範例命令以停用 RX/TX IRQ 聯合，然後特別設定這些值：
+
+```bash
+         #commands to disable adaptive RX/TX IRQ coalescing
+         echtool -C eth0 adaptive-rx off
+         echtool -C eth0 adaptive-tx off
+         #confirm the setting using the command:
+         ethtool -c eth0
+         #Let us set the rx-usecs parameter which specify how many microseconds after at least 1 packet is received before generating an interrupt, and the [irq] parameters are the corresponding delays in updating the #status when the interrupt is disabled. For Intel bases NICs below are good values to start with:
+         ethtool -C eth0 rx-usecs 100 tx-frames-irq 512
+         #confirm the setting using the command:
+         ethtool -c eth0
+```
+
+4. 我們也建議使用 RSS (接收端調整) 啟用，並且預設會結合 RSS 佇列的 rx 和 tx。 在某些特定案例中使用 Microsoft 支援服務時，停用 RSS 也改善了效能。 在測試環境中測試此設定，然後將其套用至生產環境。 以下顯示的範例命令適用于 Intel Nic。
+
+```bash
+         #command to get pre-set maximums
+         ethtool -l eth0 
+         #note the pre-set "Combined" maximum value. let's consider for this example, it is 8.
+         #command to combine the queues with the value reported in the pre-set "Combined" maximum value:
+         ethtool -L eth0 combined 8
+         #you can verify the setting using the command below
+         ethtool -l eth0
+```
+
+5. 使用 NIC 埠 IRQ 親和性。 若要藉由調整 IRQ 親和性來達到預期的效能，請考慮一些重要的參數，例如 Linux 處理伺服器拓撲、NIC 驅動程式堆疊、預設設定和 irqbalance 設定。 您可以透過伺服器拓撲的知識、停用 irqbalance，以及使用 NIC 廠商專屬的設定，來優化 NIC 埠 IRQ 的親和性設定。 以下是 Mellanox 特定網路基礎結構的範例，可協助說明設定。 請注意，這些命令會根據環境而變更。 如需進一步指引，請洽詢 NIC 廠商：
+
+```bash
+         #disable irqbalance or get a snapshot of the IRQ settings and force the daemon to exit
+         systemctl disable irqbalance.service
+         #or
+         irqbalance --oneshot
+
+         #download the Mellanox mlnx_tuning_scripts tarball, https://www.mellanox.com/sites/default/files/downloads/tools/mlnx_tuning_scripts.tar.gz and extract it
+         tar -xvf mlnx_tuning_scripts.tar.gz
+         # be sure, common_irq_affinity.sh is executable. if not, 
+         # chmod +x common_irq_affinity.sh       
+
+         #display IRQ affinity for Mellanox NIC port; e.g eth0
+         ./show_irq_affinity.sh eth0
+
+         #optimize for best throughput performance
+         ./mlnx_tune -p HIGH_THROUGHPUT
+
+         #set hardware affinity to the NUMA node hosting physically the NIC and its port
+         ./set_irq_affinity_bynode.sh `\cat /sys/class/net/eth0/device/numa_node` eth0
+
+         #verify IRQ affinity
+         ./show_irq_affinity.sh eth0
+
+         #add IRQ coalescing optimizations
+         ethtool -C eth0 adaptive-rx off
+         ethtool -C eth0 adaptive-tx off
+         ethtool -C eth0  rx-usecs 750 tx-frames-irq 2048
+
+         #verify the settings
+         ethtool -c eth0
+```
+
+6. 完成上述變更之後，請使用下列命令確認 NIC 的速度以確定其符合預期：
+
+```bash
+         ethtool eth0 | grep -i Speed
+```
 
 #### <a name="additional-advanced-kernelos-configuration"></a>其他進階 Kernel/OS 組態
 

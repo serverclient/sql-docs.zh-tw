@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 4bfe5734-3003-4165-afd4-b1131ea26e2b
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 35ed1cf50f1d39af97ac636c8aba3ca36f90e7d7
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
-ms.translationtype: HT
+ms.openlocfilehash: 19c71e5beb3b192615f57e620870dec66b2d645f
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98171670"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98688813"
 ---
 # <a name="restore-statements---arguments-transact-sql"></a>RESTORE 陳述式 - 引數 (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -255,7 +255,7 @@ CREDENTIAL
  只有在從 Microsoft Azure Blob 儲存體服務還原備份時使用。  
   
 > [!NOTE]  
->  使用 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] SP1 CU2 直到 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]，從 URL 還原時，都只能從單一裝置還原。 為了在從 URL 還原時能從多部裝置還原，您必須使用 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 至 [目前的版本](https://go.microsoft.com/fwlink/p/?LinkId=299658)，而且必須使用共用存取簽章 (SAS) 權杖。 如需詳細資訊，請參閱[啟用 SQL Server Managed Backup to Microsoft Azure](../../relational-databases/backup-restore/enable-sql-server-managed-backup-to-microsoft-azure.md) 和[在 Azure 儲存體上使用 Powershell 搭配共用存取簽章 (SAS) 權杖來簡化 SQL 認證的建立](https://docs.microsoft.com/archive/blogs/sqlcat/simplifying-creation-of-sql-credentials-with-shared-access-signature-sas-tokens-on-azure-storage-with-powershell) \(英文\)。  
+>  使用 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] SP1 CU2 直到 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]，從 URL 還原時，都只能從單一裝置還原。 為了在從 URL 還原時能從多部裝置還原，您必須使用 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 至 [目前的版本](../../sql-server/what-s-new-in-sql-server-2016.md)，而且必須使用共用存取簽章 (SAS) 權杖。 如需詳細資訊，請參閱[啟用 SQL Server Managed Backup to Microsoft Azure](../../relational-databases/backup-restore/enable-sql-server-managed-backup-to-microsoft-azure.md) 和[在 Azure 儲存體上使用 Powershell 搭配共用存取簽章 (SAS) 權杖來簡化 SQL 認證的建立](/archive/blogs/sqlcat/simplifying-creation-of-sql-credentials-with-shared-access-signature-sas-tokens-on-azure-storage-with-powershell) \(英文\)。  
   
  REPLACE  
  **支援者：** [RESTORE](../../t-sql/statements/restore-statements-transact-sql.md)  
@@ -636,6 +636,3 @@ FILE **=** { *backup_set_file_number* |  **@** _backup\_set\_file\_number_ }
  [RESTORE VERIFYONLY &#40;Transact-SQL&#41;](../../t-sql/statements/restore-statements-verifyonly-transact-sql.md)   
  [SQL Server 資料庫的備份與還原](../../relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases.md)   
  [FILESTREAM &#40;SQL Server&#41;](../../relational-databases/blob/filestream-sql-server.md)  
-  
-  
-
