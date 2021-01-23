@@ -40,12 +40,12 @@ ms.assetid: bb394abe-cae6-4905-b5c6-8daaded77742
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 12bb0423ad450ef94df8767ba8aae10a5c47cade
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
-ms.translationtype: HT
+ms.openlocfilehash: a7903d3a208bd08c9ba22d251a0e4124e81725ea
+ms.sourcegitcommit: 2bdf1f1ee88f4fe3e872227d025e965e95d1b2b4
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97439077"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98711984"
 ---
 # <a name="select---order-by-clause-transact-sql"></a>SELECT - ORDER BY 子句 (Transact-SQL)
 
@@ -146,7 +146,7 @@ ORDER BY SchemaName + ''; -- wrong
  在 SELECT TOP (*N*) 陳述式中，永遠使用 ORDER BY 子句。 這是以預測的方式指示哪些資料列受到 TOP 影響的唯一方法。 如需詳細資訊，請參閱 [TOP &#40;Transact-SQL&#41;](../../t-sql/queries/top-transact-sql.md)。  
   
 ## <a name="interoperability"></a>互通性  
- 當搭配 SELECT...INTO 陳述式一起使用，以插入其他來源的資料列時，ORDER BY 子句無法保證資料列會依照指定順序插入。  
+ 搭配 SELECT .。。INTO 或 INSERT .。。SELECT 語句：若要插入其他來源的資料列，ORDER BY 子句並不保證會以指定的順序插入資料列。  
   
  檢視表中使用 OFFSET 和 FETCH，並不會變更檢視表的可更新性屬性。  
   

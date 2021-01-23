@@ -27,12 +27,12 @@ ms.assetid: 15f8affd-8f39-4021-b092-0379fc6983da
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-current||=azuresqldb-mi-current||=azure-sqldw-latest||>=aps-pdw-2016'
-ms.openlocfilehash: 1f25887409183593230d44dfd813e1ff36a3ee36
-ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
+ms.openlocfilehash: a5b5a4174a8faae5c57ed6844e96f52b8f271311
+ms.sourcegitcommit: 2bdf1f1ee88f4fe3e872227d025e965e95d1b2b4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98689040"
+ms.locfileid: "98711994"
 ---
 # <a name="alter-database-transact-sql"></a>ALTER DATABASE (Transact-SQL)
 
@@ -168,7 +168,7 @@ COLLATE *collation_name*
 **\<delayed_durability_option> ::=**    
 **適用對象**：[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 及更新版本。
 
-如需詳細資訊，請參閱 [ALTER DATABASE SET 選項](../../t-sql/statements/alter-database-transact-sql-set-options.md)及[控制交易持久性](../../relational-databases/logs/control-transaction-durability.md)。
+如需詳細資訊，請參閱 [ALTER DATABASE SET Options](../../t-sql/statements/alter-database-transact-sql-set-options.md) 和 [Control Transaction 耐久性](../../relational-databases/logs/control-transaction-durability.md)。
 
 **\<file_and_filegroup_options>::=**    
 如需詳細資訊，請參閱 [ALTER DATABASE 檔案及檔案群組選項](../../t-sql/statements/alter-database-transact-sql-file-and-filegroup-options.md)。
@@ -482,7 +482,7 @@ MODIFY (MAXSIZE **=** [100 MB \| 500 MB \| 1 \| 1024...4096] GB)
 |1024 GB|N/A|√|√|√|√ (D)|
 |從 1024 GB 至最大 4096 GB (以每 256 GB 的大小遞增)*|N/A|N/A|N/A|N/A|√|
 
-\* P11 和 P15 允許 MAXSIZE 最大至 4 TB，並以 1024 GB 作為預設大小。 P11 和 P15 最多可使用 4 TB 的隨附儲存體，且不另收費。 在進階層中，大於 1 TB 的 MAXSIZE 目前可用於下列區域：美國東部 2、美國西部、US Gov 維吉尼亞州、西歐、德國中部、東南亞、日本東部、澳大利亞東部、加拿大中部和加拿大東部。 如需 DTU 模型的資源限制的額外詳細資訊，請參閱 [DTU 資源限制](/azure/sql-database/sql-database-dtu-resource-limits) \(部分機器翻譯\)。
+\* P11 和 P15 允許 MAXSIZE 最大至 4 TB，並以 1024 GB 作為預設大小。 P11 和 P15 最多可使用 4 TB 的隨附儲存體，且不另收費。 在進階層中，大於 1 TB 的 MAXSIZE 目前可用於下列區域：美國東部 2、美國西部、US Gov 維吉尼亞州、西歐、德國中部、東南亞、日本東部、澳大利亞東部、加拿大中部和加拿大東部。 如需 DTU 模型的資源限制的詳細資訊，請參閱 [dtu 資源限制](/azure/sql-database/sql-database-dtu-resource-limits)。
 
 對於 DTU 模型，若指定了 MAXSIZE 值，則此值必須為上表中所示適用於所指定服務層的有效值。
 
@@ -578,7 +578,7 @@ MODIFY (MAXSIZE **=** [100 MB \| 500 MB \| 1 \| 1024...4096] GB)
 |:----- | -------: | -------: | -------: | -------: | -------: |
 |資料大小上限 (GB)|1280|1536|2048|4096|4096|
 
-當使用 vCore 模型時，如果未設定 `MAXSIZE` 值，預設值為 32 GB。 如需有關虛擬核心模型資源限制的其他詳細資訊，請參閱[虛擬核心資源限制](/azure/sql-database/sql-database-dtu-resource-limits)。
+當使用 vCore 模型時，如果未設定 `MAXSIZE` 值，預設值為 32 GB。 如需 vCore 模型的資源限制的詳細資訊，請參閱 [vCore 資源限制](/azure/sql-database/sql-database-dtu-resource-limits)。
 
 以下規則會套用到 MAXSIZE 和 EDITION 引數：
 
@@ -868,26 +868,33 @@ CURRENT
 
 ## <a name="remarks"></a>備註
 
-若要移除資料庫，請使用 [DROP DATABASE](../../t-sql/statements/drop-database-transact-sql.md)。
-若要縮小資料庫大小，請使用 [DBCC SHRINKDATABASE](../../t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql.md)。
+- 若要移除資料庫，請使用 [DROP DATABASE](../../t-sql/statements/drop-database-transact-sql.md)。
 
-`ALTER DATABASE` 陳述式必須在自動認可模式 (預設的交易管理模式) 下執行，且不能用於明確或隱含交易。
+- 若要縮小資料庫大小，請使用 [DBCC SHRINKDATABASE](../../t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql.md)。
 
-清除計畫快取會導致重新編譯所有後續執行計畫，而且可能會導致查詢效能突然暫時下降。 針對每次清除計畫快取的快取存放區，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 錯誤記錄檔會包含下列資訊訊息：「由於某些資料庫維護或重新設定作業，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的 '%s' 快取存放區 (計畫快取的一部分) 發生 %d 次快取存放區排清」。 只要在該時間間隔內快取發生排清，這個訊息就會每五分鐘記錄一次。
+- `ALTER DATABASE` 陳述式必須在自動認可模式 (預設的交易管理模式) 下執行，且不能用於明確或隱含交易。
 
+- 您可以設定下列其中一個選項來清除受控執行個體的計畫快取。
+    - COLLATE
+    - MODIFY FILEGROUP DEFAULT
+    - MODIFY FILEGROUP READ_ONLY
+    - MODIFY FILEGROUP READ_WRITE
+    - 修改名稱
+
+    清除計畫快取會導致重新編譯所有後續執行計畫，而且可能會導致查詢效能突然暫時下降。 針對每次清除計畫快取的快取存放區，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 錯誤記錄檔會包含下列資訊訊息：「由於某些資料庫維護或重新設定作業，[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 的 '%s' 快取存放區 (計畫快取的一部分) 發生 %d 次快取存放區排清」。 只要在該時間間隔內快取發生排清，這個訊息就會每五分鐘記錄一次。
 在針對具有預設選項的資料庫執行數個查詢時，系統也會排清計畫快取。 然後卸除資料庫。
 
-某些 `ALTER DATABASE` 語句需要執行資料庫的獨佔鎖定。 這就是為什麼當另一個使用中的 proces cannot 持有資料庫鎖定時，它們可能會失敗。 像這樣的情況所報告的錯誤是 `Msg 5061, Level 16, State 1, Line 38` 使用 message `ALTER DATABASE failed because a lock could not be placed on database '<database name>'. Try again later` 。 這通常是暫時性的失敗，若要解決此問題，請在資料庫上的所有鎖定都釋出之後，重試失敗的 ALTER DATABASE 語句。 系統檢視會 `sys.dm_tran_locks` 保存作用中鎖定的資訊。 若要檢查資料庫上是否有共用或獨佔鎖定，請使用下列查詢。
-
-```sql
-SELECT
-    resource_type, resource_database_id, request_mode, request_type, request_status, request_session_id 
-FROM 
-    sys.dm_tran_locks
-WHERE
-    resource_database_id = DB_ID('testdb')
-```
-
+- 某些 `ALTER DATABASE` 語句需要執行資料庫的獨佔鎖定。 這就是當另一個使用中進程持有資料庫鎖定時，它們可能會失敗的原因。 像這樣的情況所報告的錯誤是 `Msg 5061, Level 16, State 1, Line 38` 使用 message `ALTER DATABASE failed because a lock could not be placed on database '<database name>'. Try again later` 。 這通常是暫時性的失敗，若要解決此問題，請在資料庫上的所有鎖定都釋出之後，重試失敗的 ALTER DATABASE 語句。 系統檢視會 `sys.dm_tran_locks` 保存作用中鎖定的資訊。 若要檢查資料庫上是否有共用或獨佔鎖定，請使用下列查詢。
+  
+    ```sql
+    SELECT
+        resource_type, resource_database_id, request_mode, request_type, request_status, request_session_id 
+    FROM 
+        sys.dm_tran_locks
+    WHERE
+        resource_database_id = DB_ID('testdb')
+    ```
+  
 ## <a name="viewing-database-information"></a>檢視資料庫資訊
 
 您可以利用目錄檢視、系統函數和系統預存程序，以傳回資料庫、檔案和檔案群組的相關資訊。
