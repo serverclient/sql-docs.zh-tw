@@ -1,389 +1,390 @@
-- name: SQL 機器學習文件
-  href: ../machine-learning/index.yml
-- name: Microsoft SQL 文件 >
-  href: ../index.yml
-- name: 概觀
-  expanded: true
-  items:
-    - name: 什麼是機器學習服務 (Python 和 R)？
-      href: ../machine-learning/sql-server-machine-learning-services.md
-    - name: 什麼是 R 服務？
-      href: ../machine-learning/r/sql-server-r-services.md
-    - name: 獨立伺服器
-      href: ../machine-learning/r/r-server-standalone.md
-    - name: 新功能
-      href: ../machine-learning/what-s-new-in-sql-server-machine-learning-services.md
-- name: 安裝
-  items:
-    - name: 在 Windows 上安裝 ML 服務
-      href: ../machine-learning/install/sql-machine-learning-services-windows-install.md
-    - name: 在 Linux 上安裝 ML 服務
-      href: ../linux/sql-server-linux-setup-machine-learning.md?toc=/sql/machine-learning/toc.json
-    - name: 在 Docker 上安裝 ML 服務
-      href: ../linux/sql-server-linux-setup-machine-learning-docker.md?toc=/sql/machine-learning/toc.json
-    - name: SQL Server 2019 的個別變更
-      href: ../machine-learning/install/sql-server-machine-learning-services-2019.md
-    - name: 安裝 R 服務
-      href: ../machine-learning/install/sql-r-services-windows-install.md
-    - name: 離線安裝 (無網際網路)
-      items:
-        - name: 在沒有網際網路存取的情況下安裝
-          href: ../machine-learning/install/sql-ml-component-install-without-internet-access.md
-        - name: CAB 下載
-          href: ../machine-learning/install/sql-ml-cab-downloads.md
-    - name: 命令提示字元設定
-      href: ../machine-learning/install/sql-ml-component-commandline-install.md
-    - name: 安裝已訓練的模型
-      href: ../machine-learning/install/sql-pretrained-models-install.md
-    - name: 安裝自訂執行階段
-      items:
-        - name: 安裝 Python 自訂執行階段
-          href: ../machine-learning/install/custom-runtime-python.md
-        - name: 安裝 R 自訂執行階段
-          href: ../machine-learning/install/custom-runtime-r.md
-    - name: 變更預設 Python 與 R 執行階段
-      href: ../machine-learning/install/change-default-language-runtime-version.md
-    - name: 使用繫結升級 Python 和 R 執行階段
-      href: ../machine-learning/install/upgrade-r-and-python.md
-    - name: Azure Data Studio 筆記本
-      href: ../machine-learning/install/sql-machine-learning-azure-data-studio.md
-    - name: 設定 Python 用戶端
-      href: ../machine-learning/python/setup-python-client-tools-sql.md
-    - name: 設定 R 用戶端
-      href: ../machine-learning/r/set-up-a-data-science-client.md
-    - name: 在 Azure VM 安裝
-      href: ../machine-learning/install/sql-machine-learning-azure-virtual-machine.md
-    - name: 安裝獨立伺服器
-      href: ../machine-learning/install/sql-machine-learning-standalone-windows-install.md
-- name: 快速入門
-  items:
-    - name: Python
-      items:
-        - name: 執行 Python 指令碼
-          href: ../machine-learning/tutorials/quickstart-python-create-script.md
-        - name: 資料結構與物件
-          href: ../machine-learning/tutorials/quickstart-python-data-structures.md
-        - name: Python 函式
-          href: ../machine-learning/tutorials/quickstart-python-functions.md
-        - name: 訓練模型並為其評分
-          href: ../machine-learning/tutorials/quickstart-python-train-score-model.md
-    - name: R
-      items:
-        - name: 執行 R 指令碼
-          href: ../machine-learning/tutorials/quickstart-r-create-script.md
-        - name: 資料類型與物件
-          href: ../machine-learning/tutorials/quickstart-r-data-types-and-objects.md
-        - name: R 函式
-          href: ../machine-learning/tutorials/quickstart-r-functions.md
-        - name: 訓練模型並為其評分
-          href: ../machine-learning/tutorials/quickstart-r-train-score-model.md
-- name: 教學課程
-  items:
-    - name: Python
-      items:
-        - name: Python 教學課程
-          href: ../machine-learning/tutorials/python-tutorials.md
-        - name: 滑雪板租賃業 (線性迴歸)
-          items:
-            - name: 1 - 簡介
-              href: ../machine-learning/tutorials/python-ski-rental-linear-regression.md
-            - name: 2 - 準備資料
-              href: ../machine-learning/tutorials/python-ski-rental-linear-regression-prepare-data.md
-            - name: 3 - 訓練模型
-              href: ../machine-learning/tutorials/python-ski-rental-linear-regression-train-model.md
-            - name: 4 - 部署模型
-              href: ../machine-learning/tutorials/python-ski-rental-linear-regression-deploy-model.md
-        - name: 將客戶分類 (k-means 叢集)
-          items:
-            - name: 1 - 簡介
-              href: ../machine-learning/tutorials/python-clustering-model.md
-            - name: 2 - 準備資料
-              href: ../machine-learning/tutorials/python-clustering-model-prepare-data.md
-            - name: 3 - 建立模型
-              href: ../machine-learning/tutorials/python-clustering-model-build.md
-            - name: 4 - 部署模型
-              href: ../machine-learning/tutorials/python-clustering-model-deploy.md
-        - name: NYC 計程車秘訣 (分類)
-          items:
-            - name: 1 - 簡介
-              href: ../machine-learning/tutorials/python-taxi-classification-introduction.md
-            - name: 2 - 資料探索
-              href: ../machine-learning/tutorials/python-taxi-classification-explore-data.md
-            - name: 3 - 特徵工程
-              href: ../machine-learning/tutorials/python-taxi-classification-create-features.md
-            - name: 4 - 定型及部署
-              href: ../machine-learning/tutorials/python-taxi-classification-train-model.md
-            - name: 5 - 預測
-              href: ../machine-learning/tutorials/python-taxi-classification-deploy-model.md
-        - name: 使用 revoscalepy 建立 Python 模型
-          href: ../machine-learning/tutorials/use-python-revoscalepy-to-create-model.md
-    - name: R
-      items:
-        - name: R 教學課程
-          href: ../machine-learning/tutorials/r-tutorials.md
-        - name: 滑雪板出租 (決策樹)
-          items:
-            - name: 1 - 簡介
-              href: ../machine-learning/tutorials/r-predictive-model-introduction.md
-            - name: 2 - 準備資料
-              href: ../machine-learning/tutorials/r-predictive-model-prepare-data.md
-            - name: 3 - 訓練模型
-              href: ../machine-learning/tutorials/r-predictive-model-train.md
-            - name: 4 - 部署模型
-              href: ../machine-learning/tutorials/r-predictive-model-deploy.md
-        - name: 將客戶分類 (k-means 叢集)
-          items:
-            - name: 1 - 簡介
-              href: ../machine-learning/tutorials/r-clustering-model-introduction.md
-            - name: 2 - 準備資料
-              href: ../machine-learning/tutorials/r-clustering-model-prepare-data.md
-            - name: 3 - 建立模型
-              href: ../machine-learning/tutorials/r-clustering-model-build.md
-            - name: 4 - 部署模型
-              href: ../machine-learning/tutorials/r-clustering-model-deploy.md
-        - name: NYC 計程車秘訣 (分類)
-          items:
-            - name: 1. 簡介
-              href: ../machine-learning/tutorials/r-taxi-classification-introduction.md
-            - name: 2. 資料探索
-              href: ../machine-learning/tutorials/r-taxi-classification-explore-data.md
-            - name: 3. 特徵設計
-              href: ../machine-learning/tutorials/r-taxi-classification-create-features.md
-            - name: 4. 定型及部署
-              href: ../machine-learning/tutorials/r-taxi-classification-train-model.md
-            - name: 5. 預測
-              href: ../machine-learning/tutorials/r-taxi-classification-deploy-model.md
-        - name: 建立資料分割型模型
-          href: ../machine-learning/tutorials/r-tutorial-create-models-per-partition.md
-        - name: 在 R 工具中使用 SQL ML
-          items:
-            - name: 1. 簡介
-              href: ../machine-learning/tutorials/walkthrough-data-science-end-to-end-walkthrough.md
-            - name: 2. 資料探索
-              href: ../machine-learning/tutorials/walkthrough-view-and-summarize-data-using-r.md
-            - name: 3. 圖形和繪圖
-              href: ../machine-learning/tutorials/walkthrough-create-graphs-and-plots-using-r.md
-            - name: 4. 特徵設計
-              href: ../machine-learning/tutorials/walkthrough-create-data-features.md
-            - name: 5. 建立及儲存模型
-              href: ../machine-learning/tutorials/walkthrough-build-and-save-the-model.md
-            - name: 6. 部署及使用模型
-              href: ../machine-learning/tutorials/walkthrough-deploy-and-use-the-model.md
-        - name: RevoScaleR 深入探討
-          items:
-            - name: 簡介
-              href: ../machine-learning/tutorials/deepdive-data-science-deep-dive-using-the-revoscaler-packages.md
-            - name: 1. 建立資料庫與權限
-              href: ../machine-learning/tutorials/deepdive-work-with-sql-server-data-using-r.md
-            - name: 2. 建立 RxSqlServerData 物件
-              href: ../machine-learning/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata.md
-            - name: 3. 查詢及修改資料
-              href: ../machine-learning/tutorials/deepdive-query-and-modify-the-sql-server-data.md
-            - name: 4. 定義計算內容
-              href: ../machine-learning/tutorials/deepdive-define-and-use-compute-contexts.md
-            - name: 5. 計算摘要統計資料
-              href: ../machine-learning/tutorials/deepdive-create-and-run-r-scripts.md
-            - name: 6. 顯現資料
-              href: ../machine-learning/tutorials/deepdive-visualize-sql-server-data-using-r.md
-            - name: 7. 建立模型
-              href: ../machine-learning/tutorials/deepdive-create-models.md
-            - name: 8. 為新資料評分
-              href: ../machine-learning/tutorials/deepdive-score-new-data.md
-            - name: 9. 轉換資料
-              href: ../machine-learning/tutorials/deepdive-transform-data-using-r.md
-            - name: 10. 使用 rxImport 載入資料
-              href: ../machine-learning/tutorials/deepdive-load-data-into-memory-using-rximport.md
-            - name: 11. 使用 rxDataStep 建立資料表
-              href: ../machine-learning/tutorials/deepdive-create-new-sql-server-table-using-rxdatastep.md
-            - name: 12. 執行區塊化分析
-              href: ../machine-learning/tutorials/deepdive-perform-chunking-analysis-using-rxdatastep.md
-            - name: 13. 使用 XDF 檔案移動資料
-              href: ../machine-learning/tutorials/deepdive-move-data-between-sql-server-and-xdf-file.md
-            - name: 14. 使用 rxExec 傳送自訂 R
-              href: ../machine-learning/tutorials/deepdive-custom-r-functions-using-rxexec.md
-    - name: 範例資料
-      items:
-        - name: 航空公司資料集
-          href: ../machine-learning/tutorials/demo-data-airlinedemo-in-sql.md
-        - name: Iris 資料集
-          href: ../machine-learning/tutorials/demo-data-iris-in-sql.md
-        - name: NYC 計程車資料集
-          href: ../machine-learning/tutorials/demo-data-nyctaxi-in-sql.md
-- name: 範例 >>
-  href: 'https://github.com/Microsoft/sql-server-samples'
-- name: 方案
-  href: ../machine-learning/tutorials/data-science-scenarios-and-solution-templates.md
-- name: 概念
-  items:
-    - name: Extensibility Framework
-      href: ../machine-learning/concepts/extensibility-framework.md
-    - name: Python 延伸模組
-      href: ../machine-learning/concepts/extension-python.md
-    - name: R 延伸模組
-      href: ../machine-learning/concepts/extension-r.md
-    - name: 安全性
-      href: ../machine-learning/concepts/security.md
-- name: 操作指南
-  items:
-    - name: 連線
-      items:
-        - name: Loopback 連線
-          href: ../machine-learning/connect/loopback-connection.md
-        - name: 從 R 連線至 OLAP
-          items:
-            - name: 在 R 中使用 OLAP Cube 的資料
-              href: ../machine-learning/r/using-data-from-olap-cubes-in-r.md
-            - name: 如何使用 olapR 建立 MDX 查詢
-              href: ../machine-learning/r/how-to-create-mdx-queries-using-olapr.md
-    - name: 資料探索及模型化
-      items:
-        - name: Python
-          items:
-            - name: 以 Python 繪製長條圖
-              href: ../machine-learning/data-exploration/python-plot-histogram.md
-            - name: 將資料匯入 Pandas 資料框架
-              href: ../machine-learning/data-exploration/python-dataframe-pandas.md
-            - name: 將資料框架插入 SQL
-              href: ../machine-learning/data-exploration/python-dataframe-sql-server.md
-        - name: R
-          items:
-            - name: 使用 ODBC 載入 R 物件
-              href: ../machine-learning/r/save-and-load-r-objects-from-sql-server-using-odbc.md
-            - name: R 預測模型
-              href: ../machine-learning/r/data-exploration-and-predictive-modeling-with-r.md
-            - name: 使用 rxExecBy 建立多個模型
-              href: ../machine-learning/r/creating-multiple-models-using-rxexecby.md
-    - name: 資料類型轉換
-      items:
-        - name: Python 轉換為 SQL
-          href: ../machine-learning/python/python-libraries-and-data-types.md
-        - name: R 轉換為 SQL
-          href: ../machine-learning/r/r-libraries-and-data-types.md
-    - name: 部署
-      items:
-        - name: 使用預存程序進行可運作化
-          href: ../machine-learning/r/operationalizing-your-r-code.md
-        - name: 使用 R 建立 SSIS 和 SSRS 工作流程
-          href: ../machine-learning/r/creating-workflows-that-use-r-in-sql-server.md
-        - name: 轉換 R 程式碼以用於 SQL Server
-          href: ../machine-learning/r/converting-r-code-for-use-in-sql-server.md
-        - name: 使用 sqlrutils 建立預存程序
-          href: ../machine-learning/r/how-to-create-a-stored-procedure-using-sqlrutils.md
-    - name: 預測
-      items:
-        - name: 使用 PREDICT T-SQL 的原生評分
-          href: ../machine-learning/predictions/native-scoring-predict-transact-sql.md
-        - name: 使用 sp_rxPredict 的即時評分
-          href: ../machine-learning/predictions/real-time-scoring.md
-    - name: 套件管理
-      items:
-        - name: 安裝新的 Python 套件
-          items:
-            - name: 取得 Python 套件資訊
-              href: ../machine-learning/package-management/python-package-information.md
-            - name: 使用 sqlmlutils 安裝
-              href: ../machine-learning/package-management/install-additional-python-packages-on-sql-server.md
-            - name: 使用 Python 工具進行安裝
-              href: ../machine-learning/package-management/install-python-packages-standard-tools.md
-        - name: 安裝新的 R 套件
-          items:
-            - name: 取得 Python 資訊
-              href: ../machine-learning/package-management/r-package-information.md
-            - name: 使用 R 工具進行安裝
-              href: ../machine-learning/package-management/install-r-packages-standard-tools.md
-            - name: 使用 sqlmlutils 安裝
-              href: ../machine-learning/package-management/install-additional-r-packages-on-sql-server.md
-            - name: 使用 T-SQL 進行安裝
-              href: ../machine-learning/package-management/install-r-packages-with-tsql.md
-            - name: 使用 RevoScaleR
-              items:
-                - name: 使用 RevoScaleR 進行安裝
-                  href: ../machine-learning/package-management/install-r-packages-with-revoscaler.md
-                - name: 啟用遠端 R 管理
-                  href: ../machine-learning/package-management/r-package-how-to-enable-or-disable.md
-                - name: 同步 R 套件
-                  href: ../machine-learning/package-management/package-install-uninstall-and-sync.md
-            - name: 建立 miniCRAN 存放庫
-              href: ../machine-learning/package-management/create-a-local-package-repository-using-minicran.md
-            - name: 使用 R 套件的祕訣
-              href: ../machine-learning/package-management/tips-for-using-r-packages.md
-    - name: 系統管理
-      items:
-        - name: 監視
-          items:
-            - name: 使用 SSMS 報告來監視
-              href: ../machine-learning/administration/monitor-sql-server-machine-learning-services-using-custom-reports-management-studio.md
-            - name: 使用 DMV 來監視
-              href: ../machine-learning/administration/monitor-sql-server-machine-learning-services-using-dynamic-management-views.md
-            - name: 擴充事件
-              items:
-                - name: 使用擴充事件監視
-                  href: ../machine-learning/administration/extended-events.md
-                - name: 監視 PREDICT T-SQL
-                  href: ../machine-learning/administration/extended-events-predict-tsql.md
-        - name: 調整指令碼執行規模
-          href: ../machine-learning/administration/scale-concurrent-execution-external-scripts.md
-        - name: 資源管理員
-          items:
-            - name: 使用資源管理員
-              href: ../machine-learning/administration/resource-governor.md
-            - name: 建立資源集區
-              href: ../machine-learning/administration/create-external-resource-pool.md
-    - name: 安全性
-      items:
-        - name: 授與使用者權限
-          href: ../machine-learning/security/user-permission.md
-        - name: 設定啟動控制板
-          href: ../machine-learning/security/sql-server-launchpad-service-account.md
-        - name: 設定防火牆
-          href: ../machine-learning/security/firewall-configuration.md
-        - name: 為 SQLRUserGroup 建立登入
-          href: ../machine-learning/security/create-a-login-for-sqlrusergroup.md
-    - name: 效能
-      items:
-        - name: R 程式碼效能
-          items:
-            - name: R 中的資料最佳化
-              href: ../machine-learning/r/r-and-data-optimization-r-services.md
-            - name: 使用 R 程式碼剖析函式
-              href: ../machine-learning/r/using-r-code-profiling-functions.md
-- name: 參考
-  items:
-    - name: Python 套件
-      items:
-        - name: revoscalepy
-          href: ../machine-learning/python/ref-py-revoscalepy.md
-        - name: microsoftml
-          href: ../machine-learning/python/ref-py-microsoftml.md
-    - name: R 套件
-      items:
-        - name: RevoScaleR
-          href: ../machine-learning/r/ref-r-revoscaler.md
-        - name: MicrosoftML
-          href: ../machine-learning/r/ref-r-microsoftml.md
-        - name: olapR
-          href: ../machine-learning/r/ref-r-olapr.md
-        - name: sqlrutils
-          href: ../machine-learning/r/ref-r-sqlrutils.md
-- name: 資源
-  items:
-    - name: 版本資訊 2019 >
-      href: ../sql-server/sql-server-version-15-release-notes.md?toc=..%252ftoc.json
-    - name: 版本資訊 2017 >
-      href: ../sql-server/sql-server-2017-release-notes.md?toc=../toc.json
-    - name: 版本資訊 2016 >
-      href: ../sql-server/sql-server-2016-release-notes.md?toc=../toc.json
-    - name: 版本資訊 2014 >
-      href: ../sql-server/sql-server-2014-release-notes.md?toc=../toc.json
-    - name: 疑難排解
-      items:
-        - name: 疑難排解概觀
-          href: ../machine-learning/troubleshooting/machine-learning-troubleshooting-overview.md
-        - name: 已知問題
-          href: ../machine-learning/troubleshooting/known-issues-for-sql-server-machine-learning-services.md
-        - name: 針對疑難排解收集資料
-          href: ../machine-learning/troubleshooting/data-collection-ml-troubleshooting-process.md
-        - name: 啟動控制板和外部指令碼問題
-          href: ../machine-learning/troubleshooting/common-issues-external-script-execution.md
-        - name: 常見的 R 指令碼錯誤
-          href: ../machine-learning/troubleshooting/r-script-execution-errors.md
+items:
+  - name: SQL 機器學習文件
+    href: ../machine-learning/index.yml
+  - name: Microsoft SQL 文件 >
+    href: ../index.yml
+  - name: 概觀
+    expanded: true
+    items:
+      - name: 什麼是機器學習服務 (Python 和 R)？
+        href: ../machine-learning/sql-server-machine-learning-services.md
+      - name: 什麼是 R 服務？
+        href: ../machine-learning/r/sql-server-r-services.md
+      - name: 獨立伺服器
+        href: ../machine-learning/r/r-server-standalone.md
+      - name: 新功能
+        href: ../machine-learning/what-s-new-in-sql-server-machine-learning-services.md
+  - name: 安裝
+    items:
+      - name: 在 Windows 上安裝 ML 服務
+        href: ../machine-learning/install/sql-machine-learning-services-windows-install.md
+      - name: 在 Linux 上安裝 ML 服務
+        href: ../linux/sql-server-linux-setup-machine-learning.md?toc=/sql/machine-learning/toc.json
+      - name: 在 Docker 上安裝 ML 服務
+        href: ../linux/sql-server-linux-setup-machine-learning-docker.md?toc=/sql/machine-learning/toc.json
+      - name: SQL Server 2019 的個別變更
+        href: ../machine-learning/install/sql-server-machine-learning-services-2019.md
+      - name: 安裝 R 服務
+        href: ../machine-learning/install/sql-r-services-windows-install.md
+      - name: 離線安裝 (無網際網路)
+        items:
+          - name: 在沒有網際網路存取的情況下安裝
+            href: ../machine-learning/install/sql-ml-component-install-without-internet-access.md
+          - name: CAB 下載
+            href: ../machine-learning/install/sql-ml-cab-downloads.md
+      - name: 命令提示字元設定
+        href: ../machine-learning/install/sql-ml-component-commandline-install.md
+      - name: 安裝已訓練的模型
+        href: ../machine-learning/install/sql-pretrained-models-install.md
+      - name: 安裝自訂執行階段
+        items:
+          - name: 安裝 Python 自訂執行階段
+            href: ../machine-learning/install/custom-runtime-python.md
+          - name: 安裝 R 自訂執行階段
+            href: ../machine-learning/install/custom-runtime-r.md
+      - name: 變更預設 Python 與 R 執行階段
+        href: ../machine-learning/install/change-default-language-runtime-version.md
+      - name: 使用繫結升級 Python 和 R 執行階段
+        href: ../machine-learning/install/upgrade-r-and-python.md
+      - name: Azure Data Studio 筆記本
+        href: ../machine-learning/install/sql-machine-learning-azure-data-studio.md
+      - name: 設定 Python 用戶端
+        href: ../machine-learning/python/setup-python-client-tools-sql.md
+      - name: 設定 R 用戶端
+        href: ../machine-learning/r/set-up-a-data-science-client.md
+      - name: 在 Azure VM 安裝
+        href: ../machine-learning/install/sql-machine-learning-azure-virtual-machine.md
+      - name: 安裝獨立伺服器
+        href: ../machine-learning/install/sql-machine-learning-standalone-windows-install.md
+  - name: 快速入門
+    items:
+      - name: Python
+        items:
+          - name: 執行 Python 指令碼
+            href: ../machine-learning/tutorials/quickstart-python-create-script.md
+          - name: 資料結構與物件
+            href: ../machine-learning/tutorials/quickstart-python-data-structures.md
+          - name: Python 函式
+            href: ../machine-learning/tutorials/quickstart-python-functions.md
+          - name: 訓練模型並為其評分
+            href: ../machine-learning/tutorials/quickstart-python-train-score-model.md
+      - name: R
+        items:
+          - name: 執行 R 指令碼
+            href: ../machine-learning/tutorials/quickstart-r-create-script.md
+          - name: 資料類型與物件
+            href: ../machine-learning/tutorials/quickstart-r-data-types-and-objects.md
+          - name: R 函式
+            href: ../machine-learning/tutorials/quickstart-r-functions.md
+          - name: 訓練模型並為其評分
+            href: ../machine-learning/tutorials/quickstart-r-train-score-model.md
+  - name: 教學課程
+    items:
+      - name: Python
+        items:
+          - name: Python 教學課程
+            href: ../machine-learning/tutorials/python-tutorials.md
+          - name: 滑雪板租賃業 (線性迴歸)
+            items:
+              - name: 1 - 簡介
+                href: ../machine-learning/tutorials/python-ski-rental-linear-regression.md
+              - name: 2 - 準備資料
+                href: ../machine-learning/tutorials/python-ski-rental-linear-regression-prepare-data.md
+              - name: 3 - 訓練模型
+                href: ../machine-learning/tutorials/python-ski-rental-linear-regression-train-model.md
+              - name: 4 - 部署模型
+                href: ../machine-learning/tutorials/python-ski-rental-linear-regression-deploy-model.md
+          - name: 將客戶分類 (k-means 叢集)
+            items:
+              - name: 1 - 簡介
+                href: ../machine-learning/tutorials/python-clustering-model.md
+              - name: 2 - 準備資料
+                href: ../machine-learning/tutorials/python-clustering-model-prepare-data.md
+              - name: 3 - 建立模型
+                href: ../machine-learning/tutorials/python-clustering-model-build.md
+              - name: 4 - 部署模型
+                href: ../machine-learning/tutorials/python-clustering-model-deploy.md
+          - name: NYC 計程車秘訣 (分類)
+            items:
+              - name: 1 - 簡介
+                href: ../machine-learning/tutorials/python-taxi-classification-introduction.md
+              - name: 2 - 資料探索
+                href: ../machine-learning/tutorials/python-taxi-classification-explore-data.md
+              - name: 3 - 特徵工程
+                href: ../machine-learning/tutorials/python-taxi-classification-create-features.md
+              - name: 4 - 定型及部署
+                href: ../machine-learning/tutorials/python-taxi-classification-train-model.md
+              - name: 5 - 預測
+                href: ../machine-learning/tutorials/python-taxi-classification-deploy-model.md
+          - name: 使用 revoscalepy 建立 Python 模型
+            href: ../machine-learning/tutorials/use-python-revoscalepy-to-create-model.md
+      - name: R
+        items:
+          - name: R 教學課程
+            href: ../machine-learning/tutorials/r-tutorials.md
+          - name: 滑雪板出租 (決策樹)
+            items:
+              - name: 1 - 簡介
+                href: ../machine-learning/tutorials/r-predictive-model-introduction.md
+              - name: 2 - 準備資料
+                href: ../machine-learning/tutorials/r-predictive-model-prepare-data.md
+              - name: 3 - 訓練模型
+                href: ../machine-learning/tutorials/r-predictive-model-train.md
+              - name: 4 - 部署模型
+                href: ../machine-learning/tutorials/r-predictive-model-deploy.md
+          - name: 將客戶分類 (k-means 叢集)
+            items:
+              - name: 1 - 簡介
+                href: ../machine-learning/tutorials/r-clustering-model-introduction.md
+              - name: 2 - 準備資料
+                href: ../machine-learning/tutorials/r-clustering-model-prepare-data.md
+              - name: 3 - 建立模型
+                href: ../machine-learning/tutorials/r-clustering-model-build.md
+              - name: 4 - 部署模型
+                href: ../machine-learning/tutorials/r-clustering-model-deploy.md
+          - name: NYC 計程車秘訣 (分類)
+            items:
+              - name: 1. 簡介
+                href: ../machine-learning/tutorials/r-taxi-classification-introduction.md
+              - name: 2. 資料探索
+                href: ../machine-learning/tutorials/r-taxi-classification-explore-data.md
+              - name: 3. 特徵設計
+                href: ../machine-learning/tutorials/r-taxi-classification-create-features.md
+              - name: 4. 定型及部署
+                href: ../machine-learning/tutorials/r-taxi-classification-train-model.md
+              - name: 5. 預測
+                href: ../machine-learning/tutorials/r-taxi-classification-deploy-model.md
+          - name: 建立資料分割型模型
+            href: ../machine-learning/tutorials/r-tutorial-create-models-per-partition.md
+          - name: 在 R 工具中使用 SQL ML
+            items:
+              - name: 1. 簡介
+                href: ../machine-learning/tutorials/walkthrough-data-science-end-to-end-walkthrough.md
+              - name: 2. 資料探索
+                href: ../machine-learning/tutorials/walkthrough-view-and-summarize-data-using-r.md
+              - name: 3. 圖形和繪圖
+                href: ../machine-learning/tutorials/walkthrough-create-graphs-and-plots-using-r.md
+              - name: 4. 特徵設計
+                href: ../machine-learning/tutorials/walkthrough-create-data-features.md
+              - name: 5. 建立及儲存模型
+                href: ../machine-learning/tutorials/walkthrough-build-and-save-the-model.md
+              - name: 6. 部署及使用模型
+                href: ../machine-learning/tutorials/walkthrough-deploy-and-use-the-model.md
+          - name: RevoScaleR 深入探討
+            items:
+              - name: 簡介
+                href: ../machine-learning/tutorials/deepdive-data-science-deep-dive-using-the-revoscaler-packages.md
+              - name: 1. 建立資料庫與權限
+                href: ../machine-learning/tutorials/deepdive-work-with-sql-server-data-using-r.md
+              - name: 2. 建立 RxSqlServerData 物件
+                href: ../machine-learning/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata.md
+              - name: 3. 查詢及修改資料
+                href: ../machine-learning/tutorials/deepdive-query-and-modify-the-sql-server-data.md
+              - name: 4. 定義計算內容
+                href: ../machine-learning/tutorials/deepdive-define-and-use-compute-contexts.md
+              - name: 5. 計算摘要統計資料
+                href: ../machine-learning/tutorials/deepdive-create-and-run-r-scripts.md
+              - name: 6. 顯現資料
+                href: ../machine-learning/tutorials/deepdive-visualize-sql-server-data-using-r.md
+              - name: 7. 建立模型
+                href: ../machine-learning/tutorials/deepdive-create-models.md
+              - name: 8. 為新資料評分
+                href: ../machine-learning/tutorials/deepdive-score-new-data.md
+              - name: 9. 轉換資料
+                href: ../machine-learning/tutorials/deepdive-transform-data-using-r.md
+              - name: 10. 使用 rxImport 載入資料
+                href: ../machine-learning/tutorials/deepdive-load-data-into-memory-using-rximport.md
+              - name: 11. 使用 rxDataStep 建立資料表
+                href: ../machine-learning/tutorials/deepdive-create-new-sql-server-table-using-rxdatastep.md
+              - name: 12. 執行區塊化分析
+                href: ../machine-learning/tutorials/deepdive-perform-chunking-analysis-using-rxdatastep.md
+              - name: 13. 使用 XDF 檔案移動資料
+                href: ../machine-learning/tutorials/deepdive-move-data-between-sql-server-and-xdf-file.md
+              - name: 14. 使用 rxExec 傳送自訂 R
+                href: ../machine-learning/tutorials/deepdive-custom-r-functions-using-rxexec.md
+      - name: 範例資料
+        items:
+          - name: 航空公司資料集
+            href: ../machine-learning/tutorials/demo-data-airlinedemo-in-sql.md
+          - name: Iris 資料集
+            href: ../machine-learning/tutorials/demo-data-iris-in-sql.md
+          - name: NYC 計程車資料集
+            href: ../machine-learning/tutorials/demo-data-nyctaxi-in-sql.md
+  - name: 範例 >>
+    href: 'https://github.com/Microsoft/sql-server-samples'
+  - name: 方案
+    href: ../machine-learning/tutorials/data-science-scenarios-and-solution-templates.md
+  - name: 概念
+    items:
+      - name: Extensibility Framework
+        href: ../machine-learning/concepts/extensibility-framework.md
+      - name: Python 延伸模組
+        href: ../machine-learning/concepts/extension-python.md
+      - name: R 延伸模組
+        href: ../machine-learning/concepts/extension-r.md
+      - name: 安全性
+        href: ../machine-learning/concepts/security.md
+  - name: 操作指南
+    items:
+      - name: 連線
+        items:
+          - name: Loopback 連線
+            href: ../machine-learning/connect/loopback-connection.md
+          - name: 從 R 連線至 OLAP
+            items:
+              - name: 在 R 中使用 OLAP Cube 的資料
+                href: ../machine-learning/r/using-data-from-olap-cubes-in-r.md
+              - name: 如何使用 olapR 建立 MDX 查詢
+                href: ../machine-learning/r/how-to-create-mdx-queries-using-olapr.md
+      - name: 資料探索及模型化
+        items:
+          - name: Python
+            items:
+              - name: 以 Python 繪製長條圖
+                href: ../machine-learning/data-exploration/python-plot-histogram.md
+              - name: 將資料匯入 Pandas 資料框架
+                href: ../machine-learning/data-exploration/python-dataframe-pandas.md
+              - name: 將資料框架插入 SQL
+                href: ../machine-learning/data-exploration/python-dataframe-sql-server.md
+          - name: R
+            items:
+              - name: 使用 ODBC 載入 R 物件
+                href: ../machine-learning/r/save-and-load-r-objects-from-sql-server-using-odbc.md
+              - name: R 預測模型
+                href: ../machine-learning/r/data-exploration-and-predictive-modeling-with-r.md
+              - name: 使用 rxExecBy 建立多個模型
+                href: ../machine-learning/r/creating-multiple-models-using-rxexecby.md
+      - name: 資料類型轉換
+        items:
+          - name: Python 轉換為 SQL
+            href: ../machine-learning/python/python-libraries-and-data-types.md
+          - name: R 轉換為 SQL
+            href: ../machine-learning/r/r-libraries-and-data-types.md
+      - name: 部署
+        items:
+          - name: 使用預存程序進行可運作化
+            href: ../machine-learning/r/operationalizing-your-r-code.md
+          - name: 使用 R 建立 SSIS 和 SSRS 工作流程
+            href: ../machine-learning/r/creating-workflows-that-use-r-in-sql-server.md
+          - name: 轉換 R 程式碼以用於 SQL Server
+            href: ../machine-learning/r/converting-r-code-for-use-in-sql-server.md
+          - name: 使用 sqlrutils 建立預存程序
+            href: ../machine-learning/r/how-to-create-a-stored-procedure-using-sqlrutils.md
+      - name: 預測
+        items:
+          - name: 使用 PREDICT T-SQL 的原生評分
+            href: ../machine-learning/predictions/native-scoring-predict-transact-sql.md
+          - name: 使用 sp_rxPredict 的即時評分
+            href: ../machine-learning/predictions/real-time-scoring.md
+      - name: 套件管理
+        items:
+          - name: 安裝新的 Python 套件
+            items:
+              - name: 取得 Python 套件資訊
+                href: ../machine-learning/package-management/python-package-information.md
+              - name: 使用 sqlmlutils 安裝
+                href: ../machine-learning/package-management/install-additional-python-packages-on-sql-server.md
+              - name: 使用 Python 工具進行安裝
+                href: ../machine-learning/package-management/install-python-packages-standard-tools.md
+          - name: 安裝新的 R 套件
+            items:
+              - name: 取得 Python 資訊
+                href: ../machine-learning/package-management/r-package-information.md
+              - name: 使用 R 工具進行安裝
+                href: ../machine-learning/package-management/install-r-packages-standard-tools.md
+              - name: 使用 sqlmlutils 安裝
+                href: ../machine-learning/package-management/install-additional-r-packages-on-sql-server.md
+              - name: 使用 T-SQL 進行安裝
+                href: ../machine-learning/package-management/install-r-packages-with-tsql.md
+              - name: 使用 RevoScaleR
+                items:
+                  - name: 使用 RevoScaleR 進行安裝
+                    href: ../machine-learning/package-management/install-r-packages-with-revoscaler.md
+                  - name: 啟用遠端 R 管理
+                    href: ../machine-learning/package-management/r-package-how-to-enable-or-disable.md
+                  - name: 同步 R 套件
+                    href: ../machine-learning/package-management/package-install-uninstall-and-sync.md
+              - name: 建立 miniCRAN 存放庫
+                href: ../machine-learning/package-management/create-a-local-package-repository-using-minicran.md
+              - name: 使用 R 套件的祕訣
+                href: ../machine-learning/package-management/tips-for-using-r-packages.md
+      - name: 系統管理
+        items:
+          - name: 監視
+            items:
+              - name: 使用 SSMS 報告來監視
+                href: ../machine-learning/administration/monitor-sql-server-machine-learning-services-using-custom-reports-management-studio.md
+              - name: 使用 DMV 來監視
+                href: ../machine-learning/administration/monitor-sql-server-machine-learning-services-using-dynamic-management-views.md
+              - name: 擴充事件
+                items:
+                  - name: 使用擴充事件監視
+                    href: ../machine-learning/administration/extended-events.md
+                  - name: 監視 PREDICT T-SQL
+                    href: ../machine-learning/administration/extended-events-predict-tsql.md
+          - name: 調整指令碼執行規模
+            href: ../machine-learning/administration/scale-concurrent-execution-external-scripts.md
+          - name: 資源管理員
+            items:
+              - name: 使用資源管理員
+                href: ../machine-learning/administration/resource-governor.md
+              - name: 建立資源集區
+                href: ../machine-learning/administration/create-external-resource-pool.md
+      - name: 安全性
+        items:
+          - name: 授與使用者權限
+            href: ../machine-learning/security/user-permission.md
+          - name: 設定啟動控制板
+            href: ../machine-learning/security/sql-server-launchpad-service-account.md
+          - name: 設定防火牆
+            href: ../machine-learning/security/firewall-configuration.md
+          - name: 為 SQLRUserGroup 建立登入
+            href: ../machine-learning/security/create-a-login-for-sqlrusergroup.md
+      - name: 效能
+        items:
+          - name: R 程式碼效能
+            items:
+              - name: R 中的資料最佳化
+                href: ../machine-learning/r/r-and-data-optimization-r-services.md
+              - name: 使用 R 程式碼剖析函式
+                href: ../machine-learning/r/using-r-code-profiling-functions.md
+  - name: 參考
+    items:
+      - name: Python 套件
+        items:
+          - name: revoscalepy
+            href: ../machine-learning/python/ref-py-revoscalepy.md
+          - name: microsoftml
+            href: ../machine-learning/python/ref-py-microsoftml.md
+      - name: R 套件
+        items:
+          - name: RevoScaleR
+            href: ../machine-learning/r/ref-r-revoscaler.md
+          - name: MicrosoftML
+            href: ../machine-learning/r/ref-r-microsoftml.md
+          - name: olapR
+            href: ../machine-learning/r/ref-r-olapr.md
+          - name: sqlrutils
+            href: ../machine-learning/r/ref-r-sqlrutils.md
+  - name: 資源
+    items:
+      - name: 版本資訊 2019 >
+        href: ../sql-server/sql-server-version-15-release-notes.md?toc=..%252ftoc.json
+      - name: 版本資訊 2017 >
+        href: ../sql-server/sql-server-2017-release-notes.md?toc=../toc.json
+      - name: 版本資訊 2016 >
+        href: ../sql-server/sql-server-2016-release-notes.md?toc=../toc.json
+      - name: 版本資訊 2014 >
+        href: ../sql-server/sql-server-2014-release-notes.md?toc=../toc.json
+      - name: 疑難排解
+        items:
+          - name: 疑難排解概觀
+            href: ../machine-learning/troubleshooting/machine-learning-troubleshooting-overview.md
+          - name: 已知問題
+            href: ../machine-learning/troubleshooting/known-issues-for-sql-server-machine-learning-services.md
+          - name: 針對疑難排解收集資料
+            href: ../machine-learning/troubleshooting/data-collection-ml-troubleshooting-process.md
+          - name: 啟動控制板和外部指令碼問題
+            href: ../machine-learning/troubleshooting/common-issues-external-script-execution.md
+          - name: 常見的 R 指令碼錯誤
+            href: ../machine-learning/troubleshooting/r-script-execution-errors.md
