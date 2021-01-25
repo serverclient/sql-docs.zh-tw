@@ -34,7 +34,7 @@ String connectionUrl =
      "encrypt=true;trustServerCertificate=true";  
 ```  
   
- 當 **encrypt** 屬性設定為 **true**，而且 **trustServerCertificate** 屬性設定為 **false** 時，[!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] 不會驗證 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] TLS 憑證。 驗證伺服器憑證是 TLS 交握的一部分，而且這麼做可以確保伺服器是所要連線的正確伺服器。 若要驗證伺服器憑證，必須在連線時間，明確地使用 **trustStore** 和 **trustStorePassword** 連線屬性，或隱含地使用基礎 Java Virtual Machine (JVM) 的預設信任存放區來提供信任的資料。  
+ 當 **encrypt** 屬性設定為 **true**，而且 **trustServerCertificate** 屬性設定為 **false** 時，[!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] 會驗證 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] TLS 憑證。 驗證伺服器憑證是 TLS 交握的一部分，而且這麼做可以確保伺服器是所要連線的正確伺服器。 若要驗證伺服器憑證，必須在連線時間，明確地使用 **trustStore** 和 **trustStorePassword** 連線屬性，或隱含地使用基礎 Java Virtual Machine (JVM) 的預設信任存放區來提供信任的資料。  
   
  **trustStore** 屬性會指定 trustStore 憑證檔案的路徑 (包括檔案名稱)，該檔案包含用戶端所信任之憑證的清單。 **trustStorePassword** 屬性會指定用於檢查 trustStore 資料完整性的密碼。 如需使用 JVM 預設信任存放區的詳細資訊，請參閱[為用戶端設定加密](../../connect/jdbc/configuring-the-client-for-ssl-encryption.md)。  
   
